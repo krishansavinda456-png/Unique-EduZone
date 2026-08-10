@@ -1,0 +1,89 @@
+body{font-family:Arial;margin:0;background:#111;color:#fff}
+header{background:#000;padding:16px}
+a{color:gold;margin-right:10px;text-decoration:none}
+main{padding:24px}
+.student-access {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.student-access-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.student-icon {
+    font-size: 45px;
+}
+
+
+.student-access h2 {
+    margin: 0 0 8px 0;
+}
+
+
+.student-access p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+
+.student-access-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.student-button {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.student-button.primary {
+    background: gold;
+    color: #000;
+}
+
+
+.student-button.secondary {
+    background: #333;
+    color: #fff;
+}
+
+
+@media (max-width: 700px) {
+
+    .student-access {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .student-access-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+
+    .student-button {
+        text-align: center;
+    }
+
+}
