@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MCQ Quiz | Unique EduZone</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/quiz.css"
+    >
+
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="quiz-container">
+
+    <h1>MCQ Quiz</h1>
+
+
+    <!-- Timer -->
+
+    <div class="timer-box">
+
+        <span>Time Remaining:</span>
+
+        <strong id="quizTimer">
+            01:00
+        </strong>
+
+    </div>
+
+
+    <!-- Progress -->
+
+    <div class="quiz-progress-container">
+
+        <div
+            id="quizProgress"
+            class="quiz-progress"
+            style="width:0%;"
+        ></div>
+
+    </div>
+
+
+    <!-- Question -->
+
+    <div
+        id="questionBox"
+        class="question-box"
+    ></div>
+
+
+    <!-- Options -->
+
+    <div
+        id="optionsBox"
+        class="options-box"
+    ></div>
+
+
+    <!-- Next -->
+
+    <button
+        id="nextButton"
+        onclick="nextQuestion()"
+        class="next-button"
+    >
+        Next
+    </button>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone
+    </p>
+
+</footer>
+
+
+<script src="../assets/js/quiz.js"></script>
+
+</body>
+
+</html>

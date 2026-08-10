@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Student Profile | Unique EduZone</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/profile.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="quiz.html">MCQ</a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="profile-container">
+
+    <h1>Student Profile</h1>
+
+    <p class="profile-intro">
+        Enter your basic learning information.
+    </p>
+
+
+    <div class="profile-card">
+
+        <form id="profileForm">
+
+
+            <label for="studentName">
+                Student Name
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="studentGrade">
+                Grade
+            </label>
+
+            <select
+                id="studentGrade"
+                required
+            >
+
+                <option value="">
+                    Select Grade
+                </option>
+
+                <option value="10">
+                    Grade 10
+                </option>
+
+                <option value="11">
+                    Grade 11
+                </option>
+
+                <option value="12">
+                    Grade 12
+                </option>
+
+                <option value="13">
+                    Grade 13
+                </option>
+
+            </select>
+
+
+            <label for="studentSubject">
+                Main Subject
+            </label>
+
+            <input
+                type="text"
+                id="studentSubject"
+                placeholder="Example: Business Studies"
+            >
+
+
+            <button
+                type="submit"
+                class="save-button"
+            >
+                Save Profile
+            </button>
+
+
+        </form>
+
+
+        <div
+            id="saveMessage"
+            class="save-message"
+        ></div>
+
+    </div>
+
+
+    <div class="profile-actions">
+
+        <a href="dashboard.html">
+            Go to Dashboard
+        </a>
+
+    </div>
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone
+    </p>
+
+</footer>
+
+
+<script src="../assets/js/profile.js"></script>
+
+</body>
+
+</html>
