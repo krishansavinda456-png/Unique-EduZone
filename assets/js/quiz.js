@@ -1,568 +1,718 @@
-const questions = [
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    {
-        question: "What is a business?",
+        /*
+         * Lesson 1 Quiz
+         */
 
-        options: [
-            "An organization that provides goods or services",
-            "A sport",
-            "A computer program"
-        ],
+        const questions = [
 
-        answer: 0
-    },
+            {
+                question:
+                    "ව්‍යාපාරයක මූලික කාර්යයක් ලෙස සැලකිය හැක්කේ කුමක්ද?",
 
+                options: [
+                    "භාණ්ඩ හා සේවා සැපයීම",
+                    "මුදල් පමණක් ගබඩා කිරීම",
+                    "බදු පමණක් ගෙවීම",
+                    "ගිණුම් පොත් පමණක් තැබීම"
+                ],
 
-    {
-        question: "Which is a factor of production?",
-
-        options: [
-            "Land",
-            "Website",
-            "Advertisement"
-        ],
-
-        answer: 0
-    },
+                answer: 0
+            },
 
 
-    {
-        question: "What is income?",
+            {
+                question:
+                    "පහත සඳහන් කුමක් මිනිසාගේ මූලික අවශ්‍යතාවයකට උදාහරණයකි?",
 
-        options: [
-            "Money received by a business",
-            "Money spent only",
-            "A business building"
-        ],
+                options: [
+                    "ආහාර",
+                    "සුඛෝපභෝගී ඔරලෝසුව",
+                    "අලංකාර භාණ්ඩයක්",
+                    "විලාසිතා භාණ්ඩයක්"
+                ],
 
-        answer: 0
-    }
-
-];
-
-
-
-/*
-    Quiz Variables
-*/
-
-let currentQuestion = 0;
-
-let score = 0;
-
-let answered = false;
+                answer: 0
+            },
 
 
-/*
-    Timer
-*/
+            {
+                question:
+                    "මිනිස් අවශ්‍යතා හා වුවමනා සපුරාලීම සඳහා භාවිත කළ හැකි ද්‍රව්‍යමය දේ හඳුන්වන්නේ කෙසේද?",
 
-let timeRemaining = 60;
+                options: [
+                    "සේවා",
+                    "භාණ්ඩ",
+                    "ශ්‍රමය",
+                    "ප්‍රාග්ධනය"
+                ],
 
-let timerInterval = null;
-
-
-/*
-    Load Question
-*/
-
-function loadQuestion() {
-
-    const question =
-        questions[currentQuestion];
+                answer: 1
+            },
 
 
-    document.getElementById(
-        "questionBox"
-    ).textContent =
-        question.question;
+            {
+                question:
+                    "පහත සඳහන් කුමක් සේවාවකට උදාහරණයක්ද?",
+
+                options: [
+                    "ඇඳුමක්",
+                    "ගෘහ භාණ්ඩයක්",
+                    "බැංකු සේවාවක්",
+                    "ආහාර පැකට්ටුවක්"
+                ],
+
+                answer: 2
+            },
 
 
-    const optionsBox =
-        document.getElementById(
-            "optionsBox"
-        );
+            {
+                question:
+                    "පහත සඳහන් කුමක් නිෂ්පාදන සාධකයකි?",
+
+                options: [
+                    "භූමිය",
+                    "පාරිභෝගිකයා",
+                    "වෙළඳ දැන්වීම",
+                    "තරඟකරු"
+                ],
+
+                answer: 0
+            },
 
 
-    optionsBox.innerHTML = "";
+            {
+                question:
+                    "නිෂ්පාදනය සඳහා යොදවන කායික හා මානසික දායකත්වය හඳුන්වන්නේ කුමක් ලෙසද?",
+
+                options: [
+                    "භූමිය",
+                    "ශ්‍රමය",
+                    "ප්‍රාග්ධනය",
+                    "ව්‍යවසායකත්වය"
+                ],
+
+                answer: 1
+            },
 
 
-    answered = false;
+            {
+                question:
+                    "නිෂ්පාදනය සඳහා භාවිත කරන මිනිසා විසින් නිපදවන සම්පත් හඳුන්වන්නේ කුමක් ලෙසද?",
+
+                options: [
+                    "භූමිය",
+                    "ශ්‍රමය",
+                    "ප්‍රාග්ධනය",
+                    "පාරිභෝගිකයා"
+                ],
+
+                answer: 2
+            },
 
 
-    question.options.forEach(
-        (option, index) => {
+            {
+                question:
+                    "ව්‍යාපාරයකට අවශ්‍ය අමුද්‍රව්‍ය හෝ වෙනත් සම්පත් සපයන පාර්ශ්වය කවුද?",
 
-            const button =
-                document.createElement(
-                    "button"
-                );
+                options: [
+                    "පාරිභෝගිකයා",
+                    "සැපයුම්කරු",
+                    "තරඟකරු",
+                    "සේවකයා"
+                ],
 
-
-            button.className =
-                "option";
-
-
-            button.textContent =
-                option;
+                answer: 1
+            },
 
 
-            button.onclick =
-                function () {
+            {
+                question:
+                    "ව්‍යාපාරයේ භාණ්ඩ හා සේවා මිලදී ගන්නා පාර්ශ්වය කවුද?",
 
-                    selectAnswer(index);
+                options: [
+                    "පාරිභෝගිකයා",
+                    "සැපයුම්කරු",
+                    "රජය",
+                    "ණයහිමියා"
+                ],
 
-                };
+                answer: 0
+            },
 
 
-            optionsBox.appendChild(
-                button
+            {
+                question:
+                    "පහත සඳහන් කුමක් ව්‍යාපාරයේ ඇල්මැති පාර්ශ්වයක් ලෙස සැලකිය හැකිද?",
+
+                options: [
+                    "පාරිභෝගිකයා",
+                    "සේවකයා",
+                    "රජය",
+                    "ඉහත සියල්ල"
+                ],
+
+                answer: 3
+            }
+
+        ];
+
+
+        /*
+         * Quiz Variables
+         */
+
+        let currentQuestion = 0;
+
+        let score = 0;
+
+        let selectedAnswer = null;
+
+        let timeLeft = 60;
+
+        let quizFinished = false;
+
+
+        /*
+         * HTML Elements
+         */
+
+        const questionBox =
+            document.getElementById(
+                "questionBox"
             );
 
-        }
-    );
 
+        const optionsBox =
+            document.getElementById(
+                "optionsBox"
+            );
 
-    updateProgress();
 
-}
+        const nextButton =
+            document.getElementById(
+                "nextButton"
+            );
 
 
-/*
-    Select Answer
-*/
+        const quizTimer =
+            document.getElementById(
+                "quizTimer"
+            );
 
-function selectAnswer(index) {
 
-    if (answered) {
+        const quizProgress =
+            document.getElementById(
+                "quizProgress"
+            );
 
-        return;
 
-    }
+        /*
+         * Show Question
+         */
 
+        function showQuestion() {
 
-    answered = true;
+            selectedAnswer = null;
 
 
-    const correctAnswer =
-        questions[
-            currentQuestion
-        ].answer;
+            const question =
+                questions[currentQuestion];
 
 
-    if (index === correctAnswer) {
+            questionBox.innerHTML =
 
-        score++;
+                "<h2>" +
+                "Question " +
+                (currentQuestion + 1) +
+                " / " +
+                questions.length +
+                "</h2>" +
 
-    }
+                "<p>" +
+                question.question +
+                "</p>";
 
 
-    const buttons =
-        document.querySelectorAll(
-            ".option"
-        );
+            optionsBox.innerHTML = "";
 
 
-    buttons.forEach(
-        button => {
+            question.options.forEach(
+                function (option, index) {
 
-            button.disabled = true;
+                    const label =
+                        document.createElement(
+                            "label"
+                        );
 
-        }
-    );
 
-}
+                    label.className =
+                        "quiz-option";
 
 
-/*
-    Next Question
-*/
+                    label.innerHTML =
 
-function nextQuestion() {
+                        "<input " +
+                        "type='radio' " +
+                        "name='answer' " +
+                        "value='" +
+                        index +
+                        "'>" +
 
-    if (!answered) {
+                        "<span>" +
+                        option +
+                        "</span>";
 
-        alert(
-            "Please select an answer."
-        );
 
-        return;
+                    label.addEventListener(
+                        "click",
+                        function () {
 
-    }
+                            selectedAnswer =
+                                index;
 
-
-    currentQuestion++;
-
-
-    if (
-        currentQuestion >=
-        questions.length
-    ) {
-
-        finishQuiz();
-
-        return;
-
-    }
-
-
-    loadQuestion();
-
-}
-
-
-/*
-    Finish Quiz
-*/
-
-function finishQuiz() {
-
-    stopTimer();
-
-
-    const total =
-        questions.length;
-
-
-    const percentage =
-        Math.round(
-            (score / total) * 100
-        );
-
-
-    /*
-        Save Score
-    */
-
-    localStorage.setItem(
-        "uez_last_score",
-        percentage
-    );
-
-    /*
-        Save Quiz Status
-    */
-
-       localStorage.setItem(
-        "uez_quiz_status",
-        "Completed"
-    );
-
-
-
-    /*
-        Quiz Count
-    */
-
-    let quizCount =
-        Number(
-            localStorage.getItem(
-                "uez_quiz_count"
-            )
-        ) || 0;
-
-
-    quizCount++;
-
-
-    localStorage.setItem(
-        "uez_quiz_count",
-        quizCount
-    );
-
-
-    /*
-        Save Details
-    */
-
-    localStorage.setItem(
-        "uez_last_total",
-        total
-    );
-
-
-    localStorage.setItem(
-        "uez_last_correct",
-        score
-    );
-
-
-    localStorage.setItem(
-        "uez_last_quiz_date",
-        new Date().toLocaleString()
-    );
-
-
-    /*
-        Go to Results
-    */
-
-    window.location.href =
-        "results.html";
-
-}
-
-
-/*
-    Timer Start
-*/
-
-function startTimer() {
-
-    updateTimerDisplay();
-
-
-    timerInterval =
-        setInterval(
-            function () {
-
-                timeRemaining--;
-
-
-                updateTimerDisplay();
-
-
-                /*
-                    Time Over
-                */
-
-                if (
-                    timeRemaining <= 0
-                ) {
-
-                    clearInterval(
-                        timerInterval
+                        }
                     );
 
 
-                    autoSubmitQuiz();
+                    optionsBox.appendChild(
+                        label
+                    );
+
+                }
+            );
+
+
+            /*
+             * Progress Bar
+             */
+
+            const progress =
+                Math.round(
+                    (currentQuestion /
+                        questions.length) *
+                    100
+                );
+
+
+            if (quizProgress) {
+
+                quizProgress.style.width =
+                    progress + "%";
+
+            }
+
+
+            /*
+             * Last Question Button
+             */
+
+            if (
+                currentQuestion ===
+                questions.length - 1
+            ) {
+
+                nextButton.textContent =
+                    "Finish Quiz";
+
+            }
+
+            else {
+
+                nextButton.textContent =
+                    "Next";
+
+            }
+
+        }
+
+
+        /*
+         * Next Question
+         */
+
+        window.nextQuestion =
+            function () {
+
+
+                if (quizFinished) {
+
+                    return;
 
                 }
 
-            },
-            1000
-        );
 
-}
+                /*
+                 * Check Answer
+                 */
 
+                if (
+                    selectedAnswer ===
+                    questions[
+                        currentQuestion
+                    ].answer
+                ) {
 
-/*
-    Timer Display
-*/
+                    score++;
 
-function updateTimerDisplay() {
-
-    const timer =
-        document.getElementById(
-            "quizTimer"
-        );
+                }
 
 
-    if (!timer) {
+                /*
+                 * Last Question
+                 */
 
-        return;
+                if (
+                    currentQuestion ===
+                    questions.length - 1
+                ) {
+
+                    finishQuiz();
+
+                    return;
+
+                }
+
+
+                currentQuestion++;
+
+                showQuestion();
+
+            };
+
+
+        /*
+         * Finish Quiz
+         */
+
+        function finishQuiz() {
+
+            if (quizFinished) {
+
+                return;
+
+            }
+
+
+            quizFinished = true;
+
+
+            /*
+             * Percentage
+             */
+
+            const totalQuestions =
+                questions.length;
+
+
+            const percentage =
+                Math.round(
+                    (score /
+                        totalQuestions) *
+                    100
+                );
+
+
+            /*
+             * Pass / Fail
+             */
+
+            const passMark = 50;
+
+
+            let status;
+
+
+            if (
+                percentage >=
+                passMark
+            ) {
+
+                status =
+                    "Pass";
+
+            }
+
+            else {
+
+                status =
+                    "Fail";
+
+            }
+
+
+            /*
+             * Save Score
+             */
+
+            localStorage.setItem(
+                "uez_last_score",
+                percentage
+            );
+
+
+            localStorage.setItem(
+                "uez_last_quiz_correct",
+                score
+            );
+
+
+            localStorage.setItem(
+                "uez_last_quiz_total",
+                totalQuestions
+            );
+
+
+            localStorage.setItem(
+                "uez_last_quiz_percentage",
+                percentage
+            );
+
+
+            localStorage.setItem(
+                "uez_quiz_status",
+                "Completed"
+            );
+
+
+            localStorage.setItem(
+                "uez_quiz_pass_fail",
+                status
+            );
+
+
+            /*
+             * Quiz Count
+             */
+
+            let quizCount =
+                Number(
+                    localStorage.getItem(
+                        "uez_quiz_count"
+                    )
+                ) || 0;
+
+
+            quizCount++;
+
+
+            localStorage.setItem(
+                "uez_quiz_count",
+                quizCount
+            );
+
+
+            /*
+             * Mark Lesson 1 Completed
+             */
+
+            let completedLessons = [];
+
+
+            const savedLessons =
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                );
+
+
+            if (savedLessons) {
+
+                try {
+
+                    completedLessons =
+                        JSON.parse(
+                            savedLessons
+                        );
+
+                }
+
+                catch (error) {
+
+                    completedLessons = [];
+
+                }
+
+            }
+
+
+            if (
+                !completedLessons.includes(
+                    "lesson1"
+                )
+            ) {
+
+                completedLessons.push(
+                    "lesson1"
+                );
+
+            }
+
+
+            localStorage.setItem(
+                "uez_completed_lessons",
+                JSON.stringify(
+                    completedLessons
+                )
+            );
+
+
+            /*
+             * Go to Results
+             */
+
+            window.location.href =
+                "results.html";
+
+        }
+
+
+        /*
+         * Auto Submit - Time Up
+         */
+
+        function autoSubmitQuiz() {
+
+            if (quizFinished) {
+
+                return;
+
+            }
+
+
+            quizFinished = true;
+
+
+            const totalQuestions =
+                questions.length;
+
+
+            const percentage =
+                Math.round(
+                    (score /
+                        totalQuestions) *
+                    100
+                );
+
+
+            /*
+             * Save Time Up Status
+             */
+
+            localStorage.setItem(
+                "uez_last_score",
+                percentage
+            );
+
+
+            localStorage.setItem(
+                "uez_last_quiz_correct",
+                score
+            );
+
+
+            localStorage.setItem(
+                "uez_last_quiz_total",
+                totalQuestions
+            );
+
+
+            localStorage.setItem(
+                "uez_last_quiz_percentage",
+                percentage
+            );
+
+
+            localStorage.setItem(
+                "uez_quiz_status",
+                "Time Up"
+            );
+
+
+            localStorage.setItem(
+                "uez_quiz_pass_fail",
+                percentage >= 50
+                    ? "Pass"
+                    : "Fail"
+            );
+
+
+            /*
+             * Go to Results
+             */
+
+            window.location.href =
+                "results.html";
+
+        }
+
+
+        /*
+         * Countdown Timer
+         */
+
+        function updateTimer() {
+
+            const minutes =
+                Math.floor(
+                    timeLeft / 60
+                );
+
+
+            const seconds =
+                timeLeft % 60;
+
+
+            if (quizTimer) {
+
+                quizTimer.textContent =
+
+                    String(minutes)
+                        .padStart(2, "0") +
+
+                    ":" +
+
+                    String(seconds)
+                        .padStart(2, "0");
+
+            }
+
+
+            if (timeLeft <= 0) {
+
+                clearInterval(
+                    timerInterval
+                );
+
+
+                autoSubmitQuiz();
+
+
+                return;
+
+            }
+
+
+            timeLeft--;
+
+        }
+
+
+        const timerInterval =
+            setInterval(
+                updateTimer,
+                1000
+            );
+
+
+        /*
+         * Start Quiz
+         */
+
+        showQuestion();
+
+        updateTimer();
 
     }
-
-
-    const minutes =
-        Math.floor(
-            timeRemaining / 60
-        );
-
-
-    const seconds =
-        timeRemaining % 60;
-
-
-    timer.textContent =
-        String(minutes).padStart(
-            2,
-            "0"
-        )
-        +
-        ":"
-        +
-        String(seconds).padStart(
-            2,
-            "0"
-        );
-
-
-    /*
-        Warning
-    */
-
-    if (
-        timeRemaining <= 10
-    ) {
-
-        timer.classList.add(
-            "timer-warning"
-        );
-
-    }
-
-}
-
-
-/*
-    Auto Submit
-*/
-
-function autoSubmitQuiz() {
-
-    /*
-        Calculate current result
-    */
-
-    const total =
-        questions.length;
-
-
-    const percentage =
-        Math.round(
-            (score / total) * 100
-        );
-
-
-    /*
-        Save Score
-    */
-
-    localStorage.setItem(
-        "uez_last_score",
-        percentage
-    );
-
-
-    /*
-        Save Quiz Status
-    */
-
-    localStorage.setItem(
-        "uez_quiz_status",
-        "Time Up"
-    );
-
-
-    /*
-        Quiz Count
-    */
-
-    let quizCount =
-        Number(
-            localStorage.getItem(
-                "uez_quiz_count"
-            )
-        ) || 0;
-
-
-    quizCount++;
-
-
-    localStorage.setItem(
-        "uez_quiz_count",
-        quizCount
-    );
-
-
-    /*
-        Save Details
-    */
-
-    localStorage.setItem(
-        "uez_last_total",
-        total
-    );
-
-
-    localStorage.setItem(
-        "uez_last_correct",
-        score
-    );
-
-
-    localStorage.setItem(
-        "uez_last_quiz_date",
-        new Date().toLocaleString()
-    );
-
-
-    /*
-        Mark as Time Up
-    */
-
-    localStorage.setItem(
-        "uez_quiz_status",
-        "Time Up"
-    );
-
-
-    /*
-        Open Results
-    */
-
-    window.location.href =
-        "results.html";
-
-}
-
-
-/*
-    Stop Timer
-*/
-
-function stopTimer() {
-
-    if (timerInterval) {
-
-        clearInterval(
-            timerInterval
-        );
-
-        timerInterval = null;
-
-    }
-
-}
-
-
-/*
-    Progress
-*/
-
-function updateProgress() {
-
-    const progress =
-        Math.round(
-            (
-                currentQuestion /
-                questions.length
-            ) * 100
-        );
-
-
-    const progressBar =
-        document.getElementById(
-            "quizProgress"
-        );
-
-
-    if (progressBar) {
-
-        progressBar.style.width =
-            progress + "%";
-
-    }
-
-}
-
-
-/*
-    Start Quiz
-*/
-
-loadQuestion();
-
-startTimer();
+);
