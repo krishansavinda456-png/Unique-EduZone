@@ -11,7 +11,7 @@
     >
 
     <title>
-        Lesson 1 | Unique EduZone
+        Lesson 1 | Business Studies | Unique EduZone
     </title>
 
     <link
@@ -21,182 +21,75 @@
 
     <style>
 
-        .lesson-page {
-            max-width: 950px;
+        .lesson-container {
+            max-width: 900px;
             margin: auto;
             padding: 30px 20px;
         }
-
 
         .lesson-header {
             background: #1b1b1b;
             border: 1px solid #333;
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             margin-bottom: 25px;
         }
 
+        .lesson-header h1 {
+            margin-top: 0;
+        }
 
         .lesson-number {
             color: gold;
             font-weight: bold;
-            margin-bottom: 8px;
         }
-
-
-        .lesson-header h1 {
-            margin: 0 0 10px;
-        }
-
 
         .lesson-section {
             background: #1b1b1b;
             border: 1px solid #333;
             border-radius: 15px;
             padding: 25px;
-            margin-bottom: 25px;
-            line-height: 1.9;
+            margin-bottom: 20px;
         }
-
 
         .lesson-section h2 {
             color: gold;
-            margin-top: 0;
         }
 
-
-        .lesson-section h3 {
-            margin-top: 25px;
+        .lesson-section p,
+        .lesson-section li {
+            line-height: 1.9;
         }
 
-
-        .important-box {
-            border-left: 4px solid gold;
-            padding: 15px;
-            margin: 20px 0;
-            background: #242424;
-        }
-
-
-        .topic-list {
-            padding-left: 25px;
-        }
-
-
-        .topic-list li {
-            margin-bottom: 8px;
-        }
-
-
-        .stakeholder-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-
-        .stakeholder-card {
-            background: #242424;
-            border: 1px solid #444;
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-
-        .stakeholder-card h3 {
-            color: gold;
-            margin-top: 0;
-        }
-
-
-        .check-question {
-            background: #242424;
-            border-radius: 10px;
-            padding: 18px;
-            margin: 15px 0;
-        }
-
-
-        .check-question label {
-            display: block;
-            margin: 8px 0;
-            cursor: pointer;
-        }
-
-
-        .check-button {
-            background: gold;
-            color: #000;
-            border: none;
-            padding: 11px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-
-        #checkResult {
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-
-        .completion-box {
-            background: #1b1b1b;
-            border: 1px solid #333;
+        .lesson-complete {
+            background: #181818;
+            border: 1px solid gold;
             border-radius: 15px;
-            padding: 25px;
-            text-align: center;
+            padding: 30px;
             margin-top: 30px;
+            text-align: center;
         }
 
-
-        .complete-button {
+        .quiz-button {
+            display: inline-block;
             background: gold;
             color: #000;
-            border: none;
-            padding: 13px 24px;
+            text-decoration: none;
+            padding: 14px 28px;
             border-radius: 8px;
             font-weight: bold;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-
-        .complete-button:disabled {
-            background: #555;
-            color: #fff;
-            cursor: not-allowed;
-        }
-
-
-        #completedMessage {
             margin-top: 15px;
-            font-weight: bold;
         }
 
+        .quiz-button:hover {
+            opacity: 0.85;
+        }
 
-        .back-link {
+        .back-button {
             display: inline-block;
-            margin-top: 25px;
             color: gold;
-            font-weight: bold;
-        }
-
-
-        @media (max-width: 600px) {
-
-            .lesson-page {
-                padding: 20px 12px;
-            }
-
-            .lesson-section {
-                padding: 18px;
-            }
-
+            text-decoration: none;
+            margin-top: 25px;
         }
 
     </style>
@@ -242,15 +135,15 @@
 
 
 
-<main class="lesson-page">
+<main class="lesson-container">
 
 
-    <!-- LESSON HEADER -->
+    <!-- Lesson Header -->
 
     <section class="lesson-header">
 
         <div class="lesson-number">
-            පාඩම 01
+            LESSON 01
         </div>
 
         <h1>
@@ -258,131 +151,74 @@
         </h1>
 
         <p>
-            Business Studies – Grade 10
-        </p>
-
-        <p>
-            මෙම පාඩම මඟින් ව්‍යාපාර සංකල්පය,
-            ව්‍යාපාර අරමුණු, අවශ්‍යතා හා වුවමනා,
-            නිෂ්පාදන ව්‍යාපාර, සේවා ව්‍යාපාර,
-            නිෂ්පාදන සාධක සහ ඇල්මැති පාර්ශ්ව
-            පිළිබඳ මූලික අවබෝධයක් ලබා ගත හැක.
+            10/11 ශ්‍රේණි ව්‍යාපාර අධ්‍යයනය
         </p>
 
     </section>
 
 
 
-    <!-- 1.1 -->
+    <!-- Introduction -->
 
     <section class="lesson-section">
 
         <h2>
-            1.1 ව්‍යාපාර පිළිබඳ මූලික පදනම
+            1. ව්‍යාපාරය යනු කුමක්ද?
         </h2>
-
-
-        <h3>
-            ව්‍යාපාර සංකල්පය
-        </h3>
 
         <p>
             මිනිසාගේ අවශ්‍යතා හා වුවමනා සපුරාලීම සඳහා
-            විවිධ භාණ්ඩ හා සේවා නිෂ්පාදනය කිරීම හෝ
-            සැපයීම ආශ්‍රිත ආර්ථික කටයුතු ව්‍යාපාර
-            ලෙස හඳුනාගත හැක.
-        </p>
-
-
-        <div class="important-box">
-
-            <strong>
-                මතක තබා ගන්න:
-            </strong>
-
-            <p>
-                ව්‍යාපාර ක්‍රියාකාරකම්වල මූලික අවධානය
-                මිනිසාගේ අවශ්‍යතා හා වුවමනා සපුරාලීමට
-                අවශ්‍ය භාණ්ඩ හා සේවා සැපයීම කෙරෙහි යොමු වේ.
-            </p>
-
-        </div>
-
-
-        <h3>
-            ව්‍යාපාරවල වැදගත්කම
-        </h3>
-
-        <p>
-            වර්තමාන සමාජයේ පුද්ගලයන් තමන්ට අවශ්‍ය
-            සියලුම භාණ්ඩ හා සේවා තනිව නිෂ්පාදනය
-            කර නොගන්නා බැවින් ව්‍යාපාරවලට වැදගත්
-            කාර්යභාරයක් පැවරී ඇත.
+            භාණ්ඩ හා සේවා නිෂ්පාදනය කිරීම, බෙදා හැරීම
+            සහ අලෙවි කිරීම වැනි ආර්ථික ක්‍රියාකාරකම්
+            ව්‍යාපාර ක්‍රියාකාරකම් ලෙස හැඳින්විය හැකිය.
         </p>
 
         <p>
-            ව්‍යාපාර මඟින් නිෂ්පාදනය හා බෙදාහැරීම
-            සිදු කරමින් පාරිභෝගිකයන්ගේ අවශ්‍යතා හා
-            වුවමනා සපුරාලීමට දායක වේ.
+            ව්‍යාපාරයක් මගින් පාරිභෝගිකයන්ට අවශ්‍ය
+            භාණ්ඩ හා සේවා සපයන අතර, ව්‍යාපාරයට සම්බන්ධ
+            විවිධ පාර්ශ්වයන්ගේ අවශ්‍යතා ද සපුරාලීමට
+            උත්සාහ කරයි.
         </p>
 
     </section>
 
 
 
-    <!-- BUSINESS OBJECTIVES -->
+    <!-- Needs and Wants -->
 
     <section class="lesson-section">
 
         <h2>
-            ව්‍යාපාර අරමුණු
+            2. අවශ්‍යතා සහ වුවමනා
         </h2>
 
         <p>
-            ව්‍යාපාරයකට සම්බන්ධ විවිධ පාර්ශ්වයන්ට
-            විවිධ අරමුණු පවතින අතර ව්‍යාපාරයක්
-            ක්‍රියාත්මක වන්නේ එම අරමුණු ඉටු කර
-            ගැනීමේ අපේක්ෂාවෙනි.
+            මිනිසාගේ ජීවිතය පවත්වාගෙන යාම සඳහා
+            අත්‍යවශ්‍ය වන දේවල් අවශ්‍යතා ලෙස හඳුන්වයි.
         </p>
 
+        <p>
+            ජීවිතයට අත්‍යවශ්‍ය නොවුණත් ජීවන තත්ත්වය
+            වැඩිදියුණු කර ගැනීම සඳහා මිනිසා කැමති වන
+            දේවල් වුවමනා ලෙස හඳුන්වයි.
+        </p>
 
-        <ul class="topic-list">
+        <ul>
 
             <li>
-                ලාභ ඉපයීම
+                ආහාර – මූලික අවශ්‍යතාවයකි.
             </li>
 
             <li>
-                පාරිභෝගික තෘප්තිය ඉහළ නැංවීම
+                ඇඳුම් – මූලික අවශ්‍යතාවයකි.
             </li>
 
             <li>
-                භාණ්ඩ හා සේවාවල ගුණාත්මකභාවය
-                ඉහළ නැංවීම
+                නිවාස – මූලික අවශ්‍යතාවයකි.
             </li>
 
             <li>
-                රැකියා අවස්ථා ඇති කිරීම
-            </li>
-
-            <li>
-                සේවක සුභසාධනය
-            </li>
-
-            <li>
-                සාධාරණ මිලකට භාණ්ඩ හා සේවා ලබාදීම
-            </li>
-
-            <li>
-                අඛණ්ඩව භාණ්ඩ සැපයීම
-            </li>
-
-            <li>
-                ව්‍යාපාරයේ අනාගත වර්ධනය
-            </li>
-
-            <li>
-                සමාජ සුභසාධනයට දායක වීම
+                සුඛෝපභෝගී භාණ්ඩ – වුවමනාවකට උදාහරණයකි.
             </li>
 
         </ul>
@@ -391,643 +227,42 @@
 
 
 
-    <!-- NEEDS AND WANTS -->
+    <!-- Goods and Services -->
 
     <section class="lesson-section">
 
         <h2>
-            පාරිභෝගික අවශ්‍යතා හා වුවමනා
-        </h2>
-
-
-        <h3>
-            අවශ්‍යතා
-        </h3>
-
-        <p>
-            ජීවත් වීම සඳහා මිනිසා විසින් අනිවාර්යයෙන්ම
-            සපුරා ගත යුතු දෑ අවශ්‍යතා ලෙස හඳුනාගත හැක.
-        </p>
-
-
-        <p>
-            ආහාර, ඇඳුම් සහ නිවාස වැනි දෑ මූලික
-            මිනිස් අවශ්‍යතා ලෙස දැක්විය හැකි අතර
-            අධ්‍යාපනය, සෞඛ්‍යය, ආරක්ෂාව, ප්‍රවාහනය,
-            සන්නිවේදනය සහ විනෝදාස්වාදය වැනි දෑ ද
-            සමාජයේ අවශ්‍යතා ලෙස සැලකේ.
-        </p>
-
-
-        <h3>
-            අවශ්‍යතාවල ලක්ෂණ
-        </h3>
-
-        <ul class="topic-list">
-
-            <li>
-                අත්‍යවශ්‍ය වීම
-            </li>
-
-            <li>
-                පොදු වීම
-            </li>
-
-            <li>
-                නිර්මාණය කළ නොහැකි වීම
-            </li>
-
-            <li>
-                සීමිත වීම
-            </li>
-
-        </ul>
-
-
-        <h3>
-            වුවමනා
-        </h3>
-
-        <p>
-            මිනිසාගේ අවශ්‍යතා සපුරා ගැනීම සඳහා
-            භාවිත කළ හැකි විවිධ ආකාර වුවමනා ලෙස
-            හඳුනාගත හැක.
-        </p>
-
-
-        <p>
-            එකම අවශ්‍යතාවයක් විවිධ පුද්ගලයන් විසින්
-            විවිධ ආකාරයෙන් සපුරා ගත හැක.
-            එම නිසා වුවමනා පුද්ගලයාගේ ආර්ථික හා
-            සමාජ තත්ත්වය අනුව වෙනස් විය හැක.
-        </p>
-
-
-        <h3>
-            වුවමනාවල ලක්ෂණ
-        </h3>
-
-        <ul class="topic-list">
-
-            <li>
-                අත්‍යවශ්‍ය නොවීම
-            </li>
-
-            <li>
-                විවිධ වීම
-            </li>
-
-            <li>
-                නිර්මාණය කළ හැකි වීම
-            </li>
-
-            <li>
-                සංකීර්ණ වීම
-            </li>
-
-            <li>
-                අසීමිත වීම
-            </li>
-
-        </ul>
-
-    </section>
-
-
-
-    <!-- GOODS -->
-
-    <section class="lesson-section">
-
-        <h2>
-            භාණ්ඩ නිෂ්පාදන ව්‍යාපාර
+            3. භාණ්ඩ සහ සේවා
         </h2>
 
         <p>
             මිනිස් අවශ්‍යතා හා වුවමනා සපුරාලීම සඳහා
-            භෞතිකව පවතින භාණ්ඩ නිෂ්පාදනය කර වෙළඳපොළට
-            ඉදිරිපත් කරන ව්‍යාපාර භාණ්ඩ නිෂ්පාදන
-            ව්‍යාපාර ලෙස හඳුනාගත හැක.
+            භාවිත කළ හැකි ද්‍රව්‍යමය දේ භාණ්ඩ ලෙස
+            හඳුන්වයි.
         </p>
-
 
         <p>
-            ආහාර පාන, මෝටර් රථ, විදුලි උපකරණ,
-            ජංගම දුරකථන, ගෘහ භාණ්ඩ සහ ඇඳුම් වැනි
-            භාණ්ඩ මෙයට උදාහරණ ලෙස දැක්විය හැක.
+            මිනිස් අවශ්‍යතා හා වුවමනා සපුරාලීම සඳහා
+            ලබා දෙන ක්‍රියාකාරකම් හෝ පහසුකම් සේවා ලෙස
+            හඳුන්වයි.
         </p>
 
-    </section>
-
-
-
-    <!-- SERVICES -->
-
-    <section class="lesson-section">
-
-        <h2>
-            සේවා සපයන ව්‍යාපාර
-        </h2>
-
-        <p>
-            පාරිභෝගිකයන්ගේ අවශ්‍යතා හා වුවමනා
-            සපුරාලීම සඳහා ක්‍රියාවක් හෝ ක්‍රියාදාමයක්
-            සේවාවක් ලෙස සැලකිය හැක.
-        </p>
-
-
-        <p>
-            තොග වෙළඳ ආයතන, සිල්ලර වෙළඳ ආයතන,
-            රක්ෂණ ආයතන, බැංකු ආයතන, රූපලාවන්‍ය
-            ආයතන සහ අධ්‍යාපන ආයතන වැනි ආයතන
-            සේවා සැපයීමේ ව්‍යාපාර සඳහා උදාහරණ වේ.
-        </p>
-
-    </section>
-
-
-
-    <!-- PRODUCTION FACTORS -->
-
-    <section class="lesson-section">
-
-        <h2>
-            නිෂ්පාදන සාධක
-        </h2>
-
-        <p>
-            භාණ්ඩ හා සේවා නිෂ්පාදනය කිරීම සඳහා
-            ව්‍යාපාරවලට විවිධ සම්පත් අවශ්‍ය වේ.
-            එම සම්පත් නිෂ්පාදන සාධක ලෙස හඳුන්වයි.
-        </p>
-
-
-        <div class="stakeholder-grid">
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    භූමිය
-                </h3>
-
-                <p>
-                    ස්වභාවධර්මයෙන් ලැබෙන සම්පත්
-                    භූමිය යටතේ සලකනු ලැබේ.
-                </p>
-
-                <p>
-                    උදාහරණ:
-                    ඛනිජ සම්පත්, වන සම්පත්,
-                    පස වැනි දෑ.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    ශ්‍රමය
-                </h3>
-
-                <p>
-                    ව්‍යාපාරය සඳහා යොදවන
-                    කායික හා මානසික දායකත්වය
-                    ශ්‍රමය ලෙස හඳුනාගත හැක.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    ප්‍රාග්ධනය
-                </h3>
-
-                <p>
-                    නිෂ්පාදනය සඳහා මිනිසා විසින්
-                    සකස් කරගත් සම්පත් ප්‍රාග්ධනය
-                    ලෙස හඳුනාගත හැක.
-                </p>
-
-                <p>
-                    උදාහරණ:
-                    යන්ත්‍රසූත්‍ර, ගොඩනැගිලි,
-                    රථ වාහන සහ මුදල්.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    ව්‍යවසාය
-                </h3>
-
-                <p>
-                    භූමිය, ශ්‍රමය හා ප්‍රාග්ධනය වැනි
-                    නිෂ්පාදන සාධක සංවිධානය කර
-                    ව්‍යාපාර ක්‍රියාවලිය ආරම්භ කර
-                    පවත්වාගෙන යාම ව්‍යවසාය සමඟ
-                    සම්බන්ධ වේ.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- 1.2 STAKEHOLDERS -->
-
-    <section class="lesson-section">
-
-        <h2>
-            1.2 ඇල්මැති පාර්ශ්ව
-        </h2>
-
-        <p>
-            ව්‍යාපාර කටයුතු පිළිබඳ උනන්දුවක් හෝ
-            සෘජු/වක්‍ර සම්බන්ධතාවයක් ඇති විවිධ
-            පාර්ශ්ව ඇල්මැති පාර්ශ්ව ලෙස හඳුනාගත හැක.
-        </p>
-
-
-        <div class="stakeholder-grid">
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    අයිතිකරුවන්
-                </h3>
-
-                <p>
-                    ව්‍යාපාරයට සම්පත් සැපයීම හා
-                    ව්‍යාපාරයේ ප්‍රතිඵල කෙරෙහි
-                    උනන්දුවක් දක්වන පාර්ශ්වය.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    කළමනාකරුවන්
-                </h3>
-
-                <p>
-                    ව්‍යාපාර කටයුතු මෙහෙයවීම,
-                    තීරණ ගැනීම සහ අයිතිකරුවන්ගේ
-                    තීරණ ක්‍රියාත්මක කිරීමේ කාර්යය
-                    ඉටු කරයි.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    ගනුදෙනුකරුවන්
-                </h3>
-
-                <p>
-                    ව්‍යාපාරයෙන් භාණ්ඩ හා සේවා
-                    මිලදී ගන්නා පාර්ශ්වය.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    සැපයුම්කරුවන්
-                </h3>
-
-                <p>
-                    ව්‍යාපාරයට අවශ්‍ය විවිධ දෑ,
-                    අමුද්‍රව්‍ය හෝ සේවා සපයන පාර්ශ්වය.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    සේවකයන්
-                </h3>
-
-                <p>
-                    ව්‍යාපාර කාර්යයන් ඉටු කරන
-                    පාර්ශ්වය.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    මූල්‍ය ආයතන
-                </h3>
-
-                <p>
-                    ව්‍යාපාරයට ණය සහ අනෙකුත්
-                    මූල්‍ය සේවා සපයන ආයතන.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    රජය
-                </h3>
-
-                <p>
-                    ආර්ථික හා සමාජ සංවර්ධනය සඳහා
-                    ප්‍රතිපත්ති හා නීති සකස් කරන
-                    පාර්ශ්වය.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    ප්‍රජාව
-                </h3>
-
-                <p>
-                    ව්‍යාපාර ක්‍රියාකාරකම්වලින්
-                    සෘජුව හෝ වක්‍රව බලපෑමට ලක්වන
-                    සමාජ පාර්ශ්වය.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    තරඟකරුවන්
-                </h3>
-
-                <p>
-                    සමාන භාණ්ඩ හෝ සේවා නිෂ්පාදනය
-                    හෝ අලෙවි කරන වෙනත් ව්‍යාපාර.
-                </p>
-
-            </div>
-
-
-            <div class="stakeholder-card">
-
-                <h3>
-                    අනාගත ආයෝජකයන්
-                </h3>
-
-                <p>
-                    අනාගතයේදී ව්‍යාපාරයට ආයෝජනය
-                    කිරීමට අපේක්ෂා කරන පාර්ශ්ව.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- QUICK CHECK -->
-
-    <section class="lesson-section">
-
-        <h2>
-            📝 පාඩම පරීක්ෂා කරමු
-        </h2>
-
-        <p>
-            පහත ප්‍රශ්නවලට පිළිතුරු තෝරන්න.
-        </p>
-
-
-        <div class="check-question">
-
-            <strong>
-                1. ව්‍යාපාරයක මූලික කාර්යයක් වන්නේ?
-            </strong>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q1"
-                    value="a"
-                >
-                භාණ්ඩ හා සේවා සැපයීම
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q1"
-                    value="b"
-                >
-                පාසල් පවත්වාගෙන යාම පමණක්
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q1"
-                    value="c"
-                >
-                මුදල් පමණක් ගබඩා කිරීම
-            </label>
-
-        </div>
-
-
-
-        <div class="check-question">
-
-            <strong>
-                2. පහත සඳහන් කුමක් නිෂ්පාදන සාධකයකි?
-            </strong>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q2"
-                    value="a"
-                >
-                ශ්‍රමය
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q2"
-                    value="b"
-                >
-                වෙළඳ දැන්වීම
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q2"
-                    value="c"
-                >
-                පාරිභෝගිකයා
-            </label>
-
-        </div>
-
-
-
-        <div class="check-question">
-
-            <strong>
-                3. ව්‍යාපාරයෙන් භාණ්ඩ හා සේවා
-                මිලදී ගන්නා පාර්ශ්වය කවුද?
-            </strong>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q3"
-                    value="a"
-                >
-                සැපයුම්කරු
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q3"
-                    value="b"
-                >
-                ගනුදෙනුකරු
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q3"
-                    value="c"
-                >
-                තරඟකරු
-            </label>
-
-        </div>
-
-
-
-        <div class="check-question">
-
-            <strong>
-                4. පහත සඳහන් කුමක් අවශ්‍යතාවකට උදාහරණයකි?
-            </strong>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q4"
-                    value="a"
-                >
-                ආහාර
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q4"
-                    value="b"
-                >
-                සුඛෝපභෝගී භාණ්ඩයක්
-            </label>
-
-            <label>
-                <input
-                    type="radio"
-                    name="q4"
-                    value="c"
-                >
-                විලාසිතා තේරීමක්
-            </label>
-
-        </div>
-
-
-
-        <button
-            class="check-button"
-            onclick="checkAnswers()"
-        >
-            Check Answers
-        </button>
-
-
-        <div id="checkResult"></div>
-
-    </section>
-
-
-
-    <!-- SUMMARY -->
-
-    <section class="lesson-section">
-
-        <h2>
-            📌 පාඩම් සාරාංශය
-        </h2>
-
-        <ul class="topic-list">
+        <ul>
 
             <li>
-                ව්‍යාපාර මිනිස් අවශ්‍යතා හා වුවමනා
-                සපුරාලීමට භාණ්ඩ හා සේවා සපයයි.
+                ආහාර, ඇඳුම්, ගෘහ භාණ්ඩ – භාණ්ඩ
             </li>
 
             <li>
-                ව්‍යාපාරවලට ලාභ ඉපයීම ඇතුළු
-                විවිධ අරමුණු පවතී.
+                බැංකු සේවා – සේවාවක්
             </li>
 
             <li>
-                අවශ්‍යතා සහ වුවමනා එකිනෙකට
-                වෙනස් ලක්ෂණ දරයි.
+                ප්‍රවාහන සේවා – සේවාවක්
             </li>
 
             <li>
-                භාණ්ඩ නිෂ්පාදන ව්‍යාපාර හා
-                සේවා සපයන ව්‍යාපාර ලෙස ව්‍යාපාර
-                වර්ග කළ හැක.
-            </li>
-
-            <li>
-                භූමිය, ශ්‍රමය, ප්‍රාග්ධනය සහ
-                ව්‍යවසාය නිෂ්පාදන ක්‍රියාවලියට
-                සම්බන්ධ ප්‍රධාන සාධක වේ.
-            </li>
-
-            <li>
-                අයිතිකරුවන්, කළමනාකරුවන්,
-                සේවකයන්, ගනුදෙනුකරුවන්,
-                සැපයුම්කරුවන්, රජය, ප්‍රජාව,
-                තරඟකරුවන් සහ අනෙකුත් පාර්ශ්ව
-                ව්‍යාපාරයේ ඇල්මැති පාර්ශ්ව වේ.
+                අධ්‍යාපන සේවා – සේවාවක්
             </li>
 
         </ul>
@@ -1036,43 +271,154 @@
 
 
 
-    <!-- COMPLETE -->
+    <!-- Production Factors -->
 
-    <section class="completion-box">
+    <section class="lesson-section">
 
         <h2>
-            🎯 පාඩම සම්පූර්ණ කළාද?
+            4. නිෂ්පාදන සාධක
         </h2>
 
         <p>
-            පාඩම අධ්‍යයනය කර අවසන් වූ පසු
-            පහත button එක click කරන්න.
+            භාණ්ඩ හා සේවා නිෂ්පාදනය කිරීම සඳහා අවශ්‍ය
+            සම්පත් නිෂ්පාදන සාධක ලෙස හැඳින්වේ.
         </p>
 
+        <ul>
 
-        <button
-            class="complete-button"
-            id="completeLessonButton"
-            onclick="markLessonComplete()"
-        >
-            ✓ Mark Lesson as Complete
-        </button>
+            <li>
+                <strong>භූමිය</strong>
+                – ස්වාභාවික සම්පත් ඇතුළත් වේ.
+            </li>
 
+            <li>
+                <strong>ශ්‍රමය</strong>
+                – නිෂ්පාදනය සඳහා යොදවන
+                කායික හා මානසික දායකත්වයයි.
+            </li>
 
-        <div
-            id="completedMessage"
-        ></div>
+            <li>
+                <strong>ප්‍රාග්ධනය</strong>
+                – නිෂ්පාදනය සඳහා භාවිත කරන
+                මිනිසා විසින් නිපදවන සම්පත්.
+            </li>
+
+            <li>
+                <strong>ව්‍යවසායකත්වය</strong>
+                – නිෂ්පාදන සාධක සංවිධානය කර
+                ව්‍යාපාරික කටයුතු මෙහෙයවීමයි.
+            </li>
+
+        </ul>
 
     </section>
 
 
 
-    <a
-        href="lessons.html"
-        class="back-link"
-    >
-        ← Back to Lessons
-    </a>
+    <!-- Stakeholders -->
+
+    <section class="lesson-section">
+
+        <h2>
+            5. ව්‍යාපාරයේ ඇල්මැති පාර්ශ්ව
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක ක්‍රියාකාරකම්වලින් බලපෑමට ලක්වන
+            හෝ ව්‍යාපාරයේ ක්‍රියාකාරකම් කෙරෙහි
+            උනන්දුවක් දක්වන පාර්ශ්ව ඇල්මැති පාර්ශ්ව
+            ලෙස හැඳින්විය හැකිය.
+        </p>
+
+        <ul>
+
+            <li>
+                පාරිභෝගිකයන්
+            </li>
+
+            <li>
+                සේවකයන්
+            </li>
+
+            <li>
+                සැපයුම්කරුවන්
+            </li>
+
+            <li>
+                රජය
+            </li>
+
+            <li>
+                හිමිකරුවන්
+            </li>
+
+            <li>
+                ණයහිමියන්
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- Lesson Summary -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📚 Lesson Summary
+        </h2>
+
+        <p>
+            මෙම පාඩම තුළින් ව්‍යාපාරය පිළිබඳ මූලික
+            සංකල්ප, අවශ්‍යතා හා වුවමනා, භාණ්ඩ හා සේවා,
+            නිෂ්පාදන සාධක සහ ව්‍යාපාරයේ ඇල්මැති
+            පාර්ශ්ව පිළිබඳ මූලික අවබෝධයක් ලබා ගත හැකිය.
+        </p>
+
+    </section>
+
+
+
+    <!-- Quiz -->
+
+    <section class="lesson-complete">
+
+        <h2>
+            🎯 Lesson 1 Complete
+        </h2>
+
+        <p>
+            පාඩම අධ්‍යයනය කර අවසන් නම්,
+            ඔබගේ දැනුම පරීක්ෂා කිරීම සඳහා
+            Lesson 1 Quiz එකට සහභාගී වන්න.
+        </p>
+
+
+        <a
+            href="quiz.html?lesson=1"
+            class="quiz-button"
+        >
+            📝 Start Lesson 1 Quiz
+        </a>
+
+    </section>
+
+
+
+    <!-- Back -->
+
+    <div style="text-align:center;">
+
+        <a
+            href="lessons.html"
+            class="back-button"
+        >
+            ← Back to Lessons
+        </a>
+
+    </div>
 
 
 </main>
@@ -1086,243 +432,6 @@
     </p>
 
 </footer>
-
-
-
-<script>
-
-function checkAnswers() {
-
-    let score = 0;
-
-
-    const answers = {
-
-        q1: "a",
-        q2: "a",
-        q3: "b",
-        q4: "a"
-
-    };
-
-
-    for (
-        const question in answers
-    ) {
-
-        const selected =
-            document.querySelector(
-                'input[name="' +
-                question +
-                '"]:checked'
-            );
-
-
-        if (
-            selected &&
-            selected.value ===
-            answers[question]
-        ) {
-
-            score++;
-
-        }
-
-    }
-
-
-    const result =
-        document.getElementById(
-            "checkResult"
-        );
-
-
-    result.textContent =
-        "ඔබගේ ලකුණු: " +
-        score +
-        " / 4";
-
-
-    if (score === 4) {
-
-        result.textContent +=
-            " — ඉතා හොඳයි! 🎉";
-
-    }
-
-    else if (score >= 2) {
-
-        result.textContent +=
-            " — හොඳයි. නැවත පාඩම බලන්න.";
-
-    }
-
-    else {
-
-        result.textContent +=
-            " — පාඩම නැවත අධ්‍යයනය කරන්න.";
-
-    }
-
-}
-
-
-
-function markLessonComplete() {
-
-    let completedLessons = [];
-
-
-    const saved =
-        localStorage.getItem(
-            "uez_completed_lessons"
-        );
-
-
-    if (saved) {
-
-        try {
-
-            completedLessons =
-                JSON.parse(saved);
-
-        }
-
-        catch (error) {
-
-            completedLessons = [];
-
-        }
-
-    }
-
-
-    if (
-        !completedLessons.includes(
-            "lesson1"
-        )
-    ) {
-
-        completedLessons.push(
-            "lesson1"
-        );
-
-    }
-
-
-    localStorage.setItem(
-        "uez_completed_lessons",
-        JSON.stringify(
-            completedLessons
-        )
-    );
-
-
-    const button =
-        document.getElementById(
-            "completeLessonButton"
-        );
-
-
-    const message =
-        document.getElementById(
-            "completedMessage"
-        );
-
-
-    button.textContent =
-        "✓ Lesson Completed";
-
-
-    button.disabled = true;
-
-
-    message.textContent =
-        "Lesson 1 completed successfully!";
-
-
-    setTimeout(
-        function () {
-
-            window.location.href =
-                "lessons.html";
-
-        },
-        1200
-    );
-
-}
-
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        const saved =
-            localStorage.getItem(
-                "uez_completed_lessons"
-            );
-
-
-        if (!saved) {
-
-            return;
-
-        }
-
-
-        try {
-
-            const completedLessons =
-                JSON.parse(saved);
-
-
-            if (
-                completedLessons.includes(
-                    "lesson1"
-                )
-            ) {
-
-                const button =
-                    document.getElementById(
-                        "completeLessonButton"
-                    );
-
-
-                const message =
-                    document.getElementById(
-                        "completedMessage"
-                    );
-
-
-                button.textContent =
-                    "✓ Lesson Completed";
-
-
-                button.disabled = true;
-
-
-                message.textContent =
-                    "ඔබ Lesson 1 දැනටමත් සම්පූර්ණ කර ඇත.";
-
-            }
-
-        }
-
-        catch (error) {
-
-            console.log(
-                "Progress data could not be loaded."
-            );
-
-        }
-
-    }
-
-);
-
-</script>
 
 
 </body>
