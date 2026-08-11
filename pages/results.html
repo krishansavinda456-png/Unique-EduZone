@@ -10,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Quiz Results | Unique EduZone</title>
+    <title>
+        Quiz Results | Unique EduZone
+    </title>
 
     <link
         rel="stylesheet"
@@ -20,57 +22,113 @@
     <style>
 
         .results-container {
+
             max-width: 700px;
+
             margin: auto;
+
             padding: 40px 20px;
+
             text-align: center;
+
         }
+
 
         .result-card {
+
             background: #1b1b1b;
+
             border: 1px solid #333;
+
             border-radius: 15px;
-            padding: 30px;
+
+            padding: 35px;
+
         }
+
 
         .result-status {
-            font-size: 26px;
+
+            font-size: 28px;
+
             font-weight: bold;
+
             margin-bottom: 20px;
+
         }
+
 
         .result-score {
-            font-size: 55px;
+
+            font-size: 60px;
+
             font-weight: bold;
+
             margin: 20px 0;
+
         }
+
 
         .result-info {
+
             margin: 12px 0;
+
             font-size: 18px;
+
         }
+
+
+        .pass-status {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            margin: 20px 0;
+
+        }
+
 
         .result-buttons {
+
             margin-top: 30px;
+
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
+
         }
+
 
         .result-button {
+
             display: inline-block;
+
             padding: 12px 22px;
+
             border-radius: 8px;
+
             text-decoration: none;
+
             background: #ffd700;
+
             color: #000;
+
             font-weight: bold;
+
         }
 
+
         .result-button.secondary {
+
             background: #333;
+
             color: #fff;
+
         }
 
     </style>
@@ -84,8 +142,11 @@
 <header class="site-header">
 
     <div class="logo">
+
         Unique EduZone
+
     </div>
+
 
     <nav>
 
@@ -105,6 +166,10 @@
             Dashboard
         </a>
 
+        <a href="profile.html">
+            Profile
+        </a>
+
     </nav>
 
 </header>
@@ -113,7 +178,11 @@
 
 <main class="results-container">
 
-    <h1>Quiz Results</h1>
+
+    <h1>
+        Quiz Results
+    </h1>
+
 
 
     <div class="result-card">
@@ -129,6 +198,7 @@
         </div>
 
 
+
         <!-- Score -->
 
         <div
@@ -139,47 +209,78 @@
         </div>
 
 
-        <!-- Details -->
+
+        <!-- Correct Answers -->
 
         <div
             id="resultDetails"
             class="result-info"
         >
-            Correct Answers: 0 / 0
+            Correct Answers: 0 / 10
         </div>
 
+
+
+        <!-- Percentage -->
+
+        <div
+            id="resultPercentage"
+            class="result-info"
+        >
+            Percentage: 0%
+        </div>
+
+
+
+        <!-- Pass / Fail -->
+
+        <div
+            id="passFail"
+            class="pass-status"
+        >
+            -
+        </div>
+
+
+
+        <!-- Date -->
 
         <div
             id="resultDate"
             class="result-info"
         >
-            Quiz Date:
+            Quiz Date: -
         </div>
+
 
 
         <!-- Buttons -->
 
         <div class="result-buttons">
 
+
             <a
-                href="quiz.html"
+                href="quiz.html?lesson=1"
                 class="result-button"
             >
-                Take Quiz Again
+                📝 Take Quiz Again
             </a>
+
 
 
             <a
                 href="dashboard.html"
                 class="result-button secondary"
             >
-                Go to Dashboard
+                📊 Go to Dashboard
             </a>
+
 
         </div>
 
 
     </div>
+
 
 </main>
 
@@ -197,88 +298,143 @@
 
 <script>
 
-    /*
-     * Get saved quiz data
-     */
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    const score =
-        Number(
+
+        /*
+         * Get Quiz Data
+         */
+
+        const score =
+            Number(
+                localStorage.getItem(
+                    "uez_last_quiz_correct"
+                )
+            ) || 0;
+
+
+        const total =
+            Number(
+                localStorage.getItem(
+                    "uez_last_quiz_total"
+                )
+            ) || 10;
+
+
+        const percentage =
+            Number(
+                localStorage.getItem(
+                    "uez_last_quiz_percentage"
+                )
+            ) || 0;
+
+
+        const status =
             localStorage.getItem(
-                "uez_last_score"
-            )
-        ) || 0;
+                "uez_quiz_status"
+            ) || "Completed";
 
 
-    const correct =
-        Number(
+        const passFail =
             localStorage.getItem(
-                "uez_last_correct"
-            )
-        ) || 0;
+                "uez_quiz_pass_fail"
+            ) ||
+            (
+                percentage >= 50
+                    ? "Pass"
+                    : "Fail"
+            );
 
 
-    const total =
-        Number(
-            localStorage.getItem(
-                "uez_last_total"
-            )
-        ) || 0;
+
+        /*
+         * Quiz Date
+         */
+
+        const now =
+            new Date();
 
 
-    const status =
-        localStorage.getItem(
-            "uez_quiz_status"
-        ) || "Completed";
+        const quizDate =
+            now.toLocaleDateString();
 
 
-    const quizDate =
-        localStorage.getItem(
-            "uez_last_quiz_date"
-        ) || "-";
+
+        /*
+         * Display Status
+         */
+
+        document.getElementById(
+            "resultStatus"
+        ).textContent =
+            status;
 
 
-    /*
-     * Display Score
-     */
 
-    document.getElementById(
-        "resultScore"
-    ).textContent =
-        score + "%";
+        /*
+         * Display Score
+         */
 
-
-    /*
-     * Display Status
-     */
-
-    document.getElementById(
-        "resultStatus"
-    ).textContent =
-        status;
+        document.getElementById(
+            "resultScore"
+        ).textContent =
+            percentage + "%";
 
 
-    /*
-     * Display Correct Answers
-     */
 
-    document.getElementById(
-        "resultDetails"
-    ).textContent =
-        "Correct Answers: " +
-        correct +
-        " / " +
-        total;
+        /*
+         * Display Correct Answers
+         */
+
+        document.getElementById(
+            "resultDetails"
+        ).textContent =
+            "Correct Answers: " +
+            score +
+            " / " +
+            total;
 
 
-    /*
-     * Display Date
-     */
 
-    document.getElementById(
-        "resultDate"
-    ).textContent =
-        "Quiz Date: " +
-        quizDate;
+        /*
+         * Display Percentage
+         */
+
+        document.getElementById(
+            "resultPercentage"
+        ).textContent =
+            "Percentage: " +
+            percentage +
+            "%";
+
+
+
+        /*
+         * Display Pass / Fail
+         */
+
+        document.getElementById(
+            "passFail"
+        ).textContent =
+            passFail;
+
+
+
+        /*
+         * Display Date
+         */
+
+        document.getElementById(
+            "resultDate"
+        ).textContent =
+            "Quiz Date: " +
+            quizDate;
+
+
+    }
+);
 
 </script>
 
