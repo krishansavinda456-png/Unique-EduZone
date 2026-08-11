@@ -188,13 +188,38 @@ document.addEventListener(
          * for the Dashboard progress.
          */
 
-        let progress =
-            Math.round(
-                (
-                    lessonsCompleted /
-                    TOTAL_LESSONS
-                ) * 100
-            );
+        /*
+ * =========================
+ * Overall Progress
+ * =========================
+ *
+ * 50% Lessons
+ * 50% Quiz
+ */
+
+const lessonProgress =
+    Math.round(
+        (
+            lessonsCompleted /
+            TOTAL_LESSONS
+        ) * 100
+    );
+
+
+const quizProgress =
+    Math.min(
+        Math.max(lastScore, 0),
+        100
+    );
+
+
+const progress =
+    Math.round(
+        (
+            (lessonProgress * 0.5) +
+            (quizProgress * 0.5)
+        )
+    );
 
 
         if (progress > 100) {
