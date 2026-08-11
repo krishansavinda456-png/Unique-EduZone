@@ -1,5 +1,5 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -19,17 +19,164 @@
         href="../assets/css/style.css"
     >
 
+    <style>
+
+        .lessons-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+
+        .lessons-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .lessons-header h1 {
+            margin-bottom: 10px;
+        }
+
+
+        .overall-progress-card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+
+        .overall-progress-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+
+        .overall-progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+
+        .overall-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: gold;
+            transition: width 0.4s ease;
+        }
+
+
+        .lesson-card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+
+        .lesson-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .lesson-number {
+            color: gold;
+            font-weight: bold;
+        }
+
+
+        .lesson-status {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        .lesson-description {
+            margin: 15px 0;
+        }
+
+
+        .lesson-progress-container {
+            width: 100%;
+            height: 8px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0 8px;
+        }
+
+
+        .lesson-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: gold;
+            transition: width 0.4s ease;
+        }
+
+
+        .lesson-progress-text {
+            font-size: 13px;
+        }
+
+
+        .lesson-actions {
+            margin-top: 18px;
+        }
+
+
+        .lesson-button {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: gold;
+            color: #000;
+        }
+
+
+        .lesson-button.completed {
+            background: #555;
+            color: #fff;
+            pointer-events: none;
+        }
+
+
+        .dashboard-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+        .dashboard-link a {
+            color: gold;
+            font-weight: bold;
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<header>
+<header class="site-header">
 
-    <h1>
+    <div class="logo">
         Unique EduZone
-    </h1>
+    </div>
 
 
     <nav>
@@ -46,12 +193,12 @@
             MCQ
         </a>
 
-        <a href="profile.html">
-            👤 Student Profile
+        <a href="dashboard.html">
+            Dashboard
         </a>
 
-        <a href="dashboard.html">
-            📊 Dashboard
+        <a href="profile.html">
+            Profile
         </a>
 
     </nav>
@@ -60,119 +207,370 @@
 
 
 
-<main>
+<main class="lessons-page">
 
-    <h1>
-        Lessons
-    </h1>
 
-    <p>
-        Complete each lesson to update your learning progress.
-    </p>
+    <!-- Header -->
+
+    <section class="lessons-header">
+
+        <h1>
+            📚 My Lessons
+        </h1>
+
+        <p>
+            Continue your learning journey with Unique EduZone.
+        </p>
+
+    </section>
+
+
+
+    <!-- Overall Lesson Progress -->
+
+    <section class="overall-progress-card">
+
+        <div class="overall-progress-top">
+
+            <strong>
+                Lesson Progress
+            </strong>
+
+            <strong id="overallLessonPercent">
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="overall-progress-bar">
+
+            <div
+                class="overall-progress-fill"
+                id="overallLessonBar"
+            ></div>
+
+        </div>
+
+
+        <p id="overallLessonText">
+            0 / 4 lessons completed
+        </p>
+
+    </section>
 
 
 
     <!-- Lesson 1 -->
 
-    <div class="lesson-card">
+    <article
+        class="lesson-card"
+        id="lesson1Card"
+    >
 
-        <h2>
-            Lesson 1
-        </h2>
+        <div class="lesson-card-header">
 
-        <p>
-            Introduction to Business Studies
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 01
+                </div>
+
+                <h2>
+                    Introduction to Business Studies
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson1Status"
+            >
+                Not Started
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description">
+            Learn the basic introduction and foundation of Business Studies.
         </p>
 
-        <button
-            onclick="completeLesson('lesson1')"
-            id="lesson1Button"
-        >
-            Complete Lesson
-        </button>
 
-    </div>
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson1Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson1ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button"
+                id="lesson1Button"
+                onclick="completeLesson('lesson1'); return false;"
+            >
+                ▶ Continue Lesson
+            </a>
+
+        </div>
+
+    </article>
 
 
 
     <!-- Lesson 2 -->
 
-    <div class="lesson-card">
+    <article
+        class="lesson-card"
+        id="lesson2Card"
+    >
 
-        <h2>
-            Lesson 2
-        </h2>
+        <div class="lesson-card-header">
 
-        <p>
-            Business Environment
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 02
+                </div>
+
+                <h2>
+                    Business Environment
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson2Status"
+            >
+                Not Started
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description">
+            Understand the internal and external business environment.
         </p>
 
-        <button
-            onclick="completeLesson('lesson2')"
-            id="lesson2Button"
-        >
-            Complete Lesson
-        </button>
 
-    </div>
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson2Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson2ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button"
+                id="lesson2Button"
+                onclick="completeLesson('lesson2'); return false;"
+            >
+                ▶ Continue Lesson
+            </a>
+
+        </div>
+
+    </article>
 
 
 
     <!-- Lesson 3 -->
 
-    <div class="lesson-card">
+    <article
+        class="lesson-card"
+        id="lesson3Card"
+    >
 
-        <h2>
-            Lesson 3
-        </h2>
+        <div class="lesson-card-header">
 
-        <p>
-            Business Objectives
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 03
+                </div>
+
+                <h2>
+                    Business Objectives
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson3Status"
+            >
+                Not Started
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description">
+            Learn about the main objectives of a business.
         </p>
 
-        <button
-            onclick="completeLesson('lesson3')"
-            id="lesson3Button"
-        >
-            Complete Lesson
-        </button>
 
-    </div>
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson3Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson3ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button"
+                id="lesson3Button"
+                onclick="completeLesson('lesson3'); return false;"
+            >
+                ▶ Continue Lesson
+            </a>
+
+        </div>
+
+    </article>
 
 
 
     <!-- Lesson 4 -->
 
-    <div class="lesson-card">
+    <article
+        class="lesson-card"
+        id="lesson4Card"
+    >
 
-        <h2>
-            Lesson 4
-        </h2>
+        <div class="lesson-card-header">
 
-        <p>
-            Business Ownership
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 04
+                </div>
+
+                <h2>
+                    Business Ownership
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson4Status"
+            >
+                Not Started
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description">
+            Understand different forms of business ownership.
         </p>
 
-        <button
-            onclick="completeLesson('lesson4')"
-            id="lesson4Button"
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson4Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson4ProgressText"
         >
-            Complete Lesson
-        </button>
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button"
+                id="lesson4Button"
+                onclick="completeLesson('lesson4'); return false;"
+            >
+                ▶ Continue Lesson
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- Dashboard -->
+
+    <div class="dashboard-link">
+
+        <a href="dashboard.html">
+            📊 View My Dashboard
+        </a>
 
     </div>
 
 
-
-    <br>
-
-
-    <a href="dashboard.html">
-        📊 View My Progress
-    </a>
-
-
 </main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
 
 
 
