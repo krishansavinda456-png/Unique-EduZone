@@ -4,7 +4,9 @@ document.addEventListener(
 
 
         /*
+         * =========================
          * Profile Data
+         * =========================
          */
 
         const studentName =
@@ -27,7 +29,9 @@ document.addEventListener(
 
 
         /*
+         * =========================
          * Quiz Data
+         * =========================
          */
 
         const lastScore =
@@ -48,7 +52,9 @@ document.addEventListener(
 
 
         /*
+         * =========================
          * Welcome Message
+         * =========================
          */
 
         document.getElementById(
@@ -60,7 +66,9 @@ document.addEventListener(
 
 
         /*
+         * =========================
          * Profile Information
+         * =========================
          */
 
         document.getElementById(
@@ -83,7 +91,9 @@ document.addEventListener(
 
 
         /*
-         * Last Score
+         * =========================
+         * Last Quiz Score
+         * =========================
          */
 
         document.getElementById(
@@ -94,7 +104,9 @@ document.addEventListener(
 
 
         /*
+         * =========================
          * Quiz Count
+         * =========================
          */
 
         document.getElementById(
@@ -105,11 +117,84 @@ document.addEventListener(
 
 
         /*
-         * Progress
+         * =========================
+         * Lessons Progress
+         * =========================
+         */
+
+        const TOTAL_LESSONS = 4;
+
+
+        let completedLessons = [];
+
+
+        const savedLessons =
+            localStorage.getItem(
+                "uez_completed_lessons"
+            );
+
+
+        if (savedLessons) {
+
+            try {
+
+                completedLessons =
+                    JSON.parse(
+                        savedLessons
+                    );
+
+            } catch (error) {
+
+                completedLessons = [];
+
+            }
+
+        }
+
+
+
+        const lessonsCompleted =
+            completedLessons.length;
+
+
+
+        /*
+         * Lessons Completed
+         */
+
+        const lessonsCompletedElement =
+            document.getElementById(
+                "lessonsCompleted"
+            );
+
+
+        if (lessonsCompletedElement) {
+
+            lessonsCompletedElement.textContent =
+                lessonsCompleted +
+                " / " +
+                TOTAL_LESSONS;
+
+        }
+
+
+
+        /*
+         * =========================
+         * Overall Progress
+         * =========================
+         *
+         * Lesson progress is used
+         * for the Dashboard progress.
          */
 
         let progress =
-            lastScore;
+            Math.round(
+                (
+                    lessonsCompleted /
+                    TOTAL_LESSONS
+                ) * 100
+            );
 
 
         if (progress > 100) {
@@ -119,43 +204,88 @@ document.addEventListener(
         }
 
 
-        document.getElementById(
-            "progressBar"
-        ).style.width =
-            progress + "%";
+
+        /*
+         * Progress Bar
+         */
+
+        const progressBar =
+            document.getElementById(
+                "progressBar"
+            );
 
 
-        document.getElementById(
-            "progressText"
-        ).textContent =
-            progress +
-            "% completed";
+        if (progressBar) {
+
+            progressBar.style.width =
+                progress + "%";
+
+        }
 
 
 
         /*
+         * Progress Text
+         */
+
+        const progressText =
+            document.getElementById(
+                "progressText"
+            );
+
+
+        if (progressText) {
+
+            progressText.textContent =
+                progress +
+                "% completed";
+
+        }
+
+
+
+        /*
+         * =========================
          * Learning Status
+         * =========================
          */
 
         let status =
             "Not Started";
 
 
-        if (completedQuizzes === 0) {
+        if (
+            lessonsCompleted === 0 &&
+            completedQuizzes === 0
+        ) {
 
             status =
                 "Not Started";
 
         }
 
-        else if (lastScore >= 75) {
+        else if (
+            lessonsCompleted ===
+            TOTAL_LESSONS
+        ) {
+
+            status =
+                "Lessons Completed";
+
+        }
+
+        else if (
+            lastScore >= 75
+        ) {
 
             status =
                 "Excellent";
 
         }
 
-        else if (lastScore >= 50) {
+        else if (
+            lastScore >= 50
+        ) {
 
             status =
                 "Good Progress";
@@ -170,126 +300,12 @@ document.addEventListener(
         }
 
 
+
         document.getElementById(
             "learningStatus"
         ).textContent =
             status;
 
-    }
-);
-
-/*
- * Lessons Progress
- */
-
-const TOTAL_LESSONS = 4;
-
-
-function getCompletedLessons() {
-
-    const saved =
-        localStorage.getItem(
-            "uez_completed_lessons"
-        );
-
-    if (!saved) {
-
-        return [];
-
-    }
-
-    try {
-
-        return JSON.parse(saved);
-
-    } catch (error) {
-
-        return [];
-
-    }
-
-}
-
-
-
-function updateLessonsProgress() {
-
-    const completedLessons =
-        getCompletedLessons();
-
-
-    const completedCount =
-        completedLessons.length;
-
-
-    const progress =
-        Math.round(
-            (completedCount /
-                TOTAL_LESSONS) * 100
-        );
-
-
-    /*
-     * Lessons Completed
-     */
-
-    const lessonsCompleted =
-        document.getElementById(
-            "lessonsCompleted"
-        );
-
-
-    if (lessonsCompleted) {
-
-        lessonsCompleted.textContent =
-            completedCount +
-            " / " +
-            TOTAL_LESSONS;
-
-    }
-
-
-    /*
-     * Overall Progress
-     */
-
-    const progressBar =
-        document.getElementById(
-            "progressBar"
-        );
-
-
-    const progressText =
-        document.getElementById(
-            "progressText"
-        );
-
-
-    if (progressBar) {
-
-        progressBar.style.width =
-            progress + "%";
-
-    }
-
-
-    if (progressText) {
-
-        progressText.textContent =
-            progress +
-            "% completed";
-
-    }
-
-}
-
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        updateLessonsProgress();
 
     }
 );
