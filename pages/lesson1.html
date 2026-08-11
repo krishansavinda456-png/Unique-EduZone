@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 1 | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+
+        .lesson-header {
+            margin-bottom: 30px;
+        }
+
+
+        .lesson-number {
+            color: gold;
+            font-weight: bold;
+        }
+
+
+        .lesson-content {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+
+        .lesson-content h2 {
+            margin-top: 25px;
+        }
+
+
+        .lesson-content ul {
+            padding-left: 25px;
+        }
+
+
+        .lesson-complete {
+            margin-top: 30px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+
+        .complete-button {
+            display: inline-block;
+            padding: 12px 22px;
+            background: gold;
+            color: #000;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        .completed-message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: gold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- Lesson Header -->
+
+    <section class="lesson-header">
+
+        <div class="lesson-number">
+            LESSON 01
+        </div>
+
+        <h1>
+            Introduction to Business Studies
+        </h1>
+
+        <p>
+            Learn the basic introduction and foundation
+            of Business Studies.
+        </p>
+
+    </section>
+
+
+
+    <!-- Lesson Content -->
+
+    <section class="lesson-content">
+
+        <h2>
+            What is Business?
+        </h2>
+
+        <p>
+            A business is an activity carried out to
+            provide goods or services to satisfy human
+            needs and wants.
+        </p>
+
+
+        <h2>
+            Importance of Business
+        </h2>
+
+        <p>
+            Businesses play an important role in an
+            economy by providing goods and services,
+            creating employment opportunities and
+            generating income.
+        </p>
+
+
+        <h2>
+            Main Areas of Business
+        </h2>
+
+        <ul>
+
+            <li>
+                Production of goods and services
+            </li>
+
+            <li>
+                Marketing and selling
+            </li>
+
+            <li>
+                Financial activities
+            </li>
+
+            <li>
+                Human resource management
+            </li>
+
+        </ul>
+
+
+        <h2>
+            Learning Summary
+        </h2>
+
+        <p>
+            In this lesson, you learned the basic idea
+            of business, its importance and some of the
+            main areas involved in business activities.
+        </p>
+
+    </section>
+
+
+
+    <!-- Complete Lesson -->
+
+    <section class="lesson-complete">
+
+        <h2>
+            Have you completed this lesson?
+        </h2>
+
+        <p>
+            After studying the lesson, click the button
+            below to update your learning progress.
+        </p>
+
+
+        <button
+            class="complete-button"
+            id="completeLessonButton"
+            onclick="markLessonComplete()"
+        >
+            ✓ Mark Lesson as Complete
+        </button>
+
+
+        <div
+            class="completed-message"
+            id="completedMessage"
+        ></div>
+
+
+    </section>
+
+
+
+    <a
+        href="lessons.html"
+        class="back-link"
+    >
+        ← Back to Lessons
+    </a>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function markLessonComplete() {
+
+    let completedLessons = [];
+
+
+    const saved =
+        localStorage.getItem(
+            "uez_completed_lessons"
+        );
+
+
+    if (saved) {
+
+        try {
+
+            completedLessons =
+                JSON.parse(saved);
+
+        } catch (error) {
+
+            completedLessons = [];
+
+        }
+
+    }
+
+
+    /*
+     * Add Lesson 1
+     */
+
+    if (
+        !completedLessons.includes(
+            "lesson1"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson1"
+        );
+
+    }
+
+
+    /*
+     * Save progress
+     */
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    /*
+     * Update button
+     */
+
+    const button =
+        document.getElementById(
+            "completeLessonButton"
+        );
+
+
+    const message =
+        document.getElementById(
+            "completedMessage"
+        );
+
+
+    button.textContent =
+        "✓ Lesson Completed";
+
+
+    button.disabled =
+        true;
+
+
+    message.textContent =
+        "Lesson 1 completed successfully!";
+
+
+    /*
+     * Return to Lessons after a short delay
+     */
+
+    setTimeout(
+        function () {
+
+            window.location.href =
+                "lessons.html";
+
+        },
+        1200
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const saved =
+            localStorage.getItem(
+                "uez_completed_lessons"
+            );
+
+
+        if (!saved) {
+
+            return;
+
+        }
+
+
+        try {
+
+            const completedLessons =
+                JSON.parse(saved);
+
+
+            if (
+                completedLessons.includes(
+                    "lesson1"
+                )
+            ) {
+
+                const button =
+                    document.getElementById(
+                        "completeLessonButton"
+                    );
+
+
+                const message =
+                    document.getElementById(
+                        "completedMessage"
+                    );
+
+
+                button.textContent =
+                    "✓ Lesson Completed";
+
+
+                button.disabled =
+                    true;
+
+
+                message.textContent =
+                    "You have already completed Lesson 1.";
+
+            }
+
+        } catch (error) {
+
+            console.log(
+                "Progress data could not be loaded."
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
