@@ -10,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Student Dashboard | Unique EduZone</title>
+    <title>
+        Student Dashboard | Unique EduZone
+    </title>
 
     <link
         rel="stylesheet"
@@ -33,6 +35,7 @@
     <div class="logo">
         Unique EduZone
     </div>
+
 
     <nav>
 
@@ -86,6 +89,8 @@
     <section class="dashboard-grid">
 
 
+        <!-- Quiz Score -->
+
         <div class="dashboard-card">
 
             <h3>
@@ -107,31 +112,56 @@
 
 
 
-       <div class="dashboard-card">
+        <!-- Lessons Completed -->
 
-    <h3>
-        Overall Progress
-    </h3>
+        <div class="dashboard-card">
 
-    <div class="progress-container">
+            <h3>
+                Lessons Completed
+            </h3>
 
-        <div
-            class="progress-bar"
-            id="progressBar"
-            style="width:0%;"
-        ></div>
+            <div
+                class="dashboard-number"
+                id="lessonsCompleted"
+            >
+                0 / 4
+            </div>
 
-    </div>
-
-    <p id="progressText">
-        0% completed
-    </p>
-
-</div>
+            <p>
+                Completed Lessons
+            </p>
 
         </div>
 
 
+
+        <!-- Overall Progress -->
+
+        <div class="dashboard-card">
+
+            <h3>
+                Overall Progress
+            </h3>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                    style="width:0%;"
+                ></div>
+
+            </div>
+
+            <p id="progressText">
+                0% completed
+            </p>
+
+        </div>
+
+
+
+        <!-- Completed Quizzes -->
 
         <div class="dashboard-card">
 
@@ -154,6 +184,8 @@
 
 
 
+        <!-- Learning Status -->
+
         <div class="dashboard-card">
 
             <h3>
@@ -173,25 +205,7 @@
 
         </div>
 
-        <div class="dashboard-card">
 
-    <h3>
-        Lessons Completed
-    </h3>
-
-    <div
-        class="dashboard-number"
-        id="lessonsCompleted"
-    >
-        0 / 4
-    </div>
-
-    <p>
-        Completed Lessons
-    </p>
-
-</div>
-        
     </section>
 
 
@@ -204,26 +218,45 @@
             My Learning Profile
         </h2>
 
+
         <p>
-            <strong>Name:</strong>
+
+            <strong>
+                Name:
+            </strong>
+
             <span id="studentName">
                 -
             </span>
+
         </p>
 
+
         <p>
-            <strong>Grade:</strong>
+
+            <strong>
+                Grade:
+            </strong>
+
             <span id="studentGrade">
                 -
             </span>
+
         </p>
 
+
         <p>
-            <strong>Subject:</strong>
+
+            <strong>
+                Subject:
+            </strong>
+
             <span id="studentSubject">
                 -
             </span>
+
         </p>
+
 
         <a href="profile.html">
             Edit Profile
@@ -245,12 +278,16 @@
         <div class="action-grid">
 
 
+            <!-- Lessons -->
+
             <a
                 href="lessons.html"
                 class="action-card"
             >
 
-                <span>📚</span>
+                <span>
+                    📚
+                </span>
 
                 <strong>
                     Study Lessons
@@ -264,12 +301,16 @@
 
 
 
+            <!-- Quiz -->
+
             <a
                 href="quiz.html"
                 class="action-card"
             >
 
-                <span>📝</span>
+                <span>
+                    📝
+                </span>
 
                 <strong>
                     Take a Quiz
@@ -283,12 +324,16 @@
 
 
 
+            <!-- Profile -->
+
             <a
                 href="profile.html"
                 class="action-card"
             >
 
-                <span>👤</span>
+                <span>
+                    👤
+                </span>
 
                 <strong>
                     My Profile
@@ -302,12 +347,16 @@
 
 
 
+            <!-- Results -->
+
             <a
                 href="results.html"
                 class="action-card"
             >
 
-                <span>📊</span>
+                <span>
+                    📊
+                </span>
 
                 <strong>
                     Results
@@ -340,6 +389,7 @@
 
 
 <script src="../assets/js/dashboard.js"></script>
+
 
 </body>
 
