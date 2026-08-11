@@ -177,3 +177,119 @@ document.addEventListener(
 
     }
 );
+
+/*
+ * Lessons Progress
+ */
+
+const TOTAL_LESSONS = 4;
+
+
+function getCompletedLessons() {
+
+    const saved =
+        localStorage.getItem(
+            "uez_completed_lessons"
+        );
+
+    if (!saved) {
+
+        return [];
+
+    }
+
+    try {
+
+        return JSON.parse(saved);
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+
+function updateLessonsProgress() {
+
+    const completedLessons =
+        getCompletedLessons();
+
+
+    const completedCount =
+        completedLessons.length;
+
+
+    const progress =
+        Math.round(
+            (completedCount /
+                TOTAL_LESSONS) * 100
+        );
+
+
+    /*
+     * Lessons Completed
+     */
+
+    const lessonsCompleted =
+        document.getElementById(
+            "lessonsCompleted"
+        );
+
+
+    if (lessonsCompleted) {
+
+        lessonsCompleted.textContent =
+            completedCount +
+            " / " +
+            TOTAL_LESSONS;
+
+    }
+
+
+    /*
+     * Overall Progress
+     */
+
+    const progressBar =
+        document.getElementById(
+            "progressBar"
+        );
+
+
+    const progressText =
+        document.getElementById(
+            "progressText"
+        );
+
+
+    if (progressBar) {
+
+        progressBar.style.width =
+            progress + "%";
+
+    }
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            progress +
+            "% completed";
+
+    }
+
+}
+
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        updateLessonsProgress();
+
+    }
+);
