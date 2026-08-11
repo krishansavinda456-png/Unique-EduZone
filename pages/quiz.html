@@ -10,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>MCQ Quiz | Unique EduZone</title>
+    <title>
+        Lesson 1 Quiz | Unique EduZone
+    </title>
 
     <link
         rel="stylesheet"
@@ -27,11 +29,13 @@
 
 <body>
 
+
 <header class="site-header">
 
     <div class="logo">
         Unique EduZone
     </div>
+
 
     <nav>
 
@@ -51,29 +55,62 @@
             Dashboard
         </a>
 
+        <a href="profile.html">
+            Profile
+        </a>
+
     </nav>
 
 </header>
 
 
+
 <main class="quiz-container">
 
-    <h1 id="quizTitle">
-    Lesson 1 Quiz
-</h1>
+
+    <!-- Quiz Title -->
+
+    <h1>
+        Lesson 1 Quiz
+    </h1>
+
+
+    <p>
+        ව්‍යාපාර පිළිබඳ මූලික පදනම
+    </p>
+
+
+    <p>
+        ප්‍රශ්න 10ක්
+    </p>
+
 
 
     <!-- Timer -->
 
     <div class="timer-box">
 
-        <span>Time Remaining:</span>
+        <span>
+            Time Remaining:
+        </span>
 
         <strong id="quizTimer">
             01:00
         </strong>
 
     </div>
+
+
+
+    <!-- Question Number -->
+
+    <div
+        id="questionNumber"
+        class="question-number"
+    >
+        Question 1 of 10
+    </div>
+
 
 
     <!-- Progress -->
@@ -89,12 +126,15 @@
     </div>
 
 
+
     <!-- Question -->
 
     <div
         id="questionBox"
         class="question-box"
-    ></div>
+    >
+    </div>
+
 
 
     <!-- Options -->
@@ -102,20 +142,36 @@
     <div
         id="optionsBox"
         class="options-box"
-    ></div>
+    >
+    </div>
 
 
-    <!-- Next -->
+
+    <!-- Next Button -->
 
     <button
         id="nextButton"
         onclick="nextQuestion()"
         class="next-button"
+        disabled
     >
         Next
     </button>
 
+
+
+    <!-- Quiz Information -->
+
+    <p
+        id="quizMessage"
+        class="quiz-message"
+    >
+        පිළිතුරක් තෝරා Next ඔබන්න.
+    </p>
+
+
 </main>
+
 
 
 <footer class="site-footer">
@@ -127,7 +183,9 @@
 </footer>
 
 
+
 <script src="../assets/js/quiz.js"></script>
+
 
 </body>
 
