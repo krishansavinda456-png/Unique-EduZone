@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 3 | ව්‍යාපාර සංවිධාන | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           LESSON 3
+           ========================================= */
+
+        .lesson-container {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 30px 20px;
+
+        }
+
+
+        .lesson-header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .lesson-header h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .lesson-header p {
+
+            font-size: 18px;
+
+        }
+
+
+        .lesson-card {
+
+            background: #1b1b1b;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .lesson-card h2 {
+
+            color: #ffd700;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .lesson-card h3 {
+
+            color: #ffffff;
+
+            margin-top: 20px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .lesson-card p {
+
+            line-height: 1.8;
+
+        }
+
+
+        .lesson-card ul {
+
+            line-height: 2;
+
+            padding-left: 25px;
+
+        }
+
+
+        .important-box {
+
+            border-left: 5px solid #ffd700;
+
+            background: #242424;
+
+            padding: 15px;
+
+            margin: 15px 0;
+
+            border-radius: 8px;
+
+        }
+
+
+        /* =========================================
+           OWNERSHIP STRUCTURE
+           ========================================= */
+
+        .sector-box {
+
+            background: #242424;
+
+            border: 1px solid #444;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .sector-title {
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            color: #ffd700;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .organization-box {
+
+            background: #1b1b1b;
+
+            border: 1px solid #555;
+
+            border-radius: 10px;
+
+            padding: 15px;
+
+            margin: 12px 0;
+
+        }
+
+
+        .organization-box h4 {
+
+            margin: 0 0 8px 0;
+
+            color: #ffffff;
+
+            font-size: 19px;
+
+        }
+
+
+        /* =========================================
+           SWOT
+           ========================================= */
+
+        .swot-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .swot-box {
+
+            background: #242424;
+
+            border: 1px solid #444;
+
+            border-radius: 10px;
+
+            padding: 18px;
+
+        }
+
+
+        .swot-box h3 {
+
+            color: #ffd700;
+
+            margin-top: 0;
+
+        }
+
+
+        /* =========================================
+           ACTIVITIES
+           ========================================= */
+
+        .activity {
+
+            background: #242424;
+
+            border: 1px solid #444;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .activity h3 {
+
+            color: #ffd700;
+
+            margin-top: 0;
+
+        }
+
+
+        .activity button {
+
+            display: block;
+
+            width: 100%;
+
+            text-align: left;
+
+            margin: 8px 0;
+
+            padding: 12px 15px;
+
+            border: 1px solid #555;
+
+            border-radius: 8px;
+
+            background: #1b1b1b;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .activity button:hover {
+
+            background: #333;
+
+        }
+
+
+        .activity-result {
+
+            margin-top: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================================
+           SCORE
+           ========================================= */
+
+        .activity-score-box {
+
+            text-align: center;
+
+            background: #242424;
+
+            border: 1px solid #444;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-top: 25px;
+
+        }
+
+
+        #activityScore {
+
+            font-size: 35px;
+
+            font-weight: bold;
+
+            color: #ffd700;
+
+        }
+
+
+        #activityFinalMessage {
+
+            margin-top: 10px;
+
+            font-size: 18px;
+
+        }
+
+
+        /* =========================================
+           QUIZ BUTTON
+           ========================================= */
+
+        .quiz-section {
+
+            text-align: center;
+
+            margin: 35px 0;
+
+        }
+
+
+        .quiz-button {
+
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: #ffd700;
+
+            color: #000;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 10px;
+
+            font-size: 18px;
+
+        }
+
+
+        .quiz-button:hover {
+
+            background: #ffffff;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            .lesson-header h1 {
+
+                font-size: 26px;
+
+            }
+
+
+            .swot-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .lesson-container {
+
+                padding: 20px 12px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="site-header">
+
+    <div class="logo">
+
+        Unique EduZone
+
+    </div>
+
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+     ========================================= -->
+
+<main class="lesson-container">
+
+
+    <!-- LESSON HEADER -->
+
+    <section class="lesson-header">
+
+        <h1>
+            පාඩම 03
+        </h1>
+
+        <p>
+            ව්‍යාපාර සංවිධාන
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         INTRODUCTION
+         ===================================== -->
+
+    <section class="lesson-card">
+
+        <h2>
+            1. ව්‍යාපාර සංවිධාන
+        </h2>
+
+        <p>
+
+            ව්‍යාපාර කටයුතු සංවිධානය කිරීම සඳහා විවිධ
+            ආකාරයේ ව්‍යාපාර සංවිධාන පවතී.
+
+            එම ව්‍යාපාර සංවිධාන විවිධ පදනම් අනුව
+            වර්ග කළ හැකිය.
+
+        </p>
+
+
+        <div class="important-box">
+
+            <strong>
+                මෙම පාඩමේදී අවධානය යොමු කරන්නේ
+                හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන
+                වර්ග කිරීම පිළිබඳවයි.
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         OWNERSHIP
+         ===================================== -->
+
+    <section class="lesson-card">
+
+        <h2>
+            2. හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන
+        </h2>
+
+        <p>
+
+            හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන
+            ප්‍රධාන වශයෙන් කොටස් දෙකකට බෙදිය හැකිය.
+
+        </p>
+
+
+        <div class="sector-box">
+
+            <div class="sector-title">
+
+                ① පෞද්ගලික අංශය
+
+            </div>
+
+
+            <p>
+
+                පෞද්ගලික පුද්ගලයන්, පුද්ගල කණ්ඩායම්
+                හෝ පෞද්ගලික ආයතන විසින් හිමිකාරිත්වය
+                දරමින් පවත්වාගෙන යන ව්‍යාපාර
+                පෞද්ගලික අංශයට අයත් වේ.
+
+            </p>
+
+
+            <!-- Sole -->
+
+            <div class="organization-box">
+
+                <h4>
+                    1. තනි පුද්ගල ව්‍යාපාර
+                </h4>
+
+                <p>
+
+                    එක් පුද්ගලයෙකු විසින් හිමිකාරිත්වය
+                    දරමින් පවත්වාගෙන යන ව්‍යාපාරයකි.
+
+                </p>
+
+                <p>
+                    <strong>උදාහරණ:</strong>
+                    කුඩා සිල්ලර වෙළඳසැලක්,
+                    කොණ්ඩා කැපීමේ ස්ථානයක්,
+                    කුඩා ආහාර අලෙවිසැලක්.
+                </p>
+
+            </div>
+
+
+            <!-- Partnership -->
+
+            <div class="organization-box">
+
+                <h4>
+                    2. හවුල් ව්‍යාපාර
+                </h4>
+
+                <p>
+
+                    පුද්ගලයන් දෙදෙනෙකු හෝ ඊට වැඩි
+                    පිරිසක් එකතුවී ගිවිසුමක් මත
+                    පවත්වාගෙන යන ව්‍යාපාරයකි.
+
+                </p>
+
+                <p>
+                    <strong>උදාහරණ:</strong>
+                    පුද්ගලයන් කිහිප දෙනෙකු එක්ව
+                    පවත්වාගෙන යන ව්‍යාපාරයක්.
+                </p>
+
+            </div>
+
+
+            <!-- Company -->
+
+            <div class="organization-box">
+
+                <h4>
+                    3. සමාගම්
+                </h4>
+
+                <p>
+
+                    නීතිය මගින් වෙනම නෛතික පුද්ගලභාවයක්
+                    ලබා ඇති ව්‍යාපාර සංවිධාන සමාගම්
+                    ලෙස හැඳින්වේ.
+
+                </p>
+
+                <p>
+                    <strong>උදාහරණ:</strong>
+                    සීමිත වගකීම් සහිත පෞද්ගලික
+                    සමාගම් හා පොදු සමාගම්.
+                </p>
+
+            </div>
+
+
+            <!-- Cooperative -->
+
+            <div class="organization-box">
+
+                <h4>
+                    4. සමුපකාර ව්‍යාපාර
+                </h4>
+
+                <p>
+
+                    පොදු අවශ්‍යතාවක් හෝ ආර්ථික අරමුණක්
+                    සපුරා ගැනීම සඳහා සාමාජිකයන්
+                    එක්ව පිහිටුවා පවත්වාගෙන යන
+                    සංවිධාන වේ.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GOVERNMENT -->
+
+        <div class="sector-box">
+
+            <div class="sector-title">
+
+                ② රාජ්‍ය අංශය
+
+            </div>
+
+
+            <p>
+
+                රජය විසින් හිමිකාරිත්වය දරමින්
+                ජනතාවගේ අවශ්‍යතා හා රටේ ආර්ථික
+                හා සමාජීය අරමුණු ඉටු කිරීම සඳහා
+                පවත්වාගෙන යන සංවිධාන රාජ්‍ය අංශයට
+                අයත් වේ.
+
+            </p>
+
+
+            <!-- Government Departments -->
+
+            <div class="organization-box">
+
+                <h4>
+                    1. රජයේ දෙපාර්තමේන්තු
+                </h4>
+
+                <p>
+
+                    රජයේ පරිපාලන හා මහජන සේවා
+                    කටයුතු ඉටු කිරීම සඳහා රජය යටතේ
+                    පිහිටුවා ඇති ආයතන වේ.
+
+                </p>
+
+                <p>
+                    <strong>උදාහරණ:</strong>
+                    රජයේ දෙපාර්තමේන්තු සහ
+                    විවිධ රාජ්‍ය පරිපාලන ආයතන.
+                </p>
+
+            </div>
+
+
+            <!-- Statutory Corporations -->
+
+            <div class="organization-box">
+
+                <h4>
+                    2. රාජ්‍ය සංස්ථා
+                </h4>
+
+                <p>
+
+                    විශේෂ නීතියක් මගින් පිහිටුවා ඇති
+                    රජයට අයත් සංවිධාන රාජ්‍ය සංස්ථා
+                    ලෙස හැඳින්වේ.
+
+                </p>
+
+                <p>
+                    <strong>උදාහරණ:</strong>
+                    මහජන සේවා හෝ ව්‍යාපාරික
+                    කටයුතු සිදු කරන රාජ්‍ය සංස්ථා.
+                </p>
+
+            </div>
+
+
+            <!-- State Companies -->
+
+            <div class="organization-box">
+
+                <h4>
+                    3. රාජ්‍ය සමාගම් / රජය සතු ව්‍යාපාර
+                </h4>
+
+                <p>
+
+                    රජය විසින් සම්පූර්ණයෙන් හෝ
+                    ප්‍රධාන වශයෙන් හිමිකාරිත්වය දරන
+                    ව්‍යාපාරික ආයතන වේ.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         COMPARISON
+         ===================================== -->
+
+    <section class="lesson-card">
+
+        <h2>
+            3. පෞද්ගලික අංශය හා රාජ්‍ය අංශය
+        </h2>
+
+
+        <div class="important-box">
+
+            <p>
+
+                <strong>
+                    පෞද්ගලික අංශය
+                </strong>
+
+                → පෞද්ගලික පුද්ගලයන් හෝ කණ්ඩායම්
+                විසින් හිමිකාරිත්වය දරයි.
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    රාජ්‍ය අංශය
+                </strong>
+
+                → රජය විසින් හිමිකාරිත්වය දරයි.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ACTIVITIES
+         ===================================== -->
+
+    <section class="lesson-card">
+
+        <h2>
+            4. Activities
+        </h2>
+
+
+        <!-- Activity 1 -->
+
+        <div class="activity">
+
+            <h3>
+                Activity 01
+            </h3>
+
+            <p>
+                හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන
+                ප්‍රධාන වශයෙන් කොටස් කීයකට බෙදේද?
+            </p>
+
+
+            <button
+                onclick="checkActivity1(this, false)"
+            >
+                A. එක් කොටසකට
+            </button>
+
+
+            <button
+                onclick="checkActivity1(this, true)"
+            >
+                B. කොටස් දෙකකට
+            </button>
+
+
+            <button
+                onclick="checkActivity1(this, false)"
+            >
+                C. කොටස් තුනකට
+            </button>
+
+
+            <button
+                onclick="checkActivity1(this, false)"
+            >
+                D. කොටස් හතරකට
+            </button>
+
+
+            <div
+                id="activity1Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 2 -->
+
+        <div class="activity">
+
+            <h3>
+                Activity 02
+            </h3>
+
+            <p>
+                එක් පුද්ගලයෙකු විසින් හිමිකාරිත්වය
+                දරන ව්‍යාපාරය කුමක්ද?
+            </p>
+
+
+            <button
+                onclick="checkActivity2(this, true)"
+            >
+                A. තනි පුද්ගල ව්‍යාපාර
+            </button>
+
+
+            <button
+                onclick="checkActivity2(this, false)"
+            >
+                B. රාජ්‍ය සංස්ථාව
+            </button>
+
+
+            <button
+                onclick="checkActivity2(this, false)"
+            >
+                C. රාජ්‍ය දෙපාර්තමේන්තුව
+            </button>
+
+
+            <button
+                onclick="checkActivity2(this, false)"
+            >
+                D. රාජ්‍ය සමාගම
+            </button>
+
+
+            <div
+                id="activity2Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 3 -->
+
+        <div class="activity">
+
+            <h3>
+                Activity 03
+            </h3>
+
+            <p>
+                පහත සඳහන් කුමක් රාජ්‍ය අංශයට අයත්ද?
+            </p>
+
+
+            <button
+                onclick="checkActivity3(this, false)"
+            >
+                A. පෞද්ගලික වෙළඳසැල
+            </button>
+
+
+            <button
+                onclick="checkActivity3(this, false)"
+            >
+                B. හවුල් ව්‍යාපාරය
+            </button>
+
+
+            <button
+                onclick="checkActivity3(this, true)"
+            >
+                C. රජයේ දෙපාර්තමේන්තුව
+            </button>
+
+
+            <button
+                onclick="checkActivity3(this, false)"
+            >
+                D. පෞද්ගලික සමාගම
+            </button>
+
+
+            <div
+                id="activity3Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 4 -->
+
+        <div class="activity">
+
+            <h3>
+                Activity 04
+            </h3>
+
+            <p>
+                පුද්ගලයන් දෙදෙනෙකු හෝ ඊට වැඩි පිරිසක්
+                එක්ව පවත්වාගෙන යන ව්‍යාපාරයක්
+                හඳුන්වන්නේ කෙසේද?
+            </p>
+
+
+            <button
+                onclick="checkActivity4(this, false)"
+            >
+                A. තනි පුද්ගල ව්‍යාපාරය
+            </button>
+
+
+            <button
+                onclick="checkActivity4(this, true)"
+            >
+                B. හවුල් ව්‍යාපාරය
+            </button>
+
+
+            <button
+                onclick="checkActivity4(this, false)"
+            >
+                C. රජයේ දෙපාර්තමේන්තුව
+            </button>
+
+
+            <button
+                onclick="checkActivity4(this, false)"
+            >
+                D. රාජ්‍ය සංස්ථාව
+            </button>
+
+
+            <div
+                id="activity4Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 5 -->
+
+        <div class="activity">
+
+            <h3>
+                Activity 05
+            </h3>
+
+            <p>
+                පහත සඳහන් කුමන සාධකය රාජ්‍ය අංශය
+                හඳුනාගැනීමට වඩාත් සුදුසුද?
+            </p>
+
+
+            <button
+                onclick="checkActivity5(this, false)"
+            >
+                A. පුද්ගලික හිමිකාරිත්වය
+            </button>
+
+
+            <button
+                onclick="checkActivity5(this, true)"
+            >
+                B. රජයේ හිමිකාරිත්වය
+            </button>
+
+
+            <button
+                onclick="checkActivity5(this, false)"
+            >
+                C. පෞද්ගලික ආයෝජනය පමණක්
+            </button>
+
+
+            <button
+                onclick="checkActivity5(this, false)"
+            >
+                D. පෞද්ගලික කළමනාකරණය පමණක්
+            </button>
+
+
+            <div
+                id="activity5Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- SCORE -->
+
+        <div class="activity-score-box">
+
+            <h3>
+                Activity Score
+            </h3>
+
+
+            <div id="activityScore">
+                0 / 5
+            </div>
+
+
+            <div id="activityFinalMessage">
+
+                Activities ආරම්භ කරන්න.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         QUIZ
+         ===================================== -->
+
+    <section class="quiz-section">
+
+        <h2>
+            පාඩම 03 Quiz
+        </h2>
+
+        <p>
+            පාඩම අවබෝධ කරගත් පසු MCQ ප්‍රශ්න 10
+            සඳහා පිළිතුරු ලබා දෙන්න.
+        </p>
+
+
+        <a
+            href="quiz.html?lesson=3"
+            class="quiz-button"
+        >
+            📝 Start Lesson 3 Quiz
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================
+     ACTIVITY JAVASCRIPT
+     ========================================= -->
+
+<script>
+
+    /* =========================================
+       Lesson 3 Interactive Activities
+       ========================================= */
+
+    let activityScore = 0;
+
+
+    const activityAnswered = {
+
+        activity1: false,
+
+        activity2: false,
+
+        activity3: false,
+
+        activity4: false,
+
+        activity5: false
+
+    };
+
+
+
+    /* =========================================
+       UPDATE SCORE
+       ========================================= */
+
+    function updateActivityScore() {
+
+        document.getElementById(
+            "activityScore"
+        ).textContent =
+            activityScore + " / 5";
+
+
+        if (activityScore === 5) {
+
+            document.getElementById(
+                "activityFinalMessage"
+            ).textContent =
+                "🎉 Excellent! ඔබ සියලුම Activities සාර්ථකව සම්පූර්ණ කළා.";
+
+        }
+
+        else if (activityScore >= 3) {
+
+            document.getElementById(
+                "activityFinalMessage"
+            ).textContent =
+                "👍 Good work! තවත් ටිකක් පුහුණු වන්න.";
+
+        }
+
+        else {
+
+            document.getElementById(
+                "activityFinalMessage"
+            ).textContent =
+                "📚 පාඩම නැවත කියවා Activities නැවත උත්සාහ කරන්න.";
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       ACTIVITY 01
+       ========================================= */
+
+    function checkActivity1(
+        button,
+        correct
+    ) {
+
+        if (
+            activityAnswered.activity1
+        ) {
+
+            return;
+
+        }
+
+
+        activityAnswered.activity1 = true;
+
+
+        showActivityResult(
+            button,
+            correct,
+            "activity1Result"
+        );
+
+    }
+
+
+
+    /* =========================================
+       ACTIVITY 02
+       ========================================= */
+
+    function checkActivity2(
+        button,
+        correct
+    ) {
+
+        if (
+            activityAnswered.activity2
+        ) {
+
+            return;
+
+        }
+
+
+        activityAnswered.activity2 = true;
+
+
+        showActivityResult(
+            button,
+            correct,
+            "activity2Result"
+        );
+
+    }
+
+
+
+    /* =========================================
+       ACTIVITY 03
+       ========================================= */
+
+    function checkActivity3(
+        button,
+        correct
+    ) {
+
+        if (
+            activityAnswered.activity3
+        ) {
+
+            return;
+
+        }
+
+
+        activityAnswered.activity3 = true;
+
+
+        showActivityResult(
+            button,
+            correct,
+            "activity3Result"
+        );
+
+    }
+
+
+
+    /* =========================================
+       ACTIVITY 04
+       ========================================= */
+
+    function checkActivity4(
+        button,
+        correct
+    ) {
+
+        if (
+            activityAnswered.activity4
+        ) {
+
+            return;
+
+        }
+
+
+        activityAnswered.activity4 = true;
+
+
+        showActivityResult(
+            button,
+            correct,
+            "activity4Result"
+        );
+
+    }
+
+
+
+    /* =========================================
+       ACTIVITY 05
+       ========================================= */
+
+    function checkActivity5(
+        button,
+        correct
+    ) {
+
+        if (
+            activityAnswered.activity5
+        ) {
+
+            return;
+
+        }
+
+
+        activityAnswered.activity5 = true;
+
+
+        showActivityResult(
+            button,
+            correct,
+            "activity5Result"
+        );
+
+    }
+
+
+
+    /* =========================================
+       COMMON RESULT FUNCTION
+       ========================================= */
+
+    function showActivityResult(
+        button,
+        correct,
+        resultId
+    ) {
+
+        const result =
+            document.getElementById(
+                resultId
+            );
+
+
+        if (correct) {
+
+            activityScore++;
+
+
+            button.style.background =
+                "#198754";
+
+
+            button.style.color =
+                "#ffffff";
+
+
+            result.textContent =
+                "✅ නිවැරදියි!";
+
+        }
+
+        else {
+
+            button.style.background =
+                "#dc3545";
+
+
+            button.style.color =
+                "#ffffff";
+
+
+            result.textContent =
+                "❌ වැරදියි. පාඩම නැවත බලන්න.";
+
+        }
+
+
+        updateActivityScore();
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
