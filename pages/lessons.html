@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 
 <head>
 
@@ -21,147 +21,307 @@
 
     <style>
 
-        .lessons-page {
-            max-width: 1000px;
+        /* =========================================
+           Lessons Page
+           ========================================= */
+
+        .lessons-container {
+
+            max-width: 1100px;
+
             margin: auto;
-            padding: 30px 20px;
+
+            padding: 35px 20px;
+
         }
 
 
         .lessons-header {
+
             text-align: center;
+
+            padding: 35px 20px;
+
             margin-bottom: 30px;
+
+            border-radius: 15px;
+
+            background: #f2f2f2;
+
+            color: #222;
+
         }
 
 
         .lessons-header h1 {
+
             margin-bottom: 10px;
+
         }
 
 
-        .overall-progress-card {
-            background: #1b1b1b;
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
+        .lessons-header p {
+
+            margin: 0;
+
+            line-height: 1.8;
+
         }
 
 
-        .overall-progress-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+        /* =========================================
+           Lesson Grid
+           ========================================= */
+
+        .lessons-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 25px;
+
         }
 
 
-        .overall-progress-bar {
-            width: 100%;
-            height: 12px;
-            background: #333;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-
-        .overall-progress-fill {
-            height: 100%;
-            width: 0%;
-            background: gold;
-            transition: width 0.4s ease;
-        }
-
+        /* =========================================
+           Lesson Card
+           ========================================= */
 
         .lesson-card {
-            background: #1b1b1b;
-            border: 1px solid #333;
+
+            background: #ffffff;
+
             border-radius: 15px;
-            padding: 22px;
-            margin-bottom: 20px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 3px 12px
+                rgba(0,0,0,0.10);
+
+            border: 1px solid #e1e1e1;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
         }
 
 
-        .lesson-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
+        .lesson-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 6px 18px
+                rgba(0,0,0,0.14);
+
         }
 
 
         .lesson-number {
-            color: gold;
+
+            font-size: 14px;
+
             font-weight: bold;
+
+            color: #666;
+
+            margin-bottom: 8px;
+
         }
 
+
+        .lesson-card h2 {
+
+            margin-top: 0;
+
+            margin-bottom: 12px;
+
+            color: #222;
+
+        }
+
+
+        .lesson-card p {
+
+            line-height: 1.8;
+
+            color: #444;
+
+        }
+
+
+        /* =========================================
+           Status
+           ========================================= */
 
         .lesson-status {
+
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
             font-size: 14px;
+
             font-weight: bold;
+
+            margin-top: 8px;
+
+            margin-bottom: 15px;
+
         }
 
 
-        .lesson-description {
-            margin: 15px 0;
+        .status-completed {
+
+            background: #d1e7dd;
+
+            color: #0f5132;
+
         }
 
+
+        .status-progress {
+
+            background: #fff3cd;
+
+            color: #664d03;
+
+        }
+
+
+        .status-not-started {
+
+            background: #e2e3e5;
+
+            color: #41464b;
+
+        }
+
+
+        /* =========================================
+           Progress
+           ========================================= */
 
         .lesson-progress-container {
+
             width: 100%;
-            height: 8px;
-            background: #333;
+
+            height: 9px;
+
+            background: #e9ecef;
+
             border-radius: 10px;
+
             overflow: hidden;
-            margin: 15px 0 8px;
+
+            margin: 10px 0 15px;
+
         }
 
 
-        .lesson-progress-bar {
+        .lesson-progress {
+
             height: 100%;
+
             width: 0%;
-            background: gold;
+
+            background: #198754;
+
             transition: width 0.4s ease;
+
         }
 
 
         .lesson-progress-text {
+
             font-size: 13px;
+
+            color: #555;
+
+            margin-bottom: 15px;
+
         }
 
 
-        .lesson-actions {
-            margin-top: 18px;
-        }
-
+        /* =========================================
+           Buttons
+           ========================================= */
 
         .lesson-button {
+
             display: inline-block;
-            padding: 10px 18px;
+
+            padding: 12px 20px;
+
             border-radius: 8px;
+
             text-decoration: none;
+
             font-weight: bold;
-            background: gold;
-            color: #000;
+
+            background: #222;
+
+            color: #ffffff;
+
+            transition:
+                background 0.2s ease;
+
         }
 
 
-        .lesson-button.completed {
-            background: #555;
-            color: #fff;
-            pointer-events: none;
+        .lesson-button:hover {
+
+            background: #000;
+
         }
 
 
-        .dashboard-link {
-            text-align: center;
-            margin-top: 30px;
-        }
+        .completed-button {
 
+            display: inline-block;
 
-        .dashboard-link a {
-            color: gold;
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
             font-weight: bold;
+
+            background: #198754;
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================================
+           Responsive
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            .lessons-container {
+
+                padding:
+                    25px 15px;
+
+            }
+
+
+            .lesson-card {
+
+                padding: 20px;
+
+            }
+
         }
 
     </style>
@@ -172,10 +332,16 @@
 <body>
 
 
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
 <header class="site-header">
 
     <div class="logo">
+
         Unique EduZone
+
     </div>
 
 
@@ -207,354 +373,318 @@
 
 
 
-<main class="lessons-page">
+<!-- =========================================
+     MAIN
+     ========================================= -->
+
+<main class="lessons-container">
 
 
-    <!-- Header -->
+    <!-- PAGE HEADER -->
 
     <section class="lessons-header">
 
         <h1>
-            📚 My Lessons
+            📚 Lessons
         </h1>
 
         <p>
-            Continue your learning journey with Unique EduZone.
+            Unique EduZone සමඟ ඔබගේ පාඩම්
+            ක්‍රමානුකූලව අධ්‍යයනය කරන්න.
         </p>
 
     </section>
 
 
 
-    <!-- Overall Lesson Progress -->
+    <!-- =====================================
+         LESSON CARDS
+         ===================================== -->
 
-    <section class="overall-progress-card">
-
-        <div class="overall-progress-top">
-
-            <strong>
-                Lesson Progress
-            </strong>
-
-            <strong id="overallLessonPercent">
-                0%
-            </strong>
-
-        </div>
-
-
-        <div class="overall-progress-bar">
-
-            <div
-                class="overall-progress-fill"
-                id="overallLessonBar"
-            ></div>
-
-        </div>
-
-
-        <p id="overallLessonText">
-            0 / 4 lessons completed
-        </p>
-
-    </section>
+    <div class="lessons-grid">
 
 
 
-    <!-- Lesson 1 -->
+        <!-- =================================
+             LESSON 1
+             ================================= -->
 
-    <article
-        class="lesson-card"
-        id="lesson1Card"
-    >
+        <article
+            class="lesson-card"
+            id="lessonCard1"
+        >
 
-        <div class="lesson-card-header">
+            <div class="lesson-number">
 
-            <div>
-
-                <div class="lesson-number">
-                    LESSON 01
-                </div>
-
-                <h2>
-                    Introduction to Business Studies
-                </h2>
+                LESSON 01
 
             </div>
 
 
+            <h2>
+
+                ව්‍යාපාර පිළිබඳ මූලික පදනම
+
+            </h2>
+
+
+            <p>
+
+                ව්‍යාපාරය, ව්‍යාපාර අරමුණු,
+                අවශ්‍යතා හා වුවමනා,
+                නිෂ්පාදන සාධක සහ
+                ඇල්මැති පාර්ශ්ව පිළිබඳ
+                මූලික කරුණු අධ්‍යයනය කරන්න.
+
+            </p>
+
+
             <div
-                class="lesson-status"
                 id="lesson1Status"
+                class="lesson-status status-not-started"
             >
+
                 Not Started
+
             </div>
 
-        </div>
 
+            <div class="lesson-progress-container">
 
-        <p class="lesson-description">
-            Learn the basic introduction and foundation of Business Studies.
-        </p>
+                <div
+                    id="lesson1Progress"
+                    class="lesson-progress"
+                ></div>
 
+            </div>
 
-        <div class="lesson-progress-container">
 
             <div
-                class="lesson-progress-bar"
-                id="lesson1Progress"
-            ></div>
+                id="lesson1ProgressText"
+                class="lesson-progress-text"
+            >
 
-        </div>
+                0% completed
 
+            </div>
 
-        <div
-            class="lesson-progress-text"
-            id="lesson1ProgressText"
-        >
-            0% completed
-        </div>
-
-
-        <div class="lesson-actions">
 
             <a
-    href="lesson1.html"
-    class="lesson-button"
-    id="lesson1Button"
->
-    ▶ Continue Lesson
-</a>
+                href="lesson1.html"
+                id="lesson1Button"
+                class="lesson-button"
+            >
 
-        </div>
+                Continue Lesson
 
-    </article>
+            </a>
+
+        </article>
 
 
 
-    <!-- Lesson 2 -->
+        <!-- =================================
+             LESSON 2
+             ================================= -->
 
-    <article
-        class="lesson-card"
-        id="lesson2Card"
-    >
+        <article
+            class="lesson-card"
+            id="lessonCard2"
+        >
 
-        <div class="lesson-card-header">
+            <div class="lesson-number">
 
-            <div>
-
-                <div class="lesson-number">
-                    LESSON 02
-                </div>
-
-                <h2>
-                    Business Environment
-                </h2>
+                LESSON 02
 
             </div>
 
 
+            <h2>
+
+                ව්‍යාපාර පරිසරය
+
+            </h2>
+
+
+            <p>
+
+                ව්‍යාපාර පරිසරය,
+                අභ්‍යන්තර හා බාහිර පරිසරය,
+                තාක්ෂණික හා ආර්ථික පරිසරය,
+                ගෝලීය පරිසරය සහ ව්‍යාපාර
+                කටයුතු අධ්‍යයනය කිරීමේ
+                වැදගත්කම පිළිබඳ අධ්‍යයනය කරන්න.
+
+            </p>
+
+
             <div
-                class="lesson-status"
                 id="lesson2Status"
+                class="lesson-status status-not-started"
             >
+
                 Not Started
+
             </div>
 
-        </div>
 
+            <div class="lesson-progress-container">
 
-        <p class="lesson-description">
-            Understand the internal and external business environment.
-        </p>
+                <div
+                    id="lesson2Progress"
+                    class="lesson-progress"
+                ></div>
 
+            </div>
 
-        <div class="lesson-progress-container">
 
             <div
-                class="lesson-progress-bar"
-                id="lesson2Progress"
-            ></div>
+                id="lesson2ProgressText"
+                class="lesson-progress-text"
+            >
 
-        </div>
+                0% completed
 
-
-        <div
-            class="lesson-progress-text"
-            id="lesson2ProgressText"
-        >
-            0% completed
-        </div>
+            </div>
 
 
-        <div class="lesson-actions">
+            <!-- IMPORTANT:
+                 Lesson 2 → lesson2.html -->
 
             <a
-                href="#"
-                class="lesson-button"
+                href="lesson2.html"
                 id="lesson2Button"
-                onclick="completeLesson('lesson2'); return false;"
-            >
-                ▶ Continue Lesson
-            </a>
-
-        </div>
-
-    </article>
-
-
-
-    <!-- Lesson 3 -->
-
-    <article
-        class="lesson-card"
-        id="lesson3Card"
-    >
-
-        <div class="lesson-card-header">
-
-            <div>
-
-                <div class="lesson-number">
-                    LESSON 03
-                </div>
-
-                <h2>
-                    Business Objectives
-                </h2>
-
-            </div>
-
-
-            <div
-                class="lesson-status"
-                id="lesson3Status"
-            >
-                Not Started
-            </div>
-
-        </div>
-
-
-        <p class="lesson-description">
-            Learn about the main objectives of a business.
-        </p>
-
-
-        <div class="lesson-progress-container">
-
-            <div
-                class="lesson-progress-bar"
-                id="lesson3Progress"
-            ></div>
-
-        </div>
-
-
-        <div
-            class="lesson-progress-text"
-            id="lesson3ProgressText"
-        >
-            0% completed
-        </div>
-
-
-        <div class="lesson-actions">
-
-            <a
-                href="#"
                 class="lesson-button"
-                id="lesson3Button"
-                onclick="completeLesson('lesson3'); return false;"
             >
-                ▶ Continue Lesson
+
+                Continue Lesson
+
             </a>
 
-        </div>
-
-    </article>
+        </article>
 
 
 
-    <!-- Lesson 4 -->
+        <!-- =================================
+             FUTURE LESSON 3
+             ================================= -->
 
-    <article
-        class="lesson-card"
-        id="lesson4Card"
-    >
-
-        <div class="lesson-card-header">
-
-            <div>
-
-                <div class="lesson-number">
-                    LESSON 04
-                </div>
-
-                <h2>
-                    Business Ownership
-                </h2>
-
-            </div>
-
-
-            <div
-                class="lesson-status"
-                id="lesson4Status"
-            >
-                Not Started
-            </div>
-
-        </div>
-
-
-        <p class="lesson-description">
-            Understand different forms of business ownership.
-        </p>
-
-
-        <div class="lesson-progress-container">
-
-            <div
-                class="lesson-progress-bar"
-                id="lesson4Progress"
-            ></div>
-
-        </div>
-
-
-        <div
-            class="lesson-progress-text"
-            id="lesson4ProgressText"
+        <article
+            class="lesson-card"
         >
-            0% completed
-        </div>
+
+            <div class="lesson-number">
+
+                LESSON 03
+
+            </div>
 
 
-        <div class="lesson-actions">
+            <h2>
 
-            <a
-                href="#"
-                class="lesson-button"
-                id="lesson4Button"
-                onclick="completeLesson('lesson4'); return false;"
+                ඉදිරියේදී එකතු වේ
+
+            </h2>
+
+
+            <p>
+
+                මෙම පාඩම ඉදිරියේදී
+                Unique EduZone වෙත
+                එකතු කරනු ලැබේ.
+
+            </p>
+
+
+            <div
+                class="lesson-status status-not-started"
             >
-                ▶ Continue Lesson
-            </a>
 
-        </div>
+                Coming Soon
 
-    </article>
+            </div>
 
 
+            <div class="lesson-progress-container">
 
-    <!-- Dashboard -->
+                <div
+                    class="lesson-progress"
+                    style="width:0%;"
+                ></div>
 
-    <div class="dashboard-link">
+            </div>
 
-        <a href="dashboard.html">
-            📊 View My Dashboard
-        </a>
+
+            <div class="lesson-progress-text">
+
+                0% completed
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =================================
+             FUTURE LESSON 4
+             ================================= -->
+
+        <article
+            class="lesson-card"
+        >
+
+            <div class="lesson-number">
+
+                LESSON 04
+
+            </div>
+
+
+            <h2>
+
+                ඉදිරියේදී එකතු වේ
+
+            </h2>
+
+
+            <p>
+
+                මෙම පාඩම ඉදිරියේදී
+                Unique EduZone වෙත
+                එකතු කරනු ලැබේ.
+
+            </p>
+
+
+            <div
+                class="lesson-status status-not-started"
+            >
+
+                Coming Soon
+
+            </div>
+
+
+            <div class="lesson-progress-container">
+
+                <div
+                    class="lesson-progress"
+                    style="width:0%;"
+                ></div>
+
+            </div>
+
+
+            <div class="lesson-progress-text">
+
+                0% completed
+
+            </div>
+
+
+        </article>
+
 
     </div>
 
@@ -563,17 +693,269 @@
 
 
 
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
 <footer class="site-footer">
 
     <p>
-        © 2026 Unique EduZone. All Rights Reserved.
+
+        © 2026 Unique EduZone
+
     </p>
 
 </footer>
 
 
 
-<script src="../assets/js/lessons.js"></script>
+<!-- =========================================
+     LESSON PROGRESS JAVASCRIPT
+     ========================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =====================================
+           Get Completed Lessons
+           ===================================== */
+
+        function getCompletedLessons() {
+
+            const saved =
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                );
+
+
+            if (!saved) {
+
+                return [];
+
+            }
+
+
+            try {
+
+                const data =
+                    JSON.parse(saved);
+
+
+                if (
+                    Array.isArray(data)
+                ) {
+
+                    return data;
+
+                }
+
+
+                return [];
+
+            }
+
+            catch (error) {
+
+                return [];
+
+            }
+
+        }
+
+
+
+        /* =====================================
+           Check Lesson Completion
+           ===================================== */
+
+        const completedLessons =
+            getCompletedLessons();
+
+
+
+        /* =====================================
+           Lesson 1
+           ===================================== */
+
+        const lesson1Completed =
+            completedLessons.some(
+                function (lesson) {
+
+                    return String(lesson) === "1";
+
+                }
+            );
+
+
+        const lesson1Status =
+            document.getElementById(
+                "lesson1Status"
+            );
+
+
+        const lesson1Progress =
+            document.getElementById(
+                "lesson1Progress"
+            );
+
+
+        const lesson1ProgressText =
+            document.getElementById(
+                "lesson1ProgressText"
+            );
+
+
+        const lesson1Button =
+            document.getElementById(
+                "lesson1Button"
+            );
+
+
+
+        if (lesson1Completed) {
+
+            lesson1Status.textContent =
+                "Completed ✓";
+
+
+            lesson1Status.className =
+                "lesson-status status-completed";
+
+
+            lesson1Progress.style.width =
+                "100%";
+
+
+            lesson1ProgressText.textContent =
+                "100% completed";
+
+
+            lesson1Button.textContent =
+                "Review Lesson";
+
+
+        }
+
+        else {
+
+            lesson1Status.textContent =
+                "Not Started";
+
+
+            lesson1Status.className =
+                "lesson-status status-not-started";
+
+
+            lesson1Progress.style.width =
+                "0%";
+
+
+            lesson1ProgressText.textContent =
+                "0% completed";
+
+
+            lesson1Button.textContent =
+                "Continue Lesson";
+
+        }
+
+
+
+        /* =====================================
+           Lesson 2
+           ===================================== */
+
+        const lesson2Completed =
+            completedLessons.some(
+                function (lesson) {
+
+                    return String(lesson) === "2";
+
+                }
+            );
+
+
+        const lesson2Status =
+            document.getElementById(
+                "lesson2Status"
+            );
+
+
+        const lesson2Progress =
+            document.getElementById(
+                "lesson2Progress"
+            );
+
+
+        const lesson2ProgressText =
+            document.getElementById(
+                "lesson2ProgressText"
+            );
+
+
+        const lesson2Button =
+            document.getElementById(
+                "lesson2Button"
+            );
+
+
+
+        if (lesson2Completed) {
+
+            lesson2Status.textContent =
+                "Completed ✓";
+
+
+            lesson2Status.className =
+                "lesson-status status-completed";
+
+
+            lesson2Progress.style.width =
+                "100%";
+
+
+            lesson2ProgressText.textContent =
+                "100% completed";
+
+
+            lesson2Button.textContent =
+                "Review Lesson";
+
+
+        }
+
+        else {
+
+            lesson2Status.textContent =
+                "Not Started";
+
+
+            lesson2Status.className =
+                "lesson-status status-not-started";
+
+
+            lesson2Progress.style.width =
+                "0%";
+
+
+            lesson2ProgressText.textContent =
+                "0% completed";
+
+
+            lesson2Button.textContent =
+                "Continue Lesson";
+
+        }
+
+    }
+
+);
+
+</script>
 
 
 </body>
