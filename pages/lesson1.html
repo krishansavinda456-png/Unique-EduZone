@@ -19,7 +19,12 @@
         href="../assets/css/style.css"
     >
 
+
     <style>
+
+        /* =========================================
+           LESSON 1 CSS
+           ========================================= */
 
         .lesson-container {
 
@@ -243,144 +248,7 @@
 
 
         /* =========================================
-           Lesson 1 Interactive Activities
-           ========================================= */
-
-        .activities-section {
-
-            margin-bottom: 30px;
-
-            padding: 25px;
-
-            border-radius: 12px;
-
-            background: #ffffff;
-
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-
-        }
-
-
-        .activities-section h2 {
-
-            margin-top: 0;
-
-            padding-bottom: 10px;
-
-            border-bottom: 2px solid #ddd;
-
-        }
-
-
-        .activity-card {
-
-            margin: 20px 0;
-
-            padding: 22px;
-
-            border-radius: 12px;
-
-            background: #f8f8f8;
-
-            border: 1px solid #ddd;
-
-        }
-
-
-        .activity-card h3 {
-
-            margin-top: 0;
-
-        }
-
-
-        .activity-option {
-
-            display: block;
-
-            width: 100%;
-
-            margin: 10px 0;
-
-            padding: 12px 15px;
-
-            border: 1px solid #ccc;
-
-            border-radius: 8px;
-
-            background: #ffffff;
-
-            color: #222222;
-
-            cursor: pointer;
-
-            text-align: left;
-
-            font-size: 16px;
-
-        }
-
-
-        .activity-option:hover {
-
-            background: #eeeeee;
-
-        }
-
-
-        .activity-result {
-
-            margin-top: 12px;
-
-            font-weight: bold;
-
-            min-height: 24px;
-
-        }
-
-
-        .activity-score-box {
-
-            margin-top: 25px;
-
-            padding: 22px;
-
-            text-align: center;
-
-            border-radius: 12px;
-
-            background: #eeeeee;
-
-        }
-
-
-        .activity-score-box h3 {
-
-            margin-top: 0;
-
-        }
-
-
-        #activityScore {
-
-            font-size: 28px;
-
-            font-weight: bold;
-
-        }
-
-
-        #activityFinalMessage {
-
-            margin-top: 10px;
-
-            font-weight: bold;
-
-        }
-
-
-        /* =========================================
-           Readable Light Theme
+           READABLE LIGHT THEME
            ========================================= */
 
         body {
@@ -523,37 +391,216 @@
         }
 
 
+
+        /* =========================================
+           INTERACTIVE ACTIVITIES CSS
+           ========================================= */
+
         .activities-section {
 
-            background: #ffffff !important;
+            margin-bottom: 25px;
 
-            color: #222222 !important;
+            padding: 25px;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 
         }
 
 
-        .activities-section h2,
-        .activities-section h3,
-        .activities-section p {
+        .activities-section h2 {
 
-            color: #222222 !important;
+            margin-top: 0;
+
+            padding-bottom: 10px;
+
+            border-bottom: 2px solid #ddd;
+
+            color: #222222;
+
+        }
+
+
+        .activity-intro {
+
+            line-height: 1.9;
+
+            color: #222222;
+
+        }
+
+
+        .activity-score {
+
+            padding: 16px;
+
+            margin: 20px 0;
+
+            border-radius: 10px;
+
+            background: #f2f2f2;
+
+            color: #222222;
+
+            font-size: 18px;
+
+            text-align: center;
 
         }
 
 
         .activity-card {
 
-            background: #f8f8f8 !important;
+            padding: 20px;
 
-            color: #222222 !important;
+            margin: 20px 0;
+
+            border: 1px solid #ddd;
+
+            border-radius: 12px;
+
+            background: #fafafa;
 
         }
 
 
-        .activity-card h3,
+        .activity-card h3 {
+
+            margin-top: 0;
+
+            color: #222222;
+
+        }
+
+
         .activity-card p {
 
-            color: #222222 !important;
+            line-height: 1.8;
+
+            color: #222222;
+
+        }
+
+
+        .activity-options {
+
+            margin-top: 15px;
+
+        }
+
+
+        .activity-button {
+
+            display: inline-block;
+
+            padding: 11px 18px;
+
+            margin: 5px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            background: #e9e9e9;
+
+            color: #222222;
+
+            font-size: 15px;
+
+            transition: 0.2s;
+
+        }
+
+
+        .activity-button:hover {
+
+            background: #d5d5d5;
+
+        }
+
+
+        .activity-result {
+
+            min-height: 24px;
+
+            margin-top: 12px;
+
+            font-weight: bold;
+
+            color: #222222;
+
+        }
+
+
+        #activityFinalMessage {
+
+            margin-top: 25px;
+
+            padding: 18px;
+
+            border-radius: 10px;
+
+            background: #f3f3f3;
+
+            color: #222222;
+
+            text-align: center;
+
+            font-weight: bold;
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .lesson-container {
+
+                padding: 20px 12px;
+
+            }
+
+
+            .lesson-section {
+
+                padding: 18px;
+
+            }
+
+
+            .activity-card {
+
+                padding: 16px;
+
+            }
+
+
+            .activity-button {
+
+                width: 100%;
+
+                margin: 5px 0;
+
+            }
+
+
+            .comparison-table {
+
+                font-size: 14px;
+
+            }
+
+
+            .comparison-table th,
+            .comparison-table td {
+
+                padding: 8px;
+
+            }
 
         }
 
@@ -578,21 +625,17 @@
             Home
         </a>
 
-
         <a href="lessons.html">
             Lessons
         </a>
-
 
         <a href="quiz.html">
             MCQ
         </a>
 
-
         <a href="dashboard.html">
             Dashboard
         </a>
-
 
         <a href="profile.html">
             Profile
@@ -1521,50 +1564,66 @@
             🎯 පාඩම 01 — Interactive Activities
         </h2>
 
-        <p>
-            පාඩමේ කරුණු අවබෝධ කරගෙන තිබේදැයි පරීක්ෂා කිරීමට
-            පහත ක්‍රියාකාරකම් සම්පූර්ණ කරන්න.
+        <p class="activity-intro">
+            පාඩම අධ්‍යයනය කිරීමෙන් පසු පහත ක්‍රියාකාරකම්
+            සම්පූර්ණ කරන්න. සෑම ක්‍රියාකාරකමක්ම ලකුණු 1කි.
         </p>
 
 
-        <!-- ACTIVITY 01 -->
+        <!-- SCORE -->
+
+        <div class="activity-score">
+
+            Activity Score:
+
+            <strong id="activityScore">
+                0 / 5
+            </strong>
+
+        </div>
+
+
+
+        <!-- ACTIVITY 1 -->
 
         <div class="activity-card">
 
             <h3>
-                Activity 01 — අවශ්‍යතාවක්ද? වුවමනාවක්ද?
+                Activity 01 — අවශ්‍යතාවක් හඳුනාගන්න
             </h3>
 
             <p>
-                මිනිසාට ජීවත් වීමට අත්‍යවශ්‍ය දෙයක් තෝරන්න.
+                පහත සඳහන් දෑ අතරින් මිනිසාගේ ජීවිතයට
+                මූලික අවශ්‍යතාවක් වන්නේ කුමක්ද?
             </p>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity1(this, true)"
-            >
-                🍚 ආහාර
-            </button>
+            <div class="activity-options">
+
+                <button
+                    class="activity-button"
+                    onclick="checkActivity1(this, true)"
+                >
+                    ආහාර
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity1(this, false)"
-            >
-                🎮 Video Game
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity1(this, false)"
+                >
+                    විලාසිතා ජංගම දුරකථනය
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity1(this, false)"
-            >
-                🎧 Headphones
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity1(this, false)"
+                >
+                    විනෝදාස්වාදය
+                </button>
+
+            </div>
 
 
             <div
@@ -1576,44 +1635,38 @@
 
 
 
-        <!-- ACTIVITY 02 -->
+        <!-- ACTIVITY 2 -->
 
         <div class="activity-card">
 
             <h3>
-                Activity 02 — භාණ්ඩ හෝ සේවා?
+                Activity 02 — අවශ්‍යතාවද? වුවමනාවද?
             </h3>
 
             <p>
-                බැංකුවක් ප්‍රධාන වශයෙන් අයත් වන්නේ කුමන ව්‍යාපාර වර්ගයටද?
+                නවතම විලාසිතා ඇඳුමක් මිලදී ගැනීමට
+                ඇති කැමැත්ත කුමන කාණ්ඩයට අයත් වේද?
             </p>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity2(this, false)"
-            >
-                🏭 භාණ්ඩ නිෂ්පාදන ව්‍යාපාර
-            </button>
+            <div class="activity-options">
+
+                <button
+                    class="activity-button"
+                    onclick="checkActivity2(this, false)"
+                >
+                    අවශ්‍යතාව
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity2(this, true)"
-            >
-                🏦 සේවා සැපයීමේ ව්‍යාපාර
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity2(this, true)"
+                >
+                    වුවමනාව
+                </button>
 
-
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity2(this, false)"
-            >
-                🌾 කෘෂිකාර්මික ව්‍යාපාර පමණක්
-            </button>
+            </div>
 
 
             <div
@@ -1625,7 +1678,7 @@
 
 
 
-        <!-- ACTIVITY 03 -->
+        <!-- ACTIVITY 3 -->
 
         <div class="activity-card">
 
@@ -1634,44 +1687,46 @@
             </h3>
 
             <p>
-                යන්ත්‍රයක් නිෂ්පාදන සාධක අතරින් කුමකට අයත් වේද?
+                ව්‍යාපාරයක සේවකයෙකු ලබා දෙන කායික හා
+                මානසික දායකත්වය කුමන නිෂ්පාදන සාධකයට
+                අයත් වේද?
             </p>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity3(this, false)"
-            >
-                🌍 භූමිය
-            </button>
+            <div class="activity-options">
+
+                <button
+                    class="activity-button"
+                    onclick="checkActivity3(this, false)"
+                >
+                    භූමිය
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity3(this, false)"
-            >
-                👷 ශ්‍රමය
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity3(this, true)"
+                >
+                    ශ්‍රමය
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity3(this, true)"
-            >
-                ⚙️ ප්‍රාග්ධනය
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity3(this, false)"
+                >
+                    ප්‍රාග්ධනය
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity3(this, false)"
-            >
-                👤 ව්‍යවසාය
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity3(this, false)"
+                >
+                    ව්‍යවසාය
+                </button>
+
+            </div>
 
 
             <div
@@ -1683,53 +1738,46 @@
 
 
 
-        <!-- ACTIVITY 04 -->
+        <!-- ACTIVITY 4 -->
 
         <div class="activity-card">
 
             <h3>
-                Activity 04 — ඇල්මැති පාර්ශ්ව
+                Activity 04 — සේවා ව්‍යාපාර
             </h3>
 
             <p>
-                ව්‍යාපාරයකින් භාණ්ඩ හා සේවා ලබා ගන්නා පාර්ශ්වය කවුද?
+                පහත සඳහන් ආයතන අතරින් සේවා සැපයීමේ
+                ව්‍යාපාරයකට උදාහරණයක් වන්නේ කුමක්ද?
             </p>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity4(this, false)"
-            >
-                👨‍💼 කළමනාකරුවන්
-            </button>
+            <div class="activity-options">
+
+                <button
+                    class="activity-button"
+                    onclick="checkActivity4(this, false)"
+                >
+                    ගෘහ භාණ්ඩ නිෂ්පාදකයෙක්
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity4(this, true)"
-            >
-                🛒 ගනුදෙනුකරුවන්
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity4(this, true)"
+                >
+                    බැංකුවක්
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity4(this, false)"
-            >
-                🏛️ රජය
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity4(this, false)"
+                >
+                    ඇඳුම් නිෂ්පාදකයෙක්
+                </button>
 
-
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity4(this, false)"
-            >
-                🏦 මූල්‍ය ආයතන
-            </button>
+            </div>
 
 
             <div
@@ -1741,54 +1789,46 @@
 
 
 
-        <!-- ACTIVITY 05 -->
+        <!-- ACTIVITY 5 -->
 
         <div class="activity-card">
 
             <h3>
-                Activity 05 — ව්‍යාපාර අරමුණ
+                Activity 05 — ඇල්මැති පාර්ශ්ව
             </h3>
 
             <p>
-                ව්‍යාපාරයක හිමිකරුවන් විසින් යොදවන ලද ප්‍රාග්ධනයට
-                ප්‍රතිලාභයක් ලබා දීම සඳහා වැදගත් වන අරමුණ කුමක්ද?
+                ව්‍යාපාරයට අවශ්‍ය අමුද්‍රව්‍ය සහ වෙනත්
+                සම්පත් සපයන පාර්ශ්වය කවුද?
             </p>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity5(this, false)"
-            >
-                👥 රැකියා අවස්ථා ඇති කිරීම
-            </button>
+            <div class="activity-options">
+
+                <button
+                    class="activity-button"
+                    onclick="checkActivity5(this, false)"
+                >
+                    ගනුදෙනුකරුවන්
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity5(this, true)"
-            >
-                💰 ලාභ ඉපයීම
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity5(this, true)"
+                >
+                    සැපයුම්කරුවන්
+                </button>
 
 
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity5(this, false)"
-            >
-                🏥 සේවක සුභසාධනය
-            </button>
+                <button
+                    class="activity-button"
+                    onclick="checkActivity5(this, false)"
+                >
+                    තරඟකරුවන්
+                </button>
 
-
-            <button
-                type="button"
-                class="activity-option"
-                onclick="checkActivity5(this, false)"
-            >
-                ⭐ පාරිභෝගික තෘප්තිය වැඩි කිරීම
-            </button>
+            </div>
 
 
             <div
@@ -1800,23 +1840,11 @@
 
 
 
-        <!-- ACTIVITY SCORE -->
+        <!-- FINAL MESSAGE -->
 
-        <div class="activity-score-box">
+        <div id="activityFinalMessage">
 
-            <h3>
-                🏆 Activity Score
-            </h3>
-
-
-            <div id="activityScore">
-                0 / 5
-            </div>
-
-
-            <p id="activityFinalMessage">
-                Activities ආරම්භ කරන්න.
-            </p>
+            📚 Activities ආරම්භ කරන්න.
 
         </div>
 
@@ -1878,7 +1906,7 @@
 
 
 <!-- =========================================
-     Lesson 1 Interactive Activities JavaScript
+     LESSON 1 INTERACTIVE ACTIVITIES JAVASCRIPT
      ========================================= -->
 
 <script>
@@ -1888,6 +1916,7 @@
    ========================================= */
 
 let activityScore = 0;
+
 
 const activityAnswered = {
 
@@ -1904,44 +1933,61 @@ const activityAnswered = {
 };
 
 
+
 /* Update Score */
 
 function updateActivityScore() {
 
-    document.getElementById(
-        "activityScore"
-    ).textContent =
-        activityScore + " / 5";
+    const scoreElement =
+        document.getElementById(
+            "activityScore"
+        );
+
+
+    if (scoreElement) {
+
+        scoreElement.textContent =
+            activityScore + " / 5";
+
+    }
+
+
+    const finalMessage =
+        document.getElementById(
+            "activityFinalMessage"
+        );
+
+
+    if (!finalMessage) {
+
+        return;
+
+    }
 
 
     if (activityScore === 5) {
 
-        document.getElementById(
-            "activityFinalMessage"
-        ).textContent =
+        finalMessage.textContent =
             "🎉 Excellent! ඔබ සියලුම Activities සාර්ථකව සම්පූර්ණ කළා.";
 
     }
 
     else if (activityScore >= 3) {
 
-        document.getElementById(
-            "activityFinalMessage"
-        ).textContent =
+        finalMessage.textContent =
             "👍 Good work! තවත් ටිකක් පුහුණු වන්න.";
 
     }
 
     else {
 
-        document.getElementById(
-            "activityFinalMessage"
-        ).textContent =
+        finalMessage.textContent =
             "📚 පාඩම නැවත කියවා Activities නැවත උත්සාහ කරන්න.";
 
     }
 
 }
+
 
 
 /* Activity 01 */
@@ -1954,7 +2000,9 @@ function checkActivity1(button, correct) {
 
     }
 
+
     activityAnswered.activity1 = true;
+
 
     showActivityResult(
         button,
@@ -1963,6 +2011,7 @@ function checkActivity1(button, correct) {
     );
 
 }
+
 
 
 /* Activity 02 */
@@ -1975,7 +2024,9 @@ function checkActivity2(button, correct) {
 
     }
 
+
     activityAnswered.activity2 = true;
+
 
     showActivityResult(
         button,
@@ -1984,6 +2035,7 @@ function checkActivity2(button, correct) {
     );
 
 }
+
 
 
 /* Activity 03 */
@@ -1996,7 +2048,9 @@ function checkActivity3(button, correct) {
 
     }
 
+
     activityAnswered.activity3 = true;
+
 
     showActivityResult(
         button,
@@ -2005,6 +2059,7 @@ function checkActivity3(button, correct) {
     );
 
 }
+
 
 
 /* Activity 04 */
@@ -2017,7 +2072,9 @@ function checkActivity4(button, correct) {
 
     }
 
+
     activityAnswered.activity4 = true;
+
 
     showActivityResult(
         button,
@@ -2026,6 +2083,7 @@ function checkActivity4(button, correct) {
     );
 
 }
+
 
 
 /* Activity 05 */
@@ -2038,7 +2096,9 @@ function checkActivity5(button, correct) {
 
     }
 
+
     activityAnswered.activity5 = true;
+
 
     showActivityResult(
         button,
@@ -2047,6 +2107,7 @@ function checkActivity5(button, correct) {
     );
 
 }
+
 
 
 /* Common Result Function */
@@ -2058,7 +2119,9 @@ function showActivityResult(
 ) {
 
     const result =
-        document.getElementById(resultId);
+        document.getElementById(
+            resultId
+        );
 
 
     if (correct) {
@@ -2068,6 +2131,7 @@ function showActivityResult(
 
         button.style.background =
             "#198754";
+
 
         button.style.color =
             "#ffffff";
@@ -2082,6 +2146,7 @@ function showActivityResult(
 
         button.style.background =
             "#dc3545";
+
 
         button.style.color =
             "#ffffff";
