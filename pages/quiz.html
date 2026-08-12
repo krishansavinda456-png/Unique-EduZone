@@ -29,7 +29,7 @@
     <style>
 
         /* =========================================
-           Quiz Page
+           Quiz Container
            ========================================= */
 
         .quiz-container {
@@ -42,6 +42,10 @@
 
         }
 
+
+        /* =========================================
+           Dynamic Title
+           ========================================= */
 
         .quiz-title-box {
 
@@ -62,7 +66,7 @@
 
             margin: 0 0 10px 0;
 
-            color: #222;
+            color: #222222;
 
         }
 
@@ -71,12 +75,16 @@
 
             margin: 0;
 
-            color: #555;
+            color: #555555;
+
+            line-height: 1.7;
 
         }
 
 
-        /* Timer */
+        /* =========================================
+           Timer
+           ========================================= */
 
         .timer-box {
 
@@ -90,7 +98,7 @@
 
             background: #eeeeee;
 
-            color: #222;
+            color: #222222;
 
         }
 
@@ -102,7 +110,9 @@
         }
 
 
-        /* Progress */
+        /* =========================================
+           Progress Bar
+           ========================================= */
 
         .quiz-progress-container {
 
@@ -132,7 +142,9 @@
         }
 
 
-        /* Question */
+        /* =========================================
+           Question
+           ========================================= */
 
         .question-box {
 
@@ -155,7 +167,7 @@
 
             margin-top: 0;
 
-            color: #222;
+            color: #222222;
 
         }
 
@@ -166,12 +178,14 @@
 
             line-height: 1.8;
 
-            color: #222;
+            color: #222222;
 
         }
 
 
-        /* Options */
+        /* =========================================
+           Options
+           ========================================= */
 
         .options-box {
 
@@ -225,7 +239,9 @@
         }
 
 
-        /* Next Button */
+        /* =========================================
+           Next Button
+           ========================================= */
 
         .next-button {
 
@@ -257,7 +273,6 @@
             opacity: 0.9;
 
         }
-
 
     </style>
 
@@ -311,7 +326,7 @@
 
 
 <!-- =========================================
-     MAIN QUIZ
+     QUIZ
      ========================================= -->
 
 <main class="quiz-container">
@@ -334,7 +349,9 @@
 
 
 
-    <!-- Timer -->
+    <!-- =====================================
+         TIMER
+         ===================================== -->
 
     <div class="timer-box">
 
@@ -351,7 +368,9 @@
 
 
 
-    <!-- Progress -->
+    <!-- =====================================
+         PROGRESS
+         ===================================== -->
 
     <div class="quiz-progress-container">
 
@@ -364,7 +383,9 @@
 
 
 
-    <!-- Question -->
+    <!-- =====================================
+         QUESTION
+         ===================================== -->
 
     <div
         id="questionBox"
@@ -373,7 +394,9 @@
 
 
 
-    <!-- Options -->
+    <!-- =====================================
+         OPTIONS
+         ===================================== -->
 
     <div
         id="optionsBox"
@@ -382,7 +405,9 @@
 
 
 
-    <!-- Next -->
+    <!-- =====================================
+         NEXT BUTTON
+         ===================================== -->
 
     <button
         id="nextButton"
@@ -412,29 +437,24 @@
 
 
 <!-- =========================================
-     DYNAMIC LESSON TITLE
+     DYNAMIC TITLE ONLY
+     
+     IMPORTANT:
+     Do NOT use variable name "lessonNumber"
+     because quiz.js already uses it.
      ========================================= -->
 
 <script>
 
-    /* =========================================
-       Get Lesson Number from URL
-       ========================================= */
-
-    const urlParams =
+    const quizPageParams =
         new URLSearchParams(
             window.location.search
         );
 
 
-    const lessonNumber =
-        urlParams.get("lesson") || "1";
+    const quizPageLesson =
+        quizPageParams.get("lesson") || "1";
 
-
-
-    /* =========================================
-       Lesson Title
-       ========================================= */
 
     const quizTitle =
         document.getElementById(
@@ -454,11 +474,7 @@
         );
 
 
-
-    if (lessonNumber === "2") {
-
-
-        /* Lesson 2 */
+    if (quizPageLesson === "2") {
 
         quizTitle.textContent =
             "Lesson 2 Quiz — ව්‍යාපාර පරිසරය";
@@ -471,13 +487,9 @@
         pageTitle.textContent =
             "Lesson 2 Quiz | ව්‍යාපාර පරිසරය | Unique EduZone";
 
-
     }
 
     else {
-
-
-        /* Lesson 1 */
 
         quizTitle.textContent =
             "Lesson 1 Quiz — ව්‍යාපාර පිළිබඳ මූලික පදනම";
