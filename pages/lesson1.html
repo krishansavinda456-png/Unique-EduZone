@@ -241,90 +241,322 @@
 
         }
 
-        /* Lesson 1 readable light theme */
 
-body {
-    background: #ffffff !important;
-    color: #222222 !important;
-}
+        /* =========================================
+           Lesson 1 Interactive Activities
+           ========================================= */
 
-.lesson-container {
-    background: #ffffff !important;
-}
+        .activities-section {
 
-.lesson-section {
-    background: #ffffff !important;
-    color: #222222 !important;
-}
+            margin-bottom: 30px;
 
-.lesson-section h1,
-.lesson-section h2,
-.lesson-section h3,
-.lesson-section p,
-.lesson-section li,
-.lesson-section strong {
-    color: #222222 !important;
-}
+            padding: 25px;
 
-.lesson-header {
-    background: #f2f2f2 !important;
-    color: #222222 !important;
-}
+            border-radius: 12px;
 
-.lesson-header h1,
-.lesson-header h2,
-.lesson-header p {
-    color: #222222 !important;
-}
+            background: #ffffff;
 
-.definition-box {
-    background: #f5f5f5 !important;
-    color: #222222 !important;
-}
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 
-.example-box {
-    background: #fafafa !important;
-    color: #222222 !important;
-}
+        }
 
-.comparison-table {
-    color: #222222 !important;
-}
 
-.comparison-table th {
-    background: #eeeeee !important;
-    color: #222222 !important;
-}
+        .activities-section h2 {
 
-.comparison-table td {
-    background: #ffffff !important;
-    color: #222222 !important;
-}
+            margin-top: 0;
 
-.stakeholder-card {
-    background: #ffffff !important;
-    color: #222222 !important;
-}
+            padding-bottom: 10px;
 
-.summary-box {
-    background: #f3f3f3 !important;
-    color: #222222 !important;
-}
+            border-bottom: 2px solid #ddd;
 
-.summary-box li {
-    color: #222222 !important;
-}
+        }
 
-.quiz-area {
-    background: #eeeeee !important;
-    color: #222222 !important;
-}
 
-.quiz-area h2,
-.quiz-area p {
-    color: #222222 !important;
-}
-        
+        .activity-card {
+
+            margin: 20px 0;
+
+            padding: 22px;
+
+            border-radius: 12px;
+
+            background: #f8f8f8;
+
+            border: 1px solid #ddd;
+
+        }
+
+
+        .activity-card h3 {
+
+            margin-top: 0;
+
+        }
+
+
+        .activity-option {
+
+            display: block;
+
+            width: 100%;
+
+            margin: 10px 0;
+
+            padding: 12px 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            background: #ffffff;
+
+            color: #222222;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            font-size: 16px;
+
+        }
+
+
+        .activity-option:hover {
+
+            background: #eeeeee;
+
+        }
+
+
+        .activity-result {
+
+            margin-top: 12px;
+
+            font-weight: bold;
+
+            min-height: 24px;
+
+        }
+
+
+        .activity-score-box {
+
+            margin-top: 25px;
+
+            padding: 22px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            background: #eeeeee;
+
+        }
+
+
+        .activity-score-box h3 {
+
+            margin-top: 0;
+
+        }
+
+
+        #activityScore {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+        }
+
+
+        #activityFinalMessage {
+
+            margin-top: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================================
+           Readable Light Theme
+           ========================================= */
+
+        body {
+
+            background: #ffffff !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-container {
+
+            background: #ffffff !important;
+
+        }
+
+
+        .lesson-section {
+
+            background: #ffffff !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-section h1,
+        .lesson-section h2,
+        .lesson-section h3,
+        .lesson-section p,
+        .lesson-section li,
+        .lesson-section strong {
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-header {
+
+            background: #f2f2f2 !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-header h1,
+        .lesson-header h2,
+        .lesson-header p {
+
+            color: #222222 !important;
+
+        }
+
+
+        .definition-box {
+
+            background: #f5f5f5 !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .example-box {
+
+            background: #fafafa !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .comparison-table {
+
+            color: #222222 !important;
+
+        }
+
+
+        .comparison-table th {
+
+            background: #eeeeee !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .comparison-table td {
+
+            background: #ffffff !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .stakeholder-card {
+
+            background: #ffffff !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .summary-box {
+
+            background: #f3f3f3 !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .summary-box li {
+
+            color: #222222 !important;
+
+        }
+
+
+        .quiz-area {
+
+            background: #eeeeee !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .quiz-area h2,
+        .quiz-area p {
+
+            color: #222222 !important;
+
+        }
+
+
+        .activities-section {
+
+            background: #ffffff !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .activities-section h2,
+        .activities-section h3,
+        .activities-section p {
+
+            color: #222222 !important;
+
+        }
+
+
+        .activity-card {
+
+            background: #f8f8f8 !important;
+
+            color: #222222 !important;
+
+        }
+
+
+        .activity-card h3,
+        .activity-card p {
+
+            color: #222222 !important;
+
+        }
+
     </style>
 
 </head>
@@ -346,17 +578,21 @@ body {
             Home
         </a>
 
+
         <a href="lessons.html">
             Lessons
         </a>
+
 
         <a href="quiz.html">
             MCQ
         </a>
 
+
         <a href="dashboard.html">
             Dashboard
         </a>
+
 
         <a href="profile.html">
             Profile
@@ -1273,285 +1509,320 @@ body {
 
     </section>
 
+
+
     <!-- =========================================
-     INTERACTIVE ACTIVITIES
-     Lesson 1
-     ========================================= -->
+         INTERACTIVE ACTIVITIES
+         ========================================= -->
 
-<section class="interactive-activities">
+    <section class="activities-section">
 
-    <div class="activity-heading">
-
-        <h2>🎯 Interactive Learning Activities</h2>
-
-        <p>
-            පාඩමෙන් ඉගෙනගත් දේ ක්‍රියාකාරකම් මගින් පරීක්ෂා කර බලන්න.
-        </p>
-
-    </div>
-
-
-    <!-- Activity 01 -->
-
-    <div class="activity-card">
-
-        <span class="activity-number">
-            Activity 01
-        </span>
-
-        <h3>
-            🎯 Need or Want?
-        </h3>
+        <h2>
+            🎯 පාඩම 01 — Interactive Activities
+        </h2>
 
         <p>
-            පහත දේවල් අතරින් අවශ්‍යතාවක් ලෙස සැලකිය හැක්කේ කුමක්ද?
+            පාඩමේ කරුණු අවබෝධ කරගෙන තිබේදැයි පරීක්ෂා කිරීමට
+            පහත ක්‍රියාකාරකම් සම්පූර්ණ කරන්න.
         </p>
 
-        <div class="activity-options">
+
+        <!-- ACTIVITY 01 -->
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 01 — අවශ්‍යතාවක්ද? වුවමනාවක්ද?
+            </h3>
+
+            <p>
+                මිනිසාට ජීවත් වීමට අත්‍යවශ්‍ය දෙයක් තෝරන්න.
+            </p>
+
 
             <button
-                onclick="checkActivity1(this, false)"
-            >
-                නවතම Smartphone එක
-            </button>
-
-            <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity1(this, true)"
             >
-                ආහාර
+                🍚 ආහාර
             </button>
 
+
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity1(this, false)"
             >
-                මිල අධික සුවඳ විලවුන්
+                🎮 Video Game
             </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity1(this, false)"
+            >
+                🎧 Headphones
+            </button>
+
+
+            <div
+                id="activity1Result"
+                class="activity-result"
+            ></div>
 
         </div>
 
-        <p
-            id="activity1Result"
-            class="activity-result"
-        ></p>
-
-    </div>
 
 
+        <!-- ACTIVITY 02 -->
 
-    <!-- Activity 02 -->
+        <div class="activity-card">
 
-    <div class="activity-card">
+            <h3>
+                Activity 02 — භාණ්ඩ හෝ සේවා?
+            </h3>
 
-        <span class="activity-number">
-            Activity 02
-        </span>
+            <p>
+                බැංකුවක් ප්‍රධාන වශයෙන් අයත් වන්නේ කුමන ව්‍යාපාර වර්ගයටද?
+            </p>
 
-        <h3>
-            🔎 Business Detective
-        </h3>
-
-        <p>
-            ගෘහ භාණ්ඩ නිෂ්පාදනය කරන ආයතනයක් කුමන වර්ගයේ
-            ව්‍යාපාරයකට අයත්ද?
-        </p>
-
-        <div class="activity-options">
 
             <button
-                onclick="checkActivity2(this, true)"
-            >
-                භාණ්ඩ නිෂ්පාදන ව්‍යාපාරය
-            </button>
-
-            <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity2(this, false)"
             >
-                සේවා ව්‍යාපාරය
+                🏭 භාණ්ඩ නිෂ්පාදන ව්‍යාපාර
             </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity2(this, true)"
+            >
+                🏦 සේවා සැපයීමේ ව්‍යාපාර
+            </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity2(this, false)"
+            >
+                🌾 කෘෂිකාර්මික ව්‍යාපාර පමණක්
+            </button>
+
+
+            <div
+                id="activity2Result"
+                class="activity-result"
+            ></div>
 
         </div>
 
-        <p
-            id="activity2Result"
-            class="activity-result"
-        ></p>
-
-    </div>
 
 
+        <!-- ACTIVITY 03 -->
 
-    <!-- Activity 03 -->
+        <div class="activity-card">
 
-    <div class="activity-card">
+            <h3>
+                Activity 03 — නිෂ්පාදන සාධක
+            </h3>
 
-        <span class="activity-number">
-            Activity 03
-        </span>
+            <p>
+                යන්ත්‍රයක් නිෂ්පාදන සාධක අතරින් කුමකට අයත් වේද?
+            </p>
 
-        <h3>
-            🏭 Production Factor Challenge
-        </h3>
-
-        <p>
-            ව්‍යාපාරයක සේවකයෙකු ලබාදෙන කායික හා මානසික
-            දායකත්වය අයත් වන්නේ කුමන නිෂ්පාදන සාධකයටද?
-        </p>
-
-        <div class="activity-options">
 
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity3(this, false)"
             >
-                භූමිය
+                🌍 භූමිය
             </button>
 
+
             <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity3(this, false)"
+            >
+                👷 ශ්‍රමය
+            </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity3(this, true)"
             >
-                ශ්‍රමය
+                ⚙️ ප්‍රාග්ධනය
             </button>
 
-            <button
-                onclick="checkActivity3(this, false)"
-            >
-                ප්‍රාග්ධනය
-            </button>
 
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity3(this, false)"
             >
-                ව්‍යවසාය
+                👤 ව්‍යවසාය
             </button>
+
+
+            <div
+                id="activity3Result"
+                class="activity-result"
+            ></div>
 
         </div>
 
-        <p
-            id="activity3Result"
-            class="activity-result"
-        ></p>
-
-    </div>
 
 
+        <!-- ACTIVITY 04 -->
 
-    <!-- Activity 04 -->
+        <div class="activity-card">
 
-    <div class="activity-card">
+            <h3>
+                Activity 04 — ඇල්මැති පාර්ශ්ව
+            </h3>
 
-        <span class="activity-number">
-            Activity 04
-        </span>
+            <p>
+                ව්‍යාපාරයකින් භාණ්ඩ හා සේවා ලබා ගන්නා පාර්ශ්වය කවුද?
+            </p>
 
-        <h3>
-            👥 Stakeholder Challenge
-        </h3>
-
-        <p>
-            ව්‍යාපාරයකින් භාණ්ඩ මිලදී ගන්නා පුද්ගලයා
-            කුමන ඇල්මැති පාර්ශ්වයක්ද?
-        </p>
-
-        <div class="activity-options">
 
             <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity4(this, false)"
+            >
+                👨‍💼 කළමනාකරුවන්
+            </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity4(this, true)"
             >
-                ගනුදෙනුකරු
+                🛒 ගනුදෙනුකරුවන්
             </button>
 
-            <button
-                onclick="checkActivity4(this, false)"
-            >
-                යන්ත්‍රය
-            </button>
 
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity4(this, false)"
             >
-                ගොඩනැගිල්ල
+                🏛️ රජය
             </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity4(this, false)"
+            >
+                🏦 මූල්‍ය ආයතන
+            </button>
+
+
+            <div
+                id="activity4Result"
+                class="activity-result"
+            ></div>
 
         </div>
 
-        <p
-            id="activity4Result"
-            class="activity-result"
-        ></p>
-
-    </div>
 
 
+        <!-- ACTIVITY 05 -->
 
-    <!-- Activity 05 -->
+        <div class="activity-card">
 
-    <div class="activity-card">
+            <h3>
+                Activity 05 — ව්‍යාපාර අරමුණ
+            </h3>
 
-        <span class="activity-number">
-            Activity 05
-        </span>
+            <p>
+                ව්‍යාපාරයක හිමිකරුවන් විසින් යොදවන ලද ප්‍රාග්ධනයට
+                ප්‍රතිලාභයක් ලබා දීම සඳහා වැදගත් වන අරමුණ කුමක්ද?
+            </p>
 
-        <h3>
-            🧠 Business Decision
-        </h3>
-
-        <p>
-            කුඩා ආහාර ව්‍යාපාරයකට නව ගනුදෙනුකරුවන්
-            වැඩි කර ගැනීමට අවශ්‍යයි. පහත ක්‍රියාමාර්ග
-            අතරින් වඩාත් සුදුසු එක තෝරන්න.
-        </p>
-
-        <div class="activity-options">
 
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity5(this, false)"
             >
-                ගනුදෙනුකරුවන් නොසලකා හැරීම
+                👥 රැකියා අවස්ථා ඇති කිරීම
             </button>
 
+
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity5(this, true)"
             >
-                ගනුදෙනුකරුවන්ගේ අවශ්‍යතා හඳුනාගෙන
-                සුදුසු භාණ්ඩ හා සේවා සැපයීම
+                💰 ලාභ ඉපයීම
             </button>
 
+
             <button
+                type="button"
+                class="activity-option"
                 onclick="checkActivity5(this, false)"
             >
-                ව්‍යාපාරය වසා දැමීම
+                🏥 සේවක සුභසාධනය
             </button>
+
+
+            <button
+                type="button"
+                class="activity-option"
+                onclick="checkActivity5(this, false)"
+            >
+                ⭐ පාරිභෝගික තෘප්තිය වැඩි කිරීම
+            </button>
+
+
+            <div
+                id="activity5Result"
+                class="activity-result"
+            ></div>
 
         </div>
 
-        <p
-            id="activity5Result"
-            class="activity-result"
-        ></p>
-
-    </div>
 
 
+        <!-- ACTIVITY SCORE -->
 
-    <!-- Activity Summary -->
+        <div class="activity-score-box">
 
-    <div class="activity-summary">
+            <h3>
+                🏆 Activity Score
+            </h3>
 
-        <h3>
-            🏆 Activity Score
-        </h3>
 
-        <p>
-            ඔබගේ ලකුණු:
-            <strong id="activityScore">
+            <div id="activityScore">
                 0 / 5
-            </strong>
-        </p>
+            </div>
 
-        <p id="activityFinalMessage"></p>
 
-    </div>
+            <p id="activityFinalMessage">
+                Activities ආරම්භ කරන්න.
+            </p>
 
-</section>
+        </div>
+
+    </section>
+
+
 
     <!-- QUIZ -->
 
@@ -1603,6 +1874,230 @@ body {
     </p>
 
 </footer>
+
+
+
+<!-- =========================================
+     Lesson 1 Interactive Activities JavaScript
+     ========================================= -->
+
+<script>
+
+/* =========================================
+   Lesson 1 Interactive Activities
+   ========================================= */
+
+let activityScore = 0;
+
+const activityAnswered = {
+
+    activity1: false,
+
+    activity2: false,
+
+    activity3: false,
+
+    activity4: false,
+
+    activity5: false
+
+};
+
+
+/* Update Score */
+
+function updateActivityScore() {
+
+    document.getElementById(
+        "activityScore"
+    ).textContent =
+        activityScore + " / 5";
+
+
+    if (activityScore === 5) {
+
+        document.getElementById(
+            "activityFinalMessage"
+        ).textContent =
+            "🎉 Excellent! ඔබ සියලුම Activities සාර්ථකව සම්පූර්ණ කළා.";
+
+    }
+
+    else if (activityScore >= 3) {
+
+        document.getElementById(
+            "activityFinalMessage"
+        ).textContent =
+            "👍 Good work! තවත් ටිකක් පුහුණු වන්න.";
+
+    }
+
+    else {
+
+        document.getElementById(
+            "activityFinalMessage"
+        ).textContent =
+            "📚 පාඩම නැවත කියවා Activities නැවත උත්සාහ කරන්න.";
+
+    }
+
+}
+
+
+/* Activity 01 */
+
+function checkActivity1(button, correct) {
+
+    if (activityAnswered.activity1) {
+
+        return;
+
+    }
+
+    activityAnswered.activity1 = true;
+
+    showActivityResult(
+        button,
+        correct,
+        "activity1Result"
+    );
+
+}
+
+
+/* Activity 02 */
+
+function checkActivity2(button, correct) {
+
+    if (activityAnswered.activity2) {
+
+        return;
+
+    }
+
+    activityAnswered.activity2 = true;
+
+    showActivityResult(
+        button,
+        correct,
+        "activity2Result"
+    );
+
+}
+
+
+/* Activity 03 */
+
+function checkActivity3(button, correct) {
+
+    if (activityAnswered.activity3) {
+
+        return;
+
+    }
+
+    activityAnswered.activity3 = true;
+
+    showActivityResult(
+        button,
+        correct,
+        "activity3Result"
+    );
+
+}
+
+
+/* Activity 04 */
+
+function checkActivity4(button, correct) {
+
+    if (activityAnswered.activity4) {
+
+        return;
+
+    }
+
+    activityAnswered.activity4 = true;
+
+    showActivityResult(
+        button,
+        correct,
+        "activity4Result"
+    );
+
+}
+
+
+/* Activity 05 */
+
+function checkActivity5(button, correct) {
+
+    if (activityAnswered.activity5) {
+
+        return;
+
+    }
+
+    activityAnswered.activity5 = true;
+
+    showActivityResult(
+        button,
+        correct,
+        "activity5Result"
+    );
+
+}
+
+
+/* Common Result Function */
+
+function showActivityResult(
+    button,
+    correct,
+    resultId
+) {
+
+    const result =
+        document.getElementById(resultId);
+
+
+    if (correct) {
+
+        activityScore++;
+
+
+        button.style.background =
+            "#198754";
+
+        button.style.color =
+            "#ffffff";
+
+
+        result.textContent =
+            "✅ නිවැරදියි!";
+
+    }
+
+    else {
+
+        button.style.background =
+            "#dc3545";
+
+        button.style.color =
+            "#ffffff";
+
+
+        result.textContent =
+            "❌ වැරදියි. පාඩම නැවත බලන්න.";
+
+    }
+
+
+    updateActivityScore();
+
+}
+
+</script>
 
 
 </body>
