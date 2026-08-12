@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 
 <head>
 
@@ -10,9 +10,10 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Lesson 1 Quiz | Unique EduZone
+    <title id="pageTitle">
+        MCQ Quiz | Unique EduZone
     </title>
+
 
     <link
         rel="stylesheet"
@@ -24,11 +25,251 @@
         href="../assets/css/quiz.css"
     >
 
+
+    <style>
+
+        /* =========================================
+           Quiz Page
+           ========================================= */
+
+        .quiz-container {
+
+            max-width: 900px;
+
+            margin: 40px auto;
+
+            padding: 30px 20px;
+
+        }
+
+
+        .quiz-title-box {
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            margin-bottom: 25px;
+
+            border-radius: 15px;
+
+            background: #f2f2f2;
+
+        }
+
+
+        .quiz-title-box h1 {
+
+            margin: 0 0 10px 0;
+
+            color: #222;
+
+        }
+
+
+        .quiz-title-box p {
+
+            margin: 0;
+
+            color: #555;
+
+        }
+
+
+        /* Timer */
+
+        .timer-box {
+
+            text-align: center;
+
+            padding: 15px;
+
+            margin-bottom: 20px;
+
+            border-radius: 10px;
+
+            background: #eeeeee;
+
+            color: #222;
+
+        }
+
+
+        .timer-box strong {
+
+            margin-left: 8px;
+
+        }
+
+
+        /* Progress */
+
+        .quiz-progress-container {
+
+            width: 100%;
+
+            height: 10px;
+
+            margin-bottom: 25px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background: #dddddd;
+
+        }
+
+
+        .quiz-progress {
+
+            height: 100%;
+
+            width: 0%;
+
+            transition: width 0.3s ease;
+
+        }
+
+
+        /* Question */
+
+        .question-box {
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 2px 10px
+                rgba(0,0,0,0.08);
+
+        }
+
+
+        .question-box h2 {
+
+            margin-top: 0;
+
+            color: #222;
+
+        }
+
+
+        .question-box p {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #222;
+
+        }
+
+
+        /* Options */
+
+        .options-box {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+        }
+
+
+        .quiz-option {
+
+            width: 100%;
+
+            padding: 15px 18px;
+
+            border: 1px solid #cccccc;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            color: #222222;
+
+            text-align: left;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .quiz-option:hover {
+
+            background: #f2f2f2;
+
+        }
+
+
+        .quiz-option.selected {
+
+            border: 2px solid #222222;
+
+            background: #eeeeee;
+
+        }
+
+
+        /* Next Button */
+
+        .next-button {
+
+            display: block;
+
+            margin: 25px auto 0 auto;
+
+            padding: 13px 30px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #222222;
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        .next-button:hover {
+
+            opacity: 0.9;
+
+        }
+
+
+    </style>
+
 </head>
 
 
 <body>
 
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
 
 <header class="site-header">
 
@@ -43,17 +284,21 @@
             Home
         </a>
 
+
         <a href="lessons.html">
             Lessons
         </a>
+
 
         <a href="quiz.html">
             MCQ
         </a>
 
+
         <a href="dashboard.html">
             Dashboard
         </a>
+
 
         <a href="profile.html">
             Profile
@@ -65,24 +310,27 @@
 
 
 
+<!-- =========================================
+     MAIN QUIZ
+     ========================================= -->
+
 <main class="quiz-container">
 
 
-    <!-- Quiz Title -->
+    <!-- Dynamic Lesson Title -->
 
-    <h1>
-        Lesson 1 Quiz
-    </h1>
+    <section class="quiz-title-box">
 
-
-    <p>
-        ව්‍යාපාර පිළිබඳ මූලික පදනම
-    </p>
+        <h1 id="quizTitle">
+            MCQ Quiz
+        </h1>
 
 
-    <p>
-        ප්‍රශ්න 10ක්
-    </p>
+        <p id="quizDescription">
+            පාඩමට අදාළ ප්‍රශ්න 10ට පිළිතුරු සපයන්න.
+        </p>
+
+    </section>
 
 
 
@@ -91,24 +339,14 @@
     <div class="timer-box">
 
         <span>
-            Time Remaining:
+            ඉතිරි කාලය:
         </span>
+
 
         <strong id="quizTimer">
             01:00
         </strong>
 
-    </div>
-
-
-
-    <!-- Question Number -->
-
-    <div
-        id="questionNumber"
-        class="question-number"
-    >
-        Question 1 of 10
     </div>
 
 
@@ -120,7 +358,6 @@
         <div
             id="quizProgress"
             class="quiz-progress"
-            style="width:0%;"
         ></div>
 
     </div>
@@ -132,8 +369,7 @@
     <div
         id="questionBox"
         class="question-box"
-    >
-    </div>
+    ></div>
 
 
 
@@ -142,37 +378,28 @@
     <div
         id="optionsBox"
         class="options-box"
-    >
-    </div>
+    ></div>
 
 
 
-    <!-- Next Button -->
+    <!-- Next -->
 
     <button
         id="nextButton"
         onclick="nextQuestion()"
         class="next-button"
-        disabled
     >
         Next
     </button>
 
 
-
-    <!-- Quiz Information -->
-
-    <p
-        id="quizMessage"
-        class="quiz-message"
-    >
-        පිළිතුරක් තෝරා Next ඔබන්න.
-    </p>
-
-
 </main>
 
 
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
 
 <footer class="site-footer">
 
@@ -184,7 +411,98 @@
 
 
 
-<script src="../assets/js/quiz.js"></script>
+<!-- =========================================
+     DYNAMIC LESSON TITLE
+     ========================================= -->
+
+<script>
+
+    /* =========================================
+       Get Lesson Number from URL
+       ========================================= */
+
+    const urlParams =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const lessonNumber =
+        urlParams.get("lesson") || "1";
+
+
+
+    /* =========================================
+       Lesson Title
+       ========================================= */
+
+    const quizTitle =
+        document.getElementById(
+            "quizTitle"
+        );
+
+
+    const quizDescription =
+        document.getElementById(
+            "quizDescription"
+        );
+
+
+    const pageTitle =
+        document.getElementById(
+            "pageTitle"
+        );
+
+
+
+    if (lessonNumber === "2") {
+
+
+        /* Lesson 2 */
+
+        quizTitle.textContent =
+            "Lesson 2 Quiz — ව්‍යාපාර පරිසරය";
+
+
+        quizDescription.textContent =
+            "ව්‍යාපාර පරිසරය පිළිබඳ පාඩමට අදාළ ප්‍රශ්න 10ට පිළිතුරු සපයන්න.";
+
+
+        pageTitle.textContent =
+            "Lesson 2 Quiz | ව්‍යාපාර පරිසරය | Unique EduZone";
+
+
+    }
+
+    else {
+
+
+        /* Lesson 1 */
+
+        quizTitle.textContent =
+            "Lesson 1 Quiz — ව්‍යාපාර පිළිබඳ මූලික පදනම";
+
+
+        quizDescription.textContent =
+            "ව්‍යාපාර පිළිබඳ මූලික පදනම පාඩමට අදාළ ප්‍රශ්න 10ට පිළිතුරු සපයන්න.";
+
+
+        pageTitle.textContent =
+            "Lesson 1 Quiz | ව්‍යාපාර පිළිබඳ මූලික පදනම | Unique EduZone";
+
+    }
+
+</script>
+
+
+
+<!-- =========================================
+     QUIZ JAVASCRIPT
+     ========================================= -->
+
+<script
+    src="../assets/js/quiz.js"
+></script>
 
 
 </body>
