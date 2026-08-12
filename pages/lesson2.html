@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 2 | ව්‍යාපාර පරිසරය | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           LESSON 2
+           ========================================= */
+
+        body {
+            background: #ffffff !important;
+            color: #222222 !important;
+        }
+
+
+        .lesson-container {
+
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 30px 20px;
+
+        }
+
+
+        .lesson-header {
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            margin-bottom: 25px;
+
+            border-radius: 15px;
+
+            background: #f2f2f2;
+
+            color: #222222;
+
+        }
+
+
+        .lesson-header h1,
+        .lesson-header h2,
+        .lesson-header p {
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-header h1 {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .lesson-section {
+
+            margin-bottom: 25px;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            color: #222222;
+
+            box-shadow:
+                0 2px 10px rgba(0,0,0,0.08);
+
+        }
+
+
+        .lesson-section h2 {
+
+            margin-top: 0;
+
+            padding-bottom: 10px;
+
+            border-bottom: 2px solid #ddd;
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-section h3 {
+
+            margin-top: 20px;
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-section p {
+
+            line-height: 1.9;
+
+            color: #222222 !important;
+
+        }
+
+
+        .lesson-section li {
+
+            line-height: 1.9;
+
+            margin-bottom: 7px;
+
+            color: #222222 !important;
+
+        }
+
+
+        .definition-box {
+
+            padding: 20px;
+
+            margin: 15px 0;
+
+            border-left: 5px solid #333;
+
+            background: #f5f5f5;
+
+            border-radius: 8px;
+
+            color: #222222;
+
+        }
+
+
+        .example-box {
+
+            padding: 20px;
+
+            margin: 15px 0;
+
+            background: #fafafa;
+
+            border-radius: 8px;
+
+            border: 1px solid #ddd;
+
+            color: #222222;
+
+        }
+
+
+        .comparison-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin-top: 15px;
+
+            color: #222222;
+
+        }
+
+
+        .comparison-table th,
+        .comparison-table td {
+
+            border: 1px solid #ccc;
+
+            padding: 12px;
+
+            text-align: left;
+
+            color: #222222;
+
+        }
+
+
+        .comparison-table th {
+
+            background: #eeeeee;
+
+        }
+
+
+        .comparison-table td {
+
+            background: #ffffff;
+
+        }
+
+
+        /* =========================================
+           ENVIRONMENT CARDS
+           ========================================= */
+
+        .environment-card {
+
+            padding: 20px;
+
+            margin: 15px 0;
+
+            border-radius: 12px;
+
+            border: 1px solid #ddd;
+
+            background: #fafafa;
+
+        }
+
+
+        .environment-card h3 {
+
+            margin-top: 0;
+
+        }
+
+
+        .environment-card ul {
+
+            padding-left: 25px;
+
+        }
+
+
+        /* =========================================
+           SWOT
+           ========================================= */
+
+        .swot-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .swot-card {
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            border: 1px solid #ddd;
+
+            background: #ffffff;
+
+        }
+
+
+        .swot-card h3 {
+
+            margin-top: 0;
+
+        }
+
+
+        .strength {
+
+            border-left: 6px solid #198754;
+
+        }
+
+
+        .weakness {
+
+            border-left: 6px solid #dc3545;
+
+        }
+
+
+        .opportunity {
+
+            border-left: 6px solid #0d6efd;
+
+        }
+
+
+        .threat {
+
+            border-left: 6px solid #fd7e14;
+
+        }
+
+
+        /* =========================================
+           ACTIVITIES
+           ========================================= */
+
+        .activities-area {
+
+            margin-top: 30px;
+
+        }
+
+
+        .activity-card {
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+            border: 1px solid #ddd;
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.06);
+
+        }
+
+
+        .activity-card h3 {
+
+            margin-top: 0;
+
+        }
+
+
+        .activity-option {
+
+            display: block;
+
+            width: 100%;
+
+            margin: 10px 0;
+
+            padding: 12px 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            background: #f8f8f8;
+
+            color: #222222;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            font-size: 15px;
+
+        }
+
+
+        .activity-option:hover {
+
+            background: #eeeeee;
+
+        }
+
+
+        .activity-result {
+
+            margin-top: 12px;
+
+            font-weight: bold;
+
+            min-height: 24px;
+
+        }
+
+
+        .activity-score-box {
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 25px;
+
+            border-radius: 12px;
+
+            background: #f2f2f2;
+
+        }
+
+
+        #activityScore {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+        }
+
+
+        #activityFinalMessage {
+
+            margin-top: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================================
+           QUIZ
+           ========================================= */
+
+        .quiz-area {
+
+            text-align: center;
+
+            margin: 35px 0;
+
+            padding: 35px 20px;
+
+            border-radius: 15px;
+
+            background: #eeeeee;
+
+            color: #222222;
+
+        }
+
+
+        .quiz-area h2,
+        .quiz-area p {
+
+            color: #222222 !important;
+
+        }
+
+
+        .quiz-button {
+
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            margin-top: 15px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            background: #222;
+
+            color: white;
+
+        }
+
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            background: #ddd;
+
+            color: #111;
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .swot-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .lesson-section {
+
+                padding: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-container">
+
+
+    <!-- =========================================
+         LESSON HEADER
+         ========================================= -->
+
+    <section class="lesson-header">
+
+        <h1>
+            පාඩම 02
+        </h1>
+
+        <h2>
+            ව්‍යාපාර පරිසරය
+        </h2>
+
+        <p>
+            10 ශ්‍රේණිය — ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         1. BUSINESS ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            1. ව්‍යාපාර පරිසරය
+        </h2>
+
+
+        <div class="definition-box">
+
+            <strong>
+                ව්‍යාපාර පරිසරය යනු,
+            </strong>
+
+            <p>
+                ව්‍යාපාරයක ක්‍රියාකාරකම් කෙරෙහි බලපෑම් ඇති කරන
+                ව්‍යාපාරය තුළ හා ව්‍යාපාරයෙන් බාහිරව පවතින
+                විවිධ පාර්ශ්ව හා සාධක සමූහයයි.
+            </p>
+
+        </div>
+
+
+        <p>
+            ව්‍යාපාරයක් තනිවම ක්‍රියාත්මක නොවේ.
+            ව්‍යාපාරයේ අභ්‍යන්තරයේ සිටින පුද්ගලයන්,
+            ගනුදෙනුකරුවන්, සැපයුම්කරුවන්, තරඟකරුවන්,
+            රජය, තාක්ෂණය සහ ආර්ථික තත්ත්වයන් වැනි
+            විවිධ සාධක ව්‍යාපාරයේ ක්‍රියාකාරකම්වලට බලපායි.
+        </p>
+
+
+        <p>
+            එම නිසා ව්‍යාපාරයකට පරිසරයේ සිදුවන වෙනස්කම්
+            හඳුනාගෙන ඒවාට ගැළපෙන පරිදි තම ක්‍රියාකාරකම්
+            වෙනස් කර ගැනීම වැදගත් වේ.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         2. INTERNAL AND EXTERNAL
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            2. ව්‍යාපාර පරිසරයේ ප්‍රධාන කොටස්
+        </h2>
+
+
+        <p>
+            ව්‍යාපාර පරිසරය ප්‍රධාන වශයෙන්
+            <strong>අභ්‍යන්තර පරිසරය</strong> සහ
+            <strong>බාහිර පරිසරය</strong> ලෙස
+            වර්ග කළ හැක.
+        </p>
+
+
+
+        <div class="environment-card">
+
+            <h3>
+                🏢 2.1 අභ්‍යන්තර පරිසරය
+            </h3>
+
+            <p>
+                ව්‍යාපාරය තුළම පවතින සහ ව්‍යාපාරයේ
+                ක්‍රියාකාරකම්වලට සෘජුව බලපාන පාර්ශ්ව හා
+                සාධක අභ්‍යන්තර පරිසරයට අයත් වේ.
+            </p>
+
+            <ul>
+
+                <li>
+                    හිමිකරුවන්
+                </li>
+
+                <li>
+                    කළමනාකරුවන්
+                </li>
+
+                <li>
+                    සේවකයන්
+                </li>
+
+                <li>
+                    ව්‍යාපාරයේ මූල්‍ය ශක්තිය
+                </li>
+
+                <li>
+                    කළමනාකරණ හැකියාව
+                </li>
+
+                <li>
+                    සේවකයන්ගේ දැනුම හා කුසලතා
+                </li>
+
+                <li>
+                    ව්‍යාපාරය සතු සම්පත්
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="environment-card">
+
+            <h3>
+                🌍 2.2 බාහිර පරිසරය
+            </h3>
+
+            <p>
+                ව්‍යාපාරයෙන් පිටත පවතින නමුත් ව්‍යාපාරයේ
+                ක්‍රියාකාරකම්වලට බලපෑම් ඇති කරන පාර්ශ්ව හා
+                සාධක බාහිර පරිසරයට අයත් වේ.
+            </p>
+
+            <ul>
+
+                <li>
+                    ගනුදෙනුකරුවන්
+                </li>
+
+                <li>
+                    සැපයුම්කරුවන්
+                </li>
+
+                <li>
+                    තරඟකරුවන්
+                </li>
+
+                <li>
+                    දේශපාලන පරිසරය
+                </li>
+
+                <li>
+                    නෛතික පරිසරය
+                </li>
+
+                <li>
+                    තාක්ෂණික පරිසරය
+                </li>
+
+                <li>
+                    ආර්ථික පරිසරය
+                </li>
+
+                <li>
+                    ගෝලීය පරිසරය
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         3. INTERNAL ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            3. අභ්‍යන්තර පරිසරය
+        </h2>
+
+
+        <h3>
+            3.1 හිමිකරුවන්
+        </h3>
+
+        <p>
+            ව්‍යාපාරයට ප්‍රාග්ධනය සපයන සහ ව්‍යාපාරයේ
+            හිමිකාරිත්වය දරන පුද්ගලයන් ව්‍යාපාරයේ
+            ක්‍රියාකාරකම්වලට බලපෑම් ඇති කරයි.
+        </p>
+
+
+        <h3>
+            3.2 කළමනාකරුවන්
+        </h3>
+
+        <p>
+            ව්‍යාපාරය මෙහෙයවීම, සැලසුම් කිරීම,
+            තීරණ ගැනීම සහ සම්පත් නිසි ලෙස භාවිත කිරීම
+            කළමනාකරුවන්ගේ වැදගත් කාර්යයන් වේ.
+        </p>
+
+
+        <h3>
+            3.3 සේවකයන්
+        </h3>
+
+        <p>
+            සේවකයන්ගේ දැනුම, කුසලතා, අත්දැකීම්,
+            කැපවීම සහ කාර්යක්ෂමතාව ව්‍යාපාරයේ
+            සාර්ථකත්වයට බලපායි.
+        </p>
+
+
+        <div class="example-box">
+
+            <strong>
+                මතක තබා ගන්න:
+            </strong>
+
+            <p>
+                අභ්‍යන්තර පරිසරයේ සාධක ව්‍යාපාරය තුළින්ම
+                හඳුනාගත හැකි බැවින් ඒවා ව්‍යාපාරයේ
+                <strong>ශක්තීන් හා දුර්වලතා</strong>
+                හඳුනාගැනීමට උපකාරී වේ.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         4. EXTERNAL ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            4. බාහිර පරිසරය
+        </h2>
+
+
+        <h3>
+            4.1 ගනුදෙනුකරුවන්
+        </h3>
+
+        <p>
+            ව්‍යාපාරයෙන් භාණ්ඩ හා සේවා ලබා ගන්නා
+            පාරිභෝගිකයන්ගේ අවශ්‍යතා, වුවමනා සහ
+            මිලදී ගැනීමේ හැසිරීම ව්‍යාපාරයට බලපායි.
+        </p>
+
+
+        <h3>
+            4.2 සැපයුම්කරුවන්
+        </h3>
+
+        <p>
+            ව්‍යාපාරයට අවශ්‍ය අමුද්‍රව්‍ය, භාණ්ඩ හා
+            සේවා සපයන සැපයුම්කරුවන්ගේ ක්‍රියාකාරකම්
+            ව්‍යාපාරයේ නිෂ්පාදනයට හා සේවා සැපයීමට බලපායි.
+        </p>
+
+
+        <h3>
+            4.3 තරඟකරුවන්
+        </h3>
+
+        <p>
+            සමාන භාණ්ඩ හා සේවා සපයන වෙනත් ව්‍යාපාර
+            සමඟ ඇති තරඟය ව්‍යාපාරයේ මිල, ගුණාත්මකභාවය,
+            අලෙවිකරණය සහ නවෝත්පාදනයට බලපායි.
+        </p>
+
+
+        <h3>
+            4.4 දේශපාලන හා නෛතික පරිසරය
+        </h3>
+
+        <p>
+            රජයේ ප්‍රතිපත්ති, නීති, රෙගුලාසි සහ
+            පාලන තීරණ ව්‍යාපාර ක්‍රියාකාරකම් කෙරෙහි
+            බලපෑම් ඇති කරයි.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         5. TECHNOLOGICAL ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            5. තාක්ෂණික පරිසරය
+        </h2>
+
+
+        <p>
+            තාක්ෂණයේ සිදුවන වෙනස්කම් ව්‍යාපාරයක
+            නිෂ්පාදන ක්‍රම, සන්නිවේදනය, ප්‍රවාහනය,
+            තොරතුරු පද්ධති සහ අලෙවිකරණ ක්‍රියාකාරකම්
+            කෙරෙහි බලපායි.
+        </p>
+
+
+        <div class="example-box">
+
+            <strong>
+                උදාහරණ:
+            </strong>
+
+            <ul>
+
+                <li>
+                    පරිගණක තාක්ෂණය
+                </li>
+
+                <li>
+                    අන්තර්ජාලය
+                </li>
+
+                <li>
+                    ඩිජිටල් තාක්ෂණය
+                </li>
+
+                <li>
+                    නවීන ප්‍රවාහන තාක්ෂණය
+                </li>
+
+                <li>
+                    තොරතුරු තාක්ෂණ පද්ධති
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <p>
+            නව තාක්ෂණය නිසි ලෙස භාවිත කිරීමෙන්
+            ව්‍යාපාරයක කාර්යක්ෂමතාව හා තරඟකාරීත්වය
+            වැඩි කරගත හැක.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         6. ECONOMIC ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            6. ආර්ථික පරිසරය
+        </h2>
+
+
+        <p>
+            රටක පවතින ආර්ථික තත්ත්වයන් ව්‍යාපාරයක
+            ආදායම, වියදම්, ආයෝජන සහ පාරිභෝගික ඉල්ලුමට
+            බලපායි.
+        </p>
+
+
+        <h3>
+            ප්‍රධාන ආර්ථික සාධක
+        </h3>
+
+        <ul>
+
+            <li>
+                පොලී අනුපාත
+            </li>
+
+            <li>
+                උද්ධමනය
+            </li>
+
+            <li>
+                ජාතික ආදායම
+            </li>
+
+            <li>
+                රැකියා නියුක්තිය
+            </li>
+
+            <li>
+                විදේශ විනිමය අනුපාත
+            </li>
+
+            <li>
+                ඉතුරුම්
+            </li>
+
+            <li>
+                ජාත්‍යන්තර ආර්ථික සම්බන්ධතා
+            </li>
+
+        </ul>
+
+
+        <div class="example-box">
+
+            <strong>
+                උදාහරණයක්:
+            </strong>
+
+            <p>
+                පොලී අනුපාත ඉහළ යාම ව්‍යාපාරයකට
+                ණය ලබා ගැනීමේ පිරිවැය වැඩි කිරීමට
+                හේතු විය හැක.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         7. GLOBAL ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            7. ගෝලීය පරිසරය සහ ව්‍යාපාර කටයුතු
+        </h2>
+
+
+        <p>
+            ලෝකයේ රටවල් අතර භාණ්ඩ, සේවා, ශ්‍රමය,
+            ප්‍රාග්ධනය සහ තාක්ෂණය හුවමාරු වීමේ
+            සම්බන්ධතාව ව්‍යාපාරවලට බලපායි.
+        </p>
+
+
+        <p>
+            ගෝලීයකරණය නිසා දේශීය ව්‍යාපාරවලට
+            විදේශ වෙළඳපොළවලට පිවිසීමට අවස්ථා
+            ලැබිය හැකි අතර විදේශීය ව්‍යාපාර සමඟ
+            තරඟ කිරීමටද සිදු වේ.
+        </p>
+
+
+        <div class="comparison-table">
+
+            <table class="comparison-table">
+
+                <tr>
+
+                    <th>
+                        හිතකර බලපෑම්
+                    </th>
+
+                    <th>
+                        අහිතකර බලපෑම්
+                    </th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        නව වෙළඳපොළවලට පිවිසීමේ අවස්ථා
+                    </td>
+
+                    <td>
+                        විදේශීය තරඟය වැඩි වීම
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        නව තාක්ෂණය ලබා ගැනීම
+                    </td>
+
+                    <td>
+                        දේශීය ව්‍යාපාරවලට දැඩි තරඟයක් ඇති වීම
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        විදේශ ආයෝජන ලබා ගැනීම
+                    </td>
+
+                    <td>
+                        ජාත්‍යන්තර වෙනස්කම්වලට බලපෑමට ලක්වීම
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         8. IMPORTANCE OF STUDYING ENVIRONMENT
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            8. ව්‍යාපාර පරිසරය අධ්‍යයනය කිරීමේ වැදගත්කම
+        </h2>
+
+
+        <p>
+            ව්‍යාපාර පරිසරය අධ්‍යයනය කිරීමෙන් ව්‍යාපාරයට
+            තමන්ගේ අභ්‍යන්තර තත්ත්වය සහ බාහිර පරිසරයේ
+            සිදුවන වෙනස්කම් හඳුනාගෙන නිවැරදි තීරණ
+            ගැනීමට හැකි වේ.
+        </p>
+
+
+        <div class="swot-grid">
+
+
+            <div class="swot-card strength">
+
+                <h3>
+                    🟢 ශක්තීන් — Strengths
+                </h3>
+
+                <p>
+                    ව්‍යාපාරය තුළ පවතින ධනාත්මක
+                    සාධක සහ වාසි.
+                </p>
+
+                <ul>
+
+                    <li>
+                        ප්‍රමාණවත් ප්‍රාග්ධනය
+                    </li>
+
+                    <li>
+                        පළපුරුදු කළමනාකරුවන්
+                    </li>
+
+                    <li>
+                        දක්ෂ සේවකයන්
+                    </li>
+
+                    <li>
+                        හොඳ තාක්ෂණික දැනුම
+                    </li>
+
+                </ul>
+
+                <strong>
+                    අභ්‍යන්තර සාධක
+                </strong>
+
+            </div>
+
+
+
+            <div class="swot-card weakness">
+
+                <h3>
+                    🔴 දුර්වලතා — Weaknesses
+                </h3>
+
+                <p>
+                    ව්‍යාපාරය තුළ පවතින අවාසිදායක
+                    හෝ දියුණු කළ යුතු සාධක.
+                </p>
+
+                <ul>
+
+                    <li>
+                        ප්‍රමාණවත් නොවන මූල්‍ය ශක්තිය
+                    </li>
+
+                    <li>
+                        පුහුණු සේවකයන්ගේ හිඟය
+                    </li>
+
+                    <li>
+                        යාවත්කාලීන නොවූ තාක්ෂණික දැනුම
+                    </li>
+
+                </ul>
+
+                <strong>
+                    අභ්‍යන්තර සාධක
+                </strong>
+
+            </div>
+
+
+
+            <div class="swot-card opportunity">
+
+                <h3>
+                    🔵 අවස්ථා — Opportunities
+                </h3>
+
+                <p>
+                    බාහිර පරිසරයෙන් ව්‍යාපාරයට
+                    ප්‍රයෝජනයක් ලබාගත හැකි අවස්ථා.
+                </p>
+
+                <ul>
+
+                    <li>
+                        පාරිභෝගික අවශ්‍යතා වෙනස් වීම
+                    </li>
+
+                    <li>
+                        අඩු පොලී ණය අවස්ථා
+                    </li>
+
+                    <li>
+                        බදු සහන
+                    </li>
+
+                    <li>
+                        නව වෙළඳපොළ
+                    </li>
+
+                </ul>
+
+                <strong>
+                    බාහිර සාධක
+                </strong>
+
+            </div>
+
+
+
+            <div class="swot-card threat">
+
+                <h3>
+                    🟠 තර්ජන — Threats
+                </h3>
+
+                <p>
+                    බාහිර පරිසරයෙන් ව්‍යාපාරයට
+                    අහිතකර බලපෑම් ඇති කළ හැකි සාධක.
+                </p>
+
+                <ul>
+
+                    <li>
+                        නව තරඟකරුවන්
+                    </li>
+
+                    <li>
+                        ස්වාභාවික ආපදා
+                    </li>
+
+                    <li>
+                        ජාත්‍යන්තර වෙළඳ වෙනස්කම්
+                    </li>
+
+                    <li>
+                        නව තාක්ෂණයට අනුගත වීමේ අපහසුතා
+                    </li>
+
+                </ul>
+
+                <strong>
+                    බාහිර සාධක
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="example-box">
+
+            <strong>
+                මතක තබාගන්න:
+            </strong>
+
+            <p>
+
+                <strong>
+                    අභ්‍යන්තර පරිසරය
+                </strong>
+                →
+                ශක්තීන් + දුර්වලතා
+
+                <br><br>
+
+                <strong>
+                    බාහිර පරිසරය
+                </strong>
+                →
+                අවස්ථා + තර්ජන
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ACTIVITIES
+         ========================================= -->
+
+    <section class="lesson-section activities-area">
+
+        <h2>
+            🎯 Lesson 2 Interactive Activities
+        </h2>
+
+
+        <p>
+            පාඩම හොඳින් අධ්‍යයනය කර පහත Activities
+            සම්පූර්ණ කරන්න.
+        </p>
+
+
+
+        <!-- Activity 1 -->
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 01 — පරිසරය හඳුනාගන්න
+            </h3>
+
+            <p>
+                ව්‍යාපාරයක සේවකයන්ගේ දක්ෂතාව
+                අයත් වන්නේ කුමන පරිසරයටද?
+            </p>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity1(this, true)"
+            >
+                A. අභ්‍යන්තර පරිසරය
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity1(this, false)"
+            >
+                B. බාහිර පරිසරය
+            </button>
+
+
+            <div
+                id="activity1Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 2 -->
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 02 — තාක්ෂණික පරිසරය
+            </h3>
+
+            <p>
+                අන්තර්ජාලය සහ ඩිජිටල් තාක්ෂණය
+                අයත් වන්නේ කුමන පරිසරයටද?
+            </p>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity2(this, false)"
+            >
+                A. ආර්ථික පරිසරය
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity2(this, true)"
+            >
+                B. තාක්ෂණික පරිසරය
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity2(this, false)"
+            >
+                C. අභ්‍යන්තර පරිසරය
+            </button>
+
+
+            <div
+                id="activity2Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 3 -->
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 03 — SWOT
+            </h3>
+
+            <p>
+                ව්‍යාපාරයකට ප්‍රමාණවත් ප්‍රාග්ධනයක්
+                තිබීම SWOT හි කුමන කොටසට අයත්ද?
+            </p>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity3(this, true)"
+            >
+                A. Strength — ශක්තිය
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity3(this, false)"
+            >
+                B. Weakness — දුර්වලතාව
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity3(this, false)"
+            >
+                C. Threat — තර්ජනය
+            </button>
+
+
+            <div
+                id="activity3Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 4 -->
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 04 — අවස්ථාවද? තර්ජනයද?
+            </h3>
+
+            <p>
+                රජය විසින් ව්‍යාපාරයට බදු සහනයක්
+                ලබා දීම SWOT හි කුමන කොටසට අයත්ද?
+            </p>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity4(this, false)"
+            >
+                A. Weakness — දුර්වලතාව
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity4(this, true)"
+            >
+                B. Opportunity — අවස්ථාව
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity4(this, false)"
+            >
+                C. Threat — තර්ජනය
+            </button>
+
+
+            <div
+                id="activity4Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- Activity 5 -->
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 05 — තර්ජනය හඳුනාගන්න
+            </h3>
+
+            <p>
+                නව තරඟකරුවෙකු වෙළඳපොළට පැමිණීම
+                SWOT හි කුමන කොටසට අයත්ද?
+            </p>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity5(this, false)"
+            >
+                A. Strength — ශක්තිය
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity5(this, false)"
+            >
+                B. Opportunity — අවස්ථාව
+            </button>
+
+
+            <button
+                class="activity-option"
+                onclick="checkActivity5(this, true)"
+            >
+                C. Threat — තර්ජනය
+            </button>
+
+
+            <div
+                id="activity5Result"
+                class="activity-result"
+            ></div>
+
+        </div>
+
+
+
+        <!-- SCORE -->
+
+        <div class="activity-score-box">
+
+            <h3>
+                🏆 Activity Score
+            </h3>
+
+
+            <div id="activityScore">
+                0 / 5
+            </div>
+
+
+            <p id="activityFinalMessage">
+                Activities ආරම්භ කරන්න.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         QUIZ
+         ========================================= -->
+
+    <section class="quiz-area">
+
+        <h2>
+            📝 Lesson 2 Quiz
+        </h2>
+
+
+        <p>
+            ව්‍යාපාර පරිසරය පිළිබඳ පාඩම හොඳින්
+            අධ්‍යයනය කළ පසු ප්‍රශ්න 10ක Quiz එකට
+            සහභාගී වන්න.
+        </p>
+
+
+        <p>
+            ඔබගේ ලකුණු, ප්‍රතිශතය සහ Pass / Fail
+            ප්‍රතිඵලය අවසානයේ පෙන්වනු ඇත.
+        </p>
+
+
+        <a
+            href="quiz.html?lesson=2"
+            class="quiz-button"
+        >
+            📝 Start Lesson 2 Quiz
+        </a>
+
+
+        <br>
+
+
+        <a
+            href="lessons.html"
+            class="back-button"
+        >
+            ← Back to Lessons
+        </a>
+
+    </section>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================
+     ACTIVITY JAVASCRIPT
+     ========================================= -->
+
+<script>
+
+let activityScore = 0;
+
+
+const activityAnswered = {
+
+    activity1: false,
+
+    activity2: false,
+
+    activity3: false,
+
+    activity4: false,
+
+    activity5: false
+
+};
+
+
+
+function updateActivityScore() {
+
+    document.getElementById(
+        "activityScore"
+    ).textContent =
+        activityScore + " / 5";
+
+
+    if (activityScore === 5) {
+
+        document.getElementById(
+            "activityFinalMessage"
+        ).textContent =
+            "🎉 Excellent! ඔබ සියලුම Activities සාර්ථකව සම්පූර්ණ කළා.";
+
+    }
+
+    else if (activityScore >= 3) {
+
+        document.getElementById(
+            "activityFinalMessage"
+        ).textContent =
+            "👍 Good work! තවත් ටිකක් පුහුණු වන්න.";
+
+    }
+
+    else {
+
+        document.getElementById(
+            "activityFinalMessage"
+        ).textContent =
+            "📚 පාඩම නැවත කියවා Activities නැවත උත්සාහ කරන්න.";
+
+    }
+
+}
+
+
+
+/* Activity 01 */
+
+function checkActivity1(button, correct) {
+
+    if (activityAnswered.activity1) {
+
+        return;
+
+    }
+
+    activityAnswered.activity1 = true;
+
+
+    showActivityResult(
+        button,
+        correct,
+        "activity1Result"
+    );
+
+}
+
+
+
+/* Activity 02 */
+
+function checkActivity2(button, correct) {
+
+    if (activityAnswered.activity2) {
+
+        return;
+
+    }
+
+    activityAnswered.activity2 = true;
+
+
+    showActivityResult(
+        button,
+        correct,
+        "activity2Result"
+    );
+
+}
+
+
+
+/* Activity 03 */
+
+function checkActivity3(button, correct) {
+
+    if (activityAnswered.activity3) {
+
+        return;
+
+    }
+
+    activityAnswered.activity3 = true;
+
+
+    showActivityResult(
+        button,
+        correct,
+        "activity3Result"
+    );
+
+}
+
+
+
+/* Activity 04 */
+
+function checkActivity4(button, correct) {
+
+    if (activityAnswered.activity4) {
+
+        return;
+
+    }
+
+    activityAnswered.activity4 = true;
+
+
+    showActivityResult(
+        button,
+        correct,
+        "activity4Result"
+    );
+
+}
+
+
+
+/* Activity 05 */
+
+function checkActivity5(button, correct) {
+
+    if (activityAnswered.activity5) {
+
+        return;
+
+    }
+
+    activityAnswered.activity5 = true;
+
+
+    showActivityResult(
+        button,
+        correct,
+        "activity5Result"
+    );
+
+}
+
+
+
+/* Common Result */
+
+function showActivityResult(
+    button,
+    correct,
+    resultId
+) {
+
+    const result =
+        document.getElementById(
+            resultId
+        );
+
+
+    if (correct) {
+
+        activityScore++;
+
+
+        button.style.background =
+            "#198754";
+
+        button.style.color =
+            "#ffffff";
+
+
+        result.textContent =
+            "✅ නිවැරදියි!";
+
+    }
+
+    else {
+
+        button.style.background =
+            "#dc3545";
+
+        button.style.color =
+            "#ffffff";
+
+
+        result.textContent =
+            "❌ වැරදියි. පාඩම නැවත බලන්න.";
+
+    }
+
+
+    updateActivityScore();
+
+}
+
+</script>
+
+
+</body>
+
+</html>
