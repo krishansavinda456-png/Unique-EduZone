@@ -2,7 +2,6 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-
         /*
          * =========================
          * Profile Data
@@ -27,7 +26,6 @@ document.addEventListener(
             ) || "-";
 
 
-
         /*
          * =========================
          * Quiz Data
@@ -50,19 +48,25 @@ document.addEventListener(
             ) || 0;
 
 
-
         /*
          * =========================
          * Welcome Message
          * =========================
          */
 
-        document.getElementById(
-            "welcomeMessage"
-        ).textContent =
-            "Welcome, " +
-            studentName;
+        const welcomeMessage =
+            document.getElementById(
+                "welcomeMessage"
+            );
 
+
+        if (welcomeMessage) {
+
+            welcomeMessage.textContent =
+                "Welcome, " +
+                studentName;
+
+        }
 
 
         /*
@@ -71,23 +75,46 @@ document.addEventListener(
          * =========================
          */
 
-        document.getElementById(
-            "studentName"
-        ).textContent =
-            studentName;
+        const nameElement =
+            document.getElementById(
+                "studentName"
+            );
 
 
-        document.getElementById(
-            "studentGrade"
-        ).textContent =
-            studentGrade;
+        if (nameElement) {
+
+            nameElement.textContent =
+                studentName;
+
+        }
 
 
-        document.getElementById(
-            "studentSubject"
-        ).textContent =
-            studentSubject;
+        const gradeElement =
+            document.getElementById(
+                "studentGrade"
+            );
 
+
+        if (gradeElement) {
+
+            gradeElement.textContent =
+                studentGrade;
+
+        }
+
+
+        const subjectElement =
+            document.getElementById(
+                "studentSubject"
+            );
+
+
+        if (subjectElement) {
+
+            subjectElement.textContent =
+                studentSubject;
+
+        }
 
 
         /*
@@ -96,11 +123,29 @@ document.addEventListener(
          * =========================
          */
 
-        document.getElementById(
-            "lastScore"
-        ).textContent =
-            lastScore + "%";
+        const lastScoreElement =
+            document.getElementById(
+                "lastScore"
+            );
 
+
+        if (lastScoreElement) {
+
+            if (completedQuizzes > 0) {
+
+                lastScoreElement.textContent =
+                    lastScore + "%";
+
+            }
+
+            else {
+
+                lastScoreElement.textContent =
+                    "0%";
+
+            }
+
+        }
 
 
         /*
@@ -109,11 +154,18 @@ document.addEventListener(
          * =========================
          */
 
-        document.getElementById(
-            "quizCount"
-        ).textContent =
-            completedQuizzes;
+        const quizCountElement =
+            document.getElementById(
+                "quizCount"
+            );
 
+
+        if (quizCountElement) {
+
+            quizCountElement.textContent =
+                completedQuizzes;
+
+        }
 
 
         /*
@@ -143,7 +195,9 @@ document.addEventListener(
                         savedLessons
                     );
 
-            } catch (error) {
+            }
+
+            catch (error) {
 
                 completedLessons = [];
 
@@ -152,14 +206,43 @@ document.addEventListener(
         }
 
 
+        if (
+            !Array.isArray(
+                completedLessons
+            )
+        ) {
+
+            completedLessons = [];
+
+        }
+
+
+        /*
+         * Remove duplicate lesson numbers
+         */
+
+        completedLessons =
+            completedLessons.filter(
+                function (lesson, index, array) {
+
+                    return (
+                        array.indexOf(
+                            lesson
+                        ) === index
+                    );
+
+                }
+            );
+
 
         const lessonsCompleted =
             completedLessons.length;
 
 
-
         /*
+         * =========================
          * Lessons Completed
+         * =========================
          */
 
         const lessonsCompletedElement =
@@ -168,7 +251,9 @@ document.addEventListener(
             );
 
 
-        if (lessonsCompletedElement) {
+        if (
+            lessonsCompletedElement
+        ) {
 
             lessonsCompletedElement.textContent =
                 lessonsCompleted +
@@ -178,48 +263,41 @@ document.addEventListener(
         }
 
 
-
         /*
          * =========================
          * Overall Progress
          * =========================
          *
-         * Lesson progress is used
-         * for the Dashboard progress.
+         * 50% Lesson Progress
+         * 50% Quiz Progress
          */
 
-        /*
- * =========================
- * Overall Progress
- * =========================
- *
- * 50% Lessons
- * 50% Quiz
- */
-
-const lessonProgress =
-    Math.round(
-        (
-            lessonsCompleted /
-            TOTAL_LESSONS
-        ) * 100
-    );
+        const lessonProgress =
+            Math.round(
+                (
+                    lessonsCompleted /
+                    TOTAL_LESSONS
+                ) * 100
+            );
 
 
-const quizProgress =
-    Math.min(
-        Math.max(lastScore, 0),
-        100
-    );
+        const quizProgress =
+            Math.min(
+                Math.max(
+                    lastScore,
+                    0
+                ),
+                100
+            );
 
 
-const progress =
-    Math.round(
-        (
-            (lessonProgress * 0.5) +
-            (quizProgress * 0.5)
-        )
-    );
+        let progress =
+            Math.round(
+                (
+                    (lessonProgress * 0.5) +
+                    (quizProgress * 0.5)
+                )
+            );
 
 
         if (progress > 100) {
@@ -229,9 +307,17 @@ const progress =
         }
 
 
+        if (progress < 0) {
+
+            progress = 0;
+
+        }
+
 
         /*
+         * =========================
          * Progress Bar
+         * =========================
          */
 
         const progressBar =
@@ -248,9 +334,10 @@ const progress =
         }
 
 
-
         /*
+         * =========================
          * Progress Text
+         * =========================
          */
 
         const progressText =
@@ -266,7 +353,6 @@ const progress =
                 "% completed";
 
         }
-
 
 
         /*
@@ -325,12 +411,18 @@ const progress =
         }
 
 
+        const learningStatus =
+            document.getElementById(
+                "learningStatus"
+            );
 
-        document.getElementById(
-            "learningStatus"
-        ).textContent =
-            status;
 
+        if (learningStatus) {
+
+            learningStatus.textContent =
+                status;
+
+        }
 
     }
 );
