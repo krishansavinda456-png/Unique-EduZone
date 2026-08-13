@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 
 <head>
 
@@ -33,8 +33,9 @@
         }
 
         .lessons-header h1 {
-            margin-bottom: 10px;
+            color: gold;
         }
+
 
         .overall-progress-card {
             background: #1b1b1b;
@@ -66,18 +67,13 @@
             transition: width 0.4s ease;
         }
 
+
         .lesson-card {
             background: #1b1b1b;
             border: 1px solid #333;
             border-radius: 15px;
             padding: 22px;
             margin-bottom: 20px;
-            transition: 0.3s ease;
-        }
-
-        .lesson-card:hover {
-            border-color: gold;
-            transform: translateY(-2px);
         }
 
         .lesson-card-header {
@@ -90,7 +86,6 @@
         .lesson-number {
             color: gold;
             font-weight: bold;
-            font-size: 14px;
         }
 
         .lesson-status {
@@ -100,8 +95,8 @@
 
         .lesson-description {
             margin: 15px 0;
-            line-height: 1.7;
         }
+
 
         .lesson-progress-container {
             width: 100%;
@@ -123,6 +118,7 @@
             font-size: 13px;
         }
 
+
         .lesson-actions {
             margin-top: 18px;
         }
@@ -135,18 +131,18 @@
             font-weight: bold;
             background: gold;
             color: #000;
-            transition: 0.3s ease;
-        }
-
-        .lesson-button:hover {
-            transform: scale(1.03);
         }
 
         .lesson-button.completed {
-            background: #555;
+            background: #198754;
             color: #fff;
-            pointer-events: none;
         }
+
+
+        .quiz-button {
+            margin-left: 8px;
+        }
+
 
         .dashboard-link {
             text-align: center;
@@ -156,8 +152,8 @@
         .dashboard-link a {
             color: gold;
             font-weight: bold;
-            text-decoration: none;
         }
+
 
         @media (max-width: 600px) {
 
@@ -166,14 +162,9 @@
                 align-items: flex-start;
             }
 
-            .overall-progress-top {
-                gap: 10px;
-            }
-
-            .lesson-button {
-                width: 100%;
-                text-align: center;
-                box-sizing: border-box;
+            .quiz-button {
+                margin-left: 0;
+                margin-top: 8px;
             }
 
         }
@@ -224,10 +215,6 @@
 <main class="lessons-page">
 
 
-    <!-- =====================================
-         PAGE HEADER
-         ===================================== -->
-
     <section class="lessons-header">
 
         <h1>
@@ -235,16 +222,14 @@
         </h1>
 
         <p>
-            Unique EduZone සමඟ ඔබේ ඉගෙනුම් ගමන ඉදිරියට ගෙන යන්න.
+            Continue your learning journey with Unique EduZone.
         </p>
 
     </section>
 
 
 
-    <!-- =====================================
-         OVERALL PROGRESS
-         ===================================== -->
+    <!-- OVERALL PROGRESS -->
 
     <section class="overall-progress-card">
 
@@ -279,9 +264,7 @@
 
 
 
-    <!-- =====================================
-         LESSON 1
-         ===================================== -->
+    <!-- LESSON 1 -->
 
     <article
         class="lesson-card"
@@ -297,11 +280,10 @@
                 </div>
 
                 <h2>
-                    ව්‍යාපාර අධ්‍යයනයට හැඳින්වීම
+                    Introduction to Business Studies
                 </h2>
 
             </div>
-
 
             <div
                 class="lesson-status"
@@ -314,11 +296,7 @@
 
 
         <p class="lesson-description">
-
-            ව්‍යාපාරයක් යනු කුමක්ද, භාණ්ඩ හා සේවා,
-            පාරිභෝගිකයන්, නිෂ්පාදනය සහ ව්‍යාපාරයට
-            සම්බන්ධ පාර්ශ්ව පිළිබඳ මූලික කරුණු අධ්‍යයනය කරමු.
-
+            Learn the basic introduction and foundation of Business Studies.
         </p>
 
 
@@ -345,9 +323,15 @@
             <a
                 href="lesson1.html"
                 class="lesson-button"
-                id="lesson1Button"
             >
-                ▶ Start Lesson 1
+                ▶ Continue Lesson
+            </a>
+
+            <a
+                href="quiz.html?lesson=1"
+                class="lesson-button quiz-button"
+            >
+                📝 Lesson 1 Quiz
             </a>
 
         </div>
@@ -356,9 +340,7 @@
 
 
 
-    <!-- =====================================
-         LESSON 2
-         ===================================== -->
+    <!-- LESSON 2 -->
 
     <article
         class="lesson-card"
@@ -374,7 +356,7 @@
                 </div>
 
                 <h2>
-                    ව්‍යාපාර පරිසරය
+                    Business Environment
                 </h2>
 
             </div>
@@ -391,11 +373,7 @@
 
 
         <p class="lesson-description">
-
-            ව්‍යාපාරයේ අභ්‍යන්තර හා බාහිර පරිසරය,
-            ආර්ථික, සමාජ, දේශපාලන, නීතිමය සහ
-            තාක්ෂණික සාධක පිළිබඳ අධ්‍යයනය කරමු.
-
+            Understand the internal and external business environment.
         </p>
 
 
@@ -422,9 +400,15 @@
             <a
                 href="lesson2.html"
                 class="lesson-button"
-                id="lesson2Button"
             >
-                ▶ Start Lesson 2
+                ▶ Continue Lesson
+            </a>
+
+            <a
+                href="quiz.html?lesson=2"
+                class="lesson-button quiz-button"
+            >
+                📝 Lesson 2 Quiz
             </a>
 
         </div>
@@ -433,9 +417,7 @@
 
 
 
-    <!-- =====================================
-         LESSON 3
-         ===================================== -->
+    <!-- LESSON 3 -->
 
     <article
         class="lesson-card"
@@ -451,7 +433,7 @@
                 </div>
 
                 <h2>
-                    ව්‍යාපාර සංවිධාන හා හිමිකාරිත්වය
+                    Business Ownership
                 </h2>
 
             </div>
@@ -468,11 +450,8 @@
 
 
         <p class="lesson-description">
-
-            තනි පුද්ගල ව්‍යාපාර, හවුල් ව්‍යාපාර,
-            සමාගම්, රාජ්‍ය අංශය සහ සමූපකාර වැනි
-            ව්‍යාපාර සංවිධාන පිළිබඳ අධ්‍යයනය කරමු.
-
+            හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන,
+            පෞද්ගලික අංශය සහ රාජ්‍ය අංශය පිළිබඳ අධ්‍යයනය කරමු.
         </p>
 
 
@@ -499,9 +478,15 @@
             <a
                 href="lesson3.html"
                 class="lesson-button"
-                id="lesson3Button"
             >
-                ▶ Start Lesson 3
+                ▶ Continue Lesson
+            </a>
+
+            <a
+                href="quiz.html?lesson=3"
+                class="lesson-button quiz-button"
+            >
+                📝 Lesson 3 Quiz
             </a>
 
         </div>
@@ -510,9 +495,7 @@
 
 
 
-    <!-- =====================================
-         LESSON 4
-         ===================================== -->
+    <!-- LESSON 4 -->
 
     <article
         class="lesson-card"
@@ -528,7 +511,7 @@
                 </div>
 
                 <h2>
-                    ගිණුම්කරණය
+                    Accounting
                 </h2>
 
             </div>
@@ -545,11 +528,9 @@
 
 
         <p class="lesson-description">
-
-            ගිණුම්කරණය, වත්කම්, වගකීම්,
-            හිමිකම, ආදායම් සහ වියදම් පිළිබඳ
-            මූලික කරුණු අධ්‍යයනය කරමු.
-
+            ගිණුම්කරණයේ මූලික සංකල්ප,
+            වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම්
+            පිළිබඳ අධ්‍යයනය කරමු.
         </p>
 
 
@@ -576,9 +557,15 @@
             <a
                 href="lesson4.html"
                 class="lesson-button"
-                id="lesson4Button"
             >
-                ▶ Start Lesson 4
+                ▶ Continue Lesson
+            </a>
+
+            <a
+                href="quiz.html?lesson=4"
+                class="lesson-button quiz-button"
+            >
+                📝 Lesson 4 Quiz
             </a>
 
         </div>
@@ -586,10 +573,6 @@
     </article>
 
 
-
-    <!-- =====================================
-         DASHBOARD LINK
-         ===================================== -->
 
     <div class="dashboard-link">
 
@@ -613,10 +596,6 @@
 </footer>
 
 
-
-<!-- =====================================
-     LESSON JAVASCRIPT
-     ===================================== -->
 
 <script src="../assets/js/lessons.js"></script>
 
