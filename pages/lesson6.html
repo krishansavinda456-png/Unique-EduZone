@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 06 | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lesson-header h1 {
+            margin-bottom: 10px;
+        }
+
+        .lesson-card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .lesson-card h2 {
+            color: gold;
+            margin-bottom: 15px;
+        }
+
+        .lesson-card h3 {
+            color: gold;
+            margin-top: 20px;
+        }
+
+        .formula {
+            background: #111;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: gold;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background: #111;
+            border-left: 4px solid gold;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .activity {
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 12px 0;
+        }
+
+        .activity strong {
+            color: gold;
+        }
+
+        .action-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .lesson-button {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 8px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: gold;
+            color: #000;
+            border: none;
+            cursor: pointer;
+        }
+
+        .lesson-button.secondary {
+            background: #333;
+            color: white;
+        }
+
+        .lesson-button.completed {
+            background: #555;
+            color: white;
+        }
+
+        .note {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        ul,
+        ol {
+            line-height: 1.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            color: gold;
+            background: #111;
+        }
+
+        @media (max-width: 600px) {
+
+            .lesson-page {
+                padding: 20px 12px;
+            }
+
+            .lesson-card {
+                padding: 18px;
+            }
+
+            .formula {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="quiz.html">MCQ</a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- HEADER -->
+
+    <section class="lesson-header">
+
+        <h1>
+            📘 Lesson 06
+        </h1>
+
+        <h2>
+            ගනුදෙනුවල ද්විත්ව බලපෑම
+        </h2>
+
+        <p>
+            Accounting – Double Effect of Transactions
+        </p>
+
+    </section>
+
+
+
+    <!-- LESSON INTRODUCTION -->
+
+    <section class="lesson-card">
+
+        <h2>
+            1. ගනුදෙනුවක් යනු කුමක්ද?
+        </h2>
+
+        <p class="note">
+
+            ව්‍යාපාරයක මූල්‍ය තත්ත්වයට බලපෑමක් ඇති කරන
+            ආර්ථික ක්‍රියාවක් ගනුදෙනුවක් ලෙස හැඳින්වේ.
+
+        </p>
+
+        <p class="note">
+
+            උදාහරණ:
+
+        </p>
+
+        <ul>
+
+            <li>ව්‍යාපාරයට මුදල් ආයෝජනය කිරීම</li>
+
+            <li>භාණ්ඩ මිලදී ගැනීම</li>
+
+            <li>භාණ්ඩ විකිණීම</li>
+
+            <li>වියදම් ගෙවීම</li>
+
+            <li>ණය ලබා ගැනීම</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- DOUBLE EFFECT -->
+
+    <section class="lesson-card">
+
+        <h2>
+            2. ගනුදෙනුවක ද්විත්ව බලපෑම
+        </h2>
+
+        <p class="note">
+
+            සෑම ව්‍යාපාරික ගනුදෙනුවක්ම ව්‍යාපාරයේ
+            මූල්‍ය තත්ත්වයට අවම වශයෙන් බලපෑම් දෙකක්
+            ඇති කරයි.
+
+        </p>
+
+        <p class="note">
+
+            එම බලපෑම් මඟින් ගිණුම්කරණ සමීකරණයේ
+            අංග දෙකක් හෝ වැඩි ගණනක් වෙනස් විය හැක.
+
+        </p>
+
+        <div class="formula">
+
+            වත්කම් = වගකීම් + හිමිකම
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXAMPLES -->
+
+    <section class="lesson-card">
+
+        <h2>
+            3. ද්විත්ව බලපෑම සඳහා උදාහරණ
+        </h2>
+
+
+        <div class="example-box">
+
+            <strong>
+                උදාහරණය 01
+            </strong>
+
+            <p>
+
+                හිමිකරු විසින් රු. 100,000ක් ව්‍යාපාරයට
+                මුදල් ලෙස ආයෝජනය කරයි.
+
+            </p>
+
+            <p>
+
+                මුදල් වත්කම වැඩි වේ.
+
+                <br>
+
+                හිමිකම වැඩි වේ.
+
+            </p>
+
+        </div>
+
+
+        <div class="example-box">
+
+            <strong>
+                උදාහරණය 02
+            </strong>
+
+            <p>
+
+                රු. 20,000ක භාණ්ඩ මුදලට මිලදී ගනී.
+
+            </p>
+
+            <p>
+
+                තොගය වැඩි වේ.
+
+                <br>
+
+                මුදල් අඩු වේ.
+
+            </p>
+
+        </div>
+
+
+        <div class="example-box">
+
+            <strong>
+                උදාහරණය 03
+            </strong>
+
+            <p>
+
+                රු. 10,000ක ණයක් ලබා ගනී.
+
+            </p>
+
+            <p>
+
+                මුදල් වත්කම වැඩි වේ.
+
+                <br>
+
+                වගකීම වැඩි වේ.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TABLE -->
+
+    <section class="lesson-card">
+
+        <h2>
+            4. ගනුදෙනු සහ ද්විත්ව බලපෑම්
+        </h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        ගනුදෙනුව
+                    </th>
+
+                    <th>
+                        පළමු බලපෑම
+                    </th>
+
+                    <th>
+                        දෙවන බලපෑම
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        මුදල් ආයෝජනය
+                    </td>
+
+                    <td>
+                        මුදල් ↑
+                    </td>
+
+                    <td>
+                        හිමිකම ↑
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        භාණ්ඩ මුදලට මිලදී ගැනීම
+                    </td>
+
+                    <td>
+                        තොග ↑
+                    </td>
+
+                    <td>
+                        මුදල් ↓
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        ණයක් ලබා ගැනීම
+                    </td>
+
+                    <td>
+                        මුදල් ↑
+                    </td>
+
+                    <td>
+                        වගකීම් ↑
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        වියදමක් ගෙවීම
+                    </td>
+
+                    <td>
+                        මුදල් ↓
+                    </td>
+
+                    <td>
+                        හිමිකම ↓
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ACTIVITIES -->
+
+    <section class="lesson-card">
+
+        <h2>
+            📝 Activities
+        </h2>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 01
+            </strong>
+
+            <p>
+                ගනුදෙනුවක් යනු කුමක්දැයි පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 02
+            </strong>
+
+            <p>
+                ගනුදෙනුවක ද්විත්ව බලපෑම යන්න පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 03
+            </strong>
+
+            <p>
+                රු. 50,000ක් හිමිකරු විසින් ව්‍යාපාරයට
+                ආයෝජනය කළ විට ඇතිවන බලපෑම් දෙක ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 04
+            </strong>
+
+            <p>
+                රු. 15,000ක භාණ්ඩ මුදලට මිලදී ගැනීමේදී
+                සිදුවන බලපෑම් සඳහන් කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 05
+            </strong>
+
+            <p>
+                රු. 25,000ක ණයක් ලබාගත් විට
+                වත්කම් සහ වගකීම්වල සිදුවන වෙනස ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 06
+            </strong>
+
+            <p>
+                රු. 5,000ක විදුලි බිලක් ගෙවූ විට
+                ඇතිවන බලපෑම් දෙක ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 07
+            </strong>
+
+            <p>
+                ගනුදෙනු පහත වර්ගීකරණයට අනුව හඳුනාගන්න:
+                වත්කම්, වගකීම්, හිමිකම.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 08
+            </strong>
+
+            <p>
+                “සෑම ගනුදෙනුවක්ම ද්විත්ව බලපෑමක් ඇති කරයි”
+                යන ප්‍රකාශය උදාහරණයක් සමඟ පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 09
+            </strong>
+
+            <p>
+                මුදල් ගෙවා උපකරණයක් මිලදී ගත් විට
+                වත්කම්වල සිදුවන වෙනස්කම් ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <strong>
+                Activity 10
+            </strong>
+
+            <p>
+                ගනුදෙනුවල ද්විත්ව බලපෑම
+                ගිණුම්කරණ සමීකරණය සමඟ සම්බන්ධ කර පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ACTIONS -->
+
+    <section class="action-buttons">
+
+        <a
+            href="quiz.html?lesson=6"
+            class="lesson-button"
+        >
+            📝 Start Lesson 6 Quiz
+        </a>
+
+
+        <button
+            type="button"
+            class="lesson-button secondary"
+            id="completeLessonButton"
+            onclick="completeLesson6()"
+        >
+            ✓ Complete Lesson
+        </button>
+
+    </section>
+
+
+
+    <div
+        id="completionMessage"
+        style="
+            text-align:center;
+            color:gold;
+            font-weight:bold;
+            margin-bottom:30px;
+        "
+    ></div>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function completeLesson6() {
+
+    let completedLessons = [];
+
+    const saved =
+        localStorage.getItem(
+            "uez_completed_lessons"
+        );
+
+    if (saved) {
+
+        try {
+
+            completedLessons =
+                JSON.parse(saved);
+
+        }
+
+        catch (error) {
+
+            completedLessons = [];
+
+        }
+
+    }
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+    if (!completedLessons.includes("lesson6")) {
+
+        completedLessons.push("lesson6");
+
+    }
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(completedLessons)
+    );
+
+    const message =
+        document.getElementById(
+            "completionMessage"
+        );
+
+    if (message) {
+
+        message.textContent =
+            "✓ Lesson 6 Completed! Progress updated to 6/10.";
+
+    }
+
+    const button =
+        document.getElementById(
+            "completeLessonButton"
+        );
+
+    if (button) {
+
+        button.textContent =
+            "✓ Lesson Completed";
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
