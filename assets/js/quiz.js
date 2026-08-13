@@ -17,6 +17,28 @@ document.addEventListener(
         const lesson =
             urlParams.get("lesson") || "1";
 
+        /*
+ * =========================================
+ * HIGHLIGHT SELECTED LESSON
+ * =========================================
+ */
+
+document
+    .querySelectorAll(".lesson-link")
+    .forEach(function (link) {
+
+        const linkLesson =
+            link.getAttribute("data-lesson");
+
+        if (linkLesson === lesson) {
+
+            link.style.color = "gold";
+            link.style.fontWeight = "bold";
+
+        }
+
+    });
+
 
         /*
          * =========================================
