@@ -1389,5 +1389,7 @@ function updateTimer() {
 
         updateScore();
 
+        startTimer();
+
     }
 );
