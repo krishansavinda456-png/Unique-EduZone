@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 05 | ගිණුම්කරණ සමීකරණය | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .lesson-number {
+            color: gold;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .lesson-header h1 {
+            margin: 10px 0;
+        }
+
+        .lesson-section {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .lesson-section h2 {
+            color: gold;
+            margin-top: 0;
+        }
+
+        .lesson-section h3 {
+            color: #fff;
+        }
+
+        .formula-box {
+            background: #111;
+            border: 2px solid gold;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .formula {
+            color: gold;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #222;
+            border-left: 4px solid gold;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .equation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .equation-table th,
+        .equation-table td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .equation-table th {
+            color: gold;
+            background: #111;
+        }
+
+        .important {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .lesson-actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .quiz-button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: gold;
+            color: #000;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #444;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        @media (max-width: 600px) {
+
+            .lesson-page {
+                padding: 20px 12px;
+            }
+
+            .lesson-header,
+            .lesson-section {
+                padding: 20px;
+            }
+
+            .formula {
+                font-size: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- HEADER -->
+
+    <section class="lesson-header">
+
+        <div class="lesson-number">
+            LESSON 05
+        </div>
+
+        <h1>
+            ගිණුම්කරණ සමීකරණය
+        </h1>
+
+        <p>
+            ව්‍යාපාරයක වත්කම්, වගකීම් සහ හිමිකම අතර සම්බන්ධතාවය හඳුනා ගනිමු.
+        </p>
+
+    </section>
+
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📘 5.1 ගිණුම්කරණ සමීකරණය යනු කුමක්ද?
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක සම්පත් හෙවත් වත්කම් සඳහා
+            මුදල් සපයා ඇති මූලාශ්‍ර අතර සම්බන්ධතාවය
+            ගණිතමය ආකාරයෙන් දැක්වීම
+            <span class="important">
+                ගිණුම්කරණ සමීකරණය
+            </span>
+            ලෙස හැඳින්වේ.
+        </p>
+
+        <div class="formula-box">
+
+            <div class="formula">
+                වත්කම් = හිමිකම + වගකීම්
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ASSETS -->
+
+    <section class="lesson-section">
+
+        <h2>
+            💰 5.2 වත්කම්
+        </h2>
+
+        <p>
+            ව්‍යාපාරයට අයත් ආර්ථික වටිනාකමක් ඇති
+            සම්පත් වත්කම් ලෙස හැඳින්වේ.
+        </p>
+
+        <h3>
+            උදාහරණ
+        </h3>
+
+        <ul>
+
+            <li>මුදල්</li>
+
+            <li>බැංකු තැන්පතු</li>
+
+            <li>තොග</li>
+
+            <li>ගොඩනැගිලි</li>
+
+            <li>යන්ත්‍රෝපකරණ</li>
+
+            <li>ගෘහ භාණ්ඩ</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- LIABILITY -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📌 5.3 වගකීම්
+        </h2>
+
+        <p>
+            ව්‍යාපාරය වෙනත් පාර්ශ්වයන්ට ගෙවිය යුතු
+            මුදල් හෝ පියවිය යුතු බැඳීම්
+            වගකීම් ලෙස හැඳින්වේ.
+        </p>
+
+        <h3>
+            උදාහරණ
+        </h3>
+
+        <ul>
+
+            <li>වෙළෙඳ ගෙවිය යුතු</li>
+
+            <li>බැංකු ණය</li>
+
+            <li>වෙනත් ණය</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- EQUITY -->
+
+    <section class="lesson-section">
+
+        <h2>
+            👤 5.4 හිමිකම
+        </h2>
+
+        <p>
+            ව්‍යාපාරයේ වත්කම්වලින් වගකීම් ඉවත් කළ පසු
+            හිමිකරුට අයත් ඉතිරි කොටස
+            හිමිකම ලෙස හැඳින්වේ.
+        </p>
+
+        <div class="formula-box">
+
+            <div class="formula">
+                හිමිකම = වත්කම් − වගකීම්
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EQUATION -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ⚖️ 5.5 ගිණුම්කරණ සමීකරණය
+        </h2>
+
+        <div class="formula-box">
+
+            <div class="formula">
+                වත්කම් = හිමිකම + වගකීම්
+            </div>
+
+        </div>
+
+        <p>
+            මෙම සමීකරණයේ දෙපසම සමාන වටිනාකමක්
+            පවත්වා ගත යුතුය.
+        </p>
+
+        <p>
+            එබැවින් ව්‍යාපාරයක සිදුවන සෑම ගනුදෙනුවක්ම
+            ගිණුම්කරණ සමීකරණයේ සමතුලිතතාවයට
+            බලපාන ආකාරයෙන් සලකා බැලිය යුතුය.
+        </p>
+
+    </section>
+
+
+
+    <!-- EXAMPLE 1 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧮 5.6 උදාහරණය 01
+        </h2>
+
+        <div class="example-box">
+
+            <p>
+                ක්‍රිෂාන් විසින් ව්‍යාපාරයක් ආරම්භ කිරීම සඳහා
+                රු. 100,000 ක මුදලක් යොදවයි.
+            </p>
+
+            <p>
+                මෙහිදී ව්‍යාපාරයට ලැබුණු වත්කම =
+                රු. 100,000
+            </p>
+
+            <p>
+                හිමිකම =
+                රු. 100,000
+            </p>
+
+            <p>
+                වගකීම් =
+                රු. 0
+            </p>
+
+        </div>
+
+
+        <table class="equation-table">
+
+            <tr>
+
+                <th>
+                    වත්කම්
+                </th>
+
+                <th>
+                    හිමිකම
+                </th>
+
+                <th>
+                    වගකීම්
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    රු. 100,000
+                </td>
+
+                <td>
+                    රු. 100,000
+                </td>
+
+                <td>
+                    රු. 0
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- EXAMPLE 2 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧮 5.7 උදාහරණය 02
+        </h2>
+
+        <div class="example-box">
+
+            <p>
+                ව්‍යාපාරය රු. 50,000 ක බැංකු ණයක් ලබා ගනී.
+            </p>
+
+            <p>
+                ව්‍යාපාරයේ වත්කම් රු. 50,000 කින් වැඩි වේ.
+            </p>
+
+            <p>
+                එම අවස්ථාවේදී වගකීම් ද
+                රු. 50,000 කින් වැඩි වේ.
+            </p>
+
+        </div>
+
+
+        <table class="equation-table">
+
+            <tr>
+
+                <th>
+                    වත්කම්
+                </th>
+
+                <th>
+                    හිමිකම
+                </th>
+
+                <th>
+                    වගකීම්
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    රු. 150,000
+                </td>
+
+                <td>
+                    රු. 100,000
+                </td>
+
+                <td>
+                    රු. 50,000
+                </td>
+
+            </tr>
+
+        </table>
+
+        <div class="formula-box">
+
+            <div class="formula">
+                150,000 = 100,000 + 50,000
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TRANSACTIONS -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🔄 5.8 ගනුදෙනු ගිණුම්කරණ සමීකරණයට බලපාන ආකාරය
+        </h2>
+
+        <p>
+            ව්‍යාපාරයේ සිදුවන ගනුදෙනුවක් නිසා
+            වත්කම්, වගකීම් හෝ හිමිකම වෙනස් විය හැක.
+        </p>
+
+        <div class="example-box">
+
+            <strong>
+                උදාහරණ:
+            </strong>
+
+            <p>
+                ව්‍යාපාරය රු. 20,000 ක භාණ්ඩ මුදලට මිලදී ගනී.
+            </p>
+
+            <p>
+                මුදල් වත්කම අඩු වන අතර
+                තොග වත්කම වැඩි වේ.
+            </p>
+
+            <p>
+                එබැවින් සමස්ත වත්කම් වටිනාකම
+                වෙනස් නොවේ.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EQUITY CHANGES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📈 5.9 හිමිකම වෙනස් වන අවස්ථා
+        </h2>
+
+        <p>
+            ව්‍යාපාරයේ ආදායම් හා වියදම් වැනි සිදුවීම්
+            හිමිකමට බලපෑම් කළ හැක.
+        </p>
+
+        <div class="example-box">
+
+            <p>
+                <strong>
+                    ආදායම වැඩි වීම →
+                </strong>
+                හිමිකම වැඩි වීමට බලපායි.
+            </p>
+
+            <p>
+                <strong>
+                    වියදම වැඩි වීම →
+                </strong>
+                හිමිකම අඩු වීමට බලපායි.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SUMMARY -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📝 5.10 පාඩමේ සාරාංශය
+        </h2>
+
+        <ul>
+
+            <li>
+                වත්කම් = හිමිකම + වගකීම්
+            </li>
+
+            <li>
+                හිමිකම = වත්කම් − වගකීම්
+            </li>
+
+            <li>
+                ව්‍යාපාර ගනුදෙනු ගිණුම්කරණ සමීකරණයට බලපායි.
+            </li>
+
+            <li>
+                සමීකරණයේ දෙපස සමාන වටිනාකමක් පවත්වා ගත යුතුය.
+            </li>
+
+            <li>
+                ආදායම් සහ වියදම් හිමිකමට බලපායි.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ACTIONS -->
+
+    <div class="lesson-actions">
+
+        <a
+            href="quiz.html?lesson=5"
+            class="quiz-button"
+        >
+            📝 Lesson 5 MCQ කරන්න
+        </a>
+
+        <a
+            href="lessons.html"
+            class="back-button"
+        >
+            ← Lessons වෙත
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
