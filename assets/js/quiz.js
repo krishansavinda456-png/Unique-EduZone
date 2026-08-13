@@ -818,6 +818,125 @@ const lessonTitleElement =
 
                 finishQuiz();
 
+        /* ==============================
+   START TIMER
+============================== */
+
+function startTimer() {
+
+    if (timerInterval) {
+
+        clearInterval(
+            timerInterval
+        );
+
+    }
+
+
+    updateTimer();
+
+
+    timerInterval =
+        setInterval(
+            function () {
+
+                timeLeft--;
+
+
+                updateTimer();
+
+
+                if (timeLeft <= 0) {
+
+                    clearInterval(
+                        timerInterval
+                    );
+
+
+                    timeLeft = 0;
+
+
+                    finishQuiz();
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+
+/* ==============================
+   UPDATE TIMER
+============================== */
+
+function updateTimer() {
+
+    if (!timerElement) {
+
+        return;
+
+    }
+
+
+    const minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+
+    const seconds =
+        timeLeft % 60;
+
+
+    timerElement.textContent =
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(seconds).padStart(2, "0");
+
+
+    /*
+     * Timer colour
+     */
+
+    timerElement.classList.remove(
+        "safe",
+        "warning"
+    );
+
+
+    if (timeLeft <= 60) {
+
+        timerElement.classList.add(
+            "warning"
+        );
+
+    }
+
+    else {
+
+        timerElement.classList.add(
+            "safe"
+        );
+
+    }
+
+
+    /*
+     * Final 10 seconds
+     */
+
+    if (timeLeft <= 10) {
+
+        timerElement.style.background =
+            "#dc3545";
+
+    }
+
+}
+
                 return;
 
             }
