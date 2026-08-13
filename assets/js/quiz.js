@@ -1247,7 +1247,6 @@ function updateTimer() {
             100
         );
             
-        function finishQuiz() {
 
             const percentage =
                 Math.round(
