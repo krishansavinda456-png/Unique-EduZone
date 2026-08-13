@@ -698,9 +698,20 @@ document.addEventListener(
 
         let currentQuestion = 0;
 
-        let score = 0;
+let score = 0;
 
-        let answered = false;
+let answered = false;
+
+
+/* ==============================
+   QUIZ TIMER
+============================== */
+
+let timeLeft = 10 * 60; // 10 minutes
+
+let timerInterval = null;
+
+let quizFinished = false;
 
 
 
