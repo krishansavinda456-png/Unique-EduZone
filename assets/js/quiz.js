@@ -688,6 +688,31 @@ document.addEventListener(
             quizData[lesson] ||
             quizData["1"];
 
+        const lessonNames = {
+
+    "1":
+        "Lesson 1 - Introduction to Business Studies",
+
+    "2":
+        "Lesson 2 - Business Environment",
+
+    "3":
+        "Lesson 3 - Business Ownership",
+
+    "4":
+        "Lesson 4 - Accounting"
+
+};
+
+
+if (lessonTitleElement) {
+
+    lessonTitleElement.textContent =
+        lessonNames[lesson] ||
+        lessonNames["1"];
+
+}
+
 
 
         /*
