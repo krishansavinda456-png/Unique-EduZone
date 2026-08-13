@@ -6,9 +6,7 @@
  * =========================================
  */
 
-
 const TOTAL_LESSONS = 10;
-
 
 
 /*
@@ -58,7 +56,6 @@ function getCompletedLessons() {
 }
 
 
-
 /*
  * =========================================
  * COMPLETE LESSON
@@ -95,7 +92,6 @@ function completeLesson(lessonId) {
     updateLessonCards();
 
 }
-
 
 
 /*
@@ -158,7 +154,7 @@ function updateLessonCards() {
 
         /*
          * =================================
-         * COMPLETED
+         * COMPLETED LESSON
          * =================================
          */
 
@@ -233,11 +229,13 @@ function updateLessonCards() {
 
 
             /*
-             * Lesson 5–10 are currently
-             * placeholders.
+             * =================================
+             * LESSON 6 - 10
+             * CURRENTLY LOCKED
+             * =================================
              */
 
-            if (i >= 5) {
+            if (i >= 6) {
 
                 if (status) {
 
@@ -257,13 +255,21 @@ function updateLessonCards() {
                         "locked"
                     );
 
+
+                    button.classList.remove(
+                        "completed"
+                    );
+
                 }
 
             }
 
 
             /*
-             * Lesson 1–4
+             * =================================
+             * LESSON 1 - 5
+             * AVAILABLE
+             * =================================
              */
 
             else {
@@ -288,8 +294,27 @@ function updateLessonCards() {
                     );
 
 
-                    button.textContent =
-                        "▶ Continue Lesson";
+                    /*
+                     * Lesson 5
+                     */
+
+                    if (i === 5) {
+
+                        button.textContent =
+                            "▶ Start Lesson 5";
+
+                    }
+
+                    /*
+                     * Lesson 1 - 4
+                     */
+
+                    else {
+
+                        button.textContent =
+                            "▶ Continue Lesson";
+
+                    }
 
                 }
 
@@ -298,7 +323,6 @@ function updateLessonCards() {
         }
 
     }
-
 
 
     /*
@@ -339,7 +363,6 @@ function updateLessonCards() {
         );
 
 
-
     /*
      * =========================================
      * OVERALL BAR
@@ -360,7 +383,6 @@ function updateLessonCards() {
     }
 
 
-
     /*
      * =========================================
      * OVERALL PERCENTAGE
@@ -379,7 +401,6 @@ function updateLessonCards() {
             overallProgress + "%";
 
     }
-
 
 
     /*
@@ -405,7 +426,6 @@ function updateLessonCards() {
     }
 
 }
-
 
 
 /*
