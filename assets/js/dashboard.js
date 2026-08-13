@@ -3,9 +3,19 @@ document.addEventListener(
     function () {
 
         /*
-         * =========================
-         * Profile Data
-         * =========================
+         * =========================================
+         * UNIQUE EDUZONE STUDENT DASHBOARD
+         * LESSON 1 - LESSON 10
+         * =========================================
+         */
+
+        const TOTAL_LESSONS = 10;
+
+
+        /*
+         * =========================================
+         * PROFILE DATA
+         * =========================================
          */
 
         const studentName =
@@ -26,10 +36,11 @@ document.addEventListener(
             ) || "-";
 
 
+
         /*
-         * =========================
-         * Quiz Data
-         * =========================
+         * =========================================
+         * QUIZ DATA
+         * =========================================
          */
 
         const lastScore =
@@ -48,10 +59,11 @@ document.addEventListener(
             ) || 0;
 
 
+
         /*
-         * =========================
-         * Welcome Message
-         * =========================
+         * =========================================
+         * WELCOME MESSAGE
+         * =========================================
          */
 
         const welcomeMessage =
@@ -69,10 +81,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Profile Information
-         * =========================
+         * =========================================
+         * PROFILE INFORMATION
+         * =========================================
          */
 
         const nameElement =
@@ -117,10 +130,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Last Quiz Score
-         * =========================
+         * =========================================
+         * LAST QUIZ SCORE
+         * =========================================
          */
 
         const lastScoreElement =
@@ -148,10 +162,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Quiz Count
-         * =========================
+         * =========================================
+         * QUIZ COUNT
+         * =========================================
          */
 
         const quizCountElement =
@@ -168,14 +183,12 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Lessons Progress
-         * =========================
+         * =========================================
+         * GET COMPLETED LESSONS
+         * =========================================
          */
-
-        const TOTAL_LESSONS = 4;
-
 
         let completedLessons = [];
 
@@ -217,13 +230,52 @@ document.addEventListener(
         }
 
 
+
         /*
-         * Remove duplicate lesson numbers
+         * =========================================
+         * VALIDATE LESSON 1 - 10
+         * =========================================
+         *
+         * Only Lesson 1-10 are counted.
          */
 
         completedLessons =
             completedLessons.filter(
-                function (lesson, index, array) {
+                function (lesson) {
+
+                    const lessonNumber =
+                        Number(
+                            String(lesson)
+                                .replace(
+                                    "lesson",
+                                    ""
+                                )
+                        );
+
+
+                    return (
+                        lessonNumber >= 1 &&
+                        lessonNumber <= TOTAL_LESSONS
+                    );
+
+                }
+            );
+
+
+
+        /*
+         * =========================================
+         * REMOVE DUPLICATES
+         * =========================================
+         */
+
+        completedLessons =
+            completedLessons.filter(
+                function (
+                    lesson,
+                    index,
+                    array
+                ) {
 
                     return (
                         array.indexOf(
@@ -235,15 +287,16 @@ document.addEventListener(
             );
 
 
+
+        /*
+         * =========================================
+         * LESSONS COMPLETED
+         * =========================================
+         */
+
         const lessonsCompleted =
             completedLessons.length;
 
-
-        /*
-         * =========================
-         * Lessons Completed
-         * =========================
-         */
 
         const lessonsCompletedElement =
             document.getElementById(
@@ -263,13 +316,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Overall Progress
-         * =========================
-         *
-         * 50% Lesson Progress
-         * 50% Quiz Progress
+         * =========================================
+         * LESSON PROGRESS
+         * =========================================
          */
 
         const lessonProgress =
@@ -281,6 +332,16 @@ document.addEventListener(
             );
 
 
+
+        /*
+         * =========================================
+         * QUIZ PROGRESS
+         * =========================================
+         *
+         * Last quiz score is used as
+         * current quiz progress.
+         */
+
         const quizProgress =
             Math.min(
                 Math.max(
@@ -291,11 +352,27 @@ document.addEventListener(
             );
 
 
+
+        /*
+         * =========================================
+         * OVERALL PROGRESS
+         * =========================================
+         *
+         * 50% Lesson Progress
+         * 50% Quiz Progress
+         */
+
         let progress =
             Math.round(
                 (
-                    (lessonProgress * 0.5) +
-                    (quizProgress * 0.5)
+                    (
+                        lessonProgress *
+                        0.5
+                    ) +
+                    (
+                        quizProgress *
+                        0.5
+                    )
                 )
             );
 
@@ -314,10 +391,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Progress Bar
-         * =========================
+         * =========================================
+         * PROGRESS BAR
+         * =========================================
          */
 
         const progressBar =
@@ -334,10 +412,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Progress Text
-         * =========================
+         * =========================================
+         * PROGRESS TEXT
+         * =========================================
          */
 
         const progressText =
@@ -355,10 +434,11 @@ document.addEventListener(
         }
 
 
+
         /*
-         * =========================
-         * Learning Status
-         * =========================
+         * =========================================
+         * LEARNING STATUS
+         * =========================================
          */
 
         let status =
@@ -410,6 +490,13 @@ document.addEventListener(
 
         }
 
+
+
+        /*
+         * =========================================
+         * DISPLAY LEARNING STATUS
+         * =========================================
+         */
 
         const learningStatus =
             document.getElementById(
