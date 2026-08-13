@@ -1219,6 +1219,36 @@ function updateTimer() {
 
         function finishQuiz() {
 
+    if (quizFinished) {
+
+        return;
+
+    }
+
+
+    quizFinished = true;
+
+
+    if (timerInterval) {
+
+        clearInterval(
+            timerInterval
+        );
+
+    }
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) *
+            100
+        );
+            
+        function finishQuiz() {
+
             const percentage =
                 Math.round(
                     (
