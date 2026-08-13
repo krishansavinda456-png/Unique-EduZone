@@ -10,9 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Lessons | Unique EduZone
-    </title>
+    <title>Lessons | Unique EduZone</title>
 
     <link
         rel="stylesheet"
@@ -93,6 +91,7 @@
 
         .lesson-description {
             margin: 15px 0;
+            line-height: 1.7;
         }
 
         .lesson-progress-container {
@@ -127,19 +126,16 @@
             font-weight: bold;
             background: gold;
             color: #000;
+            transition: 0.2s;
+        }
+
+        .lesson-button:hover {
+            transform: translateY(-2px);
         }
 
         .lesson-button.completed {
             background: #555;
             color: #fff;
-            pointer-events: none;
-        }
-
-        .lesson-button.locked {
-            background: #333;
-            color: #aaa;
-            cursor: not-allowed;
-            pointer-events: none;
         }
 
         .dashboard-link {
@@ -152,20 +148,11 @@
             font-weight: bold;
         }
 
-        .coming-soon {
-            color: #aaa;
-            font-size: 14px;
-        }
-
         @media (max-width: 600px) {
 
             .lesson-card-header {
                 flex-direction: column;
                 align-items: flex-start;
-            }
-
-            .overall-progress-top {
-                gap: 10px;
             }
 
         }
@@ -184,28 +171,17 @@
         Unique EduZone
     </div>
 
-
     <nav>
 
-        <a href="../index.html">
-            Home
-        </a>
+        <a href="../index.html">Home</a>
 
-        <a href="lessons.html">
-            Lessons
-        </a>
+        <a href="lessons.html">Lessons</a>
 
-        <a href="quiz.html">
-            MCQ
-        </a>
+        <a href="quiz.html">MCQ</a>
 
-        <a href="dashboard.html">
-            Dashboard
-        </a>
+        <a href="dashboard.html">Dashboard</a>
 
-        <a href="profile.html">
-            Profile
-        </a>
+        <a href="profile.html">Profile</a>
 
     </nav>
 
@@ -216,15 +192,9 @@
 <main class="lessons-page">
 
 
-    <!-- =========================================
-         LESSON HEADER
-         ========================================= -->
-
     <section class="lessons-header">
 
-        <h1>
-            📚 My Lessons
-        </h1>
+        <h1>📚 My Lessons</h1>
 
         <p>
             Continue your learning journey with Unique EduZone.
@@ -233,10 +203,6 @@
     </section>
 
 
-
-    <!-- =========================================
-         OVERALL PROGRESS
-         ========================================= -->
 
     <section class="overall-progress-card">
 
@@ -252,7 +218,6 @@
 
         </div>
 
-
         <div class="overall-progress-bar">
 
             <div
@@ -262,7 +227,6 @@
 
         </div>
 
-
         <p id="overallLessonText">
             0 / 10 lessons completed
         </p>
@@ -271,14 +235,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 01
-         ========================================= -->
+    <!-- LESSON 1 -->
 
-    <article
-        class="lesson-card"
-        id="lesson1Card"
-    >
+    <article class="lesson-card" id="lesson1Card">
 
         <div class="lesson-card-header">
 
@@ -294,7 +253,6 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson1Status"
@@ -304,11 +262,9 @@
 
         </div>
 
-
         <p class="lesson-description">
             Learn the basic introduction and foundation of Business Studies.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -319,14 +275,12 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson1ProgressText"
         >
             0% completed
         </div>
-
 
         <div class="lesson-actions">
 
@@ -344,14 +298,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 02
-         ========================================= -->
+    <!-- LESSON 2 -->
 
-    <article
-        class="lesson-card"
-        id="lesson2Card"
-    >
+    <article class="lesson-card" id="lesson2Card">
 
         <div class="lesson-card-header">
 
@@ -367,7 +316,6 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson2Status"
@@ -377,11 +325,9 @@
 
         </div>
 
-
         <p class="lesson-description">
             Understand the internal and external business environment.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -392,14 +338,12 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson2ProgressText"
         >
             0% completed
         </div>
-
 
         <div class="lesson-actions">
 
@@ -417,14 +361,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 03
-         ========================================= -->
+    <!-- LESSON 3 -->
 
-    <article
-        class="lesson-card"
-        id="lesson3Card"
-    >
+    <article class="lesson-card" id="lesson3Card">
 
         <div class="lesson-card-header">
 
@@ -440,7 +379,6 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson3Status"
@@ -450,12 +388,10 @@
 
         </div>
 
-
         <p class="lesson-description">
             හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන,
             පෞද්ගලික අංශය සහ රාජ්‍ය අංශය පිළිබඳ අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -466,14 +402,12 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson3ProgressText"
         >
             0% completed
         </div>
-
 
         <div class="lesson-actions">
 
@@ -491,14 +425,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 04
-         ========================================= -->
+    <!-- LESSON 4 -->
 
-    <article
-        class="lesson-card"
-        id="lesson4Card"
-    >
+    <article class="lesson-card" id="lesson4Card">
 
         <div class="lesson-card-header">
 
@@ -514,7 +443,6 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson4Status"
@@ -524,12 +452,10 @@
 
         </div>
 
-
         <p class="lesson-description">
             ගිණුම්කරණයේ මූලික සංකල්ප,
             වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -540,7 +466,6 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson4ProgressText"
@@ -548,11 +473,10 @@
             0% completed
         </div>
 
-
         <div class="lesson-actions">
 
             <a
-                href="quiz.html?lesson=4"
+                href="lesson4.html"
                 class="lesson-button"
                 id="lesson4Button"
             >
@@ -565,14 +489,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 05 - UNLOCKED
-         ========================================= -->
+    <!-- LESSON 5 -->
 
-    <article
-        class="lesson-card"
-        id="lesson5Card"
-    >
+    <article class="lesson-card" id="lesson5Card">
 
         <div class="lesson-card-header">
 
@@ -588,7 +507,6 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson5Status"
@@ -598,12 +516,11 @@
 
         </div>
 
-
         <p class="lesson-description">
-            ගිණුම්කරණ සමීකරණය පිළිබඳ මූලික සංකල්ප,
-            වත්කම්, වගකීම් සහ හිමිකම අතර සම්බන්ධතාවය අධ්‍යයනය කරමු.
+            ගිණුම්කරණ සමීකරණය,
+            වත්කම්, වගකීම් සහ හිමිකම අතර සම්බන්ධතාවය
+            උදාහරණ සමඟ අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -614,14 +531,12 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson5ProgressText"
         >
             0% completed
         </div>
-
 
         <div class="lesson-actions">
 
@@ -639,14 +554,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 06
-         ========================================= -->
+    <!-- LESSON 6 -->
 
-    <article
-        class="lesson-card"
-        id="lesson6Card"
-    >
+    <article class="lesson-card" id="lesson6Card">
 
         <div class="lesson-card-header">
 
@@ -662,21 +572,18 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson6Status"
             >
-                Coming Soon
+                Not Started
             </div>
 
         </div>
 
-
-        <p class="lesson-description coming-soon">
-            මූල්‍ය ප්‍රකාශන සහ ඒවායේ මූලික කරුණු ඉදිරියේදී එකතු කරනු ලැබේ.
+        <p class="lesson-description">
+            මූල්‍ය ප්‍රකාශන සහ ඒවායේ මූලික කරුණු අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -687,7 +594,6 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson6ProgressText"
@@ -695,15 +601,14 @@
             0% completed
         </div>
 
-
         <div class="lesson-actions">
 
             <a
-                href="#"
-                class="lesson-button locked"
+                href="lesson6.html"
+                class="lesson-button"
                 id="lesson6Button"
             >
-                🔒 Coming Soon
+                ▶ Start Lesson 6
             </a>
 
         </div>
@@ -712,14 +617,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 07
-         ========================================= -->
+    <!-- LESSON 7 -->
 
-    <article
-        class="lesson-card"
-        id="lesson7Card"
-    >
+    <article class="lesson-card" id="lesson7Card">
 
         <div class="lesson-card-header">
 
@@ -735,21 +635,18 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson7Status"
             >
-                Coming Soon
+                Not Started
             </div>
 
         </div>
 
-
-        <p class="lesson-description coming-soon">
-            අලෙවිකරණයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        <p class="lesson-description">
+            අලෙවිකරණයේ මූලික සංකල්ප සහ ව්‍යාපාරයට එහි වැදගත්කම අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -760,7 +657,6 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson7ProgressText"
@@ -768,15 +664,14 @@
             0% completed
         </div>
 
-
         <div class="lesson-actions">
 
             <a
-                href="#"
-                class="lesson-button locked"
+                href="lesson7.html"
+                class="lesson-button"
                 id="lesson7Button"
             >
-                🔒 Coming Soon
+                ▶ Start Lesson 7
             </a>
 
         </div>
@@ -785,14 +680,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 08
-         ========================================= -->
+    <!-- LESSON 8 -->
 
-    <article
-        class="lesson-card"
-        id="lesson8Card"
-    >
+    <article class="lesson-card" id="lesson8Card">
 
         <div class="lesson-card-header">
 
@@ -808,21 +698,18 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson8Status"
             >
-                Coming Soon
+                Not Started
             </div>
 
         </div>
 
-
-        <p class="lesson-description coming-soon">
-            මානව සම්පත් කළමනාකරණයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        <p class="lesson-description">
+            මානව සම්පත් කළමනාකරණයේ මූලික කරුණු අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -833,7 +720,6 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson8ProgressText"
@@ -841,15 +727,14 @@
             0% completed
         </div>
 
-
         <div class="lesson-actions">
 
             <a
-                href="#"
-                class="lesson-button locked"
+                href="lesson8.html"
+                class="lesson-button"
                 id="lesson8Button"
             >
-                🔒 Coming Soon
+                ▶ Start Lesson 8
             </a>
 
         </div>
@@ -858,14 +743,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 09
-         ========================================= -->
+    <!-- LESSON 9 -->
 
-    <article
-        class="lesson-card"
-        id="lesson9Card"
-    >
+    <article class="lesson-card" id="lesson9Card">
 
         <div class="lesson-card-header">
 
@@ -881,21 +761,18 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson9Status"
             >
-                Coming Soon
+                Not Started
             </div>
 
         </div>
 
-
-        <p class="lesson-description coming-soon">
-            ව්‍යාපාර මූල්‍යයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        <p class="lesson-description">
+            ව්‍යාපාර මූල්‍යයේ මූලික කරුණු සහ මුදල් කළමනාකරණය අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -906,7 +783,6 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson9ProgressText"
@@ -914,15 +790,14 @@
             0% completed
         </div>
 
-
         <div class="lesson-actions">
 
             <a
-                href="#"
-                class="lesson-button locked"
+                href="lesson9.html"
+                class="lesson-button"
                 id="lesson9Button"
             >
-                🔒 Coming Soon
+                ▶ Start Lesson 9
             </a>
 
         </div>
@@ -931,14 +806,9 @@
 
 
 
-    <!-- =========================================
-         LESSON 10
-         ========================================= -->
+    <!-- LESSON 10 -->
 
-    <article
-        class="lesson-card"
-        id="lesson10Card"
-    >
+    <article class="lesson-card" id="lesson10Card">
 
         <div class="lesson-card-header">
 
@@ -954,21 +824,18 @@
 
             </div>
 
-
             <div
                 class="lesson-status"
                 id="lesson10Status"
             >
-                Coming Soon
+                Not Started
             </div>
 
         </div>
 
-
-        <p class="lesson-description coming-soon">
-            ව්‍යවසායකත්වයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        <p class="lesson-description">
+            ව්‍යවසායකත්වයේ මූලික කරුණු සහ ව්‍යවසායකයෙකුගේ ලක්ෂණ අධ්‍යයනය කරමු.
         </p>
-
 
         <div class="lesson-progress-container">
 
@@ -979,7 +846,6 @@
 
         </div>
 
-
         <div
             class="lesson-progress-text"
             id="lesson10ProgressText"
@@ -987,15 +853,14 @@
             0% completed
         </div>
 
-
         <div class="lesson-actions">
 
             <a
-                href="#"
-                class="lesson-button locked"
+                href="lesson10.html"
+                class="lesson-button"
                 id="lesson10Button"
             >
-                🔒 Coming Soon
+                ▶ Start Lesson 10
             </a>
 
         </div>
@@ -1003,10 +868,6 @@
     </article>
 
 
-
-    <!-- =========================================
-         DASHBOARD
-         ========================================= -->
 
     <div class="dashboard-link">
 
@@ -1032,7 +893,6 @@
 
 
 <script src="../assets/js/lessons.js"></script>
-
 
 </body>
 
