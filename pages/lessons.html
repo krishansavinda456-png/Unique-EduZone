@@ -33,9 +33,8 @@
         }
 
         .lessons-header h1 {
-            color: gold;
+            margin-bottom: 10px;
         }
-
 
         .overall-progress-card {
             background: #1b1b1b;
@@ -67,7 +66,6 @@
             transition: width 0.4s ease;
         }
 
-
         .lesson-card {
             background: #1b1b1b;
             border: 1px solid #333;
@@ -97,7 +95,6 @@
             margin: 15px 0;
         }
 
-
         .lesson-progress-container {
             width: 100%;
             height: 8px;
@@ -118,7 +115,6 @@
             font-size: 13px;
         }
 
-
         .lesson-actions {
             margin-top: 18px;
         }
@@ -134,15 +130,17 @@
         }
 
         .lesson-button.completed {
-            background: #198754;
+            background: #555;
             color: #fff;
+            pointer-events: none;
         }
 
-
-        .quiz-button {
-            margin-left: 8px;
+        .lesson-button.locked {
+            background: #333;
+            color: #aaa;
+            cursor: not-allowed;
+            pointer-events: none;
         }
-
 
         .dashboard-link {
             text-align: center;
@@ -154,6 +152,10 @@
             font-weight: bold;
         }
 
+        .coming-soon {
+            color: #aaa;
+            font-size: 14px;
+        }
 
         @media (max-width: 600px) {
 
@@ -162,9 +164,8 @@
                 align-items: flex-start;
             }
 
-            .quiz-button {
-                margin-left: 0;
-                margin-top: 8px;
+            .overall-progress-top {
+                gap: 10px;
             }
 
         }
@@ -215,6 +216,10 @@
 <main class="lessons-page">
 
 
+    <!-- =========================================
+         LESSON HEADER
+         ========================================= -->
+
     <section class="lessons-header">
 
         <h1>
@@ -229,7 +234,9 @@
 
 
 
-    <!-- OVERALL PROGRESS -->
+    <!-- =========================================
+         OVERALL PROGRESS
+         ========================================= -->
 
     <section class="overall-progress-card">
 
@@ -257,14 +264,16 @@
 
 
         <p id="overallLessonText">
-            0 / 4 lessons completed
+            0 / 10 lessons completed
         </p>
 
     </section>
 
 
 
-    <!-- LESSON 1 -->
+    <!-- =========================================
+         LESSON 01
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -284,6 +293,7 @@
                 </h2>
 
             </div>
+
 
             <div
                 class="lesson-status"
@@ -323,15 +333,9 @@
             <a
                 href="lesson1.html"
                 class="lesson-button"
+                id="lesson1Button"
             >
                 ▶ Continue Lesson
-            </a>
-
-            <a
-                href="quiz.html?lesson=1"
-                class="lesson-button quiz-button"
-            >
-                📝 Lesson 1 Quiz
             </a>
 
         </div>
@@ -340,7 +344,9 @@
 
 
 
-    <!-- LESSON 2 -->
+    <!-- =========================================
+         LESSON 02
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -400,15 +406,9 @@
             <a
                 href="lesson2.html"
                 class="lesson-button"
+                id="lesson2Button"
             >
                 ▶ Continue Lesson
-            </a>
-
-            <a
-                href="quiz.html?lesson=2"
-                class="lesson-button quiz-button"
-            >
-                📝 Lesson 2 Quiz
             </a>
 
         </div>
@@ -417,7 +417,9 @@
 
 
 
-    <!-- LESSON 3 -->
+    <!-- =========================================
+         LESSON 03
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -478,15 +480,9 @@
             <a
                 href="lesson3.html"
                 class="lesson-button"
+                id="lesson3Button"
             >
                 ▶ Continue Lesson
-            </a>
-
-            <a
-                href="quiz.html?lesson=3"
-                class="lesson-button quiz-button"
-            >
-                📝 Lesson 3 Quiz
             </a>
 
         </div>
@@ -495,7 +491,9 @@
 
 
 
-    <!-- LESSON 4 -->
+    <!-- =========================================
+         LESSON 04
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -529,8 +527,7 @@
 
         <p class="lesson-description">
             ගිණුම්කරණයේ මූලික සංකල්ප,
-            වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම්
-            පිළිබඳ අධ්‍යයනය කරමු.
+            වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
         </p>
 
 
@@ -555,17 +552,11 @@
         <div class="lesson-actions">
 
             <a
-                href="lesson4.html"
+                href="quiz.html?lesson=4"
                 class="lesson-button"
+                id="lesson4Button"
             >
                 ▶ Continue Lesson
-            </a>
-
-            <a
-                href="quiz.html?lesson=4"
-                class="lesson-button quiz-button"
-            >
-                📝 Lesson 4 Quiz
             </a>
 
         </div>
@@ -573,6 +564,448 @@
     </article>
 
 
+
+    <!-- =========================================
+         LESSON 05
+         ========================================= -->
+
+    <article
+        class="lesson-card"
+        id="lesson5Card"
+    >
+
+        <div class="lesson-card-header">
+
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 05
+                </div>
+
+                <h2>
+                    Accounting Equation
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson5Status"
+            >
+                Coming Soon
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description coming-soon">
+            ගිණුම්කරණ සමීකරණය සහ එයට අදාළ මූලික සංකල්ප ඉදිරියේදී එකතු කරනු ලැබේ.
+        </p>
+
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson5Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson5ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button locked"
+                id="lesson5Button"
+            >
+                🔒 Coming Soon
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =========================================
+         LESSON 06
+         ========================================= -->
+
+    <article
+        class="lesson-card"
+        id="lesson6Card"
+    >
+
+        <div class="lesson-card-header">
+
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 06
+                </div>
+
+                <h2>
+                    Financial Statements
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson6Status"
+            >
+                Coming Soon
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description coming-soon">
+            මූල්‍ය ප්‍රකාශන සහ ඒවායේ මූලික කරුණු ඉදිරියේදී එකතු කරනු ලැබේ.
+        </p>
+
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson6Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson6ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button locked"
+                id="lesson6Button"
+            >
+                🔒 Coming Soon
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =========================================
+         LESSON 07
+         ========================================= -->
+
+    <article
+        class="lesson-card"
+        id="lesson7Card"
+    >
+
+        <div class="lesson-card-header">
+
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 07
+                </div>
+
+                <h2>
+                    Marketing
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson7Status"
+            >
+                Coming Soon
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description coming-soon">
+            අලෙවිකරණයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        </p>
+
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson7Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson7ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button locked"
+                id="lesson7Button"
+            >
+                🔒 Coming Soon
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =========================================
+         LESSON 08
+         ========================================= -->
+
+    <article
+        class="lesson-card"
+        id="lesson8Card"
+    >
+
+        <div class="lesson-card-header">
+
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 08
+                </div>
+
+                <h2>
+                    Human Resource Management
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson8Status"
+            >
+                Coming Soon
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description coming-soon">
+            මානව සම්පත් කළමනාකරණයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        </p>
+
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson8Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson8ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button locked"
+                id="lesson8Button"
+            >
+                🔒 Coming Soon
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =========================================
+         LESSON 09
+         ========================================= -->
+
+    <article
+        class="lesson-card"
+        id="lesson9Card"
+    >
+
+        <div class="lesson-card-header">
+
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 09
+                </div>
+
+                <h2>
+                    Business Finance
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson9Status"
+            >
+                Coming Soon
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description coming-soon">
+            ව්‍යාපාර මූල්‍යයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        </p>
+
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson9Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson9ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button locked"
+                id="lesson9Button"
+            >
+                🔒 Coming Soon
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =========================================
+         LESSON 10
+         ========================================= -->
+
+    <article
+        class="lesson-card"
+        id="lesson10Card"
+    >
+
+        <div class="lesson-card-header">
+
+            <div>
+
+                <div class="lesson-number">
+                    LESSON 10
+                </div>
+
+                <h2>
+                    Entrepreneurship
+                </h2>
+
+            </div>
+
+
+            <div
+                class="lesson-status"
+                id="lesson10Status"
+            >
+                Coming Soon
+            </div>
+
+        </div>
+
+
+        <p class="lesson-description coming-soon">
+            ව්‍යවසායකත්වයට අදාළ පාඩම් අන්තර්ගතය ඉදිරියේදී එකතු කරනු ලැබේ.
+        </p>
+
+
+        <div class="lesson-progress-container">
+
+            <div
+                class="lesson-progress-bar"
+                id="lesson10Progress"
+            ></div>
+
+        </div>
+
+
+        <div
+            class="lesson-progress-text"
+            id="lesson10ProgressText"
+        >
+            0% completed
+        </div>
+
+
+        <div class="lesson-actions">
+
+            <a
+                href="#"
+                class="lesson-button locked"
+                id="lesson10Button"
+            >
+                🔒 Coming Soon
+            </a>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =========================================
+         DASHBOARD
+         ========================================= -->
 
     <div class="dashboard-link">
 
