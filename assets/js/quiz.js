@@ -741,6 +741,16 @@ let quizFinished = false;
                 "score"
             );
 
+        const timerElement =
+    document.getElementById(
+        "quizTimer"
+    );
+
+const lessonTitleElement =
+    document.getElementById(
+        "lessonTitle"
+    );
+
 
 
         /*
