@@ -5,9 +5,14 @@ document.addEventListener(
         /*
          * =========================================
          * UNIQUE EDUZONE QUIZ SYSTEM
-         * Lesson 1 - Lesson 4
+         * LESSON 1 - 4
          * =========================================
          */
+
+
+        /* =========================================
+           GET SELECTED LESSON
+        ========================================= */
 
         const urlParams =
             new URLSearchParams(
@@ -17,680 +22,507 @@ document.addEventListener(
         const lesson =
             urlParams.get("lesson") || "1";
 
-        /*
- * =========================================
- * HIGHLIGHT SELECTED LESSON
- * =========================================
- */
 
-document
-    .querySelectorAll(".lesson-link")
-    .forEach(function (link) {
-
-        const linkLesson =
-            link.getAttribute("data-lesson");
-
-        if (linkLesson === lesson) {
-
-            link.style.color = "gold";
-            link.style.fontWeight = "bold";
-
-        }
-
-    });
-
-
-        /*
-         * =========================================
-         * QUIZ QUESTIONS
-         * =========================================
-         */
+        /* =========================================
+           QUIZ DATA
+        ========================================= */
 
         const quizData = {
-
-            /*
-             * =====================================
-             * LESSON 1
-             * =====================================
-             */
 
             "1": [
 
                 {
                     question:
                         "ව්‍යාපාරයක් යනු කුමක්ද?",
-
                     options: [
                         "අවශ්‍යතා සපුරාලීම සඳහා භාණ්ඩ හා සේවා සැපයීමේ ක්‍රියාවලියකි.",
                         "විනෝදාස්වාද කටයුත්තකි.",
                         "පාසල් අධ්‍යාපන ක්‍රියාවලියකි.",
                         "පෞද්ගලික විනෝදාංශයකි."
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක ප්‍රධාන අරමුණක් වන්නේ කුමක්ද?",
-
                     options: [
                         "ලාභ ඉපයීම",
                         "නිවාඩු ගැනීම",
                         "ක්‍රීඩා කිරීම",
                         "විවේක ගැනීම"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "භාණ්ඩ යනු කුමක්ද?",
-
                     options: [
                         "ස්පර්ශ කළ හැකි දේවල්",
                         "ස්පර්ශ කළ නොහැකි සේවා පමණි",
                         "හැඟීම් පමණි",
                         "අදහස් පමණි"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "සේවාවකට උදාහරණයක් වන්නේ කුමක්ද?",
-
                     options: [
                         "කමිසයක්",
                         "පොතක්",
                         "බස් ප්‍රවාහන සේවාව",
                         "මේසයක්"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක පාරිභෝගිකයා යනු කවුද?",
-
                     options: [
                         "භාණ්ඩ හෝ සේවා ලබාගන්නා පුද්ගලයා",
                         "රජයේ නිලධාරියා",
                         "ව්‍යාපාර හිමිකරු පමණි",
                         "සේවකයා පමණි"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "නිෂ්පාදනය යන්නෙන් අදහස් කරන්නේ කුමක්ද?",
-
                     options: [
                         "භාණ්ඩ හා සේවා නිර්මාණය කිරීම",
                         "භාණ්ඩ විනාශ කිරීම",
                         "මුදල් තබා ගැනීම",
                         "භාණ්ඩ සඟවා තැබීම"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක අභ්‍යන්තර පාර්ශ්වයකට උදාහරණයක් වන්නේ?",
-
                     options: [
                         "පාරිභෝගිකයා",
                         "සේවකයා",
                         "රජය",
                         "බැංකුව"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක බාහිර පාර්ශ්වයකට උදාහරණයක් වන්නේ?",
-
                     options: [
                         "සේවකයා",
                         "කළමනාකරු",
                         "පාරිභෝගිකයා",
                         "අධ්‍යක්ෂ"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරික කටයුතු සඳහා අවශ්‍ය සම්පතක් වන්නේ?",
-
                     options: [
                         "ශ්‍රමය",
                         "විනෝදය",
                         "නිවාඩුව",
                         "ක්‍රීඩාව"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයකින් පාරිභෝගිකයාට ලැබෙන ප්‍රධාන ප්‍රතිලාභයක් වන්නේ?",
-
                     options: [
                         "අවශ්‍යතා හා වුවමනා සපුරා ගැනීම",
                         "බදු වැඩිවීම",
                         "වියදම් වැඩිවීම",
                         "නිෂ්පාදනය අඩුවීම"
                     ],
-
                     answer: 0
                 }
 
             ],
 
-
-
-            /*
-             * =====================================
-             * LESSON 2
-             * =====================================
-             */
 
             "2": [
 
                 {
                     question:
                         "ව්‍යාපාර පරිසරය යනු කුමක්ද?",
-
                     options: [
                         "ව්‍යාපාරයට බලපාන අභ්‍යන්තර හා බාහිර සාධක එකතුව",
                         "ව්‍යාපාර ගොඩනැගිල්ල පමණි",
                         "සේවකයන් පමණි",
                         "භාණ්ඩ පමණි"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක අභ්‍යන්තර පරිසරයට අයත් වන්නේ?",
-
                     options: [
                         "සේවකයන්",
                         "දේශපාලන තත්ත්වය",
                         "උද්ධමනය",
                         "රජයේ නීති"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක බාහිර පරිසර සාධකයකට උදාහරණයක් වන්නේ?",
-
                     options: [
                         "සේවකයන්",
                         "කළමනාකරණය",
                         "තාක්ෂණික වෙනස්කම්",
                         "ව්‍යාපාර සංස්කෘතිය"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "ආර්ථික පරිසරයට අයත් සාධකයක් වන්නේ?",
-
                     options: [
                         "උද්ධමනය",
                         "සේවක පුහුණුව",
                         "කාර්යාල ගෘහ භාණ්ඩ",
                         "කළමනාකරු"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "තාක්ෂණික පරිසරයේ වෙනස්වීමක ප්‍රතිඵලයක් විය හැක්කේ?",
-
                     options: [
                         "නව නිෂ්පාදන ක්‍රම බිහිවීම",
                         "ව්‍යාපාර සම්පූර්ණයෙන් නතර වීම",
                         "පාරිභෝගිකයන් නැතිවීම පමණි",
                         "මුදල් භාවිතය නැතිවීම"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "දේශපාලන පරිසරයට සම්බන්ධ වන්නේ?",
-
                     options: [
                         "රජයේ ප්‍රතිපත්ති",
                         "සේවක වැටුප පමණි",
                         "භාණ්ඩයේ වර්ණය",
                         "කාර්යාලයේ ප්‍රමාණය"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "සමාජ පරිසරයේ වෙනස්වීමක් වන්නේ?",
-
                     options: [
                         "පාරිභෝගික රුචි අරුචිකම් වෙනස්වීම",
                         "බැංකු ගිණුම",
                         "කාර්යාල මේසය",
                         "යන්ත්‍රයක්"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "නීතිමය පරිසරය ව්‍යාපාරයට බලපාන්නේ කෙසේද?",
-
                     options: [
                         "නීති හා රෙගුලාසි මගින්",
                         "වර්ණ තෝරාගැනීමෙන්",
                         "සේවකයන්ගේ විනෝදාස්වාදයෙන්",
                         "ගබඩාවේ ප්‍රමාණයෙන්"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාර පරිසරය නිරන්තරයෙන් වෙනස් වන්නේ ඇයි?",
-
                     options: [
                         "විවිධ ආර්ථික, සමාජ, තාක්ෂණික හා දේශපාලන වෙනස්කම් නිසා",
                         "කිසිදු හේතුවක් නොමැතිව",
                         "ව්‍යාපාර හිමිකරු නිසා පමණි",
                         "සේවකයන් නිසා පමණි"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයකට පරිසර වෙනස්කම් හඳුනාගැනීම වැදගත් වන්නේ?",
-
                     options: [
                         "සුදුසු තීරණ ගැනීමට",
                         "වැඩ නතර කිරීමට",
                         "පාරිභෝගිකයන් ඉවත් කිරීමට",
                         "නිෂ්පාදනය අඩු කිරීමට"
                     ],
-
                     answer: 0
                 }
 
             ],
 
-
-
-            /*
-             * =====================================
-             * LESSON 3
-             * ව්‍යාපාර සංවිධාන
-             * =====================================
-             */
 
             "3": [
 
                 {
                     question:
                         "හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන ප්‍රධාන වශයෙන් කුමන කොටස් දෙකට බෙදේද?",
-
                     options: [
                         "සුළු හා මහා",
                         "පෞද්ගලික හා රාජ්‍ය",
                         "දේශීය හා විදේශීය",
                         "ලාභ හා අලාභ"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "පහත සඳහන් කුමක් රාජ්‍ය අංශයට අයත් වේද?",
-
                     options: [
                         "තනි පුද්ගල ව්‍යාපාර",
                         "හවුල් ව්‍යාපාර",
                         "රජයේ දෙපාර්තමේන්තුව",
                         "පෞද්ගලික සමාගම"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "තනි පුද්ගල ව්‍යාපාරයක හිමිකරුගේ වගකීම කෙසේද?",
-
                     options: [
                         "අසීමිත",
                         "සීමිත",
                         "කිසිදු වගකීමක් නැත",
                         "රජය දරයි"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "සමාගමක කොටස් හිමියන්ගේ වගකීම සාමාන්‍යයෙන් කුමක්ද?",
-
                     options: [
                         "අසීමිත",
                         "සීමිත",
                         "කිසිදු වගකීමක් නැත",
                         "රජය දරයි"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "සමූපකාර සමිතියක ප්‍රධාන ලක්ෂණයක් වන්නේ කුමක්ද?",
-
                     options: [
                         "එක් පුද්ගලයකු පමණක් හිමිකරු වීම",
                         "ප්‍රජාතන්ත්‍රවාදී පාලනය",
                         "අසීමිත වගකීම පමණක් තිබීම",
                         "කොටස් හිමියන් පමණක් සිටීම"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "තනි පුද්ගල ව්‍යාපාරයක ලාභය හිමිවන්නේ කාටද?",
-
                     options: [
                         "රජයට",
                         "සේවකයන්ට",
                         "හිමිකරුට",
                         "පාරිභෝගිකයන්ට"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "හවුල් ව්‍යාපාරයක් සඳහා අවම වශයෙන් අවශ්‍ය වන්නේ?",
-
                     options: [
                         "එක් පුද්ගලයෙකු",
                         "පුද්ගලයන් දෙදෙනෙකු",
                         "රජයේ ආයතන දෙකක්",
                         "එක් සමාගමක්"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "සමාගමකට විශේෂයෙන් වැදගත් ලක්ෂණයක් වන්නේ?",
-
                     options: [
                         "නීතිමය පුද්ගලභාවය",
                         "හිමිකරු එක් අයෙකු වීම",
                         "අසීමිත වගකීම",
                         "අඛණ්ඩ පැවැත්මක් නොමැති වීම"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "රාජ්‍ය අංශයට අයත් ආයතනයකට උදාහරණයක් වන්නේ?",
-
                     options: [
                         "තනි පුද්ගල වෙළඳසැල",
                         "පෞද්ගලික සමාගම",
                         "ශ්‍රී ලංකා දුම්රිය දෙපාර්තමේන්තුව",
                         "පෞද්ගලික හෝටලය"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාර ප්‍රමාණය අනුව වර්ග කිරීමේදී සලකා බැලිය හැකි සාධකයක් වන්නේ?",
-
                     options: [
                         "සේවක සංඛ්‍යාව",
                         "හිමිකරුගේ වයස පමණි",
                         "ගොඩනැගිල්ලේ වර්ණය",
                         "භාණ්ඩයේ නම"
                     ],
-
                     answer: 0
                 }
 
             ],
 
 
-
-            /*
-             * =====================================
-             * LESSON 4
-             * ගිණුම්කරණය
-             *
-             * NOTE:
-             * ගිණුම්කරණ සමීකරණය සහ ඉන් පසු
-             * කොටස් Lesson 5 සඳහා තබා ඇත.
-             * =====================================
-             */
-
             "4": [
 
                 {
                     question:
                         "ගිණුම්කරණය යනු කුමක්ද?",
-
                     options: [
                         "ව්‍යාපාරයක මූල්‍ය ගනුදෙනු හඳුනාගෙන, මැන, වාර්තා කර, සාරාංශ කර තොරතුරු ඉදිරිපත් කිරීමේ ක්‍රියාවලිය",
                         "භාණ්ඩ විකිණීම පමණි",
                         "සේවකයන් බඳවා ගැනීම පමණි",
                         "ව්‍යාපාර ප්‍රචාරණය කිරීම පමණි"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයට අයත් ආර්ථික වටිනාකමක් ඇති සම්පතක් හඳුන්වන්නේ?",
-
                     options: [
                         "වගකීම",
                         "වත්කම",
                         "වියදම",
                         "ආදායම"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "පහත සඳහන් කුමක් ජංගම වත්කමකට උදාහරණයක්ද?",
-
                     options: [
                         "ගොඩනැගිල්ල",
                         "ඉඩම",
                         "මුදල්",
                         "යන්ත්‍රෝපකරණ"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "පහත සඳහන් කුමක් ජංගම නොවන වත්කමකට උදාහරණයක්ද?",
-
                     options: [
                         "මුදල්",
                         "ණයගැතියන්",
                         "තොග",
                         "ගොඩනැගිල්ල"
                     ],
-
                     answer: 3
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයක් වෙනත් පාර්ශ්වයකට ගෙවිය යුතු මුදල් හෝ බැඳීම් හඳුන්වන්නේ?",
-
                     options: [
                         "වත්කම්",
                         "වගකීම්",
                         "ආදායම්",
                         "වියදම්"
                     ],
-
                     answer: 1
                 },
-
 
                 {
                     question:
                         "පහත සඳහන් කුමක් ජංගම වගකීමකට උදාහරණයක්ද?",
-
                     options: [
                         "බැංකු අයිරාව",
                         "දිගුකාලීන ණය",
                         "ගොඩනැගිල්ල",
                         "යන්ත්‍රෝපකරණ"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "පහත සඳහන් කුමක් ජංගම නොවන වගකීමකට උදාහරණයක්ද?",
-
                     options: [
                         "වෙළෙඳ ගෙවිය යුතු",
                         "කෙටි කාලීන ණය",
                         "දිගුකාලීන බැංකු ණය",
                         "මුදල්"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයට හිමිකරු විසින් යොදවන මුදල් හඳුන්වන්නේ?",
-
                     options: [
                         "ආදායම",
                         "වියදම",
                         "හිමිකම",
                         "වගකීම"
                     ],
-
                     answer: 2
                 },
-
 
                 {
                     question:
                         "භාණ්ඩ හෝ සේවා විකිණීමෙන් ව්‍යාපාරයට ලැබෙන මුදල් හඳුන්වන්නේ?",
-
                     options: [
                         "ආදායම",
                         "වගකීම",
                         "වත්කම පමණි",
                         "වියදම"
                     ],
-
                     answer: 0
                 },
-
 
                 {
                     question:
                         "ව්‍යාපාරයේ ආදායම් උපයා ගැනීම සඳහා දරන පිරිවැය හඳුන්වන්නේ?",
-
                     options: [
                         "හිමිකම",
                         "වියදම",
                         "වගකීම",
                         "වත්කම"
                     ],
-
                     answer: 1
                 }
 
@@ -699,74 +531,33 @@ document
         };
 
 
-
-        /*
-         * =========================================
-         * SELECT CURRENT LESSON
-         * =========================================
-         */
+        /* =========================================
+           QUESTIONS
+        ========================================= */
 
         const questions =
             quizData[lesson] ||
             quizData["1"];
 
-        const lessonNames = {
 
-    "1":
-        "Lesson 1 - Introduction to Business Studies",
-
-    "2":
-        "Lesson 2 - Business Environment",
-
-    "3":
-        "Lesson 3 - Business Ownership",
-
-    "4":
-        "Lesson 4 - Accounting"
-
-};
-
-
-if (lessonTitleElement) {
-
-    lessonTitleElement.textContent =
-        lessonNames[lesson] ||
-        lessonNames["1"];
-
-}
-
-
-
-        /*
-         * =========================================
-         * QUIZ VARIABLES
-         * =========================================
-         */
+        /* =========================================
+           VARIABLES
+        ========================================= */
 
         let currentQuestion = 0;
 
-let score = 0;
+        let score = 0;
 
-let answered = false;
+        let answered = false;
 
+        let timeLeft = 600;
 
-/* ==============================
-   QUIZ TIMER
-============================== */
-
-let timeLeft = 10 * 60; // 10 minutes
-
-let timerInterval = null;
-
-let quizFinished = false;
+        let timerInterval = null;
 
 
-
-        /*
-         * =========================================
-         * FIND HTML ELEMENTS
-         * =========================================
-         */
+        /* =========================================
+           HTML ELEMENTS
+        ========================================= */
 
         const questionElement =
             document.getElementById(
@@ -788,23 +579,188 @@ let quizFinished = false;
                 "score"
             );
 
+        const questionCounter =
+            document.getElementById(
+                "questionCounter"
+            );
+
         const timerElement =
-    document.getElementById(
-        "quizTimer"
-    );
+            document.getElementById(
+                "timer"
+            );
 
-const lessonTitleElement =
-    document.getElementById(
-        "lessonTitle"
-    );
+        const quizCard =
+            document.getElementById(
+                "quizCard"
+            );
+
+        const quizResult =
+            document.getElementById(
+                "quizResult"
+            );
 
 
+        /* =========================================
+           LESSON TITLES
+        ========================================= */
 
-        /*
-         * =========================================
-         * LOAD QUESTION
-         * =========================================
-         */
+        const lessonTitles = {
+
+            "1":
+                "Lesson 01 - Introduction to Business Studies",
+
+            "2":
+                "Lesson 02 - Business Environment",
+
+            "3":
+                "Lesson 03 - Business Ownership",
+
+            "4":
+                "Lesson 04 - Accounting"
+
+        };
+
+
+        /* =========================================
+           SELECTED LESSON GOLD COLOR
+        ========================================= */
+
+        document
+            .querySelectorAll(
+                ".lesson-select"
+            )
+            .forEach(
+                function (link) {
+
+                    if (
+                        link.dataset.lesson ===
+                        lesson
+                    ) {
+
+                        link.classList.add(
+                            "selected"
+                        );
+
+                    }
+
+                }
+            );
+
+
+        /* =========================================
+           SHOW LESSON TITLE
+        ========================================= */
+
+        const titleElement =
+            document.getElementById(
+                "quizLessonTitle"
+            );
+
+        if (titleElement) {
+
+            titleElement.textContent =
+                lessonTitles[lesson] ||
+                "Lesson 01";
+
+        }
+
+
+        /* =========================================
+           TIMER
+        ========================================= */
+
+        function startTimer() {
+
+            clearInterval(
+                timerInterval
+            );
+
+            timeLeft = 600;
+
+            updateTimer();
+
+
+            timerInterval =
+                setInterval(
+                    function () {
+
+                        timeLeft--;
+
+                        updateTimer();
+
+
+                        if (
+                            timeLeft <= 0
+                        ) {
+
+                            clearInterval(
+                                timerInterval
+                            );
+
+                            finishQuiz(
+                                true
+                            );
+
+                        }
+
+                    },
+                    1000
+                );
+
+        }
+
+
+        function updateTimer() {
+
+            if (!timerElement) {
+
+                return;
+
+            }
+
+
+            const minutes =
+                Math.floor(
+                    timeLeft / 60
+                );
+
+
+            const seconds =
+                timeLeft % 60;
+
+
+            timerElement.textContent =
+                String(minutes)
+                    .padStart(2, "0") +
+                ":" +
+                String(seconds)
+                    .padStart(2, "0");
+
+
+            if (
+                timeLeft <= 60
+            ) {
+
+                timerElement.classList.add(
+                    "warning"
+                );
+
+            }
+
+            else {
+
+                timerElement.classList.remove(
+                    "warning"
+                );
+
+            }
+
+        }
+
+
+        /* =========================================
+           LOAD QUESTION
+        ========================================= */
 
         function loadQuestion() {
 
@@ -818,125 +774,6 @@ const lessonTitleElement =
 
                 finishQuiz();
 
-        /* ==============================
-   START TIMER
-============================== */
-
-function startTimer() {
-
-    if (timerInterval) {
-
-        clearInterval(
-            timerInterval
-        );
-
-    }
-
-
-    updateTimer();
-
-
-    timerInterval =
-        setInterval(
-            function () {
-
-                timeLeft--;
-
-
-                updateTimer();
-
-
-                if (timeLeft <= 0) {
-
-                    clearInterval(
-                        timerInterval
-                    );
-
-
-                    timeLeft = 0;
-
-
-                    finishQuiz();
-
-                }
-
-            },
-            1000
-        );
-
-}
-
-
-
-/* ==============================
-   UPDATE TIMER
-============================== */
-
-function updateTimer() {
-
-    if (!timerElement) {
-
-        return;
-
-    }
-
-
-    const minutes =
-        Math.floor(
-            timeLeft / 60
-        );
-
-
-    const seconds =
-        timeLeft % 60;
-
-
-    timerElement.textContent =
-        String(minutes).padStart(2, "0") +
-        ":" +
-        String(seconds).padStart(2, "0");
-
-
-    /*
-     * Timer colour
-     */
-
-    timerElement.classList.remove(
-        "safe",
-        "warning"
-    );
-
-
-    if (timeLeft <= 60) {
-
-        timerElement.classList.add(
-            "warning"
-        );
-
-    }
-
-    else {
-
-        timerElement.classList.add(
-            "safe"
-        );
-
-    }
-
-
-    /*
-     * Final 10 seconds
-     */
-
-    if (timeLeft <= 10) {
-
-        timerElement.style.background =
-            "#dc3545";
-
-    }
-
-}
-
                 return;
 
             }
@@ -948,24 +785,25 @@ function updateTimer() {
                 ];
 
 
-            if (questionElement) {
-
-                questionElement.textContent =
-                    (
-                        currentQuestion + 1
-                    ) +
-                    ". " +
-                    question.question;
-
-            }
+            questionElement.textContent =
+                (
+                    currentQuestion + 1
+                ) +
+                ". " +
+                question.question;
 
 
-            if (optionsElement) {
+            questionCounter.textContent =
+                "Question " +
+                (
+                    currentQuestion + 1
+                ) +
+                " of " +
+                questions.length;
 
-                optionsElement.innerHTML =
-                    "";
 
-            }
+            optionsElement.innerHTML =
+                "";
 
 
             question.options.forEach(
@@ -1001,37 +839,26 @@ function updateTimer() {
                     );
 
 
-                    if (optionsElement) {
-
-                        optionsElement.appendChild(
-                            button
-                        );
-
-                    }
+                    optionsElement.appendChild(
+                        button
+                    );
 
                 }
             );
 
 
-            if (nextButton) {
-
-                nextButton.disabled =
-                    true;
-
-            }
+            nextButton.disabled =
+                true;
 
 
-            updateQuestionCounter();
+            updateScore();
 
         }
 
 
-
-        /*
-         * =========================================
-         * SELECT ANSWER
-         * =========================================
-         */
+        /* =========================================
+           SELECT ANSWER
+        ========================================= */
 
         function selectAnswer(
             button,
@@ -1079,7 +906,7 @@ function updateTimer() {
                             "#198754";
 
                         optionButton.style.color =
-                            "#ffffff";
+                            "#fff";
 
                     }
 
@@ -1094,12 +921,11 @@ function updateTimer() {
 
                 score++;
 
-
                 button.style.background =
                     "#198754";
 
                 button.style.color =
-                    "#ffffff";
+                    "#fff";
 
             }
 
@@ -1109,17 +935,13 @@ function updateTimer() {
                     "#dc3545";
 
                 button.style.color =
-                    "#ffffff";
+                    "#fff";
 
             }
 
 
-            if (nextButton) {
-
-                nextButton.disabled =
-                    false;
-
-            }
+            nextButton.disabled =
+                false;
 
 
             updateScore();
@@ -1127,166 +949,146 @@ function updateTimer() {
         }
 
 
+        /* =========================================
+           NEXT QUESTION
+        ========================================= */
 
-        /*
-         * =========================================
-         * NEXT QUESTION
-         * =========================================
-         */
+        nextButton.addEventListener(
+            "click",
+            function () {
 
-        if (nextButton) {
+                if (!answered) {
 
-            nextButton.addEventListener(
-                "click",
-                function () {
-
-                    if (!answered) {
-
-                        return;
-
-                    }
-
-
-                    currentQuestion++;
-
-
-                    loadQuestion();
+                    return;
 
                 }
+
+
+                currentQuestion++;
+
+                loadQuestion();
+
+            }
+        );
+
+
+        /* =========================================
+           SCORE
+        ========================================= */
+
+        function updateScore() {
+
+            scoreElement.textContent =
+                "Score: " +
+                score +
+                " / " +
+                questions.length;
+
+        }
+
+
+        /* =========================================
+           COMPLETE LESSON
+        ========================================= */
+
+        function markLessonCompleted() {
+
+            let completedLessons = [];
+
+
+            try {
+
+                completedLessons =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "uez_completed_lessons"
+                        )
+                    ) || [];
+
+            }
+
+            catch (error) {
+
+                completedLessons = [];
+
+            }
+
+
+            const lessonId =
+                "lesson" + lesson;
+
+
+            if (
+                !completedLessons.includes(
+                    lessonId
+                )
+            ) {
+
+                completedLessons.push(
+                    lessonId
+                );
+
+            }
+
+
+            localStorage.setItem(
+                "uez_completed_lessons",
+                JSON.stringify(
+                    completedLessons
+                )
             );
 
         }
 
 
+        /* =========================================
+           FINISH QUIZ
+        ========================================= */
 
-        /*
-         * =========================================
-         * SCORE
-         * =========================================
-         */
+        function finishQuiz(
+            timeExpired = false
+        ) {
 
-        function updateScore() {
+            clearInterval(
+                timerInterval
+            );
 
-            if (scoreElement) {
-
-                scoreElement.textContent =
-                    "Score: " +
-                    score +
-                    " / " +
-                    questions.length;
-
-            }
-
-        }
-
-
-
-        /*
-         * =========================================
-         * QUESTION COUNTER
-         * =========================================
-         */
-
-        function updateQuestionCounter() {
-
-            const counter =
-                document.getElementById(
-                    "questionCounter"
-                );
-
-
-            if (counter) {
-
-                counter.textContent =
-                    "Question " +
-                    (
-                        currentQuestion + 1
-                    ) +
-                    " of " +
-                    questions.length;
-
-            }
-
-        }
-
-
-
-        /*
-         * =========================================
-         * FINISH QUIZ
-         * =========================================
-         */
-
-        function finishQuiz() {
-
-    if (quizFinished) {
-
-        return;
-
-    }
-
-
-    quizFinished = true;
-
-
-    if (timerInterval) {
-
-        clearInterval(
-            timerInterval
-        );
-
-    }
-
-
-    const percentage =
-        Math.round(
-            (
-                score /
-                questions.length
-            ) *
-            100
-        );
-            
 
             const percentage =
                 Math.round(
                     (
                         score /
                         questions.length
-                    ) *
-                    100
+                    ) * 100
                 );
 
 
-            /*
-             * =====================================
-             * SAVE CURRENT QUIZ RESULT
-             * =====================================
-             */
+            /* Save general result */
 
             localStorage.setItem(
                 "uez_last_quiz_correct",
                 score
             );
 
-
             localStorage.setItem(
                 "uez_last_quiz_total",
                 questions.length
             );
-
 
             localStorage.setItem(
                 "uez_last_quiz_percentage",
                 percentage
             );
 
+            localStorage.setItem(
+                "uez_last_score",
+                percentage
+            );
 
             localStorage.setItem(
                 "uez_quiz_status",
                 "Completed"
             );
-
 
             localStorage.setItem(
                 "uez_quiz_pass_fail",
@@ -1296,12 +1098,7 @@ function updateTimer() {
             );
 
 
-
-            /*
-             * =====================================
-             * LESSON-SPECIFIC RESULT
-             * =====================================
-             */
+            /* Save lesson result */
 
             localStorage.setItem(
                 "uez_lesson_" +
@@ -1310,14 +1107,12 @@ function updateTimer() {
                 percentage
             );
 
-
             localStorage.setItem(
                 "uez_lesson_" +
                 lesson +
                 "_correct",
                 score
             );
-
 
             localStorage.setItem(
                 "uez_lesson_" +
@@ -1327,12 +1122,7 @@ function updateTimer() {
             );
 
 
-
-            /*
-             * =====================================
-             * QUIZ COUNT
-             * =====================================
-             */
+            /* Quiz count */
 
             let quizCount =
                 Number(
@@ -1351,38 +1141,84 @@ function updateTimer() {
             );
 
 
-
             /*
-             * =====================================
-             * LAST SCORE
-             * =====================================
+             * Lesson is completed only
+             * if all questions were answered
+             * or quiz was completed normally.
              */
 
-            localStorage.setItem(
-                "uez_last_score",
-                percentage
-            );
+            if (!timeExpired) {
+
+                markLessonCompleted();
+
+            }
 
 
+            /* Show result */
 
-            /*
-             * =====================================
-             * REDIRECT
-             * =====================================
-             */
+            quizCard.style.display =
+                "none";
 
-            window.location.href =
-                "results.html";
+
+            quizResult.style.display =
+                "block";
+
+
+            const resultPercentage =
+                document.getElementById(
+                    "resultPercentage"
+                );
+
+
+            const resultMessage =
+                document.getElementById(
+                    "resultMessage"
+                );
+
+
+            resultPercentage.textContent =
+                percentage + "%";
+
+
+            if (timeExpired) {
+
+                resultMessage.textContent =
+                    "⏰ කාලය අවසන් විය. ඔබ ලබාගත් ලකුණු: " +
+                    score +
+                    " / " +
+                    questions.length;
+
+            }
+
+            else if (
+                percentage >= 50
+            ) {
+
+                resultMessage.textContent =
+                    "🎉 සුභ පැතුම්! ඔබ Quiz එක සමත් වී ඇත. " +
+                    score +
+                    " / " +
+                    questions.length;
+
+            }
+
+            else {
+
+                resultMessage.textContent =
+                    "ඔබගේ ලකුණු " +
+                    score +
+                    " / " +
+                    questions.length +
+                    " කි. නැවත උත්සාහ කරන්න.";
+
+            }
 
         }
 
 
-
-        /*
-         * =========================================
-         * START QUIZ
-         * =========================================
-         */
+        /* =========================================
+           START
+        ========================================= */
 
         loadQuestion();
 
