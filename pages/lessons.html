@@ -27,17 +27,14 @@
             padding: 30px 20px;
         }
 
-
         .lessons-header {
             text-align: center;
             margin-bottom: 30px;
         }
 
-
         .lessons-header h1 {
             margin-bottom: 10px;
         }
-
 
         .overall-progress-card {
             background: #1b1b1b;
@@ -47,14 +44,12 @@
             margin-bottom: 30px;
         }
 
-
         .overall-progress-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
-
 
         .overall-progress-bar {
             width: 100%;
@@ -64,7 +59,6 @@
             overflow: hidden;
         }
 
-
         .overall-progress-fill {
             height: 100%;
             width: 0%;
@@ -72,15 +66,19 @@
             transition: width 0.4s ease;
         }
 
-
         .lesson-card {
             background: #1b1b1b;
             border: 1px solid #333;
             border-radius: 15px;
             padding: 22px;
             margin-bottom: 20px;
+            transition: 0.3s ease;
         }
 
+        .lesson-card:hover {
+            border-color: gold;
+            transform: translateY(-2px);
+        }
 
         .lesson-card-header {
             display: flex;
@@ -89,24 +87,21 @@
             gap: 15px;
         }
 
-
         .lesson-number {
             color: gold;
             font-weight: bold;
+            font-size: 14px;
         }
-
 
         .lesson-status {
             font-size: 14px;
             font-weight: bold;
         }
 
-
         .lesson-description {
             margin: 15px 0;
             line-height: 1.7;
         }
-
 
         .lesson-progress-container {
             width: 100%;
@@ -117,7 +112,6 @@
             margin: 15px 0 8px;
         }
 
-
         .lesson-progress-bar {
             height: 100%;
             width: 0%;
@@ -125,16 +119,13 @@
             transition: width 0.4s ease;
         }
 
-
         .lesson-progress-text {
             font-size: 13px;
         }
 
-
         .lesson-actions {
             margin-top: 18px;
         }
-
 
         .lesson-button {
             display: inline-block;
@@ -144,33 +135,31 @@
             font-weight: bold;
             background: gold;
             color: #000;
+            transition: 0.3s ease;
         }
-
 
         .lesson-button:hover {
-            opacity: 0.9;
+            transform: scale(1.03);
         }
-
 
         .lesson-button.completed {
             background: #555;
             color: #fff;
+            pointer-events: none;
         }
-
 
         .dashboard-link {
             text-align: center;
             margin-top: 30px;
         }
 
-
         .dashboard-link a {
             color: gold;
             font-weight: bold;
+            text-decoration: none;
         }
 
-
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
 
             .lesson-card-header {
                 flex-direction: column;
@@ -178,9 +167,13 @@
             }
 
             .overall-progress-top {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
+                gap: 10px;
+            }
+
+            .lesson-button {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
             }
 
         }
@@ -231,9 +224,9 @@
 <main class="lessons-page">
 
 
-    <!-- =========================================
-         HEADER
-         ========================================= -->
+    <!-- =====================================
+         PAGE HEADER
+         ===================================== -->
 
     <section class="lessons-header">
 
@@ -242,16 +235,16 @@
         </h1>
 
         <p>
-            Continue your learning journey with Unique EduZone.
+            Unique EduZone සමඟ ඔබේ ඉගෙනුම් ගමන ඉදිරියට ගෙන යන්න.
         </p>
 
     </section>
 
 
 
-    <!-- =========================================
+    <!-- =====================================
          OVERALL PROGRESS
-         ========================================= -->
+         ===================================== -->
 
     <section class="overall-progress-card">
 
@@ -286,9 +279,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================
          LESSON 1
-         ========================================= -->
+         ===================================== -->
 
     <article
         class="lesson-card"
@@ -304,7 +297,7 @@
                 </div>
 
                 <h2>
-                    Introduction to Business Studies
+                    ව්‍යාපාර අධ්‍යයනයට හැඳින්වීම
                 </h2>
 
             </div>
@@ -321,7 +314,11 @@
 
 
         <p class="lesson-description">
-            Learn the basic introduction and foundation of Business Studies.
+
+            ව්‍යාපාරයක් යනු කුමක්ද, භාණ්ඩ හා සේවා,
+            පාරිභෝගිකයන්, නිෂ්පාදනය සහ ව්‍යාපාරයට
+            සම්බන්ධ පාර්ශ්ව පිළිබඳ මූලික කරුණු අධ්‍යයනය කරමු.
+
         </p>
 
 
@@ -350,7 +347,7 @@
                 class="lesson-button"
                 id="lesson1Button"
             >
-                ▶ Continue Lesson
+                ▶ Start Lesson 1
             </a>
 
         </div>
@@ -359,9 +356,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================
          LESSON 2
-         ========================================= -->
+         ===================================== -->
 
     <article
         class="lesson-card"
@@ -377,7 +374,7 @@
                 </div>
 
                 <h2>
-                    Business Environment
+                    ව්‍යාපාර පරිසරය
                 </h2>
 
             </div>
@@ -394,7 +391,11 @@
 
 
         <p class="lesson-description">
-            Understand the internal and external business environment.
+
+            ව්‍යාපාරයේ අභ්‍යන්තර හා බාහිර පරිසරය,
+            ආර්ථික, සමාජ, දේශපාලන, නීතිමය සහ
+            තාක්ෂණික සාධක පිළිබඳ අධ්‍යයනය කරමු.
+
         </p>
 
 
@@ -423,7 +424,7 @@
                 class="lesson-button"
                 id="lesson2Button"
             >
-                ▶ Continue Lesson
+                ▶ Start Lesson 2
             </a>
 
         </div>
@@ -432,9 +433,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================
          LESSON 3
-         ========================================= -->
+         ===================================== -->
 
     <article
         class="lesson-card"
@@ -450,7 +451,7 @@
                 </div>
 
                 <h2>
-                    Business Ownership
+                    ව්‍යාපාර සංවිධාන හා හිමිකාරිත්වය
                 </h2>
 
             </div>
@@ -467,8 +468,11 @@
 
 
         <p class="lesson-description">
-            හිමිකාරිත්වය අනුව ව්‍යාපාර සංවිධාන,
-            පෞද්ගලික අංශය සහ රාජ්‍ය අංශය පිළිබඳ අධ්‍යයනය කරමු.
+
+            තනි පුද්ගල ව්‍යාපාර, හවුල් ව්‍යාපාර,
+            සමාගම්, රාජ්‍ය අංශය සහ සමූපකාර වැනි
+            ව්‍යාපාර සංවිධාන පිළිබඳ අධ්‍යයනය කරමු.
+
         </p>
 
 
@@ -497,7 +501,7 @@
                 class="lesson-button"
                 id="lesson3Button"
             >
-                ▶ Continue Lesson
+                ▶ Start Lesson 3
             </a>
 
         </div>
@@ -506,9 +510,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================
          LESSON 4
-         ========================================= -->
+         ===================================== -->
 
     <article
         class="lesson-card"
@@ -524,7 +528,7 @@
                 </div>
 
                 <h2>
-                    Accounting
+                    ගිණුම්කරණය
                 </h2>
 
             </div>
@@ -541,8 +545,11 @@
 
 
         <p class="lesson-description">
-            ගිණුම්කරණය, ගනුදෙනු, වත්කම්, වගකීම්,
-            හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
+
+            ගිණුම්කරණය, වත්කම්, වගකීම්,
+            හිමිකම, ආදායම් සහ වියදම් පිළිබඳ
+            මූලික කරුණු අධ්‍යයනය කරමු.
+
         </p>
 
 
@@ -566,14 +573,6 @@
 
         <div class="lesson-actions">
 
-            <!--
-                IMPORTANT:
-                Lesson 4 click කිරීමෙන්
-                completeLesson() call නොවේ.
-
-                Lesson 4 පාඩම open වේ.
-            -->
-
             <a
                 href="lesson4.html"
                 class="lesson-button"
@@ -588,9 +587,9 @@
 
 
 
-    <!-- =========================================
-         DASHBOARD
-         ========================================= -->
+    <!-- =====================================
+         DASHBOARD LINK
+         ===================================== -->
 
     <div class="dashboard-link">
 
@@ -615,9 +614,9 @@
 
 
 
-<!-- =========================================
-     LESSONS JAVASCRIPT
-     ========================================= -->
+<!-- =====================================
+     LESSON JAVASCRIPT
+     ===================================== -->
 
 <script src="../assets/js/lessons.js"></script>
 
