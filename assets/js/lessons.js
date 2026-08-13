@@ -11,18 +11,6 @@ const TOTAL_LESSONS = 10;
 
 /*
  * =========================================
- * LESSONS CURRENTLY AVAILABLE
- * =========================================
- *
- * Lesson 1 - 5 = Available
- * Lesson 6 - 10 = Coming Soon
- */
-
-const AVAILABLE_LESSONS = 5;
-
-
-/*
- * =========================================
  * GET COMPLETED LESSONS
  * =========================================
  */
@@ -60,6 +48,22 @@ function getCompletedLessons() {
 
 /*
  * =========================================
+ * SAVE COMPLETED LESSONS
+ * =========================================
+ */
+
+function saveCompletedLessons(lessons) {
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(lessons)
+    );
+
+}
+
+
+/*
+ * =========================================
  * COMPLETE LESSON
  * =========================================
  */
@@ -79,11 +83,8 @@ function completeLesson(lessonId) {
             lessonId
         );
 
-        localStorage.setItem(
-            "uez_completed_lessons",
-            JSON.stringify(
-                completedLessons
-            )
+        saveCompletedLessons(
+            completedLessons
         );
 
     }
@@ -104,10 +105,45 @@ function updateLessonCards() {
     const completedLessons =
         getCompletedLessons();
 
+    let validCompletedLessons = [];
+
+
+    /*
+     * Keep only lesson1 - lesson10
+     */
+
+    completedLessons.forEach(
+        function (lessonId) {
+
+            const number =
+                parseInt(
+                    lessonId.replace(
+                        "lesson",
+                        ""
+                    )
+                );
+
+            if (
+                number >= 1 &&
+                number <= TOTAL_LESSONS &&
+                !validCompletedLessons.includes(
+                    lessonId
+                )
+            ) {
+
+                validCompletedLessons.push(
+                    lessonId
+                );
+
+            }
+
+        }
+    );
+
 
     /*
      * =====================================
-     * UPDATE LESSON 1 - 10
+     * UPDATE ALL 10 LESSONS
      * =====================================
      */
 
@@ -120,54 +156,69 @@ function updateLessonCards() {
         const lessonId =
             "lesson" + i;
 
+
         const progressBar =
             document.getElementById(
                 lessonId + "Progress"
             );
+
 
         const progressText =
             document.getElementById(
                 lessonId + "ProgressText"
             );
 
+
         const status =
             document.getElementById(
                 lessonId + "Status"
             );
+
 
         const button =
             document.getElementById(
                 lessonId + "Button"
             );
 
+
         const completed =
-            completedLessons.includes(
+            validCompletedLessons.includes(
                 lessonId
             );
 
 
-        /*
-         * =================================
-         * COMPLETED
-         * =================================
-         */
-
         if (completed) {
 
+            /*
+             * COMPLETED
+             */
+
             if (progressBar) {
+
                 progressBar.style.width =
                     "100%";
+
             }
+
 
             if (progressText) {
+
                 progressText.textContent =
                     "100% completed";
+
             }
 
+
             if (status) {
+
                 status.textContent =
                     "✓ Completed";
+
+                status.style.color =
+                    "gold";
+
             }
+
 
             if (button) {
 
@@ -178,110 +229,63 @@ function updateLessonCards() {
                     "completed"
                 );
 
-                button.classList.remove(
-                    "locked"
-                );
-
             }
 
         }
 
-
-        /*
-         * =================================
-         * NOT COMPLETED
-         * =================================
-         */
-
         else {
 
+            /*
+             * NOT COMPLETED
+             */
+
             if (progressBar) {
+
                 progressBar.style.width =
                     "0%";
+
             }
+
 
             if (progressText) {
+
                 progressText.textContent =
                     "0% completed";
-            }
-
-
-            /*
-             * Lesson 1 - 5 AVAILABLE
-             */
-
-            if (
-                i <= AVAILABLE_LESSONS
-            ) {
-
-                if (status) {
-
-                    status.textContent =
-                        "Not Started";
-
-                }
-
-                if (button) {
-
-                    button.classList.remove(
-                        "completed"
-                    );
-
-                    button.classList.remove(
-                        "locked"
-                    );
-
-                    /*
-                     * Important:
-                     * Lesson 5 goes directly
-                     * to lesson5.html
-                     */
-
-                    button.textContent =
-                        "▶ Continue Lesson";
-
-                    if (i === 5) {
-
-                        button.href =
-                            "lesson5.html";
-
-                    }
-
-                }
 
             }
 
 
-            /*
-             * Lesson 6 - 10 LOCKED
-             */
+            if (status) {
 
-            else {
+                status.textContent =
+                    "Not Started";
 
-                if (status) {
+                status.style.color =
+                    "";
 
-                    status.textContent =
-                        "Coming Soon";
+            }
 
-                }
 
-                if (button) {
+            if (button) {
 
-                    button.textContent =
-                        "🔒 Coming Soon";
+                button.classList.remove(
+                    "completed"
+                );
 
-                    button.classList.add(
-                        "locked"
-                    );
+                button.classList.remove(
+                    "locked"
+                );
 
-                    button.classList.remove(
-                        "completed"
-                    );
 
-                    button.href =
-                        "#";
+                /*
+                 * IMPORTANT:
+                 * ALL 10 LESSONS ARE UNLOCKED
+                 */
 
-                }
+                button.textContent =
+                    i <= 4
+                        ? "▶ Continue Lesson"
+                        : "▶ Start Lesson " + i;
 
             }
 
@@ -292,29 +296,12 @@ function updateLessonCards() {
 
     /*
      * =========================================
-     * OVERALL LESSON PROGRESS
+     * OVERALL PROGRESS
      * =========================================
      */
 
     const completedCount =
-        completedLessons.filter(
-            function (lessonId) {
-
-                const number =
-                    parseInt(
-                        lessonId.replace(
-                            "lesson",
-                            ""
-                        )
-                    );
-
-                return (
-                    number >= 1 &&
-                    number <= TOTAL_LESSONS
-                );
-
-            }
-        ).length;
+        validCompletedLessons.length;
 
 
     const overallProgress =
@@ -326,14 +313,23 @@ function updateLessonCards() {
         );
 
 
-    /*
-     * Overall Bar
-     */
-
     const overallBar =
         document.getElementById(
             "overallLessonBar"
         );
+
+
+    const overallPercent =
+        document.getElementById(
+            "overallLessonPercent"
+        );
+
+
+    const overallText =
+        document.getElementById(
+            "overallLessonText"
+        );
+
 
     if (overallBar) {
 
@@ -343,15 +339,6 @@ function updateLessonCards() {
     }
 
 
-    /*
-     * Overall Percentage
-     */
-
-    const overallPercent =
-        document.getElementById(
-            "overallLessonPercent"
-        );
-
     if (overallPercent) {
 
         overallPercent.textContent =
@@ -359,15 +346,6 @@ function updateLessonCards() {
 
     }
 
-
-    /*
-     * Overall Text
-     */
-
-    const overallText =
-        document.getElementById(
-            "overallLessonText"
-        );
 
     if (overallText) {
 
