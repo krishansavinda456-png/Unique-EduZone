@@ -1,9 +1,21 @@
+/*
+ * =========================================
+ * UNIQUE EDUZONE
+ * LESSON PROGRESS SYSTEM
+ * LESSON 01 - LESSON 10
+ * =========================================
+ */
+
+
 const TOTAL_LESSONS = 10;
 
 
-/* =========================================
-   GET COMPLETED LESSONS
-========================================= */
+
+/*
+ * =========================================
+ * GET COMPLETED LESSONS
+ * =========================================
+ */
 
 function getCompletedLessons() {
 
@@ -22,20 +34,18 @@ function getCompletedLessons() {
 
     try {
 
-        const lessons =
+        const parsed =
             JSON.parse(saved);
 
 
-        if (
-            Array.isArray(lessons)
-        ) {
+        if (!Array.isArray(parsed)) {
 
-            return lessons;
+            return [];
 
         }
 
 
-        return [];
+        return parsed;
 
     }
 
@@ -48,13 +58,14 @@ function getCompletedLessons() {
 }
 
 
-/* =========================================
-   COMPLETE LESSON
-========================================= */
 
-function completeLesson(
-    lessonId
-) {
+/*
+ * =========================================
+ * COMPLETE LESSON
+ * =========================================
+ */
+
+function completeLesson(lessonId) {
 
     let completedLessons =
         getCompletedLessons();
@@ -86,9 +97,12 @@ function completeLesson(
 }
 
 
-/* =========================================
-   UPDATE LESSON CARDS
-========================================= */
+
+/*
+ * =========================================
+ * UPDATE LESSON CARDS
+ * =========================================
+ */
 
 function updateLessonCards() {
 
@@ -96,8 +110,11 @@ function updateLessonCards() {
         getCompletedLessons();
 
 
-    let completedCount = 0;
-
+    /*
+     * =====================================
+     * UPDATE EACH LESSON
+     * =====================================
+     */
 
     for (
         let i = 1;
@@ -111,29 +128,25 @@ function updateLessonCards() {
 
         const progressBar =
             document.getElementById(
-                lessonId +
-                "Progress"
+                lessonId + "Progress"
             );
 
 
         const progressText =
             document.getElementById(
-                lessonId +
-                "ProgressText"
+                lessonId + "ProgressText"
             );
 
 
         const status =
             document.getElementById(
-                lessonId +
-                "Status"
+                lessonId + "Status"
             );
 
 
         const button =
             document.getElementById(
-                lessonId +
-                "Button"
+                lessonId + "Button"
             );
 
 
@@ -143,10 +156,13 @@ function updateLessonCards() {
             );
 
 
+        /*
+         * =================================
+         * COMPLETED
+         * =================================
+         */
+
         if (completed) {
-
-            completedCount++;
-
 
             if (progressBar) {
 
@@ -169,9 +185,6 @@ function updateLessonCards() {
                 status.textContent =
                     "✓ Completed";
 
-                status.style.color =
-                    "#198754";
-
             }
 
 
@@ -180,13 +193,26 @@ function updateLessonCards() {
                 button.textContent =
                     "✓ Completed";
 
+
                 button.classList.add(
                     "completed"
+                );
+
+
+                button.classList.remove(
+                    "locked"
                 );
 
             }
 
         }
+
+
+        /*
+         * =================================
+         * NOT COMPLETED
+         * =================================
+         */
 
         else {
 
@@ -206,25 +232,66 @@ function updateLessonCards() {
             }
 
 
-            if (status) {
+            /*
+             * Lesson 5–10 are currently
+             * placeholders.
+             */
 
-                status.textContent =
-                    "Not Started";
+            if (i >= 5) {
 
-                status.style.color =
-                    "";
+                if (status) {
+
+                    status.textContent =
+                        "Coming Soon";
+
+                }
+
+
+                if (button) {
+
+                    button.textContent =
+                        "🔒 Coming Soon";
+
+
+                    button.classList.add(
+                        "locked"
+                    );
+
+                }
 
             }
 
 
-            if (button) {
+            /*
+             * Lesson 1–4
+             */
 
-                button.textContent =
-                    "▶ Continue Lesson";
+            else {
 
-                button.classList.remove(
-                    "completed"
-                );
+                if (status) {
+
+                    status.textContent =
+                        "Not Started";
+
+                }
+
+
+                if (button) {
+
+                    button.classList.remove(
+                        "completed"
+                    );
+
+
+                    button.classList.remove(
+                        "locked"
+                    );
+
+
+                    button.textContent =
+                        "▶ Continue Lesson";
+
+                }
 
             }
 
@@ -233,34 +300,55 @@ function updateLessonCards() {
     }
 
 
-    /* =====================================
-       OVERALL PROGRESS
-    ===================================== */
+
+    /*
+     * =========================================
+     * OVERALL LESSON PROGRESS
+     * =========================================
+     */
+
+    const completedCount =
+        completedLessons.filter(
+            function (lessonId) {
+
+                const number =
+                    parseInt(
+                        lessonId.replace(
+                            "lesson",
+                            ""
+                        )
+                    );
+
+
+                return (
+                    number >= 1 &&
+                    number <= TOTAL_LESSONS
+                );
+
+            }
+        ).length;
+
 
     const overallProgress =
         Math.round(
             (
                 completedCount /
                 TOTAL_LESSONS
-            ) * 100
+            ) *
+            100
         );
 
+
+
+    /*
+     * =========================================
+     * OVERALL BAR
+     * =========================================
+     */
 
     const overallBar =
         document.getElementById(
             "overallLessonBar"
-        );
-
-
-    const overallPercent =
-        document.getElementById(
-            "overallLessonPercent"
-        );
-
-
-    const overallText =
-        document.getElementById(
-            "overallLessonText"
         );
 
 
@@ -272,12 +360,38 @@ function updateLessonCards() {
     }
 
 
+
+    /*
+     * =========================================
+     * OVERALL PERCENTAGE
+     * =========================================
+     */
+
+    const overallPercent =
+        document.getElementById(
+            "overallLessonPercent"
+        );
+
+
     if (overallPercent) {
 
         overallPercent.textContent =
             overallProgress + "%";
 
     }
+
+
+
+    /*
+     * =========================================
+     * OVERALL TEXT
+     * =========================================
+     */
+
+    const overallText =
+        document.getElementById(
+            "overallLessonText"
+        );
 
 
     if (overallText) {
@@ -293,9 +407,12 @@ function updateLessonCards() {
 }
 
 
-/* =========================================
-   PAGE LOAD
-========================================= */
+
+/*
+ * =========================================
+ * PAGE LOAD
+ * =========================================
+ */
 
 document.addEventListener(
     "DOMContentLoaded",
