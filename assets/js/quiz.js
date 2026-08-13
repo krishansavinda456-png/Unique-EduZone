@@ -769,7 +769,7 @@ document.addEventListener(
                 "Lesson 03 - Business Ownership",
 
             "4":
-                "Lesson 04 - Accounting"
+                "Lesson 04 - Accounting",
 
             "5":
                 "Lesson 05 - Accounting Equation"
