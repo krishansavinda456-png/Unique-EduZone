@@ -1,4 +1,4 @@
-const TOTAL_LESSONS = 4;
+const TOTAL_LESSONS = 10;
 
 
 /* =========================================
