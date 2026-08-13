@@ -21,278 +21,221 @@
 
     <style>
 
-        body {
-            background: #000;
-            color: #fff;
-        }
-
         .quiz-page {
-            max-width: 1000px;
+
+            max-width: 900px;
             margin: auto;
             padding: 30px 20px;
+
         }
 
         .quiz-header {
+
             text-align: center;
             margin-bottom: 25px;
+
         }
 
         .quiz-header h1 {
-            color: gold;
+
+            margin-bottom: 10px;
+
         }
 
+        #quizLessonTitle {
 
-        /* ================================
-           LESSON SELECTOR
-        ================================= */
+            color: gold;
+            font-weight: bold;
+
+        }
 
         .lesson-selector {
-            display: grid;
-            grid-template-columns:
-                repeat(4, 1fr);
 
-            gap: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0;
 
-            margin-bottom: 25px;
         }
 
         .lesson-select {
-            display: block;
 
-            text-align: center;
-
-            padding: 14px 10px;
-
+            padding: 8px 14px;
+            border-radius: 8px;
+            background: #222;
             border: 1px solid #444;
-
-            border-radius: 10px;
-
-            background: #1b1b1b;
-
             color: #fff;
-
             text-decoration: none;
 
-            font-weight: bold;
-
-            transition: 0.3s;
         }
 
         .lesson-select:hover {
+
             border-color: gold;
             color: gold;
+
         }
 
         .lesson-select.selected {
+
             background: gold;
             color: #000;
             border-color: gold;
+            font-weight: bold;
+
         }
 
-
-        /* ================================
-           QUIZ CARD
-        ================================= */
-
         .quiz-card {
+
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+
+        }
+
+        .quiz-top {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+
+        }
+
+        #questionCounter {
+
+            color: #ccc;
+
+        }
+
+        #timer {
+
+            color: gold;
+            font-size: 22px;
+            font-weight: bold;
+
+        }
+
+        #timer.warning {
+
+            color: red;
+
+        }
+
+        #question {
+
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+
+        }
+
+        #options {
+
+            display: grid;
+            gap: 12px;
+
+        }
+
+        .quiz-option {
+
+            width: 100%;
+            padding: 14px;
+
+            background: #222;
+            color: #fff;
+
+            border: 1px solid #444;
+            border-radius: 10px;
+
+            text-align: left;
+            cursor: pointer;
+
+            font-size: 16px;
+
+        }
+
+        .quiz-option:hover {
+
+            border-color: gold;
+
+        }
+
+        #score {
+
+            margin-top: 20px;
+            color: gold;
+            font-weight: bold;
+
+        }
+
+        #nextBtn {
+
+            margin-top: 20px;
+
+            padding: 12px 22px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: gold;
+            color: #000;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+        #nextBtn:disabled {
+
+            background: #555;
+            color: #aaa;
+            cursor: not-allowed;
+
+        }
+
+        .quiz-result {
+
+            display: none;
+
             background: #1b1b1b;
 
             border: 1px solid #333;
 
             border-radius: 15px;
 
-            padding: 25px;
-
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.4);
-        }
-
-
-        /* ================================
-           QUIZ TOP
-        ================================= */
-
-        .quiz-top {
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items: center;
-
-            gap: 15px;
-
-            margin-bottom: 20px;
-        }
-
-        .quiz-lesson-title {
-            color: gold;
-            font-weight: bold;
-        }
-
-        .timer {
-            background: #111;
-
-            border: 1px solid gold;
-
-            color: gold;
-
-            padding: 10px 15px;
-
-            border-radius: 8px;
-
-            font-weight: bold;
-
-            min-width: 100px;
-
-            text-align: center;
-        }
-
-        .timer.warning {
-            color: #ff4d4d;
-            border-color: #ff4d4d;
-        }
-
-
-        /* ================================
-           QUESTION COUNTER
-        ================================= */
-
-        #questionCounter {
-            color: #bbb;
-
-            margin-bottom: 10px;
-        }
-
-
-        #question {
-            font-size: 21px;
-
-            line-height: 1.6;
-
-            margin-bottom: 20px;
-        }
-
-
-        /* ================================
-           OPTIONS
-        ================================= */
-
-        #options {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 12px;
-        }
-
-        .quiz-option {
-            width: 100%;
-
-            padding: 14px;
-
-            background: #252525;
-
-            border: 1px solid #444;
-
-            border-radius: 8px;
-
-            color: #fff;
-
-            text-align: left;
-
-            cursor: pointer;
-
-            font-size: 16px;
-
-            transition: 0.2s;
-        }
-
-        .quiz-option:hover {
-            border-color: gold;
-        }
-
-        .quiz-option:disabled {
-            cursor: not-allowed;
-        }
-
-
-        /* ================================
-           BOTTOM
-        ================================= */
-
-        .quiz-bottom {
-            margin-top: 25px;
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items: center;
-
-            gap: 15px;
-        }
-
-        #score {
-            color: gold;
-            font-weight: bold;
-        }
-
-        #nextBtn {
-            padding: 11px 22px;
-
-            background: gold;
-
-            color: #000;
-
-            border: none;
-
-            border-radius: 8px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-        }
-
-        #nextBtn:disabled {
-            opacity: 0.4;
-
-            cursor: not-allowed;
-        }
-
-
-        /* ================================
-           RESULT
-        ================================= */
-
-        .quiz-result {
-            display: none;
-
-            text-align: center;
-
             padding: 30px;
+
+            text-align: center;
+
         }
 
-        .quiz-result h2 {
+        #resultPercentage {
+
             color: gold;
-        }
 
-        .result-percentage {
             font-size: 45px;
 
             font-weight: bold;
 
-            color: gold;
-
             margin: 20px 0;
+
         }
 
-        .result-message {
+        #resultMessage {
+
+            font-size: 18px;
+
             margin-bottom: 20px;
+
         }
 
         .result-button {
+
             display: inline-block;
 
             padding: 12px 20px;
@@ -308,38 +251,35 @@
             font-weight: bold;
 
             margin: 5px;
+
         }
 
+        .result-button.secondary {
 
-        /* ================================
-           MOBILE
-        ================================= */
+            background: #444;
+            color: #fff;
 
-        @media (max-width: 700px) {
+        }
 
-            .lesson-selector {
-                grid-template-columns:
-                    repeat(2, 1fr);
+        @media (max-width: 600px) {
+
+            .quiz-page {
+
+                padding: 20px 12px;
+
             }
 
             .quiz-top {
+
                 flex-direction: column;
+                align-items: flex-start;
 
-                align-items: stretch;
             }
 
-            .timer {
-                width: auto;
-            }
+            #question {
 
-            .quiz-bottom {
-                flex-direction: column;
+                font-size: 18px;
 
-                align-items: stretch;
-            }
-
-            #nextBtn {
-                width: 100%;
             }
 
         }
@@ -357,6 +297,7 @@
     <div class="logo">
         Unique EduZone
     </div>
+
 
     <nav>
 
@@ -392,20 +333,18 @@
     <section class="quiz-header">
 
         <h1>
-            📝 Business Studies MCQ Quiz
+            📝 MCQ Quiz
         </h1>
 
-        <p>
-            Select a lesson and start the quiz.
+        <p id="quizLessonTitle">
+            Lesson 01
         </p>
 
     </section>
 
 
 
-    <!-- =================================
-         LESSON SELECTOR
-    ================================== -->
+    <!-- LESSON SELECTOR -->
 
     <div class="lesson-selector">
 
@@ -414,7 +353,7 @@
             class="lesson-select"
             data-lesson="1"
         >
-            Lesson 01
+            Lesson 1
         </a>
 
         <a
@@ -422,7 +361,7 @@
             class="lesson-select"
             data-lesson="2"
         >
-            Lesson 02
+            Lesson 2
         </a>
 
         <a
@@ -430,7 +369,7 @@
             class="lesson-select"
             data-lesson="3"
         >
-            Lesson 03
+            Lesson 3
         </a>
 
         <a
@@ -438,16 +377,22 @@
             class="lesson-select"
             data-lesson="4"
         >
-            Lesson 04
+            Lesson 4
+        </a>
+
+        <a
+            href="quiz.html?lesson=5"
+            class="lesson-select"
+            data-lesson="5"
+        >
+            Lesson 5
         </a>
 
     </div>
 
 
 
-    <!-- =================================
-         QUIZ
-    ================================== -->
+    <!-- QUIZ -->
 
     <section
         class="quiz-card"
@@ -456,28 +401,13 @@
 
         <div class="quiz-top">
 
-            <div>
+            <strong id="questionCounter">
+                Question 1 of 10
+            </strong>
 
-                <div
-                    class="quiz-lesson-title"
-                    id="quizLessonTitle"
-                >
-                    Lesson 01
-                </div>
-
-                <div id="questionCounter">
-                    Question 1 of 10
-                </div>
-
-            </div>
-
-
-            <div
-                class="timer"
-                id="timer"
-            >
+            <strong id="timer">
                 10:00
-            </div>
+            </strong>
 
         </div>
 
@@ -490,50 +420,42 @@
         <div id="options"></div>
 
 
-        <div class="quiz-bottom">
-
-            <div id="score">
-                Score: 0 / 10
-            </div>
-
-
-            <button
-                id="nextBtn"
-                disabled
-            >
-                Next Question →
-            </button>
-
+        <div id="score">
+            Score: 0 / 10
         </div>
+
+
+        <button
+            id="nextBtn"
+            disabled
+        >
+            Next Question
+        </button>
 
     </section>
 
 
 
-    <!-- =================================
-         RESULT
-    ================================== -->
+    <!-- RESULT -->
 
     <section
-        class="quiz-card quiz-result"
+        class="quiz-result"
         id="quizResult"
     >
 
         <h2>
-            🎉 Quiz Completed!
+            Quiz Completed
         </h2>
 
-        <div
-            class="result-percentage"
-            id="resultPercentage"
-        >
+
+        <div id="resultPercentage">
             0%
         </div>
 
-        <div
-            class="result-message"
-            id="resultMessage"
-        ></div>
+
+        <p id="resultMessage">
+            Quiz completed.
+        </p>
 
 
         <a
@@ -545,10 +467,10 @@
 
 
         <a
-            href="quiz.html"
-            class="result-button"
+            href="dashboard.html"
+            class="result-button secondary"
         >
-            🔄 Choose Another Quiz
+            📊 Dashboard
         </a>
 
     </section>
@@ -569,6 +491,7 @@
 
 
 <script src="../assets/js/quiz.js"></script>
+
 
 </body>
 
