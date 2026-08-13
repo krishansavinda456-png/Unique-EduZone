@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 
 <head>
 
@@ -27,14 +27,17 @@
             padding: 30px 20px;
         }
 
+
         .lessons-header {
             text-align: center;
             margin-bottom: 30px;
         }
 
+
         .lessons-header h1 {
             margin-bottom: 10px;
         }
+
 
         .overall-progress-card {
             background: #1b1b1b;
@@ -44,12 +47,14 @@
             margin-bottom: 30px;
         }
 
+
         .overall-progress-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
+
 
         .overall-progress-bar {
             width: 100%;
@@ -59,12 +64,14 @@
             overflow: hidden;
         }
 
+
         .overall-progress-fill {
             height: 100%;
             width: 0%;
             background: gold;
             transition: width 0.4s ease;
         }
+
 
         .lesson-card {
             background: #1b1b1b;
@@ -74,6 +81,7 @@
             margin-bottom: 20px;
         }
 
+
         .lesson-card-header {
             display: flex;
             justify-content: space-between;
@@ -81,19 +89,24 @@
             gap: 15px;
         }
 
+
         .lesson-number {
             color: gold;
             font-weight: bold;
         }
+
 
         .lesson-status {
             font-size: 14px;
             font-weight: bold;
         }
 
+
         .lesson-description {
             margin: 15px 0;
+            line-height: 1.7;
         }
+
 
         .lesson-progress-container {
             width: 100%;
@@ -104,6 +117,7 @@
             margin: 15px 0 8px;
         }
 
+
         .lesson-progress-bar {
             height: 100%;
             width: 0%;
@@ -111,13 +125,16 @@
             transition: width 0.4s ease;
         }
 
+
         .lesson-progress-text {
             font-size: 13px;
         }
 
+
         .lesson-actions {
             margin-top: 18px;
         }
+
 
         .lesson-button {
             display: inline-block;
@@ -129,20 +146,43 @@
             color: #000;
         }
 
+
+        .lesson-button:hover {
+            opacity: 0.9;
+        }
+
+
         .lesson-button.completed {
             background: #555;
             color: #fff;
-            pointer-events: none;
         }
+
 
         .dashboard-link {
             text-align: center;
             margin-top: 30px;
         }
 
+
         .dashboard-link a {
             color: gold;
             font-weight: bold;
+        }
+
+
+        @media (max-width: 700px) {
+
+            .lesson-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .overall-progress-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
         }
 
     </style>
@@ -191,7 +231,9 @@
 <main class="lessons-page">
 
 
-    <!-- Header -->
+    <!-- =========================================
+         HEADER
+         ========================================= -->
 
     <section class="lessons-header">
 
@@ -207,7 +249,9 @@
 
 
 
-    <!-- Overall Lesson Progress -->
+    <!-- =========================================
+         OVERALL PROGRESS
+         ========================================= -->
 
     <section class="overall-progress-card">
 
@@ -242,7 +286,9 @@
 
 
 
-    <!-- Lesson 1 -->
+    <!-- =========================================
+         LESSON 1
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -313,7 +359,9 @@
 
 
 
-    <!-- Lesson 2 -->
+    <!-- =========================================
+         LESSON 2
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -384,7 +432,9 @@
 
 
 
-    <!-- Lesson 3 -->
+    <!-- =========================================
+         LESSON 3
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -447,7 +497,7 @@
                 class="lesson-button"
                 id="lesson3Button"
             >
-                ▶ Start Lesson 3
+                ▶ Continue Lesson
             </a>
 
         </div>
@@ -456,7 +506,9 @@
 
 
 
-    <!-- Lesson 4 -->
+    <!-- =========================================
+         LESSON 4
+         ========================================= -->
 
     <article
         class="lesson-card"
@@ -472,7 +524,7 @@
                 </div>
 
                 <h2>
-                    Business Ownership
+                    Accounting
                 </h2>
 
             </div>
@@ -489,7 +541,8 @@
 
 
         <p class="lesson-description">
-            Understand different forms of business ownership.
+            ගිණුම්කරණය, ගනුදෙනු, වත්කම්, වගකීම්,
+            හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
         </p>
 
 
@@ -513,13 +566,20 @@
 
         <div class="lesson-actions">
 
+            <!--
+                IMPORTANT:
+                Lesson 4 click කිරීමෙන්
+                completeLesson() call නොවේ.
+
+                Lesson 4 පාඩම open වේ.
+            -->
+
             <a
-                href="#"
+                href="lesson4.html"
                 class="lesson-button"
                 id="lesson4Button"
-                onclick="completeLesson('lesson4'); return false;"
             >
-                ▶ Continue Lesson
+                ▶ Start Lesson 4
             </a>
 
         </div>
@@ -528,7 +588,9 @@
 
 
 
-    <!-- Dashboard -->
+    <!-- =========================================
+         DASHBOARD
+         ========================================= -->
 
     <div class="dashboard-link">
 
@@ -552,6 +614,10 @@
 </footer>
 
 
+
+<!-- =========================================
+     LESSONS JAVASCRIPT
+     ========================================= -->
 
 <script src="../assets/js/lessons.js"></script>
 
