@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 08 | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 1050px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .lesson-number {
+            color: gold;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .lesson-header h1 {
+            margin: 12px 0;
+        }
+
+        .lesson-section {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .lesson-section h2 {
+            color: gold;
+            margin-top: 0;
+        }
+
+        .lesson-section h3 {
+            color: #f0c94a;
+            margin-top: 22px;
+        }
+
+        .important {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .formula-box {
+            background: #111;
+            border-left: 5px solid gold;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .formula {
+            color: gold;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #222;
+            border-left: 4px solid gold;
+            padding: 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+        }
+
+        .example-title {
+            color: gold;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background: #161616;
+            border: 1px solid #444;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .warning-box {
+            background: #241f10;
+            border-left: 4px solid gold;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 18px 0;
+        }
+
+        .lesson-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+        }
+
+        .lesson-table th,
+        .lesson-table td {
+            border: 1px solid #444;
+            padding: 11px;
+            text-align: left;
+        }
+
+        .lesson-table th {
+            background: #111;
+            color: gold;
+        }
+
+        .account-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+        }
+
+        .account-table th,
+        .account-table td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .account-table th {
+            color: gold;
+            background: #111;
+        }
+
+        .debit {
+            color: #7ee787;
+            font-weight: bold;
+        }
+
+        .credit {
+            color: #ff8a8a;
+            font-weight: bold;
+        }
+
+        .activity {
+            background: #171717;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 15px 0;
+        }
+
+        .activity-number {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .document-example {
+            background: #101010;
+            border: 1px dashed #777;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .document-title {
+            text-align: center;
+            color: gold;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .document-line {
+            border-bottom: 1px dotted #777;
+            padding: 7px 0;
+        }
+
+        .ledger-entry {
+            background: #111;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .lesson-actions {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .quiz-button,
+        .complete-button,
+        .back-button {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 6px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .quiz-button,
+        .complete-button {
+            background: gold;
+            color: #000;
+        }
+
+        .back-button {
+            background: #444;
+            color: #fff;
+        }
+
+        .complete-button:hover,
+        .quiz-button:hover,
+        .back-button:hover {
+            opacity: 0.85;
+        }
+
+        @media (max-width: 650px) {
+
+            .lesson-page {
+                padding: 20px 12px;
+            }
+
+            .lesson-section,
+            .lesson-header {
+                padding: 18px;
+            }
+
+            .lesson-table,
+            .account-table {
+                font-size: 13px;
+            }
+
+            .formula {
+                font-size: 19px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- =====================================
+         LESSON HEADER
+         ===================================== -->
+
+    <section class="lesson-header">
+
+        <div class="lesson-number">
+            LESSON 08
+        </div>
+
+        <h1>
+            💰 මුදල් පොත සහ සුළු මුදල් පොත
+        </h1>
+
+        <p>
+            ව්‍යාපාරයක මුදල් ලැබීම්, මුදල් ගෙවීම්,
+            ලදුපත්, ගෙවීම් වවුචර් සහ මුදල් ගනුදෙනු
+            නිවැරදිව වාර්තා කිරීම.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         8.1 INTRODUCTION
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            8.1 මුදල් පොත
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක සිදුවන මුදල් ලැබීම් සහ
+            මුදල් ගෙවීම් කාලානුක්‍රමිකව වාර්තා
+            කරන මූලික සටහන් පොත
+            <span class="important">
+                මුදල් පොත
+            </span>
+            ලෙස හැඳින්වේ.
+        </p>
+
+        <p>
+            මුදල් ව්‍යාපාරයක වැදගත් වත්කමක් බැවින්
+            මුදල් ලැබීම් සහ ගෙවීම් නිවැරදිව
+            වාර්තා කිරීම ඉතා වැදගත් වේ.
+        </p>
+
+
+        <div class="formula-box">
+
+            <div class="formula">
+                මුදල් ලැබීම → මුදල් පොතේ හර පැත්ත
+            </div>
+
+            <br>
+
+            <div class="formula">
+                මුදල් ගෙවීම → මුදල් පොතේ බැර පැත්ත
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CASH RECEIPTS
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            💵 මුදල් ලැබීම්
+        </h2>
+
+        <p>
+            ව්‍යාපාරයට විවිධ ආකාරවලින් මුදල් ලැබිය හැකිය.
+        </p>
+
+        <table class="lesson-table">
+
+            <tr>
+                <th>
+                    මුදල් ලැබෙන ආකාරය
+                </th>
+
+                <th>
+                    උදාහරණය
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    හිමිකරුගේ ප්‍රාග්ධනය
+                </td>
+
+                <td>
+                    හිමිකරු රු. 100,000 ක් ව්‍යාපාරයට යෙදීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    මුදල් විකිණීම්
+                </td>
+
+                <td>
+                    භාණ්ඩ රු. 25,000 කට මුදලට විකිණීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    ණයගැතියන්ගෙන් ලැබීම්
+                </td>
+
+                <td>
+                    ගනුදෙනුකරුවෙකුගෙන් රු. 10,000 ක් ලැබීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    බැංකු ණය
+                </td>
+
+                <td>
+                    බැංකුවෙන් රු. 200,000 ක ණයක් ලබාගැනීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    ආදායම්
+                </td>
+
+                <td>
+                    කුලී / පොලී / කොමිස් ආදායම් ලැබීම
+                </td>
+            </tr>
+
+        </table>
+
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන 01 – මුදල් ලැබීම
+            </div>
+
+            <p>
+                2026.01.01 දින හිමිකරු විසින්
+                ව්‍යාපාරයට රු. 100,000 ක ප්‍රාග්ධනයක්
+                මුදලින් යොදවන ලදී.
+            </p>
+
+            <p>
+                මෙහිදී මුදල් වත්කම රු. 100,000 කින්
+                වැඩිවන අතර හිමිකමද රු. 100,000 කින්
+                වැඩි වේ.
+            </p>
+
+            <table class="account-table">
+
+                <tr>
+                    <th>
+                        ගිණුම
+                    </th>
+
+                    <th>
+                        හර
+                    </th>
+
+                    <th>
+                        බැර
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        මුදල් ගිණුම
+                    </td>
+
+                    <td class="debit">
+                        රු. 100,000
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        ප්‍රාග්ධන ගිණුම
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td class="credit">
+                        රු. 100,000
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         RECEIPT
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧾 ලදුපත
+        </h2>
+
+        <p>
+            ව්‍යාපාරයකට යම් මුදලක් ලැබුණු විට,
+            එම ලැබීම සනාථ කිරීම සඳහා මුදල් ගෙවූ
+            පාර්ශ්වයට නිකුත් කරන ලිඛිත සාක්ෂිය
+            <span class="important">
+                ලදුපත
+            </span>
+            ලෙස හැඳින්වේ.
+        </p>
+
+        <p>
+            ලදුපතේ සාමාන්‍යයෙන් අනුක්‍රමික අංකය,
+            දිනය, ලැබුණු මුදල, ලැබීමට හේතුව සහ
+            මුදල් භාරගත් පුද්ගලයාගේ අත්සන වැනි
+            තොරතුරු ඇතුළත් වේ.
+        </p>
+
+
+        <div class="document-example">
+
+            <div class="document-title">
+                🧾 මුදල් ලදුපත – නිදසුන
+            </div>
+
+            <div class="document-line">
+                ලදුපත් අංකය: 00125
+            </div>
+
+            <div class="document-line">
+                දිනය: 2026.01.05
+            </div>
+
+            <div class="document-line">
+                නම: කසුන් පෙරේරා
+            </div>
+
+            <div class="document-line">
+                ලැබුණු හේතුව:
+                ණය මුදලක් පියවීම
+            </div>
+
+            <div class="document-line">
+                ලැබුණු මුදල:
+                රු. 15,000
+            </div>
+
+            <div class="document-line">
+                මුදලින් / චෙක්පතකින්:
+                මුදලින්
+            </div>
+
+            <div class="document-line">
+                මුදල් භාරගත් අයගේ අත්සන:
+                __________________
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CASH PAYMENTS
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            💸 මුදල් ගෙවීම්
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක් විසින් විවිධ කටයුතු සඳහා
+            මුදල් ගෙවීම් සිදු කරයි.
+        </p>
+
+        <table class="lesson-table">
+
+            <tr>
+                <th>
+                    ගෙවීම
+                </th>
+
+                <th>
+                    නිදසුන
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    වැටුප්
+                </td>
+
+                <td>
+                    සේවක වැටුප් රු. 30,000
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    විදුලි වියදම්
+                </td>
+
+                <td>
+                    විදුලි බිල රු. 8,000
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    කුලී
+                </td>
+
+                <td>
+                    මාසික කුලිය රු. 20,000
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    සැපයුම්කරුවන්ට ගෙවීම්
+                </td>
+
+                <td>
+                    ණය පියවීම රු. 15,000
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    ස්ථාවර වත්කම් මිලදී ගැනීම
+                </td>
+
+                <td>
+                    උපකරණයක් රු. 40,000
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    හිමිකරුගේ පෞද්ගලික ගැනීම්
+                </td>
+
+                <td>
+                    රු. 5,000
+                </td>
+            </tr>
+
+        </table>
+
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන 02 – මුදල් ගෙවීම
+            </div>
+
+            <p>
+                2026.01.10 දින සේවක වැටුප් ලෙස
+                රු. 30,000 ක් මුදලින් ගෙවන ලදී.
+            </p>
+
+            <table class="account-table">
+
+                <tr>
+                    <th>
+                        ගිණුම
+                    </th>
+
+                    <th>
+                        හර
+                    </th>
+
+                    <th>
+                        බැර
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        වැටුප් ගිණුම
+                    </td>
+
+                    <td class="debit">
+                        රු. 30,000
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        මුදල් ගිණුම
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td class="credit">
+                        රු. 30,000
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PAYMENT VOUCHER
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📄 ගෙවීම් වවුචරය
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක් විසින් මුදල් ගෙවීමක් සිදු කළ
+            බවට ලිඛිත සාක්ෂියක් ලෙස සකස් කරන
+            ලේඛනය
+            <span class="important">
+                ගෙවීම් වවුචරය
+            </span>
+            ලෙස හැඳින්වේ.
+        </p>
+
+        <p>
+            ගෙවීම් වවුචරයක අනුක්‍රමික අංකය,
+            දිනය, ගෙවූ මුදල, ගෙවීමට හේතුව,
+            චෙක්පත් අංකය සහ වගකිවයුතු පුද්ගලයන්ගේ
+            අත්සන් වැනි තොරතුරු ඇතුළත් කළ හැකිය.
+        </p>
+
+
+        <div class="document-example">
+
+            <div class="document-title">
+                📄 ගෙවීම් වවුචරය – නිදසුන
+            </div>
+
+            <div class="document-line">
+                වවුචර් අංකය: PV-001
+            </div>
+
+            <div class="document-line">
+                දිනය: 2026.01.10
+            </div>
+
+            <div class="document-line">
+                ගෙවීමේ හේතුව:
+                සේවක වැටුප්
+            </div>
+
+            <div class="document-line">
+                ගෙවූ මුදල:
+                රු. 30,000
+            </div>
+
+            <div class="document-line">
+                චෙක්පත් අංකය:
+                10235
+            </div>
+
+            <div class="document-line">
+                සකස් කළ අය:
+                __________________
+            </div>
+
+            <div class="document-line">
+                අනුමත කළ අය:
+                __________________
+            </div>
+
+            <div class="document-line">
+                මුදල් භාරගත් අය:
+                __________________
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SOURCE DOCUMENTS
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📚 මූලාශ්‍ර ලේඛන සහ ඒවායේ උදාහරණ
+        </h2>
+
+        <p>
+            ගනුදෙනුවක් මුලින්ම සිදු වූ බවට සාක්ෂි
+            ලබාගැනීම සඳහා මූලාශ්‍ර ලේඛන භාවිත වේ.
+            එම තොරතුරු මත පදනම්ව මූලික සටහන් පොත්වල
+            ගනුදෙනු වාර්තා කරනු ලැබේ.
+        </p>
+
+        <table class="lesson-table">
+
+            <tr>
+                <th>
+                    මූලික සටහන් පොත
+                </th>
+
+                <th>
+                    භාවිත වන මූලාශ්‍ර ලේඛනය
+                </th>
+
+                <th>
+                    උදාහරණය
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    මුදල් පොත
+                </td>
+
+                <td>
+                    ලදුපත් / ගෙවීම් වවුචර්
+                </td>
+
+                <td>
+                    මුදල් ලැබීම / මුදල් ගෙවීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    බැංකු ගිණුම
+                </td>
+
+                <td>
+                    තැන්පත් කුවිතාන්සි,
+                    ගෙවීම් වවුචර්,
+                    බැංකු ප්‍රකාශ
+                </td>
+
+                <td>
+                    බැංකුවට මුදල් තැන්පත් කිරීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    ගැනුම් ජර්නලය
+                </td>
+
+                <td>
+                    ගැනුම් ඉන්වොයිසිය
+                </td>
+
+                <td>
+                    ණයට භාණ්ඩ මිලදී ගැනීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    විකුණුම් ජර්නලය
+                </td>
+
+                <td>
+                    විකුණුම් ඉන්වොයිසිය
+                </td>
+
+                <td>
+                    ණයට භාණ්ඩ විකිණීම
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    පොදු ජර්නලය
+                </td>
+
+                <td>
+                    ජර්නල් වවුචරය
+                </td>
+
+                <td>
+                    වෙනත් විශේෂ ගනුදෙනු
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    සුළු මුදල් පොත
+                </td>
+
+                <td>
+                    සුළු මුදල් ගෙවීම් වවුචර්
+                </td>
+
+                <td>
+                    තැපැල්, ගමන්, පිරිසිදු කිරීමේ වැනි
+                    සුළු වියදම්
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================
+         BANK DEPOSIT SLIP
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🏦 බැංකු තැන්පතු කුවිතාන්සිය – උදාහරණය
+        </h2>
+
+        <p>
+            ව්‍යාපාරයේ මුදල් බැංකුවට තැන්පත් කරන විට
+            බැංකුව විසින් ලබාදෙන තැන්පතු කුවිතාන්සිය
+            ගනුදෙනුවේ ලිඛිත සාක්ෂියක් ලෙස භාවිත කළ හැකිය.
+        </p>
+
+
+        <div class="document-example">
+
+            <div class="document-title">
+                🏦 BANK DEPOSIT SLIP
+            </div>
+
+            <div class="document-line">
+                ගිණුම් අංකය: 123456789
+            </div>
+
+            <div class="document-line">
+                දිනය: 2026.01.12
+            </div>
+
+            <div class="document-line">
+                තැන්පත් කළ මුදල:
+                රු. 50,000
+            </div>
+
+            <div class="document-line">
+                තැන්පත්කරු:
+                Unique EduZone Business
+            </div>
+
+            <div class="document-line">
+                බැංකු නිලධාරියාගේ මුද්‍රාව / අත්සන:
+                __________________
+            </div>
+
+        </div>
+
+
+        <div class="example-box">
+
+            <div class="example-title">
+                ගිණුම් සටහන
+            </div>
+
+            <table class="account-table">
+
+                <tr>
+                    <th>
+                        ගිණුම
+                    </th>
+
+                    <th>
+                        හර
+                    </th>
+
+                    <th>
+                        බැර
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        බැංකු ගිණුම
+                    </td>
+
+                    <td class="debit">
+                        රු. 50,000
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        මුදල් ගිණුම
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td class="credit">
+                        රු. 50,000
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CHEQUE
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🏦 චෙක්පත – උදාහරණය
+        </h2>
+
+        <p>
+            ව්‍යාපාරයකට ගනුදෙනුකරුවෙකුගෙන් චෙක්පතක්
+            ලැබිය හැකිය. එය මුදල් ලැබීමක් ලෙස
+            මුදල් පොතේ වාර්තා කළ හැකි අවස්ථා ඇත.
+        </p>
+
+
+        <div class="document-example">
+
+            <div class="document-title">
+                🏦 CHEQUE – නිදසුන
+            </div>
+
+            <div class="document-line">
+                චෙක්පත් අංකය: 004521
+            </div>
+
+            <div class="document-line">
+                දිනය: 2026.01.18
+            </div>
+
+            <div class="document-line">
+                Pay: Unique EduZone Business
+            </div>
+
+            <div class="document-line">
+                මුදල:
+                රු. 40,000
+            </div>
+
+            <div class="document-line">
+                බැංකුව:
+                Example Bank
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LEDGER RELATIONSHIP
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📖 මුදල් පොත සහ ලෙජර් ගිණුම් අතර සම්බන්ධතාවය
+        </h2>
+
+        <p>
+            මුදල් පොත මුදල් ගනුදෙනු වාර්තා කරන
+            මූලික සටහන් පොතක් ලෙසත්,
+            මුදල් ගිණුමේ ලෙජර් කාර්යය ඉටු කරන
+            ගිණුමක් ලෙසත් ක්‍රියා කරයි.
+        </p>
+
+        <p>
+            එබැවින් මුදල් ලැබීම් සහ ගෙවීම් මුදල්
+            පොතේ සටහන් කරන විට අදාළ අනෙක් ගිණුම්
+            ලෙජර් ගිණුම්වලට පළ කිරීම අවශ්‍ය වේ.
+        </p>
+
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන 03 – මුදල් ලැබීම → ලෙජර්
+            </div>
+
+            <p>
+                භාණ්ඩ මුදලට රු. 40,000 කට විකුණන ලදී.
+            </p>
+
+            <div class="ledger-entry">
+
+                <table class="account-table">
+
+                    <tr>
+                        <th>
+                            මුදල් ගිණුම – හර
+                        </th>
+
+                        <th>
+                            මුදල
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            විකුණුම් ගිණුම
+                        </td>
+
+                        <td>
+                            රු. 40,000
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table class="account-table">
+
+                    <tr>
+                        <th>
+                            විකුණුම් ගිණුම – බැර
+                        </th>
+
+                        <th>
+                            මුදල
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            මුදල් ගිණුම
+                        </td>
+
+                        <td>
+                            රු. 40,000
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන 04 – මුදල් ගෙවීම → ලෙජර්
+            </div>
+
+            <p>
+                විදුලි බිල ලෙස රු. 8,000 ක් ගෙවන ලදී.
+            </p>
+
+            <table class="account-table">
+
+                <tr>
+                    <th>
+                        ගිණුම
+                    </th>
+
+                    <th>
+                        හර
+                    </th>
+
+                    <th>
+                        බැර
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        විදුලි වියදම් ගිණුම
+                    </td>
+
+                    <td class="debit">
+                        රු. 8,000
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        මුදල් ගිණුම
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td class="credit">
+                        රු. 8,000
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PETTY CASH
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🪙 8.2 සුළු මුදල් පොත
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක නිතර සිදුවන සහ සාපේක්ෂව
+            කුඩා වටිනාකමක් ඇති ගෙවීම් වාර්තා කිරීම
+            සඳහා භාවිත කරන මූලික සටහන් පොත
+            <span class="important">
+                සුළු මුදල් පොත
+            </span>
+            ලෙස හැඳින්වේ.
+        </p>
+
+
+        <h3>
+            සුළු මුදල් ගෙවීම් සඳහා උදාහරණ
+        </h3>
+
+        <ul>
+
+            <li>
+                තැපැල් ගාස්තු
+            </li>
+
+            <li>
+                පිරිසිදු කිරීමේ වියදම්
+            </li>
+
+            <li>
+                ගමන් වියදම්
+            </li>
+
+            <li>
+                ලිපි ද්‍රව්‍ය වියදම්
+            </li>
+
+            <li>
+                කුඩා ප්‍රවාහන වියදම්
+            </li>
+
+        </ul>
+
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන 05 – සුළු මුදල්
+            </div>
+
+            <p>
+                තැපැල් ගාස්තු රු. 60,
+                පිරිසිදු කිරීමේ වියදම් රු. 150,
+                ගමන් වියදම් රු. 70 ලෙස ගෙවන ලදී.
+            </p>
+
+            <table class="account-table">
+
+                <tr>
+                    <th>
+                        දිනය
+                    </th>
+
+                    <th>
+                        විස්තරය
+                    </th>
+
+                    <th>
+                        මුදල
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        2026.01.05
+                    </td>
+
+                    <td>
+                        තැපැල් ගාස්තු
+                    </td>
+
+                    <td>
+                        රු. 60
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        2026.01.06
+                    </td>
+
+                    <td>
+                        පිරිසිදු කිරීම
+                    </td>
+
+                    <td>
+                        රු. 150
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        2026.01.07
+                    </td>
+
+                    <td>
+                        ගමන් වියදම්
+                    </td>
+
+                    <td>
+                        රු. 70
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                        එකතුව
+                    </th>
+
+                    <th>
+                        රු. 280
+                    </th>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PETTY CASH VOUCHER
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📄 සුළු මුදල් ගෙවීම් වවුචරය
+        </h2>
+
+        <p>
+            සෑම සුළු මුදල් ගෙවීමක් සඳහාම
+            අදාළ ගෙවීමේ තොරතුරු සටහන් කර
+            වවුචරයක් සකස් කිරීම වැදගත් වේ.
+        </p>
+
+
+        <div class="document-example">
+
+            <div class="document-title">
+                🧾 PETTY CASH PAYMENT VOUCHER
+            </div>
+
+            <div class="document-line">
+                වවුචර් අංකය: PCV-005
+            </div>
+
+            <div class="document-line">
+                දිනය: 2026.01.07
+            </div>
+
+            <div class="document-line">
+                ගෙවීමේ හේතුව:
+                ගමන් වියදම්
+            </div>
+
+            <div class="document-line">
+                ගෙවූ මුදල:
+                රු. 70
+            </div>
+
+            <div class="document-line">
+                මුදල් ලබාගත් අයගේ අත්සන:
+                __________________
+            </div>
+
+            <div class="document-line">
+                අනුමත කළ අයගේ අත්සන:
+                __________________
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         COMPLETE LEDGER EXAMPLE
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📊 සම්පූර්ණ උදාහරණයක් – ගනුදෙනුවේ සිට ලෙජරය දක්වා
+        </h2>
+
+        <div class="example-box">
+
+            <div class="example-title">
+                ගනුදෙනුව
+            </div>
+
+            <p>
+                2026.02.05 දින රු. 20,000 ක
+                භාණ්ඩ මුදලට විකුණන ලදී.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                පියවර 01 – මූලාශ්‍ර ලේඛනය
+            </strong>
+
+            <p>
+                පාරිභෝගිකයාට මුදල් ලදුපතක් නිකුත් කරයි.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                පියවර 02 – මුදල් පොත
+            </strong>
+
+            <p>
+                මුදල් ලැබීම නිසා මුදල් පොතේ
+                හර පැත්තේ රු. 20,000 සටහන් කරයි.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                පියවර 03 – ලෙජර්
+            </strong>
+
+            <p>
+                විකුණුම් ගිණුමේ බැර පැත්තට
+                රු. 20,000 පළ කරයි.
+            </p>
+
+        </div>
+
+
+        <table class="account-table">
+
+            <tr>
+                <th>
+                    ගිණුම
+                </th>
+
+                <th>
+                    හර
+                </th>
+
+                <th>
+                    බැර
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    මුදල් ගිණුම
+                </td>
+
+                <td class="debit">
+                    රු. 20,000
+                </td>
+
+                <td>
+                    -
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    විකුණුම් ගිණුම
+                </td>
+
+                <td>
+                    -
+                </td>
+
+                <td class="credit">
+                    රු. 20,000
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ACTIVITIES
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📝 ක්‍රියාකාරකම් – Activities
+        </h2>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 01
+            </div>
+
+            <p>
+                මුදල් පොත යන්නෙහි අර්ථය ඔබේම වචනවලින් ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 02
+            </div>
+
+            <p>
+                පහත ගනුදෙනු මුදල් ලැබීම්ද
+                මුදල් ගෙවීම්ද ලෙස වර්ග කරන්න.
+            </p>
+
+            <p>
+                ප්‍රාග්ධනය රු.100,000,
+                වැටුප් රු.20,000,
+                විකුණුම් රු.30,000,
+                විදුලි බිල රු.5,000.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 03
+            </div>
+
+            <p>
+                රු. 15,000 ක මුදල් ලැබීමක් සඳහා
+                ලදුපතක තිබිය යුතු කරුණු ලැයිස්තුගත කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 04
+            </div>
+
+            <p>
+                රු. 8,000 ක විදුලි බිල ගෙවීමක් සඳහා
+                ගෙවීම් වවුචරයක් සකස් කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 05
+            </div>
+
+            <p>
+                මුදල් ලැබීමක් මුදල් පොතේ
+                කුමන පැත්තේ සටහන් කරන්නේද?
+                හේතුවද සඳහන් කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 06
+            </div>
+
+            <p>
+                රු. 25,000 ක මුදල් විකිණීමක් සඳහා
+                මුදල් ගිණුම සහ විකුණුම් ගිණුම
+                හර/බැර ලෙස සටහන් කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 07
+            </div>
+
+            <p>
+                තැපැල් ගාස්තු රු.60,
+                ගමන් වියදම් රු.70 සහ
+                පිරිසිදු කිරීමේ වියදම් රු.150 සඳහා
+                සුළු මුදල් පොත් සටහනක් සකස් කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 08
+            </div>
+
+            <p>
+                ලදුපත සහ ගෙවීම් වවුචරය අතර
+                වෙනස්කම් 3ක් ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 09
+            </div>
+
+            <p>
+                රු. 50,000 ක් බැංකුවට තැන්පත් කළ විට
+                භාවිත කළ හැකි මූලාශ්‍ර ලේඛනය කුමක්ද?
+                එම ගනුදෙනුවේ ගිණුම් දෙක හඳුනාගන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <div class="activity-number">
+                ක්‍රියාකාරකම 10
+            </div>
+
+            <p>
+                පහත ගනුදෙනුව සම්පූර්ණ ක්‍රියාවලියක් ලෙස
+                ලියන්න:
+            </p>
+
+            <p>
+                <strong>
+                    ගනුදෙනුව →
+                    මූලාශ්‍ර ලේඛනය →
+                    මුදල් පොත →
+                    ලෙජර් ගිණුම
+                </strong>
+            </p>
+
+            <p>
+                රු. 20,000 ක භාණ්ඩ මුදලට විකිණීමක්
+                උදාහරණයට ගන්න.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SUMMARY
+         ===================================== -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📌 පාඩමේ සාරාංශය
+        </h2>
+
+        <ul>
+
+            <li>
+                මුදල් පොත මුදල් ලැබීම් සහ ගෙවීම් වාර්තා කරයි.
+            </li>
+
+            <li>
+                මුදල් ලැබීම් හර පැත්තේ සටහන් කරයි.
+            </li>
+
+            <li>
+                මුදල් ගෙවීම් බැර පැත්තේ සටහන් කරයි.
+            </li>
+
+            <li>
+                ලදුපත මුදල් ලැබීමේ ලිඛිත සාක්ෂියකි.
+            </li>
+
+            <li>
+                ගෙවීම් වවුචරය මුදල් ගෙවීමේ ලිඛිත සාක්ෂියකි.
+            </li>
+
+            <li>
+                මුදල් පොත මුදල් ගිණුමේ ලෙජර් කාර්යයක්ද ඉටු කරයි.
+            </li>
+
+            <li>
+                සුළු මුදල් පොත කුඩා වටිනාකම් සහිත නිතර සිදුවන
+                ගෙවීම් වාර්තා කරයි.
+            </li>
+
+            <li>
+                මූලාශ්‍ර ලේඛන මත පදනම්ව
+                මූලික සටහන් පොත්වල ගනුදෙනු වාර්තා කරයි.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ACTIONS
+         ===================================== -->
+
+    <div class="lesson-actions">
+
+        <a
+            href="quiz.html?lesson=8"
+            class="quiz-button"
+        >
+            📝 Lesson 8 Quiz – MCQ 10
+        </a>
+
+
+        <button
+            class="complete-button"
+            onclick="
+                localStorage.setItem(
+                    'uez_completed_lessons',
+                    JSON.stringify(
+                        Array.from(
+                            new Set(
+                                [
+                                    ...JSON.parse(
+                                        localStorage.getItem(
+                                            'uez_completed_lessons'
+                                        ) || '[]'
+                                    ),
+                                    'lesson8'
+                                ]
+                            )
+                        )
+                    )
+                );
+                alert('Lesson 8 Completed! ✓');
+                window.location.href='lessons.html';
+            "
+        >
+            ✓ Complete Lesson 8
+        </button>
+
+
+        <a
+            href="lessons.html"
+            class="back-button"
+        >
+            ← Back to Lessons
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
