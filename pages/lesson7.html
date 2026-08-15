@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 07 | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header,
+        .lesson-section,
+        .activity-card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .lesson-header {
+            text-align: center;
+        }
+
+        .lesson-number {
+            color: gold;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .lesson-header h1 {
+            margin: 12px 0;
+        }
+
+        .lesson-section h2 {
+            color: gold;
+            margin-top: 0;
+        }
+
+        .lesson-section h3 {
+            color: #fff;
+        }
+
+        .important {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .definition-box {
+            background: #222;
+            border-left: 5px solid gold;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .example-box {
+            background: #222;
+            border-left: 5px solid #777;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .book-card {
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .book-card h3 {
+            color: gold;
+            margin-top: 0;
+        }
+
+        .source-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .source-table th,
+        .source-table td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .source-table th {
+            background: #111;
+            color: gold;
+        }
+
+        .activity-card h3 {
+            color: gold;
+            margin-top: 0;
+        }
+
+        .activity-answer {
+            margin-top: 12px;
+        }
+
+        .activity-answer input,
+        .activity-answer textarea,
+        .activity-answer select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 7px;
+            border: 1px solid #555;
+            background: #111;
+            color: #fff;
+        }
+
+        .activity-answer textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .lesson-actions {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .lesson-button {
+            display: inline-block;
+            padding: 13px 24px;
+            margin: 6px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: gold;
+            color: #000;
+        }
+
+        .lesson-button.secondary {
+            background: #444;
+            color: #fff;
+        }
+
+        .complete-button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .completion-message {
+            display: none;
+            text-align: center;
+            background: #153b25;
+            border: 1px solid #2d8a50;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .tip-box {
+            background: #242424;
+            border: 1px solid #555;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+
+            .lesson-page {
+                padding: 20px 12px;
+            }
+
+            .lesson-header,
+            .lesson-section,
+            .activity-card {
+                padding: 18px;
+            }
+
+            .source-table {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="lessons.html">
+            Lessons
+        </a>
+
+        <a href="quiz.html">
+            MCQ
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- HEADER -->
+
+    <section class="lesson-header">
+
+        <div class="lesson-number">
+            LESSON 07
+        </div>
+
+        <h1>
+            මූලික සටහන් පොත් හා මූලාශ්‍ර ලේඛන
+        </h1>
+
+        <p>
+            ව්‍යාපාර ගනුදෙනු නිවැරදිව හඳුනාගෙන,
+            වර්ගීකරණය කර සටහන් කිරීම සඳහා භාවිත කරන
+            මූලික සටහන් පොත් සහ මූලාශ්‍ර ලේඛන පිළිබඳ අධ්‍යයනය කරමු.
+        </p>
+
+    </section>
+
+
+
+    <!-- 7.1 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📘 7.1 මූලික සටහන් පොත් හැඳින්වීම
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක දිනපතා සිදුවන ගනුදෙනු විශාල
+            සංඛ්‍යාවක් පවතී. මෙම ගනුදෙනු සෘජුවම
+            ලෙජර් ගිණුම්වල සටහන් කිරීමේදී කාලය ගතවීම,
+            දෝෂ ඇතිවීම සහ පාලනය කිරීමේ අපහසුතා ඇතිවිය හැක.
+        </p>
+
+        <div class="definition-box">
+
+            <strong class="important">
+                මූලික සටහන් පොත්
+            </strong>
+
+            <p>
+                ව්‍යාපාරයක සිදුවන ගනුදෙනු ඒවායේ ස්වභාවය
+                හා වර්ගය අනුව මුලින්ම කාලානුක්‍රමිකව
+                සටහන් කිරීමට භාවිත කරන පොත්
+                මූලික සටහන් පොත් ලෙස හැඳින්වේ.
+            </p>
+
+        </div>
+
+        <p>
+            මූලික සටහන් පොත් Journal හෝ Day Books
+            ලෙසද හඳුන්වනු ලැබේ.
+        </p>
+
+        <p>
+            සෑම ගනුදෙනුවක්ම එකම මූලික සටහන් පොතක
+            සටහන් කිරීම සුදුසු නොවේ. ගනුදෙනුවේ ස්වභාවය
+            අනුව සුදුසු මූලික සටහන් පොත තෝරා ගත යුතුය.
+        </p>
+
+
+        <div class="book-grid">
+
+            <div class="book-card">
+
+                <h3>
+                    💵 මුදල් පොත
+                </h3>
+
+                <p>
+                    මුදල් ලැබීම් සහ මුදල් ගෙවීම්
+                    සම්බන්ධ ගනුදෙනු සටහන් කිරීමට
+                    භාවිත කරයි.
+                </p>
+
+            </div>
+
+
+            <div class="book-card">
+
+                <h3>
+                    🏦 බැංකු ගිණුම / බැංකු සටහන්
+                </h3>
+
+                <p>
+                    බැංකුව හරහා සිදුවන මුදල් තැන්පතු,
+                    ගෙවීම් සහ අනෙකුත් බැංකු ගනුදෙනු
+                    සටහන් කිරීමට භාවිත වේ.
+                </p>
+
+            </div>
+
+
+            <div class="book-card">
+
+                <h3>
+                    💰 සුළු මුදල් පොත
+                </h3>
+
+                <p>
+                    සුළු වටිනාකමකින් යුතු දෛනික
+                    ගෙවීම් සටහන් කිරීමට භාවිත කරයි.
+                </p>
+
+            </div>
+
+
+            <div class="book-card">
+
+                <h3>
+                    🛒 ගැනුම් ජර්නලය
+                </h3>
+
+                <p>
+                    ණයට භාණ්ඩ මිලදී ගැනීම්
+                    සටහන් කිරීමට භාවිත කරයි.
+                </p>
+
+            </div>
+
+
+            <div class="book-card">
+
+                <h3>
+                    🧾 විකුණුම් ජර්නලය
+                </h3>
+
+                <p>
+                    ණයට භාණ්ඩ විකිණීම්
+                    සටහන් කිරීමට භාවිත කරයි.
+                </p>
+
+            </div>
+
+
+            <div class="book-card">
+
+                <h3>
+                    📖 පොදු ජර්නලය
+                </h3>
+
+                <p>
+                    විශේෂිත වෙනත් ගනුදෙනු
+                    සටහන් කිරීමට භාවිත කරන
+                    මූලික සටහන් පොතකි.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 7.2 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📚 7.2 මූලික සටහන් පොත්වල අවශ්‍යතාව
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක ගනුදෙනු නිවැරදිව වාර්තා කිරීම සඳහා
+            මූලික සටහන් පොත් භාවිත කිරීම ඉතා වැදගත්ය.
+        </p>
+
+        <h3>
+            1. ගනුදෙනු වර්ග අනුව වර්ගීකරණය
+        </h3>
+
+        <p>
+            එකම ස්වභාවයේ ගනුදෙනු එකම පොතකට ඇතුළත් කිරීමෙන්
+            ගනුදෙනු පහසුවෙන් හඳුනාගත හැක.
+        </p>
+
+        <h3>
+            2. ලෙජර් ගිණුම්වලට මාරු කිරීම පහසු වීම
+        </h3>
+
+        <p>
+            මූලික සටහන් පොත්වල ඇති තොරතුරු භාවිත කර
+            ලෙජර් ගිණුම්වලට ගනුදෙනු පළ කිරීම
+            වඩාත් ක්‍රමවත් කළ හැක.
+        </p>
+
+        <h3>
+            3. වගකීම් බෙදා පැවරීම
+        </h3>
+
+        <p>
+            වෙන වෙනම මූලික සටහන් පොත් පවත්වාගෙන යාමෙන්
+            ඒවා සටහන් කිරීමේ වගකීම විවිධ පුද්ගලයන්ට
+            පැවරීමට හැකියාව ලැබේ.
+        </p>
+
+        <h3>
+            4. දෝෂ හා වංචා හඳුනා ගැනීම
+        </h3>
+
+        <p>
+            ගනුදෙනු වර්ගීකරණය කර වාර්තා කිරීම නිසා
+            ගිණුම්කරණ දෝෂ හඳුනා ගැනීම පහසු වේ.
+        </p>
+
+        <h3>
+            5. කාලය ඉතිරි කිරීම
+        </h3>
+
+        <p>
+            එකම ස්වභාවයේ ගනුදෙනු එකම ස්ථානයක
+            සටහන් වීම නිසා පසුව තොරතුරු සෙවීමට
+            අඩු කාලයක් අවශ්‍ය වේ.
+        </p>
+
+        <div class="tip-box">
+
+            💡 <strong>මතක තබා ගන්න:</strong>
+
+            <p>
+                මූලික සටහන් පොත් → ගනුදෙනු වර්ගීකරණය →
+                ලෙජර් වෙත පළ කිරීම → ගිණුම්කරණ තොරතුරු
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 7.3 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧾 7.3 මූලාශ්‍ර ලේඛන
+        </h2>
+
+        <div class="definition-box">
+
+            <strong class="important">
+                මූලාශ්‍ර ලේඛනය යනු
+            </strong>
+
+            <p>
+                ව්‍යාපාරයක ගනුදෙනුවක් සිදුවූ බවට
+                සාක්ෂියක් ලෙස භාවිත කළ හැකි,
+                ගනුදෙනුවට අදාළ තොරතුරු ඇතුළත්
+                ලේඛනයකි.
+            </p>
+
+        </div>
+
+        <p>
+            මූලික සටහන් පොත්වල ගනුදෙනු සටහන් කිරීමේදී
+            අවශ්‍ය තොරතුරු මූලාශ්‍ර ලේඛන මගින් ලබා ගනී.
+        </p>
+
+        <p>
+            මූලාශ්‍ර ලේඛනයකට සාමාන්‍යයෙන් ව්‍යාපාරයේ
+            නම හා ලිපිනය, අනුක්‍රමික අංකය,
+            ගනුදෙනුව සිදුවූ දිනය, සම්බන්ධ අනෙක් පාර්ශ්වය,
+            ගනුදෙනුවේ විස්තර, මූල්‍ය වටිනාකම සහ
+            වගකිවයුතු නිලධාරියාගේ අත්සන වැනි තොරතුරු
+            ඇතුළත් විය හැක.
+        </p>
+
+
+        <h3>
+            ප්‍රධාන මූලාශ්‍ර ලේඛන
+        </h3>
+
+
+        <table class="source-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        මූලික සටහන් පොත
+                    </th>
+
+                    <th>
+                        භාවිත කළ හැකි මූලාශ්‍ර ලේඛන
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        මුදල් පොත
+                    </td>
+
+                    <td>
+                        ලදුපත්, ගෙවීම් වවුචර්
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        බැංකු ගනුදෙනු
+                    </td>
+
+                    <td>
+                        තැන්පතු ලේඛන, ගෙවීම් වවුචර්,
+                        බැංකු ප්‍රකාශන සහ අදාළ දැනුම්දීම්
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        සුළු මුදල් පොත
+                    </td>
+
+                    <td>
+                        සුළු මුදල් ගෙවීම් වවුචර්
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        ගැනුම් ජර්නලය
+                    </td>
+
+                    <td>
+                        ගැනුම් ඉන්වොයිසි
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        විකුණුම් ජර්නලය
+                    </td>
+
+                    <td>
+                        විකුණුම් ඉන්වොයිසි
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        පොදු ජර්නලය
+                    </td>
+
+                    <td>
+                        ජර්නල් වවුචර් සහ අදාළ ලේඛන
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- 7.4 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ⭐ 7.4 මූලාශ්‍ර ලේඛනවල ප්‍රයෝජන
+        </h2>
+
+        <p>
+            මූලාශ්‍ර ලේඛන ව්‍යාපාරයේ ගිණුම්කරණ
+            ක්‍රියාවලියට ඉතා වැදගත් වේ.
+        </p>
+
+        <h3>
+            1. ගනුදෙනුවේ සාක්ෂියක් වීම
+        </h3>
+
+        <p>
+            ගනුදෙනුවක් සැබවින්ම සිදුවූ බව තහවුරු
+            කිරීමට මූලාශ්‍ර ලේඛන භාවිත කළ හැක.
+        </p>
+
+        <h3>
+            2. ගනුදෙනුවේ තොරතුරු ලබා ගැනීම
+        </h3>
+
+        <p>
+            දිනය, වටිනාකම, භාණ්ඩ හෝ සේවා,
+            සම්බන්ධ පාර්ශ්වය වැනි තොරතුරු
+            ලබා ගැනීමට හැක.
+        </p>
+
+        <h3>
+            3. ගනුදෙනු සනාථ කිරීම
+        </h3>
+
+        <p>
+            ගිණුම් සටහන් පිළිබඳ පසුව ගැටලුවක් ඇතිවූ විට
+            මූලාශ්‍ර ලේඛනය පරීක්ෂා කර ගනුදෙනුව
+            සනාථ කළ හැක.
+        </p>
+
+        <h3>
+            4. වගකීම පැවරීම
+        </h3>
+
+        <p>
+            වගකිවයුතු නිලධාරියාගේ අත්සන හෝ අනුමැතිය
+            තිබීම නිසා වගකීම පැවරීම පහසු වේ.
+        </p>
+
+        <h3>
+            5. ගිණුම්කරණ දෝෂ හඳුනා ගැනීම
+        </h3>
+
+        <p>
+            මූලාශ්‍ර ලේඛනය සහ ගිණුම් සටහන
+            සංසන්දනය කිරීමෙන් වැරදි හඳුනාගත හැක.
+        </p>
+
+        <div class="tip-box">
+
+            📌 <strong>පාඩමේ මූලික සම්බන්ධතාවය:</strong>
+
+            <p>
+                ගනුදෙනුව → මූලාශ්‍ර ලේඛනය →
+                මූලික සටහන් පොත → ලෙජර් ගිණුම්
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ACTIVITIES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📝 Lesson 07 Activities – ක්‍රියාකාරකම් 10
+        </h2>
+
+        <p>
+            පහත ක්‍රියාකාරකම් සම්පූර්ණ කර ඔබගේ අවබෝධය පරීක්ෂා කරගන්න.
+        </p>
+
+    </section>
+
+
+
+    <!-- Activity 1 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 01 – අර්ථ දැක්වීම
+        </h3>
+
+        <p>
+            මූලික සටහන් පොතක් යනු කුමක්ද?
+        </p>
+
+        <div class="activity-answer">
+
+            <textarea
+                placeholder="ඔබගේ පිළිතුර මෙහි ලියන්න..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 2 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 02 – පොත හඳුනාගන්න
+        </h3>
+
+        <p>
+            මුදල් ලැබීම් සහ මුදල් ගෙවීම්
+            සටහන් කිරීමට භාවිත කරන පොත කුමක්ද?
+        </p>
+
+        <div class="activity-answer">
+
+            <select>
+
+                <option>
+                    පිළිතුර තෝරන්න
+                </option>
+
+                <option>
+                    මුදල් පොත
+                </option>
+
+                <option>
+                    ගැනුම් ජර්නලය
+                </option>
+
+                <option>
+                    විකුණුම් ජර්නලය
+                </option>
+
+                <option>
+                    පොදු ජර්නලය
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 3 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 03 – ගැනුම් ජර්නලය
+        </h3>
+
+        <p>
+            ණයට භාණ්ඩ මිලදී ගැනීමක් සිදු කළ විට
+            භාවිත කරන මූලික සටහන් පොත නම් කරන්න.
+        </p>
+
+        <div class="activity-answer">
+
+            <input
+                type="text"
+                placeholder="පිළිතුර..."
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 4 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 04 – විකුණුම් ජර්නලය
+        </h3>
+
+        <p>
+            ණයට භාණ්ඩ විකිණීමක් සිදු කළ විට
+            භාවිත කරන පොත නම් කරන්න.
+        </p>
+
+        <div class="activity-answer">
+
+            <input
+                type="text"
+                placeholder="පිළිතුර..."
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 5 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 05 – මූලාශ්‍ර ලේඛනය
+        </h3>
+
+        <p>
+            මූලාශ්‍ර ලේඛනයක ඇතුළත් විය හැකි
+            කරුණු 3ක් ලියන්න.
+        </p>
+
+        <div class="activity-answer">
+
+            <textarea
+                placeholder="කරුණු 3ක් ලියන්න..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 6 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 06 – නිවැරදි සම්බන්ධතාව
+        </h3>
+
+        <p>
+            ගැනුම් ජර්නලය සඳහා සුදුසු මූලාශ්‍ර
+            ලේඛනය තෝරන්න.
+        </p>
+
+        <div class="activity-answer">
+
+            <select>
+
+                <option>
+                    තෝරන්න
+                </option>
+
+                <option>
+                    ගැනුම් ඉන්වොයිසිය
+                </option>
+
+                <option>
+                    ලදුපත
+                </option>
+
+                <option>
+                    සුළු මුදල් වවුචරය
+                </option>
+
+                <option>
+                    බැංකු ප්‍රකාශය
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 7 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 07 – වගකීම
+        </h3>
+
+        <p>
+            මූලාශ්‍ර ලේඛනයකට වගකිවයුතු නිලධාරියාගේ
+            අත්සන තිබීම වැදගත් වන්නේ ඇයි?
+        </p>
+
+        <div class="activity-answer">
+
+            <textarea
+                placeholder="ඔබගේ අදහස ලියන්න..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 8 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 08 – සිද්ධියක් විශ්ලේෂණය
+        </h3>
+
+        <p>
+            ව්‍යාපාරයකට රු. 5,000 ක මුදලක්
+            පාරිභෝගිකයෙකුගෙන් ලැබුණි.
+            මෙම ගනුදෙනුව සටහන් කිරීමට
+            සුදුසු මූලික සටහන් පොත කුමක්ද?
+        </p>
+
+        <div class="activity-answer">
+
+            <input
+                type="text"
+                placeholder="පිළිතුර..."
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 9 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 09 – ප්‍රයෝජන
+        </h3>
+
+        <p>
+            මූලාශ්‍ර ලේඛනවල ප්‍රයෝජන 4ක් ලියන්න.
+        </p>
+
+        <div class="activity-answer">
+
+            <textarea
+                placeholder="ප්‍රයෝජන 4ක් ලියන්න..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Activity 10 -->
+
+    <div class="activity-card">
+
+        <h3>
+            Activity 10 – සම්පූර්ණ ක්‍රියාවලිය
+        </h3>
+
+        <p>
+            පහත ක්‍රියාවලිය නිවැරදි අනුපිළිවෙළින්
+            සකස් කරන්න.
+        </p>
+
+        <div class="example-box">
+
+            ගනුදෙනුව →
+            මූලාශ්‍ර ලේඛනය →
+            මූලික සටහන් පොත →
+            ලෙජර් ගිණුම්
+
+        </div>
+
+        <p>
+            මෙම ක්‍රියාවලියේ එක් එක් අදියරෙහි
+            කාර්යය පැහැදිලි කරන්න.
+        </p>
+
+        <div class="activity-answer">
+
+            <textarea
+                placeholder="විස්තර කරන්න..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ACTIONS -->
+
+    <section class="lesson-actions">
+
+        <a
+            href="quiz.html?lesson=7"
+            class="lesson-button"
+        >
+            📝 Start Lesson 7 Quiz
+        </a>
+
+
+        <button
+            class="lesson-button complete-button"
+            onclick="completeLesson7()"
+        >
+            ✅ Complete Lesson 7
+        </button>
+
+
+        <a
+            href="lessons.html"
+            class="lesson-button secondary"
+        >
+            ← Back to Lessons
+        </a>
+
+
+        <div
+            class="completion-message"
+            id="completionMessage"
+        >
+            🎉 Lesson 7 Completed Successfully!
+            <br><br>
+            Lesson 7 Progress: 100%
+            <br>
+            Dashboard Progress: 7 / 10
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+    function completeLesson7() {
+
+        let completedLessons = [];
+
+        try {
+
+            completedLessons =
+                JSON.parse(
+                    localStorage.getItem(
+                        "uez_completed_lessons"
+                    )
+                ) || [];
+
+        }
+
+        catch (error) {
+
+            completedLessons = [];
+
+        }
+
+
+        if (!Array.isArray(completedLessons)) {
+
+            completedLessons = [];
+
+        }
+
+
+        if (
+            !completedLessons.includes(
+                "lesson7"
+            )
+        ) {
+
+            completedLessons.push(
+                "lesson7"
+            );
+
+        }
+
+
+        localStorage.setItem(
+            "uez_completed_lessons",
+            JSON.stringify(
+                completedLessons
+            )
+        );
+
+
+        const message =
+            document.getElementById(
+                "completionMessage"
+            );
+
+
+        if (message) {
+
+            message.style.display =
+                "block";
+
+        }
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
