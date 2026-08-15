@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 09 | Bank Account & Bank Reconciliation | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 1050px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lesson-header h1 {
+            color: gold;
+        }
+
+        .lesson-section {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 22px;
+        }
+
+        .lesson-section h2 {
+            color: gold;
+            margin-bottom: 15px;
+        }
+
+        .lesson-section h3 {
+            color: #f5d76e;
+            margin-top: 20px;
+        }
+
+        .important-box,
+        .example-box,
+        .activity-box,
+        .warning-box {
+            border-radius: 12px;
+            padding: 18px;
+            margin: 18px 0;
+        }
+
+        .important-box {
+            background: #26210d;
+            border-left: 5px solid gold;
+        }
+
+        .example-box {
+            background: #102018;
+            border-left: 5px solid #38c172;
+        }
+
+        .activity-box {
+            background: #111d2b;
+            border-left: 5px solid #4da3ff;
+        }
+
+        .warning-box {
+            background: #281717;
+            border-left: 5px solid #ff6464;
+        }
+
+        .formula-box {
+            background: #000;
+            border: 1px solid gold;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .formula {
+            color: gold;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .ledger {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            background: #111;
+        }
+
+        .ledger th,
+        .ledger td {
+            border: 1px solid #555;
+            padding: 9px;
+            text-align: left;
+        }
+
+        .ledger th {
+            background: #292929;
+            color: gold;
+        }
+
+        .ledger .debit {
+            color: #66d9ef;
+        }
+
+        .ledger .credit {
+            color: #ff9f9f;
+        }
+
+        .statement {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            background: white;
+            color: #111;
+        }
+
+        .statement th,
+        .statement td {
+            border: 1px solid #555;
+            padding: 9px;
+        }
+
+        .statement th {
+            background: #ddd;
+        }
+
+        .cheque-frame {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #f8f8f8;
+            color: #111;
+            border: 3px double #333;
+            border-radius: 8px;
+            padding: 22px;
+        }
+
+        .cheque-top {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .cheque-bank {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .cheque-amount {
+            border: 1px solid #555;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .voucher-frame {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #fff;
+            color: #111;
+            border: 2px solid #555;
+            padding: 20px;
+        }
+
+        .voucher-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .notice-frame {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #fff5f5;
+            color: #111;
+            border: 3px solid #c33;
+            padding: 20px;
+        }
+
+        .bank-statement-frame {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            color: #111;
+            padding: 20px;
+            border: 3px solid #555;
+            border-radius: 8px;
+        }
+
+        .activity-list li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .complete-area {
+            text-align: center;
+            background: #151515;
+            border: 1px solid #444;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .quiz-button,
+        .complete-button {
+            display: inline-block;
+            padding: 12px 22px;
+            margin: 8px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .quiz-button {
+            background: gold;
+            color: #000;
+        }
+
+        .complete-button {
+            background: #198754;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-back {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .nav-back a {
+            color: gold;
+            font-weight: bold;
+        }
+
+        @media(max-width:600px) {
+
+            .lesson-page {
+                padding: 20px 12px;
+            }
+
+            .lesson-section {
+                padding: 17px;
+            }
+
+            .ledger,
+            .statement {
+                font-size: 13px;
+            }
+
+            .formula {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="quiz.html?lesson=9">MCQ</a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- HEADER -->
+
+    <section class="lesson-header">
+
+        <h1>
+            📚 LESSON 09
+        </h1>
+
+        <h2>
+            බැංකු ගිණුම සහ බැංකු සැසඳුම් විස්තරය
+        </h2>
+
+        <p>
+            Bank Account & Bank Reconciliation Statement
+        </p>
+
+    </section>
+
+
+
+    <!-- 9.1 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🏦 9.1 බැංකු ගිණුම
+        </h2>
+
+        <p>
+            ව්‍යාපාරයක් මුදල් ගනුදෙනු පහසුවෙන් හා ආරක්ෂිතව
+            සිදු කිරීම සඳහා බැංකුවේ ජංගම ගිණුමක් පවත්වාගෙන යයි.
+        </p>
+
+        <div class="important-box">
+
+            <strong>
+                මතක තබාගන්න:
+            </strong>
+
+            <p>
+                ව්‍යාපාරයේ බැංකු ගිණුම වත්කම් ගිණුමක් ලෙස
+                සලකනු ලබන විට බැංකු ශේෂය වැඩි කරන ගනුදෙනු
+                හර පැත්තටත්, බැංකු ශේෂය අඩු කරන ගනුදෙනු
+                බැර පැත්තටත් සටහන් කරයි.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CASH DEPOSIT -->
+
+    <section class="lesson-section">
+
+        <h2>
+            💵 9.1.1 මුදල් බැංකුවේ තැන්පත් කිරීම
+        </h2>
+
+        <p>
+            ව්‍යාපාරයේ ඇති මුදල් බැංකු ජංගම ගිණුමට තැන්පත් කළ විට
+            බැංකු ශේෂය වැඩි වේ.
+        </p>
+
+        <div class="example-box">
+
+            <h3>නිදසුන</h3>
+
+            <p>
+                රු. 20,000ක් බැංකුවේ තැන්පත් කළේ ය.
+            </p>
+
+            <p>
+                බැංකු ගිණුම වැඩි වේ.
+                මුදල් ගිණුම අඩු වේ.
+            </p>
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>බැංකු ගිණුම</td>
+                <td class="debit">රු. 20,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>මුදල් ගිණුම</td>
+                <td>-</td>
+                <td class="credit">රු. 20,000</td>
+            </tr>
+
+        </table>
+
+        <div class="formula-box">
+
+            <div class="formula">
+                බැංකු ගිණුම Dr. 20,000
+            </div>
+
+            <div>
+                මුදල් ගිණුම Cr. 20,000
+            </div>
+
+        </div>
+
+        <div class="voucher-frame">
+
+            <div class="voucher-title">
+                🧾 BANK DEPOSIT SLIP
+            </div>
+
+            <p>
+                Account Holder: Unique Business
+            </p>
+
+            <p>
+                Cash Deposit: Rs. 20,000
+            </p>
+
+            <p>
+                Date: 15.08.20XX
+            </p>
+
+            <p>
+                Bank Stamp: __________________
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CHEQUE DEPOSIT -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧾 9.1.2 ලැබුණු චෙක්පත් බැංකුවේ තැන්පත් කිරීම
+        </h2>
+
+        <p>
+            ණයගැතියෙකුගෙන් හෝ විකුණුම් මගින් ලැබුණු චෙක්පතක්
+            බැංකුවේ තැන්පත් කළ විට බැංකු ගිණුම වැඩි වේ.
+        </p>
+
+        <div class="example-box">
+
+            <h3>නිදසුන</h3>
+
+            <p>
+                ණයගැතියෙකුගෙන් රු. 15,000ක චෙක්පතක් ලැබී
+                එය බැංකුවේ තැන්පත් කළේ ය.
+            </p>
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>බැංකු ගිණුම</td>
+                <td class="debit">රු. 15,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>ණයගැති ගිණුම</td>
+                <td>-</td>
+                <td class="credit">රු. 15,000</td>
+            </tr>
+
+        </table>
+
+        <div class="cheque-frame">
+
+            <div class="cheque-top">
+
+                <span>
+                    UNIQUE BANK
+                </span>
+
+                <span>
+                    No. 00456
+                </span>
+
+            </div>
+
+            <div class="cheque-bank">
+                PAY TO: Unique Business
+            </div>
+
+            <p>
+                Rupees: Fifteen Thousand Only
+            </p>
+
+            <div class="cheque-amount">
+                Rs. 15,000.00
+            </div>
+
+            <div class="signature">
+                Signature: ______________
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ISSUED CHEQUE -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧾 9.1.3 ගෙවීම් සඳහා චෙක්පත් නිකුත් කිරීම
+        </h2>
+
+        <p>
+            ණයහිමියන්ට, භාණ්ඩ මිලදී ගැනීම් සඳහා හෝ වියදම්
+            ගෙවීමට චෙක්පත් නිකුත් කළ හැක.
+        </p>
+
+        <div class="example-box">
+
+            <h3>නිදසුන</h3>
+
+            <p>
+                විදුලි ගාස්තු ලෙස රු. 5,000ක චෙක්පතක් නිකුත් කළේ ය.
+            </p>
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>විදුලි ගාස්තු ගිණුම</td>
+                <td class="debit">රු. 5,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>බැංකු ගිණුම</td>
+                <td>-</td>
+                <td class="credit">රු. 5,000</td>
+            </tr>
+
+        </table>
+
+        <div class="voucher-frame">
+
+            <div class="voucher-title">
+                🧾 PAYMENT VOUCHER
+            </div>
+
+            <p>
+                Voucher No: PV-025
+            </p>
+
+            <p>
+                Payment: Electricity
+            </p>
+
+            <p>
+                Cheque No: 302
+            </p>
+
+            <p>
+                Amount: Rs. 5,000
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DISHONOURED CHEQUES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ❌ 9.1.4 අගරු වූ චෙක්පත්
+        </h2>
+
+        <p>
+            බැංකුව විසින් චෙක්පතක් පිළිගැනීම ප්‍රතික්ෂේප කිරීම
+            චෙක්පත අගරු වීම ලෙස හැඳින්වේ.
+        </p>
+
+        <p>
+            චෙක්පතේ ලිවීමේ දෝෂ, ප්‍රමාණවත් ශේෂයක් නොමැති වීම,
+            අත්සන වෙනස් වීම වැනි හේතු නිසා චෙක්පත් අගරු විය හැක.
+        </p>
+
+        <div class="notice-frame">
+
+            <h3>
+                ⚠️ CHEQUE RETURN NOTIFICATION
+            </h3>
+
+            <p>
+                Cheque No: 415
+            </p>
+
+            <p>
+                Amount: Rs. 13,000
+            </p>
+
+            <p>
+                Status: DISHONOURED
+            </p>
+
+            <p>
+                Reason: Insufficient Funds
+            </p>
+
+            <hr>
+
+            <strong>
+                Bank Notification
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DEPOSITED CHEQUE DISHONOURED -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ❌ 9.1.5 තැන්පත් කළ චෙක්පතක් අගරු වීම
+        </h2>
+
+        <p>
+            තැන්පත් කළ චෙක්පතක් අගරු වූ විට කලින් බැංකු ගිණුමට
+            කළ හර සටහන ආපසු හරවා දැමිය යුතුය.
+        </p>
+
+        <div class="example-box">
+
+            <h3>නිදසුන</h3>
+
+            <p>
+                ණයගැතියෙකුගෙන් ලැබුණු රු. 8,000ක චෙක්පතක්
+                බැංකුවේ තැන්පත් කළ අතර එය පසුව අගරු විය.
+            </p>
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>ණයගැති ගිණුම</td>
+                <td class="debit">රු. 8,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>බැංකු ගිණුම</td>
+                <td>-</td>
+                <td class="credit">රු. 8,000</td>
+            </tr>
+
+        </table>
+
+        <div class="important-box">
+
+            <strong>
+                මූලික අදහස:
+            </strong>
+
+            <p>
+                චෙක්පත අගරු වූ විට මුදල බැංකුවෙන් ඇත්ත වශයෙන්ම
+                ලැබී නැති නිසා බැංකු ගිණුමෙන් එම මුදල ඉවත් කළ යුතුය.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ISSUED CHEQUE DISHONOURED -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ❌ 9.1.6 නිකුත් කළ චෙක්පතක් අගරු වීම
+        </h2>
+
+        <p>
+            ව්‍යාපාරය නිකුත් කළ චෙක්පතක් අගරු වූ විට මුල් ගනුදෙනුවේ
+            සටහන ආපසු හරවනු ලැබේ.
+        </p>
+
+        <div class="example-box">
+
+            <h3>නිදසුන</h3>
+
+            <p>
+                ණයහිමියෙකුට රු. 15,000ක චෙක්පතක් නිකුත් කළේ ය.
+                පසුව එම චෙක්පත අගරු විය.
+            </p>
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>බැංකු ගිණුම</td>
+                <td class="debit">රු. 15,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>ණයහිමි ගිණුම</td>
+                <td>-</td>
+                <td class="credit">රු. 15,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- BANK OVERDRAFT -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🏦 9.1.7 බැංකු අයිරාව
+        </h2>
+
+        <p>
+            බැංකුවේ පවතින ශේෂයට වඩා වැඩි මුදලක් වටිනා චෙක්පත්
+            නිකුත් කිරීමට බැංකුව විසින් අවසර දෙන පහසුකම
+            බැංකු අයිරාව ලෙස හැඳින්වේ.
+        </p>
+
+        <div class="formula-box">
+
+            <div class="formula">
+                බැංකු අයිරාව = ව්‍යාපාරයේ බැංකුවට ගෙවිය යුතු මුදල
+            </div>
+
+        </div>
+
+        <div class="example-box">
+
+            <h3>නිදසුන</h3>
+
+            <p>
+                බැංකු ගිණුමේ ශේෂය රු. 14,000ක් වූ අවස්ථාවක
+                රු. 45,000ක චෙක්පතක් නිකුත් කළේ නම්,
+                අවශ්‍ය කොන්දේසි යටතේ බැංකු අයිරාව ඇති විය හැක.
+            </p>
+
+        </div>
+
+        <div class="important-box">
+
+            <strong>
+                වැදගත්:
+            </strong>
+
+            <p>
+                බැංකු අයිරාව ව්‍යාපාරයට වගකීමක් වේ.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BANK STATEMENT -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🏦 9.2 බැංකු ප්‍රකාශය
+        </h2>
+
+        <p>
+            බැංකුව විසින් ජංගම ගිණුම් හිමියාට ලබාදෙන
+            මාසික වාර්තාව බැංකු ප්‍රකාශය ලෙස හැඳින්වේ.
+        </p>
+
+        <p>
+            එහි බැංකුව විසින් හර කළ හා බැර කළ ගනුදෙනු සහ
+            අවසාන ශේෂය දැක්වේ.
+        </p>
+
+        <div class="bank-statement-frame">
+
+            <h3 style="text-align:center;">
+                UNIQUE BANK
+            </h3>
+
+            <h4 style="text-align:center;">
+                CURRENT ACCOUNT STATEMENT
+            </h4>
+
+            <table class="statement">
+
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Dr.</th>
+                    <th>Cr.</th>
+                    <th>Balance</th>
+                </tr>
+
+                <tr>
+                    <td>01.07</td>
+                    <td>Opening Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>10,000</td>
+                </tr>
+
+                <tr>
+                    <td>05.07</td>
+                    <td>Cash Deposit</td>
+                    <td>-</td>
+                    <td>8,000</td>
+                    <td>18,000</td>
+                </tr>
+
+                <tr>
+                    <td>16.07</td>
+                    <td>Direct Remittance</td>
+                    <td>-</td>
+                    <td>11,000</td>
+                    <td>29,000</td>
+                </tr>
+
+                <tr>
+                    <td>22.07</td>
+                    <td>Standing Order</td>
+                    <td>7,000</td>
+                    <td>-</td>
+                    <td>22,000</td>
+                </tr>
+
+                <tr>
+                    <td>25.07</td>
+                    <td>Bank Charges</td>
+                    <td>3,000</td>
+                    <td>-</td>
+                    <td>19,000</td>
+                </tr>
+
+            </table>
+
+            <strong>
+                Closing Balance: Rs. 19,000
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DIFFERENCES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🔍 9.3 බැංකු ගිණුමේ සහ බැංකු ප්‍රකාශයේ ශේෂ වෙනස් වීමට හේතු
+        </h2>
+
+        <h3>
+            1. නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත්
+        </h3>
+
+        <p>
+            ව්‍යාපාරය චෙක්පත නිකුත් කර බැංකු ගිණුමේ සටහන් කළත්
+            ලබන්නා එය බැංකුවට ඉදිරිපත් කර නොමැති නම් එය
+            bank statement එකේ තවමත් නොපෙනේ.
+        </p>
+
+        <div class="example-box">
+
+            <p>
+                නිකුත් කළ චෙක්පත = රු. 16,000
+            </p>
+
+            <p>
+                මෙය ව්‍යාපාරයේ bank account එකේ අඩු වී තිබුණත්
+                bank statement එකේ තවම අඩු වී නැත.
+            </p>
+
+        </div>
+
+
+        <h3>
+            2. තැන්පත් කළ නමුත් realization නොවූ චෙක්පත්
+        </h3>
+
+        <p>
+            ව්‍යාපාරය චෙක්පත තැන්පත් කර bank account එකේ සටහන් කළත්
+            බැංකුව විසින් එය තවම එකතු කර නොමැති නම් bank statement එකේ
+            එය නොපෙනිය හැක.
+        </p>
+
+
+        <h3>
+            3. සෘජු තැන්පතු / Direct Remittances
+        </h3>
+
+        <p>
+            ගනුදෙනුකරුවෙකු ව්‍යාපාරයේ ගිණුමට සෘජුව මුදල් තැන්පත් කළත්
+            ව්‍යාපාරය ඒ පිළිබඳ දැනගන්නේ bank statement එක ලැබුණු පසුව විය හැක.
+        </p>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>බැංකු ගිණුම</td>
+                <td class="debit">රු. 11,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>ණයගැති ගිණුම</td>
+                <td>-</td>
+                <td class="credit">රු. 11,000</td>
+            </tr>
+
+        </table>
+
+
+        <h3>
+            4. Standing Order
+        </h3>
+
+        <p>
+            බැංකුව විසින් ව්‍යාපාරයේ උපදෙස් අනුව loan instalment,
+            insurance premium වැනි නිතිපතා ගෙවීම් සිදු කිරීම standing order
+            ලෙස හැඳින්වේ.
+        </p>
+
+
+        <h3>
+            5. Bank Charges
+        </h3>
+
+        <p>
+            බැංකු සේවා සඳහා බැංකුව විසින් ගිණුමෙන් අඩු කරන ගාස්තු
+            bank charges ලෙස හැඳින්වේ.
+        </p>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>හර</th>
+                <th>බැර</th>
+            </tr>
+
+            <tr>
+                <td>Bank Charges Account</td>
+                <td class="debit">රු. 3,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Bank Account</td>
+                <td>-</td>
+                <td class="credit">රු. 3,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- COMPARISON -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📊 9.4 බැංකු ගිණුම හා බැංකු ප්‍රකාශය සැසඳීම
+        </h2>
+
+        <table class="statement">
+
+            <tr>
+                <th>ව්‍යාපාරයේ බැංකු ගිණුම</th>
+                <th>බැංකු ප්‍රකාශය</th>
+            </tr>
+
+            <tr>
+                <td>වත්කම් ගිණුමක් ලෙස සලකයි</td>
+                <td>බැංකුවේ වගකීම් ගිණුමක් ලෙස සලකයි</td>
+            </tr>
+
+            <tr>
+                <td>වැඩිවීම → හර</td>
+                <td>වැඩිවීම → බැර</td>
+            </tr>
+
+            <tr>
+                <td>අඩුවීම → බැර</td>
+                <td>අඩුවීම → හර</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ADJUSTMENT -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🛠️ 9.5 බැංකු ගිණුමේ ශේෂය සංශෝධනය කිරීම
+        </h2>
+
+        <p>
+            බැංකු ප්‍රකාශය සමඟ සංසන්දනය කිරීමේදී ව්‍යාපාරයේ
+            බැංකු ගිණුමේ සටහන් නොවූ transactions තිබේ නම්
+            එම ගිණුම සංශෝධනය කළ යුතුය.
+        </p>
+
+        <div class="important-box">
+
+            <strong>
+                සංශෝධනය කළ යුතු ප්‍රධාන අයිතම:
+            </strong>
+
+            <ul>
+
+                <li>
+                    Direct remittances
+                </li>
+
+                <li>
+                    Standing orders
+                </li>
+
+                <li>
+                    Bank charges
+                </li>
+
+            </ul>
+
+        </div>
+
+        <h3>
+            නිදසුන
+        </h3>
+
+        <p>
+            බැංකු ගිණුමේ ශේෂය රු. 31,000කි.
+            බැංකුව විසින් ණයගැතියෙකුගෙන් රු. 11,000ක් සෘජුව ලැබී ඇත.
+            Bank loan standing order රු. 18,000ක් සහ bank charges රු. 3,000ක්
+            බැංකුව විසින් අඩු කර ඇත.
+        </p>
+
+        <table class="ledger">
+
+            <tr>
+                <th>සංශෝධනය</th>
+                <th>හර / බැර</th>
+                <th>මුදල</th>
+            </tr>
+
+            <tr>
+                <td>Direct Remittance</td>
+                <td class="debit">හර</td>
+                <td>11,000</td>
+            </tr>
+
+            <tr>
+                <td>Bank Loan</td>
+                <td class="credit">බැර</td>
+                <td>18,000</td>
+            </tr>
+
+            <tr>
+                <td>Bank Charges</td>
+                <td class="credit">බැර</td>
+                <td>3,000</td>
+            </tr>
+
+        </table>
+
+        <div class="formula-box">
+
+            <div>
+                31,000 + 11,000 − 18,000 − 3,000
+            </div>
+
+            <div class="formula">
+                සංශෝධිත ශේෂය = රු. 21,000
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RECONCILIATION -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📋 9.6 බැංකු සැසඳුම් ප්‍රකාශය
+        </h2>
+
+        <p>
+            සංශෝධිත බැංකු ගිණුමේ ශේෂය සහ බැංකු ප්‍රකාශයේ ශේෂය
+            අතර පවතින වෙනස පැහැදිලි කිරීම සඳහා බැංකු සැසඳුම් ප්‍රකාශය
+            සකස් කරයි.
+        </p>
+
+        <div class="important-box">
+
+            <strong>
+                මතක තබාගන්න:
+            </strong>
+
+            <p>
+                නිකුත් කළ නමුත් ඉදිරිපත් නොකළ චෙක්පත්
+                සංශෝධිත බැංකු ශේෂයට එකතු කරයි.
+            </p>
+
+            <p>
+                තැන්පත් කළ නමුත් realization නොවූ චෙක්පත්
+                සංශෝධිත බැංකු ශේෂයෙන් අඩු කරයි.
+            </p>
+
+        </div>
+
+        <h3>
+            නිදසුන
+        </h3>
+
+        <p>
+            සංශෝධිත බැංකු ගිණුමේ ශේෂය = රු. 21,000
+        </p>
+
+        <p>
+            නිකුත් කළ නමුත් ඉදිරිපත් නොකළ චෙක්පත් = රු. 16,000
+        </p>
+
+        <p>
+            තැන්පත් කළ නමුත් realization නොවූ චෙක්පත = රු. 14,000
+        </p>
+
+        <table class="ledger">
+
+            <tr>
+                <th>Bank Reconciliation Statement</th>
+                <th>Rs.</th>
+            </tr>
+
+            <tr>
+                <td>සංශෝධිත බැංකු ශේෂය</td>
+                <td>21,000</td>
+            </tr>
+
+            <tr>
+                <td>එකතු කරන්න: ඉදිරිපත් නොකළ චෙක්පත්</td>
+                <td>16,000</td>
+            </tr>
+
+            <tr>
+                <td>අඩු කරන්න: realization නොවූ චෙක්පත්</td>
+                <td>(14,000)</td>
+            </tr>
+
+            <tr>
+                <td><strong>බැංකු ප්‍රකාශයේ ශේෂය</strong></td>
+                <td><strong>23,000</strong></td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ADJUSTED BANK ACCOUNT -->
+
+    <section class="lesson-section">
+
+        <h2>
+            🧮 9.7 සංශෝධිත බැංකු ගිණුම
+        </h2>
+
+        <table class="ledger">
+
+            <tr>
+
+                <th colspan="2">
+                    Dr. Adjusted Bank Account
+                </th>
+
+                <th colspan="2">
+                    Cr. Adjusted Bank Account
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>Balance b/f</td>
+                <td>31,000</td>
+
+                <td>Bank Loan</td>
+                <td>18,000</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Direct Remittance</td>
+                <td>11,000</td>
+
+                <td>Bank Charges</td>
+                <td>3,000</td>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+                <td></td>
+
+                <td>Balance c/d</td>
+                <td>21,000</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Total</th>
+                <th>42,000</th>
+
+                <th>Total</th>
+                <th>42,000</th>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ACTIVITIES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📝 ක්‍රියාකාරකම් 10
+        </h2>
+
+        <ol class="activity-list">
+
+            <li class="activity-box">
+                රු. 25,000ක් මුදල් ලෙස බැංකුවේ තැන්පත් කළ විට
+                අදාළ ද්විත්ව සටහන ලියන්න.
+            </li>
+
+            <li class="activity-box">
+                ණයගැතියෙකුගෙන් ලැබුණු රු. 12,000ක චෙක්පතක්
+                බැංකුවේ තැන්පත් කළේ නම් බැංකු ගිණුම සහ
+                ණයගැති ගිණුම සටහන් කරන්න.
+            </li>
+
+            <li class="activity-box">
+                රු. 8,000ක විදුලි ගාස්තු චෙක්පතක් නිකුත් කළ විට
+                payment voucher එකක් නිර්මාණය කර අදාළ ledger entry
+                ලියන්න.
+            </li>
+
+            <li class="activity-box">
+                රු. 10,000ක තැන්පත් කළ චෙක්පතක් අගරු වුවහොත්
+                ණයගැති ගිණුම සහ බැංකු ගිණුම සටහන් කරන්න.
+            </li>
+
+            <li class="activity-box">
+                රු. 15,000ක ණයහිමියාට නිකුත් කළ චෙක්පතක්
+                අගරු වූ විට reversal entry එක සකස් කරන්න.
+            </li>
+
+            <li class="activity-box">
+                ආරම්භක බැංකු ශේෂය රු. 30,000කි.
+                තැන්පතු රු. 20,000ක් සහ ගෙවීම් රු. 45,000ක් නම්
+                අවසාන ශේෂය හෝ overdraft තත්ත්වය සොයන්න.
+            </li>
+
+            <li class="activity-box">
+                පහත items අතරින් bank statement එකේ පමණක්
+                සටහන් වී ඇති items හඳුනාගන්න:
+                bank charges, direct remittance, standing order,
+                unpresented cheque.
+            </li>
+
+            <li class="activity-box">
+                බැංකු ගිණුමේ ශේෂය රු. 40,000කි.
+                Direct remittance රු. 6,000,
+                standing order රු. 4,000,
+                bank charges රු. 1,000 නම්
+                සංශෝධිත බැංකු ශේෂය සොයන්න.
+            </li>
+
+            <li class="activity-box">
+                සංශෝධිත බැංකු ශේෂය රු. 41,000කි.
+                ඉදිරිපත් නොකළ චෙක්පත් රු. 9,000ක් සහ
+                realization නොවූ චෙක්පත් රු. 5,000ක් නම්
+                bank reconciliation statement එක සකස් කරන්න.
+            </li>
+
+            <li class="activity-box">
+                ව්‍යාපාරයක bank account එක සහ bank statement එක
+                ලබාගෙන ඒ දෙක සසඳා වෙනස්කම් හඳුනාගෙන,
+                adjusted bank account එක සහ bank reconciliation statement එක
+                සම්පූර්ණයෙන් සකස් කරන්න.
+            </li>
+
+        </ol>
+
+    </section>
+
+
+
+    <!-- QUIZ -->
+
+    <section class="complete-area">
+
+        <h2>
+            🎯 Lesson 09 Quiz
+        </h2>
+
+        <p>
+            පාඩම අවසන් කිරීමෙන් පසු MCQ 10ක Quiz එකට සහභාගී වන්න.
+        </p>
+
+        <a
+            href="quiz.html?lesson=9"
+            class="quiz-button"
+        >
+            📝 Start Lesson 09 Quiz
+        </a>
+
+        <br>
+
+        <button
+            class="complete-button"
+            onclick="completeLesson9()"
+        >
+            ✅ Complete Lesson 09
+        </button>
+
+    </section>
+
+
+
+    <div class="nav-back">
+
+        <a href="lessons.html">
+            ← Back to Lessons
+        </a>
+
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        <a href="dashboard.html">
+            📊 Dashboard
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function completeLesson9() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson9"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson9"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    alert(
+        "Lesson 09 completed successfully! 🎉"
+    );
+
+
+    window.location.href =
+        "lessons.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
