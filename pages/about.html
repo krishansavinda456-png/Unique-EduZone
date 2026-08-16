@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        About Us | Unique EduZone
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           UNIQUE EDUZONE
+           ABOUT PAGE
+           BLACK + GOLD DESIGN
+           ========================================= */
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(212, 160, 23, 0.08),
+                    transparent 35%
+                ),
+                #050505;
+            color: #ffffff;
+            font-family:
+                Arial,
+                "Noto Sans Sinhala",
+                sans-serif;
+        }
+
+
+        /* =========================================
+           HEADER
+           ========================================= */
+
+        .about-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(0, 0, 0, 0.96);
+
+            border-bottom:
+                1px solid
+                rgba(212, 160, 23, 0.25);
+
+            backdrop-filter: blur(12px);
+        }
+
+
+        .header-inner {
+            max-width: 1450px;
+            margin: auto;
+
+            min-height: 92px;
+
+            padding:
+                12px 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        /* =========================================
+           LOGO
+           ========================================= */
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            text-decoration: none;
+            color: white;
+
+            min-width: 250px;
+        }
+
+
+        .brand-logo {
+            width: 68px;
+            height: 68px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border:
+                2px solid
+                #d4a017;
+
+            box-shadow:
+                0 0 18px
+                rgba(212, 160, 23, 0.22);
+        }
+
+
+        .brand-text h1 {
+            margin: 0;
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        .brand-text h1 span {
+            color: #d4a017;
+        }
+
+
+        .brand-text p {
+            margin: 4px 0 0;
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+
+        .main-nav {
+            display: flex;
+
+            align-items: center;
+
+            gap: 24px;
+
+            flex-wrap: wrap;
+
+            justify-content: flex-end;
+        }
+
+
+        .main-nav a {
+            position: relative;
+
+            color: #eeeeee;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            padding:
+                10px 0;
+
+            transition:
+                color 0.25s ease;
+        }
+
+
+        .main-nav a:hover {
+            color: #d4a017;
+        }
+
+
+        .main-nav a.active {
+            color: #d4a017;
+        }
+
+
+        .main-nav a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 2px;
+
+            height: 2px;
+
+            background: #d4a017;
+        }
+
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .about-hero {
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 440px;
+
+            display: flex;
+            align-items: center;
+
+            padding:
+                70px 25px;
+        }
+
+
+        .about-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            right: -180px;
+            top: -150px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(212,160,23,0.14),
+                    transparent 70%
+                );
+        }
+
+
+        .about-hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 1150px;
+
+            width: 100%;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .about-badge {
+            display: inline-block;
+
+            padding:
+                10px 24px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d4a017,
+                    #f2c94c
+                );
+
+            color: #000;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-hero h2 {
+            margin: 0;
+
+            font-size:
+                clamp(38px, 6vw, 72px);
+
+            line-height: 1.1;
+
+            font-weight: 900;
+        }
+
+
+        .about-hero h2 span {
+            color: #d4a017;
+        }
+
+
+        .about-hero p {
+            max-width: 850px;
+
+            margin:
+                25px auto 0;
+
+            color: #c8c8c8;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           COMMON SECTION
+           ========================================= */
+
+        .about-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding:
+                20px 22px 70px;
+        }
+
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .section-title h2 {
+            margin: 0;
+
+            font-size: 34px;
+        }
+
+
+        .section-title h2 span {
+            color: #d4a017;
+        }
+
+
+        .section-title p {
+            color: #999;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================================
+           ABOUT INTRO
+           ========================================= */
+
+        .intro-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .about-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0b0b0b
+                );
+
+            border:
+                1px solid
+                rgba(212,160,23,0.35);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 12px 40px
+                rgba(0,0,0,0.35);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .about-card:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(212,160,23,0.8);
+        }
+
+
+        .about-card-icon {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-card h3 {
+            margin:
+                0 0 12px;
+
+            color: #d4a017;
+
+            font-size: 23px;
+        }
+
+
+        .about-card p {
+            color: #c2c2c2;
+
+            line-height: 1.8;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           VISION / MISSION
+           ========================================= */
+
+        .vision-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .vision-card {
+            position: relative;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            background:
+                #101010;
+
+            border:
+                1px solid
+                #3b2d0a;
+
+            overflow: hidden;
+        }
+
+
+        .vision-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            right: -30px;
+            top: -30px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(212,160,23,0.08);
+        }
+
+
+        .vision-card h3 {
+            color: #d4a017;
+
+            margin-top: 0;
+
+            font-size: 26px;
+        }
+
+
+        .vision-card p {
+            color: #c5c5c5;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           SERVICES
+           ========================================= */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .service-card {
+            text-align: center;
+
+            background:
+                #111111;
+
+            border:
+                1px solid
+                #332805;
+
+            border-radius: 16px;
+
+            padding: 28px 20px;
+
+            transition:
+                all 0.25s ease;
+        }
+
+
+        .service-card:hover {
+            transform:
+                translateY(-6px);
+
+            border-color:
+                #d4a017;
+
+            box-shadow:
+                0 10px 30px
+                rgba(212,160,23,0.08);
+        }
+
+
+        .service-icon {
+            font-size: 40px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .service-card h3 {
+            color: #ffffff;
+
+            margin:
+                8px 0;
+        }
+
+
+        .service-card p {
+            color: #999;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           LEARNING SYSTEM
+           ========================================= */
+
+        .learning-system {
+            margin-bottom: 70px;
+        }
+
+
+        .learning-flow {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 12px;
+
+            align-items: stretch;
+        }
+
+
+        .flow-card {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #171717,
+                    #0d0d0d
+                );
+
+            border:
+                1px solid
+                #3d2e08;
+
+            border-radius: 15px;
+
+            padding: 25px 15px;
+
+            text-align: center;
+        }
+
+
+        .flow-number {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin:
+                0 auto 12px;
+
+            border-radius: 50%;
+
+            background: #d4a017;
+
+            color: #000;
+
+            font-weight: bold;
+        }
+
+
+        .flow-card h3 {
+            font-size: 16px;
+
+            margin:
+                8px 0;
+
+            color: #fff;
+        }
+
+
+        .flow-card p {
+            color: #999;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           GRADES
+           ========================================= */
+
+        .grades-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .grade-card {
+            text-align: center;
+
+            padding: 30px 15px;
+
+            border-radius: 16px;
+
+            background:
+                #101010;
+
+            border:
+                1px solid
+                #3b2d0a;
+
+            transition:
+                transform 0.25s ease;
+        }
+
+
+        .grade-card:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                #d4a017;
+        }
+
+
+        .grade-card .grade {
+            font-size: 45px;
+
+            font-weight: 900;
+
+            color: #d4a017;
+        }
+
+
+        .grade-card h3 {
+            margin:
+                10px 0;
+
+            font-size: 18px;
+        }
+
+
+        .grade-card p {
+            color: #999;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           CREATOR
+           ========================================= */
+
+        .creator-section {
+            margin-bottom: 70px;
+        }
+
+
+        .creator-card {
+            max-width: 850px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #0b0b0b
+                );
+
+            border:
+                1px solid
+                rgba(212,160,23,0.4);
+        }
+
+
+        .creator-icon {
+            width: 100px;
+            height: 100px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 45px;
+
+            background:
+                #d4a017;
+
+            color: #000;
+        }
+
+
+        .creator-card h3 {
+            margin:
+                0 0 8px;
+
+            color: #d4a017;
+
+            font-size: 26px;
+        }
+
+
+        .creator-card p {
+            margin: 5px 0;
+
+            color: #bdbdbd;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CTA
+           ========================================= */
+
+        .about-cta {
+            text-align: center;
+
+            padding:
+                55px 25px;
+
+            margin-bottom: 30px;
+
+            border-radius: 22px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(212,160,23,0.14),
+                    #0d0d0d 70%
+                );
+
+            border:
+                1px solid
+                rgba(212,160,23,0.45);
+        }
+
+
+        .about-cta h2 {
+            margin:
+                0 0 12px;
+
+            font-size: 32px;
+        }
+
+
+        .about-cta p {
+            color: #aaa;
+
+            margin-bottom: 25px;
+        }
+
+
+        .cta-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .gold-button {
+            display: inline-block;
+
+            padding:
+                13px 25px;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d4a017,
+                    #f2c94c
+                );
+
+            color: #000;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .gold-button:hover {
+            transform:
+                translateY(-2px);
+        }
+
+
+        .outline-button {
+            display: inline-block;
+
+            padding:
+                12px 24px;
+
+            border:
+                1px solid
+                #d4a017;
+
+            border-radius: 8px;
+
+            color: #d4a017;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .outline-button:hover {
+            background:
+                rgba(212,160,23,0.1);
+        }
+
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        .about-footer {
+            background:
+                #0d0d0d;
+
+            border-top:
+                1px solid
+                rgba(212,160,23,0.2);
+
+            padding:
+                35px 20px;
+        }
+
+
+        .footer-content {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .footer-box h3 {
+            color: #d4a017;
+
+            margin-top: 0;
+        }
+
+
+        .footer-box p,
+        .footer-box a {
+            color: #aaa;
+
+            line-height: 1.8;
+
+            text-decoration: none;
+        }
+
+
+        .footer-box a:hover {
+            color: #d4a017;
+        }
+
+
+        .copyright {
+            text-align: center;
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                #222;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 1000px) {
+
+            .main-nav {
+                gap: 14px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .grades-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .learning-flow {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 760px) {
+
+            .header-inner {
+                flex-direction: column;
+
+                padding:
+                    15px;
+            }
+
+
+            .brand {
+                justify-content: center;
+            }
+
+
+            .main-nav {
+                justify-content: center;
+
+                gap: 12px 18px;
+            }
+
+
+            .intro-grid,
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .creator-card {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .footer-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .brand-text h1 {
+                font-size: 22px;
+            }
+
+
+            .brand-logo {
+                width: 58px;
+                height: 58px;
+            }
+
+
+            .about-hero {
+                padding:
+                    55px 18px;
+            }
+
+
+            .about-hero p {
+                font-size: 15px;
+            }
+
+
+            .grades-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .learning-flow {
+                grid-template-columns: 1fr;
+            }
+
+
+            .about-card,
+            .vision-card {
+                padding: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="about-header">
+
+    <div class="header-inner">
+
+
+        <!-- BRAND -->
+
+        <a
+            href="../index.html"
+            class="brand"
+        >
+
+            <!--
+                If your logo file has a different name,
+                change only the src below.
+            -->
+
+            <img
+                src="../assets/images/logo.png"
+                alt="Unique EduZone Logo"
+                class="brand-logo"
+            >
+
+
+            <div class="brand-text">
+
+                <h1>
+                    Unique
+                    <span>
+                        EduZone
+                    </span>
+                </h1>
+
+                <p>
+                    LEARN SMARTER, ACHIEVE GREATER
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="../index.html">
+                HOME
+            </a>
+
+            <a
+                href="about.html"
+                class="active"
+            >
+                ABOUT
+            </a>
+
+            <a href="lessons.html">
+                LESSONS
+            </a>
+
+            <a href="quiz.html">
+                MCQ
+            </a>
+
+            <a href="downloads.html">
+                DOWNLOADS
+            </a>
+
+            <a href="videos.html">
+                VIDEOS
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+     ========================================= -->
+
+<section class="about-hero">
+
+    <div class="about-hero-content">
+
+
+        <div class="about-badge">
+            UNIQUE EDUZONE
+        </div>
+
+
+        <h2>
+
+            Learn Smarter,
+            <br>
+
+            <span>
+                Achieve Greater
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Unique EduZone යනු සිසුන් සඳහා
+            පාඩම්, ක්‍රියාකාරකම්, MCQ,
+            විභාග පුහුණුව සහ අධ්‍යාපනික
+            සම්පත් එකම ස්ථානයකින් ලබාදීමට
+            නිර්මාණය කරන ලද අධ්‍යාපනික
+            ඉගෙනුම් වේදිකාවකි.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+     ========================================= -->
+
+<main class="about-container">
+
+
+
+    <!-- =====================================
+         ABOUT
+         ===================================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                About
+                <span>
+                    Unique EduZone
+                </span>
+            </h2>
+
+            <p>
+                අපගේ අධ්‍යාපනික වේදිකාව පිළිබඳව
+            </p>
+
+        </div>
+
+
+
+        <div class="intro-grid">
+
+
+            <div class="about-card">
+
+                <div class="about-card-icon">
+                    📚
+                </div>
+
+                <h3>
+                    අප ගැන
+                </h3>
+
+                <p>
+
+                    Unique EduZone යනු සිසුන්ට
+                    තම අධ්‍යාපන කටයුතු වඩාත්
+                    පහසුවෙන් සහ ක්‍රමවත් ලෙස
+                    සිදුකරගැනීමට උපකාර වන
+                    digital learning platform එකකි.
+
+                    <br><br>
+
+                    පාඩම් අන්තර්ගතය, ක්‍රියාකාරකම්,
+                    MCQ ප්‍රශ්න, ලකුණු,
+                    progress tracking සහ
+                    අනෙකුත් අධ්‍යාපනික සම්පත්
+                    එකම පද්ධතියක් තුළ ලබාදීම
+                    මෙහි ප්‍රධාන අරමුණකි.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="about-card">
+
+                <div class="about-card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    අපගේ අරමුණ
+                </h3>
+
+                <p>
+
+                    ඉගෙනීම වඩාත් සරල,
+                    ක්‍රියාකාරී සහ සිසුන්ට
+                    ආකර්ෂණීය අත්දැකීමක් බවට
+                    පත් කිරීම අපගේ ප්‍රධාන
+                    අරමුණකි.
+
+                    <br><br>
+
+                    සිසුවෙකුට තමන් ඉගෙනගත්
+                    පාඩම්, ලබාගත් ලකුණු සහ
+                    සම්පූර්ණ කළ පාඩම් පිළිබඳව
+                    තමන්ගේම progress එක
+                    නිරීක්ෂණය කරගැනීමටද
+                    පහසුකම් සලසා ඇත.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         VISION / MISSION
+         ===================================== -->
+
+    <section>
+
+        <div class="vision-grid">
+
+
+            <div class="vision-card">
+
+                <h3>
+                    🌟 Our Vision
+                </h3>
+
+                <p>
+
+                    නවීන තාක්ෂණය භාවිත කරමින්
+                    සිසුන්ට ගුණාත්මක,
+                    පහසු සහ ප්‍රයෝජනවත්
+                    අධ්‍යාපනික පරිසරයක්
+                    නිර්මාණය කිරීම.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="vision-card">
+
+                <h3>
+                    🎯 Our Mission
+                </h3>
+
+                <p>
+
+                    පාඩම් අන්තර්ගතය,
+                    ක්‍රියාකාරකම්, MCQ,
+                    විභාග පුහුණුව සහ
+                    digital resources
+                    හරහා සිසුන්ගේ දැනුම,
+                    අවබෝධය සහ විභාග
+                    සූදානම වර්ධනය කිරීම.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         WHAT WE PROVIDE
+         ===================================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                What We
+                <span>
+                    Provide
+                </span>
+            </h2>
+
+            <p>
+                Unique EduZone හරහා ලබාදෙන ප්‍රධාන පහසුකම්
+            </p>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Lessons
+                </h3>
+
+                <p>
+                    පාඩම් අන්තර්ගතය ක්‍රමානුකූලව
+                    අධ්‍යයනය කිරීමට.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📝
+                </div>
+
+                <h3>
+                    MCQ Practice
+                </h3>
+
+                <p>
+                    පාඩම් අනුව MCQ ප්‍රශ්න
+                    විසඳා දැනුම පරීක්ෂා කිරීමට.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Activities
+                </h3>
+
+                <p>
+                    පාඩම් අන්තර්ගතය ප්‍රායෝගිකව
+                    භාවිත කිරීමට ක්‍රියාකාරකම්.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Progress Tracking
+                </h3>
+
+                <p>
+                    සම්පූර්ණ කළ පාඩම් සහ
+                    ඉගෙනුම් ප්‍රගතිය නිරීක්ෂණය කිරීමට.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📄
+                </div>
+
+                <h3>
+                    PDF Downloads
+                </h3>
+
+                <p>
+                    අවශ්‍ය අධ්‍යාපනික PDF
+                    සම්පත් ලබාගැනීමට.
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🎥
+                </div>
+
+                <h3>
+                    Video Lessons
+                </h3>
+
+                <p>
+                    වීඩියෝ මගින් පාඩම්
+                    අවබෝධ කරගැනීමට.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LEARNING SYSTEM
+         ===================================== -->
+
+    <section class="learning-system">
+
+        <div class="section-title">
+
+            <h2>
+                Our
+                <span>
+                    Learning System
+                </span>
+            </h2>
+
+            <p>
+                පාඩමක් සම්පූර්ණ කිරීමේ ක්‍රමවේදය
+            </p>
+
+        </div>
+
+
+
+        <div class="learning-flow">
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    1
+                </div>
+
+                <h3>
+                    Lesson
+                </h3>
+
+                <p>
+                    පාඩම අධ්‍යයනය කරන්න.
+                </p>
+
+            </div>
+
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    2
+                </div>
+
+                <h3>
+                    Activities
+                </h3>
+
+                <p>
+                    ක්‍රියාකාරකම් සම්පූර්ණ කරන්න.
+                </p>
+
+            </div>
+
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    3
+                </div>
+
+                <h3>
+                    MCQ Quiz
+                </h3>
+
+                <p>
+                    දැනුම පරීක්ෂා කරන්න.
+                </p>
+
+            </div>
+
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    4
+                </div>
+
+                <h3>
+                    Score
+                </h3>
+
+                <p>
+                    ලබාගත් ලකුණු බලන්න.
+                </p>
+
+            </div>
+
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    5
+                </div>
+
+                <h3>
+                    Progress
+                </h3>
+
+                <p>
+                    ඔබගේ ඉගෙනුම් ප්‍රගතිය නිරීක්ෂණය කරන්න.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         GRADES
+         ===================================== -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                Learning
+                <span>
+                    Grades
+                </span>
+            </h2>
+
+            <p>
+                ඉගෙනුම් මට්ටම් අනුව අධ්‍යාපනික අන්තර්ගතය
+            </p>
+
+        </div>
+
+
+
+        <div class="grades-grid">
+
+
+            <div class="grade-card">
+
+                <div class="grade">
+                    10
+                </div>
+
+                <h3>
+                    Grade 10
+                </h3>
+
+                <p>
+                    ව්‍යාපාර අධ්‍යයනය
+                    සහ ගිණුම්කරණය
+                </p>
+
+            </div>
+
+
+
+            <div class="grade-card">
+
+                <div class="grade">
+                    11
+                </div>
+
+                <h3>
+                    Grade 11
+                </h3>
+
+                <p>
+                    ව්‍යාපාර අධ්‍යයනය
+                    සහ ගිණුම්කරණය
+                </p>
+
+            </div>
+
+
+
+            <div class="grade-card">
+
+                <div class="grade">
+                    12
+                </div>
+
+                <h3>
+                    Grade 12
+                </h3>
+
+                <p>
+                    ගිණුම්කරණය
+                    සහ ව්‍යාපාර අධ්‍යයනය
+                </p>
+
+            </div>
+
+
+
+            <div class="grade-card">
+
+                <div class="grade">
+                    13
+                </div>
+
+                <h3>
+                    Grade 13
+                </h3>
+
+                <p>
+                    ගිණුම්කරණය
+                    සහ ව්‍යාපාර අධ්‍යයනය
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CREATOR
+         ===================================== -->
+
+    <section class="creator-section">
+
+        <div class="section-title">
+
+            <h2>
+                Meet the
+                <span>
+                    Creator
+                </span>
+            </h2>
+
+        </div>
+
+
+
+        <div class="creator-card">
+
+
+            <div class="creator-icon">
+                👨‍🏫
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    ක්‍රිෂාන් රත්නායක
+                </h3>
+
+                <p>
+                    Unique EduZone
+                    අධ්‍යාපනික වේදිකාවේ
+                    නිර්මාතෘ / අධ්‍යාපනික අන්තර්ගත
+                    සංවර්ධක.
+                </p>
+
+                <p>
+                    සිසුන්ට පහසු සහ ක්‍රමානුකූල
+                    digital learning experience
+                    එකක් ලබාදීම සඳහා
+                    Unique EduZone සංවර්ධනය කර ඇත.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CALL TO ACTION
+         ===================================== -->
+
+    <section class="about-cta">
+
+        <h2>
+            Ready to Start Learning?
+        </h2>
+
+        <p>
+            අදම ඔබගේ ඉගෙනුම් ගමන ආරම්භ කරන්න.
+        </p>
+
+
+        <div class="cta-buttons">
+
+            <a
+                href="lessons.html"
+                class="gold-button"
+            >
+                📚 Start Learning
+            </a>
+
+
+            <a
+                href="quiz.html"
+                class="outline-button"
+            >
+                📝 Try MCQ
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer class="about-footer">
+
+    <div class="footer-content">
+
+
+        <div class="footer-box">
+
+            <h3>
+                Unique EduZone
+            </h3>
+
+            <p>
+                LEARN SMARTER,
+                ACHIEVE GREATER
+            </p>
+
+            <p>
+                සිසුන් සඳහා නවීන
+                digital learning platform එකක්.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <p>
+                <a href="../index.html">
+                    Home
+                </a>
+            </p>
+
+            <p>
+                <a href="lessons.html">
+                    Lessons
+                </a>
+            </p>
+
+            <p>
+                <a href="quiz.html">
+                    MCQ
+                </a>
+            </p>
+
+            <p>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📞 077 632 2413
+            </p>
+
+            <p>
+                ✉️ krishansavinda456@gmail.com
+            </p>
+
+            <p>
+                💬 WhatsApp: 077 632 2413
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        © 2026 Unique EduZone.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+</body>
+
+</html>
