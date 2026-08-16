@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Lesson 10 | ජර්නල්, ශේෂ පිරික්සුම හා ගිණුම්කරණ වැරදි | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        .lesson-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .lesson-header h1 {
+            color: gold;
+        }
+
+        .topic-card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .topic-card h2 {
+            color: gold;
+            margin-bottom: 15px;
+        }
+
+        .topic-card h3 {
+            color: #ffd700;
+            margin-top: 25px;
+        }
+
+        .topic-card p,
+        .topic-card li {
+            line-height: 1.8;
+        }
+
+        .example-box {
+            background: #111;
+            border-left: 4px solid gold;
+            padding: 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #252525;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: gold;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .ledger {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .ledger th,
+        .ledger td {
+            border: 1px solid #555;
+            padding: 9px;
+            text-align: left;
+        }
+
+        .ledger th {
+            background: #333;
+            color: gold;
+        }
+
+        .invoice {
+            background: white;
+            color: #111;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #222;
+            padding-bottom: 10px;
+        }
+
+        .invoice table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .invoice th,
+        .invoice td {
+            border: 1px solid #777;
+            padding: 8px;
+        }
+
+        .bank-statement {
+            background: white;
+            color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .bank-statement table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bank-statement th,
+        .bank-statement td {
+            border: 1px solid #777;
+            padding: 8px;
+        }
+
+        .bank-statement th {
+            background: #ddd;
+        }
+
+        .activity {
+            background: #202020;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 12px 0;
+        }
+
+        .activity strong {
+            color: gold;
+        }
+
+        .quiz-button {
+            display: inline-block;
+            background: gold;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 13px 22px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .complete-button {
+            border: none;
+            background: #198754;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .progress-box {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: gold;
+            transition: .4s;
+        }
+
+        .small-note {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        @media(max-width:700px) {
+
+            .ledger,
+            .invoice table,
+            .bank-statement table {
+                font-size: 12px;
+            }
+
+            .topic-card {
+                padding: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Home</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="quiz.html?lesson=10">MCQ</a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+
+</header>
+
+
+<main class="lesson-page">
+
+
+    <section class="lesson-header">
+
+        <h1>
+            📚 LESSON 10
+        </h1>
+
+        <h2>
+            ජර්නල්, ශේෂ පිරික්සුම සහ ගිණුම්කරණ වැරදි නිවැරදි කිරීම
+        </h2>
+
+        <p>
+            10, 11 සහ 12 පාඩම්වල ප්‍රධාන කරුණු එකම පාඩමක් ලෙස
+            ක්‍රමානුකූලව අධ්‍යයනය කරමු.
+        </p>
+
+    </section>
+
+
+    <section class="progress-box">
+
+        <strong>
+            Lesson 10 Progress
+        </strong>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="lessonProgress"
+            ></div>
+
+        </div>
+
+        <p id="progressText">
+            0% completed
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 01
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            1. ගැනුම් ජර්නලය
+        </h2>
+
+        <p>
+            ව්‍යාපාරය විසින් නැවත විකිණීම සඳහා ණයට ලබාගන්නා
+            භාණ්ඩ සම්බන්ධ ගනුදෙනු ක්‍රමානුකූලව සටහන් කිරීමට
+            ගැනුම් ජර්නලය භාවිතා කරයි.
+        </p>
+
+        <h3>
+            ගැනුම් ජර්නලයේ වැදගත්කම
+        </h3>
+
+        <ul>
+            <li>ණයට කරන භාණ්ඩ ගැනුම් ගනුදෙනු එක තැනක සටහන් කළ හැක.</li>
+            <li>ගනුදෙනු ලෙජරයට posting කිරීම පහසු වේ.</li>
+            <li>ණයට භාණ්ඩ සැපයූ සැපයුම්කරුවන්ගේ ගිණුම් පාලනය පහසු වේ.</li>
+            <li>ගිණුම් පරීක්ෂා කිරීමේදී සාධකයක් ලෙස භාවිත කළ හැක.</li>
+        </ul>
+
+
+        <h3>
+            නිදසුන
+        </h3>
+
+        <div class="example-box">
+
+            2026.01.05 දින ABC Traders වෙතින්
+            නැවත විකිණීම සඳහා රු. 50,000ක භාණ්ඩ
+            ණයට ලබා ගන්නා ලදී.
+
+        </div>
+
+
+        <h3>
+            ගැනුම් ඉන්වොයිසිය – රූප රාමු ආකාරයේ නිදසුන
+        </h3>
+
+        <div class="invoice">
+
+            <div class="invoice-header">
+
+                <strong>
+                    ABC TRADERS
+                </strong>
+
+                <strong>
+                    INVOICE
+                </strong>
+
+            </div>
+
+            <p>
+                Invoice No: INV-105
+            </p>
+
+            <p>
+                Date: 05/01/2026
+            </p>
+
+            <p>
+                Customer: Unique Business
+            </p>
+
+            <table>
+
+                <tr>
+                    <th>භාණ්ඩය</th>
+                    <th>ප්‍රමාණය</th>
+                    <th>ඒකක මිල</th>
+                    <th>මුළු මුදල</th>
+                </tr>
+
+                <tr>
+                    <td>භාණ්ඩ A</td>
+                    <td>10</td>
+                    <td>3,000</td>
+                    <td>30,000</td>
+                </tr>
+
+                <tr>
+                    <td>භාණ්ඩ B</td>
+                    <td>10</td>
+                    <td>2,000</td>
+                    <td>20,000</td>
+                </tr>
+
+                <tr>
+                    <th colspan="3">
+                        Total
+                    </th>
+                    <th>
+                        Rs. 50,000
+                    </th>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <h3>
+            ගැනුම් ජර්නල සටහන
+        </h3>
+
+        <table class="ledger">
+
+            <tr>
+                <th>දිනය</th>
+                <th>සැපයුම්කරු</th>
+                <th>ඉන්වොයිස් අංකය</th>
+                <th>මුදල (රු.)</th>
+            </tr>
+
+            <tr>
+                <td>05/01/2026</td>
+                <td>ABC Traders</td>
+                <td>INV-105</td>
+                <td>50,000</td>
+            </tr>
+
+            <tr>
+                <td>08/01/2026</td>
+                <td>XYZ Suppliers</td>
+                <td>INV-110</td>
+                <td>30,000</td>
+            </tr>
+
+            <tr>
+                <th colspan="3">
+                    Total
+                </th>
+                <th>
+                    80,000
+                </th>
+            </tr>
+
+        </table>
+
+
+        <h3>
+            ලෙජරයට Posting
+        </h3>
+
+        <table class="ledger">
+
+            <tr>
+                <th colspan="3">
+                    Purchases Account
+                </th>
+            </tr>
+
+            <tr>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>Debit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>31/01/2026</td>
+                <td>Purchase Journal Total</td>
+                <td>80,000</td>
+            </tr>
+
+        </table>
+
+
+        <table class="ledger">
+
+            <tr>
+                <th colspan="3">
+                    ABC Traders Account
+                </th>
+            </tr>
+
+            <tr>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>Credit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>05/01/2026</td>
+                <td>Purchases</td>
+                <td>50,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 02
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            2. විකුණුම් ජර්නලය
+        </h2>
+
+        <p>
+            ව්‍යාපාරය විසින් නැවත විකිණීම සඳහා තබා ඇති භාණ්ඩ
+            ණයට විකිණීමේදී එම ගනුදෙනු සටහන් කිරීමට
+            විකුණුම් ජර්නලය භාවිතා කරයි.
+        </p>
+
+        <div class="example-box">
+
+            2026.01.10 දින Silva Stores වෙත
+            රු. 40,000ක භාණ්ඩ ණයට විකුණන ලදී.
+
+        </div>
+
+
+        <table class="ledger">
+
+            <tr>
+                <th>දිනය</th>
+                <th>ගනුදෙනුකරු</th>
+                <th>Invoice No.</th>
+                <th>Amount Rs.</th>
+            </tr>
+
+            <tr>
+                <td>10/01/2026</td>
+                <td>Silva Stores</td>
+                <td>S-101</td>
+                <td>40,000</td>
+            </tr>
+
+            <tr>
+                <td>15/01/2026</td>
+                <td>Perera Stores</td>
+                <td>S-102</td>
+                <td>25,000</td>
+            </tr>
+
+            <tr>
+                <th colspan="3">
+                    Total
+                </th>
+                <th>
+                    65,000
+                </th>
+            </tr>
+
+        </table>
+
+
+        <h3>
+            ලෙජරයට Posting
+        </h3>
+
+        <table class="ledger">
+
+            <tr>
+                <th colspan="3">
+                    Sales Account
+                </th>
+            </tr>
+
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Credit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>31/01/2026</td>
+                <td>Sales Journal Total</td>
+                <td>65,000</td>
+            </tr>
+
+        </table>
+
+
+        <table class="ledger">
+
+            <tr>
+                <th colspan="3">
+                    Silva Stores Account
+                </th>
+            </tr>
+
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Debit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>10/01/2026</td>
+                <td>Sales</td>
+                <td>40,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 03
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            3. පොදු ජර්නලය
+        </h2>
+
+        <p>
+            ගැනුම් ජර්නලයට හෝ විකුණුම් ජර්නලයට ඇතුළත් කළ නොහැකි
+            විශේෂ ගනුදෙනු සටහන් කිරීමට පොදු ජර්නලය භාවිතා කරයි.
+        </p>
+
+        <h3>
+            පොදු ජර්නලයට ඇතුළත් කළ හැකි ගනුදෙනු
+        </h3>
+
+        <ul>
+            <li>ගැළපුම් සටහන්</li>
+            <li>ගිණුම්කරණ වැරදි නිවැරදි කිරීම</li>
+            <li>අයිතිකරුගේ භාණ්ඩ ආපසු ගැනීම</li>
+            <li>වත්කම් සම්බන්ධ විශේෂ ගනුදෙනු</li>
+            <li>අවිනිශ්චිත ගිණුම් සම්බන්ධ නිවැරදි කිරීම්</li>
+        </ul>
+
+
+        <table class="ledger">
+
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Debit Rs.</th>
+                <th>Credit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>20/01/2026</td>
+                <td>Furniture A/C Dr.<br>Cash A/C</td>
+                <td>25,000</td>
+                <td>25,000</td>
+            </tr>
+
+            <tr>
+                <td>25/01/2026</td>
+                <td>Drawings A/C Dr.<br>Purchases A/C</td>
+                <td>8,000</td>
+                <td>8,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 04
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            4. තාක්ෂණික ක්‍රම මගින් සිදුකරන ක්ෂණික මුදල් ගනුදෙනු
+        </h2>
+
+        <p>
+            නවීන ව්‍යාපාරවල මුදල් ගනුදෙනු සියල්ලම අතින් මුදල්
+            හුවමාරු කිරීමෙන් සිදු නොවේ. Bank Card, Online Banking,
+            Mobile Banking, QR payments සහ Electronic Transfers
+            වැනි ක්‍රම භාවිතා කළ හැක.
+        </p>
+
+        <div class="example-box">
+
+            උදාහරණයක් ලෙස භාණ්ඩයක් සඳහා රු. 12,000ක්
+            QR payment මගින් ගෙවූ විට, ගනුදෙනුවේ සාධකය
+            ලෙස electronic receipt / bank record භාවිතා කළ හැක.
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>Debit</th>
+                <th>Credit</th>
+            </tr>
+
+            <tr>
+                <td>Purchases Account</td>
+                <td>12,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Bank Account</td>
+                <td>-</td>
+                <td>12,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 05
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            5. ශේෂ පිරික්සුම
+        </h2>
+
+        <p>
+            ලෙජර ගිණුම්වල අවසාන ශේෂ එකතු කර Debit සහ Credit
+            තීරු දෙකකට ඇතුළත් කර ඒවායේ සමානත්වය පරීක්ෂා කිරීම
+            ශේෂ පිරික්සුම ලෙස හැඳින්වේ.
+        </p>
+
+        <div class="formula">
+            Total Debit = Total Credit
+        </div>
+
+
+        <h3>
+            ගිණුම් කිහිපයක් සහිත නිදසුන
+        </h3>
+
+        <table class="ledger">
+
+            <tr>
+                <th>ගිණුම</th>
+                <th>Debit Rs.</th>
+                <th>Credit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>Cash</td>
+                <td>30,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Bank</td>
+                <td>45,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Purchases</td>
+                <td>80,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Furniture</td>
+                <td>25,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Capital</td>
+                <td>-</td>
+                <td>100,000</td>
+            </tr>
+
+            <tr>
+                <td>Sales</td>
+                <td>-</td>
+                <td>80,000</td>
+            </tr>
+
+            <tr>
+                <td>Creditors</td>
+                <td>-</td>
+                <td>20,000</td>
+            </tr>
+
+            <tr>
+                <th>Total</th>
+                <th>180,000</th>
+                <th>200,000</th>
+            </tr>
+
+        </table>
+
+        <p>
+            මෙවැනි වෙනසක් පවතින විට ගිණුම් නැවත පරීක්ෂා කළ යුතුය.
+            අවශ්‍ය අවස්ථාවක Suspense Account භාවිතා කළ හැක.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 06
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            6. මූලික පොත්වලින් ලෙජරයට ගනුදෙනු පිටපත් කිරීම
+        </h2>
+
+        <p>
+            Prime Entry Books වල සටහන් කළ ගනුදෙනු අදාළ ලෙජර්
+            ගිණුම්වලට නිවැරදිව posting කළ යුතුය.
+        </p>
+
+        <div class="example-box">
+
+            Purchase Journal එකේ ගනුදෙනු 3ක් තිබේ නම්,
+            Purchases Account එකට එම period එකේ total එක
+            posting කළ හැකි අතර එක් එක් creditor ගිණුමට
+            අදාළ individual amount posting කළ යුතුය.
+
+        </div>
+
+
+        <table class="ledger">
+
+            <tr>
+                <th>Supplier</th>
+                <th>Amount Rs.</th>
+            </tr>
+
+            <tr>
+                <td>ABC Traders</td>
+                <td>50,000</td>
+            </tr>
+
+            <tr>
+                <td>XYZ Suppliers</td>
+                <td>30,000</td>
+            </tr>
+
+            <tr>
+                <td>LMN Stores</td>
+                <td>20,000</td>
+            </tr>
+
+            <tr>
+                <th>Total Purchases</th>
+                <th>100,000</th>
+            </tr>
+
+        </table>
+
+
+        <table class="ledger">
+
+            <tr>
+                <th colspan="3">
+                    Purchases Account
+                </th>
+            </tr>
+
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Debit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>31/01</td>
+                <td>Purchase Journal</td>
+                <td>100,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 07
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            7. ගිණුම්කරණ වැරදි
+        </h2>
+
+        <p>
+            ගනුදෙනුවක් නිවැරදිව හඳුනාගෙන සටහන් කිරීමේදී,
+            ලෙජරයට posting කිරීමේදී හෝ ශේෂ පිරික්සුම සකස් කිරීමේදී
+            සිදුවන දෝෂ ගිණුම්කරණ වැරදි ලෙස හැඳින්වේ.
+        </p>
+
+        <h3>
+            වැරදි නිවැරදි කිරීමේ අවශ්‍යතාව
+        </h3>
+
+        <ul>
+            <li>නිවැරදි ලාභය හඳුනා ගැනීමට.</li>
+            <li>නිවැරදි වත්කම් හා වගකීම් පෙන්වීමට.</li>
+            <li>නිවැරදි මූල්‍ය තොරතුරු ලබා දීමට.</li>
+            <li>ශේෂ පිරික්සුමේ දෝෂ හඳුනා ගැනීමට.</li>
+            <li>අවසාන ගිණුම් නිවැරදිව සකස් කිරීමට.</li>
+        </ul>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 08
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            8. ශේෂ පිරික්සුමේ සමානත්වයට බල නොපාන වැරදි
+        </h2>
+
+        <p>
+            Debit සහ Credit දෙපසම සමාන මුදලක් වැරදි ගිණුම්වලට
+            ඇතුළත් වූ විට Trial Balance එකේ දෙපස එකතුව
+            සමාන විය හැක. එහෙත් ගිණුම් නිවැරදි නොවේ.
+        </p>
+
+        <h3>
+            නිදසුන 1 – වැරදි ගිණුමකට සටහන් කිරීම
+        </h3>
+
+        <div class="example-box">
+
+            Office Equipment රු. 20,000ක් මිලදීගෙන,
+            Purchases Account එකට Debit කර ඇත.
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>නිවැරදි කිරීම</th>
+                <th>Debit Rs.</th>
+                <th>Credit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>Office Equipment A/C Dr.<br>Purchases A/C</td>
+                <td>20,000</td>
+                <td>20,000</td>
+            </tr>
+
+        </table>
+
+
+        <h3>
+            නිදසුන 2
+        </h3>
+
+        <div class="example-box">
+
+            Electricity Rs. 5,000 Insurance Account එකට
+            වැරදියට Debit කර ඇත.
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>Correcting Entry</th>
+                <th>Debit</th>
+                <th>Credit</th>
+            </tr>
+
+            <tr>
+                <td>Electricity A/C Dr.<br>Insurance A/C</td>
+                <td>5,000</td>
+                <td>5,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 09
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            9. ශේෂ පිරික්සුමේ සමානත්වයට බලපාන වැරදි
+        </h2>
+
+        <p>
+            Debit සහ Credit entries දෙක සමාන නොවීම නිසා
+            Trial Balance එකේ දෙපස එකතුව වෙනස් විය හැක.
+        </p>
+
+        <h3>
+            නිදසුන
+        </h3>
+
+        <div class="example-box">
+
+            Furniture රු. 15,000කට මිලදී ගත් නමුත්
+            Furniture Account එකට රු. 5,000ක් පමණක් Debit කර ඇත.
+
+            වෙනස = රු. 10,000
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>Correction</th>
+                <th>Debit</th>
+                <th>Credit</th>
+            </tr>
+
+            <tr>
+                <td>Furniture A/C Dr.<br>Suspense A/C</td>
+                <td>10,000</td>
+                <td>10,000</td>
+            </tr>
+
+        </table>
+
+        <p class="small-note">
+            මෙවැනි Trial Balance agreement errors සඳහා
+            Suspense Account භාවිතා කළ හැක. e-Thaksalawa
+            accounting-error material එකේද මෙවැනි අවස්ථාවල
+            suspense account භාවිතා කිරීම පැහැදිලි කරයි. :contentReference[oaicite:2]{index=2}
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 10
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            10. අවිනිශ්චිත ගිණුම – Suspense Account
+        </h2>
+
+        <p>
+            Trial Balance එකේ Debit සහ Credit totals අතර වෙනසක්
+            ඇති වූ විට එම වෙනස තාවකාලිකව තබා ගැනීමට
+            Suspense Account භාවිතා කළ හැක.
+        </p>
+
+        <h3>
+            නිදසුන 1
+        </h3>
+
+        <div class="example-box">
+
+            Stationery රු. 3,500ක් Cash Book එකේ සටහන් කර ඇත.
+            නමුත් Stationery Account එකට Debit කර නැත.
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>Account</th>
+                <th>Debit</th>
+                <th>Credit</th>
+            </tr>
+
+            <tr>
+                <td>Stationery A/C</td>
+                <td>3,500</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Suspense A/C</td>
+                <td>-</td>
+                <td>3,500</td>
+            </tr>
+
+        </table>
+
+
+        <h3>
+            නිදසුන 2
+        </h3>
+
+        <div class="example-box">
+
+            Purchases Account එකේ රු. 25,000ක් තිබිය යුතු නමුත්
+            රු. 5,000ක් පමණක් සටහන් කර ඇත.
+
+            වෙනස = රු. 20,000
+
+        </div>
+
+        <table class="ledger">
+
+            <tr>
+                <th>Account</th>
+                <th>Debit</th>
+                <th>Credit</th>
+            </tr>
+
+            <tr>
+                <td>Purchases A/C</td>
+                <td>20,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Suspense A/C</td>
+                <td>-</td>
+                <td>20,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 11
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            11. ශේෂ පිරික්සුම මගින් අනාවරණය වන වැරදි නිවැරදි කිරීම
+        </h2>
+
+        <p>
+            Trial Balance එක සමාන නොවූ විට මුලින්ම වෙනස හඳුනාගෙන,
+            ledger accounts, prime entry books සහ trial balance
+            නැවත පරීක්ෂා කළ යුතුය.
+        </p>
+
+        <h3>
+            ප්‍රධාන පියවර
+        </h3>
+
+        <ol>
+            <li>Trial Balance totals නැවත එකතු කිරීම.</li>
+            <li>Ledger balances නැවත පරීක්ෂා කිරීම.</li>
+            <li>Prime entry books පරීක්ෂා කිරීම.</li>
+            <li>Posting errors පරීක්ෂා කිරීම.</li>
+            <li>වෙනස තාවකාලිකව Suspense Account එකට දැමීම.</li>
+            <li>දෝෂය හඳුනාගැනීම.</li>
+            <li>Journal entry මගින් නිවැරදි කිරීම.</li>
+            <li>Suspense Account එක නැවත පරීක්ෂා කිරීම.</li>
+        </ol>
+
+
+        <h3>
+            ගනුදෙනු කිහිපයක් මගින් නිදසුන
+        </h3>
+
+        <table class="ledger">
+
+            <tr>
+                <th>දෝෂය</th>
+                <th>Correction</th>
+                <th>Dr.</th>
+                <th>Cr.</th>
+            </tr>
+
+            <tr>
+                <td>Stationery omitted Rs. 3,500</td>
+                <td>Stationery Dr / Suspense Cr</td>
+                <td>3,500</td>
+                <td>3,500</td>
+            </tr>
+
+            <tr>
+                <td>Furniture understated Rs. 10,000</td>
+                <td>Furniture Dr / Suspense Cr</td>
+                <td>10,000</td>
+                <td>10,000</td>
+            </tr>
+
+            <tr>
+                <td>Sales Account overcast Rs. 2,000</td>
+                <td>Sales Dr / Suspense Cr</td>
+                <td>2,000</td>
+                <td>2,000</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PART 12
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            12. අවසාන ශේෂ පිරික්සුම – සම්පූර්ණ නිදසුන
+        </h2>
+
+        <p>
+            පහත උදාහරණයේදී ව්‍යාපාරයක ප්‍රධාන ලෙජර් ගිණුම්වල
+            අවසාන ශේෂ Trial Balance එකකට ගෙන එයි.
+        </p>
+
+        <table class="ledger">
+
+            <tr>
+                <th>Account</th>
+                <th>Debit Rs.</th>
+                <th>Credit Rs.</th>
+            </tr>
+
+            <tr>
+                <td>Cash</td>
+                <td>20,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Bank</td>
+                <td>40,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Debtors</td>
+                <td>35,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Purchases</td>
+                <td>100,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Furniture</td>
+                <td>25,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Rent</td>
+                <td>10,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Wages</td>
+                <td>20,000</td>
+                <td>-</td>
+            </tr>
+
+            <tr>
+                <td>Capital</td>
+                <td>-</td>
+                <td>100,000</td>
+            </tr>
+
+            <tr>
+                <td>Sales</td>
+                <td>-</td>
+                <td>120,000</td>
+            </tr>
+
+            <tr>
+                <td>Creditors</td>
+                <td>-</td>
+                <td>30,000</td>
+            </tr>
+
+            <tr>
+                <th>Total</th>
+                <th>250,000</th>
+                <th>250,000</th>
+            </tr>
+
+        </table>
+
+        <div class="formula">
+            Debit Total = Rs. 250,000<br>
+            Credit Total = Rs. 250,000
+        </div>
+
+        <p>
+            එබැවින් මෙම උදාහරණයේ Trial Balance එකේ
+            Debit සහ Credit totals සමාන වේ.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ACTIVITIES 01 - 30
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            📝 Activities – ක්‍රියාකාරකම් 30
+        </h2>
+
+
+        <div class="activity">
+            <strong>Activity 01:</strong>
+            ගැනුම් ජර්නලය යනු කුමක්ද? එහි අරමුණු 3ක් ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 02:</strong>
+            රු. 25,000ක ණය ගැනුම් ගනුදෙනුවක් Purchase Journal එකක සටහන් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 03:</strong>
+            Purchase Invoice එකක තිබිය යුතු තොරතුරු 6ක් ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 04:</strong>
+            ABC Traders Rs.40,000, XYZ Traders Rs.25,000 යන ගනුදෙනු දෙක Purchase Journal එකකට ඇතුළත් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 05:</strong>
+            Purchase Journal total එක Purchases Account එකට posting කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 06:</strong>
+            ABC Traders Account එකට individual transaction එක posting කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 07:</strong>
+            Sales Journal එකේ අරමුණ පැහැදිලි කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 08:</strong>
+            Silva Stores Rs.35,000 සහ Perera Stores Rs.45,000 යන ණය විකුණුම් Sales Journal එකකට ඇතුළත් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 09:</strong>
+            Sales Journal total එක Sales Account එකට posting කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 10:</strong>
+            Debtor Account එකකට Sales transaction එක posting කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 11:</strong>
+            General Journal භාවිතා කරන අවස්ථා 5ක් ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 12:</strong>
+            Furniture Rs.20,000 cash මගින් මිලදී ගැනීමේ Journal Entry එක සකස් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 13:</strong>
+            Owner විසින් භාණ්ඩ Rs.8,000ක් පෞද්ගලික භාවිතයට ගත් විට Journal Entry එක සකස් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 14:</strong>
+            QR payment මගින් Rs.15,000ක් ගෙවූ ගනුදෙනුවක් සඳහා Debit/Credit accounts හඳුනාගන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 15:</strong>
+            Trial Balance යන්න නිර්වචනය කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 16:</strong>
+            Cash Rs.20,000, Bank Rs.30,000, Purchases Rs.50,000,
+            Capital Rs.70,000 සහ Sales Rs.30,000 භාවිතා කර Trial Balance එක සකස් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 17:</strong>
+            Trial Balance එක සමාන නොවීමට හේතු 5ක් ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 18:</strong>
+            Prime Entry Book එකකින් Ledger එකකට posting කරන ක්‍රමය පැහැදිලි කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 19:</strong>
+            Purchase Journal එකේ ගනුදෙනු 3ක් දී Purchases Account එකට posting කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 20:</strong>
+            වැරදි ගිණුමකට transaction එකක් සටහන් කළ විට Trial Balance එකට බලපෑමක් ඇති වේදැයි පැහැදිලි කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 21:</strong>
+            Office Equipment Rs.30,000ක් Purchases Account එකට වැරදියට Debit කර ඇති විට correction entry එක ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 22:</strong>
+            Electricity Rs.6,000 Insurance Account එකට වැරදියට Debit කර ඇති විට correction entry එක ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 23:</strong>
+            Trial Balance agreement එකට බලපාන වැරදි සහ බල නොපාන වැරදි අතර වෙනස ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 24:</strong>
+            Stationery Rs.4,000ක් එක් entry එකක් පමණක් ලෙස සටහන් කර ඇති විට correction entry එක ලියන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 25:</strong>
+            Furniture Rs.15,000ක් වෙනුවට Rs.5,000ක් posting කර ඇති විට suspense correction entry එක සකස් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 26:</strong>
+            Suspense Account එක යනු කුමක්ද? එය භාවිතා කරන්නේ ඇයි?
+        </div>
+
+        <div class="activity">
+            <strong>Activity 27:</strong>
+            දෝෂ 3ක් ලබා දී ඒවා Trial Balance agreement එකට බලපානවාදැයි වර්ගීකරණය කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 28:</strong>
+            Suspense Account එකේ Debit සහ Credit entries ලබා දී මුල් Trial Balance difference එක සොයන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 29:</strong>
+            ගනුදෙනු 8ක් ලබාගෙන Ledger Accounts සකස් කර Trial Balance එකක් සකස් කරන්න.
+        </div>
+
+        <div class="activity">
+            <strong>Activity 30:</strong>
+            Purchase Journal, Sales Journal, General Journal, Ledger,
+            Trial Balance සහ Error Correction යන සියලුම කොටස් ඇතුළත්
+            සම්පූර්ණ ව්‍යාපාරික ගිණුම් අභ්‍යාසයක් සම්පූර්ණ කරන්න.
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUIZ
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            📝 Lesson 10 Quiz
+        </h2>
+
+        <p>
+            පාඩම් 10, 11 සහ 12 ආවරණය වන MCQ ප්‍රශ්න 10ක්.
+        </p>
+
+        <a
+            href="quiz.html?lesson=10"
+            class="quiz-button"
+        >
+            📝 Start Lesson 10 Quiz
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         COMPLETE LESSON
+         ===================================================== -->
+
+    <section class="topic-card">
+
+        <h2>
+            ✅ Lesson Completion
+        </h2>
+
+        <p>
+            පාඩම සම්පූර්ණයෙන් අධ්‍යයනය කිරීමෙන් පසු
+            පහත button එක ඔබන්න.
+        </p>
+
+        <button
+            class="complete-button"
+            id="completeLessonButton"
+            onclick="completeLesson10()"
+        >
+            ✅ Complete Lesson 10
+        </button>
+
+        <p id="completionMessage"></p>
+
+    </section>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+    function completeLesson10() {
+
+        let completedLessons = [];
+
+        try {
+
+            completedLessons =
+                JSON.parse(
+                    localStorage.getItem(
+                        "uez_completed_lessons"
+                    )
+                ) || [];
+
+        }
+
+        catch (error) {
+
+            completedLessons = [];
+
+        }
+
+
+        if (!completedLessons.includes("lesson10")) {
+
+            completedLessons.push("lesson10");
+
+        }
+
+
+        localStorage.setItem(
+            "uez_completed_lessons",
+            JSON.stringify(completedLessons)
+        );
+
+
+        document.getElementById(
+            "lessonProgress"
+        ).style.width = "100%";
+
+
+        document.getElementById(
+            "progressText"
+        ).textContent =
+            "100% completed";
+
+
+        document.getElementById(
+            "completionMessage"
+        ).textContent =
+            "✓ Lesson 10 completed successfully!";
+
+
+        document.getElementById(
+            "completeLessonButton"
+        ).textContent =
+            "✓ Lesson 10 Completed";
+
+
+        document.getElementById(
+            "completeLessonButton"
+        ).disabled = true;
+
+    }
+
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            let completedLessons = [];
+
+            try {
+
+                completedLessons =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "uez_completed_lessons"
+                        )
+                    ) || [];
+
+            }
+
+            catch (error) {
+
+                completedLessons = [];
+
+            }
+
+
+            if (
+                completedLessons.includes(
+                    "lesson10"
+                )
+            ) {
+
+                document.getElementById(
+                    "lessonProgress"
+                ).style.width =
+                    "100%";
+
+
+                document.getElementById(
+                    "progressText"
+                ).textContent =
+                    "100% completed";
+
+
+                document.getElementById(
+                    "completionMessage"
+                ).textContent =
+                    "✓ Lesson 10 completed successfully!";
+
+
+                document.getElementById(
+                    "completeLessonButton"
+                ).textContent =
+                    "✓ Lesson 10 Completed";
+
+
+                document.getElementById(
+                    "completeLessonButton"
+                ).disabled = true;
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
