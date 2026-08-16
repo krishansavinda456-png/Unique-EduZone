@@ -1254,18 +1254,155 @@ const quizData = {
     "10": [
 
         {
-            question: "ව්‍යවසායකයෙකුගේ වැදගත් ලක්ෂණයක් වන්නේ?",
+            question:
+                "නැවත විකිණීම සඳහා ණයට ලබාගන්නා භාණ්ඩ ගනුදෙනු සටහන් කිරීමට භාවිතා කරන ජර්නලය කුමක්ද?",
+    
             options: [
-                "අවදානම් භාරගැනීම",
-                "කිසිදු තීරණයක් නොගැනීම",
-                "වගකීම් නොගැනීම",
-                "ව්‍යාපාරය වසා දැමීම"
+                "විකුණුම් ජර්නලය",
+                "ගැනුම් ජර්නලය",
+                "පොදු ජර්නලය",
+                "මුදල් පොත"
             ],
+    
+            answer: 1
+        },
+    
+    
+        {
+            question:
+                "Sales Journal එකේ සටහන් කරන්නේ කුමන ගනුදෙනුද?",
+    
+            options: [
+                "සියලුම cash sales",
+                "ණයට විකුණන ලද භාණ්ඩ",
+                "ව්‍යාපාරික ණය ලබාගැනීම්",
+                "අයිතිකරුගේ drawings"
+            ],
+    
+            answer: 1
+        },
+    
+    
+        {
+            question:
+                "Purchase Journal එකේ සටහන් කළ ගනුදෙනුවේ individual supplier amount එක සාමාන්‍යයෙන් කුමන ගිණුමට posting කරයිද?",
+    
+            options: [
+                "Cash Account",
+                "Capital Account",
+                "Supplier / Creditor Account",
+                "Sales Account"
+            ],
+    
+            answer: 2
+        },
+    
+    
+        {
+            question:
+                "ගැනුම් සහ විකුණුම් ජර්නල්වලට ඇතුළත් නොවන විශේෂ ගනුදෙනු සඳහා භාවිතා කරන ජර්නලය කුමක්ද?",
+    
+            options: [
+                "General Journal",
+                "Sales Journal",
+                "Purchase Journal",
+                "Petty Cash Book"
+            ],
+    
             answer: 0
+        },
+    
+    
+        {
+            question:
+                "Trial Balance එකක මූලික අරමුණ කුමක්ද?",
+    
+            options: [
+                "ලාභය පමණක් සෙවීම",
+                "වත්කම් පමණක් සෙවීම",
+                "Debit සහ Credit balances වල සමානත්වය පරීක්ෂා කිරීම",
+                "මුදල් පමණක් ගණනය කිරීම"
+            ],
+    
+            answer: 2
+        },
+    
+    
+        {
+            question:
+                "Office Equipment එකක් වැරදියට Purchases Account එකට Debit කළ විට එය කුමන ආකාරයේ දෝෂයක්ද?",
+    
+            options: [
+                "Trial Balance agreement එකට අනිවාර්යයෙන් බලපාන දෝෂයක්",
+                "නිවැරදි ගිණුම වෙනුවට වැරදි ගිණුමකට සටහන් කළ දෝෂයක්",
+                "Debit entry එක සම්පූර්ණයෙන් අතහැරීම",
+                "Credit entry එක දෙවරක් කිරීම"
+            ],
+    
+            answer: 1
+        },
+    
+    
+        {
+            question:
+                "Debit සහ Credit totals අතර වෙනසක් ඇති වූ විට තාවකාලිකව භාවිතා කළ හැකි ගිණුම කුමක්ද?",
+    
+            options: [
+                "Capital Account",
+                "Suspense Account",
+                "Sales Account",
+                "Purchases Account"
+            ],
+    
+            answer: 1
+        },
+    
+    
+        {
+            question:
+                "Furniture රු.15,000ක් මිලදීගෙන Furniture Account එකට රු.5,000ක් පමණක් Debit කළේ නම් correction සඳහා වෙනස කොපමණද?",
+    
+            options: [
+                "Rs.5,000",
+                "Rs.10,000",
+                "Rs.15,000",
+                "Rs.20,000"
+            ],
+    
+            answer: 1
+        },
+    
+    
+        {
+            question:
+                "ගිණුම්කරණ වැරදි නිවැරදි කිරීමේ ප්‍රධාන හේතුවක් වන්නේ කුමක්ද?",
+    
+            options: [
+                "වෙළඳ දැන්වීම් වැඩි කිරීම",
+                "ගිණුම් වාර්තා නිවැරදි කිරීම",
+                "සේවකයන් වැඩි කිරීම",
+                "භාණ්ඩ මිල අඩු කිරීම"
+            ],
+    
+            answer: 1
+        },
+    
+    
+        {
+            question:
+                "Trial Balance එකේ Debit සහ Credit totals සමාන වුවත් ගිණුම් නිවැරදි බව අනිවාර්යයෙන්ම තහවුරු කළ හැකිද?",
+    
+            options: [
+                "ඔව්, සෑම විටම",
+                "නැහැ, සමහර දෝෂ Trial Balance එකේ සමානත්වයට බලපාන්නේ නැහැ",
+                "ඔව්, නමුත් cash transactions සඳහා පමණයි",
+                "නැහැ, Trial Balance කිසිවිටෙක භාවිතා නොකරයි"
+            ],
+    
+            answer: 1
         }
-
+    
     ]
-
 };
 
 
