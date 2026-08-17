@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Grade 11 Lesson 01 | Unique EduZone
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           UNIQUE EDUZONE
+           GRADE 11 - LESSON 01
+           BLACK + GOLD THEME
+           ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        .lesson-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 35px 20px 70px;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .lesson-hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #111,
+                    #1b1b1b
+                );
+
+            border: 1px solid #333;
+            border-radius: 20px;
+
+            padding: 35px 25px;
+
+            margin-bottom: 30px;
+
+            text-align: center;
+        }
+
+        .grade-label {
+            display: inline-block;
+
+            background: gold;
+            color: #000;
+
+            padding: 6px 15px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .lesson-hero h1 {
+            color: gold;
+
+            font-size: 34px;
+
+            margin: 5px 0 10px;
+        }
+
+        .lesson-hero p {
+            color: #ccc;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        /* =========================================
+           TOP PROGRESS
+           ========================================= */
+
+        .progress-card {
+            background: #111;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            margin-bottom: 30px;
+        }
+
+        .progress-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+
+            height: 10px;
+
+            background: #333;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+
+            height: 100%;
+
+            background: gold;
+
+            transition: width 0.4s ease;
+        }
+
+        /* =========================================
+           CONTENT SECTIONS
+           ========================================= */
+
+        .lesson-section {
+            background: #111;
+
+            border: 1px solid #333;
+
+            border-radius: 16px;
+
+            padding: 28px;
+
+            margin-bottom: 25px;
+        }
+
+        .lesson-section h2 {
+            color: gold;
+
+            margin-top: 0;
+
+            font-size: 27px;
+        }
+
+        .lesson-section h3 {
+            color: #f5d76e;
+
+            margin-top: 25px;
+        }
+
+        .lesson-section p {
+            color: #ddd;
+
+            margin: 12px 0;
+        }
+
+        .lesson-section ul,
+        .lesson-section ol {
+            color: #ddd;
+
+            padding-left: 25px;
+        }
+
+        .lesson-section li {
+            margin-bottom: 8px;
+        }
+
+        /* =========================================
+           IMPORTANT NOTE
+           ========================================= */
+
+        .important {
+            background: #191500;
+
+            border-left: 4px solid gold;
+
+            padding: 18px;
+
+            margin: 20px 0;
+
+            border-radius: 8px;
+        }
+
+        .important strong {
+            color: gold;
+        }
+
+        /* =========================================
+           EXAMPLE BOX
+           ========================================= */
+
+        .example-box {
+            background: #181818;
+
+            border: 1px solid #444;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin: 20px 0;
+        }
+
+        .example-title {
+            color: gold;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        /* =========================================
+           COMPARISON TABLE
+           ========================================= */
+
+        .table-wrapper {
+            overflow-x: auto;
+
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 650px;
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+
+            padding: 12px;
+
+            text-align: left;
+        }
+
+        th {
+            background: #242000;
+
+            color: gold;
+        }
+
+        td {
+            background: #101010;
+
+            color: #ddd;
+        }
+
+        /* =========================================
+           PROCESS
+           ========================================= */
+
+        .process-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .process-card {
+            background: #181818;
+
+            border: 1px solid #333;
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            text-align: center;
+        }
+
+        .process-number {
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: gold;
+
+            color: #000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 10px;
+
+            font-weight: bold;
+        }
+
+        /* =========================================
+           EXAM BOX
+           ========================================= */
+
+        .exam-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #211d00,
+                    #111
+                );
+
+            border: 1px solid #806f00;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            margin-top: 25px;
+        }
+
+        .exam-box h3 {
+            color: gold;
+
+            margin-top: 0;
+        }
+
+        /* =========================================
+           ACTIVITY
+           ========================================= */
+
+        .activity {
+            background: #151515;
+
+            border: 1px solid #333;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+        }
+
+        .activity h3 {
+            color: gold;
+
+            margin-top: 0;
+        }
+
+        .answer {
+            margin-top: 10px;
+
+            color: #aaa;
+
+            font-size: 14px;
+        }
+
+        /* =========================================
+           BUTTONS
+           ========================================= */
+
+        .lesson-actions {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .lesson-button {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            background: gold;
+
+            color: #000;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .lesson-button:hover {
+            background: #fff;
+
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            background: #333;
+
+            color: #fff;
+        }
+
+        .secondary-button:hover {
+            background: #555;
+        }
+
+        .complete-button {
+            background: #00a86b;
+
+            color: #fff;
+        }
+
+        /* =========================================
+           COMPLETED MESSAGE
+           ========================================= */
+
+        .complete-message {
+            display: none;
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            padding: 18px;
+
+            background: #062417;
+
+            border: 1px solid #00a86b;
+
+            border-radius: 12px;
+
+            color: #8ff0c5;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 650px) {
+
+            .lesson-page {
+                padding: 25px 14px 50px;
+            }
+
+            .lesson-hero h1 {
+                font-size: 27px;
+            }
+
+            .lesson-section {
+                padding: 20px 16px;
+            }
+
+            .lesson-section h2 {
+                font-size: 23px;
+            }
+
+            .progress-top {
+                flex-direction: column;
+            }
+
+            .lesson-button {
+                width: 100%;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="site-header">
+
+    <div class="logo">
+        Unique EduZone
+    </div>
+
+    <nav>
+
+        <a href="../../index.html">
+            Home
+        </a>
+
+        <a href="../pages/lessons.html">
+            Lessons
+        </a>
+
+        <a href="../pages/quiz.html">
+            MCQ
+        </a>
+
+        <a href="../pages/dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="../pages/profile.html">
+            Profile
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="lesson-page">
+
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <section class="lesson-hero">
+
+        <div class="grade-label">
+            GRADE 11
+        </div>
+
+        <h1>
+            පාඩම 01
+        </h1>
+
+        <h2>
+            වෙළෙඳාම සහ උපකාරක සේවා
+        </h2>
+
+        <p>
+            ව්‍යාපාර අධ්‍යයනය හා ගිණුම්කරණය
+            — 11 ශ්‍රේණිය
+        </p>
+
+        <p>
+            වෙළෙඳාම, වෙළෙඳාමේ වැදගත්කම,
+            වෙළෙඳාමේ ආකාර සහ වෙළෙඳාමට
+            උපකාර වන සේවා පිළිබඳ විස්තරාත්මක
+            අධ්‍යයනය.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROGRESS
+         ========================================= -->
+
+    <section class="progress-card">
+
+        <div class="progress-top">
+
+            <strong>
+                Grade 11 Lesson Progress
+            </strong>
+
+            <strong id="lessonProgressText">
+                0%
+            </strong>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="lessonProgressBar"
+            ></div>
+
+        </div>
+
+        <p>
+            Lesson 01 / 08
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 01
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            1. වෙළෙඳාම යනු කුමක්ද?
+        </h2>
+
+        <p>
+            මිනිසුන්ගේ අවශ්‍යතා හා වුවමනා සපුරා ගැනීම
+            සඳහා භාණ්ඩ හා සේවා අවශ්‍ය වේ. එහෙත් සෑම
+            පුද්ගලයෙකුටම තමන්ට අවශ්‍ය සියලුම භාණ්ඩ
+            හා සේවා තනිව නිෂ්පාදනය කරගත නොහැක.
+            එබැවින් භාණ්ඩ හා සේවා නිෂ්පාදකයන්ගෙන්
+            පාරිභෝගිකයන් වෙත ගමන් කිරීම සඳහා
+            විවිධ ආර්ථික ක්‍රියාකාරකම් අවශ්‍ය වේ.
+        </p>
+
+        <p>
+            භාණ්ඩ හා සේවා හුවමාරුවට සම්බන්ධ වන
+            ක්‍රියාකාරකම් සමූහය තුළ වෙළෙඳාමට
+            වැදගත් ස්ථානයක් හිමි වේ.
+        </p>
+
+        <div class="important">
+
+            <strong>
+                විභාගයට වැදගත්:
+            </strong>
+
+            <p>
+                වෙළෙඳාම පිළිබඳ නිර්වචනයක්,
+                වෙළෙඳාමේ අවශ්‍යතාව සහ වෙළෙඳාම
+                ආර්ථික ක්‍රියාවලියට දක්වන දායකත්වය
+                පැහැදිලි කිරීමට හැකි විය යුතුය.
+            </p>
+
+        </div>
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන
+            </div>
+
+            <p>
+                ගොවියෙකු විසින් නිෂ්පාදනය කරන ලද
+                එළවළු නගරයේ වෙළෙන්දෙකු වෙත ලබා දී,
+                එම වෙළෙන්දා විසින් පාරිභෝගිකයන්ට
+                අලෙවි කිරීමේ ක්‍රියාවලිය තුළ
+                වෙළෙඳාමට සම්බන්ධ ක්‍රියාකාරකම්
+                දැකිය හැක.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 02
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            2. වෙළෙඳාම අවශ්‍ය වන්නේ ඇයි?
+        </h2>
+
+        <p>
+            නිෂ්පාදනය සිදු වූ ස්ථානය සහ පාරිභෝගිකයා
+            සිටින ස්ථානය එකම ස්ථානයක් නොවිය හැක.
+            එසේම නිෂ්පාදනය සිදු කරන කාලය සහ
+            පාරිභෝගිකයා භාණ්ඩය අවශ්‍ය කරන කාලයද
+            වෙනස් විය හැක.
+        </p>
+
+        <p>
+            මේ නිසා නිෂ්පාදකයා සහ පාරිභෝගිකයා
+            අතර පවතින දුර, කාලය සහ හිමිකාරිත්වය
+            සම්බන්ධ බාධා අවම කිරීමට වෙළෙඳාම
+            සහ උපකාරක සේවා වැදගත් වේ.
+        </p>
+
+        <h3>
+            වෙළෙඳාමෙන් ඉටු වන වැදගත් කාර්යයන්
+        </h3>
+
+        <ul>
+
+            <li>
+                නිෂ්පාදකයා සහ පාරිභෝගිකයා සම්බන්ධ කිරීම.
+            </li>
+
+            <li>
+                භාණ්ඩ හා සේවා අවශ්‍ය ස්ථානයට
+                ළඟා කිරීමට පහසුකම් සැලසීම.
+            </li>
+
+            <li>
+                භාණ්ඩ හා සේවා හුවමාරුව පහසු කිරීම.
+            </li>
+
+            <li>
+                වෙළෙඳපොළ තුළ භාණ්ඩ ලබාගැනීමේ
+                අවස්ථාව වැඩි කිරීම.
+            </li>
+
+            <li>
+                නිෂ්පාදකයන්ට තම නිෂ්පාදන අලෙවි කිරීමට
+                අවස්ථාව ලබා දීම.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 03
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            3. වෙළෙඳාමේ ප්‍රධාන ආකාර
+        </h2>
+
+        <p>
+            වෙළෙඳාම විවිධ පදනම් මත වර්ග කළ හැක.
+            භාණ්ඩ හුවමාරුව සිදුවන භූගෝලීය සීමාව
+            අනුව වෙළෙඳාම ප්‍රධාන වශයෙන්
+            දේශීය වෙළෙඳාම සහ විදේශීය වෙළෙඳාම
+            ලෙස අධ්‍යයනය කළ හැක.
+        </p>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            වෙළෙඳාමේ ආකාරය
+                        </th>
+
+                        <th>
+                            අදහස
+                        </th>
+
+                        <th>
+                            නිදසුන
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            දේශීය වෙළෙඳාම
+                        </td>
+
+                        <td>
+                            රටක් තුළ සිදු වන
+                            භාණ්ඩ හා සේවා හුවමාරුව.
+                        </td>
+
+                        <td>
+                            මහනුවරින් කොළඹට
+                            භාණ්ඩ අලෙවි කිරීම.
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            විදේශීය වෙළෙඳාම
+                        </td>
+
+                        <td>
+                            රටවල් අතර සිදු වන
+                            භාණ්ඩ හා සේවා හුවමාරුව.
+                        </td>
+
+                        <td>
+                            ශ්‍රී ලංකාවෙන් තේ
+                            විදේශයකට අලෙවි කිරීම.
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 04
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            4. දේශීය වෙළෙඳාම
+        </h2>
+
+        <p>
+            රටේ දේශසීමා තුළ සිදුවන භාණ්ඩ හා සේවා
+            හුවමාරුව දේශීය වෙළෙඳාම ලෙස හැඳින්විය
+            හැකිය. මෙහිදී ගනුදෙනුවේ පාර්ශ්වයන්
+            එකම රටේ ආර්ථික පද්ධතිය තුළ කටයුතු කරයි.
+        </p>
+
+        <h3>
+            දේශීය වෙළෙඳාමේ නිදසුන්
+        </h3>
+
+        <ul>
+
+            <li>
+                ගොවියෙකුගෙන් එළවළු මිලදී ගැනීම.
+            </li>
+
+            <li>
+                නිෂ්පාදකයෙකුගෙන් තොග වෙළෙන්දෙකු
+                භාණ්ඩ මිලදී ගැනීම.
+            </li>
+
+            <li>
+                තොග වෙළෙන්දෙකුගෙන් සිල්ලර වෙළෙන්දෙකු
+                භාණ්ඩ මිලදී ගැනීම.
+            </li>
+
+            <li>
+                සිල්ලර වෙළෙන්දෙකුගෙන් පාරිභෝගිකයෙකු
+                භාණ්ඩ මිලදී ගැනීම.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 05
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            5. විදේශීය වෙළෙඳාම
+        </h2>
+
+        <p>
+            රටවල් දෙකක් හෝ ඊට වැඩි රටවල් අතර
+            භාණ්ඩ හා සේවා හුවමාරුව සිදුවන විට
+            එය විදේශීය වෙළෙඳාමට අයත් වේ.
+        </p>
+
+        <p>
+            විදේශීය වෙළෙඳාම රටකට අවශ්‍ය භාණ්ඩ
+            විදේශයන්ගෙන් ලබා ගැනීමටත්, රට තුළ
+            නිෂ්පාදනය කරන භාණ්ඩ විදේශ වෙළෙඳපොළට
+            ඉදිරිපත් කිරීමටත් අවස්ථාව ලබා දෙයි.
+        </p>
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන
+            </div>
+
+            <p>
+                ශ්‍රී ලංකාවේ නිෂ්පාදනය කරන තේ
+                විදේශීය වෙළෙඳපොළකට යැවීම
+                විදේශීය වෙළෙඳාමට අදාළ නිදසුනකි.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 06
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            6. තොග වෙළෙඳාම
+        </h2>
+
+        <p>
+            විශාල ප්‍රමාණවලින් භාණ්ඩ මිලදී ගෙන
+            ඒවා සාමාන්‍යයෙන් තවත් වෙළෙඳුන් වෙත
+            අලෙවි කරන ක්‍රියාවලිය තොග වෙළෙඳාම
+            ලෙස හැඳින්විය හැක.
+        </p>
+
+        <p>
+            තොග වෙළෙන්දා නිෂ්පාදකයා සහ සිල්ලර
+            වෙළෙන්දා අතර සම්බන්ධකයෙකු ලෙස
+            ක්‍රියා කළ හැක.
+        </p>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    1
+                </div>
+
+                <strong>
+                    නිෂ්පාදකයා
+                </strong>
+
+            </div>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    2
+                </div>
+
+                <strong>
+                    තොග වෙළෙන්දා
+                </strong>
+
+            </div>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    3
+                </div>
+
+                <strong>
+                    සිල්ලර වෙළෙන්දා
+                </strong>
+
+            </div>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    4
+                </div>
+
+                <strong>
+                    පාරිභෝගිකයා
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 07
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            7. සිල්ලර වෙළෙඳාම
+        </h2>
+
+        <p>
+            අවසාන පාරිභෝගිකයන්ට සාපේක්ෂව කුඩා
+            ප්‍රමාණවලින් භාණ්ඩ හා සේවා අලෙවි කරන
+            ක්‍රියාවලිය සිල්ලර වෙළෙඳාම ලෙස
+            හැඳින්විය හැක.
+        </p>
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන්
+            </div>
+
+            <ul>
+
+                <li>
+                    සුපිරි වෙළෙඳසැලකින් පාරිභෝගිකයෙකු
+                    භාණ්ඩ මිලදී ගැනීම.
+                </li>
+
+                <li>
+                    ගමේ වෙළඳසැලකින් ආහාර ද්‍රව්‍ය
+                    මිලදී ගැනීම.
+                </li>
+
+                <li>
+                    ඇඳුම් වෙළඳසැලකින් පාරිභෝගිකයෙකු
+                    ඇඳුමක් මිලදී ගැනීම.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 08
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            8. වෙළෙඳාමට උපකාරක සේවා
+        </h2>
+
+        <p>
+            භාණ්ඩ හා සේවා නිෂ්පාදකයාගෙන්
+            පාරිභෝගිකයා වෙත ගමන් කිරීමේදී
+            වෙළෙඳාමට විවිධ බාධා ඇති විය හැක.
+            එම බාධා අවම කර වෙළෙඳාම පහසු කිරීම
+            සඳහා විවිධ උපකාරක සේවා අවශ්‍ය වේ.
+        </p>
+
+        <p>
+            ප්‍රවාහනය, ගබඩා කිරීම, බැංකු සේවා,
+            රක්ෂණ සේවා සහ සන්නිවේදන සේවා වැනි
+            ක්‍රියාකාරකම් වෙළෙඳාමට සහාය වන
+            වැදගත් සේවා ලෙස සලකා බැලිය හැක.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 09
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            9. ප්‍රවාහන සේවා
+        </h2>
+
+        <p>
+            භාණ්ඩ නිෂ්පාදනය කරන ස්ථානයෙන්
+            පාරිභෝගිකයාට හෝ වෙළෙඳාමේ ඊළඟ
+            පාර්ශ්වයට අවශ්‍ය ස්ථානය වෙත ගෙන යාමට
+            ප්‍රවාහනය අවශ්‍ය වේ.
+        </p>
+
+        <h3>
+            නිදසුන
+        </h3>
+
+        <p>
+            ගොවිපළක නිෂ්පාදනය කරන එළවළු
+            නගරයේ තොග වෙළෙඳපොළ වෙත ගෙන යාම
+            ප්‍රවාහන සේවාව භාවිත කිරීමකි.
+        </p>
+
+        <div class="important">
+
+            <strong>
+                විභාග කරුණ:
+            </strong>
+
+            <p>
+                ප්‍රවාහනය මඟින් භාණ්ඩවල ස්ථානීය
+                බාධාව අවම කර වෙළෙඳාමට සහාය වේ.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 10
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            10. ගබඩා කිරීමේ සේවා
+        </h2>
+
+        <p>
+            නිෂ්පාදනය කරන ලද සියලුම භාණ්ඩ
+            නිෂ්පාදනය වූ මොහොතේම පාරිභෝගිකයාට
+            අලෙවි නොවිය හැක. එවැනි අවස්ථාවලදී
+            භාණ්ඩ ආරක්ෂිතව තබා ගැනීමට ගබඩා
+            පහසුකම් අවශ්‍ය වේ.
+        </p>
+
+        <p>
+            ගබඩා කිරීම මඟින් භාණ්ඩ අවශ්‍ය
+            අවස්ථාව වන තෙක් ආරක්ෂිතව තබා ගැනීමට
+            සහ සැපයුම අඛණ්ඩව පවත්වා ගැනීමට
+            උපකාර කළ හැක.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 11
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            11. බැංකු සේවා
+        </h2>
+
+        <p>
+            වෙළෙඳාමේදී මුදල් ගෙවීම්, මුදල්
+            තැන්පත් කිරීම, ණය පහසුකම් සහ
+            විවිධ මූල්‍ය ගනුදෙනු අවශ්‍ය වේ.
+            එම කටයුතු සඳහා බැංකු පද්ධතිය
+            වැදගත් උපකාරක සේවාවක් සපයයි.
+        </p>
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නූතන නිදසුන
+            </div>
+
+            <p>
+                ව්‍යාපාරයකට භාණ්ඩ මිලදී ගැනීම සඳහා
+                බැංකු ගිණුමකින් මුදල් ගෙවීම,
+                card payment හෝ online banking
+                භාවිත කිරීම වැනි ක්‍රියාකාරකම්
+                වෙළෙඳ ගනුදෙනු පහසු කරයි.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 12
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            12. රක්ෂණ සේවා
+        </h2>
+
+        <p>
+            වෙළෙඳාම හා ව්‍යාපාර කටයුතු සිදු කරන
+            විට විවිධ අවදානම් ඇති විය හැක.
+            එවැනි අවදානම්වලින් ඇති විය හැකි
+            මූල්‍ය බලපෑම් අවම කර ගැනීම සඳහා
+            රක්ෂණ සේවා වැදගත් වේ.
+        </p>
+
+        <div class="example-box">
+
+            <div class="example-title">
+                නිදසුන
+            </div>
+
+            <p>
+                ව්‍යාපාරයක භාණ්ඩ ප්‍රවාහනය කරන
+                අවස්ථාවකදී ඇති විය හැකි අනතුරු
+                හානි සඳහා අදාළ රක්ෂණ ආවරණයක්
+                ලබා ගැනීම.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 13
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            13. සන්නිවේදන සේවා
+        </h2>
+
+        <p>
+            වෙළෙඳාමේදී නිෂ්පාදකයන්, වෙළෙන්දන්,
+            පාරිභෝගිකයන්, බැංකු සහ අනෙකුත්
+            ආයතන අතර තොරතුරු හුවමාරුව අවශ්‍ය වේ.
+        </p>
+
+        <p>
+            දුරකථන, විද්‍යුත් තැපෑල, අන්තර්ජාලය
+            සහ අනෙකුත් සන්නිවේදන ක්‍රම මඟින්
+            වෙළෙඳ තොරතුරු වේගයෙන් හුවමාරු කළ හැක.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 14
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            14. උපකාරක සේවා එකිනෙකට සම්බන්ධ වන ආකාරය
+        </h2>
+
+        <p>
+            වෙළෙඳාම සාර්ථකව සිදු වීමට එක්
+            උපකාරක සේවාවක් පමණක් ප්‍රමාණවත්
+            නොවිය හැක. ප්‍රවාහනය, ගබඩා කිරීම,
+            බැංකු, රක්ෂණ සහ සන්නිවේදන සේවා
+            එකිනෙකට සම්බන්ධව ක්‍රියා කරයි.
+        </p>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+                <div class="process-number">1</div>
+                නිෂ්පාදනය
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">2</div>
+                ප්‍රවාහනය
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">3</div>
+                ගබඩා කිරීම
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">4</div>
+                මූල්‍ය ගනුදෙනු
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">5</div>
+                සන්නිවේදනය
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">6</div>
+                පාරිභෝගිකයා
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECTION 15
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            15. විභාගයට සූදානම් විය යුතු ප්‍රධාන කරුණු
+        </h2>
+
+        <div class="exam-box">
+
+            <h3>
+                ⭐ Exam Focus
+            </h3>
+
+            <ul>
+
+                <li>
+                    වෙළෙඳාම යන්න පැහැදිලි කිරීම.
+                </li>
+
+                <li>
+                    වෙළෙඳාමේ අවශ්‍යතාව පැහැදිලි කිරීම.
+                </li>
+
+                <li>
+                    දේශීය හා විදේශීය වෙළෙඳාම
+                    හඳුනා ගැනීම.
+                </li>
+
+                <li>
+                    තොග හා සිල්ලර වෙළෙඳාම
+                    අතර වෙනස දැක්වීම.
+                </li>
+
+                <li>
+                    වෙළෙඳාමට උපකාරක සේවා
+                    හඳුනා ගැනීම.
+                </li>
+
+                <li>
+                    ප්‍රවාහනයේ කාර්යය පැහැදිලි කිරීම.
+                </li>
+
+                <li>
+                    ගබඩා කිරීමේ අවශ්‍යතාව
+                    පැහැදිලි කිරීම.
+                </li>
+
+                <li>
+                    බැංකු සේවාවල දායකත්වය
+                    පැහැදිලි කිරීම.
+                </li>
+
+                <li>
+                    රක්ෂණ සේවාවල වැදගත්කම
+                    පැහැදිලි කිරීම.
+                </li>
+
+                <li>
+                    සන්නිවේදනය වෙළෙඳාමට
+                    උපකාර වන ආකාරය පැහැදිලි කිරීම.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ACTIVITIES
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📝 Activities – ක්‍රියාකාරකම්
+        </h2>
+
+        <p>
+            පහත ක්‍රියාකාරකම් පාඩමේ ප්‍රධාන
+            සංකල්ප නැවත අධ්‍යයනය කිරීමට
+            සකස් කර ඇත.
+        </p>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 01
+            </h3>
+
+            <p>
+                වෙළෙඳාම යන්න ඔබේම වචනවලින්
+                පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 02
+            </h3>
+
+            <p>
+                දේශීය වෙළෙඳාමට නිදසුන් 5ක්
+                ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 03
+            </h3>
+
+            <p>
+                දේශීය වෙළෙඳාම සහ විදේශීය
+                වෙළෙඳාම අතර වෙනස්කම් 3ක්
+                වගුවක් මඟින් දක්වන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 04
+            </h3>
+
+            <p>
+                තොග වෙළෙන්දා සහ සිල්ලර
+                වෙළෙන්දාගේ කාර්යයන්
+                පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 05
+            </h3>
+
+            <p>
+                ප්‍රවාහනය වෙළෙඳාමට උපකාර වන
+                ආකාරය නිදසුන් සහිතව පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 06
+            </h3>
+
+            <p>
+                ගබඩා කිරීම අවශ්‍ය වන අවස්ථා
+                3ක් ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 07
+            </h3>
+
+            <p>
+                වෙළෙඳාම සඳහා බැංකු සේවා
+                වැදගත් වන්නේ ඇයි?
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 08
+            </h3>
+
+            <p>
+                රක්ෂණ සේවාවක් භාවිත කළ හැකි
+                ව්‍යාපාරික අවස්ථා 3ක් ලියන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 09
+            </h3>
+
+            <p>
+                වෙළෙඳාමේදී සන්නිවේදනයේ
+                වැදගත්කම පැහැදිලි කරන්න.
+            </p>
+
+        </div>
+
+
+        <div class="activity">
+
+            <h3>
+                ක්‍රියාකාරකම 10
+            </h3>
+
+            <p>
+                නිෂ්පාදකයා සිට පාරිභෝගිකයා
+                දක්වා භාණ්ඩයක් ගමන් කරන
+                ක්‍රියාවලිය රූප සටහනකින්
+                දක්වන්න. එහිදී භාවිත වන
+                උපකාරක සේවා නම් කරන්න.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         LESSON SUMMARY
+         ========================================= -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📌 පාඩමේ සාරාංශය
+        </h2>
+
+        <p>
+            වෙළෙඳාම මඟින් නිෂ්පාදකයා සහ
+            පාරිභෝගිකයා අතර භාණ්ඩ හා සේවා
+            හුවමාරුව පහසු කරයි. වෙළෙඳාම
+            දේශීය හා විදේශීය වශයෙන් අධ්‍යයනය
+            කළ හැකි අතර, දේශීය වෙළෙඳාම
+            රට තුළ සිදු වන අතර විදේශීය
+            වෙළෙඳාම රටවල් අතර සිදු වේ.
+        </p>
+
+        <p>
+            තොග සහ සිල්ලර වෙළෙඳාම තුළ
+            භාණ්ඩ විවිධ මට්ටම්වලින් පාරිභෝගිකයා
+            වෙත ගමන් කරයි. එම ක්‍රියාවලිය
+            සාර්ථකව සිදු කිරීම සඳහා ප්‍රවාහනය,
+            ගබඩා කිරීම, බැංකු, රක්ෂණ සහ
+            සන්නිවේදන වැනි උපකාරක සේවා
+            වැදගත් දායකත්වයක් සපයයි.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ACTIONS
+         ========================================= -->
+
+    <div class="lesson-actions">
+
+        <a
+            href="../pages/quiz.html?grade=11&lesson=1"
+            class="lesson-button"
+        >
+            📝 Lesson 1 Quiz
+        </a>
+
+        <a
+            href="lessons.html"
+            class="lesson-button secondary-button"
+        >
+            📚 Grade 11 Lessons
+        </a>
+
+        <button
+            type="button"
+            class="lesson-button complete-button"
+            id="completeLessonButton"
+        >
+            ✅ Complete Lesson
+        </button>
+
+    </div>
+
+
+    <!-- =========================================
+         COMPLETE MESSAGE
+         ========================================= -->
+
+    <div
+        class="complete-message"
+        id="completeMessage"
+    >
+
+        🎉
+        <strong>
+            Lesson 1 Complete!
+        </strong>
+
+        <br>
+
+        Grade 11 Lesson Progress:
+        <strong>
+            1 / 8
+        </strong>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer class="site-footer">
+
+    <p>
+        © 2026 Unique EduZone.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+    /*
+     * =========================================
+     * GRADE 11 - LESSON 01 PROGRESS
+     *
+     * Separate localStorage key.
+     *
+     * This DOES NOT modify the existing
+     * Grade 10 progress system.
+     * =========================================
+     */
+
+    const GRADE11_COMPLETED_KEY =
+        "uez_grade11_completed_lessons";
+
+
+    function getGrade11CompletedLessons() {
+
+        const saved =
+            localStorage.getItem(
+                GRADE11_COMPLETED_KEY
+            );
+
+        if (!saved) {
+
+            return [];
+
+        }
+
+        try {
+
+            const data =
+                JSON.parse(saved);
+
+            if (!Array.isArray(data)) {
+
+                return [];
+
+            }
+
+            return data;
+
+        }
+
+        catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+    function updateLessonProgress() {
+
+        const completedLessons =
+            getGrade11CompletedLessons();
+
+        const completed =
+            completedLessons.includes(
+                "lesson1"
+            );
+
+        const bar =
+            document.getElementById(
+                "lessonProgressBar"
+            );
+
+        const text =
+            document.getElementById(
+                "lessonProgressText"
+            );
+
+        const message =
+            document.getElementById(
+                "completeMessage"
+            );
+
+        const button =
+            document.getElementById(
+                "completeLessonButton"
+            );
+
+
+        if (completed) {
+
+            if (bar) {
+
+                bar.style.width =
+                    "100%";
+
+            }
+
+            if (text) {
+
+                text.textContent =
+                    "100%";
+
+            }
+
+            if (message) {
+
+                message.style.display =
+                    "block";
+
+            }
+
+            if (button) {
+
+                button.textContent =
+                    "✓ Lesson Completed";
+
+                button.disabled =
+                    true;
+
+            }
+
+        }
+
+        else {
+
+            if (bar) {
+
+                bar.style.width =
+                    "0%";
+
+            }
+
+            if (text) {
+
+                text.textContent =
+                    "0%";
+
+            }
+
+        }
+
+    }
+
+
+    function completeGrade11Lesson1() {
+
+        let completedLessons =
+            getGrade11CompletedLessons();
+
+
+        if (
+            !completedLessons.includes(
+                "lesson1"
+            )
+        ) {
+
+            completedLessons.push(
+                "lesson1"
+            );
+
+        }
+
+
+        localStorage.setItem(
+
+            GRADE11_COMPLETED_KEY,
+
+            JSON.stringify(
+                completedLessons
+            )
+
+        );
+
+
+        updateLessonProgress();
+
+    }
+
+
+    document.addEventListener(
+
+        "DOMContentLoaded",
+
+        function () {
+
+            updateLessonProgress();
+
+
+            const button =
+                document.getElementById(
+                    "completeLessonButton"
+                );
+
+
+            if (button) {
+
+                button.addEventListener(
+                    "click",
+                    completeGrade11Lesson1
+                );
+
+            }
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+
+</html>
