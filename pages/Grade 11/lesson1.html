@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 11 - Lesson 1 | Unique EduZone</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.8;
+}
+
+header{
+    background:linear-gradient(135deg,#050505,#151515);
+    border-bottom:2px solid #d4af37;
+    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.logo-text{
+    color:#d4af37;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:#080808;
+    background:#d4af37;
+    padding:8px 18px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:30px auto 80px;
+}
+
+.hero{
+    background:linear-gradient(135deg,#111,#1d1d1d);
+    border:1px solid #d4af37;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    color:#d4af37;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+}
+
+.progress-box{
+    margin-top:20px;
+}
+
+.progress-title{
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.progress{
+    height:14px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:8px;
+}
+
+.progress-fill{
+    width:12.5%;
+    height:100%;
+    background:linear-gradient(90deg,#b8860b,#ffd700);
+}
+
+.section{
+    background:#111;
+    border:1px solid #292929;
+    border-left:4px solid #d4af37;
+    border-radius:15px;
+    padding:25px;
+    margin:25px 0;
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
+
+.section h2{
+    color:#d4af37;
+    margin-bottom:15px;
+    font-size:26px;
+}
+
+.section h3{
+    color:#f0c94a;
+    margin:20px 0 10px;
+    font-size:21px;
+}
+
+p{
+    margin-bottom:13px;
+}
+
+ul,ol{
+    padding-left:28px;
+    margin-bottom:15px;
+}
+
+li{
+    margin-bottom:6px;
+}
+
+.example{
+    background:#171717;
+    border:1px dashed #d4af37;
+    border-radius:12px;
+    padding:18px;
+    margin:18px 0;
+}
+
+.example-title{
+    color:#d4af37;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+    margin-top:18px;
+}
+
+.card{
+    background:#191919;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:20px;
+}
+
+.card h4{
+    color:#d4af37;
+    margin-bottom:8px;
+    font-size:19px;
+}
+
+.compare{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+}
+
+.compare th,
+.compare td{
+    border:1px solid #555;
+    padding:12px;
+    text-align:left;
+    vertical-align:top;
+}
+
+.compare th{
+    background:#d4af37;
+    color:#080808;
+}
+
+.compare td{
+    background:#151515;
+}
+
+.visual{
+    background:#f4f4f4;
+    color:#111;
+    border-radius:14px;
+    padding:20px;
+    margin:20px 0;
+    overflow:auto;
+}
+
+.visual-title{
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:12px;
+    color:#222;
+}
+
+.cheque{
+    min-width:650px;
+    border:3px solid #222;
+    border-radius:10px;
+    padding:22px;
+    background:#fff;
+}
+
+.cheque-top{
+    display:flex;
+    justify-content:space-between;
+    font-weight:bold;
+}
+
+.cheque-line{
+    border-bottom:1px solid #333;
+    margin:18px 0;
+    padding:6px;
+}
+
+.card-visual{
+    width:390px;
+    max-width:100%;
+    min-height:220px;
+    border-radius:18px;
+    padding:25px;
+    margin:auto;
+    background:linear-gradient(135deg,#222,#555);
+    color:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+.card-chip{
+    width:55px;
+    height:42px;
+    background:#d4af37;
+    border-radius:7px;
+    margin:25px 0;
+}
+
+.card-number{
+    letter-spacing:3px;
+    font-size:19px;
+}
+
+.bank-statement{
+    min-width:650px;
+    border:2px solid #333;
+    background:#fff;
+    color:#111;
+}
+
+.bank-statement h4{
+    background:#222;
+    color:#d4af37;
+    padding:15px;
+}
+
+.statement-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.statement-table th,
+.statement-table td{
+    border:1px solid #aaa;
+    padding:9px;
+}
+
+.statement-table th{
+    background:#ddd;
+}
+
+.activity{
+    background:#151515;
+    border:1px solid #444;
+    border-radius:14px;
+    padding:20px;
+    margin:15px 0;
+}
+
+.activity span{
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.quiz-box{
+    background:#101010;
+    border:1px solid #d4af37;
+    border-radius:15px;
+    padding:25px;
+    margin-top:30px;
+}
+
+.question{
+    margin-bottom:25px;
+    padding-bottom:20px;
+    border-bottom:1px solid #333;
+}
+
+.question h4{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.option{
+    display:block;
+    background:#1a1a1a;
+    border:1px solid #333;
+    padding:10px 14px;
+    border-radius:8px;
+    margin:7px 0;
+}
+
+.complete{
+    text-align:center;
+    background:linear-gradient(135deg,#111,#202020);
+    border:2px solid #d4af37;
+    border-radius:18px;
+    padding:30px;
+    margin-top:35px;
+}
+
+.complete button,
+.quiz-button{
+    border:0;
+    background:#d4af37;
+    color:#080808;
+    padding:13px 28px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.quiz-button{
+    display:inline-block;
+    text-decoration:none;
+}
+
+.note{
+    background:#211d0e;
+    border-left:4px solid #d4af37;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #333;
+    color:#aaa;
+}
+
+@media(max-width:700px){
+    .hero h1{
+        font-size:26px;
+    }
+
+    .section{
+        padding:18px;
+    }
+
+    .logo-text{
+        font-size:17px;
+    }
+
+    .back-btn{
+        padding:7px 12px;
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+
+            <!-- ඔබගේ Logo file එකේ නම වෙනස් නම් මෙය පමණක් වෙනස් කරන්න -->
+            <img src="../assets/logo.png" alt="Unique EduZone Logo">
+
+            <div class="logo-text">
+                Unique EduZone
+            </div>
+
+        </div>
+
+        <a href="../index.html" class="back-btn">
+            ← Home
+        </a>
+
+    </div>
+</header>
+
+
+<div class="container">
+
+<section class="hero">
+
+    <h1>11 ශ්‍රේණිය – පාඩම 01</h1>
+
+    <p>
+        වෙළෙඳාම සහ උපකාරක සේවා
+    </p>
+
+    <div class="progress-box">
+
+        <div class="progress-title">
+            Lesson Progress – 1 / 8
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill"></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     1.1 වෙළෙඳාම හා උපකාරක සේවා
+===================================================== -->
+
+<section class="section">
+
+<h2>1.1 වෙළෙඳාම හා උපකාරක සේවා හැඳින්වීම</h2>
+
+<p>
+මිනිස් අවශ්‍යතා හා වුවමනා තෘප්තිමත් කිරීම සඳහා සිදුකරන ආර්ථික
+කටයුතු අතර ව්‍යාපාරයට ඉතා වැදගත් ස්ථානයක් හිමි වේ.
+ව්‍යාපාරයක් මගින් භාණ්ඩ හා සේවා නිෂ්පාදනය කිරීම, ඒවා
+පාරිභෝගිකයන් වෙත ළඟා කිරීම සහ අවශ්‍ය ස්ථානයේ හා අවශ්‍ය
+වේලාවේදී ලබාදීම සිදු කරයි.
+</p>
+
+<p>
+ව්‍යාපාර කටයුතු අතර වෙළෙඳාම ඉතා වැදගත් කොටසකි.
+වෙළෙඳාම පහසු හා කාර්යක්ෂම කිරීමට විවිධ සේවාවන් අවශ්‍ය වේ.
+එම සේවාවන් උපකාරක සේවා ලෙස හඳුන්වයි.
+</p>
+
+<div class="example">
+
+<div class="example-title">නිදසුන</div>
+
+<p>
+නිෂ්පාදකයෙකු විසින් නිෂ්පාදනය කළ භාණ්ඩයක් පාරිභෝගිකයා
+වෙත ළඟා කිරීමේදී මුදල් ගෙවීම, භාණ්ඩ ප්‍රවාහනය, සන්නිවේදනය,
+බැංකු ගනුදෙනු සහ අවදානම් ආවරණය කිරීම වැනි කටයුතු අවශ්‍ය වේ.
+මේවා වෙළෙඳාමට උපකාර වන සේවාවන් වේ.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     1.2 වෙළෙඳාම
+===================================================== -->
+
+<section class="section">
+
+<h2>1.2 වෙළෙඳාම</h2>
+
+<p>
+භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම වෙළෙඳාම ලෙස හඳුන්වයි.
+වෙළෙඳාමේදී භාණ්ඩයක හිමිකම එක් පාර්ශ්වයකින් තවත් පාර්ශ්වයකට
+මාරු වන අතර එම හුවමාරුව මූල්‍ය වටිනාකමක් මත සිදු වේ.
+</p>
+
+<h3>වෙළෙඳාමේ ප්‍රධාන වර්ග</h3>
+
+<div class="info-grid">
+
+<div class="card">
+<h4>දේශීය වෙළෙඳාම</h4>
+<p>
+එක් රටක් තුළ විවිධ පාර්ශ්ව අතර සිදුවන වෙළෙඳ කටයුතු
+දේශීය වෙළෙඳාම ලෙස හඳුන්වයි.
+</p>
+</div>
+
+<div class="card">
+<h4>විදේශීය වෙළෙඳාම</h4>
+<p>
+රටවල් දෙකක් හෝ කිහිපයක් අතර සිදුවන වෙළෙඳාම
+විදේශීය වෙළෙඳාම ලෙස හඳුන්වයි.
+</p>
+</div>
+
+</div>
+
+<h3>දේශීය වෙළෙඳාම</h3>
+
+<p>
+එක් රටක් තුළ නිෂ්පාදකයන්, වෙළෙඳුන් සහ පාරිභෝගිකයන් අතර
+සිදුවන වෙළෙඳ කටයුතු දේශීය වෙළෙඳාමට අයත් වේ.
+</p>
+
+<h3>සිල්ලර වෙළෙඳාම</h3>
+
+<p>
+අවසාන පරිභෝජනය සඳහා පාරිභෝගිකයන්ට භාණ්ඩ හා සේවා විකිණීම
+සිල්ලර වෙළෙඳාමයි.
+</p>
+
+<div class="example">
+<div class="example-title">නිදසුන</div>
+<p>
+ශිෂ්‍යයෙකු පාසල් භාවිතයට අවශ්‍ය අභ්‍යාස පොතක්,
+පෑනක් සහ පාසල් උපකරණයක් පොත් සාප්පුවකින් මිලදී ගැනීම
+සිල්ලර වෙළෙඳාමකට නිදසුනකි.
+</p>
+</div>
+
+<h3>තොග වෙළෙඳාම</h3>
+
+<p>
+නැවත විකිණීමේ අරමුණින් සාපේක්ෂව විශාල ප්‍රමාණයකින්
+භාණ්ඩ මිලදීගෙන වෙළෙඳුන්ට විකිණීම තොග වෙළෙඳාමයි.
+</p>
+
+<div class="example">
+<div class="example-title">නිදසුන</div>
+<p>
+තොග වෙළෙන්දෙකු විසින් සිල්ලර වෙළෙන්දෙකුට සබන් පෙට්ටි
+විශාල ප්‍රමාණයක් එකවර විකිණීම තොග වෙළෙඳාමකි.
+</p>
+</div>
+
+<h3>විදේශීය වෙළෙඳාම</h3>
+
+<p>
+රටවල් දෙකක් හෝ කිහිපයක් අතර සිදුවන වෙළෙඳාම විදේශීය
+වෙළෙඳාම ලෙස හැඳින්වේ.
+</p>
+
+<div class="info-grid">
+
+<div class="card">
+<h4>ආනයන වෙළෙඳාම</h4>
+<p>
+විදේශීය රටකින් භාණ්ඩ හෝ සේවා තම රටට ලබාගැනීම.
+</p>
+<p><strong>නිදසුන:</strong> ඉන්දියාවෙන් මෝටර් රථයක් මිලදී ගැනීම.</p>
+</div>
+
+<div class="card">
+<h4>අපනයන වෙළෙඳාම</h4>
+<p>
+තම රටේ නිෂ්පාදිත භාණ්ඩ හෝ සේවා විදේශ රටකට විකිණීම.
+</p>
+<p><strong>නිදසුන:</strong> ශ්‍රී ලංකාවේ තේ යුරෝපීය රටකට විකිණීම.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     1.3 උපකාරක සේවා
+===================================================== -->
+
+<section class="section">
+
+<h2>1.3 උපකාරක සේවා</h2>
+
+<p>
+වෙළෙඳ කටයුතු පහසු කිරීම, වේගවත් කිරීම සහ කාර්යක්ෂම කිරීම
+සඳහා අවශ්‍ය වන සේවාවන් උපකාරක සේවා ලෙස හඳුන්වයි.
+</p>
+
+<div class="info-grid">
+
+<div class="card">
+<h4>බැංකු සේවා</h4>
+<p>මුදල් තැන්පත් කිරීම, ගෙවීම් කිරීම සහ මූල්‍ය ගනුදෙනු පහසු කිරීම.</p>
+</div>
+
+<div class="card">
+<h4>රක්ෂණ සේවා</h4>
+<p>විවිධ අවදානම් නිසා ඇතිවන මූල්‍ය අලාභවලට ආරක්ෂාව ලබාදීම.</p>
+</div>
+
+<div class="card">
+<h4>සන්නිවේදන සේවා</h4>
+<p>තොරතුරු හා පණිවිඩ පාර්ශ්ව අතර හුවමාරු කිරීම.</p>
+</div>
+
+<div class="card">
+<h4>ප්‍රවාහන සේවා</h4>
+<p>භාණ්ඩ හා පුද්ගලයන් එක් ස්ථානයකින් තවත් ස්ථානයකට ගෙනයාම.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     1.4 බැංකු සේවා
+===================================================== -->
+
+<section class="section">
+
+<h2>1.4 බැංකු සේවා</h2>
+
+<p>
+ව්‍යාපාරිකයන්ට තම ව්‍යාපාරික කටයුතු සාර්ථකව සිදුකරගෙන යාමට
+බැංකු මගින් සපයන විවිධ සේවාවන් බැංකු සේවා ලෙස හඳුන්වයි.
+ව්‍යාපාරික කටයුතු සඳහා වාණිජ බැංකු විශාල දායකත්වයක් සපයයි.
+</p>
+
+<p>
+වාණිජ බැංකු මගින් ඉතිරි කිරීමේ ගිණුම්, ස්ථාවර තැන්පතු ගිණුම්
+සහ ජංගම ගිණුම් පවත්වාගෙන යන අතර ව්‍යාපාරිකයන්ගේ මුදල්
+ගනුදෙනු පහසු කිරීම සඳහා විවිධ සේවාවන් සපයයි.
+</p>
+
+<h3>බැංකු සේවා ප්‍රධාන කොටස්</h3>
+
+<ul>
+<li>තැන්පතු ආශ්‍රිත සේවා</li>
+<li>විද්‍යුත් මුදල් ආශ්‍රිත සේවා</li>
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     තැන්පතු
+===================================================== -->
+
+<section class="section">
+
+<h2>තැන්පතු ආශ්‍රිත සේවා</h2>
+
+<p>
+ව්‍යාපාරිකයන්ට තම අතිරික්ත මුදල් ආරක්ෂිතව තැන්පත් කිරීමටත්,
+දෛනික ගනුදෙනු සිදුකිරීමටත් වාණිජ බැංකු විවිධ තැන්පතු ගිණුම්
+පවත්වාගෙන යයි.
+</p>
+
+<h3>ප්‍රධාන තැන්පතු ගිණුම්</h3>
+
+<ol>
+<li>ඉතිරි කිරීමේ ගිණුම්</li>
+<li>ස්ථාවර තැන්පතු ගිණුම්</li>
+<li>ජංගම ගිණුම්</li>
+</ol>
+
+</section>
+
+
+<!-- =====================================================
+     ඉතිරි කිරීමේ ගිණුම
+===================================================== -->
+
+<section class="section">
+
+<h2>ඉතිරි කිරීමේ ගිණුම</h2>
+
+<p>
+තමන් සතුව ඇති මුදල් අවශ්‍ය විට තැන්පත් කිරීමටත්,
+අවශ්‍ය විට ආපසු ලබාගැනීමටත් හැකි ගිණුමක් ලෙස ඉතිරි කිරීමේ
+ගිණුම හඳුන්වා දිය හැක.
+</p>
+
+<h3>ප්‍රධාන ලක්ෂණ</h3>
+
+<ul>
+<li>මුදල් ආරක්ෂිතව තබාගත හැක.</li>
+<li>බැංකුව විසින් නියමිත කොන්දේසි අනුව පොලී ලබාදිය හැක.</li>
+<li>අවශ්‍ය විට මුදල් ආපසු ලබාගත හැක.</li>
+<li>ATM පහසුකම් භාවිත කළ හැක.</li>
+<li>හරපත් මගින් ගෙවීම් කළ හැක.</li>
+<li>හදිසි අවස්ථාවල මුදල් ලබාගැනීමට පහසුය.</li>
+</ul>
+
+<div class="example">
+
+<div class="example-title">විභාග නිදසුන</div>
+
+<p>
+කමල් සතුව රු.100,000ක අතිරික්ත මුදලක් ඇත.
+ඔහු එම මුදල ඉතිරි කිරීමේ ගිණුමක තැන්පත් කරයි.
+පසුව රු.20,000ක අවශ්‍යතාවයක් ඇති වූ විට එම ගිණුමෙන්
+මුදල් ලබාගනී.
+</p>
+
+<p>
+මෙහිදී මුදල ආරක්ෂිතව තබාගැනීම සහ අවශ්‍ය විට මුදල් ලබාගැනීම
+ඉතිරි කිරීමේ ගිණුමේ වැදගත් ප්‍රයෝජන වේ.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ස්ථාවර තැන්පතු
+===================================================== -->
+
+<section class="section">
+
+<h2>ස්ථාවර තැන්පතු</h2>
+
+<p>
+නිශ්චිත මුදලක් නිශ්චිත කාල සීමාවක් සඳහා නියමිත පොලී
+අනුපාතයක් යටතේ බැංකුවක තැන්පත් කිරීම ස්ථාවර තැන්පතුවක් ලෙස
+හඳුන්වයි.
+</p>
+
+<h3>ස්ථාවර තැන්පතුවේ ලක්ෂණ</h3>
+
+<ul>
+<li>නිශ්චිත කාල සීමාවක් සඳහා තැන්පතුව පවත්වාගෙන යයි.</li>
+<li>තැන්පතු කාලය හා මුදල අනුව පොලී අනුපාතය වෙනස් විය හැක.</li>
+<li>සාමාන්‍ය ඉතිරි කිරීමේ ගිණුමකට වඩා වැඩි පොලී අනුපාතයක් ලැබිය හැක.</li>
+<li>ස්ථාවර තැන්පතුව ඇපයට තබා ණය ලබාගත හැක.</li>
+<li>පොලිය මාසිකව හෝ ගිවිසුම්ගත ආකාරයට ලබාගත හැක.</li>
+<li>තැන්පතු මුදල, දිනය, පොලී අනුපාතය සහ කල් පිරෙන දිනය සඳහන් සහතිකයක් ලැබේ.</li>
+</ul>
+
+<div class="example">
+
+<div class="example-title">නිදසුන</div>
+
+<p>
+නිමල් රු.500,000ක් මාස 12ක ස්ථාවර තැන්පතුවක තබයි.
+අදාළ බැංකුවේ නියමිත පොලී අනුපාතය අනුව කල් පිරීමේදී
+මුල් මුදලට අමතරව පොලියක් ලැබේ.
+</p>
+
+</div>
+
+<div class="note">
+<strong>විභාග අවධානය:</strong>
+ස්ථාවර තැන්පතුවක පොලී අනුපාතය, කාල සීමාව සහ මුදල් ආපසු
+ලබාගැනීමේ කොන්දේසි ඉතිරි කිරීමේ ගිණුමකට වඩා වෙනස් වේ.
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ජංගම ගිණුම
+===================================================== -->
+
+<section class="section">
+
+<h2>ජංගම ගිණුම</h2>
+
+<p>
+ජංගම ගිණුම යනු විශේෂයෙන් ව්‍යාපාරිකයන් විසින් නිතර
+ගනුදෙනු සිදුකිරීම සඳහා භාවිත කරන ගිණුමකි.
+මෙහි ප්‍රධාන ලක්ෂණයක් වන්නේ චෙක්පත් මගින් ගනුදෙනු
+කළ හැකි වීමයි.
+</p>
+
+<h3>ජංගම ගිණුමේ වාසි</h3>
+
+<ul>
+<li>චෙක්පත් මගින් ගෙවීම් කළ හැක.</li>
+<li>සේවක වැටුප් ගෙවිය හැක.</li>
+<li>විදුලි බිල්පත් ගෙවිය හැක.</li>
+<li>රක්ෂණ ගාස්තු ගෙවිය හැක.</li>
+<li>බැංකු අයිරා පහසුකම ලබාගත හැක.</li>
+<li>සෘජු ප්‍රේෂණ ලබාගත හැක.</li>
+<li>ස්ථාවර නියෝග මගින් නියමිත ගෙවීම් සිදුකළ හැක.</li>
+<li>බැංකු ප්‍රකාශය ලබාගත හැක.</li>
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     බැංකු අයිරා
+===================================================== -->
+
+<section class="section">
+
+<h2>බැංකු අයිරා පහසුකම</h2>
+
+<p>
+ජංගම ගිණුමේ ඇති ශේෂයට වඩා වැඩි මුදලක් සඳහා චෙක්පත්
+නිකුත් කිරීමට බැංකුව විසින් අවසර ලබාදීම බැංකු අයිරා
+පහසුකම ලෙස හැඳින්වේ.
+</p>
+
+<div class="example">
+
+<div class="example-title">නිදසුන</div>
+
+<p>
+ව්‍යාපාරයක බැංකු ගිණුමේ රු.100,000ක් ඇත.
+බැංකුව විසින් රු.50,000ක අයිරා සීමාවක් ලබාදී තිබේ.
+එවිට බැංකු කොන්දේසි අනුව රු.150,000 දක්වා ගෙවීම්
+කිරීමට හැකියාව ලැබේ.
+</p>
+
+</div>
+
+<div class="note">
+බැංකු අයිරාව ව්‍යාපාරයක කෙටි කාලීන මූල්‍ය අවශ්‍යතා
+සපුරාගැනීමට උපකාරී වන පහසුකමකි.
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     සෘජු ප්‍රේෂණ
+===================================================== -->
+
+<section class="section">
+
+<h2>සෘජු ප්‍රේෂණ රැස් කිරීම</h2>
+
+<p>
+ජංගම ගිණුමක් පවත්වාගෙන යන ව්‍යාපාරිකයෙකුට වෙනත්
+ආයතන හෝ පුද්ගලයන්ගෙන් ලැබෙන මුදල් බැංකුව විසින්
+ඔහුගේ ගිණුමට රැස්කර දිය හැක.
+</p>
+
+<div class="example">
+
+<div class="example-title">නිදසුන</div>
+
+<p>
+ව්‍යාපාරිකයෙකුට ලාභාංශ, පොලී ආදායම් සහ ණයගැති
+ප්‍රේෂණ ලැබේ. එම මුදල් බැංකුව විසින් ඔහුගේ
+ගිණුමට රැස් කරයි.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ස්ථාවර නියෝග
+===================================================== -->
+
+<section class="section">
+
+<h2>ස්ථාවර නියෝග</h2>
+
+<p>
+නිශ්චිත දිනයක නිශ්චිත මුදලක් අඛණ්ඩව ගෙවීමට බැංකුවට
+ලියාපදිංචි නියෝගයක් ලබාදීම ස්ථාවර නියෝගයක් ලෙස හැඳින්විය හැක.
+</p>
+
+<div class="example">
+
+<div class="example-title">නිදසුන්</div>
+
+<ul>
+<li>රක්ෂණ වාරික ගෙවීම</li>
+<li>ණය වාරික ගෙවීම</li>
+<li>නියමිත මාසික ගෙවීම්</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     බැංකු ප්‍රකාශය
+===================================================== -->
+
+<section class="section">
+
+<h2>බැංකු ප්‍රකාශය</h2>
+
+<p>
+ජංගම ගිණුම් හිමියා විසින් සිදුකළ ගනුදෙනු ඇතුළත් කර
+බැංකුව විසින් ගිණුම් හිමියාට ලබාදෙන වාර්තාව
+බැංකු ප්‍රකාශය ලෙස හැඳින්වේ.
+</p>
+
+<div class="visual">
+
+<div class="visual-title">
+ආදර්ශ බැංකු ප්‍රකාශයක්
+</div>
+
+<div class="bank-statement">
+
+<h4>UNIQUE BANK – ACCOUNT STATEMENT</h4>
+
+<table class="statement-table">
+
+<tr>
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>තැන්පතු</th>
+<th>ගෙවීම්</th>
+<th>ශේෂය</th>
+</tr>
+
+<tr>
+<td>01/01</td>
+<td>Opening Balance</td>
+<td>-</td>
+<td>-</td>
+<td>100,000</td>
+</tr>
+
+<tr>
+<td>05/01</td>
+<td>Cash Deposit</td>
+<td>50,000</td>
+<td>-</td>
+<td>150,000</td>
+</tr>
+
+<tr>
+<td>10/01</td>
+<td>Cheque Payment</td>
+<td>-</td>
+<td>20,000</td>
+<td>130,000</td>
+</tr>
+
+<tr>
+<td>15/01</td>
+<td>Bank Charge</td>
+<td>-</td>
+<td>1,000</td>
+<td>129,000</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<p>
+බැංකු ප්‍රකාශය මගින් ව්‍යාපාරිකයාට තම ගිණුමේ සිදුවූ
+තැන්පතු, ගෙවීම් සහ අවසාන ශේෂය පරීක්ෂා කළ හැක.
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     විද්‍යුත් මුදල්
+===================================================== -->
+
+<section class="section">
+
+<h2>විද්‍යුත් මුදල් ආශ්‍රිත සේවා</h2>
+
+<p>
+භාණ්ඩයක් හෝ සේවාවක් ලබාගැනීමේදී මුදල් හෝ චෙක්පත් වෙනුවට
+විද්‍යුත් ගෙවීම් ක්‍රම භාවිතයෙන් ගනුදෙනු කිරීම
+විද්‍යුත් මුදල් ආශ්‍රිත සේවා ලෙස හඳුන්වයි.
+</p>
+
+<h3>ප්‍රධාන විද්‍යුත් මුදල් උපකරණ</h3>
+
+<div class="info-grid">
+
+<div class="card">
+<h4>Credit Card</h4>
+<p>
+බැංකුව විසින් ණය පදනම මත නිකුත් කරන කාඩ්පතකි.
+</p>
+</div>
+
+<div class="card">
+<h4>Debit Card</h4>
+<p>
+බැංකු ගිණුමේ ඇති මුදල භාවිත කර ගෙවීම් කිරීමට
+භාවිත කරන කාඩ්පතකි.
+</p>
+</div>
+
+<div class="card">
+<h4>ATM Card</h4>
+<p>
+ATM යන්ත්‍ර මගින් මුදල් ලබාගැනීම හා ඇතැම් බැංකු
+සේවා භාවිත කිරීමට භාවිත කරන කාඩ්පතකි.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Credit Card visual -->
+
+<section class="section">
+
+<h2>ණයපත – Credit Card</h2>
+
+<div class="visual">
+
+<div class="card-visual">
+
+<strong>UNIQUE BANK</strong>
+
+<div class="card-chip"></div>
+
+<div class="card-number">
+XXXX XXXX XXXX 1234
+</div>
+
+<br>
+
+<span>VALID THRU 12/29</span>
+
+</div>
+
+</div>
+
+<p>
+ණයපත භාවිතයෙන් පාරිභෝගිකයාට බැංකුව විසින් ලබාදෙන
+ණය සීමාවක් තුළ භාණ්ඩ හා සේවා ලබාගත හැක.
+පසුව එම ණය මුදල බැංකුවට ගෙවිය යුතුය.
+</p>
+
+<div class="example">
+<strong>නිදසුන:</strong>
+රු.50,000ක භාණ්ඩයක් Credit Card එකෙන් මිලදී ගත් විට,
+එම මුදල පාරිභෝගිකයා විසින් පසුව බැංකුවට ගෙවිය යුතුය.
+</div>
+
+</section>
+
+
+<!-- Debit Card -->
+
+<section class="section">
+
+<h2>හරපත – Debit Card</h2>
+
+<p>
+බැංකු ගිණුමේ ඇති මුදලින් සෘජුවම ගෙවීම් කිරීමට
+භාවිත කරන කාඩ්පත හරපතයි.
+</p>
+
+<div class="example">
+
+<strong>නිදසුන:</strong>
+
+<p>
+ගිණුමේ රු.80,000ක් තිබේ. රු.12,000ක භාණ්ඩයක්
+Debit Card එකෙන් මිලදී ගත් විට ගිණුමේ ඉතිරි මුදල
+රු.68,000ක් වේ.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ATM -->
+
+<section class="section">
+
+<h2>ස්වයංක්‍රීය ටෙලර් යන්ත්‍ර කාඩ්පත – ATM</h2>
+
+<p>
+ATM කාඩ්පත් භාවිතයෙන් ස්වයංක්‍රීය ටෙලර් යන්ත්‍ර හරහා
+මුදල් ආපසු ගැනීම, ගිණුම් අතර මුදල් මාරු කිරීම සහ
+වෙනත් බැංකු සේවා ලබාගැනීම වැනි කටයුතු කළ හැක.
+</p>
+
+<div class="example">
+
+<strong>පෙළපොතේ දක්වන උදාහරණ:</strong>
+
+<ul>
+<li>PET – මහජන බැංකුව</li>
+<li>CEY NET – ලංකා බැංකුව</li>
+<li>SET – සම්පත් බැංකුව</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- Electronic money advantages -->
+
+<section class="section">
+
+<h2>විද්‍යුත් මුදල් ආශ්‍රිත සේවාවල වැදගත්කම</h2>
+
+<ul>
+<li>ගනුදෙනු ක්ෂණිකව සිදු කළ හැක.</li>
+<li>ගෙවීම් ක්‍රියාවලිය කාර්යක්ෂම වේ.</li>
+<li>මුදල් රැගෙන යාමේ අවදානම අඩු වේ.</li>
+<li>ගනුදෙනු ස්වයංක්‍රීයව වාර්තා වේ.</li>
+<li>දවසේ අවශ්‍ය ඕනෑම වේලාවක ගනුදෙනු කළ හැක.</li>
+<li>ව්‍යාපාරිකයාගේ කාලය ඉතිරි වේ.</li>
+</ul>
+
+<h3>සීමා</h3>
+
+<ul>
+<li>දත්ත විනාශ වීමේ අවදානම.</li>
+<li>තාක්ෂණික දෝෂ.</li>
+<li>PIN වැනි රහස් තොරතුරු වංචා වීමේ අවදානම.</li>
+<li>විද්‍යුත් වංචාවලට ගොදුරු වීම.</li>
+<li>Credit Card ගෙවීම් ප්‍රමාද වීමෙන් අමතර ගාස්තු ඇතිවීම.</li>
+<li>සමහර වෙළෙඳසැල්වල ඇතැම් ගෙවීම් උපකරණ භාවිත කළ නොහැකි වීම.</li>
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     රක්ෂණ
+===================================================== -->
+
+<section class="section">
+
+<h2>1.5 රක්ෂණ සේවා</h2>
+
+<p>
+පුද්ගලයන්ට මෙන්ම ව්‍යාපාරිකයන්ටද විවිධ අවදානම්වලට මුහුණදීමට
+සිදුවේ. ගිනිගැනීම්, සොරකම්, ගංවතුර, සුනාමි, භූමිකම්පා,
+හදිසි අනතුරු සහ වෙනත් අවදානම් නිසා විශාල මූල්‍ය අලාභ
+සිදුවිය හැක.
+</p>
+
+<p>
+මෙවැනි අවදානම්වල මූල්‍ය බලපෑමට මුහුණදීම සඳහා
+රක්ෂණ සේවා වැදගත් වේ.
+</p>
+
+<h3>රක්ෂණයේ මූලික අදහස</h3>
+
+<p>
+විවිධ අවදානම්වලට මුහුණදීමට සිදුවිය හැකි පුද්ගලයන් විසින්
+ගෙවනු ලබන වාරිකවලින් පොදු රක්ෂණ අරමුදලක් ගොඩනැගේ.
+අදාළ අවදානම සිදුවූ පාර්ශ්වයට ගිවිසුමේ කොන්දේසි අනුව
+එම අරමුදලෙන් වන්දි ගෙවිය හැක.
+</p>
+
+</section>
+
+
+<!-- Insurance parties -->
+
+<section class="section">
+
+<h2>රක්ෂණයට සම්බන්ධ පාර්ශ්ව</h2>
+
+<div class="info-grid">
+
+<div class="card">
+<h4>පළමු පාර්ශ්වය</h4>
+<p>
+රක්ෂණ ආවරණය ලබාගන්නා පාර්ශ්වය – රක්ෂිතයා.
+</p>
+</div>
+
+<div class="card">
+<h4>දෙවන පාර්ශ්වය</h4>
+<p>
+රක්ෂණ ආවරණය ලබාදෙන රක්ෂණ ආයතනය – රක්ෂකයා.
+</p>
+</div>
+
+<div class="card">
+<h4>තෙවන පාර්ශ්වය</h4>
+<p>
+රක්ෂණ ගිවිසුමෙන් බලපෑමට ලක්වන අනෙකුත් පාර්ශ්ව.
+</p>
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">මෝටර් රථ නිදසුන</div>
+
+<p>
+පුද්ගලයෙකු තම මෝටර් රථය රක්ෂණය කරයි.
+රක්ෂණය කර ඇති රථය වෙනත් වාහනයකට හානි කළහොත්,
+එම අනෙක් වාහනයේ හිමිකරු තෙවන පාර්ශ්වයක් ලෙස
+සලකා බැලිය හැක.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- Insurance principles -->
+
+<section class="section">
+
+<h2>රක්ෂණ මූලධර්ම</h2>
+
+<h3>1. රක්ෂ්‍ය හිමිකම</h3>
+
+<p>
+ජීවිතයක් හෝ දේපළක් රක්ෂණය කිරීමට රක්ෂිතයාට එම
+ජීවිතය හෝ දේපළ සම්බන්ධයෙන් නීත්‍යානුකූල හෝ
+මූල්‍යමය සම්බන්ධතාවක් තිබිය යුතුය.
+</p>
+
+<div class="example">
+<strong>නිදසුන්:</strong>
+
+<ul>
+<li>ස්වාමිපුරුෂයාට බිරිඳගේ ජීවිතය සම්බන්ධ රක්ෂ්‍ය හිමිකමක් තිබිය හැක.</li>
+<li>දේපළ හිමිකරුට තම දේපළ සම්බන්ධයෙන් රක්ෂ්‍ය හිමිකම ඇත.</li>
+<li>ණය ලබාදුන් පුද්ගලයාට ණයගැතියාගේ ජීවිතය සම්බන්ධයෙන් රක්ෂ්‍ය හිමිකමක් තිබිය හැක.</li>
+</ul>
+</div>
+
+<h3>2. උපරිම විශ්වාසය</h3>
+
+<p>
+රක්ෂණ ගිවිසුමට අදාළ වැදගත් තොරතුරු රක්ෂිතයා සහ
+රක්ෂකයා විසින් නිවැරදිව හෙළි කළ යුතුය.
+වැදගත් කරුණක් සඟවා ගැනීමෙන් උපරිම විශ්වාසයේ
+මූලධර්මය උල්ලංඝනය විය හැක.
+</p>
+
+<h3>3. හානි පූරණය</h3>
+
+<p>
+රක්ෂිත දේපළකට හානියක් සිදුවූ විට එම හානිය
+යථා තත්ත්වයට පත් කිරීමට අවශ්‍ය වන්දි ලබාදීම
+හානි පූරණ මූලධර්මයයි.
+</p>
+
+<div class="example">
+
+<div class="example-title">නිදසුන</div>
+
+<p>
+රු.2,000,000කට රක්ෂණය කළ මෝටර් රථයකට
+රු.500,000ක හානියක් සිදුවුවහොත්, දේපළ රක්ෂණයේ
+හානි පූරණ මූලධර්මය අනුව සත්‍ය හානියට අදාළ
+වන්දි ප්‍රමාණය සලකා බලයි.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- Life insurance -->
+
+<section class="section">
+
+<h2>ජීවිත රක්ෂණය</h2>
+
+<p>
+පුද්ගලයෙකුගේ ජීවිතය සම්බන්ධ අවදානම් ආවරණය කිරීම සඳහා
+ලබාගන්නා රක්ෂණය ජීවිත රක්ෂණය ලෙස හඳුන්වයි.
+</p>
+
+<h3>ජීවිත රක්ෂණයේ වැදගත්කම</h3>
+
+<ul>
+<li>රක්ෂිත පුද්ගලයා අකාලයේ මියගිය විට යැපෙන්නන්ට මූල්‍ය සහනයක් ලබාදීම.</li>
+<li>ඉතිරි කිරීමේ ක්‍රමයක් ලෙස භාවිත කළ හැකි වීම.</li>
+<li>ආයෝජන මාර්ගයක් ලෙස භාවිත කළ හැකි වීම.</li>
+<li>දරුවන්ගේ අධ්‍යාපන කටයුතු සඳහා මූල්‍ය සහාය ලබාදීම.</li>
+<li>දරුවන්ගේ විවාහ කටයුතු සඳහා මූල්‍ය සහාය ලබාදීම.</li>
+<li>ඇතැම් අවස්ථාවල ණය ලබාගැනීමේදී ඇපයක් ලෙස භාවිත කළ හැකි වීම.</li>
+<li>හදිසි අනතුරු හා සෞඛ්‍ය ආශ්‍රිත අමතර ආවරණ ලබාගත හැකි වීම.</li>
+</ul>
+
+<div class="example">
+<strong>නිදසුන:</strong>
+<p>
+පවුලේ ප්‍රධාන ආදායම් උපයන්නා ජීවිත රක්ෂණයක් ලබාගෙන
+ඇති විට ඔහු අකාලයේ මියගියහොත්, ගිවිසුමේ කොන්දේසි අනුව
+ඔහුගේ යැපෙන්නන්ට මූල්‍ය ප්‍රතිලාභයක් ලැබිය හැක.
+</p>
+</div>
+
+</section>
+
+
+<!-- Property insurance -->
+
+<section class="section">
+
+<h2>දේපළ රක්ෂණය</h2>
+
+<p>
+ගොඩනැගිලි, යන්ත්‍ර සූත්‍ර, රථවාහන, භාණ්ඩ තොග වැනි
+දේපළවලට සිදුවිය හැකි අවදානම් ආවරණය කිරීම සඳහා
+ලබාගන්නා රක්ෂණය දේපළ රක්ෂණයයි.
+</p>
+
+<h3>නිදසුන්</h3>
+
+<ul>
+<li>ගිනි රක්ෂණ</li>
+<li>රථවාහන රක්ෂණ</li>
+<li>මුහුදු රක්ෂණ</li>
+<li>ස්වාභාවික විපත් සඳහා රක්ෂණ</li>
+<li>භාණ්ඩ තොග රක්ෂණ</li>
+</ul>
+
+<div class="example">
+
+<div class="example-title">ව්‍යාපාරික නිදසුන</div>
+
+<p>
+ව්‍යාපාරයක ගබඩාවේ ඇති භාණ්ඩ තොගයක් ගින්නකින් විනාශ වුවහොත්,
+අදාළ අවදානම රක්ෂණ ඔප්පුවෙන් ආවරණය කර තිබේ නම්
+ගිවිසුමේ කොන්දේසි අනුව වන්දි ලබාගත හැක.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- Life vs property -->
+
+<section class="section">
+
+<h2>ජීවිත රක්ෂණය සහ දේපළ රක්ෂණය අතර වෙනස</h2>
+
+<table class="compare">
+
+<tr>
+<th>ජීවිත රක්ෂණය</th>
+<th>දේපළ රක්ෂණය</th>
+</tr>
+
+<tr>
+<td>මිනිස් ජීවිතය සම්බන්ධ අවදානම් ආවරණය කරයි.</td>
+<td>දේපළ සම්බන්ධ අවදානම් ආවරණය කරයි.</td>
+</tr>
+
+<tr>
+<td>මරණය හෝ ගිවිසුමේ සඳහන් සිදුවීම් අනුව ප්‍රතිලාභ ලැබිය හැක.</td>
+<td>දේපළට සිදුවන ආවරණයට අයත් හානිය අනුව වන්දි ලැබිය හැක.</td>
+</tr>
+
+<tr>
+<td>හානි පූරණ මූලධර්මය අදාළ නොවේ.</td>
+<td>හානි පූරණ මූලධර්මය අදාළ වේ.</td>
+</tr>
+
+<tr>
+<td>යැපෙන්නන්ට මූල්‍ය ආරක්ෂාව ලබාදිය හැක.</td>
+<td>දේපළ හානිවල මූල්‍ය බලපෑම අඩු කරයි.</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- =====================================================
+     1.6 Communication
+===================================================== -->
+
+<section class="section">
+
+<h2>1.6 සන්නිවේදන සේවා</h2>
+
+<p>
+පණිවිඩ, තොරතුරු සහ අදහස් විවිධ පාර්ශ්ව අතර යම් මාධ්‍යයක්
+මගින් හුවමාරු කරගැනීම සන්නිවේදනය ලෙස හැඳින්විය හැක.
+</p>
+
+<p>
+ව්‍යාපාරයක් සාර්ථකව පවත්වාගෙන යාමට අභ්‍යන්තර හා බාහිර
+පාර්ශ්ව සමඟ කාර්යක්ෂම සන්නිවේදනයක් අවශ්‍ය වේ.
+</p>
+
+<h3>අභ්‍යන්තර සන්නිවේදනය</h3>
+
+<p>
+ආයතනය තුළ හිමිකරුවන්, කළමනාකරුවන් සහ සේවකයන්
+අතර සිදුවන සන්නිවේදනයයි.
+</p>
+
+<h3>බාහිර සන්නිවේදනය</h3>
+
+<p>
+ව්‍යාපාරය හා ගනුදෙනුකරුවන්, සැපයුම්කරුවන්, රජයේ ආයතන
+සහ අනෙකුත් බාහිර පාර්ශ්ව අතර සිදුවන සන්නිවේදනයයි.
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     1.7 Transport
+===================================================== -->
+
+<section class="section">
+
+<h2>1.7 ප්‍රවාහන සේවා</h2>
+
+<p>
+භාණ්ඩ හා පුද්ගලයන් එක් ස්ථානයකින් තවත් ස්ථානයකට
+ගෙනයාමට අවශ්‍ය සේවාව ප්‍රවාහන සේවාවයි.
+</p>
+
+<div class="info-grid">
+
+<div class="card">
+<h4>මාර්ග ප්‍රවාහනය</h4>
+<p>ලොරි, බස්, වෑන් සහ වෙනත් මාර්ග වාහන.</p>
+</div>
+
+<div class="card">
+<h4>දුම්රිය ප්‍රවාහනය</h4>
+<p>විශාල ප්‍රමාණයේ භාණ්ඩ සහ පුද්ගලයන් ප්‍රවාහනය.</p>
+</div>
+
+<div class="card">
+<h4>මුහුදු ප්‍රවාහනය</h4>
+<p>විශාල ප්‍රමාණයේ ජාත්‍යන්තර භාණ්ඩ ප්‍රවාහනය.</p>
+</div>
+
+<div class="card">
+<h4>ගුවන් ප්‍රවාහනය</h4>
+<p>වේගවත් ප්‍රවාහනය අවශ්‍ය භාණ්ඩ හා පුද්ගලයන් සඳහා.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ACTIVITIES – 10
+===================================================== -->
+
+<section class="section">
+
+<h2>ක්‍රියාකාරකම් – Activities 10</h2>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 01:</span>
+දේශීය වෙළෙඳාම සහ විදේශීය වෙළෙඳාම අතර වෙනස්කම්
+වගුවක් මගින් සකස් කරන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 02:</span>
+ඔබේ ප්‍රදේශයේ සිල්ලර වෙළෙඳසැල් 5ක් හඳුනාගෙන
+ඒවා සපයන භාණ්ඩ හා සේවා ලැයිස්තුගත කරන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 03:</span>
+තොග වෙළෙඳාමට නිදසුන් 3ක් සහ සිල්ලර වෙළෙඳාමට
+නිදසුන් 3ක් ලබා දෙන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 04:</span>
+ඉතිරි කිරීමේ ගිණුම, ස්ථාවර තැන්පතුව සහ ජංගම ගිණුම
+සංසන්දනය කරන වගුවක් සකස් කරන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 05:</span>
+ව්‍යාපාරිකයෙකුට ජංගම ගිණුමක් වැදගත් වන්නේ ඇයි?
+කරුණු 5ක් ලියන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 06:</span>
+Credit Card, Debit Card සහ ATM Card සඳහා
+භාවිත අවස්ථා 2 බැගින් ලියන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 07:</span>
+විද්‍යුත් ගෙවීම්වල වාසි 5ක් සහ සීමා 5ක්
+වගුවක් මගින් සකස් කරන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 08:</span>
+ජීවිත රක්ෂණය සහ දේපළ රක්ෂණය අතර
+වෙනස්කම් 5ක් ලියන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 09:</span>
+රක්ෂ්‍ය හිමිකම, උපරිම විශ්වාසය සහ හානි පූරණය
+යන රක්ෂණ මූලධර්ම තුනට නිදසුන් ලබා දෙන්න.
+</div>
+
+<div class="activity">
+<span>ක්‍රියාකාරකම 10:</span>
+ඔබ තෝරාගත් කුඩා ව්‍යාපාරයක් සඳහා
+බැංකු සේවා, රක්ෂණ, සන්නිවේදන සහ ප්‍රවාහන
+සේවා අවශ්‍ය වන ආකාරය පැහැදිලි කරන්න.
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUIZ – 10
+===================================================== -->
+
+<section class="quiz-box">
+
+<h2 style="color:#d4af37;margin-bottom:25px;">
+Lesson 1 – Quiz 10
+</h2>
+
+<div class="question">
+<h4>1. භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම යනු?</h4>
+<label class="option">A. නිෂ්පාදනය</label>
+<label class="option">B. වෙළෙඳාම</label>
+<label class="option">C. ප්‍රවාහනය</label>
+<label class="option">D. රක්ෂණය</label>
+</div>
+
+<div class="question">
+<h4>2. අවසාන පාරිභෝගිකයා සඳහා භාණ්ඩ විකිණීම කුමක්ද?</h4>
+<label class="option">A. තොග වෙළෙඳාම</label>
+<label class="option">B. ආනයනය</label>
+<label class="option">C. සිල්ලර වෙළෙඳාම</label>
+<label class="option">D. අපනයනය</label>
+</div>
+
+<div class="question">
+<h4>3. නිශ්චිත කාලයකට මුදල් තැන්පත් කර පොලී ලබාගන්නා ගිණුම?</h4>
+<label class="option">A. ජංගම ගිණුම</label>
+<label class="option">B. ස්ථාවර තැන්පතුව</label>
+<label class="option">C. ණය ගිණුම</label>
+<label class="option">D. වියදම් ගිණුම</label>
+</div>
+
+<div class="question">
+<h4>4. චෙක්පත් මගින් ගනුදෙනු කිරීමට වඩාත් සම්බන්ධ ගිණුම?</h4>
+<label class="option">A. ජංගම ගිණුම</label>
+<label class="option">B. ස්ථාවර තැන්පතුව</label>
+<label class="option">C. ඉතිරි කිරීමේ ගිණුම</label>
+<label class="option">D. ණයපත</label>
+</div>
+
+<div class="question">
+<h4>5. බැංකු ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කිරීමට භාවිත කරන්නේ?</h4>
+<label class="option">A. Credit Card</label>
+<label class="option">B. Debit Card</label>
+<label class="option">C. Cheque Book</label>
+<label class="option">D. Insurance Card</label>
+</div>
+
+<div class="question">
+<h4>6. රක්ෂණ ගිවිසුමට අදාළ සියලු වැදගත් කරුණු හෙළි කිරීමේ මූලධර්මය?</h4>
+<label class="option">A. හානි පූරණය</label>
+<label class="option">B. රක්ෂ්‍ය හිමිකම</label>
+<label class="option">C. උපරිම විශ්වාසය</label>
+<label class="option">D. ප්‍රවාහනය</label>
+</div>
+
+<div class="question">
+<h4>7. දේපළ රක්ෂණයට අදාළ වන්නේ කුමක්ද?</h4>
+<label class="option">A. මිනිස් ජීවිතය පමණි</label>
+<label class="option">B. ගොඩනැගිලි හා භාණ්ඩ වැනි දේපළ</label>
+<label class="option">C. සන්නිවේදනය පමණි</label>
+<label class="option">D. බැංකු ගිණුම පමණි</label>
+</div>
+
+<div class="question">
+<h4>8. රක්ෂණයේ හානි පූරණ මූලධර්මය වඩාත් සෘජුව අදාළ වන්නේ?</h4>
+<label class="option">A. දේපළ රක්ෂණයට</label>
+<label class="option">B. ජීවිත රක්ෂණයට</label>
+<label class="option">C. සන්නිවේදනයට</label>
+<label class="option">D. බැංකු අයිරාවට</label>
+</div>
+
+<div class="question">
+<h4>9. ජංගම ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට බැංකුව ලබාදෙන පහසුකම?</h4>
+<label class="option">A. ස්ථාවර තැන්පතුව</label>
+<label class="option">B. බැංකු අයිරාව</label>
+<label class="option">C. Debit Card</label>
+<label class="option">D. රක්ෂණය</label>
+</div>
+
+<div class="question">
+<h4>10. රටවල් දෙකක් හෝ කිහිපයක් අතර සිදුවන වෙළෙඳාම?</h4>
+<label class="option">A. දේශීය වෙළෙඳාම</label>
+<label class="option">B. සිල්ලර වෙළෙඳාම</label>
+<label class="option">C. විදේශීය වෙළෙඳාම</label>
+<label class="option">D. තොග වෙළෙඳාම</label>
+</div>
+
+<a href="quiz.html?lesson=1" class="quiz-button">
+    Lesson 1 Quiz →
+</a>
+
+</section>
+
+
+<!-- =====================================================
+     COMPLETE LESSON
+===================================================== -->
+
+<section class="complete">
+
+<h2 style="color:#d4af37;">
+Lesson 1 Complete කරන්න
+</h2>
+
+<p>
+පාඩම සම්පූර්ණයෙන් අධ්‍යයනය කර Activities සහ Quiz
+සම්පූර්ණ කළ පසු පහත button එක භාවිත කරන්න.
+</p>
+
+<button onclick="completeLesson()">
+✓ Complete Lesson
+</button>
+
+<p id="completeMessage"
+   style="margin-top:15px;color:#d4af37;font-weight:bold;">
+</p>
+
+</section>
+
+</div>
+
+
+<footer>
+    © 2026 Unique EduZone | Grade 11 Business & Accounting Studies
+</footer>
+
+
+<script>
+
+/*
+=========================================================
+GRADE 11 LESSON 1 PROGRESS
+=========================================================
+*/
+
+function completeLesson(){
+
+    try{
+
+        // Existing progress system එකට හැකි තරම්
+        // safe ලෙස integrate වීමට localStorage භාවිත කරයි.
+
+        localStorage.setItem(
+            "grade11_lesson1_completed",
+            "true"
+        );
+
+        localStorage.setItem(
+            "grade11_lesson1_progress",
+            "100"
+        );
+
+        // lessonsCompleted object එක තිබේ නම් update කරන්න
+        let completed =
+            JSON.parse(
+                localStorage.getItem("grade11CompletedLessons") || "{}"
+            );
+
+        completed["1"] = true;
+
+        localStorage.setItem(
+            "grade11CompletedLessons",
+            JSON.stringify(completed)
+        );
+
+        document.getElementById("completeMessage").innerHTML =
+            "✓ Lesson 1 සාර්ථකව සම්පූර්ණ කරන ලදී! Dashboard එකේ 1/8 progress ලෙස පෙන්විය හැක.";
+
+    }catch(error){
+
+        document.getElementById("completeMessage").innerHTML =
+            "Lesson completed.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
