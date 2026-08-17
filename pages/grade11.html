@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grade 11 Lessons | Unique EduZone</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#050505,#151515);
+    border-bottom:2px solid #d4af37;
+    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.logo-text{
+    color:#d4af37;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.home-btn{
+    text-decoration:none;
+    color:#080808;
+    background:#d4af37;
+    padding:9px 20px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:35px auto 70px;
+}
+
+.hero{
+    background:linear-gradient(135deg,#111,#1c1c1c);
+    border:1px solid #d4af37;
+    border-radius:22px;
+    padding:40px 25px;
+    text-align:center;
+    margin-bottom:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.hero h1{
+    color:#d4af37;
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+}
+
+.progress-area{
+    margin-top:25px;
+}
+
+.progress-title{
+    color:#d4af37;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.progress{
+    width:100%;
+    max-width:600px;
+    height:14px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin:auto;
+}
+
+.progress-fill{
+    width:12.5%;
+    height:100%;
+    background:linear-gradient(90deg,#b8860b,#ffd700);
+}
+
+.section-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:28px;
+    margin:30px 0 22px;
+}
+
+.lessons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.lesson-card{
+    background:linear-gradient(145deg,#111,#1b1b1b);
+    border:1px solid #333;
+    border-radius:18px;
+    padding:25px;
+    transition:.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.lesson-card:hover{
+    transform:translateY(-5px);
+    border-color:#d4af37;
+    box-shadow:0 10px 25px rgba(212,175,55,.15);
+}
+
+.lesson-number{
+    color:#d4af37;
+    font-size:15px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.lesson-card h2{
+    color:#fff;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.lesson-card p{
+    color:#bbb;
+    font-size:15px;
+    min-height:55px;
+}
+
+.lesson-btn{
+    display:inline-block;
+    text-decoration:none;
+    margin-top:17px;
+    padding:9px 20px;
+    border-radius:25px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.active{
+    background:#d4af37;
+    color:#080808;
+}
+
+.active:hover{
+    background:#ffd700;
+}
+
+.locked{
+    background:#292929;
+    color:#777;
+    cursor:not-allowed;
+}
+
+.status{
+    position:absolute;
+    top:18px;
+    right:18px;
+    font-size:12px;
+    padding:4px 9px;
+    border-radius:15px;
+}
+
+.available{
+    background:#d4af37;
+    color:#080808;
+}
+
+.coming{
+    background:#292929;
+    color:#aaa;
+}
+
+.info{
+    background:#111;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
+    padding:20px;
+    margin:35px 0;
+    color:#ccc;
+}
+
+.info strong{
+    color:#d4af37;
+}
+
+.back-section{
+    text-align:center;
+    margin-top:35px;
+}
+
+.back-section a{
+    display:inline-block;
+    text-decoration:none;
+    color:#080808;
+    background:#d4af37;
+    padding:11px 25px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+footer{
+    border-top:1px solid #333;
+    text-align:center;
+    color:#999;
+    padding:30px 15px;
+    margin-top:50px;
+}
+
+@media(max-width:700px){
+
+    .header-inner{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .logo-text{
+        font-size:18px;
+    }
+
+    .lessons{
+        grid-template-columns:1fr;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+
+            <img
+                src="../assets/logo.png"
+                alt="Unique EduZone Logo"
+            >
+
+            <div class="logo-text">
+                Unique EduZone
+            </div>
+
+        </div>
+
+        <a href="../index.html" class="home-btn">
+            ← Home
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="hero">
+
+        <h1>11 ශ්‍රේණිය</h1>
+
+        <p>
+            ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය
+        </p>
+
+        <div class="progress-area">
+
+            <div class="progress-title">
+                Grade 11 Progress – 1 / 8
+            </div>
+
+            <div class="progress">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <h2 class="section-title">
+        11 ශ්‍රේණිය පාඩම්
+    </h2>
+
+
+    <div class="lessons">
+
+
+        <!-- ==========================================
+             LESSON 01
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status available">
+                Available
+            </span>
+
+            <div class="lesson-number">
+                LESSON 01
+            </div>
+
+            <h2>
+                වෙළෙඳාම සහ උපකාරක සේවා
+            </h2>
+
+            <p>
+                වෙළෙඳාම, උපකාරක සේවා, බැංකු සේවා,
+                තැන්පතු සේවා, විද්‍යුත් මුදල් සේවා,
+                රක්ෂණ සේවා සහ අනෙකුත් අදාළ කරුණු.
+            </p>
+
+            <!-- දැනට තිබෙන file එක -->
+            <a
+                href="g11lesson1.html"
+                class="lesson-btn active">
+                පාඩම බලන්න →
+            </a>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 02
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 02
+            </div>
+
+            <h2>
+                පාඩම 02
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ දෙවන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 03
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 03
+            </div>
+
+            <h2>
+                පාඩම 03
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ තුන්වන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 04
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 04
+            </div>
+
+            <h2>
+                පාඩම 04
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ සිව්වන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 05
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 05
+            </div>
+
+            <h2>
+                පාඩම 05
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ පස්වන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 06
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 06
+            </div>
+
+            <h2>
+                පාඩම 06
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ හයවන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 07
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 07
+            </div>
+
+            <h2>
+                පාඩම 07
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ හත්වන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+
+        <!-- ==========================================
+             LESSON 08
+        =========================================== -->
+
+        <div class="lesson-card">
+
+            <span class="status coming">
+                Coming Soon
+            </span>
+
+            <div class="lesson-number">
+                LESSON 08
+            </div>
+
+            <h2>
+                පාඩම 08
+            </h2>
+
+            <p>
+                11 ශ්‍රේණියේ අටවන පාඩම
+                ඉදිරියේදී මෙහි ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <span class="lesson-btn locked">
+                ඉදිරියේදී
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="info">
+
+        <strong>සටහන:</strong>
+
+        <p>
+            මෙම පිටුව 11 ශ්‍රේණිය සඳහා වෙනම Lesson
+            navigation page එකක් ලෙස භාවිත කරයි.
+            Grade 10 පාඩම් මෙම පිටුව තුළට ඇතුළත් නොවේ.
+        </p>
+
+        <p>
+            දැනට Lesson 01 පමණක් සක්‍රීය කර ඇති අතර,
+            අනෙකුත් පාඩම් සකස් කළ පසු ඒවායේ HTML
+            files වලට සෘජුවම links එකතු කළ හැක.
+        </p>
+
+    </div>
+
+
+    <div class="back-section">
+
+        <a href="../index.html">
+            ← Home Page වෙත
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 Unique EduZone |
+    Grade 11 Business & Accounting Studies
+
+</footer>
+
+
+<script>
+
+/*
+=========================================================
+GRADE 11 PROGRESS
+=========================================================
+*/
+
+function updateGrade11Progress(){
+
+    try{
+
+        const completed =
+            JSON.parse(
+                localStorage.getItem(
+                    "grade11CompletedLessons"
+                ) || "{}"
+            );
+
+        let count = 0;
+
+        for(let i = 1; i <= 8; i++){
+
+            if(completed[String(i)] === true){
+                count++;
+            }
+
+        }
+
+        const percentage =
+            (count / 8) * 100;
+
+        const fill =
+            document.getElementById(
+                "progressFill"
+            );
+
+        if(fill){
+
+            fill.style.width =
+                percentage + "%";
+
+        }
+
+        const progressTitle =
+            document.querySelector(
+                ".progress-title"
+            );
+
+        if(progressTitle){
+
+            progressTitle.textContent =
+                "Grade 11 Progress – " +
+                count +
+                " / 8";
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Grade 11 progress unavailable."
+        );
+
+    }
+
+}
+
+updateGrade11Progress();
+
+</script>
+
+</body>
+</html>
