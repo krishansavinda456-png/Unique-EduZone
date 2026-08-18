@@ -64,52 +64,747 @@ footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #333}
 <footer>© 2026 Unique EduZone | Grade 11 Business & Accounting Studies</footer>
 
 <script>
+
 const questions=[
 ["භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම හඳුන්වන්නේ කුමක් ලෙසද?",["නිෂ්පාදනය","වෙළෙඳාම","ප්‍රවාහනය","රක්ෂණය"],1,"භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම වෙළෙඳාමයි."],
+
 ["අවසාන පරිභෝජනය සඳහා පාරිභෝගිකයන්ට භාණ්ඩ හා සේවා විකිණීම කුමක්ද?",["තොග වෙළෙඳාම","ආනයන වෙළෙඳාම","සිල්ලර වෙළෙඳාම","අපනයන වෙළෙඳාම"],2,"අවසාන පාරිභෝගිකයා සඳහා විකිණීම සිල්ලර වෙළෙඳාමයි."],
+
 ["නැවත විකිණීමේ අරමුණින් විශාල ප්‍රමාණයකින් භාණ්ඩ මිලදීගෙන වෙළෙඳුන්ට විකිණීම කුමක්ද?",["සිල්ලර වෙළෙඳාම","තොග වෙළෙඳාම","ආනයනය","අපනයනය"],1,"වෙළෙඳුන්ට නැවත විකිණීම සඳහා විශාල ප්‍රමාණයෙන් භාණ්ඩ විකිණීම තොග වෙළෙඳාමයි."],
+
 ["විදේශ රටකින් භාණ්ඩ හෝ සේවා තම රටට ලබාගැනීම කුමක්ද?",["ආනයන වෙළෙඳාම","අපනයන වෙළෙඳාම","සිල්ලර වෙළෙඳාම","දේශීය වෙළෙඳාම"],0,"විදේශ රටකින් තම රටට ලබාගැනීම ආනයන වෙළෙඳාමයි."],
+
 ["නිශ්චිත මුදලක් නිශ්චිත කාලයකට නියමිත පොලී අනුපාතයක් යටතේ බැංකුවක තැන්පත් කිරීම කුමක්ද?",["ජංගම ගිණුම","ඉතිරි කිරීමේ ගිණුම","ස්ථාවර තැන්පතුව","බැංකු අයිරාව"],2,"නිශ්චිත කාලයකට නියමිත පොලී අනුපාතයක් යටතේ තබන තැන්පතුව ස්ථාවර තැන්පතුවකි."],
+
 ["චෙක්පත් මගින් නිතර ගනුදෙනු කිරීමට වඩාත් සම්බන්ධ ගිණුම කුමක්ද?",["ජංගම ගිණුම","ස්ථාවර තැන්පතුව","ඉතිරි කිරීමේ ගිණුම","ණය ගිණුම"],0,"ජංගම ගිණුම ව්‍යාපාරික ගනුදෙනු සහ චෙක්පත් සඳහා භාවිත කරයි."],
+
 ["බැංකු ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කිරීමට භාවිත කරන කාඩ්පත කුමක්ද?",["Credit Card","Debit Card","Insurance Card","ATM Receipt"],1,"Debit Card මගින් ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කළ හැක."],
+
 ["රක්ෂණ ගිවිසුමට අදාළ වැදගත් තොරතුරු නිවැරදිව හෙළි කිරීමේ මූලධර්මය කුමක්ද?",["හානි පූරණය","රක්ෂ්‍ය හිමිකම","උපරිම විශ්වාසය","ප්‍රවාහනය"],2,"වැදගත් කරුණු නිවැරදිව හෙළි කිරීම උපරිම විශ්වාසයේ මූලධර්මයට අදාළ වේ."],
+
 ["දේපළ රක්ෂණයට වඩාත් අදාළ නිදසුන කුමක්ද?",["ගොඩනැගිල්ලකට ගින්නකින් සිදුවන හානිය","දරුවෙකුගේ අධ්‍යාපන අරමුදල","සේවක වැටුප් ගෙවීම","බැංකු ගිණුමක් විවෘත කිරීම"],0,"ගොඩනැගිලි, යන්ත්‍ර සූත්‍ර, රථවාහන සහ භාණ්ඩ තොග වැනි දේපළ සඳහා දේපළ රක්ෂණය අදාළ වේ."],
+
 ["ජංගම ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට බැංකුව ලබාදෙන පහසුකම කුමක්ද?",["ස්ථාවර තැන්පතුව","බැංකු අයිරාව","Debit Card","රක්ෂණ සේවාව"],1,"ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට අවසර දෙන පහසුකම බැංකු අයිරාවයි."]
 ];
 
-let current=0,answers=Array(10).fill(null),finished=false;
+
+// =====================================================
+// QUIZ SETTINGS
+// =====================================================
+
+const QUIZ_TIME = 10 * 60; // 10 minutes
+
+let current = 0;
+let answers = Array(questions.length).fill(null);
+let finished = false;
+
+let timeLeft = QUIZ_TIME;
+let timer = null;
+let quizStartedAt = null;
+let quizFinishedAt = null;
+
+
+// =====================================================
+// TIMER
+// =====================================================
+
+function startTimer(){
+
+    if(timer !== null){
+        return;
+    }
+
+    quizStartedAt = new Date().toISOString();
+
+    timer = setInterval(function(){
+
+        timeLeft--;
+
+        updateTimer();
+
+        if(timeLeft <= 0){
+
+            clearInterval(timer);
+            timer = null;
+
+            alert("⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ.");
+
+            autoSubmitQuiz();
+        }
+
+    },1000);
+
+    updateTimer();
+}
+
+
+function updateTimer(){
+
+    const timerElement = document.getElementById("quizTimer");
+
+    if(!timerElement){
+        return;
+    }
+
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    minutes = String(minutes).padStart(2,"0");
+    seconds = String(seconds).padStart(2,"0");
+
+    timerElement.textContent =
+        "⏱️ ඉතිරි කාලය: " + minutes + ":" + seconds;
+
+    if(timeLeft <= 60){
+
+        timerElement.style.color = "#ff4444";
+        timerElement.style.borderColor = "#ff4444";
+        timerElement.style.background = "#2b1010";
+
+    }else{
+
+        timerElement.style.color = "#d4af37";
+        timerElement.style.borderColor = "#d4af37";
+        timerElement.style.background = "#211d0e";
+
+    }
+}
+
+
+// =====================================================
+// TIMER HTML
+// =====================================================
+
+function createTimer(){
+
+    const hero = document.querySelector(".hero");
+
+    if(!hero){
+        return;
+    }
+
+    const oldTimer = document.getElementById("quizTimer");
+
+    if(oldTimer){
+        return;
+    }
+
+    const timerBox = document.createElement("div");
+
+    timerBox.id = "quizTimer";
+
+    timerBox.style.marginTop = "18px";
+    timerBox.style.padding = "12px 20px";
+    timerBox.style.border = "2px solid #d4af37";
+    timerBox.style.borderRadius = "30px";
+    timerBox.style.display = "inline-block";
+    timerBox.style.background = "#211d0e";
+    timerBox.style.color = "#d4af37";
+    timerBox.style.fontWeight = "bold";
+    timerBox.style.fontSize = "18px";
+
+    hero.appendChild(timerBox);
+
+}
+
+
+// =====================================================
+// RENDER QUESTION
+// =====================================================
 
 function render(){
- const q=questions[current],box=document.getElementById("quizBox");
- let h='<div class="question active"><div class="question-number">ප්‍රශ්නය '+(current+1)+' / 10</div><h2>'+q[0]+'</h2>';
- q[1].forEach((o,i)=>h+='<button class="option '+(answers[current]===i?'selected':'')+'" onclick="selectOption('+i+')">'+String.fromCharCode(65+i)+'. '+o+'</button>');
- h+='<div class="note">ඉඟිය: ප්‍රශ්නයේ අර්ථය සහ පාඩමේ අදාළ සංකල්පය සසඳන්න.</div><div class="controls">';
- h+='<button class="prev" onclick="previous()" '+(current===0?'disabled':'')+'>← පෙර</button>';
- h+=(current<9?'<button class="next" onclick="next()">ඊළඟ →</button>':'<button class="submit" onclick="submitQuiz()">Quiz Submit ✓</button>');
- h+='</div></div>';box.innerHTML=h;
- document.getElementById("progressFill").style.width=((current+1)*10)+'%';
- document.getElementById("progressText").textContent='ප්‍රශ්නය '+(current+1)+' / 10';
+
+    const q = questions[current];
+
+    const box = document.getElementById("quizBox");
+
+    let h =
+        '<div class="question active">' +
+
+        '<div class="question-number">' +
+        'ප්‍රශ්නය ' + (current + 1) +
+        ' / ' + questions.length +
+        '</div>' +
+
+        '<h2>' +
+        q[0] +
+        '</h2>';
+
+    q[1].forEach(function(o,i){
+
+        h +=
+            '<button class="option ' +
+            (answers[current] === i ? 'selected' : '') +
+            '" onclick="selectOption(' + i + ')">' +
+
+            String.fromCharCode(65+i) +
+            '. ' +
+            o +
+
+            '</button>';
+
+    });
+
+
+    h +=
+        '<div class="note">' +
+        'ඉඟිය: ප්‍රශ්නයේ අර්ථය සහ පාඩමේ අදාළ සංකල්පය සසඳන්න.' +
+        '</div>' +
+
+        '<div class="controls">';
+
+
+    h +=
+        '<button class="prev" onclick="previous()" ' +
+        (current === 0 ? 'disabled' : '') +
+        '>' +
+        '← පෙර' +
+        '</button>';
+
+
+    if(current < questions.length - 1){
+
+        h +=
+            '<button class="next" onclick="next()">' +
+            'ඊළඟ →' +
+            '</button>';
+
+    }else{
+
+        h +=
+            '<button class="submit" onclick="submitQuiz()">' +
+            'Quiz Submit ✓' +
+            '</button>';
+
+    }
+
+
+    h += '</div></div>';
+
+    box.innerHTML = h;
+
+
+    document.getElementById("progressFill").style.width =
+        ((current + 1) / questions.length * 100) + "%";
+
+
+    document.getElementById("progressText").textContent =
+        'ප්‍රශ්නය ' +
+        (current + 1) +
+        ' / ' +
+        questions.length;
+
+
+    updateTimer();
+
 }
-function selectOption(i){answers[current]=i;render()}
-function next(){if(answers[current]===null){alert("කරුණාකර පිළිතුරක් තෝරන්න.");return}current++;render()}
-function previous(){if(current>0){current--;render()}}
+
+
+// =====================================================
+// SELECT ANSWER
+// =====================================================
+
+function selectOption(i){
+
+    answers[current] = i;
+
+    render();
+
+}
+
+
+// =====================================================
+// NEXT
+// =====================================================
+
+function next(){
+
+    if(answers[current] === null){
+
+        alert("කරුණාකර පිළිතුරක් තෝරන්න.");
+
+        return;
+    }
+
+    current++;
+
+    render();
+
+}
+
+
+// =====================================================
+// PREVIOUS
+// =====================================================
+
+function previous(){
+
+    if(current > 0){
+
+        current--;
+
+        render();
+
+    }
+
+}
+
+
+// =====================================================
+// SUBMIT
+// =====================================================
+
 function submitQuiz(){
- if(answers.some(a=>a===null)){alert("සියලුම ප්‍රශ්නවලට පිළිතුරු ලබාදී පසුව Submit කරන්න.");return}
- finished=true;let score=0;
- questions.forEach((q,i)=>{if(answers[i]===q[2])score++});
- document.getElementById("quizBox").style.display="none";
- document.getElementById("resultBox").style.display="block";
- document.getElementById("score").textContent=score+" / 10";
- document.getElementById("resultMessage").textContent=score===10?"විශිෂ්ටයි! පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත.":score>=7?"හොඳයි! තව ටිකක් පුනරීක්ෂණය කරන්න.":"පාඩම නැවත අධ්‍යයනය කර Quiz එක නැවත කරන්න.";
- let r="";
- questions.forEach((q,i)=>{r+='<div class="review-item"><strong>'+(i+1)+'. '+q[0]+'</strong><br>'+(answers[i]===q[2]?'✓ ඔබගේ පිළිතුර නිවැරදියි. ':'✗ නිවැරදි පිළිතුර: '+q[1][q[2]]+'. ')+q[3]+'</div>'});
- document.getElementById("review").innerHTML=r;
- localStorage.setItem("grade11_lesson1_quiz_score",score);
- localStorage.setItem("grade11_lesson1_quiz_completed","true");
+
+    if(finished){
+        return;
+    }
+
+    if(answers.some(function(a){
+        return a === null;
+    })){
+
+        alert(
+            "සියලුම ප්‍රශ්නවලට පිළිතුරු ලබාදී පසුව Submit කරන්න."
+        );
+
+        return;
+    }
+
+    finishQuiz(false);
+
 }
-function restartQuiz(){current=0;answers=Array(10).fill(null);finished=false;document.getElementById("resultBox").style.display="none";document.getElementById("quizBox").style.display="block";render()}
-function completeQuiz(){localStorage.setItem("grade11_lesson1_quiz_completed","true");alert("✓ Grade 11 Lesson 1 Quiz සම්පූර්ණ කරන ලදී!")}
+
+
+// =====================================================
+// AUTO SUBMIT
+// =====================================================
+
+function autoSubmitQuiz(){
+
+    if(finished){
+        return;
+    }
+
+    finishQuiz(true);
+
+}
+
+
+// =====================================================
+// FINISH QUIZ
+// =====================================================
+
+function finishQuiz(timeExpired){
+
+    finished = true;
+
+    if(timer !== null){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    }
+
+
+    quizFinishedAt = new Date().toISOString();
+
+
+    let score = 0;
+
+    questions.forEach(function(q,i){
+
+        if(answers[i] === q[2]){
+
+            score++;
+
+        }
+
+    });
+
+
+    const percentage =
+        Math.round(
+            (score / questions.length) * 100
+        );
+
+
+    const timeUsed =
+        QUIZ_TIME - Math.max(timeLeft,0);
+
+
+    const minutesUsed =
+        Math.floor(timeUsed / 60);
+
+    const secondsUsed =
+        timeUsed % 60;
+
+
+    const timeUsedText =
+        String(minutesUsed).padStart(2,"0") +
+        ":" +
+        String(secondsUsed).padStart(2,"0");
+
+
+    // =================================================
+    // RESULT DISPLAY
+    // =================================================
+
+    document.getElementById("quizBox").style.display =
+        "none";
+
+    document.getElementById("resultBox").style.display =
+        "block";
+
+
+    document.getElementById("score").textContent =
+        score + " / " + questions.length;
+
+
+    let resultMessage = "";
+
+    if(timeExpired){
+
+        resultMessage =
+            "⏰ කාලය අවසන් වීම නිසා Quiz එක ස්වයංක්‍රීයව Submit කරන ලදී.";
+
+    }else if(score === questions.length){
+
+        resultMessage =
+            "විශිෂ්ටයි! පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත.";
+
+    }else if(score >= 7){
+
+        resultMessage =
+            "හොඳයි! තව ටිකක් පුනරීක්ෂණය කරන්න.";
+
+    }else{
+
+        resultMessage =
+            "පාඩම නැවත අධ්‍යයනය කර Quiz එක නැවත කරන්න.";
+
+    }
+
+
+    document.getElementById("resultMessage").innerHTML =
+        resultMessage +
+        "<br><br>" +
+        "ලකුණු: " + score + " / " + questions.length +
+        "<br>" +
+        "ප්‍රතිශතය: " + percentage + "%" +
+        "<br>" +
+        "ගත වූ කාලය: " + timeUsedText;
+
+
+    // =================================================
+    // REVIEW
+    // =================================================
+
+    let r = "";
+
+    questions.forEach(function(q,i){
+
+        r +=
+            '<div class="review-item">' +
+
+            '<strong>' +
+            (i+1) +
+            '. ' +
+            q[0] +
+            '</strong><br>';
+
+
+        if(answers[i] === q[2]){
+
+            r +=
+                "✓ ඔබගේ පිළිතුර නිවැරදියි.";
+
+        }else{
+
+            r +=
+                "✗ නිවැරදි පිළිතුර: " +
+                q[1][q[2]] +
+                ".";
+
+        }
+
+
+        r +=
+            "<br>" +
+            q[3] +
+            "</div>";
+
+    });
+
+
+    document.getElementById("review").innerHTML = r;
+
+
+    // =================================================
+    // SAVE QUIZ RESULT
+    // =================================================
+
+    const quizResult = {
+
+        grade: 11,
+
+        lesson: 1,
+
+        lessonTitle:
+            "වෙළෙඳාම සහ උපකාරක සේවා",
+
+        totalQuestions:
+            questions.length,
+
+        score:
+            score,
+
+        percentage:
+            percentage,
+
+        timeLimit:
+            QUIZ_TIME,
+
+        timeUsed:
+            timeUsed,
+
+        timeUsedText:
+            timeUsedText,
+
+        completed:
+            true,
+
+        completedAt:
+            quizFinishedAt,
+
+        startedAt:
+            quizStartedAt,
+
+        timeExpired:
+            timeExpired
+
+    };
+
+
+    // Main quiz result
+    localStorage.setItem(
+        "grade11_lesson1_quiz_result",
+        JSON.stringify(quizResult)
+    );
+
+
+    // Existing keys – compatibility
+    localStorage.setItem(
+        "grade11_lesson1_quiz_score",
+        score
+    );
+
+
+    localStorage.setItem(
+        "grade11_lesson1_quiz_percentage",
+        percentage
+    );
+
+
+    localStorage.setItem(
+        "grade11_lesson1_quiz_completed",
+        "true"
+    );
+
+
+    // =================================================
+    // GRADE 11 DASHBOARD DATA
+    // =================================================
+
+    let grade11Data = {
+
+        lesson1: {
+
+            completed:
+                true,
+
+            quizCompleted:
+                true,
+
+            score:
+                score,
+
+            percentage:
+                percentage,
+
+            timeUsed:
+                timeUsed,
+
+            completedAt:
+                quizFinishedAt
+
+        }
+
+    };
+
+
+    // Existing Grade 11 dashboard data තිබේ නම්
+    // ඒවා මකා නොදමා Lesson 1 update කරන්න.
+
+    try{
+
+        const oldData =
+            JSON.parse(
+                localStorage.getItem("grade11Progress") || "{}"
+            );
+
+
+        oldData.lesson1 =
+            grade11Data.lesson1;
+
+
+        localStorage.setItem(
+            "grade11Progress",
+            JSON.stringify(oldData)
+        );
+
+
+    }catch(error){
+
+        localStorage.setItem(
+            "grade11Progress",
+            JSON.stringify(grade11Data)
+        );
+
+    }
+
+
+    // =================================================
+    // GENERAL LESSON COMPLETION
+    // =================================================
+
+    let completedLessons = {};
+
+    try{
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "grade11CompletedLessons"
+                ) || "{}"
+            );
+
+    }catch(error){
+
+        completedLessons = {};
+
+    }
+
+
+    completedLessons["1"] = true;
+
+
+    localStorage.setItem(
+        "grade11CompletedLessons",
+        JSON.stringify(completedLessons)
+    );
+
+
+}
+
+
+// =====================================================
+// RESTART
+// =====================================================
+
+function restartQuiz(){
+
+    if(timer !== null){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    }
+
+
+    current = 0;
+
+    answers =
+        Array(questions.length).fill(null);
+
+    finished = false;
+
+    timeLeft = QUIZ_TIME;
+
+    quizStartedAt = null;
+
+    quizFinishedAt = null;
+
+
+    document.getElementById("resultBox").style.display =
+        "none";
+
+
+    document.getElementById("quizBox").style.display =
+        "block";
+
+
+    render();
+
+    startTimer();
+
+}
+
+
+// =====================================================
+// COMPLETE QUIZ
+// =====================================================
+
+function completeQuiz(){
+
+    const result =
+        localStorage.getItem(
+            "grade11_lesson1_quiz_result"
+        );
+
+
+    if(!result){
+
+        alert(
+            "කරුණාකර පළමුව Quiz එක සම්පූර්ණ කරන්න."
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "grade11_lesson1_quiz_completed",
+        "true"
+    );
+
+
+    localStorage.setItem(
+        "grade11_lesson1_completed",
+        "true"
+    );
+
+
+    alert(
+        "✓ Grade 11 Lesson 1 Quiz සම්පූර්ණ කරන ලදී!"
+    );
+
+}
+
+
+// =====================================================
+// PAGE START
+// =====================================================
+
+createTimer();
+
 render();
+
+startTimer();
+
 </script>
 </body>
 </html>
