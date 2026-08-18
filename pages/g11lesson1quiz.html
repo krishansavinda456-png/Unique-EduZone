@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Grade 11 | Lesson 01 Quiz | Unique EduZone
+    </title>
+
+    <link rel="stylesheet"
+          href="../assets/css/style.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family:
+                Arial,
+                "Noto Sans Sinhala",
+                sans-serif;
+
+            background: #050505;
+            color: #ffffff;
+        }
+
+        .quiz-container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .quiz-header {
+            background: linear-gradient(
+                145deg,
+                #151515,
+                #0d0d0d
+            );
+
+            border: 1px solid #f5c542;
+            border-radius: 18px;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+        .quiz-header h1 {
+            color: #f5c542;
+            margin-bottom: 10px;
+        }
+
+        .quiz-header p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        .question-card {
+            margin-top: 25px;
+
+            background: #111111;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+
+            padding: 25px;
+        }
+
+        .question-number {
+            color: #f5c542;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .question {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            display: block;
+
+            width: 100%;
+
+            margin: 10px 0;
+
+            padding: 14px;
+
+            background: #191919;
+
+            border: 1px solid #444;
+
+            border-radius: 9px;
+
+            color: white;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            border-color: #f5c542;
+            background: #222;
+        }
+
+        .option.selected {
+            border-color: #f5c542;
+            background: #29220b;
+        }
+
+        .submit-btn {
+            display: block;
+
+            margin: 30px auto;
+
+            padding: 14px 35px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #ffd95a,
+                #dca916
+            );
+
+            color: #000;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        #result {
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border: 1px solid #f5c542;
+
+            border-radius: 15px;
+
+            background: #111;
+
+            text-align: center;
+        }
+
+        #result h2 {
+            color: #f5c542;
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 11px 25px;
+
+            border: 1px solid #f5c542;
+
+            border-radius: 8px;
+
+            color: #f5c542;
+        }
+
+        .back-btn:hover {
+            background: #f5c542;
+            color: #000;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="quiz-container">
+
+
+    <!-- HEADER -->
+
+    <div class="quiz-header">
+
+        <h1>
+            Grade 11
+        </h1>
+
+        <h2>
+            1 වන පාඩම – වෙළෙඳාම සහ උපකාරක සේවා
+        </h2>
+
+        <p>
+            ව්‍යාපාර අධ්‍යයනය හා ගිණුම්කරණය
+            <br>
+            පාඩම 01 සඳහා MCQ Quiz
+        </p>
+
+    </div>
+
+
+
+    <!-- QUESTION 01 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 01
+        </div>
+
+        <div class="question">
+            වෙළෙඳාම යනු කුමක්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(1, 'A', this)">
+            A. භාණ්ඩ හා සේවා නිෂ්පාදනය පමණක් කිරීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(1, 'B', this)">
+            B. භාණ්ඩ හා සේවා හුවමාරුව හා බෙදාහැරීම සම්බන්ධ ක්‍රියාකාරකම්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(1, 'C', this)">
+            C. මුදල් ඉතිරි කිරීම පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(1, 'D', this)">
+            D. සේවකයන් පුහුණු කිරීම පමණක්
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 02 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 02
+        </div>
+
+        <div class="question">
+            ව්‍යාපාරයක ප්‍රධාන අරමුණක් වන්නේ කුමක්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(2, 'A', this)">
+            A. ලාභ ඉපයීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(2, 'B', this)">
+            B. පාසල් පවත්වාගෙන යාම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(2, 'C', this)">
+            C. රාජ්‍ය නීති සකස් කිරීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(2, 'D', this)">
+            D. ජනගහනය ගණනය කිරීම
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 03 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 03
+        </div>
+
+        <div class="question">
+            වාණිජ්‍යයට අයත් ප්‍රධාන අංග දෙක වන්නේ කුමක්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(3, 'A', this)">
+            A. නිෂ්පාදනය හා පරිභෝජනය
+        </button>
+
+        <button class="option"
+                onclick="selectOption(3, 'B', this)">
+            B. වෙළෙඳාම හා උපකාරක සේවා
+        </button>
+
+        <button class="option"
+                onclick="selectOption(3, 'C', this)">
+            C. ඉතුරුම් හා ආයෝජන
+        </button>
+
+        <button class="option"
+                onclick="selectOption(3, 'D', this)">
+            D. බදු හා වැටුප්
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 04 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 04
+        </div>
+
+        <div class="question">
+            දේශීය වෙළෙඳාම යනු කුමක්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(4, 'A', this)">
+            A. රටවල් දෙකක් අතර සිදුවන වෙළෙඳාම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(4, 'B', this)">
+            B. එකම රටක් තුළ සිදුවන වෙළෙඳාම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(4, 'C', this)">
+            C. අන්තර්ජාලය හරහා පමණක් සිදුවන වෙළෙඳාම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(4, 'D', this)">
+            D. බැංකු අතර සිදුවන ගනුදෙනු
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 05 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 05
+        </div>
+
+        <div class="question">
+            සිල්ලර වෙළෙඳාමේදී භාණ්ඩ සාමාන්‍යයෙන් විකුණනු ලබන්නේ කාටද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(5, 'A', this)">
+            A. අවසාන පාරිභෝගිකයාට
+        </button>
+
+        <button class="option"
+                onclick="selectOption(5, 'B', this)">
+            B. නිෂ්පාදකයාට පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(5, 'C', this)">
+            C. බැංකුවට පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(5, 'D', this)">
+            D. රජයට පමණක්
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 06 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 06
+        </div>
+
+        <div class="question">
+            තොග වෙළෙඳාමේදී භාණ්ඩ සාමාන්‍යයෙන් විකුණනු ලබන්නේ කාටද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(6, 'A', this)">
+            A. අවසාන පාරිභෝගිකයන්ට පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(6, 'B', this)">
+            B. සිල්ලර වෙළෙඳුන් වැනි අතරමැදියන්ට
+        </button>
+
+        <button class="option"
+                onclick="selectOption(6, 'C', this)">
+            C. පාසල් සිසුන්ට පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(6, 'D', this)">
+            D. රජයේ සේවකයන්ට පමණක්
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 07 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 07
+        </div>
+
+        <div class="question">
+            ආනයන වෙළෙඳාම යනු කුමක්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(7, 'A', this)">
+            A. භාණ්ඩ විදේශ රටකට විකිණීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(7, 'B', this)">
+            B. විදේශ රටකින් භාණ්ඩ රට තුළට ගෙන ඒම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(7, 'C', this)">
+            C. රට තුළ භාණ්ඩ බෙදාහැරීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(7, 'D', this)">
+            D. භාණ්ඩ ගබඩා කිරීම
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 08 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 08
+        </div>
+
+        <div class="question">
+            අපනයන වෙළෙඳාම යනු කුමක්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(8, 'A', this)">
+            A. විදේශ රටකට භාණ්ඩ හා සේවා විකිණීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(8, 'B', this)">
+            B. විදේශ රටකින් භාණ්ඩ මිලදී ගැනීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(8, 'C', this)">
+            C. රට තුළ භාණ්ඩ ගබඩා කිරීම
+        </button>
+
+        <button class="option"
+                onclick="selectOption(8, 'D', this)">
+            D. බැංකු ගිණුම් පවත්වාගෙන යාම
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 09 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 09
+        </div>
+
+        <div class="question">
+            වෙළෙඳාමට සහාය වන සේවාවන් හැඳින්වෙන්නේ කුමන නාමයෙන්ද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(9, 'A', this)">
+            A. නිෂ්පාදන සේවා
+        </button>
+
+        <button class="option"
+                onclick="selectOption(9, 'B', this)">
+            B. උපකාරක සේවා
+        </button>
+
+        <button class="option"
+                onclick="selectOption(9, 'C', this)">
+            C. පාරිභෝගික සේවා පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(9, 'D', this)">
+            D. කාර්යාල සේවා
+        </button>
+
+    </div>
+
+
+
+    <!-- QUESTION 10 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            ප්‍රශ්නය 10
+        </div>
+
+        <div class="question">
+            පහත සඳහන් කුමක් වෙළෙඳාමට උපකාර කරන සේවාවක් ලෙස සැලකිය හැකිද?
+        </div>
+
+        <button class="option"
+                onclick="selectOption(10, 'A', this)">
+            A. බැංකු සේවා
+        </button>
+
+        <button class="option"
+                onclick="selectOption(10, 'B', this)">
+            B. ගොවිතැන පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(10, 'C', this)">
+            C. නිෂ්පාදනය පමණක්
+        </button>
+
+        <button class="option"
+                onclick="selectOption(10, 'D', this)">
+            D. පරිභෝජනය පමණක්
+        </button>
+
+    </div>
+
+
+
+    <!-- SUBMIT -->
+
+    <button class="submit-btn"
+            onclick="checkQuiz()">
+
+        ප්‍රතිඵල බලන්න
+
+    </button>
+
+
+
+    <!-- RESULT -->
+
+    <div id="result">
+
+        <h2>
+            Quiz ප්‍රතිඵල
+        </h2>
+
+        <p id="score"></p>
+
+        <a href="g11lesson1.html"
+           class="back-btn">
+
+            ← Grade 11 Lesson 01 වෙත
+
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+    const answers = {
+
+        1: "B",
+        2: "A",
+        3: "B",
+        4: "B",
+        5: "A",
+        6: "B",
+        7: "B",
+        8: "A",
+        9: "B",
+        10: "A"
+
+    };
+
+
+    const selectedAnswers = {};
+
+
+    function selectOption(
+        question,
+        answer,
+        button
+    ) {
+
+        selectedAnswers[question] =
+            answer;
+
+
+        const buttons =
+            button.parentElement
+            .querySelectorAll(".option");
+
+
+        buttons.forEach(
+            function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            }
+        );
+
+
+        button.classList.add(
+            "selected"
+        );
+
+    }
+
+
+
+    function checkQuiz() {
+
+        let score = 0;
+
+
+        for (
+            let i = 1;
+            i <= 10;
+            i++
+        ) {
+
+            if (
+                selectedAnswers[i] ===
+                answers[i]
+            ) {
+
+                score++;
+
+            }
+
+        }
+
+
+        document.getElementById(
+            "result"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "score"
+        ).innerHTML =
+
+            "ඔබගේ ලකුණු: <strong>" +
+            score +
+            " / 10</strong>";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
