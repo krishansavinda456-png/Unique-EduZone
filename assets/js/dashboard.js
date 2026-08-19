@@ -1,245 +1,147 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        /*
-         * =========================================
-         * UNIQUE EDUZONE STUDENT DASHBOARD
-         * =========================================
-         *
-         * Grade 10 = 10 Lessons
-         * Grade 11 = 8 Lessons
-         * Total     = 18 Lessons
-         *
-         * IMPORTANT:
-         * Grade 10 existing localStorage data
-         * will NOT be deleted or modified.
-         *
-         * Grade 11 data is read separately.
-         * =========================================
-         */
+    /*
+     * =====================================================
+     * UNIQUE EDUZONE STUDENT DASHBOARD
+     *
+     * Grade 10  -> 10 Lessons
+     * Grade 11  -> 8 Lessons
+     *
+     * Grade 10 existing system is preserved.
+     * Grade 11 uses grade11Progress / grade11CompletedLessons.
+     * =====================================================
+     */
 
 
-        const GRADE10_TOTAL_LESSONS = 10;
-        const GRADE11_TOTAL_LESSONS = 8;
+    /* =====================================================
+       PROFILE DATA
+       ===================================================== */
 
-        const TOTAL_LESSONS =
-            GRADE10_TOTAL_LESSONS +
-            GRADE11_TOTAL_LESSONS;
+    const studentName =
+        localStorage.getItem("uez_student_name") || "Student";
 
+    const studentGrade =
+        localStorage.getItem("uez_student_grade") || "-";
 
-        /*
-         * =========================================
-         * PROFILE DATA
-         * =========================================
-         */
-
-        const studentName =
-            localStorage.getItem(
-                "uez_student_name"
-            ) || "Student";
+    const studentSubject =
+        localStorage.getItem("uez_student_subject") || "-";
 
 
-        const studentGrade =
-            localStorage.getItem(
-                "uez_student_grade"
-            ) || "-";
+    /* =====================================================
+       DETECT GRADE
+       ===================================================== */
+
+    const gradeText =
+        String(studentGrade).toLowerCase().trim();
+
+    const isGrade11 =
+        gradeText === "11" ||
+        gradeText.includes("grade 11") ||
+        gradeText.includes("11 ශ්‍රේණිය") ||
+        gradeText.includes("11 ශ්‍රේණිය");
 
 
-        const studentSubject =
-            localStorage.getItem(
-                "uez_student_subject"
-            ) || "-";
+    /*
+     * Grade 11 = 8 Lessons
+     * Grade 10 = 10 Lessons
+     */
+
+    const TOTAL_LESSONS =
+        isGrade11 ? 8 : 10;
 
 
-        /*
-         * =========================================
-         * WELCOME MESSAGE
-         * =========================================
-         */
+    /* =====================================================
+       WELCOME MESSAGE
+       ===================================================== */
 
-        const welcomeMessage =
-            document.getElementById(
-                "welcomeMessage"
-            );
+    const welcomeMessage =
+        document.getElementById("welcomeMessage");
 
+    if (welcomeMessage) {
 
-        if (welcomeMessage) {
+        welcomeMessage.textContent =
+            "Welcome, " + studentName;
 
-            welcomeMessage.textContent =
-                "Welcome, " +
-                studentName;
-
-        }
+    }
 
 
-        /*
-         * =========================================
-         * PROFILE INFORMATION
-         * =========================================
-         */
+    /* =====================================================
+       PROFILE INFORMATION
+       ===================================================== */
 
-        const nameElement =
-            document.getElementById(
-                "studentName"
-            );
+    const nameElement =
+        document.getElementById("studentName");
 
+    if (nameElement) {
 
-        if (nameElement) {
+        nameElement.textContent =
+            studentName;
 
-            nameElement.textContent =
-                studentName;
-
-        }
+    }
 
 
-        const gradeElement =
-            document.getElementById(
-                "studentGrade"
-            );
+    const gradeElement =
+        document.getElementById("studentGrade");
+
+    if (gradeElement) {
+
+        gradeElement.textContent =
+            studentGrade;
+
+    }
 
 
-        if (gradeElement) {
+    const subjectElement =
+        document.getElementById("studentSubject");
 
-            gradeElement.textContent =
-                studentGrade;
+    if (subjectElement) {
 
-        }
+        subjectElement.textContent =
+            studentSubject;
 
-
-        const subjectElement =
-            document.getElementById(
-                "studentSubject"
-            );
+    }
 
 
-        if (subjectElement) {
+    /* =====================================================
+       VARIABLES
+       ===================================================== */
 
-            subjectElement.textContent =
-                studentSubject;
-
-        }
-
-
-        /*
-         * =========================================
-         * GRADE 10 - EXISTING DATA
-         * =========================================
-         *
-         * DO NOT CHANGE EXISTING GRADE 10 SYSTEM
-         */
-
-        let grade10CompletedLessons = [];
+    let lastScore = 0;
+    let completedQuizzes = 0;
+    let completedLessons = [];
 
 
-        const savedGrade10Lessons =
-            localStorage.getItem(
-                "uez_completed_lessons"
-            );
+    /* =====================================================
+       GRADE 11 DATA
+       ===================================================== */
 
+    if (isGrade11) {
 
-        if (savedGrade10Lessons) {
+        let grade11Progress = {};
 
-            try {
+        try {
 
-                grade10CompletedLessons =
-                    JSON.parse(
-                        savedGrade10Lessons
-                    );
+            grade11Progress =
+                JSON.parse(
+                    localStorage.getItem(
+                        "grade11Progress"
+                    ) || "{}"
+                );
 
-            }
+        } catch (error) {
 
-            catch (error) {
-
-                grade10CompletedLessons = [];
-
-            }
-
-        }
-
-
-        if (
-            !Array.isArray(
-                grade10CompletedLessons
-            )
-        ) {
-
-            grade10CompletedLessons = [];
+            grade11Progress = {};
 
         }
 
 
         /*
-         * Validate only Grade 10 Lesson 1-10
-         */
-
-        grade10CompletedLessons =
-            grade10CompletedLessons.filter(
-                function (lesson) {
-
-                    const lessonNumber =
-                        Number(
-                            String(lesson)
-                                .replace(
-                                    "lesson",
-                                    ""
-                                )
-                        );
-
-
-                    return (
-                        lessonNumber >= 1 &&
-                        lessonNumber <=
-                        GRADE10_TOTAL_LESSONS
-                    );
-
-                }
-            );
-
-
-        /*
-         * Remove duplicates
-         */
-
-        grade10CompletedLessons =
-            grade10CompletedLessons.filter(
-                function (
-                    lesson,
-                    index,
-                    array
-                ) {
-
-                    return (
-                        array.indexOf(
-                            lesson
-                        ) === index
-                    );
-
-                }
-            );
-
-
-        const grade10LessonsCompleted =
-            grade10CompletedLessons.length;
-
-
-        /*
-         * =========================================
-         * GRADE 11 - COMPLETED LESSONS
-         * =========================================
-         *
-         * Reads:
-         * grade11CompletedLessons
-         *
-         * Example:
-         * {
-         *     "1": true,
-         *     "2": true
-         * }
+         * -----------------------------------------------
+         * Grade 11 Completed Lessons
+         * -----------------------------------------------
          */
 
         let grade11CompletedLessons = {};
-
 
         try {
 
@@ -250,9 +152,7 @@ document.addEventListener(
                     ) || "{}"
                 );
 
-        }
-
-        catch (error) {
+        } catch (error) {
 
             grade11CompletedLessons = {};
 
@@ -260,23 +160,31 @@ document.addEventListener(
 
 
         /*
-         * Count Grade 11 completed lessons
+         * Count Lesson 1 - Lesson 8 only
          */
 
-        let grade11LessonsCompleted = 0;
+        for (let i = 1; i <= 8; i++) {
 
+            const lessonKey =
+                "lesson" + i;
 
-        for (
-            let i = 1;
-            i <= GRADE11_TOTAL_LESSONS;
-            i++
-        ) {
+            const progressData =
+                grade11Progress[lessonKey];
+
+            const completedByProgress =
+                progressData &&
+                progressData.completed === true;
+
+            const completedByLessonList =
+                grade11CompletedLessons[String(i)] === true ||
+                grade11CompletedLessons[lessonKey] === true;
 
             if (
-                grade11CompletedLessons[i] === true
+                completedByProgress ||
+                completedByLessonList
             ) {
 
-                grade11LessonsCompleted++;
+                completedLessons.push(i);
 
             }
 
@@ -284,87 +192,95 @@ document.addEventListener(
 
 
         /*
-         * =========================================
-         * TOTAL COMPLETED LESSONS
-         * =========================================
+         * Remove duplicates
          */
 
-        const totalLessonsCompleted =
-            grade10LessonsCompleted +
-            grade11LessonsCompleted;
+        completedLessons =
+            [...new Set(completedLessons)];
 
 
         /*
-         * =========================================
-         * UPDATE LESSON CARD
-         * =========================================
+         * -----------------------------------------------
+         * Count Completed Grade 11 Quizzes
+         * -----------------------------------------------
          */
 
-        const lessonsCompletedElement =
-            document.getElementById(
-                "lessonsCompleted"
-            );
+        let latestQuiz = null;
 
 
-        if (
-            lessonsCompletedElement
-        ) {
+        for (let i = 1; i <= 8; i++) {
 
-            lessonsCompletedElement.textContent =
-                totalLessonsCompleted +
-                " / " +
-                TOTAL_LESSONS;
+            const lessonKey =
+                "lesson" + i;
+
+            const lessonData =
+                grade11Progress[lessonKey];
+
+
+            if (
+                lessonData &&
+                lessonData.quizCompleted === true
+            ) {
+
+                completedQuizzes++;
+
+
+                /*
+                 * Find latest quiz
+                 */
+
+                if (
+                    !latestQuiz ||
+                    new Date(
+                        lessonData.completedAt || 0
+                    ) >
+                    new Date(
+                        latestQuiz.completedAt || 0
+                    )
+                ) {
+
+                    latestQuiz = {
+
+                        score:
+                            Number(
+                                lessonData.score
+                            ) || 0,
+
+                        percentage:
+                            Number(
+                                lessonData.percentage
+                            ) || 0,
+
+                        completedAt:
+                            lessonData.completedAt || 0
+
+                    };
+
+                }
+
+            }
 
         }
 
 
         /*
-         * =========================================
-         * GRADE 10 QUIZ DATA
-         * =========================================
-         *
-         * Existing system is preserved.
+         * -----------------------------------------------
+         * Also check individual Grade 11 result keys
+         * -----------------------------------------------
          */
 
-        const grade10LastScore =
-            Number(
-                localStorage.getItem(
-                    "uez_last_score"
-                )
-            ) || 0;
+        for (let i = 1; i <= 8; i++) {
 
-
-        const grade10QuizCount =
-            Number(
-                localStorage.getItem(
-                    "uez_quiz_count"
-                )
-            ) || 0;
-
-
-        /*
-         * =========================================
-         * GRADE 11 QUIZ DATA
-         * =========================================
-         */
-
-        const grade11Results = [];
-
-
-        for (
-            let i = 1;
-            i <= GRADE11_TOTAL_LESSONS;
-            i++
-        ) {
-
-            const key =
+            const resultKey =
                 "grade11_lesson" +
                 i +
                 "_quiz_result";
 
 
             const savedResult =
-                localStorage.getItem(key);
+                localStorage.getItem(
+                    resultKey
+                );
 
 
             if (!savedResult) {
@@ -380,142 +296,59 @@ document.addEventListener(
                     );
 
 
-                if (
-                    result &&
-                    result.completed === true
-                ) {
+                /*
+                 * Prevent double counting
+                 */
 
-                    grade11Results.push(
-                        {
-                            lesson: i,
-                            result: result
-                        }
-                    );
+                const alreadyCounted =
+                    grade11Progress[
+                        "lesson" + i
+                    ] &&
+                    grade11Progress[
+                        "lesson" + i
+                    ].quizCompleted === true;
+
+
+                if (!alreadyCounted) {
+
+                    completedQuizzes++;
 
                 }
 
-            }
-
-            catch (error) {
-
-                console.warn(
-                    "Invalid Grade 11 quiz result:",
-                    key
-                );
-
-            }
-
-        }
-
-
-        /*
-         * =========================================
-         * GRADE 11 QUIZ COUNT
-         * =========================================
-         */
-
-        const grade11QuizCount =
-            grade11Results.length;
-
-
-        /*
-         * =========================================
-         * TOTAL QUIZ COUNT
-         * =========================================
-         */
-
-        const totalQuizCount =
-            grade10QuizCount +
-            grade11QuizCount;
-
-
-        /*
-         * =========================================
-         * FIND LATEST QUIZ
-         * =========================================
-         *
-         * Grade 10:
-         * Existing system does not provide
-         * completedAt, therefore it is used
-         * as the fallback.
-         *
-         * Grade 11:
-         * completedAt is available.
-         */
-
-        let latestScore =
-            grade10LastScore;
-
-
-        let latestCompletedAt = null;
-
-
-        grade11Results.forEach(
-            function (item) {
-
-                const result =
-                    item.result;
-
 
                 if (
-                    result.completedAt
+                    !latestQuiz ||
+                    new Date(
+                        result.completedAt || 0
+                    ) >
+                    new Date(
+                        latestQuiz.completedAt || 0
+                    )
                 ) {
 
-                    const resultDate =
-                        new Date(
-                            result.completedAt
-                        );
+                    latestQuiz = {
 
+                        score:
+                            Number(
+                                result.score
+                            ) || 0,
 
-                    if (
-                        latestCompletedAt === null ||
-                        resultDate >
-                        latestCompletedAt
-                    ) {
-
-                        latestCompletedAt =
-                            resultDate;
-
-
-                        latestScore =
+                        percentage:
                             Number(
                                 result.percentage
-                            ) || 0;
+                            ) || 0,
 
-                    }
+                        completedAt:
+                            result.completedAt || 0
+
+                    };
 
                 }
 
-            }
-        );
 
+            } catch (error) {
 
-        /*
-         * =========================================
-         * LAST QUIZ SCORE
-         * =========================================
-         */
-
-        const lastScoreElement =
-            document.getElementById(
-                "lastScore"
-            );
-
-
-        if (lastScoreElement) {
-
-            if (totalQuizCount > 0) {
-
-                lastScoreElement.textContent =
-                    latestScore +
-                    "%";
-
-            }
-
-            else {
-
-                lastScoreElement.textContent =
-                    "0%";
+                // Ignore invalid result data
 
             }
 
@@ -523,276 +356,420 @@ document.addEventListener(
 
 
         /*
-         * =========================================
-         * QUIZ COUNT DISPLAY
-         * =========================================
+         * -----------------------------------------------
+         * Latest Grade 11 Score
+         * -----------------------------------------------
          */
 
-        const quizCountElement =
-            document.getElementById(
-                "quizCount"
-            );
+        if (latestQuiz) {
 
-
-        if (quizCountElement) {
-
-            quizCountElement.textContent =
-                totalQuizCount;
+            lastScore =
+                Math.min(
+                    Math.max(
+                        latestQuiz.percentage,
+                        0
+                    ),
+                    100
+                );
 
         }
 
+    }
+
+
+    /* =====================================================
+       GRADE 10 DATA
+       ===================================================== */
+
+    else {
 
         /*
-         * =========================================
-         * LESSON PROGRESS
-         * =========================================
+         * IMPORTANT:
+         * Existing Grade 10 system remains unchanged.
          */
 
-        const lessonProgress =
-            Math.round(
-                (
-                    totalLessonsCompleted /
-                    TOTAL_LESSONS
-                ) * 100
-            );
-
-
-        /*
-         * =========================================
-         * QUIZ PROGRESS
-         * =========================================
-         *
-         * Last completed quiz percentage.
-         */
-
-        const quizProgress =
-            Math.min(
-                Math.max(
-                    latestScore,
-                    0
-                ),
-                100
-            );
-
-
-        /*
-         * =========================================
-         * OVERALL PROGRESS
-         * =========================================
-         *
-         * 50% Lesson Progress
-         * 50% Quiz Progress
-         *
-         * Existing Dashboard method preserved.
-         */
-
-        let progress =
-            Math.round(
-                (
-                    (
-                        lessonProgress *
-                        0.5
-                    ) +
-                    (
-                        quizProgress *
-                        0.5
-                    )
+        lastScore =
+            Number(
+                localStorage.getItem(
+                    "uez_last_score"
                 )
-            );
+            ) || 0;
 
 
-        if (progress > 100) {
-            progress = 100;
-        }
-
-
-        if (progress < 0) {
-            progress = 0;
-        }
-
-
-        /*
-         * =========================================
-         * PROGRESS BAR
-         * =========================================
-         */
-
-        const progressBar =
-            document.getElementById(
-                "progressBar"
-            );
-
-
-        if (progressBar) {
-
-            progressBar.style.width =
-                progress + "%";
-
-        }
+        completedQuizzes =
+            Number(
+                localStorage.getItem(
+                    "uez_quiz_count"
+                )
+            ) || 0;
 
 
         /*
-         * =========================================
-         * PROGRESS TEXT
-         * =========================================
+         * Existing Grade 10 completed lessons
          */
 
-        const progressText =
-            document.getElementById(
-                "progressText"
+        const savedLessons =
+            localStorage.getItem(
+                "uez_completed_lessons"
             );
 
 
-        if (progressText) {
+        if (savedLessons) {
 
-            progressText.textContent =
-                progress +
-                "% completed";
+            try {
+
+                completedLessons =
+                    JSON.parse(
+                        savedLessons
+                    );
+
+            } catch (error) {
+
+                completedLessons = [];
+
+            }
 
         }
-
-
-        /*
-         * =========================================
-         * LEARNING STATUS
-         * =========================================
-         */
-
-        let status =
-            "Not Started";
 
 
         if (
-            totalLessonsCompleted === 0 &&
-            totalQuizCount === 0
+            !Array.isArray(
+                completedLessons
+            )
         ) {
 
-            status =
-                "Not Started";
-
-        }
-
-        else if (
-            totalLessonsCompleted ===
-            TOTAL_LESSONS
-        ) {
-
-            status =
-                "All Lessons Completed";
-
-        }
-
-        else if (
-            latestScore >= 75
-        ) {
-
-            status =
-                "Excellent";
-
-        }
-
-        else if (
-            latestScore >= 50
-        ) {
-
-            status =
-                "Good Progress";
-
-        }
-
-        else {
-
-            status =
-                "Keep Practicing";
+            completedLessons = [];
 
         }
 
 
         /*
-         * =========================================
-         * DISPLAY STATUS
-         * =========================================
+         * Only Lesson 1 - 10
          */
 
-        const learningStatus =
-            document.getElementById(
-                "learningStatus"
+        completedLessons =
+            completedLessons.filter(
+                function (lesson) {
+
+                    const lessonNumber =
+                        Number(
+                            String(lesson)
+                                .replace(
+                                    "lesson",
+                                    ""
+                                )
+                        );
+
+
+                    return (
+                        lessonNumber >= 1 &&
+                        lessonNumber <= 10
+                    );
+
+                }
             );
 
 
-        if (learningStatus) {
+        /*
+         * Remove duplicates
+         */
 
-            learningStatus.textContent =
-                status;
+        completedLessons =
+            completedLessons.filter(
+                function (
+                    lesson,
+                    index,
+                    array
+                ) {
+
+                    return (
+                        array.indexOf(
+                            lesson
+                        ) === index
+                    );
+
+                }
+            );
+
+    }
+
+
+    /* =====================================================
+       COMPLETED LESSON COUNT
+       ===================================================== */
+
+    const lessonsCompleted =
+        completedLessons.length;
+
+
+    const lessonsCompletedElement =
+        document.getElementById(
+            "lessonsCompleted"
+        );
+
+
+    if (lessonsCompletedElement) {
+
+        lessonsCompletedElement.textContent =
+            lessonsCompleted +
+            " / " +
+            TOTAL_LESSONS;
+
+    }
+
+
+    /* =====================================================
+       LAST QUIZ SCORE
+       ===================================================== */
+
+    const lastScoreElement =
+        document.getElementById(
+            "lastScore"
+        );
+
+
+    if (lastScoreElement) {
+
+        if (completedQuizzes > 0) {
+
+            lastScoreElement.textContent =
+                lastScore + "%";
+
+        } else {
+
+            lastScoreElement.textContent =
+                "0%";
 
         }
 
+    }
 
-        /*
-         * =========================================
-         * CONSOLE INFORMATION
-         * =========================================
-         *
-         * Useful for checking the system.
-         */
 
-        console.log(
-            "================================="
+    /* =====================================================
+       QUIZ COUNT
+       ===================================================== */
+
+    const quizCountElement =
+        document.getElementById(
+            "quizCount"
         );
 
-        console.log(
-            "Unique EduZone Dashboard"
+
+    if (quizCountElement) {
+
+        quizCountElement.textContent =
+            completedQuizzes;
+
+    }
+
+
+    /* =====================================================
+       LESSON PROGRESS
+       ===================================================== */
+
+    const lessonProgress =
+        Math.round(
+            (
+                lessonsCompleted /
+                TOTAL_LESSONS
+            ) * 100
         );
 
-        console.log(
-            "Grade 10 Lessons:",
-            grade10LessonsCompleted +
-            " / " +
-            GRADE10_TOTAL_LESSONS
+
+    /* =====================================================
+       QUIZ PROGRESS
+       ===================================================== */
+
+    const quizProgress =
+        Math.min(
+            Math.max(
+                lastScore,
+                0
+            ),
+            100
         );
 
-        console.log(
-            "Grade 11 Lessons:",
-            grade11LessonsCompleted +
-            " / " +
-            GRADE11_TOTAL_LESSONS
+
+    /* =====================================================
+       OVERALL PROGRESS
+       =====================================================
+       
+       50% Lessons
+       50% Quiz performance
+       ===================================================== */
+
+    let progress =
+        Math.round(
+            (
+                lessonProgress * 0.5
+            ) +
+            (
+                quizProgress * 0.5
+            )
         );
 
-        console.log(
-            "Total Lessons:",
-            totalLessonsCompleted +
-            " / " +
-            TOTAL_LESSONS
+
+    progress =
+        Math.min(
+            Math.max(
+                progress,
+                0
+            ),
+            100
         );
 
-        console.log(
-            "Grade 10 Quizzes:",
-            grade10QuizCount
+
+    /* =====================================================
+       PROGRESS BAR
+       ===================================================== */
+
+    const progressBar =
+        document.getElementById(
+            "progressBar"
         );
 
-        console.log(
-            "Grade 11 Quizzes:",
-            grade11QuizCount
+
+    if (progressBar) {
+
+        progressBar.style.width =
+            progress + "%";
+
+    }
+
+
+    /* =====================================================
+       PROGRESS TEXT
+       ===================================================== */
+
+    const progressText =
+        document.getElementById(
+            "progressText"
         );
 
-        console.log(
-            "Total Quizzes:",
-            totalQuizCount
+
+    if (progressText) {
+
+        progressText.textContent =
+            progress +
+            "% completed";
+
+    }
+
+
+    /* =====================================================
+       LEARNING STATUS
+       ===================================================== */
+
+    let status =
+        "Not Started";
+
+
+    if (
+        lessonsCompleted === 0 &&
+        completedQuizzes === 0
+    ) {
+
+        status =
+            "Not Started";
+
+    }
+
+    else if (
+        lessonsCompleted ===
+        TOTAL_LESSONS
+    ) {
+
+        status =
+            "All Lessons Completed";
+
+    }
+
+    else if (
+        lastScore >= 75
+    ) {
+
+        status =
+            "Excellent";
+
+    }
+
+    else if (
+        lastScore >= 50
+    ) {
+
+        status =
+            "Good Progress";
+
+    }
+
+    else {
+
+        status =
+            "Keep Practicing";
+
+    }
+
+
+    /* =====================================================
+       DISPLAY STATUS
+       ===================================================== */
+
+    const learningStatus =
+        document.getElementById(
+            "learningStatus"
         );
 
-        console.log(
-            "Latest Score:",
-            latestScore + "%"
-        );
 
-        console.log(
-            "Overall Progress:",
-            progress + "%"
-        );
+    if (learningStatus) {
 
-        console.log(
-            "================================="
+        learningStatus.textContent =
+            status;
+
+    }
+
+
+    /* =====================================================
+       OPTIONAL: STORE GENERAL DASHBOARD DATA
+       =====================================================
+       
+       This does NOT overwrite the existing Grade 10
+       quiz system.
+       ===================================================== */
+
+    if (isGrade11) {
+
+        const dashboardData = {
+
+            grade: 11,
+
+            totalLessons:
+                TOTAL_LESSONS,
+
+            completedLessons:
+                lessonsCompleted,
+
+            completedQuizzes:
+                completedQuizzes,
+
+            lastScore:
+                lastScore,
+
+            overallProgress:
+                progress,
+
+            updatedAt:
+                new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            "uez_grade11_dashboard",
+            JSON.stringify(
+                dashboardData
+            )
         );
 
     }
-);
+
+});
