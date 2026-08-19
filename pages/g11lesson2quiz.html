@@ -1,817 +1,371 @@
 <!DOCTYPE html>
 <html lang="si">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>
-    Grade 11 - Lesson 2 Quiz | Unique EduZone
-</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 11 - Lesson 2 Quiz | Unique EduZone</title>
 
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-/* =========================================
-   RESET
-========================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body{
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.7
 }
 
-
-/* =========================================
-   BODY
-========================================= */
-
-body {
-
-    font-family:
-        Arial,
-        "Noto Sans Sinhala",
-        sans-serif;
-
-    background: #080808;
-
-    color: #f5f5f5;
-
-    line-height: 1.7;
+header{
+    background:#111;
+    border-bottom:2px solid #d4af37;
+    padding:16px 6%;
+    position:sticky;
+    top:0;
+    z-index:10
 }
 
-
-/* =========================================
-   HEADER
-========================================= */
-
-header {
-
-    background: #111;
-
-    border-bottom:
-        2px solid #d4af37;
-
-    padding:
-        16px 6%;
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 10;
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
 }
 
-
-.header-inner {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px
 }
 
-
-.logo {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
+.logo img{
+    width:52px;
+    height:52px;
+    object-fit:contain
 }
 
-
-.logo img {
-
-    width: 52px;
-
-    height: 52px;
-
-    object-fit: contain;
+.logo-text{
+    color:#d4af37;
+    font-size:21px;
+    font-weight:bold
 }
 
-
-.logo-text {
-
-    color: #d4af37;
-
-    font-size: 21px;
-
-    font-weight: bold;
+.back-btn{
+    color:#080808;
+    background:#d4af37;
+    text-decoration:none;
+    padding:7px 17px;
+    border-radius:25px;
+    font-weight:bold
 }
 
-
-.back-btn {
-
-    color: #080808;
-
-    background: #d4af37;
-
-    text-decoration: none;
-
-    padding:
-        7px 17px;
-
-    border-radius: 25px;
-
-    font-weight: bold;
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:30px auto 70px
 }
 
-
-/* =========================================
-   CONTAINER
-========================================= */
-
-.container {
-
-    width: 92%;
-
-    max-width: 1000px;
-
-    margin:
-        30px auto 70px;
+.hero,.quiz-box,.result-box{
+    background:#111;
+    border:1px solid #d4af37;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:24px
 }
 
-
-/* =========================================
-   HERO
-========================================= */
-
-.hero {
-
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #1d1d1d
-        );
-
-    border:
-        1px solid #d4af37;
-
-    border-radius: 18px;
-
-    padding: 28px;
-
-    margin-bottom: 24px;
-
-    text-align: center;
+.hero{
+    text-align:center;
+    background:linear-gradient(135deg,#111,#1d1d1d)
 }
 
-
-.hero h1 {
-
-    color: #d4af37;
-
-    font-size: 31px;
-
-    margin-bottom: 8px;
+.hero h1{
+    color:#d4af37;
+    font-size:31px;
+    margin-bottom:8px
 }
 
-
-.hero p {
-
-    color: #ddd;
+.hero p{
+    color:#ddd
 }
 
-
-/* =========================================
-   TIMER
-========================================= */
-
-#quizTimer {
-
-    margin-top: 18px;
-
-    padding:
-        12px 20px;
-
-    border:
-        2px solid #d4af37;
-
-    border-radius: 30px;
-
-    display: inline-block;
-
-    background: #211d0e;
-
-    color: #d4af37;
-
-    font-weight: bold;
-
-    font-size: 18px;
-
-    min-width: 190px;
+.progress{
+    height:12px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:16px
 }
 
-
-/* =========================================
-   PROGRESS
-========================================= */
-
-.progress {
-
-    height: 12px;
-
-    background: #333;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    margin-top: 16px;
+.progress-fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#b8860b,#ffd700);
+    transition:.3s
 }
 
-
-.progress-fill {
-
-    height: 100%;
-
-    width: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            #b8860b,
-            #ffd700
-        );
-
-    transition: .3s;
+.question{
+    display:none
 }
 
-
-#progressText {
-
-    margin-top: 7px;
-
-    color: #d4af37;
-
-    font-weight: bold;
+.question.active{
+    display:block
 }
 
-
-/* =========================================
-   QUIZ BOX
-========================================= */
-
-.quiz-box {
-
-    background: #111;
-
-    border:
-        1px solid #d4af37;
-
-    border-radius: 18px;
-
-    padding: 28px;
+.question-number{
+    color:#d4af37;
+    font-weight:bold;
+    margin-bottom:8px
 }
 
-
-/* =========================================
-   QUESTION
-========================================= */
-
-.question {
-
-    display: none;
+.question h2{
+    font-size:21px;
+    margin-bottom:18px
 }
 
-
-.question.active {
-
-    display: block;
+.option{
+    display:block;
+    width:100%;
+    text-align:left;
+    background:#191919;
+    color:#f5f5f5;
+    border:1px solid #3b3b3b;
+    border-radius:10px;
+    padding:12px 15px;
+    margin:9px 0;
+    cursor:pointer;
+    font-size:16px
 }
 
-
-.question-number {
-
-    color: #d4af37;
-
-    font-weight: bold;
-
-    margin-bottom: 8px;
+.option:hover,
+.option.selected{
+    border-color:#d4af37;
+    background:#2a2410
 }
 
-
-.question h2 {
-
-    font-size: 21px;
-
-    margin-bottom: 18px;
+.controls{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:24px
 }
 
-
-/* =========================================
-   OPTIONS
-========================================= */
-
-.option {
-
-    display: block;
-
-    width: 100%;
-
-    text-align: left;
-
-    background: #191919;
-
-    color: #f5f5f5;
-
-    border:
-        1px solid #3b3b3b;
-
-    border-radius: 10px;
-
-    padding:
-        12px 15px;
-
-    margin:
-        9px 0;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    transition: .2s;
+button{
+    border:0;
+    border-radius:25px;
+    padding:11px 24px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px
 }
-
-
-.option:hover {
-
-    border-color: #d4af37;
-
-    background: #2a2410;
-}
-
-
-.option.selected {
-
-    border-color: #d4af37;
-
-    background: #2a2410;
-
-    color: #ffd700;
-}
-
-
-/* =========================================
-   NOTE
-========================================= */
-
-.note {
-
-    margin-top: 16px;
-
-    background: #211d0e;
-
-    border-left:
-        4px solid #d4af37;
-
-    padding: 13px;
-
-    border-radius: 8px;
-}
-
-
-/* =========================================
-   CONTROLS
-========================================= */
-
-.controls {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    margin-top: 24px;
-}
-
-
-button {
-
-    border: 0;
-
-    border-radius: 25px;
-
-    padding:
-        11px 24px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    font-size: 15px;
-}
-
 
 .next,
-.submit {
-
-    background: #d4af37;
-
-    color: #080808;
+.submit{
+    background:#d4af37;
+    color:#080808
 }
 
-
-.prev {
-
-    background: #333;
-
-    color: #fff;
+.prev{
+    background:#333;
+    color:#fff
 }
 
-
-button:disabled {
-
-    opacity: .4;
-
-    cursor: not-allowed;
+button:disabled{
+    opacity:.4;
+    cursor:not-allowed
 }
 
-
-/* =========================================
-   RESULT
-========================================= */
-
-.result-box {
-
-    display: none;
-
-    background: #111;
-
-    border:
-        1px solid #d4af37;
-
-    border-radius: 18px;
-
-    padding:
-        30px 25px;
-
-    text-align: center;
+.note{
+    margin-top:16px;
+    background:#211d0e;
+    border-left:4px solid #d4af37;
+    padding:13px;
+    border-radius:8px
 }
 
-
-.result-box h2 {
-
-    color: #d4af37;
-
-    margin-bottom: 10px;
+.result-box{
+    display:none;
+    text-align:center
 }
 
-
-.score {
-
-    font-size: 42px;
-
-    color: #d4af37;
-
-    font-weight: bold;
-
-    margin: 10px 0;
+.score{
+    font-size:42px;
+    color:#d4af37;
+    font-weight:bold
 }
 
-
-#resultMessage {
-
-    color: #ddd;
-
-    margin-bottom: 15px;
+.result-box h2{
+    color:#d4af37;
+    margin-bottom:10px
 }
 
-
-/* =========================================
-   REVIEW
-========================================= */
-
-.review {
-
-    margin-top: 20px;
-
-    text-align: left;
+.result-box button{
+    margin:7px;
+    background:#d4af37;
+    color:#080808
 }
 
-
-.review-item {
-
-    padding: 13px;
-
-    border-bottom:
-        1px solid #333;
+.review{
+    margin-top:20px;
+    text-align:left
 }
 
-
-.review-item strong {
-
-    color: #d4af37;
+.review-item{
+    padding:13px;
+    border-bottom:1px solid #333
 }
 
-
-.correct-answer {
-
-    color: #55dd55;
+.review-item strong{
+    color:#d4af37
 }
 
-
-.wrong-answer {
-
-    color: #ff6666;
+footer{
+    text-align:center;
+    padding:25px;
+    color:#aaa;
+    border-top:1px solid #333
 }
 
+@media(max-width:650px){
 
-/* =========================================
-   RESULT BUTTONS
-========================================= */
-
-.result-box button {
-
-    margin: 7px;
-
-    background: #d4af37;
-
-    color: #080808;
-}
-
-
-.result-box a {
-
-    display: inline-block;
-
-    margin: 7px;
-
-    padding:
-        11px 24px;
-
-    border-radius: 25px;
-
-    background: #333;
-
-    color: #fff;
-
-    text-decoration: none;
-
-    font-weight: bold;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-
-    text-align: center;
-
-    padding: 25px;
-
-    color: #aaa;
-
-    border-top:
-        1px solid #333;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:650px) {
-
-    .header-inner {
-
-        flex-direction: column;
-
-        gap: 12px;
-
-        text-align: center;
+    .hero h1{
+        font-size:25px
     }
 
-
-    .hero h1 {
-
-        font-size: 25px;
+    .quiz-box{
+        padding:19px
     }
 
-
-    .quiz-box {
-
-        padding: 19px;
+    .question h2{
+        font-size:19px
     }
 
-
-    .question h2 {
-
-        font-size: 19px;
+    .controls{
+        flex-direction:column
     }
 
-
-    .controls {
-
-        flex-direction: column;
+    .controls button{
+        width:100%
     }
-
-
-    .controls button {
-
-        width: 100%;
-    }
-
-
-    .result-box button,
-    .result-box a {
-
-        width: 90%;
-    }
-
 }
-
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- =========================================
-     HEADER
-========================================= -->
 
 <header>
 
 <div class="header-inner">
 
-
 <div class="logo">
 
 <img
-    src="../assets/logo.png"
-    alt="Unique EduZone Logo"
->
+src="../assets/logo.png"
+alt="Unique EduZone Logo">
 
 <div class="logo-text">
-    Unique EduZone
+Unique EduZone
 </div>
 
 </div>
-
 
 <a
-    href="../index.html"
-    class="back-btn"
->
-    ← Home
-</a>
+href="../index.html"
+class="back-btn">
 
+← Home
+
+</a>
 
 </div>
 
 </header>
 
 
-
-<!-- =========================================
-     MAIN
-========================================= -->
-
 <div class="container">
 
-
-<!-- =========================================
-     HERO
-========================================= -->
 
 <section class="hero">
 
 <h1>
-    11 ශ්‍රේණිය – පාඩම 02 Quiz
+11 ශ්‍රේණිය – පාඩම 02 Quiz
 </h1>
 
-
 <p>
-    කළමණාකරණය
+කළමණාකරණය
 </p>
-
 
 <p
-    style="margin-top:8px;color:#aaa"
->
-    ප්‍රශ්න 10 • එක් ප්‍රශ්නයකට එක් නිවැරදි පිළිතුරක්
-</p>
+style="margin-top:8px;color:#aaa">
 
+ප්‍රශ්න 10 • එක් ප්‍රශ්නයකට එක් නිවැරදි පිළිතුරක්
+
+</p>
 
 <div class="progress">
 
 <div
-    class="progress-fill"
-    id="progressFill"
-></div>
+class="progress-fill"
+id="progressFill">
+</div>
 
 </div>
 
+<p
+id="progressText"
+style="margin-top:7px;color:#d4af37;font-weight:bold">
 
-<p id="progressText">
-    ප්‍රශ්නය 1 / 10
+ප්‍රශ්නය 1 / 10
+
 </p>
 
-
-<div id="quizTimer">
-    ⏱️ 10:00
-</div>
-
-
 </section>
 
 
+<section
+class="quiz-box"
+id="quizBox">
+</section>
 
-<!-- =========================================
-     QUIZ
-========================================= -->
 
 <section
-    class="quiz-box"
-    id="quizBox"
-></section>
-
-
-
-<!-- =========================================
-     RESULT
-========================================= -->
-
-<section
-    class="result-box"
-    id="resultBox"
->
-
+class="result-box"
+id="resultBox">
 
 <h2>
-    🎉 Quiz ප්‍රතිඵලය
+Quiz ප්‍රතිඵලය
 </h2>
 
-
 <div
-    class="score"
-    id="score"
->
-    0 / 10
+class="score"
+id="score">
 </div>
 
-
-<p id="resultMessage"></p>
-
+<p
+id="resultMessage">
+</p>
 
 <div
-    class="review"
-    id="review"
-></div>
-
-
-<button
-    onclick="restartQuiz()"
->
-    🔄 නැවත Quiz කරන්න
-</button>
-
+class="review"
+id="review">
+</div>
 
 <button
-    onclick="completeQuiz()"
->
-    ✓ Quiz Complete
+onclick="restartQuiz()">
+
+නැවත Quiz කරන්න
+
 </button>
 
+<button
+onclick="completeQuiz()">
 
-<br>
+✓ Quiz Complete
 
-
-<a href="g11lesson2.html">
-    📖 පාඩමට යන්න
-</a>
-
-
-<a href="../index.html">
-    🏠 Home
-</a>
-
+</button>
 
 </section>
 
-
 </div>
-
 
 
 <footer>
@@ -822,162 +376,191 @@ Grade 11 Business & Accounting Studies
 </footer>
 
 
-
 <script>
 
-/* =====================================================
-   LESSON 02 QUESTIONS
 
-   මේ කොටස Lesson 1 එකේ structure එකට
-   සමානව තබා ඇත.
+/*
+ * =========================================
+ * LESSON 02 QUIZ DATA
+ * කළමණාකරණය
+ * =========================================
+ */
 
-   [Question, Options, Correct Answer, Explanation]
-===================================================== */
+const questions = [
 
-const lesson2Questions = [
 
 [
-    "කළමණාකරණය යනු කුමක්ද?",
-    [
-        "සංවිධානයක අරමුණු සාර්ථකව ඉටු කිරීම සඳහා සම්පත් සැලසුම් කර, සංවිධානය කර, මෙහෙයවා හා පාලනය කිරීමේ ක්‍රියාවලියයි",
-        "භාණ්ඩ මිලදී ගැනීම පමණි",
-        "මුදල් ගණනය කිරීම පමණි",
-        "වෙළඳ දැන්වීම් පළ කිරීම පමණි"
-    ],
-    0,
-    "සංවිධානයක අරමුණු ඉටු කිරීම සඳහා සම්පත් සැලසුම් කිරීම, සංවිධානය කිරීම, මෙහෙයවීම සහ පාලනය කිරීම කළමණාකරණයයි."
+"කළමණාකරණය යනු ප්‍රධාන වශයෙන් කුමක්ද?",
+
+[
+"සංවිධානයක අරමුණු සාක්ෂාත් කර ගැනීම සඳහා සම්පත් කාර්යක්ෂමව හා ඵලදායීව භාවිතා කිරීමේ ක්‍රියාවලිය",
+"භාණ්ඩ මිලදී ගැනීම පමණක්",
+"සේවකයන්ට වැටුප් ගෙවීම පමණක්",
+"භාණ්ඩ ගබඩා කිරීම පමණක්"
+],
+
+0,
+
+"කළමණාකරණය මගින් සංවිධානයේ අරමුණු ඉටු කර ගැනීම සඳහා සම්පත් සැලසුම් කර, සංවිධානය කර, මෙහෙයවා හා පාලනය කරයි."
 ],
 
 
 [
-    "කළමණාකරණයේ ප්‍රධාන කාර්යයක් වන්නේ කුමක්ද?",
-    [
-        "සැලසුම් කිරීම",
-        "භාණ්ඩ පරිභෝජනය කිරීම",
-        "බදු එකතු කිරීම පමණි",
-        "භාණ්ඩ විනාශ කිරීම"
-    ],
-    0,
-    "සැලසුම් කිරීම කළමණාකරණයේ ප්‍රධාන කාර්යයකි."
+"කළමණාකරණයේ මූලික කාර්යයක් වන්නේ කුමක්ද?",
+
+[
+"සැලසුම් කිරීම",
+"භාණ්ඩ පරිභෝජනය කිරීම",
+"බදු එකතු කිරීම පමණි",
+"භාණ්ඩ විනාශ කිරීම"
+],
+
+0,
+
+"සංවිධානයක අරමුණු ඉටු කිරීමට ඉදිරියේදී කළ යුතු දේ තීරණය කිරීම සැලසුම් කිරීමයි."
 ],
 
 
 [
-    "සැලසුම් කිරීම යනු කුමක්ද?",
-    [
-        "අනාගතයේ කළ යුතු කාර්යයන් හා ඒවා ඉටු කරන ආකාරය කලින් තීරණය කිරීම",
-        "කාර්යයන් සිදු වූ පසු ඒවා පමණක් පරීක්ෂා කිරීම",
-        "භාණ්ඩ පමණක් ගබඩා කිරීම",
-        "සේවකයන්ට වැටුප් ගෙවීම පමණි"
-    ],
-    0,
-    "අනාගතයේ කළ යුතු කාර්යයන් හා ඒවා ඉටු කරන ආකාරය කලින් තීරණය කිරීම සැලසුම් කිරීමයි."
+"සංවිධානයක අරමුණු සාක්ෂාත් කර ගැනීම සඳහා කළ යුතු කාර්යයන් හඳුනාගෙන ක්‍රමවත් කිරීම කුමන කළමණාකරණ කාර්යයට අදාළද?",
+
+[
+"සැලසුම් කිරීම",
+"සංවිධානය කිරීම",
+"පාලනය කිරීම",
+"අලෙවිකරණය"
+],
+
+1,
+
+"කාර්යයන්, සම්පත් හා වගකීම් ක්‍රමවත් ලෙස සකස් කිරීම සංවිධානය කිරීමේ කාර්යයට අදාළ වේ."
 ],
 
 
 [
-    "සංවිධානය කිරීමේදී ප්‍රධාන වශයෙන් සිදු කරන්නේ කුමක්ද?",
-    [
-        "කාර්යයන් හා සම්පත් නිසි ලෙස වෙන් කර සම්බන්ධ කිරීම",
-        "ව්‍යාපාරය වසා දැමීම",
-        "භාණ්ඩ පමණක් විකිණීම",
-        "බැංකු ගිණුම් පමණක් පවත්වාගෙන යාම"
-    ],
-    0,
-    "කාර්යයන් හා සම්පත් නිසි ලෙස වෙන් කර සම්බන්ධ කිරීම සංවිධානය කිරීමයි."
+"සේවකයන්ට උපදෙස් ලබාදී ඔවුන් අරමුණු කරා මෙහෙයවීම කුමන කළමණාකරණ කාර්යයට අදාළද?",
+
+[
+"සංවිධානය කිරීම",
+"පාලනය කිරීම",
+"මෙහෙයවීම",
+"ගිණුම්කරණය"
+],
+
+2,
+
+"සේවකයන්ට උපදෙස් ලබාදී ඔවුන්ගේ කාර්යයන් අරමුණු කරා මෙහෙයවීම මෙහෙයවීමේ කාර්යයයි."
 ],
 
 
 [
-    "කාර්ය මණ්ඩලය මෙහෙයවීමේදී කළමනාකරුවෙකුගේ වැදගත් කාර්යයක් වන්නේ කුමක්ද?",
-    [
-        "සේවකයන්ට මඟ පෙන්වීම හා ඔවුන් අරමුණු කරා මෙහෙයවීම",
-        "භාණ්ඩ පමණක් ගබඩා කිරීම",
-        "ව්‍යාපාරික ස්ථානය වසා දැමීම",
-        "ගනුදෙනුකරුවන්ට බදු අය කිරීම"
-    ],
-    0,
-    "සේවකයන්ට මඟ පෙන්වීම සහ ඔවුන් ආයතනික අරමුණු කරා මෙහෙයවීම කළමනාකරුවෙකුගේ වැදගත් කාර්යයකි."
+"සැලසුම් කළ කාර්යයන් සැබෑ ප්‍රතිඵල සමඟ සසඳා අවශ්‍ය නිවැරදි කිරීම් කිරීම කුමක්ද?",
+
+[
+"පාලනය කිරීම",
+"නිෂ්පාදනය",
+"වෙළෙඳාම",
+"ප්‍රවාහනය"
+],
+
+0,
+
+"සැලසුම් කළ ප්‍රතිඵල හා සැබෑ ප්‍රතිඵල සසඳා වෙනස්කම් හඳුනාගෙන අවශ්‍ය ක්‍රියාමාර්ග ගැනීම පාලනය කිරීමයි."
 ],
 
 
 [
-    "පාලනය කිරීම යනුවෙන් අදහස් කරන්නේ කුමක්ද?",
-    [
-        "සැලසුම් කළ ප්‍රතිඵල හා සැබෑ ප්‍රතිඵල සංසන්දනය කර අවශ්‍ය නිවැරදි කිරීම් කිරීම",
-        "සැලසුම් කිරීම කිසිසේත් නොකිරීම",
-        "භාණ්ඩ විකිණීම පමණි",
-        "සේවකයන් ඉවත් කිරීම පමණි"
-    ],
-    0,
-    "සැලසුම් කළ ප්‍රතිඵල හා සැබෑ ප්‍රතිඵල සංසන්දනය කර අවශ්‍ය නිවැරදි කිරීම් කිරීම පාලනය කිරීමයි."
+"කළමණාකරණ සම්පත් අතරට අයත් වන්නේ කුමක්ද?",
+
+[
+"මානව සම්පත්",
+"භාණ්ඩ පරිභෝජනය පමණි",
+"වෙළඳ දැන්වීම් පමණි",
+"බදු පමණි"
+],
+
+0,
+
+"සේවකයන් හා ඔවුන්ගේ දැනුම, කුසලතා සහ හැකියාවන් මානව සම්පත් ලෙස සැලකේ."
 ],
 
 
 [
-    "කළමණාකරණයට මානව සම්පත් වැදගත් වන්නේ ඇයි?",
-    [
-        "ව්‍යාපාරයේ කාර්යයන් ඉටු කිරීම සඳහා සේවකයන්ගේ දැනුම, කුසලතා හා හැකියාවන් අවශ්‍ය වන බැවිනි",
-        "සේවකයන්ට කිසිදු කාර්යයක් නොමැති බැවිනි",
-        "භාණ්ඩ පමණක් නිෂ්පාදනය කළ හැකි බැවිනි",
-        "බදු ගෙවීම වැළැක්විය හැකි බැවිනි"
-    ],
-    0,
-    "ව්‍යාපාරයේ කාර්යයන් සාර්ථකව ඉටු කිරීමට සේවකයන්ගේ දැනුම, කුසලතා සහ හැකියාවන් අවශ්‍ය වේ."
+"කළමණාකරණයේදී මානව සම්පත් වැදගත් වන්නේ ඇයි?",
+
+[
+"ආයතනයේ කාර්යයන් ඉටු කිරීමට මිනිස් ශ්‍රමය හා දැනුම අවශ්‍ය බැවින්",
+"භාණ්ඩ ගබඩා කිරීමට පමණි",
+"බැංකු ගිණුම් වසා දැමීමට පමණි",
+"බදු අහෝසි කිරීමට පමණි"
+],
+
+0,
+
+"ආයතනයේ අරමුණු ඉටු කිරීමට සේවකයන්ගේ දැනුම, කුසලතා හා ශ්‍රමය අවශ්‍ය වේ."
 ],
 
 
 [
-    "කළමනාකරුවෙකු විසින් කාර්යයක් සේවකයෙකුට පැවරීම හැඳින්වෙන්නේ කුමක් ලෙසද?",
-    [
-        "කාර්ය පැවරීම",
-        "භාණ්ඩ පරිභෝජනය",
-        "අපනයනය",
-        "ගබඩා කිරීම"
-    ],
-    0,
-    "කළමනාකරුවෙකු විසින් තමන්ට පැවරී ඇති කාර්යයක් සේවකයෙකුට පැවරීම කාර්ය පැවරීම ලෙස හැඳින්වේ."
+"කළමණාකරණයේදී කාර්යක්ෂමතාව යන්නෙන් අදහස් කරන්නේ කුමක්ද?",
+
+[
+"ලබාගත් සම්පත් නිසි ලෙස භාවිත කර අපේක්ෂිත ප්‍රතිඵල ලබා ගැනීම",
+"කිසිදු සැලසුමක් නොමැතිව කටයුතු කිරීම",
+"සම්පත් නාස්ති කිරීම",
+"වැඩ කටයුතු නතර කිරීම"
+],
+
+0,
+
+"කාර්යක්ෂමතාව යනු පවතින සම්පත් නාස්තිය අවම කරමින් ඒවා නිසි ලෙස භාවිත කිරීමයි."
 ],
 
 
 [
-    "ව්‍යාපාරයක අරමුණු තීරණය කිරීම වඩාත් සම්බන්ධ වන්නේ කුමන කළමණාකරණ කාර්යයටද?",
-    [
-        "සැලසුම් කිරීම",
-        "ප්‍රවාහනය",
-        "රක්ෂණය",
-        "සිල්ලර වෙළෙඳාම"
-    ],
-    0,
-    "ව්‍යාපාරයේ අරමුණු තීරණය කිරීම සැලසුම් කිරීමේ කාර්යයට සම්බන්ධ වේ."
+"කළමණාකරණයේදී ඵලදායීතාව යන්නෙන් ප්‍රධාන වශයෙන් අදහස් කරන්නේ කුමක්ද?",
+
+[
+"සංවිධානයේ අපේක්ෂිත අරමුණු හා ප්‍රතිඵල ලබා ගැනීම",
+"මුදල් තැන්පත් කිරීම පමණි",
+"භාණ්ඩ ගබඩා කිරීම පමණි",
+"සේවකයන් අඩු කිරීම පමණි"
+],
+
+0,
+
+"ඵලදායීතාව යනු සංවිධානය විසින් අපේක්ෂා කරන අරමුණු හා ප්‍රතිඵල සාක්ෂාත් කර ගැනීමයි."
 ],
 
 
 [
-    "හොඳ කළමණාකරණයක ප්‍රධාන ප්‍රතිඵලයක් වන්නේ කුමක්ද?",
-    [
-        "ලබාගත හැකි සම්පත් කාර්යක්ෂම හා ඵලදායී ලෙස භාවිත කර අරමුණු ඉටු කිරීම",
-        "සම්පත් කිසිදු සැලසුමකින් තොරව භාවිත කිරීම",
-        "ව්‍යාපාරික කටයුතු නතර කිරීම",
-        "භාණ්ඩ පමණක් ගබඩා කිරීම"
-    ],
-    0,
-    "හොඳ කළමණාකරණයකදී සම්පත් කාර්යක්ෂම හා ඵලදායී ලෙස භාවිත කර ආයතනයේ අරමුණු ඉටු කරයි."
+"කළමණාකරණයේ කාර්යයන් එකිනෙකට සම්බන්ධ වන්නේ කෙසේද?",
+
+[
+"සැලසුම් කිරීම, සංවිධානය කිරීම, මෙහෙයවීම හා පාලනය කිරීම එකිනෙකට සම්බන්ධව ක්‍රියා කරයි",
+"සෑම කාර්යයක්ම සම්පූර්ණයෙන්ම වෙන වෙනම සිදු කරයි",
+"පාලනය කිරීම පමණක් සිදු කරයි",
+"සංවිධානය කිරීම අවශ්‍ය නොවේ"
+],
+
+0,
+
+"කළමණාකරණයේ මූලික කාර්යයන් එකිනෙකට සම්බන්ධව ක්‍රියා කරමින් සංවිධානයේ අරමුණු සාක්ෂාත් කිරීමට උපකාරී වේ."
 ]
 
 ];
 
 
-/* =====================================================
-   QUIZ SETTINGS
-===================================================== */
+// =====================================================
+// QUIZ SETTINGS
+// =====================================================
 
 const QUIZ_TIME = 10 * 60;
 
 let current = 0;
 
 let answers =
-    Array(lesson2Questions.length).fill(null);
+    Array(questions.length).fill(null);
 
 let finished = false;
 
@@ -990,30 +573,27 @@ let quizStartedAt = null;
 let quizFinishedAt = null;
 
 
-/* =====================================================
-   TIMER
-===================================================== */
+// =====================================================
+// TIMER
+// =====================================================
 
-function startTimer() {
+function startTimer(){
 
-    if (timer !== null) {
+    if(timer !== null){
         return;
     }
-
 
     quizStartedAt =
         new Date().toISOString();
 
-
-    timer = setInterval(
-        function () {
+    timer =
+        setInterval(function(){
 
             timeLeft--;
 
             updateTimer();
 
-
-            if (timeLeft <= 0) {
+            if(timeLeft <= 0){
 
                 clearInterval(timer);
 
@@ -1027,38 +607,31 @@ function startTimer() {
 
             }
 
-        },
-        1000
-    );
-
+        },1000);
 
     updateTimer();
 
 }
 
 
-function updateTimer() {
+function updateTimer(){
 
     const timerElement =
         document.getElementById(
             "quizTimer"
         );
 
-
-    if (!timerElement) {
+    if(!timerElement){
         return;
     }
-
 
     let minutes =
         Math.floor(
             timeLeft / 60
         );
 
-
     let seconds =
         timeLeft % 60;
-
 
     minutes =
         String(minutes).padStart(
@@ -1066,13 +639,11 @@ function updateTimer() {
             "0"
         );
 
-
     seconds =
         String(seconds).padStart(
             2,
             "0"
         );
-
 
     timerElement.textContent =
         "⏱️ ඉතිරි කාලය: " +
@@ -1081,7 +652,7 @@ function updateTimer() {
         seconds;
 
 
-    if (timeLeft <= 60) {
+    if(timeLeft <= 60){
 
         timerElement.style.color =
             "#ff4444";
@@ -1092,7 +663,7 @@ function updateTimer() {
         timerElement.style.background =
             "#2b1010";
 
-    } else {
+    }else{
 
         timerElement.style.color =
             "#d4af37";
@@ -1108,15 +679,80 @@ function updateTimer() {
 }
 
 
-/* =====================================================
-   RENDER
-===================================================== */
+// =====================================================
+// TIMER HTML
+// =====================================================
 
-function render() {
+function createTimer(){
+
+    const hero =
+        document.querySelector(
+            ".hero"
+        );
+
+    if(!hero){
+        return;
+    }
+
+    const oldTimer =
+        document.getElementById(
+            "quizTimer"
+        );
+
+    if(oldTimer){
+        return;
+    }
+
+    const timerBox =
+        document.createElement(
+            "div"
+        );
+
+    timerBox.id =
+        "quizTimer";
+
+    timerBox.style.marginTop =
+        "18px";
+
+    timerBox.style.padding =
+        "12px 20px";
+
+    timerBox.style.border =
+        "2px solid #d4af37";
+
+    timerBox.style.borderRadius =
+        "30px";
+
+    timerBox.style.display =
+        "inline-block";
+
+    timerBox.style.background =
+        "#211d0e";
+
+    timerBox.style.color =
+        "#d4af37";
+
+    timerBox.style.fontWeight =
+        "bold";
+
+    timerBox.style.fontSize =
+        "18px";
+
+    hero.appendChild(
+        timerBox
+    );
+
+}
+
+
+// =====================================================
+// RENDER QUESTION
+// =====================================================
+
+function render(){
 
     const q =
-        lesson2Questions[current];
-
+        questions[current];
 
     const box =
         document.getElementById(
@@ -1132,49 +768,41 @@ function render() {
         'ප්‍රශ්නය ' +
         (current + 1) +
         ' / ' +
-        lesson2Questions.length +
+        questions.length +
 
         '</div>' +
 
         '<h2>' +
-
         q[0] +
-
         '</h2>';
 
 
     q[1].forEach(
-        function (option, i) {
+        function(o,i){
 
             h +=
 
-                '<button ' +
-
-                'type="button" ' +
-
-                'class="option ' +
+                '<button class="option ' +
 
                 (
                     answers[current] === i
-                    ? 'selected'
-                    : ''
+                    ?
+                    'selected'
+                    :
+                    ''
                 ) +
 
-                '" ' +
-
-                'onclick="selectOption(' +
+                '" onclick="selectOption(' +
                 i +
-                ')"' +
-
-                '>' +
+                ')">' +
 
                 String.fromCharCode(
-                    65 + i
+                    65+i
                 ) +
 
                 '. ' +
 
-                option +
+                o +
 
                 '</button>';
 
@@ -1186,28 +814,23 @@ function render() {
 
         '<div class="note">' +
 
-        '💡 ඉඟිය: ප්‍රශ්නයේ අර්ථය සහ පාඩමේ අදාළ කළමණාකරණ සංකල්පය සසඳන්න.' +
+        'ඉඟිය: ප්‍රශ්නයේ අර්ථය සහ පාඩමේ අදාළ සංකල්පය සසඳන්න.' +
 
         '</div>' +
-
 
         '<div class="controls">';
 
 
     h +=
 
-        '<button ' +
-
-        'type="button" ' +
-
-        'class="prev" ' +
-
-        'onclick="previous()" ' +
+        '<button class="prev" onclick="previous()" ' +
 
         (
             current === 0
-            ? 'disabled'
-            : ''
+            ?
+            'disabled'
+            :
+            ''
         ) +
 
         '>' +
@@ -1217,40 +840,24 @@ function render() {
         '</button>';
 
 
-    if (
+    if(
         current <
-        lesson2Questions.length - 1
-    ) {
+        questions.length - 1
+    ){
 
         h +=
 
-            '<button ' +
-
-            'type="button" ' +
-
-            'class="next" ' +
-
-            'onclick="next()"' +
-
-            '>' +
+            '<button class="next" onclick="next()">' +
 
             'ඊළඟ →' +
 
             '</button>';
 
-    } else {
+    }else{
 
         h +=
 
-            '<button ' +
-
-            'type="button" ' +
-
-            'class="submit" ' +
-
-            'onclick="submitQuiz()"' +
-
-            '>' +
+            '<button class="submit" onclick="submitQuiz()">' +
 
             'Quiz Submit ✓' +
 
@@ -1263,7 +870,8 @@ function render() {
         '</div></div>';
 
 
-    box.innerHTML = h;
+    box.innerHTML =
+        h;
 
 
     document.getElementById(
@@ -1272,7 +880,7 @@ function render() {
 
         (
             (current + 1) /
-            lesson2Questions.length *
+            questions.length *
             100
         ) +
 
@@ -1283,13 +891,10 @@ function render() {
         "progressText"
     ).textContent =
 
-        "ප්‍රශ්නය " +
-
+        'ප්‍රශ්නය ' +
         (current + 1) +
-
-        " / " +
-
-        lesson2Questions.length;
+        ' / ' +
+        questions.length;
 
 
     updateTimer();
@@ -1297,28 +902,29 @@ function render() {
 }
 
 
-/* =====================================================
-   SELECT OPTION
-===================================================== */
+// =====================================================
+// SELECT ANSWER
+// =====================================================
 
-function selectOption(i) {
+function selectOption(i){
 
-    answers[current] = i;
+    answers[current] =
+        i;
 
     render();
 
 }
 
 
-/* =====================================================
-   NEXT
-===================================================== */
+// =====================================================
+// NEXT
+// =====================================================
 
-function next() {
+function next(){
 
-    if (
+    if(
         answers[current] === null
-    ) {
+    ){
 
         alert(
             "කරුණාකර පිළිතුරක් තෝරන්න."
@@ -1327,28 +933,22 @@ function next() {
         return;
     }
 
+    current++;
 
-    if (
-        current <
-        lesson2Questions.length - 1
-    ) {
-
-        current++;
-
-        render();
-
-    }
+    render();
 
 }
 
 
-/* =====================================================
-   PREVIOUS
-===================================================== */
+// =====================================================
+// PREVIOUS
+// =====================================================
 
-function previous() {
+function previous(){
 
-    if (current > 0) {
+    if(
+        current > 0
+    ){
 
         current--;
 
@@ -1359,24 +959,25 @@ function previous() {
 }
 
 
-/* =====================================================
-   SUBMIT
-===================================================== */
+// =====================================================
+// SUBMIT
+// =====================================================
 
-function submitQuiz() {
+function submitQuiz(){
 
-    if (finished) {
+    if(finished){
         return;
     }
 
-
-    if (
+    if(
         answers.some(
-            function (answer) {
-                return answer === null;
+            function(a){
+
+                return a === null;
+
             }
         )
-    ) {
+    ){
 
         alert(
             "සියලුම ප්‍රශ්නවලට පිළිතුරු ලබාදී පසුව Submit කරන්න."
@@ -1385,38 +986,38 @@ function submitQuiz() {
         return;
     }
 
-
     finishQuiz(false);
 
 }
 
 
-/* =====================================================
-   AUTO SUBMIT
-===================================================== */
+// =====================================================
+// AUTO SUBMIT
+// =====================================================
 
-function autoSubmitQuiz() {
+function autoSubmitQuiz(){
 
-    if (finished) {
+    if(finished){
         return;
     }
-
 
     finishQuiz(true);
 
 }
 
 
-/* =====================================================
-   FINISH QUIZ
-===================================================== */
+// =====================================================
+// FINISH QUIZ
+// =====================================================
 
-function finishQuiz(timeExpired) {
+function finishQuiz(
+    timeExpired
+){
 
     finished = true;
 
 
-    if (timer !== null) {
+    if(timer !== null){
 
         clearInterval(timer);
 
@@ -1432,12 +1033,12 @@ function finishQuiz(timeExpired) {
     let score = 0;
 
 
-    lesson2Questions.forEach(
-        function (q, i) {
+    questions.forEach(
+        function(q,i){
 
-            if (
+            if(
                 answers[i] === q[2]
-            ) {
+            ){
 
                 score++;
 
@@ -1451,7 +1052,7 @@ function finishQuiz(timeExpired) {
         Math.round(
             (
                 score /
-                lesson2Questions.length
+                questions.length
             ) * 100
         );
 
@@ -1476,18 +1077,26 @@ function finishQuiz(timeExpired) {
 
     const timeUsedText =
 
-        String(minutesUsed)
-        .padStart(2, "0") +
+        String(
+            minutesUsed
+        ).padStart(
+            2,
+            "0"
+        ) +
 
         ":" +
 
-        String(secondsUsed)
-        .padStart(2, "0");
+        String(
+            secondsUsed
+        ).padStart(
+            2,
+            "0"
+        );
 
 
-    /* =========================================
-       RESULT
-    ========================================= */
+    // =================================================
+    // RESULT DISPLAY
+    // =================================================
 
     document.getElementById(
         "quizBox"
@@ -1507,40 +1116,42 @@ function finishQuiz(timeExpired) {
 
         score +
         " / " +
-        lesson2Questions.length;
+        questions.length;
 
 
-    let resultMessage;
+    let resultMessage = "";
 
 
-    if (timeExpired) {
+    if(timeExpired){
 
         resultMessage =
             "⏰ කාලය අවසන් වීම නිසා Quiz එක ස්වයංක්‍රීයව Submit කරන ලදී.";
 
     }
 
-    else if (
+    else if(
         score ===
-        lesson2Questions.length
-    ) {
+        questions.length
+    ){
 
         resultMessage =
-            "විශිෂ්ටයි! පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත. 🎉";
+            "විශිෂ්ටයි! පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත.";
 
     }
 
-    else if (score >= 7) {
+    else if(
+        score >= 7
+    ){
 
         resultMessage =
-            "හොඳයි! තව ටිකක් පුනරීක්ෂණය කරන්න. 👍";
+            "හොඳයි! තව ටිකක් පුනරීක්ෂණය කරන්න.";
 
     }
 
-    else {
+    else{
 
         resultMessage =
-            "පාඩම නැවත අධ්‍යයනය කර Quiz එක නැවත කරන්න. 💪";
+            "පාඩම නැවත අධ්‍යයනය කර Quiz එක නැවත කරන්න.";
 
     }
 
@@ -1556,7 +1167,7 @@ function finishQuiz(timeExpired) {
         "ලකුණු: " +
         score +
         " / " +
-        lesson2Questions.length +
+        questions.length +
 
         "<br>" +
 
@@ -1570,61 +1181,52 @@ function finishQuiz(timeExpired) {
         timeUsedText;
 
 
-    /* =========================================
-       REVIEW
-    ========================================= */
+    // =================================================
+    // REVIEW
+    // =================================================
 
-    let reviewHTML = "";
+    let r = "";
 
 
-    lesson2Questions.forEach(
-        function (q, i) {
+    questions.forEach(
+        function(q,i){
 
-            reviewHTML +=
+            r +=
 
                 '<div class="review-item">' +
 
                 '<strong>' +
 
-                (i + 1) +
+                (i+1) +
 
-                ". " +
+                '. ' +
 
                 q[0] +
 
                 '</strong><br>';
 
 
-            if (
+            if(
                 answers[i] === q[2]
-            ) {
+            ){
 
-                reviewHTML +=
+                r +=
+                    "✓ ඔබගේ පිළිතුර නිවැරදියි.";
 
-                    '<span class="correct-answer">' +
+            }else{
 
-                    "✓ ඔබගේ පිළිතුර නිවැරදියි." +
-
-                    "</span>";
-
-            }
-
-            else {
-
-                reviewHTML +=
-
-                    '<span class="wrong-answer">' +
+                r +=
 
                     "✗ නිවැරදි පිළිතුර: " +
 
                     q[1][q[2]] +
 
-                    "</span>";
+                    ".";
 
             }
 
 
-            reviewHTML +=
+            r +=
 
                 "<br>" +
 
@@ -1639,12 +1241,12 @@ function finishQuiz(timeExpired) {
     document.getElementById(
         "review"
     ).innerHTML =
-        reviewHTML;
+        r;
 
 
-    /* =========================================
-       SAVE LESSON 2 RESULT
-    ========================================= */
+    // =================================================
+    // SAVE QUIZ RESULT
+    // =================================================
 
     const quizResult = {
 
@@ -1656,7 +1258,7 @@ function finishQuiz(timeExpired) {
             "කළමණාකරණය",
 
         totalQuestions:
-            lesson2Questions.length,
+            questions.length,
 
         score:
             score,
@@ -1688,6 +1290,8 @@ function finishQuiz(timeExpired) {
     };
 
 
+    // Main quiz result
+
     localStorage.setItem(
 
         "grade11_lesson2_quiz_result",
@@ -1698,6 +1302,8 @@ function finishQuiz(timeExpired) {
 
     );
 
+
+    // Existing compatibility keys
 
     localStorage.setItem(
 
@@ -1726,125 +1332,38 @@ function finishQuiz(timeExpired) {
     );
 
 
-    /* =========================================
-       EXISTING GRADE 11 SYSTEM
-    ========================================= */
+    // =================================================
+    // GRADE 11 DASHBOARD DATA
+    // =================================================
 
-    localStorage.setItem(
+    let grade11Data = {
 
-        "uez_grade11_last_score",
+        lesson2: {
 
-        percentage
+            completed:
+                true,
 
-    );
+            quizCompleted:
+                true,
 
+            score:
+                score,
 
-    const oldCount =
+            percentage:
+                percentage,
 
-        Number(
+            timeUsed:
+                timeUsed,
 
-            localStorage.getItem(
+            completedAt:
+                quizFinishedAt
 
-                "uez_grade11_quiz_count"
+        }
 
-            )
-
-        ) || 0;
-
-
-    localStorage.setItem(
-
-        "uez_grade11_quiz_count",
-
-        oldCount + 1
-
-    );
+    };
 
 
-    localStorage.setItem(
-
-        "uez_grade11_lesson2_score",
-
-        percentage
-
-    );
-
-
-    /* =========================================
-       COMPLETED LESSONS
-    ========================================= */
-
-    let completedLessons = [];
-
-
-    try {
-
-        completedLessons =
-
-            JSON.parse(
-
-                localStorage.getItem(
-
-                    "uez_grade11_completed_lessons"
-
-                ) || "[]"
-
-            );
-
-
-    }
-
-    catch (error) {
-
-        completedLessons = [];
-
-    }
-
-
-    if (
-        !Array.isArray(
-            completedLessons
-        )
-    ) {
-
-        completedLessons = [];
-
-    }
-
-
-    const lessonId =
-        "lesson2";
-
-
-    if (
-        !completedLessons.includes(
-            lessonId
-        )
-    ) {
-
-        completedLessons.push(
-            lessonId
-        );
-
-    }
-
-
-    localStorage.setItem(
-
-        "uez_grade11_completed_lessons",
-
-        JSON.stringify(
-            completedLessons
-        )
-
-    );
-
-
-    /* =========================================
-       GRADE 11 PROGRESS
-    ========================================= */
-
-    try {
+    try{
 
         const oldData =
 
@@ -1852,27 +1371,14 @@ function finishQuiz(timeExpired) {
 
                 localStorage.getItem(
                     "grade11Progress"
-                ) || "{}"
+                ) ||
+                "{}"
 
             );
 
 
-        oldData.lesson2 = {
-
-            completed: true,
-
-            quizCompleted: true,
-
-            score: score,
-
-            percentage: percentage,
-
-            timeUsed: timeUsed,
-
-            completedAt:
-                quizFinishedAt
-
-        };
+        oldData.lesson2 =
+            grade11Data.lesson2;
 
 
         localStorage.setItem(
@@ -1885,28 +1391,32 @@ function finishQuiz(timeExpired) {
 
         );
 
-    }
 
-    catch (error) {
+    }catch(error){
 
-        console.log(
-            "Grade 11 progress save error:",
-            error
+        localStorage.setItem(
+
+            "grade11Progress",
+
+            JSON.stringify(
+                grade11Data
+            )
+
         );
 
     }
 
 
-    /* =========================================
-       GRADE 11 COMPLETED LESSONS
-    ========================================= */
+    // =================================================
+    // GENERAL LESSON COMPLETION
+    // =================================================
 
-    let grade11Completed = {};
+    let completedLessons = {};
 
 
-    try {
+    try{
 
-        grade11Completed =
+        completedLessons =
 
             JSON.parse(
 
@@ -1914,20 +1424,20 @@ function finishQuiz(timeExpired) {
 
                     "grade11CompletedLessons"
 
-                ) || "{}"
+                ) ||
+                "{}"
 
             );
 
-    }
+    }catch(error){
 
-    catch (error) {
-
-        grade11Completed = {};
+        completedLessons = {};
 
     }
 
 
-    grade11Completed["2"] = true;
+    completedLessons["2"] =
+        true;
 
 
     localStorage.setItem(
@@ -1935,7 +1445,7 @@ function finishQuiz(timeExpired) {
         "grade11CompletedLessons",
 
         JSON.stringify(
-            grade11Completed
+            completedLessons
         )
 
     );
@@ -1943,13 +1453,13 @@ function finishQuiz(timeExpired) {
 }
 
 
-/* =====================================================
-   RESTART
-===================================================== */
+// =====================================================
+// RESTART
+// =====================================================
 
-function restartQuiz() {
+function restartQuiz(){
 
-    if (timer !== null) {
+    if(timer !== null){
 
         clearInterval(timer);
 
@@ -1963,7 +1473,7 @@ function restartQuiz() {
 
     answers =
         Array(
-            lesson2Questions.length
+            questions.length
         ).fill(null);
 
 
@@ -1974,9 +1484,12 @@ function restartQuiz() {
         QUIZ_TIME;
 
 
-    quizStartedAt = null;
+    quizStartedAt =
+        null;
 
-    quizFinishedAt = null;
+
+    quizFinishedAt =
+        null;
 
 
     document.getElementById(
@@ -1998,11 +1511,11 @@ function restartQuiz() {
 }
 
 
-/* =====================================================
-   COMPLETE QUIZ
-===================================================== */
+// =====================================================
+// COMPLETE QUIZ
+// =====================================================
 
-function completeQuiz() {
+function completeQuiz(){
 
     const result =
 
@@ -2013,10 +1526,12 @@ function completeQuiz() {
         );
 
 
-    if (!result) {
+    if(!result){
 
         alert(
+
             "කරුණාකර පළමුව Quiz එක සම්පූර්ණ කරන්න."
+
         );
 
         return;
@@ -2043,15 +1558,19 @@ function completeQuiz() {
 
 
     alert(
+
         "✓ Grade 11 Lesson 2 Quiz සම්පූර්ණ කරන ලදී!"
+
     );
 
 }
 
 
-/* =====================================================
-   PAGE START
-===================================================== */
+// =====================================================
+// PAGE START
+// =====================================================
+
+createTimer();
 
 render();
 
@@ -2059,27 +1578,5 @@ startTimer();
 
 </script>
 
-
-<!--
-=======================================================
-IMPORTANT
-
-දැනට තිබෙන:
-
-assets/js/grade11-quiz.js
-
-file එක මෙතැන load නොකරන ලදී.
-
-හේතුව:
-Lesson 2 සඳහා මෙහි ඇති quiz engine එක
-Lesson 1 එකේ behaviour එකට match කර ඇත.
-
-එම නිසා existing grade11-quiz.js
-වෙනස් වීමක් සිදු නොවේ.
-
-=======================================================
--->
-
 </body>
-
 </html>
