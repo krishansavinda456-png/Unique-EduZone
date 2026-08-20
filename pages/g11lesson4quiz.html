@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 11 - Lesson 4 Quiz | Unique EduZone</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.7
+}
+
+header{
+    background:#111;
+    border-bottom:2px solid #d4af37;
+    padding:16px 6%;
+    position:sticky;
+    top:0;
+    z-index:10
+}
+
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px
+}
+
+.logo img{
+    width:52px;
+    height:52px;
+    object-fit:contain
+}
+
+.logo-text{
+    color:#d4af37;
+    font-size:21px;
+    font-weight:bold
+}
+
+.back-btn{
+    color:#080808;
+    background:#d4af37;
+    text-decoration:none;
+    padding:7px 17px;
+    border-radius:25px;
+    font-weight:bold
+}
+
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:30px auto 70px
+}
+
+.hero,.quiz-box,.result-box{
+    background:#111;
+    border:1px solid #d4af37;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:24px
+}
+
+.hero{
+    text-align:center;
+    background:linear-gradient(135deg,#111,#1d1d1d)
+}
+
+.hero h1{
+    color:#d4af37;
+    font-size:31px;
+    margin-bottom:8px
+}
+
+.hero p{
+    color:#ddd
+}
+
+.progress{
+    height:12px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:16px
+}
+
+.progress-fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#b8860b,#ffd700);
+    transition:.3s
+}
+
+.question{
+    display:none
+}
+
+.question.active{
+    display:block
+}
+
+.question-number{
+    color:#d4af37;
+    font-weight:bold;
+    margin-bottom:8px
+}
+
+.question h2{
+    font-size:21px;
+    margin-bottom:18px
+}
+
+.option{
+    display:block;
+    width:100%;
+    text-align:left;
+    background:#191919;
+    color:#f5f5f5;
+    border:1px solid #3b3b3b;
+    border-radius:10px;
+    padding:12px 15px;
+    margin:9px 0;
+    cursor:pointer;
+    font-size:16px
+}
+
+.option:hover,
+.option.selected{
+    border-color:#d4af37;
+    background:#2a2410
+}
+
+.controls{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:24px
+}
+
+button{
+    border:0;
+    border-radius:25px;
+    padding:11px 24px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px
+}
+
+.next,
+.submit{
+    background:#d4af37;
+    color:#080808
+}
+
+.prev{
+    background:#333;
+    color:#fff
+}
+
+button:disabled{
+    opacity:.4;
+    cursor:not-allowed
+}
+
+.note{
+    margin-top:16px;
+    background:#211d0e;
+    border-left:4px solid #d4af37;
+    padding:13px;
+    border-radius:8px
+}
+
+.result-box{
+    display:none;
+    text-align:center
+}
+
+.score{
+    font-size:42px;
+    color:#d4af37;
+    font-weight:bold
+}
+
+.result-box h2{
+    color:#d4af37;
+    margin-bottom:10px
+}
+
+.result-box button{
+    margin:7px;
+    background:#d4af37;
+    color:#080808
+}
+
+.review{
+    margin-top:20px;
+    text-align:left
+}
+
+.review-item{
+    padding:13px;
+    border-bottom:1px solid #333
+}
+
+.review-item strong{
+    color:#d4af37
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#aaa;
+    border-top:1px solid #333
+}
+
+@media(max-width:650px){
+
+    .hero h1{
+        font-size:25px
+    }
+
+    .quiz-box{
+        padding:19px
+    }
+
+    .question h2{
+        font-size:19px
+    }
+
+    .controls{
+        flex-direction:column
+    }
+
+    .controls button{
+        width:100%
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+
+<img
+src="../assets/logo.png"
+alt="Unique EduZone Logo">
+
+<div class="logo-text">
+Unique EduZone
+</div>
+
+</div>
+
+<a
+href="../index.html"
+class="back-btn">
+
+← Home
+
+</a>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<section class="hero">
+
+<h1>
+11 ශ්‍රේණිය – පාඩම 04 Quiz
+</h1>
+
+<p>
+ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන
+</p>
+
+<p
+style="margin-top:8px;color:#aaa">
+
+ප්‍රශ්න 10 • එක් ප්‍රශ්නයකට එක් නිවැරදි පිළිතුරක්
+
+</p>
+
+<div class="progress">
+
+<div
+class="progress-fill"
+id="progressFill">
+</div>
+
+</div>
+
+<p
+id="progressText"
+style="margin-top:7px;color:#d4af37;font-weight:bold">
+
+ප්‍රශ්නය 1 / 10
+
+</p>
+
+</section>
+
+
+<section
+class="quiz-box"
+id="quizBox">
+</section>
+
+
+<section
+class="result-box"
+id="resultBox">
+
+<h2>
+Quiz ප්‍රතිඵලය
+</h2>
+
+<div
+class="score"
+id="score">
+</div>
+
+<p
+id="resultMessage">
+</p>
+
+<div
+class="review"
+id="review">
+</div>
+
+<button
+onclick="restartQuiz()">
+
+නැවත Quiz කරන්න
+
+</button>
+
+<button
+onclick="completeQuiz()">
+
+✓ Quiz Complete
+
+</button>
+
+</section>
+
+</div>
+
+
+<footer>
+
+© 2026 Unique EduZone |
+Grade 11 Business & Accounting Studies
+
+</footer>
+
+
+<script>
+
+/*
+ * =========================================
+ * LESSON 04 QUIZ DATA
+ * ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන
+ * =========================================
+ */
+
+const questions = [
+
+[
+"ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන සකස් කිරීමේ ප්‍රධාන අරමුණ කුමක්ද?",
+
+[
+"නිෂ්පාදන පමණක් ගණනය කිරීම",
+"ව්‍යාපාරයේ මෙහෙයුම් ප්‍රතිඵලය හා නිශ්චිත දිනයක මූල්‍ය තත්ත්වය පෙන්වීම",
+"සේවකයන්ගේ පැමිණීම පරීක්ෂා කිරීම",
+"භාණ්ඩවල වෙළඳ දැන්වීම් සකස් කිරීම"
+],
+
+1,
+
+"මූල්‍ය ප්‍රකාශන මගින් ගිණුම් කාලපරිච්ඡේදයක මෙහෙයුම් ප්‍රතිඵලයත් නිශ්චිත දිනයක මූල්‍ය තත්ත්වයත් ඉදිරිපත් කරයි."
+],
+
+
+[
+"පහත දැක්වෙන ගිණුම්කරණ ක්‍රියාවලියේ නිවැරදි අනුපිළිවෙල කුමක්ද?",
+
+[
+"ලෙජර් → ගනුදෙනු → මූල්‍ය ප්‍රකාශන → ජර්නල්",
+"මූල්‍ය ප්‍රකාශන → ගනුදෙනු → ලෙජර් → ශේෂ පිරික්සුම",
+"ගනුදෙනු → මූලික සටහන් → ලෙජර් → ශේෂ පිරික්සුම → ගැලපුම් → මූල්‍ය ප්‍රකාශන",
+"ශේෂ පිරික්සුම → ගනුදෙනු → ජර්නල් → ලෙජර්"
+],
+
+2,
+
+"ගනුදෙනු මුලින් මූලික සටහන්වලට ඇතුළත් කර, ලෙජර් වෙත පිටපත් කර, ශේෂ පිරික්සුම හා අවශ්‍ය ගැලපුම් පසුව මූල්‍ය ප්‍රකාශන සකස් කරයි."
+],
+
+
+[
+"ව්‍යාපාරයක අත්පිට විකුණුම් රු. 58,000ක් සහ ණයට විකුණුම් රු. 76,000ක් නම් මුළු විකුණුම් ආදායම කොපමණද?",
+
+[
+"රු. 134,000",
+"රු. 124,000",
+"රු. 138,000",
+"රු. 132,000"
+],
+
+0,
+
+"58,000 + 76,000 = 134,000 බැවින් මුළු විකුණුම් ආදායම රු. 134,000කි."
+],
+
+
+[
+"ආරම්භක තොගය රු. 15,000, ගැනුම් රු. 82,000, ගෙන ඒමේ වියදම් රු. 15,000 සහ අවසාන තොගය රු. 22,000 නම් විකුණුම් පිරිවැය කොපමණද?",
+
+[
+"රු. 90,000",
+"රු. 112,000",
+"රු. 105,000",
+"රු. 100,000"
+],
+
+0,
+
+"විකුණුම් පිරිවැය = 15,000 + 82,000 + 15,000 − 22,000 = රු. 90,000."
+],
+
+
+[
+"විකුණුම් ආදායම රු. 134,000ක් සහ විකුණුම් පිරිවැය රු. 90,000ක් නම් දළ ලාභය කොපමණද?",
+
+[
+"රු. 34,000",
+"රු. 54,000",
+"රු. 44,000",
+"රු. 224,000"
+],
+
+2,
+
+"දළ ලාභය = විකුණුම් ආදායම − විකුණුම් පිරිවැය = 134,000 − 90,000 = රු. 44,000."
+],
+
+
+[
+"විකුණුම් ආදායම රු. 134,000ක් වන අතර විකුණුම් පිරිවැය රු. 140,000ක් නම් ඇතිවන්නේ කුමක්ද?",
+
+[
+"රු. 6,000ක දළ ලාභයක්",
+"රු. 6,000ක දළ අලාභයක්",
+"රු. 274,000ක දළ ලාභයක්",
+"කිසිදු ලාභයක් හෝ අලාභයක් නොමැත"
+],
+
+1,
+
+"විකුණුම් පිරිවැය විකුණුම් ආදායමට වඩා රු. 6,000කින් වැඩි බැවින් රු. 6,000ක දළ අලාභයක් ඇතිවේ."
+],
+
+
+[
+"වත්කමක් යනු කුමක්ද?",
+
+[
+"අතීත ගනුදෙනු හේතුවෙන් ඇති වී අනාගත ආර්ථික ප්‍රතිලාභ ගෙන දිය හැකි ව්‍යාපාරය පාලනය කරන සම්පතක්",
+"ව්‍යාපාරය විසින් අනාගතයේ ගෙවිය යුතු සෑම මුදලක්ම",
+"හිමිකරුට පමණක් ලැබෙන ලාභය",
+"ව්‍යාපාරයේ සියලු වියදම්වල එකතුව"
+],
+
+0,
+
+"වත්කමක් යනු අතීත ගනුදෙනුවක ප්‍රතිඵලයක් ලෙස ව්‍යාපාරය පාලනය කරන සහ අනාගත ආර්ථික ප්‍රතිලාභ ගෙන දිය හැකි සම්පතකි."
+],
+
+
+[
+"ව්‍යාපාරයක මුළු වත්කම් රු. 801,000ක් සහ මුළු වගකීම් රු. 210,000ක් නම් හිමිකම කොපමණද?",
+
+[
+"රු. 1,011,000",
+"රු. 591,000",
+"රු. 610,000",
+"රු. 210,000"
+],
+
+1,
+
+"හිමිකම = වත්කම් − වගකීම් = 801,000 − 210,000 = රු. 591,000."
+],
+
+
+[
+"ගිණුම්කරණ සමීකරණයේ නිවැරදි සම්බන්ධතාවය කුමක්ද?",
+
+[
+"වත්කම් = හිමිකම + වගකීම්",
+"වත්කම් = ආදායම් − වියදම්",
+"හිමිකම = විකුණුම් + ගැනුම්",
+"වගකීම් = වත්කම් + හිමිකම"
+],
+
+0,
+
+"මූල්‍ය තත්ත්වය පරීක්ෂා කිරීමේ මූලික සමීකරණය වන්නේ වත්කම් = හිමිකම + වගකීම් යන්නයි."
+],
+
+
+[
+"පහත සඳහන් ඒවා අතරින් ජංගම වත්කමකට වඩාත් සුදුසු උදාහරණයක් කුමක්ද?",
+
+[
+"ගොඩනැගිල්ල",
+"ඉඩම",
+"කාර්යාල ගෘහභාණ්ඩ",
+"ණයගැතියෝ"
+],
+
+3,
+
+"ණයගැතියෝ සාපේක්ෂව කෙටි කාලයකදී මුදල් බවට පත් කළ හැකි බැවින් ජංගම වත්කම් යටතට අයත් වේ."
+]
+
+];
+
+
+// =====================================================
+// QUIZ SETTINGS
+// =====================================================
+
+const QUIZ_TIME = 10 * 60;
+
+let current = 0;
+
+let answers =
+    Array(questions.length).fill(null);
+
+let finished = false;
+
+let timeLeft = QUIZ_TIME;
+
+let timer = null;
+
+let quizStartedAt = null;
+
+let quizFinishedAt = null;
+
+
+// =====================================================
+// TIMER
+// =====================================================
+
+function startTimer(){
+
+    if(timer !== null){
+        return;
+    }
+
+    quizStartedAt =
+        new Date().toISOString();
+
+    timer =
+        setInterval(function(){
+
+            timeLeft--;
+
+            updateTimer();
+
+            if(timeLeft <= 0){
+
+                clearInterval(timer);
+
+                timer = null;
+
+                alert(
+                    "⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ."
+                );
+
+                autoSubmitQuiz();
+
+            }
+
+        },1000);
+
+    updateTimer();
+
+}
+
+
+function updateTimer(){
+
+    const timerElement =
+        document.getElementById(
+            "quizTimer"
+        );
+
+    if(!timerElement){
+        return;
+    }
+
+    let minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+    let seconds =
+        timeLeft % 60;
+
+    minutes =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
+
+    seconds =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
+
+    timerElement.textContent =
+        "⏱️ ඉතිරි කාලය: " +
+        minutes +
+        ":" +
+        seconds;
+
+
+    if(timeLeft <= 60){
+
+        timerElement.style.color =
+            "#ff4444";
+
+        timerElement.style.borderColor =
+            "#ff4444";
+
+        timerElement.style.background =
+            "#2b1010";
+
+    }else{
+
+        timerElement.style.color =
+            "#d4af37";
+
+        timerElement.style.borderColor =
+            "#d4af37";
+
+        timerElement.style.background =
+            "#211d0e";
+
+    }
+
+}
+
+
+// =====================================================
+// TIMER HTML
+// =====================================================
+
+function createTimer(){
+
+    const hero =
+        document.querySelector(
+            ".hero"
+        );
+
+    if(!hero){
+        return;
+    }
+
+    const oldTimer =
+        document.getElementById(
+            "quizTimer"
+        );
+
+    if(oldTimer){
+        return;
+    }
+
+    const timerBox =
+        document.createElement(
+            "div"
+        );
+
+    timerBox.id =
+        "quizTimer";
+
+    timerBox.style.marginTop =
+        "18px";
+
+    timerBox.style.padding =
+        "12px 20px";
+
+    timerBox.style.border =
+        "2px solid #d4af37";
+
+    timerBox.style.borderRadius =
+        "30px";
+
+    timerBox.style.display =
+        "inline-block";
+
+    timerBox.style.background =
+        "#211d0e";
+
+    timerBox.style.color =
+        "#d4af37";
+
+    timerBox.style.fontWeight =
+        "bold";
+
+    timerBox.style.fontSize =
+        "18px";
+
+    hero.appendChild(
+        timerBox
+    );
+
+}
+
+
+// =====================================================
+// RENDER QUESTION
+// =====================================================
+
+function render(){
+
+    const q =
+        questions[current];
+
+    const box =
+        document.getElementById(
+            "quizBox"
+        );
+
+
+    let h =
+        '<div class="question active">' +
+
+        '<div class="question-number">' +
+
+        'ප්‍රශ්නය ' +
+        (current + 1) +
+        ' / ' +
+        questions.length +
+
+        '</div>' +
+
+        '<h2>' +
+        q[0] +
+        '</h2>';
+
+
+    q[1].forEach(
+        function(o,i){
+
+            h +=
+
+                '<button class="option ' +
+
+                (
+                    answers[current] === i
+                    ?
+                    'selected'
+                    :
+                    ''
+                ) +
+
+                '" onclick="selectOption(' +
+                i +
+                ')">' +
+
+                String.fromCharCode(
+                    65+i
+                ) +
+
+                '. ' +
+
+                o +
+
+                '</button>';
+
+        }
+    );
+
+
+    h +=
+
+        '<div class="note">' +
+
+        'ඉඟිය: ප්‍රශ්නයේ දත්ත, ගිණුම්කරණ සංකල්පය සහ අදාළ ගණනය කිරීම සසඳන්න.' +
+
+        '</div>' +
+
+        '<div class="controls">';
+
+
+    h +=
+
+        '<button class="prev" onclick="previous()" ' +
+
+        (
+            current === 0
+            ?
+            'disabled'
+            :
+            ''
+        ) +
+
+        '>' +
+
+        '← පෙර' +
+
+        '</button>';
+
+
+    if(
+        current <
+        questions.length - 1
+    ){
+
+        h +=
+
+            '<button class="next" onclick="next()">' +
+
+            'ඊළඟ →' +
+
+            '</button>';
+
+    }else{
+
+        h +=
+
+            '<button class="submit" onclick="submitQuiz()">' +
+
+            'Quiz Submit ✓' +
+
+            '</button>';
+
+    }
+
+
+    h +=
+        '</div></div>';
+
+
+    box.innerHTML =
+        h;
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+
+        (
+            (current + 1) /
+            questions.length *
+            100
+        ) +
+
+        "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+
+        'ප්‍රශ්නය ' +
+        (current + 1) +
+        ' / ' +
+        questions.length;
+
+
+    updateTimer();
+
+}
+
+
+// =====================================================
+// SELECT ANSWER
+// =====================================================
+
+function selectOption(i){
+
+    answers[current] =
+        i;
+
+    render();
+
+}
+
+
+// =====================================================
+// NEXT
+// =====================================================
+
+function next(){
+
+    if(
+        answers[current] === null
+    ){
+
+        alert(
+            "කරුණාකර පිළිතුරක් තෝරන්න."
+        );
+
+        return;
+    }
+
+    current++;
+
+    render();
+
+}
+
+
+// =====================================================
+// PREVIOUS
+// =====================================================
+
+function previous(){
+
+    if(
+        current > 0
+    ){
+
+        current--;
+
+        render();
+
+    }
+
+}
+
+
+// =====================================================
+// SUBMIT
+// =====================================================
+
+function submitQuiz(){
+
+    if(finished){
+        return;
+    }
+
+    if(
+        answers.some(
+            function(a){
+
+                return a === null;
+
+            }
+        )
+    ){
+
+        alert(
+            "සියලුම ප්‍රශ්නවලට පිළිතුරු ලබාදී පසුව Submit කරන්න."
+        );
+
+        return;
+    }
+
+    finishQuiz(false);
+
+}
+
+
+// =====================================================
+// AUTO SUBMIT
+// =====================================================
+
+function autoSubmitQuiz(){
+
+    if(finished){
+        return;
+    }
+
+    finishQuiz(true);
+
+}
+
+
+// =====================================================
+// FINISH QUIZ
+// =====================================================
+
+function finishQuiz(
+    timeExpired
+){
+
+    finished = true;
+
+
+    if(timer !== null){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    }
+
+
+    quizFinishedAt =
+        new Date().toISOString();
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        function(q,i){
+
+            if(
+                answers[i] === q[2]
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) * 100
+        );
+
+
+    const timeUsed =
+        QUIZ_TIME -
+        Math.max(
+            timeLeft,
+            0
+        );
+
+
+    const minutesUsed =
+        Math.floor(
+            timeUsed / 60
+        );
+
+
+    const secondsUsed =
+        timeUsed % 60;
+
+
+    const timeUsedText =
+
+        String(
+            minutesUsed
+        ).padStart(
+            2,
+            "0"
+        ) +
+
+        ":" +
+
+        String(
+            secondsUsed
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    // =================================================
+    // RESULT DISPLAY
+    // =================================================
+
+    document.getElementById(
+        "quizBox"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "resultBox"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "score"
+    ).textContent =
+
+        score +
+        " / " +
+        questions.length;
+
+
+    let resultMessage = "";
+
+
+    if(timeExpired){
+
+        resultMessage =
+            "⏰ කාලය අවසන් වීම නිසා Quiz එක ස්වයංක්‍රීයව Submit කරන ලදී.";
+
+    }
+
+    else if(
+        score ===
+        questions.length
+    ){
+
+        resultMessage =
+            "විශිෂ්ටයි! මූල්‍ය ප්‍රකාශන පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත.";
+
+    }
+
+    else if(
+        score >= 7
+    ){
+
+        resultMessage =
+            "හොඳයි! මූල්‍ය ප්‍රකාශන හා ගිණුම්කරණ ගණනය කිරීම් තව ටිකක් පුනරීක්ෂණය කරන්න.";
+
+    }
+
+    else{
+
+        resultMessage =
+            "පාඩම නැවත අධ්‍යයනය කර Quiz එක නැවත කරන්න.";
+
+    }
+
+
+    document.getElementById(
+        "resultMessage"
+    ).innerHTML =
+
+        resultMessage +
+
+        "<br><br>" +
+
+        "ලකුණු: " +
+        score +
+        " / " +
+        questions.length +
+
+        "<br>" +
+
+        "ප්‍රතිශතය: " +
+        percentage +
+        "%" +
+
+        "<br>" +
+
+        "ගත වූ කාලය: " +
+        timeUsedText;
+
+
+    // =================================================
+    // REVIEW
+    // =================================================
+
+    let r = "";
+
+
+    questions.forEach(
+        function(q,i){
+
+            r +=
+
+                '<div class="review-item">' +
+
+                '<strong>' +
+
+                (i+1) +
+
+                '. ' +
+
+                q[0] +
+
+                '</strong><br>';
+
+
+            if(
+                answers[i] === q[2]
+            ){
+
+                r +=
+                    "✓ ඔබගේ පිළිතුර නිවැරදියි.";
+
+            }else{
+
+                r +=
+
+                    "✗ නිවැරදි පිළිතුර: " +
+
+                    q[1][q[2]] +
+
+                    ".";
+
+            }
+
+
+            r +=
+
+                "<br>" +
+
+                q[3] +
+
+                "</div>";
+
+        }
+    );
+
+
+    document.getElementById(
+        "review"
+    ).innerHTML =
+        r;
+
+
+    // =================================================
+    // SAVE QUIZ RESULT
+    // =================================================
+
+    const quizResult = {
+
+        grade: 11,
+
+        lesson: 4,
+
+        lessonTitle:
+            "ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+
+        totalQuestions:
+            questions.length,
+
+        score:
+            score,
+
+        percentage:
+            percentage,
+
+        timeLimit:
+            QUIZ_TIME,
+
+        timeUsed:
+            timeUsed,
+
+        timeUsedText:
+            timeUsedText,
+
+        completed:
+            true,
+
+        completedAt:
+            quizFinishedAt,
+
+        startedAt:
+            quizStartedAt,
+
+        timeExpired:
+            timeExpired
+
+    };
+
+
+    localStorage.setItem(
+
+        "grade11_lesson4_quiz_result",
+
+        JSON.stringify(
+            quizResult
+        )
+
+    );
+
+
+    // Existing compatibility keys
+
+    localStorage.setItem(
+
+        "grade11_lesson4_quiz_score",
+
+        score
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson4_quiz_percentage",
+
+        percentage
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson4_quiz_completed",
+
+        "true"
+
+    );
+
+
+    // =================================================
+    // GRADE 11 DASHBOARD DATA
+    // =================================================
+
+    let grade11Data = {
+
+        lesson4: {
+
+            completed:
+                true,
+
+            quizCompleted:
+                true,
+
+            score:
+                score,
+
+            percentage:
+                percentage,
+
+            timeUsed:
+                timeUsed,
+
+            completedAt:
+                quizFinishedAt
+
+        }
+
+    };
+
+
+    try{
+
+        const oldData =
+
+            JSON.parse(
+
+                localStorage.getItem(
+                    "grade11Progress"
+                ) ||
+                "{}"
+
+            );
+
+
+        oldData.lesson4 =
+            grade11Data.lesson4;
+
+
+        localStorage.setItem(
+
+            "grade11Progress",
+
+            JSON.stringify(
+                oldData
+            )
+
+        );
+
+
+    }catch(error){
+
+        localStorage.setItem(
+
+            "grade11Progress",
+
+            JSON.stringify(
+                grade11Data
+            )
+
+        );
+
+    }
+
+
+    // =================================================
+    // GENERAL LESSON COMPLETION
+    // =================================================
+
+    let completedLessons = {};
+
+
+    try{
+
+        completedLessons =
+
+            JSON.parse(
+
+                localStorage.getItem(
+
+                    "grade11CompletedLessons"
+
+                ) ||
+                "{}"
+
+            );
+
+    }catch(error){
+
+        completedLessons = {};
+
+    }
+
+
+    completedLessons["4"] =
+        true;
+
+
+    localStorage.setItem(
+
+        "grade11CompletedLessons",
+
+        JSON.stringify(
+            completedLessons
+        )
+
+    );
+
+}
+
+
+// =====================================================
+// RESTART
+// =====================================================
+
+function restartQuiz(){
+
+    if(timer !== null){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    }
+
+
+    current = 0;
+
+
+    answers =
+        Array(
+            questions.length
+        ).fill(null);
+
+
+    finished = false;
+
+
+    timeLeft =
+        QUIZ_TIME;
+
+
+    quizStartedAt =
+        null;
+
+
+    quizFinishedAt =
+        null;
+
+
+    document.getElementById(
+        "resultBox"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "quizBox"
+    ).style.display =
+        "block";
+
+
+    render();
+
+    startTimer();
+
+}
+
+
+// =====================================================
+// COMPLETE QUIZ
+// =====================================================
+
+function completeQuiz(){
+
+    const result =
+
+        localStorage.getItem(
+
+            "grade11_lesson4_quiz_result"
+
+        );
+
+
+    if(!result){
+
+        alert(
+
+            "කරුණාකර පළමුව Quiz එක සම්පූර්ණ කරන්න."
+
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+
+        "grade11_lesson4_quiz_completed",
+
+        "true"
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson4_completed",
+
+        "true"
+
+    );
+
+
+    alert(
+
+        "✓ Grade 11 Lesson 4 Quiz සම්පූර්ණ කරන ලදී!"
+
+    );
+
+}
+
+
+// =====================================================
+// PAGE START
+// =====================================================
+
+createTimer();
+
+render();
+
+startTimer();
+
+</script>
+
+</body>
+</html>
