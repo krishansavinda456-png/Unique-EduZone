@@ -1,0 +1,2846 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Grade 11 - Lesson 5 | Unique EduZone
+</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.8
+}
+
+header{
+    background:#111;
+    border-bottom:2px solid #d4af37;
+    padding:16px 6%;
+    position:sticky;
+    top:0;
+    z-index:10
+}
+
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px
+}
+
+.logo img{
+    width:52px;
+    height:52px;
+    object-fit:contain
+}
+
+.logo-text{
+    color:#d4af37;
+    font-size:21px;
+    font-weight:bold
+}
+
+.back-btn,
+.quiz-button{
+    color:#080808;
+    background:#d4af37;
+    text-decoration:none;
+    padding:7px 17px;
+    border-radius:25px;
+    font-weight:bold
+}
+
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:30px auto 70px
+}
+
+.hero,
+.lesson-box{
+    background:#111;
+    border:1px solid #d4af37;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:24px
+}
+
+.hero{
+    text-align:center;
+    background:linear-gradient(135deg,#111,#1d1d1d)
+}
+
+.hero h1{
+    color:#d4af37;
+    font-size:31px;
+    margin-bottom:8px
+}
+
+.hero p{
+    color:#ddd
+}
+
+.lesson-box h2{
+    color:#d4af37;
+    margin-bottom:10px
+}
+
+.lesson-box h3{
+    color:#ffd95a;
+    margin:20px 0 8px
+}
+
+.lesson-box ul{
+    padding-left:25px
+}
+
+.lesson-box li{
+    margin:6px 0
+}
+
+.highlight{
+    background:#211d0e;
+    border-left:4px solid #d4af37;
+    padding:14px;
+    border-radius:8px;
+    margin:14px 0
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px
+}
+
+.card{
+    background:#191919;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:15px
+}
+
+.card strong{
+    color:#d4af37
+}
+
+.formula{
+    background:#17130a;
+    border:1px solid #8c7424;
+    border-radius:10px;
+    padding:14px;
+    margin:12px 0;
+    font-weight:bold;
+    text-align:center;
+    color:#ffe58a
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px
+}
+
+th,
+td{
+    border:1px solid #444;
+    padding:9px;
+    text-align:left;
+    vertical-align:top
+}
+
+th{
+    background:#211d0e;
+    color:#d4af37
+}
+
+.amount{
+    text-align:right;
+    white-space:nowrap
+}
+
+.activity{
+    background:#141414;
+    border:1px solid #555;
+    border-left:4px solid #d4af37;
+    border-radius:12px;
+    padding:17px;
+    margin:18px 0
+}
+
+.activity h3{
+    color:#ffd95a;
+    margin:0 0 8px
+}
+
+.solution{
+    background:#0f1710;
+    border:1px solid #315b36;
+    border-radius:10px;
+    padding:14px;
+    margin-top:12px
+}
+
+.solution strong{
+    color:#8fe39a
+}
+
+.note{
+    color:#bbb;
+    font-size:14px
+}
+
+.quiz-button{
+    display:inline-block;
+    margin-top:15px;
+    padding:11px 24px
+}
+
+/* =====================================================
+   TEXTBOOK / EXAM STYLE ACCOUNTING AREA
+   ===================================================== */
+
+.textbook-page{
+
+    margin-top:24px;
+
+    background:#fff;
+
+    color:#174a72;
+
+    border:2px solid #4aa3df;
+
+    border-radius:4px;
+
+    padding:22px;
+
+    overflow-x:auto;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.25)
+}
+
+.textbook-title{
+
+    text-align:center;
+
+    color:#174a72;
+
+    font-weight:bold;
+
+    font-size:19px;
+
+    margin-bottom:5px
+}
+
+.textbook-subtitle{
+
+    text-align:center;
+
+    color:#174a72;
+
+    font-size:14px;
+
+    margin-bottom:16px
+}
+
+.exam-account{
+
+    width:100%;
+
+    min-width:760px;
+
+    border-collapse:collapse;
+
+    color:#174a72;
+
+    margin-top:10px;
+
+    background:#fff
+}
+
+.exam-account th,
+.exam-account td{
+
+    border:1px solid #65b4e5;
+
+    padding:8px 9px;
+
+    vertical-align:top;
+
+    background:#fff
+}
+
+.exam-account th{
+
+    text-align:center;
+
+    background:#f7fbfe;
+
+    color:#174a72
+}
+
+.exam-account .particular{
+
+    width:54%;
+
+    text-align:left
+}
+
+.exam-account .money{
+
+    width:23%;
+
+    text-align:right;
+
+    white-space:nowrap
+}
+
+.exam-account .total-row td{
+
+    font-weight:bold;
+
+    border-top:2px solid #174a72
+}
+
+.exam-account .final-row td{
+
+    font-weight:bold;
+
+    border-top:2px double #174a72;
+
+    border-bottom:2px double #174a72
+}
+
+.indent{
+
+    padding-left:25px
+}
+
+.exam-note{
+
+    color:#174a72;
+
+    background:#f7fbfe;
+
+    border-left:4px solid #4aa3df;
+
+    padding:10px 12px;
+
+    margin-top:12px;
+
+    font-size:13px
+}
+
+/* =====================================================
+   LEDGER
+   ===================================================== */
+
+.textbook-ledger{
+
+    width:100%;
+
+    min-width:760px;
+
+    border-collapse:collapse;
+
+    color:#174a72;
+
+    background:#fff
+}
+
+.textbook-ledger th,
+.textbook-ledger td{
+
+    border:1px solid #65b4e5;
+
+    padding:8px;
+
+    height:38px;
+
+    background:#fff
+}
+
+.textbook-ledger th{
+
+    background:#f7fbfe;
+
+    text-align:center;
+
+    color:#174a72
+}
+
+.textbook-ledger .amount{
+
+    text-align:right;
+
+    white-space:nowrap
+}
+
+/* =====================================================
+   BALANCE SHEET
+   ===================================================== */
+
+.balance-sheet{
+
+    width:100%;
+
+    min-width:760px;
+
+    border-collapse:collapse;
+
+    color:#174a72;
+
+    background:#fff
+}
+
+.balance-sheet th,
+.balance-sheet td{
+
+    border:1px solid #65b4e5;
+
+    padding:8px;
+
+    background:#fff
+}
+
+.balance-sheet th{
+
+    text-align:center;
+
+    background:#f7fbfe
+}
+
+.balance-sheet .side-title{
+
+    font-weight:bold;
+
+    text-align:center;
+
+    color:#174a72
+}
+
+.balance-sheet .amount{
+
+    text-align:right;
+
+    white-space:nowrap
+}
+
+.statement-total{
+
+    font-weight:bold;
+
+    border-top:2px solid #174a72 !important
+}
+
+.statement-final{
+
+    font-weight:bold;
+
+    border-top:2px double #174a72 !important;
+
+    border-bottom:2px double #174a72 !important
+}
+
+details{
+
+    background:#171717;
+
+    border:1px solid #444;
+
+    border-radius:10px;
+
+    margin-top:12px;
+
+    padding:10px
+}
+
+summary{
+
+    cursor:pointer;
+
+    color:#ffd95a;
+
+    font-weight:bold
+}
+
+.callout{
+
+    padding:16px;
+
+    border-radius:10px;
+
+    background:#101820;
+
+    border-left:4px solid #4ba3ff;
+
+    margin:15px 0
+}
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#aaa;
+
+    border-top:1px solid #333
+}
+
+@media(max-width:650px){
+
+    .hero h1{
+        font-size:25px
+    }
+
+    .grid{
+        grid-template-columns:1fr
+    }
+
+    .lesson-box{
+        padding:19px
+    }
+
+    table{
+        font-size:13px
+    }
+
+    .exam-account,
+    .textbook-ledger,
+    .balance-sheet{
+        min-width:700px
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+
+<img
+src="../assets/logo.png"
+alt="Unique EduZone Logo">
+
+<div class="logo-text">
+Unique EduZone
+</div>
+
+</div>
+
+<a
+href="../index.html"
+class="back-btn">
+
+← Home
+
+</a>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+<h1>
+11 ශ්‍රේණිය – පාඩම 05
+</h1>
+
+<p>
+ගැලපුම් සටහන් සහිත මූල්‍ය ප්‍රකාශන
+</p>
+
+<p style="color:#aaa">
+Business &amp; Accounting Studies
+</p>
+
+<a
+href="g11lesson5quiz.html"
+class="quiz-button">
+
+Lesson 5 Quiz ආරම්භ කරන්න →
+
+</a>
+
+</section>
+
+
+<!-- =====================================================
+     5.1
+     ===================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+5.1 ගැලපුම් සටහන් හැඳින්වීම
+</h2>
+
+<p>
+ගිණුම් කාලපරිච්ඡේදයක අවසානයේ ලෙජර් ගිණුම්වල පවතින
+ශේෂයන් සෘජුවම භාවිත කර මූල්‍ය ප්‍රකාශන සකස් කිරීම
+සෑම අවස්ථාවකම නිවැරදි නොවේ.
+</p>
+
+<p>
+ගිණුම් කාලපරිච්ඡේදයට අදාළ ආදායම් හා වියදම්,
+වත්කම්, වගකීම් සහ හිමිකම් නිවැරදි වටිනාකමින්
+පෙන්වීම සඳහා අවශ්‍ය වෙනස්කම් ගිණුම්වල සිදු කළ යුතුය.
+මෙම වෙනස්කම් සඳහා කරන සටහන්
+<strong>ගැලපුම් සටහන්</strong> ලෙස හැඳින්වේ.
+</p>
+
+<div class="highlight">
+
+<strong>ප්‍රධාන අදහස</strong><br>
+
+ගිණුම් කාලපරිච්ඡේදයට අදාළ ආදායම් හා වියදම්
+මුදල් ලැබීම හෝ ගෙවීම සිදු වූ අවස්ථාව මත නොව,
+අදාළ කාලපරිච්ඡේදයට අයත් වීම මත මූල්‍ය ප්‍රකාශනවලට
+ඇතුළත් කළ යුතුය.
+
+</div>
+
+<div class="formula">
+
+ගනුදෙනු → මූලික සටහන් → ලෙජර් →
+ශේෂ පිරික්සුම → ගැලපුම් → මූල්‍ය ප්‍රකාශන
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<strong>උපචිත වියදම්</strong><br>
+
+කාලපරිච්ඡේදයට අදාළ නමුත් තවමත් ගෙවා නොමැති වියදම්.
+
+</div>
+
+<div class="card">
+
+<strong>ලැබිය යුතු ආදායම්</strong><br>
+
+කාලපරිච්ඡේදයට අදාළ නමුත් තවමත් ලැබී නොමැති ආදායම්.
+
+</div>
+
+<div class="card">
+
+<strong>බොල් ණය</strong><br>
+
+ණයගැතියෙකුගෙන් අයකරගත නොහැකි බවට තීරණය කරන ණය.
+
+</div>
+
+<div class="card">
+
+<strong>ක්ෂයවීම්</strong><br>
+
+ජංගම නොවන වත්කමක ප්‍රයෝජනවත් ජීව කාලය තුළ
+එහි පිරිවැය ක්‍රමානුකූලව වියදමක් ලෙස බෙදාහැරීම.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     5.2
+     ===================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+5.2 ගැලපුම් සටහන් වාර්තා කිරීම
+</h2>
+
+<p>
+මෙම කොටසේ ප්‍රධාන වශයෙන් උපචිත වියදම්,
+ලැබිය යුතු ආදායම්, බොල් ණය සහ ක්ෂයවීම්
+ගිණුම්ගත කරන ආකාරය සලකා බලයි.
+</p>
+
+
+<h3>
+A. උපචිත වියදම්
+</h3>
+
+<p>
+ගිණුම් කාලපරිච්ඡේදය තුළ ව්‍යාපාරය විසින්
+සේවාව ලබාගෙන ඇති නමුත් කාලපරිච්ඡේදය අවසානයේ
+තවමත් ගෙවා නොමැති වියදම් උපචිත වියදම් වේ.
+</p>
+
+<div class="formula">
+
+උපචිත වියදම =
+මුළු කාලපරිච්ඡේද වියදම − ගෙවා ඇති වියදම
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+උදාහරණය 01 – රක්ෂණ වියදම
+</h3>
+
+<p>
+වාර්ෂික රක්ෂණ වියදම රු. 6,000කි.
+මුදලින් ගෙවා ඇත්තේ රු. 4,000කි.
+</p>
+
+<div class="solution">
+
+<strong>ගණනය:</strong><br>
+
+රු. 6,000 − රු. 4,000 = රු. 2,000
+
+<br><br>
+
+උපචිත රක්ෂණ වියදම = <strong>රු. 2,000</strong>
+
+</div>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+පොදු ජර්නලය
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>පිටු අංකය</th>
+<th>හර රු.</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+රක්ෂණ වියදම් ගිණුම<br>
+&nbsp;&nbsp;&nbsp;උපචිත රක්ෂණ වියදම් ගිණුම
+</td>
+
+<td>001</td>
+
+<td class="money">2,000</td>
+
+<td class="money">2,000</td>
+
+</tr>
+
+</table>
+
+<div class="exam-note">
+
+ගැලපුම් සටහන මගින් අදාළ වියදම වැඩි වන අතර
+උපචිත වියදම වගකීමක් ලෙස හඳුනා ගනී.
+
+</div>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+උපචිත රක්ෂණ වියදම් ගිණුම
+</div>
+
+<table class="textbook-ledger">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>හර රු.</th>
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+<td>ශේෂය</td>
+<td class="amount">2,000</td>
+
+<td>20xx.12.31</td>
+<td>රක්ෂණ වියදම් ගිණුම</td>
+<td class="amount">2,000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>
+උපචිත වැටුප්
+</h3>
+
+<div class="activity">
+
+<h3>
+උදාහරණය 02
+</h3>
+
+<p>
+මාසික වෙළඳ සේවක වැටුප රු. 8,000කි.
+වසර තුළ මාස 10ක වැටුප් පමණක් ගෙවා ඇත.
+</p>
+
+<div class="solution">
+
+රු. 8,000 × 2 = <strong>රු. 16,000</strong>
+
+<br>
+
+උපචිත වැටුප් = රු. 16,000
+
+</div>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+උපචිත වැටුප් ගිණුම
+</div>
+
+<table class="textbook-ledger">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>හර රු.</th>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+<td>ශේෂය</td>
+<td class="amount">16,000</td>
+
+<td>20xx.12.31</td>
+<td>වැටුප් ගිණුම</td>
+<td class="amount">16,000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>
+බැංකු ණය පොලී උපචිත කිරීම
+</h3>
+
+<div class="activity">
+
+<h3>
+උදාහරණය 03
+</h3>
+
+<p>
+රු. 50,000ක බැංකු ණයක් සඳහා වාර්ෂික පොලී අනුපාතය 12%කි.
+මාස 2ක පොලී ගෙවා නොමැත.
+</p>
+
+<div class="solution">
+
+රු. 50,000 × 12/100 × 2/12
+= <strong>රු. 1,000</strong>
+
+</div>
+
+</div>
+
+
+<div class="formula">
+
+උපචිත පොලී =
+ණය × පොලී අනුපාතය × කාලය
+
+</div>
+
+
+<!-- =====================================================
+     RECEIVABLE INCOME
+     ===================================================== -->
+
+<h3>
+B. ලැබිය යුතු ආදායම්
+</h3>
+
+<p>
+ගිණුම් කාලපරිච්ඡේදයට අදාළ නමුත් තවමත්
+මුදල් වශයෙන් ලැබී නොමැති ආදායම්
+ලැබිය යුතු ආදායම් ලෙස හඳුන්වයි.
+</p>
+
+
+<div class="activity">
+
+<h3>
+උදාහරණය 04 – කොමිස් ආදායම
+</h3>
+
+<p>
+කොමිස් ආදායම ලෙස රු. 12,000ක් ලැබී ඇති අතර
+තවත් රු. 3,000ක් ලැබිය යුතුය.
+</p>
+
+<div class="solution">
+
+ගිණුම් කාලපරිච්ඡේදයට අදාළ මුළු කොමිස් ආදායම:
+
+<br><br>
+
+රු. 12,000 + රු. 3,000
+= <strong>රු. 15,000</strong>
+
+</div>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+පොදු ජර්නලය
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>හර රු.</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+ලැබිය යුතු කොමිස් ආදායම් ගිණුම<br>
+&nbsp;&nbsp;&nbsp;කොමිස් ආදායම් ගිණුම
+</td>
+
+<td class="money">3,000</td>
+
+<td class="money">3,000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+ලැබිය යුතු කොමිස් ආදායම් ගිණුම
+</div>
+
+<table class="textbook-ledger">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>හර රු.</th>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+<td>කොමිස් ආදායම් ගිණුම</td>
+<td class="amount">3,000</td>
+
+<td>20xx.12.31</td>
+<td>ශේෂය</td>
+<td class="amount">3,000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>
+C. බොල් ණය
+</h3>
+
+<p>
+ව්‍යාපාරයකට ණයගැතියෙකුගෙන් අයකරගත යුතු
+මුදලක් නිශ්චිතවම අයකරගත නොහැකි බවට
+තීරණය වූ විට එය බොල් ණයක් ලෙස සලකයි.
+</p>
+
+<p>
+බොල් ණය නිසා ණයගැති වත්කමේ වටිනාකම අඩු වන අතර
+එම ප්‍රමාණය වියදමක් ලෙස ලාභ හෝ අලාභ ප්‍රකාශනයට
+ඇතුළත් කරයි.
+</p>
+
+
+<div class="activity">
+
+<h3>
+උදාහරණය 05 – බොල් ණය
+</h3>
+
+<p>
+සමීරගෙන් ලැබිය යුතු රු. 8,500ක මුදලක්
+අයකරගත නොහැකි බවට තීරණය කර ඇත.
+</p>
+
+<div class="solution">
+
+බොල් ණය = <strong>රු. 8,500</strong>
+
+<br><br>
+
+ගැලපුම් සටහන:
+
+<br>
+
+බොල් ණය ගිණුම — හර රු. 8,500<br>
+සමීරගේ ගිණුම — බැර රු. 8,500
+
+</div>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+පොදු ජර්නලය
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>හර රු.</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+බොල් ණය ගිණුම<br>
+&nbsp;&nbsp;&nbsp;සමීරගේ ගිණුම
+</td>
+
+<td class="money">8,500</td>
+
+<td class="money">8,500</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- =====================================================
+     DEPRECIATION
+     ===================================================== -->
+
+<h3>
+D. ක්ෂයවීම්
+</h3>
+
+<p>
+ජංගම නොවන වත්කම් වන ගොඩනැගිලි,
+යන්ත්‍රෝපකරණ, කාර්යාල උපකරණ සහ මෝටර් රථ
+ආදිය ව්‍යාපාරය භාවිත කරන කාලය තුළ
+වටිනාකම අඩු වේ.
+</p>
+
+<p>
+මෙම වටිනාකම් අඩුවීම ක්ෂයවීම ලෙස හැඳින්වේ.
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<strong>ක්ෂයවීමට බලපාන කරුණු</strong>
+
+<ul>
+
+<li>වත්කමේ පිරිවැය</li>
+
+<li>ප්‍රයෝජනවත් ජීව කාලය</li>
+
+<li>සුන්බුන් වටිනාකම</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<strong>ක්ෂයවීමට හේතු</strong>
+
+<ul>
+
+<li>භෞතික ගෙවී යාම</li>
+
+<li>කාලය ගතවීම</li>
+
+<li>තාක්ෂණික යල්පැනීම</li>
+
+<li>ආර්ථික සාධක</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<h3>
+සරල මාර්ග ක්ෂය ක්‍රමය
+</h3>
+
+<div class="formula">
+
+වාර්ෂික ක්ෂය =
+
+(පිරිවැය − සුන්බුන් වටිනාකම)
+÷ ප්‍රයෝජනවත් ජීව කාලය
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+උදාහරණය 06 – යන්ත්‍රයක්
+</h3>
+
+<p>
+යන්ත්‍රයක පිරිවැය රු. 500,000කි.
+සුන්බුන් වටිනාකම රු. 100,000කි.
+ප්‍රයෝජනවත් ජීව කාලය වසර 5කි.
+</p>
+
+<div class="solution">
+
+ක්ෂය කළ හැකි වටිනාකම:
+
+<br>
+
+රු. 500,000 − රු. 100,000
+= <strong>රු. 400,000</strong>
+
+<br><br>
+
+වාර්ෂික ක්ෂය:
+
+<br>
+
+රු. 400,000 ÷ 5
+= <strong>රු. 80,000</strong>
+
+</div>
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+ක්ෂය ගිණුම්ගත කිරීම
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th>දිනය</th>
+<th>විස්තරය</th>
+<th>හර රු.</th>
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+ක්ෂය ගිණුම<br>
+&nbsp;&nbsp;&nbsp;ක්ෂය වෙන්කිරීමේ ගිණුම
+</td>
+
+<td class="money">80,000</td>
+
+<td class="money">80,000</td>
+
+</tr>
+
+</table>
+
+<div class="exam-note">
+
+ක්ෂය ගිණුම හර කිරීමෙන් වියදම හඳුනාගනී.
+ක්ෂය වෙන්කිරීමේ ගිණුම බැර කිරීමෙන්
+සමුච්චිත ක්ෂය වෙන්කිරීම පෙන්වයි.
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     DEPRECIATION ACTIVITY
+     ===================================================== -->
+
+<div class="activity">
+
+<h3>
+ක්‍රියාකාරකම – 01
+</h3>
+
+<p>
+පරිපාලන කටයුතු සඳහා මිලදී ගත් මෝටර් රථයක
+මිල රු. 800,000කි. ප්‍රදර්ශනාගාරයට ගෙන ඒමේ
+ප්‍රවාහන වියදම රු. 20,000කි.
+සුන්බුන් වටිනාකම රු. 70,000කි.
+ප්‍රයෝජනවත් ජීව කාලය වසර 5කි.
+</p>
+
+<p>
+පහත දේ සොයන්න.
+</p>
+
+<ol>
+
+<li>මෝටර් රථයේ පිරිවැය</li>
+
+<li>ක්ෂය කළ හැකි වටිනාකම</li>
+
+<li>සරල මාර්ග ක්‍රමයට වාර්ෂික ක්ෂය</li>
+
+</ol>
+
+
+<details>
+
+<summary>
+පිළිතුර බලන්න
+</summary>
+
+<div class="solution">
+
+<strong>1. පිරිවැය</strong><br>
+
+800,000 + 20,000 = රු. 820,000
+
+<br><br>
+
+<strong>2. ක්ෂය කළ හැකි වටිනාකම</strong><br>
+
+820,000 − 70,000 = රු. 750,000
+
+<br><br>
+
+<strong>3. වාර්ෂික ක්ෂය</strong><br>
+
+750,000 ÷ 5 = <strong>රු. 150,000</strong>
+
+</div>
+
+</details>
+
+</div>
+
+
+<!-- =====================================================
+     5.3 NON CURRENT ASSETS
+     ===================================================== -->
+
+</section>
+
+
+<section class="lesson-box">
+
+<h2>
+5.3 ජංගම නොවන වත්කම් මූල්‍ය තත්ත්ව ප්‍රකාශනයේ ඉදිරිපත් කිරීම
+</h2>
+
+<p>
+ජංගම නොවන වත්කම් මූල්‍ය තත්ත්ව ප්‍රකාශනයේදී
+පිරිවැය, සමුච්චිත ක්ෂය සහ ධාරණ වටිනාකම
+වෙන් වෙන්ව පෙන්වීම වැදගත් වේ.
+</p>
+
+
+<div class="formula">
+
+ධාරණ වටිනාකම =
+පිරිවැය − සමුච්චිත ක්ෂය
+
+</div>
+
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+මූල්‍ය තත්ත්ව ප්‍රකාශනය
+</div>
+
+<div class="textbook-subtitle">
+20xx.12.31 දිනට
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th class="particular">
+ජංගම නොවන වත්කම්
+</th>
+
+<th class="money">
+පිරිවැය<br>රු.
+</th>
+
+<th class="money">
+සමුච්චිත ක්ෂය<br>රු.
+</th>
+
+<th class="money">
+ධාරණ වටිනාකම<br>රු.
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+ගොඩනැගිලි
+</td>
+
+<td class="money">
+400,000
+</td>
+
+<td class="money">
+80,000
+</td>
+
+<td class="money">
+320,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+මෝටර් රථ
+</td>
+
+<td class="money">
+500,000
+</td>
+
+<td class="money">
+125,000
+</td>
+
+<td class="money">
+375,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+යන්ත්‍ර
+</td>
+
+<td class="money">
+60,000
+</td>
+
+<td class="money">
+9,000
+</td>
+
+<td class="money">
+51,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+කාර්යාල උපකරණ
+</td>
+
+<td class="money">
+30,000
+</td>
+
+<td class="money">
+4,500
+</td>
+
+<td class="money">
+25,500
+</td>
+
+</tr>
+
+<tr class="final-row">
+
+<td>
+මුළු ජංගම නොවන වත්කම්
+</td>
+
+<td class="money">
+990,000
+</td>
+
+<td class="money">
+218,500
+</td>
+
+<td class="money">
+771,500
+</td>
+
+</tr>
+
+</table>
+
+<div class="exam-note">
+
+මෙම ආකෘතියෙන් පිරිවැය සහ සමුච්චිත ක්ෂය
+අඩු කිරීමෙන් ධාරණ වටිනාකම ලබාගත හැක.
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+ක්‍රියාකාරකම – 02
+</h3>
+
+<p>
+ව්‍යාපාරයකට පහත ජංගම නොවන වත්කම් ඇත.
+</p>
+
+<table>
+
+<tr>
+<th>වත්කම</th>
+<th>පිරිවැය රු.</th>
+<th>සමුච්චිත ක්ෂය රු.</th>
+</tr>
+
+<tr>
+<td>ගොඩනැගිලි</td>
+<td class="amount">400,000</td>
+<td class="amount">60,000</td>
+</tr>
+
+<tr>
+<td>මෝටර් රථ</td>
+<td class="amount">500,000</td>
+<td class="amount">100,000</td>
+</tr>
+
+<tr>
+<td>යන්ත්‍ර</td>
+<td class="amount">60,000</td>
+<td class="amount">6,000</td>
+</tr>
+
+<tr>
+<td>ලී බඩු</td>
+<td class="amount">30,000</td>
+<td class="amount">3,000</td>
+</tr>
+
+</table>
+
+<details>
+
+<summary>
+ධාරණ වටිනාකම්
+</summary>
+
+<div class="solution">
+
+ගොඩනැගිලි:
+400,000 − 60,000 = <strong>340,000</strong>
+
+<br>
+
+මෝටර් රථ:
+500,000 − 100,000 = <strong>400,000</strong>
+
+<br>
+
+යන්ත්‍ර:
+60,000 − 6,000 = <strong>54,000</strong>
+
+<br>
+
+ලී බඩු:
+30,000 − 3,000 = <strong>27,000</strong>
+
+<br><br>
+
+මුළු ධාරණ වටිනාකම =
+<strong>825,000</strong>
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     5.4
+     ===================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+5.4 ගැලපුම් සටහන් සහිත මූල්‍ය ප්‍රකාශන පිළියෙල කිරීම
+</h2>
+
+<p>
+ගැලපුම් සටහන් සකස් කිරීමෙන් පසු ඒවායේ බලපෑම
+ලාභ හෝ අලාභ ප්‍රකාශනයටත් මූල්‍ය තත්ත්ව
+ප්‍රකාශනයටත් නිවැරදිව ඇතුළත් කළ යුතුය.
+</p>
+
+
+<div class="highlight">
+
+<strong>
+මතක තබාගන්න:
+</strong>
+
+ගැලපුමක් එක් ගිණුමකට පමණක් බලපාන්නේ නැත.
+බොහෝ අවස්ථාවල එක් ගැලපුම් සටහනක්
+ලාභ/අලාභ ප්‍රකාශනයටත් මූල්‍ය තත්ත්ව ප්‍රකාශනයටත්
+බලපායි.
+
+</div>
+
+
+<!-- =====================================================
+     FULL EXAMPLE
+     ===================================================== -->
+
+<div class="activity">
+
+<h3>
+විශාල ඒකාබද්ධ උදාහරණය
+</h3>
+
+<p>
+සමන්ගේ ව්‍යාපාරයේ 20xx.12.31 දිනට ශේෂ පිරික්සුමේ
+පහත ශේෂයන් ඇත.
+</p>
+
+<table>
+
+<tr>
+<th>ගිණුම</th>
+<th>රු.</th>
+</tr>
+
+<tr>
+<td>ප්‍රාග්ධනය</td>
+<td class="amount">300,000</td>
+</tr>
+
+<tr>
+<td>ගැනුම්</td>
+<td class="amount">185,000</td>
+</tr>
+
+<tr>
+<td>විකුණුම්</td>
+<td class="amount">385,000</td>
+</tr>
+
+<tr>
+<td>ණයගැතියෝ</td>
+<td class="amount">50,000</td>
+</tr>
+
+<tr>
+<td>ණයහිමියෝ</td>
+<td class="amount">70,000</td>
+</tr>
+
+<tr>
+<td>මුදල්</td>
+<td class="amount">40,000</td>
+</tr>
+
+<tr>
+<td>මෝටර් රථ</td>
+<td class="amount">250,000</td>
+</tr>
+
+<tr>
+<td>කාර්යාල උපකරණ</td>
+<td class="amount">40,000</td>
+</tr>
+
+<tr>
+<td>රක්ෂණ වියදම්</td>
+<td class="amount">6,000</td>
+</tr>
+
+<tr>
+<td>කඩ කුලී</td>
+<td class="amount">20,000</td>
+</tr>
+
+<tr>
+<td>බැංකු ණය පොලී</td>
+<td class="amount">4,000</td>
+</tr>
+
+</table>
+
+<p style="margin-top:15px">
+
+අමතර තොරතුරු:
+
+</p>
+
+<ol>
+
+<li>
+උපචිත රක්ෂණ වියදම රු. 2,500කි.
+</li>
+
+<li>
+උපචිත කඩ කුලී වියදම රු. 4,000කි.
+</li>
+
+<li>
+ලැබිය යුතු බැංකු ණය පොලී ආදායම රු. 7,000කි.
+</li>
+
+<li>
+ණයගැතියන්ගෙන් රු. 3,000ක් බොල් ණය ලෙස කපා හැරිය යුතුය.
+</li>
+
+<li>
+මෝටර් රථ පිරිවැය මත 8%ක් ක්ෂය කළ යුතුය.
+</li>
+
+<li>
+කාර්යාල උපකරණ පිරිවැය මත 10%ක් ක්ෂය කළ යුතුය.
+</li>
+
+<li>
+අවසාන තොගය රු. 70,000කි.
+</li>
+
+</ol>
+
+</div>
+
+
+<!-- =====================================================
+     ADJUSTMENT CALCULATION TABLE
+     ===================================================== -->
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+ගැලපුම් ගණනය කිරීම
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th>
+ගැලපුම
+</th>
+
+<th>
+ගණනය
+</th>
+
+<th>
+වටිනාකම රු.
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+උපචිත රක්ෂණ වියදම්
+</td>
+
+<td>
+ලබා දී ඇති අමතර තොරතුරු
+</td>
+
+<td class="money">
+2,500
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+උපචිත කඩ කුලී
+</td>
+
+<td>
+ලබා දී ඇති අමතර තොරතුරු
+</td>
+
+<td class="money">
+4,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ලැබිය යුතු පොලී ආදායම
+</td>
+
+<td>
+ලබා දී ඇති අමතර තොරතුරු
+</td>
+
+<td class="money">
+7,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+බොල් ණය
+</td>
+
+<td>
+ලබා දී ඇති අමතර තොරතුරු
+</td>
+
+<td class="money">
+3,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+මෝටර් රථ ක්ෂය
+</td>
+
+<td>
+250,000 × 8%
+</td>
+
+<td class="money">
+20,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+කාර්යාල උපකරණ ක්ෂය
+</td>
+
+<td>
+40,000 × 10%
+</td>
+
+<td class="money">
+4,000
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- =====================================================
+     JOURNAL
+     ===================================================== -->
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+ගැලපුම් සටහන් සඳහා පොදු ජර්නලය
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th>දිනය</th>
+
+<th>විස්තරය</th>
+
+<th>හර රු.</th>
+
+<th>බැර රු.</th>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+රක්ෂණ වියදම් ගිණුම<br>
+&nbsp;&nbsp;&nbsp;උපචිත රක්ෂණ වියදම් ගිණුම
+</td>
+
+<td class="money">2,500</td>
+
+<td class="money">2,500</td>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+කඩ කුලී වියදම් ගිණුම<br>
+&nbsp;&nbsp;&nbsp;උපචිත කඩ කුලී වියදම් ගිණුම
+</td>
+
+<td class="money">4,000</td>
+
+<td class="money">4,000</td>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+ලැබිය යුතු පොලී ආදායම් ගිණුම<br>
+&nbsp;&nbsp;&nbsp;පොලී ආදායම් ගිණුම
+</td>
+
+<td class="money">7,000</td>
+
+<td class="money">7,000</td>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+බොල් ණය ගිණුම<br>
+&nbsp;&nbsp;&nbsp;ණයගැතියෝ
+</td>
+
+<td class="money">3,000</td>
+
+<td class="money">3,000</td>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+මෝටර් රථ ක්ෂය ගිණුම<br>
+&nbsp;&nbsp;&nbsp;මෝටර් රථ ක්ෂය වෙන්කිරීමේ ගිණුම
+</td>
+
+<td class="money">20,000</td>
+
+<td class="money">20,000</td>
+
+</tr>
+
+<tr>
+
+<td>20xx.12.31</td>
+
+<td>
+කාර්යාල උපකරණ ක්ෂය ගිණුම<br>
+&nbsp;&nbsp;&nbsp;කාර්යාල උපකරණ ක්ෂය වෙන්කිරීමේ ගිණුම
+</td>
+
+<td class="money">4,000</td>
+
+<td class="money">4,000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- =====================================================
+     PROFIT LOSS
+     ===================================================== -->
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+සමන්ගේ ව්‍යාපාරය
+</div>
+
+<div class="textbook-subtitle">
+20xx.12.31 දිනෙන් අවසන් වූ වර්ෂය සඳහා<br>
+ලාභ හෝ අලාභ ප්‍රකාශනය
+</div>
+
+<table class="exam-account">
+
+<tr>
+
+<th class="particular">
+විස්තරය
+</th>
+
+<th class="money">
+රු.
+</th>
+
+<th class="money">
+රු.
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+විකුණුම්
+</td>
+
+<td></td>
+
+<td class="money">
+385,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: විකුණුම් පිරිවැය
+</td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td class="indent">
+ආරම්භක තොගය
+</td>
+
+<td class="money">
+40,000
+</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td class="indent">
+ගැනුම්
+</td>
+
+<td class="money">
+185,000
+</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td class="indent">
+භාණ්ඩ ගෙන ඒමේ වියදම්
+</td>
+
+<td class="money">
+4,000
+</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td class="indent">
+අඩු කළා: අවසාන තොගය
+</td>
+
+<td class="money">
+(70,000)
+</td>
+
+<td></td>
+
+</tr>
+
+<tr class="statement-total">
+
+<td>
+විකුණුම් පිරිවැය
+</td>
+
+<td></td>
+
+<td class="money">
+159,000
+</td>
+
+</tr>
+
+<tr class="statement-total">
+
+<td>
+දළ ලාභය
+</td>
+
+<td></td>
+
+<td class="money">
+226,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+එකතු කළා: පොලී ආදායම
+</td>
+
+<td></td>
+
+<td class="money">
+7,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: රක්ෂණ වියදම්
+</td>
+
+<td></td>
+
+<td class="money">
+8,500
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: කඩ කුලී
+</td>
+
+<td></td>
+
+<td class="money">
+24,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: බොල් ණය
+</td>
+
+<td></td>
+
+<td class="money">
+3,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: මෝටර් රථ ක්ෂය
+</td>
+
+<td></td>
+
+<td class="money">
+20,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: කාර්යාල උපකරණ ක්ෂය
+</td>
+
+<td></td>
+
+<td class="money">
+4,000
+</td>
+
+</tr>
+
+<tr class="final-row">
+
+<td>
+ශුද්ධ ලාභය
+</td>
+
+<td></td>
+
+<td class="money">
+173,500
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- =====================================================
+     FINANCIAL POSITION
+     ===================================================== -->
+
+<div class="textbook-page">
+
+<div class="textbook-title">
+සමන්ගේ ව්‍යාපාරය
+</div>
+
+<div class="textbook-subtitle">
+20xx.12.31 දිනට මූල්‍ය තත්ත්ව ප්‍රකාශනය
+</div>
+
+<table class="balance-sheet">
+
+<tr>
+
+<th>
+විස්තරය
+</th>
+
+<th>
+පිරිවැය රු.
+</th>
+
+<th>
+සමුච්චිත ක්ෂය රු.
+</th>
+
+<th>
+ධාරණ වටිනාකම රු.
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+මෝටර් රථ
+</td>
+
+<td class="amount">
+250,000
+</td>
+
+<td class="amount">
+20,000
+</td>
+
+<td class="amount">
+230,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+කාර්යාල උපකරණ
+</td>
+
+<td class="amount">
+40,000
+</td>
+
+<td class="amount">
+4,000
+</td>
+
+<td class="amount">
+36,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ජංගම වත්කම්
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+74,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ණයගැතියෝ
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+47,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ලැබිය යුතු පොලී ආදායම
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+7,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+මුදල්
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+40,000
+</td>
+
+</tr>
+
+<tr class="statement-total">
+
+<td>
+මුළු වත්කම්
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+434,000
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+ප්‍රාග්ධනය + ශුද්ධ ලාභය
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+473,500
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+අඩු කළා: පෞද්ගලික ගැනීම්
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+(39,500)
+</td>
+
+</tr>
+
+<tr class="statement-final">
+
+<td>
+අවසන් හිමිකම
+</td>
+
+<td colspan="2"></td>
+
+<td class="amount">
+434,000
+</td>
+
+</tr>
+
+</table>
+
+<div class="exam-note">
+
+මූල්‍ය තත්ත්ව ප්‍රකාශනයේදී වත්කම් =
+හිමිකම + වගකීම් යන සම්බන්ධතාවය පවත්වාගත යුතුය.
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ACTIVITIES
+     ===================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ක්‍රියාකාරකම් – විභාග පුහුණුව
+</h2>
+
+
+<div class="activity">
+
+<h3>
+ක්‍රියාකාරකම 03 – උපචිත වියදම්
+</h3>
+
+<p>
+වසරේදී විදුලි වියදම ලෙස රු. 18,000ක් ගෙවා ඇත.
+වසර අවසානයේ දෙසැම්බර් මාසයට අදාළ රු. 3,000ක්
+තවමත් ගෙවා නොමැත.
+</p>
+
+<p>
+1. ගිණුම් කාලපරිච්ඡේදයට අදාළ විදුලි වියදම සොයන්න.<br>
+2. ගැලපුම් ජර්නල් සටහන ලියන්න.<br>
+3. උපචිත වියදම මූල්‍ය තත්ත්ව ප්‍රකාශනයේ
+දක්වන ස්ථානය සඳහන් කරන්න.
+</p>
+
+<details>
+
+<summary>
+පිළිතුර
+</summary>
+
+<div class="solution">
+
+මුළු විදුලි වියදම:
+
+18,000 + 3,000
+= <strong>21,000</strong>
+
+<br><br>
+
+හර:
+විදුලි වියදම් ගිණුම රු. 3,000
+
+<br>
+
+බැර:
+උපචිත විදුලි වියදම් ගිණුම රු. 3,000
+
+<br><br>
+
+උපචිත විදුලි වියදම
+ජංගම වගකීමක් ලෙස පෙන්වයි.
+
+</div>
+
+</details>
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+ක්‍රියාකාරකම 04 – ලැබිය යුතු ආදායම්
+</h3>
+
+<p>
+ස්ථාවර තැන්පතුවකින් වසර තුළ රු. 4,000ක් පොලී
+ලැබී ඇත. තවත් රු. 2,000ක් ලැබිය යුතුය.
+</p>
+
+<p>
+1. මුළු පොලී ආදායම සොයන්න.<br>
+2. ගැලපුම් සටහන ලියන්න.<br>
+3. ලැබිය යුතු පොලී ආදායම මූල්‍ය තත්ත්ව
+ප්‍රකාශනයේ දක්වන්න.
+</p>
+
+<details>
+
+<summary>
+පිළිතුර
+</summary>
+
+<div class="solution">
+
+මුළු පොලී ආදායම:
+
+4,000 + 2,000
+= <strong>6,000</strong>
+
+<br><br>
+
+ලැබිය යුතු පොලී ආදායම
+= <strong>රු. 2,000</strong>
+
+<br><br>
+
+එය ජංගම වත්කමක් ලෙස පෙන්වයි.
+
+</div>
+
+</details>
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+ක්‍රියාකාරකම 05 – බොල් ණය සහ ක්ෂය
+</h3>
+
+<p>
+ණයගැතියන් රු. 60,000කි.
+එයින් රු. 4,000ක් බොල් ණය ලෙස කපා හැරිය යුතුය.
+</p>
+
+<p>
+යන්ත්‍ර පිරිවැය රු. 300,000කි.
+සුන්බුන් වටිනාකම රු. 60,000කි.
+ප්‍රයෝජනවත් ජීව කාලය වසර 10කි.
+</p>
+
+<details>
+
+<summary>
+පිළිතුර
+</summary>
+
+<div class="solution">
+
+බොල් ණය:
+
+60,000 − 4,000
+= <strong>56,000</strong>
+
+<br><br>
+
+ක්ෂය කළ හැකි වටිනාකම:
+
+300,000 − 60,000
+= <strong>240,000</strong>
+
+<br><br>
+
+වාර්ෂික ක්ෂය:
+
+240,000 ÷ 10
+= <strong>රු. 24,000</strong>
+
+</div>
+
+</details>
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+ක්‍රියාකාරකම 06 – සම්පූර්ණ මූල්‍ය ප්‍රකාශන
+</h3>
+
+<p>
+මෙය විභාග ආකාරයේ ඒකාබද්ධ ප්‍රශ්නයකි.
+පහත ශේෂ පිරික්සුම සහ ගැලපුම් තොරතුරු
+භාවිත කර ලාභ හෝ අලාභ ප්‍රකාශනය සහ
+මූල්‍ය තත්ත්ව ප්‍රකාශනය සකස් කරන්න.
+</p>
+
+
+<table>
+
+<tr>
+<th>ගිණුම</th>
+<th>හර රු.</th>
+<th>බැර රු.</th>
+</tr>
+
+<tr>
+<td>මුදල්</td>
+<td class="amount">52,000</td>
+<td></td>
+</tr>
+
+<tr>
+<td>ණයගැතියෝ</td>
+<td class="amount">80,000</td>
+<td></td>
+</tr>
+
+<tr>
+<td>ගොඩනැගිලි</td>
+<td class="amount">350,000</td>
+<td></td>
+</tr>
+
+<tr>
+<td>යන්ත්‍ර</td>
+<td class="amount">300,000</td>
+<td></td>
+</tr>
+
+<tr>
+<td>ගැනුම්</td>
+<td class="amount">230,000</td>
+<td></td>
+</tr>
+
+<tr>
+<td>විකුණුම්</td>
+<td></td>
+<td class="amount">520,000</td>
+</tr>
+
+<tr>
+<td>ණයහිමියෝ</td>
+<td></td>
+<td class="amount">44,000</td>
+</tr>
+
+<tr>
+<td>ප්‍රාග්ධනය</td>
+<td></td>
+<td class="amount">450,000</td>
+</tr>
+
+</table>
+
+
+<p style="margin-top:15px">
+
+ගැලපුම්:
+
+</p>
+
+<ol>
+
+<li>
+අවසාන තොගය රු. 56,000කි.
+</li>
+
+<li>
+උපචිත රක්ෂණ වියදම රු. 2,000කි.
+</li>
+
+<li>
+උපචිත ප්‍රචාරණ වියදම රු. 3,000කි.
+</li>
+
+<li>
+බොල් ණය රු. 4,000කි.
+</li>
+
+<li>
+ගොඩනැගිලි හා යන්ත්‍ර මත 5% ක්ෂය කළ යුතුය.
+</li>
+
+</ol>
+
+
+<details>
+
+<summary>
+ගණනය කිරීමේ මාර්ගය
+</summary>
+
+<div class="solution">
+
+<strong>ක්ෂය:</strong><br>
+
+ගොඩනැගිලි:
+350,000 × 5% = රු. 17,500
+
+<br>
+
+යන්ත්‍ර:
+300,000 × 5% = රු. 15,000
+
+<br><br>
+
+<strong>බොල් ණය:</strong><br>
+
+ණයගැතියන් 80,000 − 4,000
+= රු. 76,000
+
+<br><br>
+
+<strong>උපචිත රක්ෂණ:</strong>
+රු. 2,000
+
+<br>
+
+<strong>උපචිත ප්‍රචාරණ:</strong>
+රු. 3,000
+
+<br><br>
+
+ඊළඟට මෙම ගැලපුම්
+ලාභ හෝ අලාභ ප්‍රකාශනයටත්
+මූල්‍ය තත්ත්ව ප්‍රකාශනයටත්
+අදාළ පරිදි ඇතුළත් කළ යුතුය.
+
+</div>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM TIPS
+     ===================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+විභාගයට වැදගත් කරුණු
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<strong>1. උපචිත වියදම</strong><br>
+
+වියදම වැඩි කරයි.<br>
+ජංගම වගකීමක් වැඩි කරයි.
+
+</div>
+
+<div class="card">
+
+<strong>2. ලැබිය යුතු ආදායම</strong><br>
+
+ආදායම වැඩි කරයි.<br>
+ජංගම වත්කමක් වැඩි කරයි.
+
+</div>
+
+<div class="card">
+
+<strong>3. බොල් ණය</strong><br>
+
+වියදමක් ලෙස ලාභය අඩු කරයි.<br>
+ණයගැතියන් අඩු කරයි.
+
+</div>
+
+<div class="card">
+
+<strong>4. ක්ෂයවීම</strong><br>
+
+වියදමක් ලෙස ලාභය අඩු කරයි.<br>
+වත්කමේ ධාරණ වටිනාකම අඩු කරයි.
+
+</div>
+
+</div>
+
+
+<div class="highlight">
+
+<strong>
+විභාග උපක්‍රමය:
+</strong>
+
+ගැලපුමක් ලබා දී ඇති විට මුලින්ම
+එය බලපාන ගිණුම හඳුනාගන්න.
+ඉන්පසු හර සහ බැර තීරණය කරන්න.
+අවසානයේ එහි බලපෑම ලාභ හෝ අලාභ
+ප්‍රකාශනයේද, මූල්‍ය තත්ත්ව ප්‍රකාශනයේද
+දක්වන්න.
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+© 2026 Unique EduZone |
+Grade 11 Business & Accounting Studies
+
+</footer>
+
+
+</body>
+
+</html>
