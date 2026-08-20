@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 11 - Lesson 4 | Unique EduZone</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,"Noto Sans Sinhala",sans-serif;background:#080808;color:#f5f5f5;line-height:1.8}
+header{background:#111;border-bottom:2px solid #d4af37;padding:16px 6%;position:sticky;top:0;z-index:10}
+.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}.logo img{width:52px;height:52px;object-fit:contain}.logo-text{color:#d4af37;font-size:21px;font-weight:bold}
+.back-btn,.quiz-button{color:#080808;background:#d4af37;text-decoration:none;padding:7px 17px;border-radius:25px;font-weight:bold}
+.container{width:92%;max-width:1000px;margin:30px auto 70px}
+.hero,.lesson-box{background:#111;border:1px solid #d4af37;border-radius:18px;padding:28px;margin-bottom:24px}
+.hero{text-align:center;background:linear-gradient(135deg,#111,#1d1d1d)}
+.hero h1{color:#d4af37;font-size:31px;margin-bottom:8px}.hero p{color:#ddd}
+.lesson-box h2{color:#d4af37;margin-bottom:10px}.lesson-box h3{color:#ffd95a;margin:18px 0 8px}
+.lesson-box ul{padding-left:25px}.lesson-box li{margin:6px 0}
+.highlight{background:#211d0e;border-left:4px solid #d4af37;padding:14px;border-radius:8px;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:#191919;border:1px solid #333;border-radius:12px;padding:15px}.card strong{color:#d4af37}
+.formula{background:#17130a;border:1px solid #8c7424;border-radius:10px;padding:14px;margin:12px 0;font-weight:bold;text-align:center;color:#ffe58a}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{border:1px solid #444;padding:9px;text-align:left;vertical-align:top}th{background:#211d0e;color:#d4af37}
+.amount{text-align:right;white-space:nowrap}
+.activity{background:#141414;border:1px solid #555;border-left:4px solid #d4af37;border-radius:12px;padding:17px;margin:16px 0}
+.activity h3{color:#ffd95a;margin:0 0 8px}
+.solution{background:#0f1710;border:1px solid #315b36;border-radius:10px;padding:14px;margin-top:12px}
+.solution strong{color:#8fe39a}
+.note{color:#bbb;font-size:14px}
+.quiz-button{display:inline-block;margin-top:15px;padding:11px 24px}
+.small{font-size:14px;color:#bbb}
+/* =====================================================
+   TEXTBOOK / EXAM-STYLE ACCOUNTING STATEMENTS
+   ===================================================== */
+.textbook-page{
+    margin-top:24px;
+    background:#fff;
+    color:#111;
+    border:2px solid #4aa3df;
+    border-radius:4px;
+    padding:22px;
+    overflow-x:auto;
+    box-shadow:0 8px 24px rgba(0,0,0,.25)
+}
+.textbook-title{
+    text-align:center;
+    color:#174a72;
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:4px
+}
+.textbook-subtitle{
+    text-align:center;
+    color:#174a72;
+    font-size:14px;
+    margin-bottom:16px
+}
+.exam-account{
+    width:100%;
+    min-width:760px;
+    border-collapse:collapse;
+    color:#174a72;
+    margin-top:10px;
+    background:#fff
+}
+.exam-account th,.exam-account td{
+    border:1px solid #65b4e5;
+    padding:7px 9px;
+    vertical-align:top;
+    background:#fff
+}
+.exam-account th{
+    color:#174a72;
+    background:#f7fbfe;
+    text-align:center
+}
+.exam-account .particular{
+    width:54%;
+    text-align:left
+}
+.exam-account .money{
+    width:23%;
+    text-align:right;
+    white-space:nowrap
+}
+.exam-account .total-row td{
+    font-weight:bold;
+    border-top:2px solid #174a72
+}
+.exam-account .final-row td{
+    font-weight:bold;
+    border-top:2px double #174a72;
+    border-bottom:2px double #174a72
+}
+.exam-account .indent{
+    padding-left:25px
+}
+.exam-note{
+    color:#174a72;
+    background:#f7fbfe;
+    border-left:4px solid #4aa3df;
+    padding:10px 12px;
+    margin-top:12px;
+    font-size:13px
+}
+.balance-sheet{
+    width:100%;
+    min-width:760px;
+    border-collapse:collapse;
+    color:#174a72;
+    background:#fff
+}
+.balance-sheet th,.balance-sheet td{
+    border:1px solid #65b4e5;
+    padding:7px 9px;
+    background:#fff
+}
+.balance-sheet th{
+    text-align:center;
+    background:#f7fbfe
+}
+.balance-sheet .side-title{
+    font-weight:bold;
+    text-align:center;
+    color:#174a72
+}
+.balance-sheet .amount{
+    text-align:right;
+    white-space:nowrap
+}
+@media(max-width:650px){
+    .textbook-page{padding:12px}
+    .exam-account,.balance-sheet{min-width:700px}
+}
+
+.ledger-wrap{overflow-x:auto;margin-top:15px}
+.ledger{min-width:650px;width:100%;border-collapse:collapse}
+.ledger th{background:#211d0e;color:#d4af37;text-align:center}
+.ledger td{height:42px}
+.ledger .dr{background:#17130a}.ledger .cr{background:#101010}
+.section-title{margin-top:20px;color:#ffd95a}
+.badge{display:inline-block;background:#211d0e;color:#d4af37;border:1px solid #8c7424;border-radius:20px;padding:3px 10px;margin:3px}
+details{background:#171717;border:1px solid #444;border-radius:10px;margin-top:12px;padding:10px}
+summary{cursor:pointer;color:#ffd95a;font-weight:bold}
+.callout{padding:16px;border-radius:10px;background:#101820;border-left:4px solid #4ba3ff;margin:15px 0}
+footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #333}
+@media(max-width:650px){
+.hero h1{font-size:25px}.grid{grid-template-columns:1fr}.lesson-box{padding:19px}
+table{font-size:13px}.amount{white-space:normal}.ledger{min-width:620px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-inner">
+<div class="logo">
+<img src="../assets/logo.png" alt="Unique EduZone Logo">
+<div class="logo-text">Unique EduZone</div>
+</div>
+<a href="../index.html" class="back-btn">← Home</a>
+</div>
+</header>
+
+<div class="container">
+
+<section class="hero">
+<h1>11 ශ්‍රේණිය – පාඩම 04</h1>
+<p>ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන</p>
+<p style="color:#aaa">Business &amp; Accounting Studies</p>
+<a href="g11lesson4quiz.html" class="quiz-button">Lesson 4 Quiz →</a>
+</section>
+
+<section class="lesson-box">
+<h2>4.1 මූල්‍ය ප්‍රකාශන හැඳින්වීම</h2>
+<p>ගිණුම්කරණ ක්‍රියාවලියේදී ගනුදෙනු මූලික සටහන් පොත්වල වාර්තා කර, ලෙජර් ගිණුම්වලට පිටපත් කර, ශේෂ පිරික්සුම සකස් කර, අවශ්‍ය ගැලපුම් සිදු කිරීමෙන් පසු ව්‍යාපාරයේ මෙහෙයුම් ප්‍රතිඵලය සහ නිශ්චිත දිනයක මූල්‍ය තත්ත්වය පෙන්වන වාර්තා සකස් කරයි. එම වාර්තා මූල්‍ය ප්‍රකාශන ලෙස හැඳින්වේ.</p>
+<div class="highlight"><strong>ප්‍රධාන අරමුණ:</strong> ගිණුම් කාලපරිච්ඡේදයක් තුළ ව්‍යාපාරය ලබාගත් මෙහෙයුම් ප්‍රතිඵලයත්, නිශ්චිත දිනයක වත්කම්, හිමිකම හා වගකීම් මගින් පෙන්වන මූල්‍ය තත්ත්වයත් පැහැදිලිව ඉදිරිපත් කිරීමයි.</div>
+<div class="formula">ගනුදෙනු → මූලික සටහන් → ලෙජර් → ශේෂ පිරික්සුම → ගැලපුම් → මූල්‍ය ප්‍රකාශන</div>
+<div class="grid">
+<div class="card"><strong>01. ලාභ හෝ අලාභ ප්‍රකාශනය</strong><br>ගිණුම් කාලපරිච්ඡේදයක දළ ලාභය/දළ අලාභය සහ ශුද්ධ ලාභය/ශුද්ධ අලාභය පෙන්වයි.</div>
+<div class="card"><strong>02. මූල්‍ය තත්ත්ව ප්‍රකාශනය</strong><br>නිශ්චිත දිනයක ව්‍යාපාරය සතු වත්කම්, හිමිකම සහ වගකීම් පෙන්වයි.</div>
+</div>
+<p class="note">PDF මූලාශ්‍රයේ 4.1 කොටස මූල්‍ය ප්‍රකාශන ගිණුම්කරණ ක්‍රියාවලියේ නිමාව ලෙසත්, මෙහෙයුම් ප්‍රතිඵලය සහ මූල්‍ය තත්ත්වය හඳුනාගැනීමේ මාර්ගයක් ලෙසත් පැහැදිලි කරයි. fileciteturn179file0L28-L59</p>
+</section>
+
+<section class="lesson-box">
+<h2>4.2 ලාභ හෝ අලාභ ප්‍රකාශනය</h2>
+<p>ගිණුම් කාලපරිච්ඡේදය තුළ ව්‍යාපාරය උපයාගත් විකුණුම් ආදායම හා වෙනත් ආදායම් සලකා බලා, භාණ්ඩ විකිණීමේ පිරිවැය සහ අනෙකුත් වියදම් අඩු කිරීමෙන් මෙහෙයුම් ප්‍රතිඵලය තීරණය කරයි.</p>
+
+<h3>පියවර 01 – දළ ලාභය හෝ දළ අලාභය</h3>
+<div class="formula">දළ ලාභය / දළ අලාභය = විකුණුම් ආදායම − විකුණුම් පිරිවැය</div>
+
+<h3>විකුණුම් ආදායම</h3>
+<p>ගිණුම් කාලපරිච්ඡේදය තුළ සිදු කළ අත්පිට විකුණුම් සහ ණයට විකුණුම් එකතුව විකුණුම් ආදායමයි.</p>
+<table>
+<tr><th>අයිතමය</th><th class="amount">රු.</th></tr>
+<tr><td>අත්පිට විකුණුම්</td><td class="amount">58,000</td></tr>
+<tr><td>ණයට විකුණුම්</td><td class="amount">76,000</td></tr>
+<tr><th>මුළු විකුණුම් ආදායම</th><th class="amount">134,000</th></tr>
+</table>
+
+<h3>විකුණුම් පිරිවැය</h3>
+<p>විකිණීමට ඉදිරිපත් කළ භාණ්ඩවල පිරිවැය ගණනය කිරීමේදී ආරම්භක තොගය, ගැනුම් සහ භාණ්ඩ ව්‍යාපාරික ස්ථානයට ගෙන ඒමට දැරූ අදාළ වියදම් එකතු කර අවසාන තොගය අඩු කරයි.</p>
+<div class="formula">විකුණුම් පිරිවැය = ආරම්භක තොගය + ගැනුම් + ගෙන ඒමේ වියදම් − අවසාන තොගය</div>
+<table>
+<tr><th>විකුණුම් පිරිවැය ගණනය</th><th class="amount">රු.</th></tr>
+<tr><td>ආරම්භක තොගය</td><td class="amount">15,000</td></tr>
+<tr><td>ගැනුම්</td><td class="amount">82,000</td></tr>
+<tr><td>ප්‍රවාහන ගාස්තු</td><td class="amount">6,000</td></tr>
+<tr><td>ගෙන ඒමේ කුලී</td><td class="amount">9,000</td></tr>
+<tr><td>විකිණීමට ඉදිරිපත් කළ භාණ්ඩවල පිරිවැය</td><td class="amount">112,000</td></tr>
+<tr><td>අඩු කළා – අවසාන තොගය</td><td class="amount">(22,000)</td></tr>
+<tr><th>විකුණුම් පිරිවැය</th><th class="amount">90,000</th></tr>
+<tr><th>දළ ලාභය</th><th class="amount">44,000</th></tr>
+</table>
+<p class="note">PDF හි දළ ලාභය ගණනය කිරීමේදී ආරම්භක තොගය, ගැනුම්, ගෙන ඒමේ කුලී/ප්‍රවාහන වියදම් සහ අවසාන තොගය සලකා බලන බවත්, විකුණුම් ආදායම හා විකුණුම් පිරිවැය අතර වෙනස දළ ලාභය/අලාභය බවත් දක්වා ඇත. fileciteturn179file0L65-L98 fileciteturn179file0L104-L139</p>
+</section>
+
+<section class="lesson-box">
+<h2>දළ ලාභය සහ දළ අලාභය – සංසන්දනය</h2>
+<div class="grid">
+<div class="card"><strong>දළ ලාභය</strong><br>විකුණුම් ආදායම = රු.134,000<br>විකුණුම් පිරිවැය = රු.90,000<br><b>134,000 − 90,000 = රු.44,000</b></div>
+<div class="card"><strong>දළ අලාභය</strong><br>විකුණුම් ආදායම = රු.134,000<br>විකුණුම් පිරිවැය = රු.140,000<br><b>134,000 − 140,000 = රු.(6,000)</b></div>
+</div>
+<p class="note">PDF හි ලාභ සහ අලාභ දෙකම උදාහරණ මගින් පෙන්වා ඇත. fileciteturn179file0L145-L158</p>
+</section>
+
+<section class="lesson-box">
+<h2>වෙනත් ආදායම්</h2>
+<p>හිමිකරු විසින් යොදන ප්‍රාග්ධනය නිසා ඇතිවන හිමිකමේ වෙනස්වීම හැර, ව්‍යාපාරය උපයන අනෙකුත් ආදායම් ශුද්ධ ලාභය/අලාභය ගණනය කිරීමේදී සලකා බලයි.</p>
+<ul>
+<li>ස්ථාවර තැන්පතු පොලී ආදායම්</li>
+<li>කුලී ආදායම්</li>
+<li>ලාභාංශ ආදායම්</li>
+<li>ලැබූ වට්ටම්</li>
+<li>කොමිස් ආදායම්</li>
+</ul>
+<p class="note">PDF හි වෙනත් ආදායම් සඳහා ස්ථාවර තැන්පතු පොලී, කුලී, ලාභාංශ, ලැබූ වට්ටම් සහ කොමිස් ආදායම් වැනි උදාහරණ දක්වා ඇත. fileciteturn179file0L205-L222</p>
+</section>
+
+<section class="lesson-box">
+<h2>වියදම් වර්ගීකරණය</h2>
+<table>
+<tr><th>වියදම් වර්ගය</th><th>උදාහරණ</th></tr>
+<tr><td>බෙදාහැරීමේ වියදම්</td><td>ප්‍රචාරණ වියදම්, විකුණුම් සේවක වැටුප්, බොල් ණය, දුන් වට්ටම්, බෙදාහැරීමේ වාහන ක්ෂයවීම, විකුණුම් කොමිස්</td></tr>
+<tr><td>පරිපාලන වියදම්</td><td>කුලී ගෙවීම්, රක්ෂණ ගාස්තු, ලිපි ද්‍රව්‍ය වියදම්, පරිපාලන වැටුප්, විදුලි ගාස්තු, කාර්යාල උපකරණ ක්ෂයවීම, අලුත්වැඩියා වියදම්</td></tr>
+<tr><td>වෙනත් වියදම්</td><td>මුදල් වංචා අලාභ, ගිනි හානි වැනි බෙදාහැරීමේ, පරිපාලන හෝ මූල්‍ය වියදම් නොවන අලාභ</td></tr>
+<tr><td>මූල්‍ය වියදම්</td><td>බැංකු ණය පොලී, බැංකු අයිරා පොලී, බැංකු ගාස්තු</td></tr>
+</table>
+<p class="note">PDF හි වියදම් බෙදාහැරීමේ, පරිපාලන, වෙනත් සහ මූල්‍ය වියදම් ලෙස වර්ගීකරණය කරයි. fileciteturn179file0L241-L279</p>
+</section>
+
+<section class="lesson-box">
+<h2>ශුද්ධ ලාභය හෝ ශුද්ධ අලාභය</h2>
+<div class="formula">ශුද්ධ ලාභය = දළ ලාභය + වෙනත් ආදායම් − අදාළ වියදම්</div>
+<table>
+<tr><th>පියවර</th><th class="amount">රු.</th></tr>
+<tr><td>දළ ලාභය</td><td class="amount">230,000</td></tr>
+<tr><td>ලැබූ වට්ටම්</td><td class="amount">12,000</td></tr>
+<tr><td>කොමිස් ආදායම්</td><td class="amount">5,000</td></tr>
+<tr><td>පොලී ආදායම්</td><td class="amount">8,000</td></tr>
+<tr><td>බෙදාහැරීමේ වියදම්</td><td class="amount">(54,000)</td></tr>
+<tr><td>පරිපාලන වියදම්</td><td class="amount">(93,000)</td></tr>
+<tr><td>වෙනත් වියදම්</td><td class="amount">(8,000)</td></tr>
+<tr><td>මූල්‍ය වියදම්</td><td class="amount">(12,000)</td></tr>
+<tr><th>ශුද්ධ ලාභය</th><th class="amount">88,000</th></tr>
+</table>
+<p class="note">මෙම සංයුතිය PDF හි දක්වන ආදායම් සහ වියදම් කාණ්ඩ අනුව සකස් කළ අධ්‍යාපනික උදාහරණයකි. fileciteturn179file0L301-L353</p>
+</section>
+
+<section class="lesson-box">
+<h2>ලාභ හෝ අලාභ ප්‍රකාශනය – සම්පූර්ණ ආකෘතිය</h2>
+<table>
+<tr><th colspan="2">XYZ ව්‍යාපාරය – 20XX.12.31 න් අවසන් වර්ෂය සඳහා ලාභ හෝ අලාභ ප්‍රකාශනය</th></tr>
+<tr><td>විකුණුම්</td><td class="amount">500,000</td></tr>
+<tr><td>අඩු කළා – විකුණුම් පිරිවැය</td><td class="amount">(290,000)</td></tr>
+<tr><th>දළ ලාභය</th><th class="amount">210,000</th></tr>
+<tr><td>එකතු කළා – වෙනත් ආදායම්</td><td class="amount">10,000</td></tr>
+<tr><td>අඩු කළා – බෙදාහැරීමේ/පරිපාලන/මූල්‍ය වියදම්</td><td class="amount">(113,000)</td></tr>
+<tr><th>ශුද්ධ ලාභය</th><th class="amount">107,000</th></tr>
+</table>
+<p class="note">PDF හි ලාභ හෝ අලාභ ප්‍රකාශනය සඳහා විකුණුම්, විකුණුම් පිරිවැය, දළ ලාභය, වෙනත් ආදායම්, වියදම් සහ ශුද්ධ ලාභය/අලාභය අනුපිළිවෙලින් ඉදිරිපත් කරන ආකෘතියක් දක්වා ඇත. fileciteturn179file0L364-L440</p>
+</section>
+
+<section class="lesson-box">
+<h2>4.3 මූල්‍ය තත්ත්ව ප්‍රකාශනය</h2>
+<p>නිශ්චිත දිනයක ව්‍යාපාරයේ වත්කම්, හිමිකම සහ වගකීම් පෙන්වන ප්‍රකාශනය මූල්‍ය තත්ත්ව ප්‍රකාශනයයි. එය ව්‍යාපාරයේ මූල්‍ය හැකියාව හා ශක්තිය හඳුනාගැනීමටත්, හිමිකරුවන්, ණයහිමියන්, මූල්‍ය ආයතන වැනි පාර්ශ්වයන්ට ආර්ථික තීරණ ගැනීමටත් වැදගත් වේ.</p>
+<div class="formula">වත්කම් = හිමිකම + වගකීම්</div>
+<div class="grid">
+<div class="card"><strong>වත්කම්</strong><br>අතීත ගනුදෙනු හේතුවෙන් ඇති වී අනාගත ආර්ථික ප්‍රතිලාභ ගෙන දිය හැකි ව්‍යාපාරය පාලනය කරන සම්පත්.</div>
+<div class="card"><strong>හිමිකම</strong><br>මුළු වත්කම්වලින් මුළු වගකීම් අඩු කළ පසු හිමිකරුට ඉතිරිවන අයිතිය.</div>
+<div class="card"><strong>වගකීම්</strong><br>අතීත ගනුදෙනු හේතුවෙන් අනාගතයේදී ව්‍යාපාරය විසින් ගෙවිය යුතු බැඳීම්.</div>
+<div class="card"><strong>ද්‍රවශීලතාව</strong><br>වත්කමක් ඉක්මනින් මුදල් බවට පත් කරගැනීමේ හැකියාව.</div>
+</div>
+<p class="note">PDF හි මූල්‍ය තත්ත්ව ප්‍රකාශනයේ මූලික කොටස් සහ ගිණුම්කරණ සමීකරණය පැහැදිලි කරයි. fileciteturn179file0L690-L703 fileciteturn179file1L1075-L1097</p>
+</section>
+
+<section class="lesson-box">
+<h2>වත්කම් වර්ගීකරණය</h2>
+<table>
+<tr><th>වර්ගය</th><th>උදාහරණ</th><th>ඉදිරිපත් කිරීම</th></tr>
+<tr><td>ජංගම නොවන වත්කම්</td><td>ඉඩම් හා ගොඩනැගිලි, බෙදාහැරීමේ වාහන/මෝටර් රථ, ලී බඩු උපකරණ, යන්ත්‍ර, දිගුකාලීන ස්ථාවර තැන්පතු</td><td>පළමුව</td></tr>
+<tr><td>ජංගම වත්කම්</td><td>අවසාන තොගය, වෙළෙඳ ණයගැතියෝ, ලැබිය යුතු ආදායම්, බැංකු මුදල්, අතැති මුදල්</td><td>ද්‍රවශීලතාව අනුව</td></tr>
+</table>
+<h3>PDF උදාහරණය – වත්කම්</h3>
+<table>
+<tr><th>වත්කම</th><th class="amount">රු.</th></tr>
+<tr><td>ඉඩම් හා ගොඩනැගිලි</td><td class="amount">280,000</td></tr>
+<tr><td>බෙදාහැරීමේ මෝටර් රථ</td><td class="amount">400,000</td></tr>
+<tr><td>යන්ත්‍ර</td><td class="amount">60,000</td></tr>
+<tr><td>ලී බඩු</td><td class="amount">20,000</td></tr>
+<tr><td>වසර 5ක ස්ථාවර තැන්පතු</td><td class="amount">50,000</td></tr>
+<tr><td>අවසාන තොගය</td><td class="amount">30,000</td></tr>
+<tr><td>වෙළෙඳ ණයගැතියෝ</td><td class="amount">45,000</td></tr>
+<tr><td>බැංකු මුදල්</td><td class="amount">15,000</td></tr>
+<tr><td>අතැති මුදල්</td><td class="amount">80,000</td></tr>
+<tr><th>මුළු වත්කම්</th><th class="amount">1,015,000</th></tr>
+</table>
+<p class="note">PDF හි වත්කම් උදාහරණවල ඉඩම් හා ගොඩනැගිලි, මෝටර් රථ, යන්ත්‍ර, ලී බඩු, ස්ථාවර තැන්පතු, තොග, ණයගැතියෝ, බැංකු සහ අතැති මුදල් දක්වා ඇත. fileciteturn179file1L1098-L1135</p>
+</section>
+
+<section class="lesson-box">
+<h2>ද්‍රවශීලතා අනුපිළිවෙල</h2>
+<p>මූල්‍ය තත්ත්ව ප්‍රකාශනයේ වත්කම් ඒවා මුදල් බවට පත් කරගැනීමේ හැකියාව අනුව ඉදිරිපත් කළ හැක. ද්‍රවශීලතාව අඩු වත්කම් පළමුවත්, වැඩි ද්‍රවශීලතාවක් ඇති වත්කම් පසුවත් පෙන්වීමේ ක්‍රමය PDF හි පැහැදිලි කර ඇත.</p>
+<div class="callout"><strong>මතක තබාගන්න:</strong> අවසාන තොගය, ණයගැතියෝ, ලැබිය යුතු ආදායම්, බැංකු මුදල් සහ අතැති මුදල් වැනි ජංගම වත්කම් ද්‍රවශීලතාව අනුව සකස් කළ හැක.</div>
+<p class="note">PDF හි ද්‍රවශීලතාව අනුපිළිවෙල සහ 100% ද්‍රවශීලතාව ඇති අතැති මුදල් උදාහරණය දක්වා ඇත. fileciteturn179file2L1166-L1184</p>
+</section>
+
+<section class="lesson-box">
+<h2>හිමිකම ගණනය කිරීම</h2>
+<p>තනි පුද්ගල ව්‍යාපාරයක හිමිකම යනු වත්කම්වලින් වගකීම් අඩු කළ පසු හිමිකරුට ඉතිරිවන කොටසයි. ශුද්ධ ලාභය නිසා හිමිකම වැඩි වන අතර ශුද්ධ අලාභය සහ ගැනීම් නිසා හිමිකම අඩු වේ.</p>
+<div class="formula">අවසාන හිමිකම = ආරම්භක ප්‍රාග්ධනය + ශුද්ධ ලාභය − මුදල් ගැනීම් − භාණ්ඩ ගැනීම්</div>
+<table>
+<tr><th>අයිතමය</th><th class="amount">රු.</th></tr>
+<tr><td>ආරම්භක ප්‍රාග්ධනය</td><td class="amount">150,000</td></tr>
+<tr><td>එකතු කළා – ශුද්ධ ලාභය</td><td class="amount">50,000</td></tr>
+<tr><td>අඩු කළා – මුදල් ගැනීම්</td><td class="amount">(12,000)</td></tr>
+<tr><td>අඩු කළා – භාණ්ඩ ගැනීම්</td><td class="amount">(8,000)</td></tr>
+<tr><th>අවසාන හිමිකම</th><th class="amount">180,000</th></tr>
+</table>
+<p class="note">මෙය PDF හි හිමිකම ගණනය කිරීමේ උදාහරණයට අනුරූප වේ. fileciteturn179file2L1186-L1218</p>
+</section>
+
+<section class="lesson-box">
+<h2>වගකීම් වර්ගීකරණය</h2>
+<table>
+<tr><th>වර්ගය</th><th>උදාහරණ</th></tr>
+<tr><td>ජංගම නොවන වගකීම්</td><td>වසර 3කින්, 4කින් හෝ 5කින් පසු ගෙවිය යුතු බැංකු ණය සහ දිගුකාලීන ණය.</td></tr>
+<tr><td>ජංගම වගකීම්</td><td>වෙළෙඳ ණයහිමියෝ, ගෙවිය යුතු කඩ කුලී, ගෙවිය යුතු රක්ෂණ, ගෙවිය යුතු පොලී, ගෙවිය යුතු වියදම්.</td></tr>
+</table>
+<p class="note">PDF හි වගකීම් ද්‍රවශීලතා අනුපිළිවෙලට ජංගම නොවන හා ජංගම වගකීම් ලෙස වර්ගීකරණය කරයි. fileciteturn179file2L1230-L1276</p>
+</section>
+
+<section class="lesson-box">
+<h2>ගිණුම්කරණ සමීකරණය – මූල්‍ය තත්ත්වය පරීක්ෂා කිරීම</h2>
+<div class="formula">වත්කම් = හිමිකම + වගකීම්</div>
+<p>උදාහරණයක් ලෙස:</p>
+<div class="formula">240,000 + 60,000 + 20,000 + 30,000 + 50,000 + 80,000 = 300,000 + 100,000 + 80,000<br>480,000 = 480,000</div>
+<p>එම නිසා ගිණුම්කරණ සමීකරණය සමතුලිත වේ.</p>
+<p class="note">මෙම උදාහරණය PDF හි ගිණුම්කරණ සමීකරණය මගින් මූල්‍ය තත්ත්වය පෙන්වන ක්‍රියාකාරකමට අදාළය. fileciteturn183file0L57-L61</p>
+</section>
+
+<section class="lesson-box">
+<h2>ලෙජර් ගිණුම් – PDF ආකෘතියට සමාන T-ගිණුම්</h2>
+<p>පහත ආකෘතියේ වම් පැත්ත <strong>හර (Dr.)</strong> සහ දකුණු පැත්ත <strong>බැර (Cr.)</strong> වේ. දිනය, විස්තර සහ මුදල පැහැදිලිව වෙන් කර පෙන්වා ඇත.</p>
+
+<h3>මුදල් ගිණුම</h3>
+<div class="ledger-wrap">
+<table class="ledger">
+<tr><th colspan="3">හර (Dr.)</th><th colspan="3">බැර (Cr.)</th></tr>
+<tr><th>දිනය</th><th>විස්තර</th><th>රු.</th><th>දිනය</th><th>විස්තර</th><th>රු.</th></tr>
+<tr><td>01/01</td><td>ප්‍රාග්ධනය</td><td class="amount">500,000</td><td>02/01</td><td>බැංකු</td><td class="amount">350,000</td></tr>
+<tr><td>06/01</td><td>විකුණුම්</td><td class="amount">150,000</td><td>04/01</td><td>ගැනුම්</td><td class="amount">70,000</td></tr>
+<tr><td colspan="2"><strong>එකතුව</strong></td><td class="amount"><strong>650,000</strong></td><td>05/01</td><td>ගෙන ඒමේ කුලී</td><td class="amount">8,000</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><strong>ශේෂය c/d</strong></td><td class="amount"><strong>222,000</strong></td></tr>
+<tr><th colspan="2">මුළු එකතුව</th><th class="amount">650,000</th><th colspan="2">මුළු එකතුව</th><th class="amount">650,000</th></tr>
+</table>
+</div>
+
+<h3>බැංකු ගිණුම</h3>
+<div class="ledger-wrap">
+<table class="ledger">
+<tr><th colspan="3">හර (Dr.)</th><th colspan="3">බැර (Cr.)</th></tr>
+<tr><th>දිනය</th><th>විස්තර</th><th>රු.</th><th>දිනය</th><th>විස්තර</th><th>රු.</th></tr>
+<tr><td>02/01</td><td>මුදල්</td><td class="amount">350,000</td><td>09/01</td><td>ණයහිමියෝ</td><td class="amount">90,000</td></tr>
+<tr><td>08/01</td><td>ණයගැතියෝ</td><td class="amount">100,000</td><td>10/01</td><td>ප්‍රචාරණ</td><td class="amount">12,000</td></tr>
+<tr><td>14/01</td><td>බැංකු ණය</td><td class="amount">120,000</td><td>11/01</td><td>වැටුප්</td><td class="amount">25,000</td></tr>
+<tr><td colspan="2"><strong>එකතුව</strong></td><td class="amount"><strong>570,000</strong></td><td>12/01</td><td>කුලී</td><td class="amount">18,000</td></tr>
+<tr><td></td><td></td><td></td><td>13/01</td><td>ස්ථාවර වත්කම්</td><td class="amount">60,000</td></tr>
+<tr><td></td><td></td><td></td><td>15/01</td><td>පොලී</td><td class="amount">6,000</td></tr>
+<tr><td></td><td></td><td></td><td>16/01</td><td>ගැනීම්</td><td class="amount">15,000</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><strong>ශේෂය c/d</strong></td><td class="amount"><strong>344,000</strong></td></tr>
+<tr><th colspan="2">මුළු එකතුව</th><th class="amount">570,000</th><th colspan="2">මුළු එකතුව</th><th class="amount">570,000</th></tr>
+</table>
+</div>
+
+<h3>වෙළෙඳ ණයගැති ගිණුම</h3>
+<div class="ledger-wrap">
+<table class="ledger">
+<tr><th colspan="3">හර (Dr.)</th><th colspan="3">බැර (Cr.)</th></tr>
+<tr><th>දිනය</th><th>විස්තර</th><th>රු.</th><th>දිනය</th><th>විස්තර</th><th>රු.</th></tr>
+<tr><td>07/01</td><td>විකුණුම්</td><td class="amount">220,000</td><td>08/01</td><td>බැංකු</td><td class="amount">100,000</td></tr>
+<tr><td colspan="2"><strong>ශේෂය c/d</strong></td><td class="amount"><strong>120,000</strong></td><td></td><td></td><td></td></tr>
+<tr><th colspan="2">මුළු එකතුව</th><th class="amount">220,000</th><th colspan="2">මුළු එකතුව</th><th class="amount">220,000</th></tr>
+</table>
+</div>
+
+<h3>වෙළෙඳ ණයහිමි ගිණුම</h3>
+<div class="ledger-wrap">
+<table class="ledger">
+<tr><th colspan="3">හර (Dr.)</th><th colspan="3">බැර (Cr.)</th></tr>
+<tr><th>දිනය</th><th>විස්තර</th><th>රු.</th><th>දිනය</th><th>විස්තර</th><th>රු.</th></tr>
+<tr><td>09/01</td><td>බැංකු</td><td class="amount">90,000</td><td>03/01</td><td>ගැනුම්</td><td class="amount">180,000</td></tr>
+<tr><td></td><td></td><td></td><td></td><td><strong>ශේෂය c/d</strong></td><td class="amount"><strong>90,000</strong></td></tr>
+<tr><th colspan="2">මුළු එකතුව</th><th class="amount">90,000</th><th colspan="2">මුළු එකතුව</th><th class="amount">180,000</th></tr>
+</table>
+</div>
+
+<p class="note">මෙම T-ගිණුම් ආකෘතිය PDF හි දක්වන හර/බැර ගිණුම් සටහන් පෙන්වීමේ ආකාරයට website එක තුළ සකස් කළ අධ්‍යාපනික ඉදිරිපත් කිරීමකි. fileciteturn179file0L29-L52</p>
+</section>
+
+<section class="lesson-box">
+<h2>විශාල ගනුදෙනු උදාහරණය – ගනුදෙනු → ජර්නල් → ලෙජර් → මූල්‍ය ප්‍රකාශන</h2>
+<p>මෙම උදාහරණය ශිෂ්‍යයාට ගනුදෙනුවක සිට අවසාන මූල්‍ය ප්‍රකාශනය දක්වා ගමන් කරන සම්පූර්ණ ක්‍රියාවලිය දැකගැනීමට සකස් කර ඇත.</p>
+<table>
+<tr><th>#</th><th>ගනුදෙනුව</th><th class="amount">රු.</th></tr>
+<tr><td>1</td><td>හිමිකරු මුදල් ප්‍රාග්ධනය ලෙස යෙදවීය</td><td class="amount">500,000</td></tr>
+<tr><td>2</td><td>බැංකු ගිණුමට මුදල් තැන්පත් කළේය</td><td class="amount">350,000</td></tr>
+<tr><td>3</td><td>ණයට භාණ්ඩ මිලදී ගත්තේය</td><td class="amount">180,000</td></tr>
+<tr><td>4</td><td>අත්පිට භාණ්ඩ මිලදී ගත්තේය</td><td class="amount">70,000</td></tr>
+<tr><td>5</td><td>ගෙන ඒමේ කුලී ගෙවීය</td><td class="amount">8,000</td></tr>
+<tr><td>6</td><td>අත්පිට විකුණුම්</td><td class="amount">150,000</td></tr>
+<tr><td>7</td><td>ණයට විකුණුම්</td><td class="amount">220,000</td></tr>
+<tr><td>8</td><td>ණයගැතියෙකුගෙන් බැංකුවට මුදල් ලැබුණි</td><td class="amount">100,000</td></tr>
+<tr><td>9</td><td>ණයහිමියෙකුට බැංකුවෙන් ගෙවීය</td><td class="amount">90,000</td></tr>
+<tr><td>10</td><td>ප්‍රචාරණ වියදම් ගෙවීය</td><td class="amount">12,000</td></tr>
+<tr><td>11</td><td>සේවක වැටුප් ගෙවීය</td><td class="amount">25,000</td></tr>
+<tr><td>12</td><td>කාර්යාල කුලී ගෙවීය</td><td class="amount">18,000</td></tr>
+<tr><td>13</td><td>ස්ථාවර වත්කමක් බැංකුවෙන් මිලදී ගත්තේය</td><td class="amount">60,000</td></tr>
+<tr><td>14</td><td>බැංකු ණයක් ලබාගත්තේය</td><td class="amount">120,000</td></tr>
+<tr><td>15</td><td>බැංකු ණය පොලී ගෙවීය</td><td class="amount">6,000</td></tr>
+<tr><td>16</td><td>හිමිකරු පෞද්ගලික භාවිතයට මුදල් ගත්තේය</td><td class="amount">15,000</td></tr>
+<tr><td>17</td><td>හිමිකරු පෞද්ගලික භාවිතයට භාණ්ඩ ගත්තේය</td><td class="amount">5,000</td></tr>
+<tr><td>18</td><td>වසර අවසානයේ අවසාන තොගය</td><td class="amount">55,000</td></tr>
+</table>
+
+<h3>ජර්නල් සටහන්</h3>
+<table>
+<tr><th>#</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th class="amount">රු.</th></tr>
+<tr><td>1</td><td>මුදල්</td><td>ප්‍රාග්ධනය</td><td class="amount">500,000</td></tr>
+<tr><td>2</td><td>බැංකු</td><td>මුදල්</td><td class="amount">350,000</td></tr>
+<tr><td>3</td><td>ගැනුම්</td><td>වෙළෙඳ ණයහිමියෝ</td><td class="amount">180,000</td></tr>
+<tr><td>4</td><td>ගැනුම්</td><td>මුදල්</td><td class="amount">70,000</td></tr>
+<tr><td>5</td><td>ගෙන ඒමේ කුලී</td><td>මුදල්</td><td class="amount">8,000</td></tr>
+<tr><td>6</td><td>මුදල්</td><td>විකුණුම්</td><td class="amount">150,000</td></tr>
+<tr><td>7</td><td>වෙළෙඳ ණයගැතියෝ</td><td>විකුණුම්</td><td class="amount">220,000</td></tr>
+<tr><td>8</td><td>බැංකු</td><td>වෙළෙඳ ණයගැතියෝ</td><td class="amount">100,000</td></tr>
+<tr><td>9</td><td>වෙළෙඳ ණයහිමියෝ</td><td>බැංකු</td><td class="amount">90,000</td></tr>
+<tr><td>10</td><td>ප්‍රචාරණ වියදම්</td><td>බැංකු</td><td class="amount">12,000</td></tr>
+<tr><td>11</td><td>වැටුප්</td><td>බැංකු</td><td class="amount">25,000</td></tr>
+<tr><td>12</td><td>කුලී වියදම්</td><td>බැංකු</td><td class="amount">18,000</td></tr>
+<tr><td>13</td><td>ස්ථාවර වත්කම්</td><td>බැංකු</td><td class="amount">60,000</td></tr>
+<tr><td>14</td><td>බැංකු</td><td>බැංකු ණය</td><td class="amount">120,000</td></tr>
+<tr><td>15</td><td>බැංකු ණය පොලී</td><td>බැංකු</td><td class="amount">6,000</td></tr>
+<tr><td>16</td><td>ගැනීම්</td><td>බැංකු</td><td class="amount">15,000</td></tr>
+<tr><td>17</td><td>ගැනීම්</td><td>ගැනුම්</td><td class="amount">5,000</td></tr>
+</table>
+<p class="note">ගනුදෙනු → මූලික සටහන් → ලෙජර් → ශේෂ පිරික්සුම → මූල්‍ය ප්‍රකාශන යන ක්‍රියාවලිය PDF හි පැහැදිලි කර ඇත. fileciteturn179file0L28-L52</p>
+</section>
+
+<section class="lesson-box">
+<h2>ශේෂ පිරික්සුමෙන් මූල්‍ය ප්‍රකාශන දක්වා</h2>
+<div class="grid">
+<div class="card"><strong>විකුණුම්</strong><br>රු.370,000</div>
+<div class="card"><strong>ගැනුම්</strong><br>රු.250,000 − භාණ්ඩ ගැනීම් රු.5,000 = රු.245,000</div>
+<div class="card"><strong>ගෙන ඒමේ වියදම්</strong><br>රු.8,000</div>
+<div class="card"><strong>අවසාන තොගය</strong><br>රු.55,000</div>
+</div>
+<div class="solution">
+<strong>විකුණුම් පිරිවැය:</strong><br>
+ආරම්භක තොගය 0 + ශුද්ධ ගැනුම් 245,000 + ගෙන ඒමේ වියදම් 8,000 − අවසාන තොගය 55,000 = <b>රු.198,000</b><br><br>
+<strong>දළ ලාභය:</strong> 370,000 − 198,000 = <b>රු.172,000</b><br>
+<strong>වෙනත්/මෙහෙයුම් වියදම්:</strong> 12,000 + 25,000 + 18,000 + 6,000 = <b>රු.61,000</b><br>
+<strong>ශුද්ධ ලාභය:</strong> 172,000 − 61,000 = <b>රු.111,000</b><br>
+<strong>අවසාන හිමිකම:</strong> 500,000 + 111,000 − 15,000 − 5,000 = <b>රු.591,000</b>
+</div>
+</section>
+
+<section class="lesson-box">
+<h2>අවසාන මූල්‍ය ප්‍රකාශන – විශාල උදාහරණය</h2>
+<h3>ලාභ හෝ අලාභ ප්‍රකාශනය</h3>
+<table>
+<tr><th>අයිතමය</th><th class="amount">රු.</th></tr>
+<tr><td>විකුණුම්</td><td class="amount">370,000</td></tr>
+<tr><td>අඩු කළා – විකුණුම් පිරිවැය</td><td class="amount">(198,000)</td></tr>
+<tr><th>දළ ලාභය</th><th class="amount">172,000</th></tr>
+<tr><td>බෙදාහැරීමේ වියදම් – ප්‍රචාරණ</td><td class="amount">(12,000)</td></tr>
+<tr><td>පරිපාලන වියදම් – වැටුප්</td><td class="amount">(25,000)</td></tr>
+<tr><td>පරිපාලන වියදම් – කුලී</td><td class="amount">(18,000)</td></tr>
+<tr><td>මූල්‍ය වියදම් – ණය පොලී</td><td class="amount">(6,000)</td></tr>
+<tr><th>ශුද්ධ ලාභය</th><th class="amount">111,000</th></tr>
+</table>
+
+<h3>මූල්‍ය තත්ත්ව ප්‍රකාශනය</h3>
+<table>
+<tr><th>අයිතමය</th><th class="amount">රු.</th></tr>
+<tr><td colspan="2"><strong>ජංගම නොවන වත්කම්</strong></td></tr>
+<tr><td>ස්ථාවර වත්කම්</td><td class="amount">60,000</td></tr>
+<tr><td colspan="2"><strong>ජංගම වත්කම්</strong></td></tr>
+<tr><td>අවසාන තොගය</td><td class="amount">55,000</td></tr>
+<tr><td>වෙළෙඳ ණයගැතියෝ</td><td class="amount">120,000</td></tr>
+<tr><td>බැංකු</td><td class="amount">344,000</td></tr>
+<tr><td>මුදල්</td><td class="amount">222,000</td></tr>
+<tr><th>මුළු වත්කම්</th><th class="amount">801,000</th></tr>
+<tr><td colspan="2"><strong>හිමිකම හා වගකීම්</strong></td></tr>
+<tr><td>අවසාන හිමිකම</td><td class="amount">591,000</td></tr>
+<tr><td>වෙළෙඳ ණයහිමියෝ</td><td class="amount">90,000</td></tr>
+<tr><td>බැංකු ණය</td><td class="amount">120,000</td></tr>
+<tr><th>මුළු හිමිකම හා වගකීම්</th><th class="amount">801,000</th></tr>
+</table>
+<div class="highlight"><strong>පරීක්ෂාව:</strong> වත්කම් රු.801,000 = හිමිකම රු.591,000 + වගකීම් රු.210,000 = රු.801,000.</div>
+
+<div class="textbook-page">
+<div class="textbook-title">XYZ ව්‍යාපාරය</div>
+<div class="textbook-subtitle">20XX දෙසැම්බර් 31 න් අවසන් වර්ෂය සඳහා වෙළඳ හා ලාභ අලාභ ගිණුම</div>
+
+<table class="exam-account">
+<tr>
+<th class="particular">විස්තරය</th>
+<th class="money">හර (රු.)</th>
+<th class="money">බැර (රු.)</th>
+</tr>
+<tr>
+<td class="particular"><b>වෙළඳ ගිණුම</b></td><td></td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To ආරම්භක තොගය</td><td class="money">50,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To ගැනුම්</td><td class="money">193,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To ගෙන ඒමේ වියදම්</td><td class="money">10,000</td><td></td>
+</tr>
+<tr class="total-row">
+<td class="particular indent">To දළ ලාභය c/d</td><td class="money">172,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">By විකුණුම්</td><td></td><td class="money">370,000</td>
+</tr>
+<tr>
+<td class="particular indent">By අවසාන තොගය</td><td></td><td class="money">55,000</td>
+</tr>
+<tr class="final-row">
+<td class="particular"><b>එකතුව</b></td><td class="money"><b>425,000</b></td><td class="money"><b>425,000</b></td>
+</tr>
+<tr>
+<td class="particular"><b>ලාභ අලාභ ගිණුම</b></td><td></td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To බෙදාහැරීමේ වියදම් – ප්‍රචාරණ</td><td class="money">12,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To පරිපාලන වියදම් – වැටුප්</td><td class="money">25,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To පරිපාලන වියදම් – කුලී</td><td class="money">18,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">To මූල්‍ය වියදම් – ණය පොලී</td><td class="money">6,000</td><td></td>
+</tr>
+<tr class="total-row">
+<td class="particular indent">To ශුද්ධ ලාභය c/d</td><td class="money">111,000</td><td></td>
+</tr>
+<tr>
+<td class="particular indent">By දළ ලාභය b/d</td><td></td><td class="money">172,000</td>
+</tr>
+<tr class="final-row">
+<td class="particular"><b>එකතුව</b></td><td class="money"><b>172,000</b></td><td class="money"><b>172,000</b></td>
+</tr>
+</table>
+
+<div class="exam-note">මෙම ආකෘතියේදී “To” හර පැත්තත් “By” බැර පැත්තත් පෙන්වයි. පළමුව වෙළඳ ගිණුමෙන් දළ ලාභය/අලාභය තීරණය කර, එය ලාභ අලාභ ගිණුමට ගෙන ගොස් අනෙකුත් ආදායම් හා වියදම් සලකා ශුද්ධ ලාභය/අලාභය තීරණය කරයි.</div>
+</div>
+
+<div class="textbook-page">
+<div class="textbook-title">XYZ ව්‍යාපාරය</div>
+<div class="textbook-subtitle">20XX දෙසැම්බර් 31 දිනට මූල්‍ය තත්ත්ව ප්‍රකාශනය</div>
+
+<table class="balance-sheet">
+<tr>
+<th colspan="2" class="side-title">වත්කම්</th>
+<th colspan="2" class="side-title">හිමිකම හා වගකීම්</th>
+</tr>
+<tr>
+<td>ජංගම නොවන වත්කම්</td><td class="amount"></td>
+<td>හිමිකම</td><td class="amount"></td>
+</tr>
+<tr>
+<td class="indent">ස්ථාවර වත්කම්</td><td class="amount">60,000</td>
+<td class="indent">අවසාන හිමිකම</td><td class="amount">591,000</td>
+</tr>
+<tr>
+<td>ජංගම වත්කම්</td><td class="amount"></td>
+<td>ජංගම නොවන වගකීම්</td><td class="amount"></td>
+</tr>
+<tr>
+<td class="indent">අවසාන තොගය</td><td class="amount">55,000</td>
+<td class="indent">බැංකු ණය</td><td class="amount">120,000</td>
+</tr>
+<tr>
+<td class="indent">වෙළෙඳ ණයගැතියෝ</td><td class="amount">120,000</td>
+<td>ජංගම වගකීම්</td><td class="amount"></td>
+</tr>
+<tr>
+<td class="indent">බැංකු</td><td class="amount">344,000</td>
+<td class="indent">වෙළෙඳ ණයහිමියෝ</td><td class="amount">90,000</td>
+</tr>
+<tr>
+<td class="indent">මුදල්</td><td class="amount">222,000</td>
+<td></td><td></td>
+</tr>
+<tr class="final-row">
+<td><b>මුළු වත්කම්</b></td><td class="amount"><b>801,000</b></td>
+<td><b>මුළු හිමිකම හා වගකීම්</b></td><td class="amount"><b>801,000</b></td>
+</tr>
+</table>
+
+<div class="exam-note"><b>ගිණුම්කරණ සමීකරණය:</b> වත්කම් = හිමිකම + වගකීම් → රු.801,000 = රු.591,000 + රු.210,000. එබැවින් ප්‍රකාශනය සමතුලිත වේ.</div>
+</div>
+</section>
+
+<section class="lesson-box">
+<h2>PDF හි අමතර ක්‍රියාකාරකම් – පුහුණුව</h2>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 01 – දළ ලාභය</h3>
+<p>විකුණුම් ආදායම රු.168,000, ආරම්භක තොගය රු.15,000, ගැනුම් රු.75,000, ප්‍රවාහන/ගෙන ඒමේ වියදම් රු.18,000, අවසාන තොගය රු.20,000 නම් විකුණුම් පිරිවැය සහ දළ ලාභය සොයන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">විකුණුම් පිරිවැය = 15,000 + 75,000 + 18,000 − 20,000 = <b>රු.88,000</b>.<br>දළ ලාභය = 168,000 − 88,000 = <b>රු.80,000</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 02 – වෙනත් ආදායම් සහ වියදම්</h3>
+<p>දළ ලාභය රු.70,000, ණයට විකුණුම් රු.48,000, ලාභාංශ ආදායම රු.5,000, කුලී ආදායම රු.30,000, ලැබූ වට්ටම් රු.6,000, පොලී ආදායම රු.7,000 සහ අදාළ වියදම් රු.60,000 නම් වෙනත් ආදායම් එකතුව සහ ශුද්ධ ප්‍රතිඵලය ගණනය කරන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">වෙනත් ආදායම් = 5,000 + 30,000 + 6,000 + 7,000 = <b>රු.48,000</b>.<br>ශුද්ධ ලාභය = 70,000 + 48,000 − 60,000 = <b>රු.58,000</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 03 – වියදම් වර්ගීකරණය</h3>
+<p>ප්‍රචාරණ වියදම්, රක්ෂණ ගාස්තු, බැංකු ණය පොලී, මුදල් වංචා අලාභ, විකුණුම් කොමිස්, පරිපාලන වැටුප් සහ බැංකු ගාස්තු සුදුසු කාණ්ඩවලට වෙන් කරන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">ප්‍රචාරණ සහ විකුණුම් කොමිස් – <b>බෙදාහැරීමේ වියදම්</b>.<br>රක්ෂණ සහ පරිපාලන වැටුප් – <b>පරිපාලන වියදම්</b>.<br>බැංකු ණය පොලී සහ බැංකු ගාස්තු – <b>මූල්‍ය වියදම්</b>.<br>මුදල් වංචා අලාභ – <b>වෙනත් වියදම්</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 04 – මූල්‍ය තත්ත්ව ප්‍රකාශනය</h3>
+<p>ඉඩම් රු.240,000, යන්ත්‍ර රු.60,000, ලී බඩු රු.20,000, තොග රු.30,000, ණයගැතියෝ රු.50,000, මුදල් රු.80,000, ප්‍රාග්ධනය රු.300,000, බැංකු ණය රු.100,000 සහ ණයහිමියෝ රු.80,000 නම් ගිණුම්කරණ සමීකරණය පරීක්ෂා කරන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">වත්කම් = 240,000 + 60,000 + 20,000 + 30,000 + 50,000 + 80,000 = <b>රු.480,000</b>.<br>හිමිකම + වගකීම් = 300,000 + 100,000 + 80,000 = <b>රු.480,000</b>.<br>එබැවින් සමීකරණය සමතුලිතයි.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 05 – හිමිකම</h3>
+<p>ආරම්භක ප්‍රාග්ධනය රු.320,000, ශුද්ධ ලාභය රු.140,000, මුදල් ගැනීම් රු.24,000 සහ භාණ්ඩ ගැනීම් රු.8,000 නම් අවසාන හිමිකම සොයන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">320,000 + 140,000 − 24,000 − 8,000 = <b>රු.428,000</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 06 – වත්කම් ද්‍රවශීලතාව</h3>
+<p>පහත අයිතම ජංගම නොවන වත්කම් සහ ජංගම වත්කම් ලෙස වෙන් කර, ජංගම වත්කම් ද්‍රවශීලතා අනුපිළිවෙලකට සකස් කරන්න: යන්ත්‍ර, මෝටර් රථ, අවසාන තොගය, ණයගැතියෝ, ලැබිය යුතු ආදායම්, බැංකු මුදල්, අතැති මුදල්.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">ජංගම නොවන: <b>යන්ත්‍ර, මෝටර් රථ</b>.<br>ජංගම: <b>අවසාන තොගය, ණයගැතියෝ, ලැබිය යුතු ආදායම්, බැංකු මුදල්, අතැති මුදල්</b>. ඉදිරිපත් කිරීමේදී ද්‍රවශීලතාව සලකා බලයි.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 07 – වගකීම්</h3>
+<p>රු.480,000ක වසර 5කින් ගෙවිය යුතු බැංකු ණයක්, රු.60,000ක වෙළෙඳ ණයහිමියන්, රු.9,000ක ගෙවිය යුතු වැටුප් සහ රු.4,000ක ගෙවිය යුතු දුරකථන ගාස්තු ඇත. ජංගම නොවන හා ජංගම වගකීම් වෙන් කරන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">ජංගම නොවන වගකීම – <b>රු.480,000 බැංකු ණය</b>.<br>ජංගම වගකීම් – <b>රු.60,000 ණයහිමියෝ + රු.9,000 වැටුප් + රු.4,000 දුරකථන ගාස්තු = රු.73,000</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 08 – ලෙජර් සටහන</h3>
+<p>මුදල් ගිණුමට ප්‍රාග්ධනය රු.200,000ක් ලැබුණි. පසුව භාණ්ඩ මිලදී ගැනීමට රු.40,000ක් සහ කුලී සඳහා රු.10,000ක් ගෙවා ඇත. මුදල් ගිණුමේ ශේෂය සොයන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">හර පැත්ත = රු.200,000.<br>බැර පැත්ත = 40,000 + 10,000 = රු.50,000.<br>ශේෂය = 200,000 − 50,000 = <b>රු.150,000 හර ශේෂය</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 09 – මූල්‍ය තත්ත්ව ප්‍රකාශනය සම්පූර්ණ කිරීම</h3>
+<p>මුළු වත්කම් රු.1,201,000 සහ මුළු වගකීම් රු.288,000 නම් හිමිකම සොයන්න.</p>
+<details><summary>පිළිතුර බලන්න</summary><div class="solution">හිමිකම = වත්කම් − වගකීම් = 1,201,000 − 288,000 = <b>රු.913,000</b>.</div></details>
+</div>
+
+<div class="activity">
+<h3>ක්‍රියාකාරකම 10 – සම්පූර්ණ ගිණුම්කරණ ක්‍රියාවලිය</h3>
+<p>ගනුදෙනු 5ක් තෝරාගෙන ඒවායේ හර හා බැර ගිණුම් හඳුනාගෙන, ලෙජර්වලට මාරු කර, අවසාන ශේෂ ලබාගෙන, ලාභ හෝ අලාභ ප්‍රකාශනය සහ මූල්‍ය තත්ත්ව ප්‍රකාශනය සකස් කරන්න.</p>
+<details><summary>ගිණුම් ක්‍රමය</summary><div class="solution">
+<strong>1.</strong> සෑම ගනුදෙනුවකම ගිණුම් දෙක හඳුනාගන්න.<br>
+<strong>2.</strong> ගිණුම්කරණ සමීකරණයට බලපෑම සලකා බලන්න.<br>
+<strong>3.</strong> හර ගිණුම සහ බැර ගිණුම තීරණය කරන්න.<br>
+<strong>4.</strong> ජර්නල් සටහන සකස් කරන්න.<br>
+<strong>5.</strong> ලෙජර් ගිණුමට පිටපත් කරන්න.<br>
+<strong>6.</strong> ශේෂ පිරික්සුම සකස් කරන්න.<br>
+<strong>7.</strong> අවසාන තොග සහ අනෙකුත් අවශ්‍ය ගැලපුම් සලකා බලන්න.<br>
+<strong>8.</strong> විකුණුම් පිරිවැය සහ දළ ලාභය/අලාභය සොයන්න.<br>
+<strong>9.</strong> වෙනත් ආදායම් සහ වියදම් ඇතුළත් කර ශුද්ධ ලාභය/අලාභය සොයන්න.<br>
+<strong>10.</strong> අවසාන හිමිකම ගණනය කර මූල්‍ය තත්ත්ව ප්‍රකාශනය සකස් කරන්න.
+</div></details>
+</div>
+</section>
+
+<section class="lesson-box">
+<h2>PDF හි අවසාන ආදර්ශ ප්‍රශ්නය – මූල්‍ය තත්ත්ව ප්‍රකාශනය</h2>
+<p>PDF හි අවසාන ක්‍රියාකාරකම්වලදී ශේෂ පිරික්සුමක දත්ත භාවිත කර ලාභ හෝ අලාභ ප්‍රකාශනය සහ මූල්‍ය තත්ත්ව ප්‍රකාශනය සකස් කිරීමට උපදෙස් දී ඇත. එහි අයිතම ලෙස ප්‍රාග්ධනය, ණයගැතියෝ, ණයහිමියෝ, ආරම්භක තොගය, ගැනුම්, ගෙන ඒමේ කුලී, විකුණුම් කොමිස්, රක්ෂණ, කඩ කුලී ආදායම්, ලැබූ වට්ටම්, විකුණුම්, දුන් වට්ටම්, යන්ත්‍ර හා උපකරණ, ගොඩනැගිලි, බැංකු ණය, පොලී වියදම්, බැංකු අයිරාව, මුදල් ශේෂය, බොල් ණය, පරිපාලන වැටුප් සහ බැංකු ගාස්තු වැනි අයිතම භාවිත කරයි. fileciteturn183file0L90-L150</p>
+<div class="highlight"><strong>විභාග උපදෙස:</strong> මුලින් ගිණුම් වර්ගීකරණය කරන්න. පසුව ලාභ හෝ අලාභ ප්‍රකාශනය සඳහා ආදායම් හා වියදම් වෙන් කරන්න. ඉන්පසු වත්කම්, හිමිකම සහ වගකීම් මූල්‍ය තත්ත්ව ප්‍රකාශනයට ඇතුළත් කරන්න.</div>
+</section>
+
+<section class="lesson-box">
+<h2>මතක තබාගන්න</h2>
+<div class="grid">
+<div class="card"><strong>දළ ලාභය</strong><br>විකුණුම් ආදායම − විකුණුම් පිරිවැය</div>
+<div class="card"><strong>විකුණුම් පිරිවැය</strong><br>ආරම්භක තොගය + ගැනුම් + ගෙන ඒමේ වියදම් − අවසාන තොගය</div>
+<div class="card"><strong>ශුද්ධ ලාභය</strong><br>දළ ලාභය + වෙනත් ආදායම් − වියදම්</div>
+<div class="card"><strong>හිමිකම</strong><br>වත්කම් − වගකීම්</div>
+<div class="card"><strong>ගිණුම්කරණ සමීකරණය</strong><br>වත්කම් = හිමිකම + වගකීම්</div>
+<div class="card"><strong>ජංගම වත්කම්</strong><br>සාපේක්ෂව ඉක්මනින් මුදල් බවට පත් කළ හැකි වත්කම්.</div>
+<div class="card"><strong>ජංගම නොවන වත්කම්</strong><br>දිගුකාලීනව ව්‍යාපාරය භාවිත කරන වත්කම්.</div>
+<div class="card"><strong>ජංගම වගකීම්</strong><br>කෙටි කාලයකදී ගෙවිය යුතු වගකීම්.</div>
+<div class="card"><strong>ජංගම නොවන වගකීම්</strong><br>දිගු කාලයකදී ගෙවිය යුතු වගකීම්.</div>
+</div>
+<a href="g11lesson4quiz.html" class="quiz-button">Lesson 4 Quiz ආරම්භ කරන්න →</a>
+</section>
+
+</div>
+
+<footer>© 2026 Unique EduZone | Grade 11 Business &amp; Accounting Studies</footer>
+
+</body>
+</html>
