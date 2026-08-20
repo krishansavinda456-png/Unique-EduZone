@@ -1,28 +1,12 @@
 <!DOCTYPE html>
 <html lang="si">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>
-Grade 11 - Lesson 3 Quiz | Unique EduZone
-</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade 11 - Lesson 3 Quiz | Unique EduZone</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
     font-family:Arial,"Noto Sans Sinhala",sans-serif;
@@ -30,7 +14,6 @@ body{
     color:#f5f5f5;
     line-height:1.7
 }
-
 
 header{
     background:#111;
@@ -41,7 +24,6 @@ header{
     z-index:10
 }
 
-
 .header-inner{
     max-width:1000px;
     margin:auto;
@@ -50,13 +32,11 @@ header{
     justify-content:space-between
 }
 
-
 .logo{
     display:flex;
     align-items:center;
     gap:12px
 }
-
 
 .logo img{
     width:52px;
@@ -64,13 +44,11 @@ header{
     object-fit:contain
 }
 
-
 .logo-text{
     color:#d4af37;
     font-size:21px;
     font-weight:bold
 }
-
 
 .back-btn{
     color:#080808;
@@ -81,17 +59,13 @@ header{
     font-weight:bold
 }
 
-
 .container{
     width:92%;
     max-width:1000px;
     margin:30px auto 70px
 }
 
-
-.hero,
-.quiz-box,
-.result-box{
+.hero,.quiz-box,.result-box{
     background:#111;
     border:1px solid #d4af37;
     border-radius:18px;
@@ -99,16 +73,10 @@ header{
     margin-bottom:24px
 }
 
-
 .hero{
     text-align:center;
-    background:linear-gradient(
-        135deg,
-        #111,
-        #1d1d1d
-    )
+    background:linear-gradient(135deg,#111,#1d1d1d)
 }
-
 
 .hero h1{
     color:#d4af37;
@@ -116,11 +84,9 @@ header{
     margin-bottom:8px
 }
 
-
 .hero p{
     color:#ddd
 }
-
 
 .progress{
     height:12px;
@@ -130,28 +96,20 @@ header{
     margin-top:16px
 }
 
-
 .progress-fill{
     height:100%;
     width:0;
-    background:linear-gradient(
-        90deg,
-        #b8860b,
-        #ffd700
-    );
+    background:linear-gradient(90deg,#b8860b,#ffd700);
     transition:.3s
 }
-
 
 .question{
     display:none
 }
 
-
 .question.active{
     display:block
 }
-
 
 .question-number{
     color:#d4af37;
@@ -159,12 +117,10 @@ header{
     margin-bottom:8px
 }
 
-
 .question h2{
     font-size:21px;
     margin-bottom:18px
 }
-
 
 .option{
     display:block;
@@ -180,13 +136,11 @@ header{
     font-size:16px
 }
 
-
 .option:hover,
 .option.selected{
     border-color:#d4af37;
     background:#2a2410
 }
-
 
 .controls{
     display:flex;
@@ -194,7 +148,6 @@ header{
     gap:12px;
     margin-top:24px
 }
-
 
 button{
     border:0;
@@ -205,25 +158,21 @@ button{
     font-size:15px
 }
 
-
 .next,
 .submit{
     background:#d4af37;
     color:#080808
 }
 
-
 .prev{
     background:#333;
     color:#fff
 }
 
-
 button:disabled{
     opacity:.4;
     cursor:not-allowed
 }
-
 
 .note{
     margin-top:16px;
@@ -233,12 +182,10 @@ button:disabled{
     border-radius:8px
 }
 
-
 .result-box{
     display:none;
     text-align:center
 }
-
 
 .score{
     font-size:42px;
@@ -246,12 +193,10 @@ button:disabled{
     font-weight:bold
 }
 
-
 .result-box h2{
     color:#d4af37;
     margin-bottom:10px
 }
-
 
 .result-box button{
     margin:7px;
@@ -259,23 +204,19 @@ button:disabled{
     color:#080808
 }
 
-
 .review{
     margin-top:20px;
     text-align:left
 }
-
 
 .review-item{
     padding:13px;
     border-bottom:1px solid #333
 }
 
-
 .review-item strong{
     color:#d4af37
 }
-
 
 footer{
     text-align:center;
@@ -283,7 +224,6 @@ footer{
     color:#aaa;
     border-top:1px solid #333
 }
-
 
 @media(max-width:650px){
 
@@ -306,28 +246,21 @@ footer{
     .controls button{
         width:100%
     }
-
 }
-
 </style>
-
 </head>
 
-
 <body>
-
 
 <header>
 
 <div class="header-inner">
 
-
 <div class="logo">
 
 <img
-    src="../assets/logo.png"
-    alt="Unique EduZone Logo"
->
+src="../assets/logo.png"
+alt="Unique EduZone Logo">
 
 <div class="logo-text">
 Unique EduZone
@@ -335,136 +268,104 @@ Unique EduZone
 
 </div>
 
-
 <a
-    href="../index.html"
-    class="back-btn"
->
+href="../index.html"
+class="back-btn">
 
 ← Home
 
 </a>
-
 
 </div>
 
 </header>
 
 
-
 <div class="container">
 
 
-
 <section class="hero">
-
 
 <h1>
 11 ශ්‍රේණිය – පාඩම 03 Quiz
 </h1>
 
-
 <p>
 අලෙවිකරණය
 </p>
 
-
 <p
-style="margin-top:8px;color:#aaa"
->
+style="margin-top:8px;color:#aaa">
 
 ප්‍රශ්න 10 • එක් ප්‍රශ්නයකට එක් නිවැරදි පිළිතුරක්
 
 </p>
 
-
 <div class="progress">
 
 <div
-    class="progress-fill"
-    id="progressFill"
->
+class="progress-fill"
+id="progressFill">
 </div>
 
 </div>
-
 
 <p
 id="progressText"
-style="margin-top:7px;color:#d4af37;font-weight:bold"
->
+style="margin-top:7px;color:#d4af37;font-weight:bold">
 
 ප්‍රශ්නය 1 / 10
 
 </p>
 
-
 </section>
-
 
 
 <section
 class="quiz-box"
-id="quizBox"
->
+id="quizBox">
 </section>
-
 
 
 <section
 class="result-box"
-id="resultBox"
->
-
+id="resultBox">
 
 <h2>
 Quiz ප්‍රතිඵලය
 </h2>
 
-
 <div
 class="score"
-id="score"
->
+id="score">
 </div>
 
-
 <p
-id="resultMessage"
->
+id="resultMessage">
 </p>
-
 
 <div
 class="review"
-id="review"
->
+id="review">
 </div>
 
-
 <button
-onclick="restartQuiz()"
->
+onclick="restartQuiz()">
 
 නැවත Quiz කරන්න
 
 </button>
 
-
 <button
-onclick="completeQuiz()"
->
+onclick="completeQuiz()">
 
 ✓ Quiz Complete
 
 </button>
 
-
 </section>
 
-
 </div>
-
 
 
 <footer>
@@ -475,18 +376,1203 @@ Grade 11 Business & Accounting Studies
 </footer>
 
 
+<script>
 
-<!-- =========================================
-     LESSON 03 QUIZ JAVASCRIPT
-     assets/js යටතේ ඇති file එක
-     ========================================= -->
 
-<script
-src="../assets/js/grade11-quiz.js"
->
+/*
+ * =========================================
+ * LESSON 03 QUIZ DATA
+ * අලෙවිකරණය
+ * =========================================
+ */
+
+const questions = [
+
+
+[
+"අලෙවිකරණය යනු ප්‍රධාන වශයෙන් කුමක්ද?",
+
+[
+"භාණ්ඩ ගබඩා කිරීම පමණක්",
+"පාරිභෝගික අවශ්‍යතා හා වුවමනා තෘප්තිමත් කිරීම සඳහා භාණ්ඩ හා සේවා නිර්මාණය, මිල නියම කිරීම, බෙදාහැරීම හා ප්‍රවර්ධනය සම්බන්ධ ක්‍රියාවලිය",
+"සේවකයන්ට වැටුප් ගෙවීම පමණක්",
+"භාණ්ඩ නිෂ්පාදනය කිරීම පමණක්"
+],
+
+1,
+
+"අලෙවිකරණය පාරිභෝගික අවශ්‍යතා හා වුවමනා තෘප්තිමත් කිරීම සඳහා නිෂ්පාදනය, මිල, බෙදාහැරීම හා ප්‍රවර්ධනය ඇතුළු ක්‍රියාකාරකම් සමඟ සම්බන්ධ වේ."
+],
+
+
+[
+"පහත සඳහන් කුමක් අලෙවිකරණ ක්‍රියාකාරකමක්ද?",
+
+[
+"පාරිභෝගික අවශ්‍යතා හා වුවමනා හඳුනාගැනීම",
+"භාණ්ඩ විනාශ කිරීම",
+"ව්‍යාපාරය වසා දැමීම",
+"සම්පත් භාවිත නොකිරීම"
+],
+
+0,
+
+"අලෙවිකරණයේදී පාරිභෝගික අවශ්‍යතා හා වුවමනා හඳුනාගැනීම වැදගත් ක්‍රියාකාරකමකි."
+],
+
+
+[
+"ව්‍යාපාරයක් තම නිෂ්පාදනයෙන් වඩාත් හොඳින් තෘප්තිමත් කළ හැකි පාරිභෝගික කොටස හඳුන්වන්නේ කුමක් ලෙසද?",
+
+[
+"තොග වෙළෙඳපොළ",
+"නිෂ්පාදන අංශය",
+"ඉලක්ක වෙළෙඳපොළ",
+"ගබඩා අංශය"
+],
+
+2,
+
+"ව්‍යාපාරයක් තම නිෂ්පාදනයෙන් වඩාත් හොඳින් තෘප්තිමත් කළ හැකි පාරිභෝගික කොටස ඉලක්ක වෙළෙඳපොළ ලෙස හැඳින්වේ."
+],
+
+
+[
+"අලෙවිකරණ මිශ්‍රයේ 4Ps අතරට අයත් නොවන්නේ කුමක්ද?",
+
+[
+"Product",
+"Price",
+"Place",
+"Production"
+],
+
+3,
+
+"4Ps ලෙස Product, Price, Place සහ Promotion යන අංග හතර හඳුන්වා දී ඇත. Production එහි අංගයක් නොවේ."
+],
+
+
+[
+"4Ps හි Product යන්නෙන් අදහස් කරන්නේ කුමක්ද?",
+
+[
+"පාරිභෝගිකයාගෙන් අය කරන මුදල",
+"නිෂ්පාදනය පාරිභෝගිකයා වෙත ගෙන යන මාර්ගය",
+"වෙළෙඳපොළට පාරිභෝගික අවශ්‍යතා හා වුවමනා ඉටු කිරීමට ඉදිරිපත් කරන භාණ්ඩ හෝ සේවාව",
+"නිෂ්පාදනය පිළිබඳ දැන්වීම් පමණක්"
+],
+
+2,
+
+"Product යටතට පාරිභෝගික අවශ්‍යතා හා වුවමනා ඉටු කිරීමට වෙළෙඳපොළට ඉදිරිපත් කරන භාණ්ඩ හා සේවා ඇතුළත් වේ."
+],
+
+
+[
+"4Ps හි Price යන්නෙන් අදහස් කරන්නේ කුමක්ද?",
+
+[
+"භාණ්ඩයක් හෝ සේවාවක් වෙනුවෙන් පාරිභෝගිකයාගෙන් අය කිරීමට අපේක්ෂිත වටිනාකම",
+"නිෂ්පාදනයේ ඇසුරුම",
+"නිෂ්පාදනය බෙදාහැරීමේ ස්ථානය",
+"භාණ්ඩය පිළිබඳ ප්‍රචාරණය"
+],
+
+0,
+
+"Price යනු භාණ්ඩයක් හෝ සේවාවක් වෙනුවෙන් පාරිභෝගිකයාගෙන් අය කිරීමට අපේක්ෂිත වටිනාකමයි."
+],
+
+
+[
+"Place යන අලෙවිකරණ මිශ්‍ර අංගයෙන් ප්‍රධාන වශයෙන් අදහස් කරන්නේ කුමක්ද?",
+
+[
+"භාණ්ඩයේ ගුණාත්මකභාවය",
+"නිෂ්පාදනය පාරිභෝගිකයා වෙත ලබාදීම හා බෙදාහැරීම සම්බන්ධ ක්‍රියාකාරකම්",
+"භාණ්ඩයේ මිල",
+"වෙළෙඳ දැන්වීමේ නිර්මාණය"
+],
+
+1,
+
+"Place යටතේ නිෂ්පාදනය පාරිභෝගිකයා වෙත ලබාදීම සහ ඒ සඳහා සම්බන්ධ බෙදාහැරීමේ ක්‍රියාකාරකම් ඇතුළත් වේ."
+],
+
+
+[
+"පහත සඳහන් කුමක් Promotion සඳහා උදාහරණයක්ද?",
+
+[
+"නිෂ්පාදනය ගබඩා කිරීම",
+"නිෂ්පාදන පිරිවැය ගණනය කිරීම",
+"නොමිලේ සාම්පල ලබාදීම",
+"කාර්යාලය පිරිසිදු කිරීම"
+],
+
+2,
+
+"නොමිලේ සාම්පල ලබාදීම පාරිභෝගිකයන්ට නිෂ්පාදනය හඳුන්වාදීමට හා මිලදී ගැනීමට උනන්දු කිරීමට භාවිත කළ හැකි ප්‍රවර්ධන ක්‍රමයකි."
+],
+
+
+[
+"පහත සඳහන් කුමක් අලෙවිකරණ මිශ්‍රයේ Place සම්බන්ධ ක්‍රමයක්ද?",
+
+[
+"අතරමැදියන් හරහා බෙදාහැරීම",
+"නොමිලේ සාම්පල ලබාදීම",
+"වට්ටම් ලබාදීම",
+"ප්‍රචාරණ දැන්වීම් පළ කිරීම"
+],
+
+0,
+
+"අතරමැදියන් හරහා බෙදාහැරීම නිෂ්පාදනය පාරිභෝගිකයා වෙත ගෙන යාමට භාවිත කරන බෙදාහැරීමේ ක්‍රමයකි."
+],
+
+
+[
+"පහත සඳහන් කුමක් 4Ps හි Promotion යටතට අයත් වේ?",
+
+[
+"නිෂ්පාදනයේ ඇසුරුම",
+"ගෙවීම් ක්‍රම",
+"තොග හා සිල්ලර වෙළෙන්දන් භාවිත කිරීම",
+"පුද්ගලික අලෙවිය"
+],
+
+3,
+
+"පුද්ගලික අලෙවිය යනු පාරිභෝගිකයන්ට නිෂ්පාදනය පිළිබඳ තොරතුරු ලබාදී මිලදී ගැනීමට උනන්දු කිරීම සඳහා භාවිත කළ හැකි ප්‍රවර්ධන ක්‍රමයකි."
+]
+
+];
+
+
+// =====================================================
+// QUIZ SETTINGS
+// =====================================================
+
+const QUIZ_TIME = 10 * 60;
+
+let current = 0;
+
+let answers =
+    Array(questions.length).fill(null);
+
+let finished = false;
+
+let timeLeft = QUIZ_TIME;
+
+let timer = null;
+
+let quizStartedAt = null;
+
+let quizFinishedAt = null;
+
+
+// =====================================================
+// TIMER
+// =====================================================
+
+function startTimer(){
+
+    if(timer !== null){
+        return;
+    }
+
+    quizStartedAt =
+        new Date().toISOString();
+
+    timer =
+        setInterval(function(){
+
+            timeLeft--;
+
+            updateTimer();
+
+            if(timeLeft <= 0){
+
+                clearInterval(timer);
+
+                timer = null;
+
+                alert(
+                    "⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ."
+                );
+
+                autoSubmitQuiz();
+
+            }
+
+        },1000);
+
+    updateTimer();
+
+}
+
+
+function updateTimer(){
+
+    const timerElement =
+        document.getElementById(
+            "quizTimer"
+        );
+
+    if(!timerElement){
+        return;
+    }
+
+    let minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+    let seconds =
+        timeLeft % 60;
+
+    minutes =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
+
+    seconds =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
+
+    timerElement.textContent =
+        "⏱️ ඉතිරි කාලය: " +
+        minutes +
+        ":" +
+        seconds;
+
+
+    if(timeLeft <= 60){
+
+        timerElement.style.color =
+            "#ff4444";
+
+        timerElement.style.borderColor =
+            "#ff4444";
+
+        timerElement.style.background =
+            "#2b1010";
+
+    }else{
+
+        timerElement.style.color =
+            "#d4af37";
+
+        timerElement.style.borderColor =
+            "#d4af37";
+
+        timerElement.style.background =
+            "#211d0e";
+
+    }
+
+}
+
+
+// =====================================================
+// TIMER HTML
+// =====================================================
+
+function createTimer(){
+
+    const hero =
+        document.querySelector(
+            ".hero"
+        );
+
+    if(!hero){
+        return;
+    }
+
+    const oldTimer =
+        document.getElementById(
+            "quizTimer"
+        );
+
+    if(oldTimer){
+        return;
+    }
+
+    const timerBox =
+        document.createElement(
+            "div"
+        );
+
+    timerBox.id =
+        "quizTimer";
+
+    timerBox.style.marginTop =
+        "18px";
+
+    timerBox.style.padding =
+        "12px 20px";
+
+    timerBox.style.border =
+        "2px solid #d4af37";
+
+    timerBox.style.borderRadius =
+        "30px";
+
+    timerBox.style.display =
+        "inline-block";
+
+    timerBox.style.background =
+        "#211d0e";
+
+    timerBox.style.color =
+        "#d4af37";
+
+    timerBox.style.fontWeight =
+        "bold";
+
+    timerBox.style.fontSize =
+        "18px";
+
+    hero.appendChild(
+        timerBox
+    );
+
+}
+
+
+// =====================================================
+// RENDER QUESTION
+// =====================================================
+
+function render(){
+
+    const q =
+        questions[current];
+
+    const box =
+        document.getElementById(
+            "quizBox"
+        );
+
+
+    let h =
+        '<div class="question active">' +
+
+        '<div class="question-number">' +
+
+        'ප්‍රශ්නය ' +
+        (current + 1) +
+        ' / ' +
+        questions.length +
+
+        '</div>' +
+
+        '<h2>' +
+        q[0] +
+        '</h2>';
+
+
+    q[1].forEach(
+        function(o,i){
+
+            h +=
+
+                '<button class="option ' +
+
+                (
+                    answers[current] === i
+                    ?
+                    'selected'
+                    :
+                    ''
+                ) +
+
+                '" onclick="selectOption(' +
+                i +
+                ')">' +
+
+                String.fromCharCode(
+                    65+i
+                ) +
+
+                '. ' +
+
+                o +
+
+                '</button>';
+
+        }
+    );
+
+
+    h +=
+
+        '<div class="note">' +
+
+        'ඉඟිය: ප්‍රශ්නයේ අර්ථය සහ පාඩමේ අදාළ සංකල්පය සසඳන්න.' +
+
+        '</div>' +
+
+        '<div class="controls">';
+
+
+    h +=
+
+        '<button class="prev" onclick="previous()" ' +
+
+        (
+            current === 0
+            ?
+            'disabled'
+            :
+            ''
+        ) +
+
+        '>' +
+
+        '← පෙර' +
+
+        '</button>';
+
+
+    if(
+        current <
+        questions.length - 1
+    ){
+
+        h +=
+
+            '<button class="next" onclick="next()">' +
+
+            'ඊළඟ →' +
+
+            '</button>';
+
+    }else{
+
+        h +=
+
+            '<button class="submit" onclick="submitQuiz()">' +
+
+            'Quiz Submit ✓' +
+
+            '</button>';
+
+    }
+
+
+    h +=
+        '</div></div>';
+
+
+    box.innerHTML =
+        h;
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+
+        (
+            (current + 1) /
+            questions.length *
+            100
+        ) +
+
+        "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+
+        'ප්‍රශ්නය ' +
+        (current + 1) +
+        ' / ' +
+        questions.length;
+
+
+    updateTimer();
+
+}
+
+
+// =====================================================
+// SELECT ANSWER
+// =====================================================
+
+function selectOption(i){
+
+    answers[current] =
+        i;
+
+    render();
+
+}
+
+
+// =====================================================
+// NEXT
+// =====================================================
+
+function next(){
+
+    if(
+        answers[current] === null
+    ){
+
+        alert(
+            "කරුණාකර පිළිතුරක් තෝරන්න."
+        );
+
+        return;
+    }
+
+    current++;
+
+    render();
+
+}
+
+
+// =====================================================
+// PREVIOUS
+// =====================================================
+
+function previous(){
+
+    if(
+        current > 0
+    ){
+
+        current--;
+
+        render();
+
+    }
+
+}
+
+
+// =====================================================
+// SUBMIT
+// =====================================================
+
+function submitQuiz(){
+
+    if(finished){
+        return;
+    }
+
+    if(
+        answers.some(
+            function(a){
+
+                return a === null;
+
+            }
+        )
+    ){
+
+        alert(
+            "සියලුම ප්‍රශ්නවලට පිළිතුරු ලබාදී පසුව Submit කරන්න."
+        );
+
+        return;
+    }
+
+    finishQuiz(false);
+
+}
+
+
+// =====================================================
+// AUTO SUBMIT
+// =====================================================
+
+function autoSubmitQuiz(){
+
+    if(finished){
+        return;
+    }
+
+    finishQuiz(true);
+
+}
+
+
+// =====================================================
+// FINISH QUIZ
+// =====================================================
+
+function finishQuiz(
+    timeExpired
+){
+
+    finished = true;
+
+
+    if(timer !== null){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    }
+
+
+    quizFinishedAt =
+        new Date().toISOString();
+
+
+    let score = 0;
+
+
+    questions.forEach(
+        function(q,i){
+
+            if(
+                answers[i] === q[2]
+            ){
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) * 100
+        );
+
+
+    const timeUsed =
+        QUIZ_TIME -
+        Math.max(
+            timeLeft,
+            0
+        );
+
+
+    const minutesUsed =
+        Math.floor(
+            timeUsed / 60
+        );
+
+
+    const secondsUsed =
+        timeUsed % 60;
+
+
+    const timeUsedText =
+
+        String(
+            minutesUsed
+        ).padStart(
+            2,
+            "0"
+        ) +
+
+        ":" +
+
+        String(
+            secondsUsed
+        ).padStart(
+            2,
+            "0"
+        );
+
+
+    // =================================================
+    // RESULT DISPLAY
+    // =================================================
+
+    document.getElementById(
+        "quizBox"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "resultBox"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "score"
+    ).textContent =
+
+        score +
+        " / " +
+        questions.length;
+
+
+    let resultMessage = "";
+
+
+    if(timeExpired){
+
+        resultMessage =
+            "⏰ කාලය අවසන් වීම නිසා Quiz එක ස්වයංක්‍රීයව Submit කරන ලදී.";
+
+    }
+
+    else if(
+        score ===
+        questions.length
+    ){
+
+        resultMessage =
+            "විශිෂ්ටයි! පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත.";
+
+    }
+
+    else if(
+        score >= 7
+    ){
+
+        resultMessage =
+            "හොඳයි! තව ටිකක් පුනරීක්ෂණය කරන්න.";
+
+    }
+
+    else{
+
+        resultMessage =
+            "පාඩම නැවත අධ්‍යයනය කර Quiz එක නැවත කරන්න.";
+
+    }
+
+
+    document.getElementById(
+        "resultMessage"
+    ).innerHTML =
+
+        resultMessage +
+
+        "<br><br>" +
+
+        "ලකුණු: " +
+        score +
+        " / " +
+        questions.length +
+
+        "<br>" +
+
+        "ප්‍රතිශතය: " +
+        percentage +
+        "%" +
+
+        "<br>" +
+
+        "ගත වූ කාලය: " +
+        timeUsedText;
+
+
+    // =================================================
+    // REVIEW
+    // =================================================
+
+    let r = "";
+
+
+    questions.forEach(
+        function(q,i){
+
+            r +=
+
+                '<div class="review-item">' +
+
+                '<strong>' +
+
+                (i+1) +
+
+                '. ' +
+
+                q[0] +
+
+                '</strong><br>';
+
+
+            if(
+                answers[i] === q[2]
+            ){
+
+                r +=
+                    "✓ ඔබගේ පිළිතුර නිවැරදියි.";
+
+            }else{
+
+                r +=
+
+                    "✗ නිවැරදි පිළිතුර: " +
+
+                    q[1][q[2]] +
+
+                    ".";
+
+            }
+
+
+            r +=
+
+                "<br>" +
+
+                q[3] +
+
+                "</div>";
+
+        }
+    );
+
+
+    document.getElementById(
+        "review"
+    ).innerHTML =
+        r;
+
+
+    // =================================================
+    // SAVE QUIZ RESULT
+    // =================================================
+
+    const quizResult = {
+
+        grade: 11,
+
+        lesson: 3,
+
+        lessonTitle:
+            "අලෙවිකරණය",
+
+        totalQuestions:
+            questions.length,
+
+        score:
+            score,
+
+        percentage:
+            percentage,
+
+        timeLimit:
+            QUIZ_TIME,
+
+        timeUsed:
+            timeUsed,
+
+        timeUsedText:
+            timeUsedText,
+
+        completed:
+            true,
+
+        completedAt:
+            quizFinishedAt,
+
+        startedAt:
+            quizStartedAt,
+
+        timeExpired:
+            timeExpired
+
+    };
+
+
+    localStorage.setItem(
+
+        "grade11_lesson3_quiz_result",
+
+        JSON.stringify(
+            quizResult
+        )
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson3_quiz_score",
+
+        score
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson3_quiz_percentage",
+
+        percentage
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson3_quiz_completed",
+
+        "true"
+
+    );
+
+
+    // =================================================
+    // GRADE 11 DASHBOARD DATA
+    // =================================================
+
+    let grade11Data = {
+
+        lesson3: {
+
+            completed:
+                true,
+
+            quizCompleted:
+                true,
+
+            score:
+                score,
+
+            percentage:
+                percentage,
+
+            timeUsed:
+                timeUsed,
+
+            completedAt:
+                quizFinishedAt
+
+        }
+
+    };
+
+
+    try{
+
+        const oldData =
+
+            JSON.parse(
+
+                localStorage.getItem(
+                    "grade11Progress"
+                ) ||
+                "{}"
+
+            );
+
+
+        oldData.lesson3 =
+            grade11Data.lesson3;
+
+
+        localStorage.setItem(
+
+            "grade11Progress",
+
+            JSON.stringify(
+                oldData
+            )
+
+        );
+
+
+    }catch(error){
+
+        localStorage.setItem(
+
+            "grade11Progress",
+
+            JSON.stringify(
+                grade11Data
+            )
+
+        );
+
+    }
+
+
+    // =================================================
+    // GENERAL LESSON COMPLETION
+    // =================================================
+
+    let completedLessons = {};
+
+
+    try{
+
+        completedLessons =
+
+            JSON.parse(
+
+                localStorage.getItem(
+
+                    "grade11CompletedLessons"
+
+                ) ||
+                "{}"
+
+            );
+
+    }catch(error){
+
+        completedLessons = {};
+
+    }
+
+
+    completedLessons["3"] =
+        true;
+
+
+    localStorage.setItem(
+
+        "grade11CompletedLessons",
+
+        JSON.stringify(
+            completedLessons
+        )
+
+    );
+
+}
+
+
+// =====================================================
+// RESTART
+// =====================================================
+
+function restartQuiz(){
+
+    if(timer !== null){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    }
+
+
+    current = 0;
+
+
+    answers =
+        Array(
+            questions.length
+        ).fill(null);
+
+
+    finished = false;
+
+
+    timeLeft =
+        QUIZ_TIME;
+
+
+    quizStartedAt =
+        null;
+
+
+    quizFinishedAt =
+        null;
+
+
+    document.getElementById(
+        "resultBox"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "quizBox"
+    ).style.display =
+        "block";
+
+
+    render();
+
+    startTimer();
+
+}
+
+
+// =====================================================
+// COMPLETE QUIZ
+// =====================================================
+
+function completeQuiz(){
+
+    const result =
+
+        localStorage.getItem(
+
+            "grade11_lesson3_quiz_result"
+
+        );
+
+
+    if(!result){
+
+        alert(
+
+            "කරුණාකර පළමුව Quiz එක සම්පූර්ණ කරන්න."
+
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+
+        "grade11_lesson3_quiz_completed",
+
+        "true"
+
+    );
+
+
+    localStorage.setItem(
+
+        "grade11_lesson3_completed",
+
+        "true"
+
+    );
+
+
+    alert(
+
+        "✓ Grade 11 Lesson 3 Quiz සම්පූර්ණ කරන ලදී!"
+
+    );
+
+}
+
+
+// =====================================================
+// PAGE START
+// =====================================================
+
+createTimer();
+
+render();
+
+startTimer();
+
 </script>
 
-
 </body>
-
 </html>
