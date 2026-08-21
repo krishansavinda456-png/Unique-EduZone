@@ -66,6 +66,41 @@ header{
     font-weight:bold;
 }
 
+/* =====================================================
+   LANGUAGE SWITCHER
+   ===================================================== */
+
+.language-switcher{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.language-btn{
+    border:1px solid #555;
+    background:#191919;
+    color:#ddd;
+    padding:6px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.language-btn:hover{
+    border-color:#d4af37;
+    color:#d4af37;
+}
+
+.language-btn.active{
+    background:#d4af37;
+    color:#080808;
+    border-color:#d4af37;
+}
+
 .container{
     width:92%;
     max-width:1200px;
@@ -218,6 +253,21 @@ footer{
     .lesson-card{
         padding:20px;
     }
+
+    .header-inner{
+        flex-wrap:wrap;
+    }
+
+    .language-switcher{
+        width:100%;
+        order:3;
+        margin-top:8px;
+    }
+
+    .language-btn{
+        padding:6px 10px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
@@ -239,8 +289,50 @@ footer{
 
     </div>
 
-    <a href="../index.html" class="home-btn">
+
+    <!-- LANGUAGE BUTTONS -->
+
+    <div class="language-switcher">
+
+        <button
+            class="language-btn"
+            data-lang="si"
+            onclick="changeLanguage('si')">
+
+            සිංහල
+
+        </button>
+
+
+        <button
+            class="language-btn"
+            data-lang="ta"
+            onclick="changeLanguage('ta')">
+
+            தமிழ்
+
+        </button>
+
+
+        <button
+            class="language-btn"
+            data-lang="en"
+            onclick="changeLanguage('en')">
+
+            English
+
+        </button>
+
+    </div>
+
+
+    <a
+        href="../index.html"
+        class="home-btn"
+        id="homeBtn">
+
         ← Home
+
     </a>
 
 </div>
@@ -254,16 +346,22 @@ footer{
 
 <section class="hero">
 
-    <h1>11 ශ්‍රේණිය</h1>
+    <h1 id="gradeTitle">
+        11 ශ්‍රේණිය
+    </h1>
 
-    <p>
+    <p id="subjectTitle">
         ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය
     </p>
 
     <div class="progress-box">
 
-        <div class="progress-title">
+        <div
+            class="progress-title"
+            id="progressTitle">
+
             Lesson Progress – 1 / 8
+
         </div>
 
         <div class="progress">
@@ -290,15 +388,21 @@ footer{
         LESSON 01
     </div>
 
-    <h2>පාඩම 01</h2>
+    <h2 id="lesson1Title">
+        පාඩම 01
+    </h2>
 
-    <p>
+    <p id="lesson1Description">
         වෙළෙඳාම සහ උපකාරක සේවා
     </p>
 
-    <a href="g11lesson1.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson1.html"
+        class="lesson-btn"
+        id="lesson1Btn">
+
         Lesson 01 →
+
     </a>
 
 </div>
@@ -312,15 +416,21 @@ footer{
         LESSON 02
     </div>
 
-    <h2>පාඩම 02</h2>
+    <h2 id="lesson2Title">
+        පාඩම 02
+    </h2>
 
-    <p>
+    <p id="lesson2Description">
         කළමනාකරණය
     </p>
 
-    <a href="g11lesson2.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson2.html"
+        class="lesson-btn"
+        id="lesson2Btn">
+
         Lesson 02 →
+
     </a>
 
 </div>
@@ -334,15 +444,21 @@ footer{
         LESSON 03
     </div>
 
-    <h2>පාඩම 03</h2>
+    <h2 id="lesson3Title">
+        පාඩම 03
+    </h2>
 
-    <p>
+    <p id="lesson3Description">
         අලෙවිකරණය
     </p>
 
-    <a href="g11lesson3.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson3.html"
+        class="lesson-btn"
+        id="lesson3Btn">
+
         Lesson 03 →
+
     </a>
 
 </div>
@@ -356,15 +472,21 @@ footer{
         LESSON 04
     </div>
 
-    <h2>පාඩම 04</h2>
+    <h2 id="lesson4Title">
+        පාඩම 04
+    </h2>
 
-    <p>
+    <p id="lesson4Description">
        ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන
     </p>
 
-    <a href="g11lesson4.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson4.html"
+        class="lesson-btn"
+        id="lesson4Btn">
+
         Lesson 04 →
+
     </a>
 
 </div>
@@ -378,16 +500,23 @@ footer{
         LESSON 05
     </div>
 
-    <h2>පාඩම 05</h2>
+    <h2 id="lesson5Title">
+        පාඩම 05
+    </h2>
 
-    <p>
+    <p id="lesson5Description">
         ගැළපුම් සටහන් සහිත මූල්‍ය ප්‍රකාශන
     </p>
 
-    <a href="g11lesson5.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson5.html"
+        class="lesson-btn"
+        id="lesson5Btn">
+
         Lesson 05 →
+
     </a>
+
 </div>
 
 
@@ -399,15 +528,21 @@ footer{
         LESSON 06
     </div>
 
-    <h2>පාඩම 06</h2>
+    <h2 id="lesson6Title">
+        පාඩම 06
+    </h2>
 
-    <p>
+    <p id="lesson6Description">
         ලාභ අරමුණු කර නොගත් සංවිධාන
     </p>
 
-    <a href="g11lesson6.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson6.html"
+        class="lesson-btn"
+        id="lesson6Btn">
+
         Lesson 06 →
+
     </a>
 
 </div>
@@ -421,15 +556,21 @@ footer{
         LESSON 07
     </div>
 
-    <h2>පාඩම 07</h2>
+    <h2 id="lesson7Title">
+        පාඩම 07
+    </h2>
 
-    <p>
+    <p id="lesson7Description">
         නිෂ්පාදන පිරිවැය ලේඛණය
     </p>
 
-    <a href="g11lesson7.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson7.html"
+        class="lesson-btn"
+        id="lesson7Btn">
+
         Lesson 07 →
+
     </a>
 
 </div>
@@ -443,15 +584,21 @@ footer{
         LESSON 08
     </div>
 
-    <h2>පාඩම 08</h2>
+    <h2 id="lesson8Title">
+        පාඩම 08
+    </h2>
 
-    <p>
+    <p id="lesson8Description">
         ආයෝජන
     </p>
 
-    <a href="g11lesson8.html"
-       class="lesson-btn">
+    <a
+        href="g11lesson8.html"
+        class="lesson-btn"
+        id="lesson8Btn">
+
         Lesson 08 →
+
     </a>
 
 </div>
@@ -463,15 +610,17 @@ footer{
 
 <section class="info">
 
-    <h2>Grade 11 පාඩම්</h2>
+    <h2 id="infoTitle">
+        Grade 11 පාඩම්
+    </h2>
 
-    <p>
+    <p id="infoText1">
         11 ශ්‍රේණියට අදාළ පාඩම් 08ක් මෙම කොටස තුළ
         වෙනම පාඩම් ලෙස අධ්‍යයනය කිරීමට හැකි වන ආකාරයට
         ක්‍රමයෙන් එකතු කරනු ලැබේ.
     </p>
 
-    <p>
+    <p id="infoText2">
         දැනට පාඩම 01 පමණක් සම්පූර්ණ කර ඇති අතර,
         අනෙකුත් පාඩම් ඉදිරියේදී එකින් එක එකතු කරනු ලැබේ.
     </p>
@@ -483,10 +632,474 @@ footer{
 
 <footer>
 
-© 2026 Unique EduZone |
-Grade 11 Business & Accounting Studies
+<span id="footerText">
+© 2026 Unique EduZone | Grade 11 Business & Accounting Studies
+</span>
 
 </footer>
+
+
+<script>
+
+/* =====================================================
+   UNIQUE EDUZONE
+   GRADE 11 LANGUAGE SYSTEM
+
+   මෙම කොටස:
+   - දැනට ඇති Lesson links වෙනස් නොකරයි
+   - Progress system වෙනස් නොකරයි
+   - CSS design වෙනස් නොකරයි
+   - තෝරාගත් භාෂාව localStorage තුළ තබා ගනී
+   ===================================================== */
+
+
+const languageData = {
+
+    si: {
+
+        gradeTitle:
+            "11 ශ්‍රේණිය",
+
+        subjectTitle:
+            "ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය",
+
+        progressTitle:
+            "පාඩම් ප්‍රගතිය – 1 / 8",
+
+        home:
+            "← මුල් පිටුව",
+
+        lessons: [
+
+            {
+                title: "පාඩම 01",
+                description: "වෙළෙඳාම සහ උපකාරක සේවා",
+                button: "පාඩම 01 →"
+            },
+
+            {
+                title: "පාඩම 02",
+                description: "කළමනාකරණය",
+                button: "පාඩම 02 →"
+            },
+
+            {
+                title: "පාඩම 03",
+                description: "අලෙවිකරණය",
+                button: "පාඩම 03 →"
+            },
+
+            {
+                title: "පාඩම 04",
+                description: "ව්‍යාපාරයක මූල්‍ය ප්‍රකාශන",
+                button: "පාඩම 04 →"
+            },
+
+            {
+                title: "පාඩම 05",
+                description: "ගැළපුම් සටහන් සහිත මූල්‍ය ප්‍රකාශන",
+                button: "පාඩම 05 →"
+            },
+
+            {
+                title: "පාඩම 06",
+                description: "ලාභ අරමුණු කර නොගත් සංවිධාන",
+                button: "පාඩම 06 →"
+            },
+
+            {
+                title: "පාඩම 07",
+                description: "නිෂ්පාදන පිරිවැය ලේඛණය",
+                button: "පාඩම 07 →"
+            },
+
+            {
+                title: "පාඩම 08",
+                description: "ආයෝජන",
+                button: "පාඩම 08 →"
+            }
+
+        ],
+
+        infoTitle:
+            "11 ශ්‍රේණියේ පාඩම්",
+
+        infoText1:
+            "11 ශ්‍රේණියට අදාළ පාඩම් 08ක් මෙම කොටස තුළ වෙනම පාඩම් ලෙස අධ්‍යයනය කිරීමට හැකි වන ආකාරයට ක්‍රමයෙන් එකතු කරනු ලැබේ.",
+
+        infoText2:
+            "දැනට පාඩම 01 පමණක් සම්පූර්ණ කර ඇති අතර, අනෙකුත් පාඩම් ඉදිරියේදී එකින් එක එකතු කරනු ලැබේ.",
+
+        footer:
+            "© 2026 Unique EduZone | 11 ශ්‍රේණිය ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය"
+
+    },
+
+
+    ta: {
+
+        gradeTitle:
+            "தரம் 11",
+
+        subjectTitle:
+            "வணிகம் மற்றும் கணக்கியல் கற்கை",
+
+        progressTitle:
+            "பாட முன்னேற்றம் – 1 / 8",
+
+        home:
+            "← முகப்பு",
+
+        lessons: [
+
+            {
+                title: "பாடம் 01",
+                description: "வர்த்தகம் மற்றும் துணைச் சேவைகள்",
+                button: "பாடம் 01 →"
+            },
+
+            {
+                title: "பாடம் 02",
+                description: "முகாமைத்துவம்",
+                button: "பாடம் 02 →"
+            },
+
+            {
+                title: "பாடம் 03",
+                description: "சந்தைப்படுத்தல்",
+                button: "பாடம் 03 →"
+            },
+
+            {
+                title: "பாடம் 04",
+                description: "வணிகத்தின் நிதிக் கூற்றுகள்",
+                button: "பாடம் 04 →"
+            },
+
+            {
+                title: "பாடம் 05",
+                description: "சரிசெய்தல் குறிப்புகளுடன் கூடிய நிதிக் கூற்றுகள்",
+                button: "பாடம் 05 →"
+            },
+
+            {
+                title: "பாடம் 06",
+                description: "இலாப நோக்கற்ற நிறுவனங்கள்",
+                button: "பாடம் 06 →"
+            },
+
+            {
+                title: "பாடம் 07",
+                description: "உற்பத்திச் செலவுப் பட்டியல்",
+                button: "பாடம் 07 →"
+            },
+
+            {
+                title: "பாடம் 08",
+                description: "முதலீடுகள்",
+                button: "பாடம் 08 →"
+            }
+
+        ],
+
+        infoTitle:
+            "தரம் 11 பாடங்கள்",
+
+        infoText1:
+            "தரம் 11க்குரிய 08 பாடங்களும் தனித்தனி பாடங்களாகக் கற்கக்கூடிய வகையில் இந்தப் பகுதியில் படிப்படியாக சேர்க்கப்படுகின்றன.",
+
+        infoText2:
+            "தற்போது பாடம் 01 மட்டும் முழுமையாக நிறைவு செய்யப்பட்டுள்ளதுடன், ஏனைய பாடங்கள் எதிர்காலத்தில் ஒன்றன்பின் ஒன்றாக சேர்க்கப்படும்.",
+
+        footer:
+            "© 2026 Unique EduZone | தரம் 11 வணிகம் மற்றும் கணக்கியல் கற்கை"
+
+    },
+
+
+    en: {
+
+        gradeTitle:
+            "Grade 11",
+
+        subjectTitle:
+            "Business & Accounting Studies",
+
+        progressTitle:
+            "Lesson Progress – 1 / 8",
+
+        home:
+            "← Home",
+
+        lessons: [
+
+            {
+                title: "Lesson 01",
+                description: "Trade and Auxiliary Services",
+                button: "Lesson 01 →"
+            },
+
+            {
+                title: "Lesson 02",
+                description: "Management",
+                button: "Lesson 02 →"
+            },
+
+            {
+                title: "Lesson 03",
+                description: "Marketing",
+                button: "Lesson 03 →"
+            },
+
+            {
+                title: "Lesson 04",
+                description: "Financial Statements of a Business",
+                button: "Lesson 04 →"
+            },
+
+            {
+                title: "Lesson 05",
+                description: "Financial Statements with Adjusting Entries",
+                button: "Lesson 05 →"
+            },
+
+            {
+                title: "Lesson 06",
+                description: "Non-Profit Organizations",
+                button: "Lesson 06 →"
+            },
+
+            {
+                title: "Lesson 07",
+                description: "Cost of Production Statement",
+                button: "Lesson 07 →"
+            },
+
+            {
+                title: "Lesson 08",
+                description: "Investments",
+                button: "Lesson 08 →"
+            }
+
+        ],
+
+        infoTitle:
+            "Grade 11 Lessons",
+
+        infoText1:
+            "The 08 Grade 11 lessons are gradually added to this section so that each lesson can be studied separately.",
+
+        infoText2:
+            "At present, Lesson 01 has been completed, while the remaining lessons will be added one by one in the future.",
+
+        footer:
+            "© 2026 Unique EduZone | Grade 11 Business & Accounting Studies"
+
+    }
+
+};
+
+
+/* =====================================================
+   CHANGE LANGUAGE
+   ===================================================== */
+
+function changeLanguage(lang){
+
+    if(!languageData[lang]){
+        return;
+    }
+
+
+    const data =
+        languageData[lang];
+
+
+    /* Save selected language */
+
+    localStorage.setItem(
+        "uniqueEduZoneLanguage",
+        lang
+    );
+
+
+    /* Change HTML language */
+
+    document.documentElement.lang =
+        lang;
+
+
+    /* Grade */
+
+    document.getElementById(
+        "gradeTitle"
+    ).textContent =
+        data.gradeTitle;
+
+
+    /* Subject */
+
+    document.getElementById(
+        "subjectTitle"
+    ).textContent =
+        data.subjectTitle;
+
+
+    /* Progress */
+
+    document.getElementById(
+        "progressTitle"
+    ).textContent =
+        data.progressTitle;
+
+
+    /* Home */
+
+    document.getElementById(
+        "homeBtn"
+    ).textContent =
+        data.home;
+
+
+    /* Lessons */
+
+    data.lessons.forEach(
+        function(lesson,index){
+
+            const number =
+                index + 1;
+
+
+            document.getElementById(
+                "lesson" +
+                number +
+                "Title"
+            ).textContent =
+                lesson.title;
+
+
+            document.getElementById(
+                "lesson" +
+                number +
+                "Description"
+            ).textContent =
+                lesson.description;
+
+
+            document.getElementById(
+                "lesson" +
+                number +
+                "Btn"
+            ).textContent =
+                lesson.button;
+
+        }
+    );
+
+
+    /* Information */
+
+    document.getElementById(
+        "infoTitle"
+    ).textContent =
+        data.infoTitle;
+
+
+    document.getElementById(
+        "infoText1"
+    ).textContent =
+        data.infoText1;
+
+
+    document.getElementById(
+        "infoText2"
+    ).textContent =
+        data.infoText2;
+
+
+    /* Footer */
+
+    document.getElementById(
+        "footerText"
+    ).textContent =
+        data.footer;
+
+
+    /* Active button */
+
+    document.querySelectorAll(
+        ".language-btn"
+    ).forEach(
+        function(button){
+
+            button.classList.remove(
+                "active"
+            );
+
+
+            if(
+                button.dataset.lang ===
+                lang
+            ){
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   LOAD SAVED LANGUAGE
+   ===================================================== */
+
+function loadLanguage(){
+
+    const savedLanguage =
+        localStorage.getItem(
+            "uniqueEduZoneLanguage"
+        );
+
+
+    if(
+        savedLanguage &&
+        languageData[savedLanguage]
+    ){
+
+        changeLanguage(
+            savedLanguage
+        );
+
+    }else{
+
+        changeLanguage(
+            "si"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   PAGE START
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadLanguage();
+
+    }
+);
+
+</script>
 
 </body>
 </html>
