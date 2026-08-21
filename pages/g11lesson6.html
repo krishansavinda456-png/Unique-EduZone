@@ -1,0 +1,3201 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1.0">
+
+<title>
+Grade 11 - Lesson 6 | Unique EduZone
+</title>
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    font-family:
+        Arial,
+        "Noto Sans Sinhala",
+        sans-serif;
+
+    background:#080808;
+
+    color:#f5f5f5;
+
+    line-height:1.8
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header{
+    background:#111;
+
+    border-bottom:
+        2px solid #d4af37;
+
+    padding:16px 6%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10
+}
+
+
+.header-inner{
+    max-width:1000px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between
+}
+
+
+.logo{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px
+}
+
+
+.logo img{
+    width:52px;
+
+    height:52px;
+
+    object-fit:contain
+}
+
+
+.logo-text{
+    color:#d4af37;
+
+    font-size:21px;
+
+    font-weight:bold
+}
+
+
+.back-btn,
+.quiz-button{
+    color:#080808;
+
+    background:#d4af37;
+
+    text-decoration:none;
+
+    padding:7px 17px;
+
+    border-radius:25px;
+
+    font-weight:bold
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container{
+    width:92%;
+
+    max-width:1000px;
+
+    margin:
+        30px auto
+        70px
+}
+
+
+/* ================================
+   HERO / LESSON BOX
+================================ */
+
+.hero,
+.lesson-box{
+    background:#111;
+
+    border:
+        1px solid #d4af37;
+
+    border-radius:18px;
+
+    padding:28px;
+
+    margin-bottom:24px
+}
+
+
+.hero{
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #1d1d1d
+        )
+}
+
+
+.hero h1{
+    color:#d4af37;
+
+    font-size:31px
+}
+
+
+.hero p{
+    color:#ddd
+}
+
+
+.lesson-box h2{
+    color:#d4af37;
+
+    margin-bottom:10px
+}
+
+
+.lesson-box h3{
+    color:#ffd95a;
+
+    margin:
+        18px 0
+        8px
+}
+
+
+.lesson-box ul{
+    padding-left:25px
+}
+
+
+.lesson-box li{
+    margin:6px 0
+}
+
+
+/* ================================
+   HIGHLIGHT
+================================ */
+
+.highlight{
+    background:#211d0e;
+
+    border-left:
+        4px solid #d4af37;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    margin:14px 0
+}
+
+
+/* ================================
+   GRID
+================================ */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px
+}
+
+
+.card{
+    background:#191919;
+
+    border:
+        1px solid #333;
+
+    border-radius:12px;
+
+    padding:15px
+}
+
+
+.card strong{
+    color:#d4af37
+}
+
+
+/* ================================
+   ACCOUNTING TABLES
+================================ */
+
+.account-table{
+    width:100%;
+
+    border-collapse:
+        collapse;
+
+    margin-top:18px;
+
+    background:#111
+}
+
+
+.account-table th,
+.account-table td{
+    border:
+        1px solid #777;
+
+    padding:
+        9px 10px;
+
+    text-align:left
+}
+
+
+.account-table th{
+    background:#211d0e;
+
+    color:#d4af37;
+
+    text-align:center
+}
+
+
+.account-table td.amount{
+    text-align:right;
+
+    white-space:nowrap
+}
+
+
+.account-table td.total{
+    font-weight:bold;
+
+    border-top:
+        2px solid #d4af37
+}
+
+
+.account-title{
+    text-align:center;
+
+    color:#ffd95a;
+
+    font-weight:bold;
+
+    margin-top:18px;
+
+    margin-bottom:5px
+}
+
+
+/* ================================
+   TEXTBOOK STYLE ACCOUNT
+================================ */
+
+.textbook-account{
+    width:100%;
+
+    border-collapse:
+        collapse;
+
+    margin:
+        18px 0;
+
+    background:#fafafa;
+
+    color:#111;
+
+    font-size:15px
+}
+
+
+.textbook-account th,
+.textbook-account td{
+    border:
+        1px solid #4f81bd;
+
+    padding:
+        8px 9px
+}
+
+
+.textbook-account th{
+    background:#e8f1fb;
+
+    color:#17365d;
+
+    text-align:center;
+
+    font-weight:bold
+}
+
+
+.textbook-account td.amount{
+    text-align:right;
+
+    white-space:nowrap
+}
+
+
+.textbook-account .total-row td{
+    font-weight:bold;
+
+    border-top:
+        2px solid #17365d
+}
+
+
+.textbook-account .balance{
+    background:#f1f1f1;
+
+    font-weight:bold
+}
+
+
+/* ================================
+   FORMULA
+================================ */
+
+.formula{
+    background:#191919;
+
+    border:
+        1px solid #555;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin:
+        15px 0;
+
+    text-align:center;
+
+    color:#ffd95a;
+
+    font-size:18px;
+
+    font-weight:bold
+}
+
+
+/* ================================
+   ACTIVITY
+================================ */
+
+.activity{
+    background:#151515;
+
+    border:
+        1px solid #444;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-top:18px
+}
+
+
+.activity h3{
+    color:#d4af37;
+
+    margin-bottom:10px
+}
+
+
+.activity button{
+    background:#d4af37;
+
+    color:#080808;
+
+    border:0;
+
+    border-radius:22px;
+
+    padding:
+        9px 18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:10px
+}
+
+
+.solution{
+    display:none;
+
+    background:#211d0e;
+
+    border-left:
+        4px solid #d4af37;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border-radius:8px
+}
+
+
+/* ================================
+   MEMORY BOX
+================================ */
+
+.memory{
+    background:
+        linear-gradient(
+            135deg,
+            #211d0e,
+            #171717
+        );
+
+    border:
+        1px solid #d4af37;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-top:15px
+}
+
+
+.memory strong{
+    color:#ffd700
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer{
+    text-align:center;
+
+    padding:25px;
+
+    color:#aaa;
+
+    border-top:
+        1px solid #333
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:650px){
+
+    .hero h1{
+        font-size:25px
+    }
+
+    .grid{
+        grid-template-columns:1fr
+    }
+
+    .lesson-box{
+        padding:19px
+    }
+
+    .textbook-account{
+        font-size:13px
+    }
+
+    .textbook-account th,
+    .textbook-account td{
+        padding:6px
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+
+<div class="logo">
+
+<img
+src="../assets/logo.png"
+alt="Unique EduZone Logo">
+
+<div class="logo-text">
+Unique EduZone
+</div>
+
+</div>
+
+
+<a
+href="../index.html"
+class="back-btn">
+
+← Home
+
+</a>
+
+
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero">
+
+<h1>
+11 ශ්‍රේණිය – පාඩම 06
+</h1>
+
+<p>
+ලාභ අරමුණු කර නොගත් සංවිධාන
+</p>
+
+<p style="color:#aaa">
+Business & Accounting Studies
+</p>
+
+
+<a
+href="g11lesson6quiz.html"
+class="quiz-button">
+
+Lesson 6 Quiz →
+
+</a>
+
+</section>
+
+
+
+<!-- ==================================================
+     INTRODUCTION
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+6.1 ලාභ අරමුණු කර නොගත් සංවිධාන හැඳින්වීම
+</h2>
+
+
+<p>
+“ව්‍යාපාරයක්” යන වචනය ඇසූ විට සාමාන්‍යයෙන්
+අපගේ අවධානය යොමු වන්නේ ලාභ උපයා ගැනීම
+අරමුණු කරගෙන ක්‍රියා කරන සංවිධාන වෙතය.
+නමුත් සමාජයේ විවිධ අවශ්‍යතා ඉටු කිරීම,
+සාමාජිකයන්ගේ සුභසාධනය, ආගමික, සංස්කෘතික,
+ක්‍රීඩා, අධ්‍යාපනික සහ සමාජ සේවා අරමුණු
+ඉටු කිරීම සඳහාද සංවිධාන පවත්වාගෙන යනු ලැබේ.
+</p>
+
+
+<p>
+මෙවැනි සංවිධානවල ප්‍රධාන අරමුණ ලාභය
+සාමාජිකයන් අතර බෙදාහැරීම නොව, තම සංවිධානය
+පිහිටුවීමේදී තීරණය කළ අරමුණු ඉටු කිරීමයි.
+</p>
+
+
+<div class="highlight">
+
+<strong>
+වැදගත්:
+</strong>
+
+ලාභ අරමුණු කර නොගත් සංවිධානයක
+අතිරික්තයක් ඇති විය හැකි නමුත්,
+එය සාමාජිකයන් අතර ලාභයක් ලෙස බෙදාදීම
+එහි ප්‍රධාන අරමුණ නොවේ.
+
+</div>
+
+
+<h3>
+උදාහරණ
+</h3>
+
+
+<ul>
+
+<li>පාසල් ආදි ශිෂ්‍ය සංගම්</li>
+
+<li>ක්‍රීඩා සංගම්</li>
+
+<li>තරුණ සංවිධාන</li>
+
+<li>කාන්තා සංවිධාන</li>
+
+<li>ග්‍රාම සංවර්ධන සමිති</li>
+
+<li>සමාජ සේවා සමිති</li>
+
+<li>ආගමික සංවිධාන</li>
+
+<li>පරිත්‍යාග හා සුභසාධන සංවිධාන</li>
+
+</ul>
+
+
+<p>
+
+මෙවැනි සංවිධානවල ක්‍රියාකාරකම්වල
+අවසාන අරමුණ වන්නේ සාමාජික සුභසාධනය,
+සමාජ සම්බන්ධතා වර්ධනය, අධ්‍යාපනික සහාය,
+ප්‍රජා සේවය වැනි අරමුණු ඉටු කිරීමයි.
+
+</p>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ACTIVITIES OF NPO
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ලාභ අරමුණු කර නොගත් සංවිධානවල ක්‍රියාකාරකම්
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<strong>
+ක්‍රීඩා සංගමයක්
+</strong>
+
+<br>
+
+ක්‍රීඩා පුහුණු කිරීම,
+තරග සංවිධානය කිරීම,
+ක්‍රීඩා උපකරණ ලබාදීම.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+තරුණ සංවිධානයක්
+</strong>
+
+<br>
+
+තරුණ වැඩසටහන්,
+ප්‍රජා සේවා සහ
+පුහුණු වැඩසටහන්.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+කාන්තා සංවිධානයක්
+</strong>
+
+<br>
+
+ස්වයං රැකියා වැඩසටහන්,
+පුහුණු වැඩසටහන් සහ
+සුභසාධන වැඩසටහන්.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+ග්‍රාම සංවර්ධන සමිතිය
+</strong>
+
+<br>
+
+ගම්මාන සංවර්ධන කටයුතු,
+ප්‍රජා ව්‍යාපෘති හා
+ආධාර වැඩසටහන්.
+
+</div>
+
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+Activity 01
+</h3>
+
+<p>
+ඔබගේ පාසලේ හෝ ඔබ ජීවත් වන ප්‍රදේශයේ
+ක්‍රියාත්මක වන ලාභ අරමුණු කර නොගත්
+සංවිධාන 5ක් නම් කරන්න.
+</p>
+
+
+<button
+onclick="showSolution('s1')">
+
+පිළිතුර බලන්න
+
+</button>
+
+
+<div
+id="s1"
+class="solution">
+
+<table class="textbook-account">
+
+<tr>
+<th>අංකය</th>
+<th>ලාභ අරමුණු කර නොගත් සංවිධානය</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>පාසල් සංගමය</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>ක්‍රීඩා සංගමය</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>තරුණ සංගමය</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>කාන්තා සංගමය</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>ග්‍රාම සංවර්ධන සමිතිය</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FINANCIAL STATEMENTS
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+6.2 ලාභ අරමුණු කර නොගත් සංවිධානවල මූල්‍ය ප්‍රකාශ
+</h2>
+
+
+<p>
+
+ලාභ අරමුණු කර නොගත් සංවිධානයක්ද
+තම දෛනික කටයුතු පවත්වාගෙන යාම සඳහා
+ප්‍රමාණවත් ආදායමක් උපයාගත යුතුය.
+එම ආදායම්වලින් සංවිධානයේ ක්‍රියාකාරකම්
+සඳහා වන වියදම් දරනු ලැබේ.
+
+</p>
+
+
+<h3>
+ප්‍රධාන ආදායම් මාර්ග
+</h3>
+
+
+<ul>
+
+<li>සාමාජික මුදල්</li>
+
+<li>පරිත්‍යාග</li>
+
+<li>භාණ්ඩ අලෙවියෙන් ලැබෙන මුදල්</li>
+
+<li>ප්‍රදර්ශන හා උත්සවවලින් ලැබෙන ආදායම්</li>
+
+<li>ආධාර</li>
+
+<li>පොලී ආදායම්</li>
+
+<li>වෙනත් ආදායම්</li>
+
+</ul>
+
+
+<h3>
+ප්‍රධාන වියදම්
+</h3>
+
+
+<ul>
+
+<li>වැටුප් හා වේතන</li>
+
+<li>කුලී</li>
+
+<li>විදුලි වියදම්</li>
+
+<li>ප්‍රවාහන වියදම්</li>
+
+<li>ලිපිද්‍රව්‍ය වියදම්</li>
+
+<li>මුද්‍රණ වියදම්</li>
+
+<li>ප්‍රචාරණ වියදම්</li>
+
+<li>උත්සව වියදම්</li>
+
+<li>උපකරණ නඩත්තු වියදම්</li>
+
+</ul>
+
+
+<div class="highlight">
+
+<strong>
+මූල්‍ය තොරතුරු නිවැරදිව වාර්තා කිරීමේ වැදගත්කම
+</strong>
+
+<br>
+
+• සාමාජිකයන් හා අනෙකුත් පාර්ශ්ව දැනුවත් කිරීම<br>
+
+• විශ්වාසය පවත්වා ගැනීම<br>
+
+• අනාගත කටයුතු සැලසුම් කිරීම<br>
+
+• මුදල් නිසි ලෙස කළමනාකරණය කිරීම<br>
+
+• වංචා හා අක්‍රමිකතා අවම කිරීම
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     RECEIPTS AND PAYMENTS
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ලැබීම් හා ගෙවීම් ගිණුම
+</h2>
+
+
+<p>
+
+යම් කාලපරිච්ඡේදයක් තුළ සංවිධානයට ලැබුණු
+සියලු මුදල් ලැබීම් සහ එම කාලය තුළ
+ගෙවූ සියලු මුදල් ගෙවීම් සටහන් කරන
+ගිණුම ලැබීම් හා ගෙවීම් ගිණුම ලෙස හැඳින්වේ.
+
+</p>
+
+
+<p>
+
+මෙය මුදල් පදනම මත සකස් වන ගිණුමකි.
+එනම් ඇත්ත වශයෙන්ම මුදල් ලැබුණු අවස්ථාව
+හෝ ගෙවූ අවස්ථාව එහි සටහන් කරයි.
+
+</p>
+
+
+<div class="highlight">
+
+<strong>
+මතක තබාගන්න:
+</strong>
+
+ලැබීම් හා ගෙවීම් ගිණුම
+මුදල් පොතට බොහෝ දුරට සමාන ස්වභාවයක්
+ගන්නා ගිණුමකි.
+
+</div>
+
+
+<div class="account-title">
+
+ලාභ අරමුණු කර නොගත් සංවිධානය
+
+<br>
+
+20XX.12.31 දිනෙන් අවසන් වූ වර්ෂය සඳහා
+
+<br>
+
+ලැබීම් හා ගෙවීම් ගිණුම
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">
+ලැබීම්
+</th>
+
+<th colspan="2">
+ගෙවීම්
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+
+<td class="amount">25,200</td>
+
+<td>සඟරා මුද්‍රණය</td>
+
+<td class="amount">2,800</td>
+
+</tr>
+
+
+<tr>
+
+<td>සඟරා විකිණීම</td>
+
+<td class="amount">4,100</td>
+
+<td>ලිපිද්‍රව්‍ය</td>
+
+<td class="amount">800</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරිත්‍යාග</td>
+
+<td class="amount">2,300</td>
+
+<td>ප්‍රවාහන වියදම්</td>
+
+<td class="amount">200</td>
+
+</tr>
+
+
+<tr>
+
+<td>වෙළඳ දැන්වීම්</td>
+
+<td class="amount">14,400</td>
+
+<td>පරිත්‍යාග ගෙවීම්</td>
+
+<td class="amount">400</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ලැබීම්</td>
+
+<td class="amount">46,000</td>
+
+<td>මුළු ගෙවීම්</td>
+
+<td class="amount">4,200</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td></td>
+
+<td></td>
+
+<td>අවසන් මුදල් ශේෂය</td>
+
+<td class="amount">41,800</td>
+
+</tr>
+
+</table>
+
+
+<p>
+
+ලැබීම් හා ගෙවීම් ගිණුමෙන්
+කාලපරිච්ඡේදය අවසානයේ පවතින
+මුදල් ශේෂය හඳුනාගත හැකිය.
+
+</p>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ACTIVITY 02
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ලැබීම් හා ගෙවීම් ගිණුම – Activity 02
+</h2>
+
+
+<div class="activity">
+
+<h3>
+Activity 02
+</h3>
+
+<p>
+
+යම් ක්‍රීඩා සංගමයක වර්ෂය ආරම්භයේ
+මුදල් ශේෂය රු.12,300කි.
+සාමාජික මුදල් රු.27,000ක්,
+පරිත්‍යාග රු.150,000ක් සහ
+තැන්පතු පොලී රු.15,000ක් ලැබුණි.
+
+කුලී රු.12,000ක්,
+උත්සව වියදම් රු.11,400ක්,
+පලතුරු පැළ සඳහා රු.4,200ක්,
+පොහොර සඳහා රු.3,500ක්,
+බැංකු ණය පොලී රු.1,200ක්,
+උපකරණ සඳහා රු.12,000ක්,
+වැටුප් රු.10,000ක්,
+විදුලිය රු.400ක්,
+දැන්වීම් රු.6,200ක් සහ
+ප්‍රවාහන වියදම් රු.1,700ක් ගෙවා ඇත.
+
+ලැබීම් හා ගෙවීම් ගිණුම සකස් කරන්න.
+
+</p>
+
+
+<button
+onclick="showSolution('s2')">
+
+පිළිතුර බලන්න
+
+</button>
+
+
+<div
+id="s2"
+class="solution">
+
+<div class="account-title">
+
+ක්‍රීඩා සංගමය
+
+<br>
+
+20XX වර්ෂය සඳහා
+
+<br>
+
+ලැබීම් හා ගෙවීම් ගිණුම
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">ලැබීම්</th>
+
+<th colspan="2">ගෙවීම්</th>
+
+</tr>
+
+
+<tr>
+
+<td>ආරම්භක මුදල් ශේෂය</td>
+
+<td class="amount">12,300</td>
+
+<td>කුලී</td>
+
+<td class="amount">12,000</td>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+
+<td class="amount">27,000</td>
+
+<td>උත්සව වියදම්</td>
+
+<td class="amount">11,400</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරිත්‍යාග</td>
+
+<td class="amount">150,000</td>
+
+<td>පලතුරු පැළ</td>
+
+<td class="amount">4,200</td>
+
+</tr>
+
+
+<tr>
+
+<td>තැන්පතු පොලී</td>
+
+<td class="amount">15,000</td>
+
+<td>පොහොර</td>
+
+<td class="amount">3,500</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>බැංකු ණය පොලී</td>
+
+<td class="amount">1,200</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>උපකරණ</td>
+
+<td class="amount">12,000</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>වැටුප්</td>
+
+<td class="amount">10,000</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>විදුලිය</td>
+
+<td class="amount">400</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>දැන්වීම්</td>
+
+<td class="amount">6,200</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>ප්‍රවාහනය</td>
+
+<td class="amount">1,700</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ලැබීම්</td>
+
+<td class="amount">204,300</td>
+
+<td>මුළු ගෙවීම්</td>
+
+<td class="amount">62,600</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td></td>
+
+<td></td>
+
+<td>අවසන් මුදල් ශේෂය</td>
+
+<td class="amount">141,700</td>
+
+</tr>
+
+</table>
+
+
+<div class="formula">
+
+අවසන් මුදල් ශේෂය
+
+=
+
+204,300 − 62,600
+
+=
+
+රු.141,700
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     SUBSCRIPTION
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+සාමාජික මුදල්
+</h2>
+
+
+<p>
+
+ලාභ අරමුණු කර නොගත් බොහෝ සාමාජික
+සංවිධානවල ප්‍රධාන ආදායම් මාර්ගයක්
+සාමාජිකයන්ගෙන් අය කරන සාමාජික මුදල් වේ.
+
+</p>
+
+
+<p>
+
+සාමාජික මුදල් මාසිකව, ත්‍රෛමාසිකව,
+අර්ධ වාර්ෂිකව හෝ වාර්ෂිකව අය කළ හැකිය.
+
+</p>
+
+
+<div class="formula">
+
+වාර්ෂික සාමාජික මුදල්
+
+=
+
+සාමාජිකයන් ගණන
+
+×
+
+වාර්ෂික සාමාජික මුදල
+
+</div>
+
+
+<h3>
+උදාහරණය
+</h3>
+
+
+<p>
+
+සාමාජිකයන් 420 දෙනෙකු සිටින
+වෙළෙඳ සංගමයක් එක් සාමාජිකයෙකුගෙන්
+වාර්ෂිකව රු.60ක් අය කරයි.
+
+</p>
+
+
+<div class="formula">
+
+420 × 60
+
+=
+
+රු.25,200
+
+</div>
+
+
+<h3>
+හිඟ සාමාජික මුදල්
+</h3>
+
+
+<p>
+
+සියලුම සාමාජිකයන් අදාළ වර්ෂය සඳහා
+මුදල් ගෙවා නොමැති නම්,
+ලැබුණු සාමාජික මුදල් හා ලැබිය යුතු
+සාමාජික මුදල් වෙන වෙනම සලකා බැලිය යුතුය.
+
+</p>
+
+
+<div class="formula">
+
+ලැබුණු සාමාජික මුදල්
++
+ලැබිය යුතු සාමාජික මුදල්
+
+=
+
+අදාළ වර්ෂයට හිමි සාමාජික මුදල්
+
+</div>
+
+
+<div class="activity">
+
+<h3>
+Activity 03
+</h3>
+
+<p>
+
+ක්‍රීඩා සමිතියක සාමාජිකයන් 400 දෙනෙකි.
+වාර්ෂික සාමාජික මුදල රු.200කි.
+20 දෙනෙකු අදාළ වර්ෂයේදී මුදල් ගෙවා
+නොමැත.
+
+1. ලැබුණු සාමාජික මුදල් ගණනය කරන්න.
+
+2. හිඟ සාමාජික මුදල් ගණනය කරන්න.
+
+3. අදාළ වර්ෂයට හිමි මුළු සාමාජික මුදල්
+ගණනය කරන්න.
+
+</p>
+
+
+<button
+onclick="showSolution('s3')">
+
+පිළිතුර බලන්න
+
+</button>
+
+
+<div
+id="s3"
+class="solution">
+
+<div class="account-title">
+
+සාමාජික මුදල් ගණනය
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th>විස්තරය</th>
+
+<th>ගණනය</th>
+
+<th>රු.</th>
+
+</tr>
+
+
+<tr>
+
+<td>මුළු සාමාජිකයන්</td>
+
+<td>400 × 200</td>
+
+<td class="amount">80,000</td>
+
+</tr>
+
+
+<tr>
+
+<td>හිඟ සාමාජිකයන්</td>
+
+<td>20 × 200</td>
+
+<td class="amount">4,000</td>
+
+</tr>
+
+
+<tr>
+
+<td>ලැබුණු සාමාජිකයන්</td>
+
+<td>400 − 20 = 380</td>
+
+<td class="amount">76,000</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>
+අදාළ වර්ෂයට හිමි මුළු
+සාමාජික මුදල්
+</td>
+
+<td>
+76,000 + 4,000
+</td>
+
+<td class="amount">
+80,000
+</td>
+
+</tr>
+
+</table>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     INCOME STATEMENT
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ආදායම් ප්‍රකාශය
+</h2>
+
+
+<p>
+
+ලාභ අරමුණු කර නොගත් සංවිධානයක් විසින්
+නිශ්චිත කාලපරිච්ඡේදයක් තුළ සිදු කරන ලද
+ආර්ථික ක්‍රියාකාරකම්වල ප්‍රතිඵල හඳුනාගැනීම
+සඳහා ආදායම් ප්‍රකාශය සකස් කරයි.
+
+</p>
+
+
+<p>
+
+මෙම ප්‍රකාශයෙන් අදාළ කාලපරිච්ඡේදය
+සඳහා සංවිධානයට ඇති වූ
+<strong>අතිරික්තය</strong> හෝ
+<strong>ඌනතාවය</strong> හඳුනාගත හැකිය.
+
+</p>
+
+
+<div class="highlight">
+
+<strong>අතිරික්තය:</strong>
+
+ආදායම් වියදම්වලට වඩා වැඩි වූ විට.
+
+<br><br>
+
+<strong>ඌනතාවය:</strong>
+
+වියදම් ආදායම්වලට වඩා වැඩි වූ විට.
+
+</div>
+
+
+<p>
+
+ලැබීම් හා ගෙවීම් ගිණුම මුදල් පදනම මත
+සකස් වන අතර ආදායම් ප්‍රකාශය
+අදාළ කාලපරිච්ඡේදයට අදාළ ආදායම් හා
+වියදම් පදනම් කරගෙන සකස් කරයි.
+
+</p>
+
+
+<div class="account-title">
+
+20XX.12.31 දිනෙන් අවසන් වර්ෂය සඳහා
+
+<br>
+
+ආදායම් ප්‍රකාශය
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">ආදායම්</th>
+
+<th colspan="2">වියදම්</th>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+
+<td class="amount">25,200</td>
+
+<td>සඟරා මුද්‍රණය</td>
+
+<td class="amount">2,800</td>
+
+</tr>
+
+
+<tr>
+
+<td>සඟරා විකිණීම</td>
+
+<td class="amount">4,100</td>
+
+<td>ලිපිද්‍රව්‍ය</td>
+
+<td class="amount">800</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරිත්‍යාග</td>
+
+<td class="amount">2,300</td>
+
+<td>ප්‍රවාහන වියදම්</td>
+
+<td class="amount">200</td>
+
+</tr>
+
+
+<tr>
+
+<td>වෙළඳ දැන්වීම්</td>
+
+<td class="amount">14,400</td>
+
+<td>පරිත්‍යාග ගෙවීම්</td>
+
+<td class="amount">400</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ආදායම</td>
+
+<td class="amount">46,000</td>
+
+<td>මුළු වියදම</td>
+
+<td class="amount">4,200</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td>අතිරික්තය</td>
+
+<td class="amount">41,800</td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     DIFFERENCE
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ලැබීම් හා ගෙවීම් ගිණුම සහ ආදායම් ප්‍රකාශය අතර වෙනස
+</h2>
+
+
+<table class="account-table">
+
+<tr>
+
+<th>කරුණ</th>
+
+<th>ලැබීම් හා ගෙවීම් ගිණුම</th>
+
+<th>ආදායම් ප්‍රකාශය</th>
+
+</tr>
+
+
+<tr>
+
+<td>පදනම</td>
+
+<td>මුදල් පදනම</td>
+
+<td>අදාළ කාලපරිච්ඡේද පදනම</td>
+
+</tr>
+
+
+<tr>
+
+<td>ලැබීම්</td>
+
+<td>සියලු මුදල් ලැබීම්</td>
+
+<td>අදාළ කාලයට අදාළ ආදායම්</td>
+
+</tr>
+
+
+<tr>
+
+<td>ගෙවීම්</td>
+
+<td>සියලු මුදල් ගෙවීම්</td>
+
+<td>අදාළ කාලයට අදාළ වියදම්</td>
+
+</tr>
+
+
+<tr>
+
+<td>ප්‍රතිඵලය</td>
+
+<td>අවසන් මුදල් ශේෂය</td>
+
+<td>අතිරික්තය / ඌනතාවය</td>
+
+</tr>
+
+</table>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ACTIVITY 04
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+Activity 04 – සම්පූර්ණ ලැබීම් හා ගෙවීම් ගිණුම
+</h2>
+
+
+<div class="activity">
+
+<p>
+
+“සමඟි තරුණ සමාජය” 20XX වර්ෂයේ
+පළමු මාස තුන සඳහා පහත ගනුදෙනු සිදු කළේය.
+
+</p>
+
+
+<table class="account-table">
+
+<tr>
+<th>දිනය</th>
+<th>ගනුදෙනුව</th>
+<th>රු.</th>
+</tr>
+
+
+<tr>
+<td>01.01</td>
+<td>ආරම්භක මුදල් ශේෂය</td>
+<td class="amount">12,400</td>
+</tr>
+
+
+<tr>
+<td>01.04</td>
+<td>පරිපාලන වැටුප්</td>
+<td class="amount">10,200</td>
+</tr>
+
+
+<tr>
+<td>01.07</td>
+<td>සාමාජික මුදල් ලැබීම්</td>
+<td class="amount">3,200</td>
+</tr>
+
+
+<tr>
+<td>01.10</td>
+<td>විදුලි ගාස්තු</td>
+<td class="amount">1,400</td>
+</tr>
+
+
+<tr>
+<td>01.15</td>
+<td>බදු හා වරිපනම්</td>
+<td class="amount">300</td>
+</tr>
+
+
+<tr>
+<td>01.20</td>
+<td>සාමාජික මුදල්</td>
+<td class="amount">7,300</td>
+</tr>
+
+
+<tr>
+<td>01.23</td>
+<td>තරග තීරක ගාස්තු</td>
+<td class="amount">1,500</td>
+</tr>
+
+
+<tr>
+<td>01.30</td>
+<td>ප්‍රවාහන ගාස්තු</td>
+<td class="amount">1,200</td>
+</tr>
+
+
+<tr>
+<td>02.01</td>
+<td>සාමාජික මුදල්</td>
+<td class="amount">15,800</td>
+</tr>
+
+
+<tr>
+<td>02.05</td>
+<td>පරිත්‍යාග ලැබීම්</td>
+<td class="amount">4,000</td>
+</tr>
+
+
+<tr>
+<td>03.10</td>
+<td>ප්‍රදර්ශන ආදායම</td>
+<td class="amount">94,200</td>
+</tr>
+
+
+<tr>
+<td>03.13</td>
+<td>ප්‍රදර්ශන වියදම</td>
+<td class="amount">27,500</td>
+</tr>
+
+</table>
+
+
+<p style="margin-top:15px">
+
+මෙම ගනුදෙනු ලැබීම් හා ගෙවීම්
+ගිණුමකට වර්ගීකරණය කර
+අවසාන මුදල් ශේෂය සොයන්න.
+
+</p>
+
+
+<button
+onclick="showSolution('s4')">
+
+ගිණුම් ක්‍රමය බලන්න
+
+</button>
+
+
+<div
+id="s4"
+class="solution">
+
+<div class="account-title">
+
+සමඟි තරුණ සමාජය
+
+<br>
+
+20XX පළමු මාස තුන සඳහා
+
+<br>
+
+ලැබීම් හා ගෙවීම් ගිණුම
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">ලැබීම්</th>
+
+<th colspan="2">ගෙවීම්</th>
+
+</tr>
+
+
+<tr>
+
+<td>ආරම්භක මුදල් ශේෂය</td>
+<td class="amount">12,400</td>
+
+<td>පරිපාලන වැටුප්</td>
+<td class="amount">10,200</td>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+<td class="amount">26,300</td>
+
+<td>විදුලිය</td>
+<td class="amount">1,400</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරිත්‍යාග</td>
+<td class="amount">4,000</td>
+
+<td>බදු හා වරිපනම්</td>
+<td class="amount">300</td>
+
+</tr>
+
+
+<tr>
+
+<td>ප්‍රදර්ශන ආදායම</td>
+<td class="amount">94,200</td>
+
+<td>තරග තීරක ගාස්තු</td>
+<td class="amount">1,500</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+<td></td>
+
+<td>ප්‍රවාහන ගාස්තු</td>
+<td class="amount">1,200</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+<td></td>
+
+<td>ප්‍රදර්ශන වියදම</td>
+<td class="amount">27,500</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ලැබීම්</td>
+<td class="amount">136,900</td>
+
+<td>මුළු ගෙවීම්</td>
+<td class="amount">42,100</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td></td>
+<td></td>
+
+<td>අවසන් මුදල් ශේෂය</td>
+<td class="amount">94,800</td>
+
+</tr>
+
+</table>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     ACTIVITY 05
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+Activity 05 – සාමාජික මුදල් හා ආදායම්
+</h2>
+
+
+<div class="activity">
+
+<p>
+
+සංගමයක සාමාජිකයන් 120 දෙනෙකි.
+එක් සාමාජිකයෙකුගෙන් වාර්ෂිකව රු.350ක්
+අය කරයි.
+
+සාමාජිකයන් 15 දෙනෙකු වර්ෂය අවසානයේ
+මුදල් ගෙවා නොතිබුණි.
+
+</p>
+
+
+<p>
+
+1. ලැබුණු සාමාජික මුදල් සොයන්න.
+
+<br>
+
+2. හිඟ සාමාජික මුදල් සොයන්න.
+
+<br>
+
+3. අදාළ වර්ෂයට හිමි මුළු සාමාජික මුදල් සොයන්න.
+
+</p>
+
+
+<button
+onclick="showSolution('s5')">
+
+පිළිතුර බලන්න
+
+</button>
+
+
+<div
+id="s5"
+class="solution">
+
+<div class="account-title">
+
+සාමාජික මුදල් ගිණුම් ක්‍රමය
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th>විස්තරය</th>
+
+<th>ගණනය</th>
+
+<th>රු.</th>
+
+</tr>
+
+
+<tr>
+
+<td>මුළු සාමාජිකයන්</td>
+
+<td>120 × 350</td>
+
+<td class="amount">42,000</td>
+
+</tr>
+
+
+<tr>
+
+<td>හිඟ සාමාජිකයන්</td>
+
+<td>15 × 350</td>
+
+<td class="amount">5,250</td>
+
+</tr>
+
+
+<tr>
+
+<td>ලැබුණු සාමාජිකයන්</td>
+
+<td>120 − 15 = 105</td>
+
+<td class="amount">36,750</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>
+අදාළ වර්ෂයට හිමි මුළු
+සාමාජික මුදල්
+</td>
+
+<td>
+36,750 + 5,250
+</td>
+
+<td class="amount">
+42,000
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FINANCIAL STATEMENT EXAMPLE
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ආදායම් ප්‍රකාශය – විස්තීර්ණ උදාහරණය
+</h2>
+
+
+<p>
+
+විද්‍යා සංගමයක 20XX වර්ෂයේ
+ආදායම් හා වියදම් පහත පරිදි වේ.
+
+</p>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">
+ආදායම්
+</th>
+
+<th colspan="2">
+වියදම්
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+
+<td class="amount">25,200</td>
+
+<td>සඟරා මුද්‍රණය</td>
+
+<td class="amount">2,800</td>
+
+</tr>
+
+
+<tr>
+
+<td>සඟරා විකිණීම</td>
+
+<td class="amount">4,100</td>
+
+<td>ලිපිද්‍රව්‍ය</td>
+
+<td class="amount">800</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරිත්‍යාග</td>
+
+<td class="amount">2,300</td>
+
+<td>ප්‍රවාහනය</td>
+
+<td class="amount">200</td>
+
+</tr>
+
+
+<tr>
+
+<td>වෙළඳ දැන්වීම්</td>
+
+<td class="amount">14,400</td>
+
+<td>පරිත්‍යාග ගෙවීම්</td>
+
+<td class="amount">400</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ආදායම</td>
+
+<td class="amount">46,000</td>
+
+<td>මුළු වියදම</td>
+
+<td class="amount">4,200</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td>අතිරික්තය</td>
+
+<td class="amount">41,800</td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+
+<div class="formula">
+
+අතිරික්තය
+
+=
+
+මුළු ආදායම − මුළු වියදම
+
+<br>
+
+= 46,000 − 4,200
+
+<br>
+
+= රු.41,800
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     LARGE ACCOUNTING ACTIVITY
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+Activity 06 – සම්පූර්ණ ගිණුම් ගැටලුව
+</h2>
+
+
+<div class="activity">
+
+<p>
+
+“ජනජය සමාජය” සතුව වර්ෂය ආරම්භයේ
+රු.12,300ක මුදල් ශේෂයක් තිබුණි.
+
+වර්ෂය තුළ:
+
+</p>
+
+
+<ul>
+
+<li>සාමාජික මුදල් ලැබීම් – රු.74,300</li>
+
+<li>පරිත්‍යාග ලැබීම් – රු.40,000</li>
+
+<li>කොඩි විකිණීම – රු.86,400</li>
+
+<li>පරණ පුවත්පත් විකිණීම – රු.200</li>
+
+<li>පරිත්‍යාග ගෙවීම් – රු.1,200</li>
+
+<li>ලිපිද්‍රව්‍ය – රු.520</li>
+
+<li>පුවත්පත් සඳහා – රු.1,280</li>
+
+<li>දුරකථන – රු.720</li>
+
+<li>ආධාර ගෙවීම් – රු.2,500</li>
+
+<li>විදුලි ගාස්තු – රු.1,450</li>
+
+<li>ගොඩනැගිලි කුලී – රු.7,000</li>
+
+<li>සංග්‍රහ වියදම් – රු.640</li>
+
+</ul>
+
+
+<p>
+
+අමතර තොරතුරු:
+
+<br>
+
+• සාමාජිකයන් 746 දෙනෙකි.
+
+<br>
+
+• වාර්ෂික සාමාජික මුදල රු.100කි.
+
+<br>
+
+• සාමාජිකයන් 3 දෙනෙකු මුදල් ගෙවා නැත.
+
+<br>
+
+• වාර්ෂික දුරකථන ගාස්තුව රු.840කි.
+
+<br>
+
+• කොඩි විකිණීමෙන් තවත් රු.1,600ක් ලැබිය යුතුය.
+
+<br>
+
+• විදුලි ගාස්තු රු.150ක් වැඩිපුර ගෙවා ඇත.
+
+</p>
+
+
+<button
+onclick="showSolution('s6')">
+
+ගිණුම් ක්‍රමය බලන්න
+
+</button>
+
+
+<div
+id="s6"
+class="solution">
+
+<div class="account-title">
+
+ජනජය සමාජය
+
+<br>
+
+20XX වර්ෂය සඳහා
+
+<br>
+
+ආදායම් ප්‍රකාශය
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">ආදායම්</th>
+
+<th colspan="2">වියදම්</th>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+
+<td class="amount">74,600</td>
+
+<td>පරිත්‍යාග ගෙවීම්</td>
+
+<td class="amount">1,200</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරිත්‍යාග</td>
+
+<td class="amount">40,000</td>
+
+<td>ලිපිද්‍රව්‍ය</td>
+
+<td class="amount">520</td>
+
+</tr>
+
+
+<tr>
+
+<td>කොඩි විකිණීම</td>
+
+<td class="amount">88,000</td>
+
+<td>පුවත්පත්</td>
+
+<td class="amount">1,280</td>
+
+</tr>
+
+
+<tr>
+
+<td>පරණ පුවත්පත්</td>
+
+<td class="amount">200</td>
+
+<td>දුරකථන</td>
+
+<td class="amount">840</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>ආධාර ගෙවීම්</td>
+
+<td class="amount">2,500</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>විදුලිය</td>
+
+<td class="amount">1,300</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>ගොඩනැගිලි කුලී</td>
+
+<td class="amount">7,000</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>සංග්‍රහ වියදම්</td>
+
+<td class="amount">640</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ආදායම</td>
+
+<td class="amount">202,800</td>
+
+<td>මුළු වියදම</td>
+
+<td class="amount">15,280</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td>අතිරික්තය</td>
+
+<td class="amount">187,520</td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+
+<div class="highlight">
+
+<strong>
+ගිණුම් ක්‍රමය:
+</strong>
+
+<br><br>
+
+සාමාජික මුදල්:
+
+<br>
+
+746 × 100 = රු.74,600
+
+<br><br>
+
+කොඩි විකිණීම:
+
+<br>
+
+86,400 + 1,600 = රු.88,000
+
+<br><br>
+
+විදුලි වියදම:
+
+<br>
+
+1,450 − 150 = රු.1,300
+
+<br><br>
+
+ආදායම් ප්‍රකාශයේදී
+අදාළ කාලයට අයත් ආදායම් හා වියදම්
+පමණක් සලකා බලනු ලැබේ.
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ==================================================
+     ACCOUNTING METHOD
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+ගිණුම් ගැටලු විසඳීමේ ක්‍රමය
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<strong>
+01. ගනුදෙනු හඳුනාගන්න
+</strong>
+
+<br>
+
+ලැබීමක්ද, ගෙවීමක්ද,
+ආදායමක්ද, වියදමක්ද
+යන්න තීරණය කරන්න.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+02. මුදල් හා කාලය සලකන්න
+</strong>
+
+<br>
+
+මුදල් ලැබුණු/ගෙවූ බව පමණක් නොව
+එය අදාළ කාලපරිච්ඡේදයටද අයත්ද
+යන්න සලකන්න.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+03. සාමාජික මුදල්
+</strong>
+
+<br>
+
+ලැබුණු, ලැබිය යුතු සහ
+හිඟ සාමාජික මුදල් වෙන වෙනම
+සලකන්න.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+04. අවසාන ප්‍රතිඵලය
+</strong>
+
+<br>
+
+ලැබීම් හා ගෙවීම් ගිණුමෙන්
+මුදල් ශේෂයත්,
+ආදායම් ප්‍රකාශයෙන්
+අතිරික්තය/ඌනතාවයත්
+හඳුනාගන්න.
+
+</div>
+
+
+</div>
+
+
+<div class="memory">
+
+<strong>
+විභාගයට මතක තබාගන්න
+</strong>
+
+<br><br>
+
+ලැබීම් හා ගෙවීම් ගිණුම
+→ සියලු මුදල් ලැබීම් හා ගෙවීම්
+
+<br>
+
+ආදායම් ප්‍රකාශය
+→ අදාළ කාලයට අයත් ආදායම් හා වියදම්
+
+<br>
+
+අතිරික්තය
+→ ආදායම් > වියදම්
+
+<br>
+
+ඌනතාවය
+→ වියදම් > ආදායම්
+
+<br>
+
+සාමාජික මුදල්
+→ සාමාජිකයන් ගණන × වාර්ෂික සාමාජික මුදල
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL ACTIVITY
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+Activity 07 – විභාග ආකාරයේ ප්‍රශ්නය
+</h2>
+
+
+<div class="activity">
+
+<p>
+
+ක්‍රීඩා සමාජයක සාමාජිකයන් 50 දෙනෙකි.
+එක් සාමාජිකයෙකුගෙන් වාර්ෂිකව රු.300ක්
+අය කරයි.
+
+වර්ෂය තුළ ලැබුණු මුදල්:
+
+</p>
+
+
+<ul>
+
+<li>ආරම්භක බැංකු ශේෂය – රු.1,500</li>
+
+<li>සාමාජික මුදල් – රු.12,000</li>
+
+<li>සඟරා විකිණීම – රු.9,370</li>
+
+<li>ශාලා කුලී – රු.5,600</li>
+
+</ul>
+
+
+<p>
+
+වර්ෂය තුළ ගෙවීම්:
+
+</p>
+
+
+<ul>
+
+<li>දුරකථන – රු.1,200</li>
+
+<li>ගොඩනැගිලි කුලී – රු.1,600</li>
+
+<li>සංග්‍රහ වියදම් – රු.2,200</li>
+
+<li>උපකරණ අලුත්වැඩියා – රු.3,500</li>
+
+<li>ලිපිද්‍රව්‍ය – රු.350</li>
+
+<li>ප්‍රවාහන – රු.1,200</li>
+
+</ul>
+
+
+<p>
+
+අමතර තොරතුරු:
+
+<br>
+
+• ගෙවිය යුතු ගොඩනැගිලි කුලිය රු.400කි.
+
+<br>
+
+• ශාලා කුලියෙන් ඉදිරි වර්ෂයට
+ලැබුණු මුදල රු.200කි.
+
+<br>
+
+• සමාජය සතු උපකරණ රු.8,000ක් වන අතර
+5% බැගින් ක්ෂය කළ යුතුය.
+
+<br>
+
+• ඉදිරි වර්ෂය සඳහා ගෙවූ මුද්‍රණ වියදම රු.600කි.
+
+</p>
+
+
+<button
+onclick="showSolution('s7')">
+
+ගිණුම් ක්‍රමය බලන්න
+
+</button>
+
+
+<div
+id="s7"
+class="solution">
+
+<div class="account-title">
+
+ක්‍රීඩා සමාජය
+
+<br>
+
+20XX වර්ෂය සඳහා
+
+<br>
+
+ආදායම් ප්‍රකාශය
+
+</div>
+
+
+<table class="textbook-account">
+
+<tr>
+
+<th colspan="2">
+ආදායම්
+</th>
+
+<th colspan="2">
+වියදම්
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>සාමාජික මුදල්</td>
+
+<td class="amount">15,000</td>
+
+<td>දුරකථන</td>
+
+<td class="amount">1,200</td>
+
+</tr>
+
+
+<tr>
+
+<td>සඟරා විකිණීම</td>
+
+<td class="amount">9,370</td>
+
+<td>ගොඩනැගිලි කුලී</td>
+
+<td class="amount">2,000</td>
+
+</tr>
+
+
+<tr>
+
+<td>ශාලා කුලී</td>
+
+<td class="amount">5,400</td>
+
+<td>සංග්‍රහ වියදම්</td>
+
+<td class="amount">2,200</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>උපකරණ අලුත්වැඩියා</td>
+
+<td class="amount">3,500</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>ලිපිද්‍රව්‍ය</td>
+
+<td class="amount">350</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>ප්‍රවාහන</td>
+
+<td class="amount">1,200</td>
+
+</tr>
+
+
+<tr>
+
+<td></td>
+
+<td></td>
+
+<td>ක්ෂය</td>
+
+<td class="amount">400</td>
+
+</tr>
+
+
+<tr class="total-row">
+
+<td>මුළු ආදායම</td>
+
+<td class="amount">29,770</td>
+
+<td>මුළු වියදම</td>
+
+<td class="amount">10,850</td>
+
+</tr>
+
+
+<tr class="balance">
+
+<td>අතිරික්තය</td>
+
+<td class="amount">18,920</td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</table>
+
+
+<div class="highlight">
+
+<strong>
+ගිණුම් ක්‍රමය:
+</strong>
+
+<br><br>
+
+සාමාජික මුදල්:
+
+<br>
+
+50 × 300 = රු.15,000
+
+<br><br>
+
+ශාලා කුලී ආදායම:
+
+<br>
+
+5,600 − 200 = රු.5,400
+
+<br><br>
+
+ගොඩනැගිලි කුලී වියදම:
+
+<br>
+
+1,600 + 400 = රු.2,000
+
+<br><br>
+
+ක්ෂය:
+
+<br>
+
+8,000 × 5%
+= රු.400
+
+<br><br>
+
+ඉදිරි වර්ෂයට අදාළ මුදල්
+වත්මන් වර්ෂයේ ආදායම/වියදම ලෙස
+සම්පූර්ණයෙන් නොසලකයි.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL MEMORY
+================================================== -->
+
+<section class="lesson-box">
+
+<h2>
+මතක තබාගන්න
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<strong>
+ලාභ අරමුණු කර නොගත් සංවිධානය
+</strong>
+
+<br>
+
+ප්‍රධාන අරමුණ ලාභ බෙදාදීම නොව
+සංවිධානයේ සමාජීය හෝ
+සාමාජික අරමුණු ඉටු කිරීමයි.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+ලැබීම් හා ගෙවීම් ගිණුම
+</strong>
+
+<br>
+
+මුදල් ලැබීම් සහ මුදල් ගෙවීම්
+වාර්තා කරයි.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+ආදායම් ප්‍රකාශය
+</strong>
+
+<br>
+
+අදාළ කාලයට ආදායම් හා වියදම්
+සසඳා අතිරික්තය හෝ ඌනතාවය
+හඳුනාගනී.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+සාමාජික මුදල්
+</strong>
+
+<br>
+
+සාමාජිකයන්ගේ සංඛ්‍යාව,
+වාර්ෂික ගාස්තුව සහ හිඟ/ඉදිරි
+මුදල් සලකා ගණනය කළ යුතුය.
+
+</div>
+
+
+</div>
+
+
+<a
+href="g11lesson6quiz.html"
+class="quiz-button">
+
+Lesson 6 Quiz ආරම්භ කරන්න →
+
+</a>
+
+
+</section>
+
+
+</div>
+
+
+
+<footer>
+
+© 2026 Unique EduZone |
+Grade 11 Business & Accounting Studies
+
+</footer>
+
+
+
+<script>
+
+function showSolution(id){
+
+    const box =
+        document.getElementById(id);
+
+    if(!box){
+        return;
+    }
+
+
+    if(
+        box.style.display === "block"
+    ){
+
+        box.style.display =
+            "none";
+
+    }else{
+
+        box.style.display =
+            "block";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
