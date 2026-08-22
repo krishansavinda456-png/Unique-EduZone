@@ -171,3 +171,40 @@ main{padding:24px}
     }
 
 }
+
+/* =========================================
+   HOME PAGE LOGO
+   ========================================= */
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.home-logo-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-logo-symbol img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================
+   MOBILE HOME LOGO
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .home-logo-symbol img {
+        width: 55px;
+        height: 55px;
+    }
+
+}
