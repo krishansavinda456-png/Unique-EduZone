@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="si">
 <head>
@@ -207,6 +208,46 @@ li{
     background:#151515;
 }
 
+/* =====================================================
+   IMAGE SECTIONS
+===================================================== */
+
+.lesson-image-box{
+    background:#111;
+    border:1px solid #d4af37;
+    border-radius:15px;
+    padding:20px;
+    margin:25px 0;
+    text-align:center;
+}
+
+.lesson-image-box h3{
+    color:#d4af37;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.lesson-image{
+    width:100%;
+    max-width:1050px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+    border-radius:12px;
+    border:1px solid #333;
+    box-shadow:0 8px 25px rgba(0,0,0,.45);
+}
+
+.lesson-image-caption{
+    color:#ccc;
+    font-size:15px;
+    margin-top:12px;
+}
+
+/* =====================================================
+   VISUAL SECTIONS
+===================================================== */
+
 .visual{
     background:#f4f4f4;
     color:#111;
@@ -380,6 +421,7 @@ footer{
 }
 
 @media(max-width:700px){
+
     .hero h1{
         font-size:26px;
     }
@@ -394,6 +436,14 @@ footer{
 
     .back-btn{
         padding:7px 12px;
+        font-size:13px;
+    }
+
+    .lesson-image-box{
+        padding:12px;
+    }
+
+    .lesson-image-caption{
         font-size:13px;
     }
 }
@@ -484,6 +534,31 @@ footer{
 </p>
 
 </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMAGE SECTION 01 – TRADE FLOW
+     Image file:
+     ../assets/images/trade-flow.png
+===================================================== -->
+
+<section class="lesson-image-box">
+
+    <h3>වෙළෙඳාම සහ උපකාරක සේවා – දෘශ්‍ය සටහන</h3>
+
+    <img
+        src="../assets/images/trade-flow.png"
+        alt="නිෂ්පාදකයා සිට වෙළෙඳාම, ප්‍රවාහනය, බැංකු, රක්ෂණ සහ සන්නිවේදන සේවා හරහා පාරිභෝගිකයා වෙත භාණ්ඩ ළඟා වන ආකාරය"
+        class="lesson-image"
+        loading="lazy"
+    >
+
+    <p class="lesson-image-caption">
+        නිෂ්පාදකයාගෙන් පාරිභෝගිකයා වෙත භාණ්ඩ ළඟා වීමේදී
+        වෙළෙඳාම සහ උපකාරක සේවා සම්බන්ධ වන ආකාරය.
+    </p>
 
 </section>
 
@@ -658,6 +733,31 @@ footer{
 <li>තැන්පතු ආශ්‍රිත සේවා</li>
 <li>විද්‍යුත් මුදල් ආශ්‍රිත සේවා</li>
 </ul>
+
+</section>
+
+
+<!-- =====================================================
+     IMAGE SECTION 02 – BANKING SERVICES
+     Image file:
+     ../assets/images/banking-services.png
+===================================================== -->
+
+<section class="lesson-image-box">
+
+    <h3>බැංකු සේවා – දෘශ්‍ය සටහන</h3>
+
+    <img
+        src="../assets/images/banking-services.png"
+        alt="ඉතිරි කිරීමේ ගිණුම, ස්ථාවර තැන්පතුව, ජංගම ගිණුම සහ විද්‍යුත් කාඩ්පත් ඇතුළු බැංකු සේවා"
+        class="lesson-image"
+        loading="lazy"
+    >
+
+    <p class="lesson-image-caption">
+        ව්‍යාපාරික කටයුතු සඳහා භාවිත වන ප්‍රධාන බැංකු සේවා
+        සහ විද්‍යුත් ගෙවීම් උපකරණ.
+    </p>
 
 </section>
 
@@ -1728,3 +1828,28 @@ function completeLesson(){
 
 </body>
 </html>
+```
+
+**Images folder එකේ files දෙක මෙන්න මේ නම්වලින් තිබිය යුතුයි:**
+
+```text
+assets/
+└── images/
+    ├── logo.png
+    ├── trade-flow.png
+    └── banking-services.png
+```
+
+ඒ අනුව `lesson1.html` තුළ image paths දෙක:
+
+```html
+../assets/images/trade-flow.png
+```
+
+සහ
+
+```html
+../assets/images/banking-services.png
+```
+
+යන ආකාරයට දාලා තියෙනවා. ප්‍රධාන HTML structure එක, පාඩමේ content sections, Activities 10, Quiz 10, Quiz link එක සහ `completeLesson()` localStorage system එක ඉවත් කරලා නැහැ.
