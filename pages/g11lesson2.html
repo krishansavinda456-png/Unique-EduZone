@@ -1,184 +1,2262 @@
 <!DOCTYPE html>
 <html lang="si">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade 11 - Lesson 2 | Unique EduZone</title>
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>
+Grade 11 - Lesson 2 | Unique EduZone
+</title>
+
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,"Noto Sans Sinhala",sans-serif;background:#080808;color:#f5f5f5;line-height:1.8}
-header{background:linear-gradient(135deg,#050505,#151515);border-bottom:2px solid #d4af37;padding:18px 6%;position:sticky;top:0;z-index:1000}
-.header-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:12px}.logo img{width:55px;height:55px;object-fit:contain;border-radius:50%}.logo-text{color:#d4af37;font-size:22px;font-weight:bold}
-.back-btn{color:#080808;background:#d4af37;padding:8px 18px;border-radius:25px;font-weight:bold;text-decoration:none}
-.lang-btn{border:0;background:#d4af37;color:#080808;padding:8px 15px;border-radius:25px;font-weight:bold;cursor:pointer}
-.container{width:92%;max-width:1200px;margin:30px auto 80px}
-.hero,.section,.quiz-box,.complete{border-radius:18px}
-.hero{background:linear-gradient(135deg,#111,#1d1d1d);border:1px solid #d4af37;padding:35px 25px;text-align:center;margin-bottom:30px}
-.hero h1{color:#d4af37;font-size:34px;margin-bottom:10px}.hero p{color:#ddd;font-size:18px}
-.progress-box{margin-top:20px}.progress-title{color:#d4af37;font-weight:bold}.progress{height:14px;background:#333;border-radius:20px;overflow:hidden;margin-top:8px}.progress-fill{width:25%;height:100%;background:linear-gradient(90deg,#b8860b,#ffd700)}
-.section{background:#111;border:1px solid #292929;border-left:4px solid #d4af37;padding:25px;margin:25px 0;box-shadow:0 8px 25px rgba(0,0,0,.3)}
-.section h2{color:#d4af37;margin-bottom:15px;font-size:26px}.section h3{color:#f0c94a;margin:20px 0 10px;font-size:21px}
-p{margin-bottom:13px}ul,ol{padding-left:28px;margin-bottom:15px}li{margin-bottom:6px}
-.example{background:#171717;border:1px dashed #d4af37;border-radius:12px;padding:18px;margin:18px 0}.example-title{color:#d4af37;font-weight:bold;margin-bottom:8px}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:18px}.card{background:#191919;border:1px solid #333;border-radius:14px;padding:20px}.card h4{color:#d4af37;margin-bottom:8px;font-size:19px}
-.compare{width:100%;border-collapse:collapse;margin:18px 0}.compare th,.compare td{border:1px solid #555;padding:12px;text-align:left;vertical-align:top}.compare th{background:#d4af37;color:#080808}.compare td{background:#151515}
-.note{background:#211d0e;border-left:4px solid #d4af37;padding:15px;border-radius:8px;margin:15px 0}
-.visual{background:#f4f4f4;color:#111;border-radius:14px;padding:20px;margin:20px 0;overflow:auto}.visual-title{text-align:center;font-weight:bold;margin-bottom:12px;color:#222}.source-img{display:block;width:100%;max-width:850px;margin:auto;border-radius:10px}
-.activity{background:#151515;border:1px solid #444;border-radius:14px;padding:20px;margin:15px 0}.activity span{color:#d4af37;font-weight:bold}
-.quiz-box{background:#101010;border:1px solid #d4af37;padding:25px;margin-top:30px}.question{margin-bottom:25px;padding-bottom:20px;border-bottom:1px solid #333}.question h4{color:#d4af37;margin-bottom:10px}.option{display:block;background:#1a1a1a;border:1px solid #333;padding:10px 14px;border-radius:8px;margin:7px 0}
-.quiz-button,.complete button{border:0;background:#d4af37;color:#080808;padding:13px 28px;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:15px;text-decoration:none;display:inline-block}
-.complete{text-align:center;background:linear-gradient(135deg,#111,#202020);border:2px solid #d4af37;padding:30px;margin-top:35px}
-footer{text-align:center;padding:30px;border-top:1px solid #333;color:#aaa}
-.en{display:none}.si{display:block}
-body.english .si{display:none} body.english .en{display:block}
-@media(max-width:700px){.hero h1{font-size:26px}.section{padding:18px}.logo-text{font-size:17px}.back-btn,.lang-btn{padding:7px 12px;font-size:13px}}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+body{
+font-family:Arial,"Noto Sans Sinhala",sans-serif;
+background:#080808;
+color:#f5f5f5;
+line-height:1.8
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+background:#111;
+border-bottom:2px solid #d4af37;
+padding:16px 6%;
+position:sticky;
+top:0;
+z-index:10
+}
+
+.header-inner{
+max-width:1000px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px
+}
+
+.logo img{
+width:52px;
+height:52px;
+object-fit:contain
+}
+
+.logo-text{
+color:#d4af37;
+font-size:21px;
+font-weight:bold
+}
+
+.back-btn,
+.quiz-button{
+color:#080808;
+background:#d4af37;
+text-decoration:none;
+padding:7px 17px;
+border-radius:25px;
+font-weight:bold
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container{
+width:92%;
+max-width:1000px;
+margin:30px auto 70px
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero,
+.lesson-box{
+background:#111;
+border:1px solid #d4af37;
+border-radius:18px;
+padding:28px;
+margin-bottom:24px
+}
+
+.hero{
+text-align:center;
+background:linear-gradient(
+135deg,
+#111,
+#1d1d1d
+)
+}
+
+.hero h1{
+color:#d4af37;
+font-size:31px
+}
+
+.hero p{
+color:#ddd
+}
+
+
+/* =========================================
+   LESSON CONTENT
+========================================= */
+
+.lesson-box h2{
+color:#d4af37;
+margin-bottom:10px
+}
+
+.lesson-box h3{
+color:#ffd95a;
+margin:18px 0 8px
+}
+
+.lesson-box ul{
+padding-left:25px
+}
+
+.lesson-box li{
+margin:6px 0
+}
+
+.highlight{
+background:#211d0e;
+border-left:4px solid #d4af37;
+padding:14px;
+border-radius:8px;
+margin:14px 0
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(2,1fr);
+gap:14px
+}
+
+.card{
+background:#191919;
+border:1px solid #333;
+border-radius:12px;
+padding:15px
+}
+
+.card strong{
+color:#d4af37
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px
+}
+
+th,
+td{
+border:1px solid #444;
+padding:10px;
+text-align:left
+}
+
+th{
+background:#211d0e;
+color:#d4af37
+}
+
+
+/* =========================================
+   ACTIVITIES
+========================================= */
+
+.activities-title{
+color:#d4af37;
+font-size:25px;
+margin-bottom:8px
+}
+
+.activity{
+background:#191919;
+border:1px solid #333;
+border-radius:14px;
+padding:20px;
+margin:16px 0;
+transition:
+border-color .2s ease,
+box-shadow .2s ease
+}
+
+.activity:hover{
+border-color:#d4af37
+}
+
+.activity-number{
+color:#d4af37;
+font-weight:bold;
+font-size:17px;
+margin-bottom:6px
+}
+
+.activity h3{
+color:#ffd95a;
+margin:5px 0 10px
+}
+
+.activity-task{
+background:#211d0e;
+border-left:4px solid #d4af37;
+padding:13px;
+border-radius:8px;
+margin:12px 0
+}
+
+.activity ul{
+padding-left:25px;
+margin-top:8px
+}
+
+.activity li{
+margin:5px 0
+}
+
+
+/* =========================================
+   ACTIVITY COMPLETE BUTTON
+   GOLD → GREEN
+========================================= */
+
+.activity-complete-btn{
+
+    margin-top:15px;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+.activity-complete-btn:hover{
+
+    background:#ffd95a;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* COMPLETED = GREEN */
+
+.activity-complete-btn.completed{
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    cursor:default;
+
+}
+
+
+/* Disabled button stays green */
+
+.activity-complete-btn:disabled{
+
+    opacity:1;
+
+}
+
+
+/* =========================================
+   ACTIVITY ANSWER
+========================================= */
+
+.activity-answer{
+margin-top:12px
+}
+
+.activity-answer summary{
+cursor:pointer;
+color:#d4af37;
+font-weight:bold;
+padding:8px 0
+}
+
+.activity-answer p{
+
+background:#111;
+
+border:1px solid #333;
+
+border-radius:8px;
+
+padding:12px;
+
+margin-top:8px
+
+}
+
+
+/* =========================================
+   QUIZ BUTTON
+========================================= */
+
+.quiz-button{
+display:inline-block;
+margin-top:15px;
+padding:11px 24px
+}
+
+
+/* =========================================
+   LESSON COMPLETE
+========================================= */
+
+.lesson-complete-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:13px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+.lesson-complete-btn:hover{
+
+    background:#ffd95a;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* LESSON COMPLETED = GREEN */
+
+.lesson-complete-btn.completed{
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    cursor:default;
+
+}
+
+.lesson-complete-btn:disabled{
+
+    opacity:1;
+
+}
+
+.lesson-complete-message{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#7cff7c;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+text-align:center;
+padding:25px;
+color:#aaa;
+border-top:1px solid #333
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:650px){
+
+.hero h1{
+font-size:25px
+}
+
+.grid{
+grid-template-columns:1fr
+}
+
+.lesson-box{
+padding:19px
+}
+
+.activity{
+padding:16px
+}
+
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
 <header>
+
 <div class="header-inner">
-<div class="logo"><<img src="../assets/images/logo.png"
-     alt="Unique EduZone Logo"><div class="logo-text">Unique EduZone</div></div>
-<div style="display:flex;gap:8px;align-items:center"><button class="lang-btn" onclick="toggleLanguage()">English / සිංහල</button><a href="../index.html" class="back-btn">← Home</a></div>
+
+<div class="logo">
+
+<img
+src="../assets/images/logo.png"
+alt="Unique EduZone Logo">
+
+<div class="logo-text">
+Unique EduZone
 </div>
+
+</div>
+
+
+<a
+href="../index.html"
+class="back-btn">
+
+← Home
+
+</a>
+
+</div>
+
 </header>
 
+
+
 <div class="container">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
 <section class="hero">
-<h1 class="si">11 ශ්‍රේණිය – පාඩම 02</h1><h1 class="en">Grade 11 – Lesson 02</h1>
-<p class="si">කළමනාකරණය</p><p class="en">Management</p>
-<div class="progress-box"><div class="progress-title si">Lesson Progress – 2 / 8</div><div class="progress-title en">Lesson Progress – 2 / 8</div><div class="progress"><div class="progress-fill"></div></div></div>
+
+<h1>
+11 ශ්‍රේණිය – පාඩම 02
+</h1>
+
+<p>
+කළමනාකරණය
+</p>
+
+<p style="color:#aaa">
+
+Business & Accounting Studies
+
+</p>
+
+
+<a
+href="g11lesson2quiz.html"
+class="quiz-button">
+
+Lesson 2 Quiz →
+
+</a>
+
 </section>
 
-<section class="section">
-<h2 class="si">2.1 කළමනාකරණය හැඳින්වීම</h2><h2 class="en">2.1 Introduction to Management</h2>
-<p class="si">වර්තමාන ආර්ථික හා සමාජ සංවර්ධනයත් සමඟ පුළුල් වූ මිනිස් අවශ්‍යතා හා වුවමනා සපුරාලීම සඳහා ලොව පුරා ව්‍යාපාර විශාල සංඛ්‍යාවක් බිහි වී ඇත. එහෙත් සෑම ව්‍යාපාරයක්ම සාර්ථක ලෙස ක්‍රියාත්මක නොවේ. ව්‍යාපාරයක සාර්ථකත්වය රඳා පවතින්නේ එහි අරමුණු කොතෙක් දුරට සාක්ෂාත් කරගන්නේද සහ සම්පත් කෙතරම් හොඳින් භාවිත කරන්නේද යන්න මතය.</p>
-<p class="si">ශ්‍රමය, අමුද්‍රව්‍ය, මුදල් සහ අනෙකුත් සම්පත් සීමිත බැවින් ඒවා අපතේ නොයවා උපරිම ප්‍රයෝජනය ලබාගත යුතුය. මෙම සම්පත් කාර්යක්ෂමව යොදා ගනිමින් ව්‍යාපාර අරමුණු සාර්ථකව ඉටුකර ගැනීමට මඟ පෙන්වන්නේ කළමනාකරණයයි.</p>
-<p class="en">With economic and social development, many businesses have emerged to satisfy expanding human needs and wants. However, not every business operates successfully. Business success depends on the extent to which objectives are achieved and resources are used effectively.</p>
-<p class="en">Labour, raw materials, money and other resources are limited. Therefore, they should be used with minimum waste and maximum benefit. Management provides the process and direction needed to use these limited resources effectively and achieve business objectives.</p>
-<div class="example"><div class="example-title si">නිදසුන</div><div class="example-title en">Example</div>
-<p class="si">කුඩා බේකරි ව්‍යාපාරයක් සාර්ථකව පවත්වාගෙන යාම සඳහා අමුද්‍රව්‍ය මිලදී ගැනීම, සේවකයන්ට වැඩ බෙදාදීම, නිෂ්පාදන කාලසටහන සකස් කිරීම, විකුණුම් පාලනය කිරීම සහ වියදම් පරීක්ෂා කිරීම අවශ්‍ය වේ. මේ සියල්ල කළමනාකරණ ක්‍රියාවලියට සම්බන්ධ වේ.</p>
-<p class="en">A small bakery needs to purchase raw materials, allocate work among employees, prepare a production schedule, control sales and monitor expenses. These activities are part of the management process.</p></div>
-</section>
 
-<section class="section">
-<h2 class="si">කළමනාකරණයේ අර්ථය</h2><h2 class="en">Meaning of Management</h2>
-<p class="si">කළමනාකරණය යනු ව්‍යාපාර අරමුණක් සාර්ථකව ඉටුකර ගැනීම සඳහා පවතින සම්පත් කාර්යක්ෂමව යොදා ගනිමින් ව්‍යාපාරය සැලසුම් කිරීම, සංවිධානය කිරීම, මෙහෙයවීම සහ පාලනය කිරීම සම්බන්ධ වූ ක්‍රියාවලියකි.</p>
-<p class="en">Management is the process of planning, organizing, directing and controlling a business by using available resources efficiently to achieve business objectives successfully.</p>
-<div class="info-grid">
-<div class="card"><h4>සාර්ථකත්වය / Effectiveness</h4><p class="si">අපේක්ෂිත අරමුණු නිසි ආකාරයෙන් ඉටුකර ගැනීම.</p><p class="en">Achieving the intended objectives.</p></div>
-<div class="card"><h4>කාර්යක්ෂමතාව / Efficiency</h4><p class="si">අවම සම්පත් ප්‍රමාණයකින් උපරිම ප්‍රයෝජනය ලබාගැනීම.</p><p class="en">Obtaining maximum benefit with minimum resource wastage.</p></div>
+
+<!-- =========================================
+     2.1 MANAGEMENT
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+2.1 කළමනාකරණය හැඳින්වීම
+</h2>
+
+
+<p>
+
+වර්තමාන ආර්ථික හා සමාජ සංවර්ධනයත්
+සමඟ පුළුල් වූ මිනිස් අවශ්‍යතා හා
+වුවමනා සපුරාලීම සඳහා ලොව පුරා
+ව්‍යාපාර විශාල සංඛ්‍යාවක් බිහි වී ඇත.
+
+</p>
+
+
+<p>
+
+එහෙත් සෑම ව්‍යාපාරයක්ම සාර්ථක ලෙස
+ක්‍රියාත්මක නොවේ. ව්‍යාපාරයක
+සාර්ථකත්වය රඳා පවතින්නේ එහි
+අරමුණු කොතෙක් දුරට සාක්ෂාත් කරගන්නේද
+සහ සම්පත් කෙතරම් හොඳින් භාවිත
+කරන්නේද යන්න මතය.
+
+</p>
+
+
+<p>
+
+ශ්‍රමය, අමුද්‍රව්‍ය, මුදල් සහ අනෙකුත්
+සම්පත් සීමිත බැවින් ඒවා අපතේ නොයවා
+උපරිම ප්‍රයෝජනය ලබාගත යුතුය.
+
+</p>
+
+
+<div class="highlight">
+
+<strong>
+ප්‍රධාන අදහස:
+</strong>
+
+ව්‍යාපාර අරමුණු සාර්ථකව
+ඉටුකර ගැනීම සඳහා සීමිත
+සම්පත් කාර්යක්ෂමව යොදාගැනීමට
+මඟපෙන්වන්නේ කළමනාකරණයයි.
+
 </div>
+
+
+<div class="card">
+
+<strong>
+නිදසුන
+</strong>
+
+<br><br>
+
+කුඩා බේකරි ව්‍යාපාරයක් සාර්ථකව
+පවත්වාගෙන යාම සඳහා අමුද්‍රව්‍ය
+මිලදී ගැනීම, සේවකයන්ට වැඩ
+බෙදාදීම, නිෂ්පාදන කාලසටහන
+සකස් කිරීම, විකුණුම් පාලනය
+කිරීම සහ වියදම් පරීක්ෂා කිරීම
+අවශ්‍ය වේ.
+
+</div>
+
 </section>
 
-<section class="section">
-<h2 class="si">2.2 කළමනාකරණ කාර්යයන් 04</h2><h2 class="en">2.2 Four Functions of Management</h2>
-<p class="si">කළමනාකරණ ක්‍රියාවලියේ ප්‍රධාන කාර්යයන් හතරක් ඇත.</p><p class="en">The management process consists of four main functions.</p>
-<table class="compare"><tr><th>සිංහල</th><th>English</th><th class="si">කෙටි අදහස</th></tr>
-<tr><td>01. සැලසුම්කරණය</td><td>Planning</td><td class="si">අරමුණු තීරණය කර ඒවා ඉටු කිරීමට සුදුසු ක්‍රියාමාර්ග තීරණය කිරීම.</td></tr>
-<tr><td>02. සංවිධායකරණය</td><td>Organizing</td><td class="si">වැඩ, තනතුරු, සම්පත් සහ වගකීම් නිසි ලෙස බෙදා සකස් කිරීම.</td></tr>
-<tr><td>03. මෙහෙයවීම</td><td>Directing</td><td class="si">සේවකයන්ට මඟපෙන්වීම, උපදෙස් ලබාදීම හා ඔවුන් මෙහෙයවීම.</td></tr>
-<tr><td>04. පාලනය</td><td>Controlling</td><td class="si">සැලසුම් කළ දේ සිදුවී ඇත්දැයි පරීක්ෂා කර අඩුපාඩු නිවැරදි කිරීම.</td></tr>
+
+
+<!-- =========================================
+     MEANING
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+කළමනාකරණයේ අර්ථය
+</h2>
+
+
+<p>
+
+කළමනාකරණය යනු ව්‍යාපාර අරමුණක්
+සාර්ථකව ඉටුකර ගැනීම සඳහා පවතින
+සම්පත් කාර්යක්ෂමව යොදා ගනිමින්
+ව්‍යාපාරය සැලසුම් කිරීම,
+සංවිධානය කිරීම, මෙහෙයවීම සහ
+පාලනය කිරීම සම්බන්ධ වූ ක්‍රියාවලියකි.
+
+</p>
+
+
+<div class="grid">
+
+<div class="card">
+
+<strong>
+සාර්ථකත්වය
+</strong>
+
+<br><br>
+
+අපේක්ෂිත අරමුණු නිසි ආකාරයෙන්
+ඉටුකර ගැනීම.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+කාර්යක්ෂමතාව
+</strong>
+
+<br><br>
+
+අවම සම්පත් ප්‍රමාණයකින්
+උපරිම ප්‍රයෝජනය ලබාගැනීම.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOUR FUNCTIONS
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+2.2 කළමනාකරණ කාර්යයන් 04
+</h2>
+
+
+<p>
+
+කළමනාකරණ ක්‍රියාවලියේ ප්‍රධාන
+කාර්යයන් හතරක් ඇත.
+
+</p>
+
+
+<table>
+
+<tr>
+
+<th>
+සිංහල
+</th>
+
+<th>
+English
+</th>
+
+<th>
+කෙටි අදහස
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+01. සැලසුම්කරණය
+</td>
+
+<td>
+Planning
+</td>
+
+<td>
+අරමුණු තීරණය කර ඒවා ඉටු කිරීමට
+සුදුසු ක්‍රියාමාර්ග තීරණය කිරීම.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+02. සංවිධායකරණය
+</td>
+
+<td>
+Organizing
+</td>
+
+<td>
+වැඩ, තනතුරු, සම්පත් සහ වගකීම්
+නිසි ලෙස බෙදා සකස් කිරීම.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+03. මෙහෙයවීම
+</td>
+
+<td>
+Directing
+</td>
+
+<td>
+සේවකයන්ට මඟපෙන්වීම,
+උපදෙස් ලබාදීම හා
+ඔවුන් මෙහෙයවීම.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+04. පාලනය
+</td>
+
+<td>
+Controlling
+</td>
+
+<td>
+සැලසුම් කළ දේ සිදුවී ඇත්දැයි
+පරීක්ෂා කර අඩුපාඩු නිවැරදි කිරීම.
+</td>
+
+</tr>
+
 </table>
+
 </section>
 
-<section class="section">
-<h2 class="si">සැලසුම්කරණය</h2><h2 class="en">Planning</h2>
-<p class="si">ව්‍යාපාරයක අරමුණු තීරණය කිරීම සහ එම අරමුණු ඉටුකර ගැනීම සඳහා සුදුසු ක්‍රියාමාර්ග තීරණය කිරීමේ ක්‍රියාවලිය සැලසුම්කරණයයි.</p>
-<p class="en">Planning is the process of deciding business objectives and determining suitable courses of action to achieve them.</p>
-<h3 class="si">සැලසුම්කරණයට ඇතුළත් කරුණු</h3><h3 class="en">Elements of Planning</h3>
-<ul class="si"><li>අරමුණු තීරණය කිරීම</li><li>අරමුණු ඉටුකර ගැනීමේ ක්‍රම තීරණය කිරීම</li><li>නිෂ්පාදනය හා අලෙවිකරණය සිදුකරන ආකාරය තීරණය කිරීම</li><li>අවශ්‍ය සම්පත් හා සේවකයන් තීරණය කිරීම</li><li>සම්පත් ලබාගන්නා ආකාරය තීරණය කිරීම</li></ul>
-<ul class="en"><li>Setting objectives</li><li>Deciding methods for achieving objectives</li><li>Deciding how production and marketing will be carried out</li><li>Determining required resources and employees</li><li>Deciding how resources will be obtained</li></ul>
-<div class="example"><div class="example-title si">නිදසුන</div><div class="example-title en">Example</div><p class="si">නව ඇඳුම් වෙළෙඳසැලක් ආරම්භ කිරීමට පෙර කුමන ඇඳුම් විකිණිය යුතුද, කොපමණ භාණ්ඩ තොගයක් අවශ්‍යද, කීදෙනෙකු සේවයේ යොදවන්නේද සහ භාණ්ඩ ප්‍රචාරණය කරන්නේ කෙසේද යන්න තීරණය කිරීම සැලසුම්කරණයට අයත් වේ.</p><p class="en">Before opening a clothing store, deciding what products to sell, how much stock is required, how many employees are needed and how products will be promoted are planning activities.</p></div>
-</section>
 
-<section class="section">
-<h2 class="si">සංවිධායකරණය</h2><h2 class="en">Organizing</h2>
-<p class="si">සැලසුම් කළ ක්‍රියාමාර්ග ක්‍රියාත්මක කිරීමට අවශ්‍ය සම්පත්, තනතුරු, වැඩ සහ වගකීම් නිසි ලෙස බෙදාහැරීම හා සකස් කිරීම සංවිධායකරණයයි.</p>
-<p class="en">Organizing is the process of arranging resources, positions, tasks and responsibilities so that planned activities can be implemented.</p>
-<ul class="si"><li>කළමනාකරුවන් පත් කිරීම</li><li>අදාළ සේවකයන් හා සම්පත් ලබාදීම</li><li>වැඩ බෙදාහැරීම</li><li>වගකීම් හා බලතල පැවරීම</li></ul>
-<ul class="en"><li>Appointing managers</li><li>Providing required employees and resources</li><li>Dividing work</li><li>Delegating authority and responsibility</li></ul>
-<div class="example"><div class="example-title si">නිදසුන</div><div class="example-title en">Example</div><p class="si">පාසල් වාණිජ දිනයක් සංවිධානය කිරීමේදී මුදල්, ප්‍රචාරණ, ආහාර, සැරසිලි සහ වැඩසටහන් සඳහා වෙන වෙනම කමිටු පත් කිරීම සංවිධායකරණයට උදාහරණයකි.</p><p class="en">When organizing a school commerce day, appointing separate committees for finance, publicity, food, decorations and programmes is an example of organizing.</p></div>
-</section>
 
-<section class="section">
-<h2 class="si">මෙහෙයවීම</h2><h2 class="en">Directing</h2>
-<p class="si">සැලසුම් කළ කටයුතු ක්‍රියාත්මක කිරීමේදී මානව සම්පත් නිසි ලෙස හැසිරවීම, තොරතුරු හා උපදෙස් ලබාදීම, සේවකයන්ට නායකත්වය ලබාදීම සහ ඔවුන් කාර්යයන් ඉටු කිරීමට පෙළඹවීම මෙහෙයවීමයි.</p>
-<p class="en">Directing involves guiding people, providing information and instructions, providing leadership and motivating employees to perform their tasks.</p>
-<ul class="si"><li>සේවකයන්ට අවශ්‍ය තොරතුරු හා උපදෙස් ලබාදීම</li><li>වෘත්තීය සම්බන්ධතා පවත්වාගැනීම</li><li>සේවකයන් තම කාර්යයන් නිසි ලෙස ඉටු කිරීමට පෙළඹවීම</li></ul>
-<ul class="en"><li>Providing employees with information and instructions</li><li>Maintaining professional relationships</li><li>Motivating employees to perform their duties properly</li></ul>
-</section>
+<!-- =========================================
+     PLANNING
+========================================= -->
 
-<section class="section">
-<h2 class="si">පාලනය</h2><h2 class="en">Controlling</h2>
-<p class="si">සැලසුම් කළ ආකාරයට ව්‍යාපාර කටයුතු සිදුවේදැයි පරීක්ෂා කිරීම, අඩුපාඩු හඳුනාගැනීම සහ ඒවා නිවැරදි කිරීමට අවශ්‍ය පියවර ගැනීම පාලනයයි.</p>
-<p class="en">Controlling is the process of checking whether activities are being carried out as planned, identifying shortcomings and taking corrective action.</p>
-<ul class="si"><li>සැලසුම් කළ පරිදි ගුණාත්මක නිෂ්පාදනයක් සිදුවී ඇත්දැයි පරීක්ෂා කිරීම</li><li>සැලසුම් කළ පරිදි භාණ්ඩ අලෙවි වී ඇත්දැයි පරීක්ෂා කිරීම</li><li>නිෂ්පාදනය හෝ අලෙවිය අඩුවීමට හේතු සොයා බැලීම</li><li>අඩුපාඩු නිවැරදි කිරීමට පියවර ගැනීම</li></ul>
-<ul class="en"><li>Checking whether quality production has been achieved as planned</li><li>Checking whether products have been sold as planned</li><li>Finding reasons for low production or sales</li><li>Taking corrective action</li></ul>
-<div class="note"><strong class="si">මතක තබාගන්න:</strong><strong class="en">Remember:</strong><span class="si"> සැලසුම් කිරීම → සංවිධානය කිරීම → මෙහෙයවීම → පාලනය කිරීම යන කාර්යයන් එකිනෙකට සම්බන්ධ වේ.</span><span class="en"> Planning → Organizing → Directing → Controlling are interconnected functions.</span></div>
-</section>
+<section class="lesson-box">
 
-<section class="section">
-<h2 class="si">PDF හි රූප හා ක්‍රියාකාරකම්</h2><h2 class="en">Source Visuals and Activities</h2>
-<p class="si">PDF මූලාශ්‍රයේ අඩංගු රූප/සටහන් පාඩමට යොමු කිරීමක් ලෙස පහතින් ඇතුළත් කර ඇත.</p>
-<p class="en">The visual pages from the supplied PDF are included below as source references.</p>
-<div class="info-grid">
-<div class="card"><h4>Source Page 1</h4><img class="source-img" src="assets/chapter02-page-1.png" alt="Chapter 02 page 1"></div><div class="card"><h4>Source Page 2</h4><img class="source-img" src="assets/chapter02-page-2.png" alt="Chapter 02 page 2"></div><div class="card"><h4>Source Page 3</h4><img class="source-img" src="assets/chapter02-page-3.png" alt="Chapter 02 page 3"></div><div class="card"><h4>Source Page 4</h4><img class="source-img" src="assets/chapter02-page-4.png" alt="Chapter 02 page 4"></div><div class="card"><h4>Source Page 5</h4><img class="source-img" src="assets/chapter02-page-5.png" alt="Chapter 02 page 5"></div><div class="card"><h4>Source Page 6</h4><img class="source-img" src="assets/chapter02-page-6.png" alt="Chapter 02 page 6"></div>
+<h2>
+සැලසුම්කරණය – Planning
+</h2>
+
+
+<p>
+
+ව්‍යාපාරයක අරමුණු තීරණය කිරීම
+සහ එම අරමුණු ඉටුකර ගැනීම සඳහා
+සුදුසු ක්‍රියාමාර්ග තීරණය කිරීමේ
+ක්‍රියාවලිය සැලසුම්කරණයයි.
+
+</p>
+
+
+<h3>
+සැලසුම්කරණයට ඇතුළත් කරුණු
+</h3>
+
+
+<ul>
+
+<li>
+අරමුණු තීරණය කිරීම
+</li>
+
+<li>
+අරමුණු ඉටුකර ගැනීමේ ක්‍රම
+තීරණය කිරීම
+</li>
+
+<li>
+නිෂ්පාදනය හා අලෙවිකරණය සිදුකරන
+ආකාරය තීරණය කිරීම
+</li>
+
+<li>
+අවශ්‍ය සම්පත් හා සේවකයන්
+තීරණය කිරීම
+</li>
+
+<li>
+සම්පත් ලබාගන්නා ආකාරය
+තීරණය කිරීම
+</li>
+
+</ul>
+
+
+<div class="highlight">
+
+<strong>
+නිදසුන:
+</strong>
+
+නව ඇඳුම් වෙළෙඳසැලක් ආරම්භ කිරීමට
+පෙර කුමන ඇඳුම් විකිණිය යුතුද,
+කොපමණ භාණ්ඩ තොගයක් අවශ්‍යද,
+කීදෙනෙකු සේවයේ යොදවන්නේද සහ
+භාණ්ඩ ප්‍රචාරණය කරන්නේ කෙසේද
+යන්න තීරණය කිරීම සැලසුම්කරණයට
+අයත් වේ.
+
 </div>
+
 </section>
 
-<section class="section">
-<h2 class="si">ක්‍රියාකාරකම් – Activities</h2><h2 class="en">Activities</h2>
-<div class="activity"><span>01:</span> <span class="si">කළමනාකරණ ක්‍රියාවලියේදී සැලසුම්කරණය, සංවිධායකරණය, මෙහෙයවීම හා පාලනය යන කාර්යයන් හඳුනාගෙන එක් එක් කාර්යයට නිදසුනක් ලියන්න.</span><span class="en">Identify planning, organizing, directing and controlling and give one example for each.</span></div>
-<div class="activity"><span>02:</span> <span class="si">පාසල් වාණිජ දිනයක් සංවිධානය කිරීමට අවශ්‍ය ක්‍රියාකාරකම් ඉහත කළමනාකරණ කාර්යයන් හතර යටතේ වර්ග කරන්න.</span><span class="en">Classify the activities needed to organize a school commerce day under the four management functions.</span></div>
-<div class="activity"><span>03:</span> <span class="si">කුඩා ව්‍යාපාරයක් සඳහා සම්පත් කාර්යක්ෂමව භාවිත කිරීම වැදගත් වන්නේ ඇයි? කරුණු 5ක් ලියන්න.</span><span class="en">Why is efficient use of resources important for a small business? Give five points.</span></div>
-<div class="activity"><span>04:</span> <span class="si">සාර්ථකත්වය හා කාර්යක්ෂමතාව අතර වෙනස වගුවකින් දක්වන්න.</span><span class="en">Show the difference between effectiveness and efficiency in a table.</span></div>
-<div class="activity"><span>05:</span> <span class="si">ඔබ කැමති ව්‍යාපාරයක් තෝරාගෙන එහි කළමනාකරණ කාර්යයන් හතර සඳහා උදාහරණ සපයන්න.</span><span class="en">Choose a business and provide examples for its four management functions.</span></div>
-</section>
 
-<section class="quiz-box">
-<h2 style="color:#d4af37;margin-bottom:25px;">Lesson 2 – Quiz 10</h2>
-<div class="question"><h4>1. සීමිත සම්පත් කාර්යක්ෂමව යොදාගෙන ව්‍යාපාර අරමුණු ඉටුකර ගැනීමට මඟපෙන්වන ක්‍රියාවලිය කුමක්ද?</h4><label class="option">A. අලෙවිකරණය</label><label class="option">B. කළමනාකරණය</label><label class="option">C. ප්‍රවාහනය</label><label class="option">D. ගිණුම්කරණය</label></div>
-<div class="question"><h4>2. ව්‍යාපාර අරමුණු තීරණය කර ඒවා ඉටුකර ගැනීමේ ක්‍රම තීරණය කිරීම කුමන කාර්යයට අයත්ද?</h4><label class="option">A. සැලසුම්කරණය</label><label class="option">B. පාලනය</label><label class="option">C. මෙහෙයවීම</label><label class="option">D. සංවිධායකරණය</label></div>
-<div class="question"><h4>3. වැඩ, සම්පත්, තනතුරු සහ වගකීම් බෙදා සකස් කිරීම කුමක්ද?</h4><label class="option">A. පාලනය</label><label class="option">B. මෙහෙයවීම</label><label class="option">C. සංවිධායකරණය</label><label class="option">D. සැලසුම්කරණය</label></div>
-<div class="question"><h4>4. සේවකයන්ට උපදෙස් හා මඟපෙන්වීම ලබාදීම ප්‍රධාන වශයෙන් කුමන කාර්යයට අයත්ද?</h4><label class="option">A. මෙහෙයවීම</label><label class="option">B. සැලසුම්කරණය</label><label class="option">C. පාලනය</label><label class="option">D. සංවිධායකරණය</label></div>
-<div class="question"><h4>5. සැලසුම් කළ පරිදි කටයුතු සිදුවේදැයි පරීක්ෂා කර අඩුපාඩු නිවැරදි කිරීම කුමක්ද?</h4><label class="option">A. සංවිධායකරණය</label><label class="option">B. පාලනය</label><label class="option">C. මෙහෙයවීම</label><label class="option">D. නිෂ්පාදනය</label></div>
-<div class="question"><h4>6. අවම සම්පත් ප්‍රමාණයකින් උපරිම ප්‍රයෝජනය ලබාගැනීමෙන් අදහස් කරන්නේ?</h4><label class="option">A. කාර්යක්ෂමතාව</label><label class="option">B. වෙළෙඳාම</label><label class="option">C. සන්නිවේදනය</label><label class="option">D. ප්‍රචාරණය</label></div>
-<div class="question"><h4>7. අපේක්ෂිත අරමුණු ඉටුකර ගැනීමෙන් අදහස් කරන්නේ?</h4><label class="option">A. කාර්යක්ෂමතාව</label><label class="option">B. සාර්ථකත්වය</label><label class="option">C. ප්‍රවාහනය</label><label class="option">D. පාලනය</label></div>
-<div class="question"><h4>8. කළමනාකරණයේ ප්‍රධාන කාර්යයන් ගණන කීයද?</h4><label class="option">A. 2</label><label class="option">B. 3</label><label class="option">C. 4</label><label class="option">D. 5</label></div>
-<div class="question"><h4>9. සේවකයන්ට නායකත්වය ලබාදීම හා ඔවුන් පෙළඹවීම වඩාත් සම්බන්ධ වන්නේ?</h4><label class="option">A. මෙහෙයවීම</label><label class="option">B. පාලනය</label><label class="option">C. සැලසුම්කරණය</label><label class="option">D. සංවිධායකරණය</label></div>
-<div class="question"><h4>10. සැලසුම් කළ පරිදි නිෂ්පාදනය සිදුවී නැතිනම් හේතුව සොයා නිවැරදි පියවර ගැනීම කුමක්ද?</h4><label class="option">A. සැලසුම්කරණය</label><label class="option">B. සංවිධායකරණය</label><label class="option">C. මෙහෙයවීම</label><label class="option">D. පාලනය</label></div>
-<a href="g11lesson2quiz.html" class="quiz-button">Lesson 2 Quiz →</a>
-</section>
 
-<section class="complete">
-<h2 style="color:#d4af37;" class="si">Lesson 2 Complete කරන්න</h2><h2 style="color:#d4af37;" class="en">Complete Lesson 2</h2>
-<p class="si">පාඩම අධ්‍යයනය කර Activities සහ Quiz සම්පූර්ණ කළ පසු පහත button එක භාවිත කරන්න.</p>
-<p class="en">After studying the lesson and completing the activities and quiz, use the button below.</p>
-<button onclick="completeLesson()">✓ Complete Lesson</button>
-<p id="completeMessage" style="margin-top:15px;color:#d4af37;font-weight:bold;"></p>
-</section>
+<!-- =========================================
+     ORGANIZING
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+සංවිධායකරණය – Organizing
+</h2>
+
+
+<p>
+
+සැලසුම් කළ ක්‍රියාමාර්ග ක්‍රියාත්මක
+කිරීමට අවශ්‍ය සම්පත්, තනතුරු,
+වැඩ සහ වගකීම් නිසි ලෙස
+බෙදාහැරීම හා සකස් කිරීම
+සංවිධායකරණයයි.
+
+</p>
+
+
+<ul>
+
+<li>
+කළමනාකරුවන් පත් කිරීම
+</li>
+
+<li>
+අදාළ සේවකයන් හා සම්පත්
+ලබාදීම
+</li>
+
+<li>
+වැඩ බෙදාහැරීම
+</li>
+
+<li>
+වගකීම් හා බලතල පැවරීම
+</li>
+
+</ul>
+
+
+<div class="highlight">
+
+<strong>
+නිදසුන:
+</strong>
+
+පාසල් වාණිජ දිනයක් සංවිධානය
+කිරීමේදී මුදල්, ප්‍රචාරණ,
+ආහාර, සැරසිලි සහ වැඩසටහන්
+සඳහා වෙන වෙනම කමිටු පත් කිරීම
+සංවිධායකරණයට උදාහරණයකි.
+
 </div>
-<footer>© 2026 Unique EduZone | Grade 11 Business & Accounting Studies</footer>
+
+</section>
+
+
+
+<!-- =========================================
+     DIRECTING
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+මෙහෙයවීම – Directing
+</h2>
+
+
+<p>
+
+සැලසුම් කළ කටයුතු ක්‍රියාත්මක
+කිරීමේදී මානව සම්පත් නිසි ලෙස
+හැසිරවීම, තොරතුරු හා උපදෙස්
+ලබාදීම, සේවකයන්ට නායකත්වය
+ලබාදීම සහ ඔවුන් කාර්යයන්
+ඉටු කිරීමට පෙළඹවීම මෙහෙයවීමයි.
+
+</p>
+
+
+<ul>
+
+<li>
+සේවකයන්ට අවශ්‍ය තොරතුරු හා
+උපදෙස් ලබාදීම
+</li>
+
+<li>
+වෘත්තීය සම්බන්ධතා පවත්වාගැනීම
+</li>
+
+<li>
+සේවකයන් තම කාර්යයන් නිසි ලෙස
+ඉටු කිරීමට පෙළඹවීම
+</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTROLLING
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+පාලනය – Controlling
+</h2>
+
+
+<p>
+
+සැලසුම් කළ ආකාරයට ව්‍යාපාර
+කටයුතු සිදුවේදැයි පරීක්ෂා කිරීම,
+අඩුපාඩු හඳුනාගැනීම සහ ඒවා
+නිවැරදි කිරීමට අවශ්‍ය පියවර
+ගැනීම පාලනයයි.
+
+</p>
+
+
+<ul>
+
+<li>
+සැලසුම් කළ පරිදි ගුණාත්මක
+නිෂ්පාදනයක් සිදුවී ඇත්දැයි
+පරීක්ෂා කිරීම
+</li>
+
+<li>
+සැලසුම් කළ පරිදි භාණ්ඩ
+අලෙවි වී ඇත්දැයි පරීක්ෂා කිරීම
+</li>
+
+<li>
+නිෂ්පාදනය හෝ අලෙවිය අඩුවීමට
+හේතු සොයා බැලීම
+</li>
+
+<li>
+අඩුපාඩු නිවැරදි කිරීමට
+පියවර ගැනීම
+</li>
+
+</ul>
+
+
+<div class="highlight">
+
+<strong>
+මතක තබාගන්න:
+</strong>
+
+<br>
+
+සැලසුම් කිරීම →
+සංවිධානය කිරීම →
+මෙහෙයවීම →
+පාලනය කිරීම
+
+<br><br>
+
+මෙම කාර්යයන් එකිනෙකට
+සම්බන්ධ වේ.
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+     ACTIVITIES
+========================================= -->
+
+<section class="lesson-box">
+
+<h2 class="activities-title">
+ක්‍රියාකාරකම් – Activities
+</h2>
+
+
+<p>
+
+පහත ක්‍රියාකාරකම් මඟින් පාඩම තුළ
+ඉගෙනගත් කළමනාකරණ සංකල්ප
+ප්‍රායෝගිකව භාවිත කර බලන්න.
+
+</p>
+
+
+
+<!-- =========================================
+     ACTIVITY 01
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 01
+</div>
+
+<h3>
+කළමනාකරණ කාර්යයන් හඳුනාගනිමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+කාර්යය:
+</strong>
+
+සැලසුම්කරණය, සංවිධායකරණය,
+මෙහෙයවීම සහ පාලනය යන
+කළමනාකරණ කාර්යයන් හතර
+හඳුනාගෙන එක් එක් කාර්යයට
+එක් නිදසුනක් ලියන්න.
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(1,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-1"
+style="display:none;">
+
+<summary>
+පිළිතුර / උදාහරණය පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+<strong>සැලසුම්කරණය:</strong>
+ව්‍යාපාරයක අරමුණු තීරණය කිරීම.
+
+<br><br>
+
+<strong>සංවිධායකරණය:</strong>
+සේවකයන් අතර වැඩ බෙදාදීම.
+
+<br><br>
+
+<strong>මෙහෙයවීම:</strong>
+සේවකයන්ට උපදෙස් හා මඟපෙන්වීම ලබාදීම.
+
+<br><br>
+
+<strong>පාලනය:</strong>
+සැලසුම් කළ පරිදි කටයුතු සිදුවේදැයි
+පරීක්ෂා කිරීම.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 02
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 02
+</div>
+
+<h3>
+පාසල් වාණිජ දිනය
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+කාර්යය:
+</strong>
+
+පාසල් වාණිජ දිනයක් සංවිධානය
+කිරීමට අවශ්‍ය ක්‍රියාකාරකම්
+කළමනාකරණ කාර්යයන් හතර
+යටතේ වර්ග කරන්න.
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(2,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-2"
+style="display:none;">
+
+<summary>
+පිළිතුර / උදාහරණය පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+<strong>සැලසුම්කරණය:</strong>
+වාණිජ දිනය පැවැත්වෙන දිනය
+සහ වැඩසටහන තීරණය කිරීම.
+
+<br><br>
+
+<strong>සංවිධායකරණය:</strong>
+විවිධ කමිටු පත් කිරීම.
+
+<br><br>
+
+<strong>මෙහෙයවීම:</strong>
+කමිටු සාමාජිකයන්ට උපදෙස්
+ලබාදීම.
+
+<br><br>
+
+<strong>පාලනය:</strong>
+සැලසුම් කළ පරිදි වැඩසටහන
+සිදුවේදැයි පරීක්ෂා කිරීම.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 03
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 03
+</div>
+
+<h3>
+සම්පත් කාර්යක්ෂමව භාවිත කරමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+කාර්යය:
+</strong>
+
+කුඩා ව්‍යාපාරයක් සඳහා සම්පත්
+කාර්යක්ෂමව භාවිත කිරීම වැදගත්
+වන්නේ ඇයි?
+
+කරුණු 5ක් ලියන්න.
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(3,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-3"
+style="display:none;">
+
+<summary>
+උදාහරණ පිළිතුර බලන්න
+</summary>
+
+<p>
+
+1. සම්පත් අපතේ යාම අඩු වේ.
+
+<br>
+
+2. පිරිවැය අඩු කරගත හැක.
+
+<br>
+
+3. ලාභය වැඩි කරගත හැක.
+
+<br>
+
+4. සීමිත සම්පත්වලින් වැඩි
+ප්‍රතිඵලයක් ලබාගත හැක.
+
+<br>
+
+5. ව්‍යාපාරයේ කාර්යක්ෂමතාව
+වැඩි වේ.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 04
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 04
+</div>
+
+<h3>
+සාර්ථකත්වය සහ කාර්යක්ෂමතාව
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+කාර්යය:
+</strong>
+
+සාර්ථකත්වය සහ කාර්යක්ෂමතාව
+අතර වෙනස වගුවකින් දක්වන්න.
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(4,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-4"
+style="display:none;">
+
+<summary>
+පිළිතුර පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+<strong>සාර්ථකත්වය:</strong>
+අපේක්ෂිත අරමුණු ඉටුකර ගැනීම.
+
+<br><br>
+
+<strong>කාර්යක්ෂමතාව:</strong>
+අවම සම්පත් ප්‍රමාණයකින්
+උපරිම ප්‍රයෝජනය ලබාගැනීම.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 05
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 05
+</div>
+
+<h3>
+ඔබ කැමති ව්‍යාපාරයක් තෝරමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+කාර්යය:
+</strong>
+
+ඔබ කැමති ව්‍යාපාරයක් තෝරාගෙන
+එහි කළමනාකරණ කාර්යයන් හතර
+සඳහා උදාහරණ සපයන්න.
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(5,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-5"
+style="display:none;">
+
+<summary>
+උදාහරණයක් බලන්න
+</summary>
+
+<p>
+
+<strong>ව්‍යාපාරය:</strong>
+කුඩා බේකරි ව්‍යාපාරයක්.
+
+<br><br>
+
+<strong>සැලසුම්කරණය:</strong>
+නිෂ්පාදනය කළ යුතු බේකරි
+නිෂ්පාදන තීරණය කිරීම.
+
+<br>
+
+<strong>සංවිධායකරණය:</strong>
+සේවකයන්ට වැඩ බෙදාදීම.
+
+<br>
+
+<strong>මෙහෙයවීම:</strong>
+සේවකයන්ට උපදෙස් ලබාදීම.
+
+<br>
+
+<strong>පාලනය:</strong>
+නිෂ්පාදනවල ගුණාත්මකභාවය
+පරීක්ෂා කිරීම.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 06
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 06
+</div>
+
+<h3>
+සැලසුම්කරණය හඳුනාගනිමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+ප්‍රශ්නය:
+</strong>
+
+නව ඇඳුම් වෙළෙඳසැලක්
+ආරම්භ කිරීමට පෙර කුමන
+භාණ්ඩ විකිණිය යුතුද,
+කොපමණ තොගයක් අවශ්‍යද
+යන්න තීරණය කිරීම
+කළමනාකරණයේ කුමන
+කාර්යයට අයත්ද?
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(6,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-6"
+style="display:none;">
+
+<summary>
+පිළිතුර පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+එය
+<strong>සැලසුම්කරණය – Planning</strong>
+යන කාර්යයට අදාළ වේ.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 07
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 07
+</div>
+
+<h3>
+සංවිධායකරණය හඳුනාගනිමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+ප්‍රශ්නය:
+</strong>
+
+සේවකයන් අතර වැඩ බෙදාදීම
+සහ වගකීම් පැවරීම කළමනාකරණයේ
+කුමන කාර්යයට අයත්ද?
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(7,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-7"
+style="display:none;">
+
+<summary>
+පිළිතුර පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+එය
+<strong>සංවිධායකරණය – Organizing</strong>
+යන කාර්යයට අදාළ වේ.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 08
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 08
+</div>
+
+<h3>
+මෙහෙයවීම හඳුනාගනිමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+ප්‍රශ්නය:
+</strong>
+
+කළමනාකරුවෙකු තම සේවකයන්ට
+අවශ්‍ය උපදෙස් ලබාදී ඔවුන්
+වැඩ කිරීමට පෙළඹවීම
+කළමනාකරණයේ කුමන
+කාර්යයට අයත්ද?
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(8,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-8"
+style="display:none;">
+
+<summary>
+පිළිතුර පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+එය
+<strong>මෙහෙයවීම – Directing</strong>
+යන කාර්යයට අදාළ වේ.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 09
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 09
+</div>
+
+<h3>
+පාලනය හඳුනාගනිමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+ප්‍රශ්නය:
+</strong>
+
+සැලසුම් කළ පරිදි නිෂ්පාදනය
+සිදුවී නැතිනම් එයට හේතුව
+සොයා බලා නිවැරදි පියවර
+ගැනීම කළමනාකරණයේ
+කුමන කාර්යයට අයත්ද?
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(9,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-9"
+style="display:none;">
+
+<summary>
+පිළිතුර පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+එය
+<strong>පාලනය – Controlling</strong>
+යන කාර්යයට අදාළ වේ.
+
+<br><br>
+
+පාලනයේදී අඩුපාඩු හඳුනාගෙන
+ඒවා නිවැරදි කිරීමට පියවර
+ගනු ලැබේ.
+
+</p>
+
+</details>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY 10
+========================================= -->
+
+<div class="activity">
+
+<div class="activity-number">
+ක්‍රියාකාරකම 10
+</div>
+
+<h3>
+කළමනාකරණ කාර්යයන් සම්පූර්ණ කරමු
+</h3>
+
+
+<div class="activity-task">
+
+<strong>
+කාර්යය:
+</strong>
+
+පහත හිස්තැන් සම්පූර්ණ කරන්න.
+
+<br><br>
+
+1. Planning = __________
+
+<br>
+
+2. Organizing = __________
+
+<br>
+
+3. Directing = __________
+
+<br>
+
+4. Controlling = __________
+
+</div>
+
+
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(10,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-10"
+style="display:none;">
+
+<summary>
+පිළිතුර පරීක්ෂා කරන්න
+</summary>
+
+<p>
+
+1. Planning = සැලසුම්කරණය
+
+<br>
+
+2. Organizing = සංවිධායකරණය
+
+<br>
+
+3. Directing = මෙහෙයවීම
+
+<br>
+
+4. Controlling = පාලනය
+
+</p>
+
+</details>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     REMEMBER
+========================================= -->
+
+<section class="lesson-box">
+
+<h2>
+මතක තබාගන්න
+</h2>
+
+
+<div class="grid">
+
+<div class="card">
+
+<strong>
+Planning
+</strong>
+
+<br>
+
+අරමුණු තීරණය කර
+ක්‍රියාමාර්ග සැලසුම් කිරීම.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+Organizing
+</strong>
+
+<br>
+
+වැඩ, සම්පත් සහ වගකීම්
+නිසි ලෙස සකස් කිරීම.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+Directing
+</strong>
+
+<br>
+
+සේවකයන්ට මඟපෙන්වීම,
+උපදෙස් ලබාදීම හා
+පෙළඹවීම.
+
+</div>
+
+
+<div class="card">
+
+<strong>
+Controlling
+</strong>
+
+<br>
+
+සැලසුම් කළ දේ පරීක්ෂා කර
+අඩුපාඩු නිවැරදි කිරීම.
+
+</div>
+
+</div>
+
+
+<a
+href="g11lesson2quiz.html"
+class="quiz-button">
+
+Lesson 2 Quiz ආරම්භ කරන්න →
+
+</a>
+
+
+
+<!-- =========================================
+     LESSON COMPLETE
+========================================= -->
+
+<button
+type="button"
+class="lesson-complete-btn"
+onclick="completeLesson()">
+
+✓ පාඩම සම්පූර්ණ කළා
+
+</button>
+
+
+<p
+id="lessonCompleteMessage"
+class="lesson-complete-message">
+
+</p>
+
+
+</section>
+
+
+</div>
+
+
+
+<footer>
+
+© 2026 Unique EduZone |
+Grade 11 Business & Accounting Studies
+
+</footer>
+
+
+
+<!-- =========================================
+     LESSON 2 ACTIVITY + COMPLETION SYSTEM
+========================================= -->
 
 <script>
-function toggleLanguage(){
- document.body.classList.toggle("english");
- localStorage.setItem("uniqueEduLanguage", document.body.classList.contains("english")?"en":"si");
-}
-(function(){ if(localStorage.getItem("uniqueEduLanguage")==="en") document.body.classList.add("english"); })();
 
-function completeLesson(){
- try{
-  localStorage.setItem("grade11_lesson2_completed","true");
-  localStorage.setItem("grade11_lesson2_progress","100");
-  let completed=JSON.parse(localStorage.getItem("grade11CompletedLessons")||"{}");
-  completed["2"]=true;
-  localStorage.setItem("grade11CompletedLessons",JSON.stringify(completed));
-  document.getElementById("completeMessage").innerHTML="✓ Lesson 2 සාර්ථකව සම්පූර්ණ කරන ලදී!";
- }catch(e){document.getElementById("completeMessage").innerHTML="Lesson completed.";}
+
+/*
+ * =========================================
+ * RESTORE SAVED DATA
+ * =========================================
+ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* -------------------------------------
+           RESTORE ACTIVITIES
+        ------------------------------------- */
+
+        let completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "g11_lesson2_activities"
+                )
+            ) || [];
+
+
+        completedActivities.forEach(
+            function (activityNumber) {
+
+
+                const button =
+                    document.querySelector(
+                        '.activity-complete-btn[onclick="completeActivity(' +
+                        activityNumber +
+                        ',this)"]'
+                    );
+
+
+                const answer =
+                    document.getElementById(
+                        "activity-answer-" +
+                        activityNumber
+                    );
+
+
+                if (button) {
+
+                    button.textContent =
+                        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+                    button.disabled =
+                        true;
+
+                    button.classList.add(
+                        "completed"
+                    );
+
+                }
+
+
+                if (answer) {
+
+                    answer.style.display =
+                        "block";
+
+                }
+
+            }
+        );
+
+
+
+        /* -------------------------------------
+           RESTORE LESSON COMPLETION
+        ------------------------------------- */
+
+        let completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+
+        if (
+            completedLessons.includes(
+                "lesson2"
+            )
+        ) {
+
+
+            const button =
+                document.querySelector(
+                    ".lesson-complete-btn"
+                );
+
+
+            if (button) {
+
+                button.textContent =
+                    "✓ පාඩම සම්පූර්ණයි";
+
+                button.disabled =
+                    true;
+
+                button.classList.add(
+                    "completed"
+                );
+
+            }
+
+
+            const message =
+                document.getElementById(
+                    "lessonCompleteMessage"
+                );
+
+
+            if (message) {
+
+                message.textContent =
+                    "පාඩම සාර්ථකව සම්පූර්ණ කර ඇත.";
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/*
+ * =========================================
+ * COMPLETE ACTIVITY
+ * =========================================
+ */
+
+function completeActivity(
+    activityNumber,
+    button
+) {
+
+
+    /* -------------------------------------
+       SHOW ANSWER
+    ------------------------------------- */
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (answer) {
+
+        answer.style.display =
+            "block";
+
+    }
+
+
+
+    /* -------------------------------------
+       CHANGE BUTTON GOLD → GREEN
+    ------------------------------------- */
+
+    if (button) {
+
+        button.textContent =
+            "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+        button.disabled =
+            true;
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+
+
+    /* -------------------------------------
+       SAVE ACTIVITY
+    ------------------------------------- */
+
+    let completedActivities =
+        JSON.parse(
+            localStorage.getItem(
+                "g11_lesson2_activities"
+            )
+        ) || [];
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "g11_lesson2_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
 }
+
+
+
+/*
+ * =========================================
+ * COMPLETE LESSON
+ * =========================================
+ */
+
+function completeLesson() {
+
+
+    const lessonNumber =
+        "lesson2";
+
+
+    /* -------------------------------------
+       GET COMPLETED LESSONS
+    ------------------------------------- */
+
+    let completedLessons =
+        JSON.parse(
+            localStorage.getItem(
+                "uez_completed_lessons"
+            )
+        ) || [];
+
+
+    /* -------------------------------------
+       MAKE SURE ARRAY
+    ------------------------------------- */
+
+    if (
+        !Array.isArray(
+            completedLessons
+        )
+    ) {
+
+        completedLessons = [];
+
+    }
+
+
+    /* -------------------------------------
+       ADD LESSON 2
+    ------------------------------------- */
+
+    if (
+        !completedLessons.includes(
+            lessonNumber
+        )
+    ) {
+
+        completedLessons.push(
+            lessonNumber
+        );
+
+    }
+
+
+    /* -------------------------------------
+       SAVE
+    ------------------------------------- */
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+
+    /* -------------------------------------
+       UPDATE BUTTON
+    ------------------------------------- */
+
+    const button =
+        document.querySelector(
+            ".lesson-complete-btn"
+        );
+
+
+    if (button) {
+
+        button.textContent =
+            "✓ පාඩම සම්පූර්ණයි";
+
+        button.disabled =
+            true;
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+
+
+    /* -------------------------------------
+       SHOW MESSAGE
+    ------------------------------------- */
+
+    const message =
+        document.getElementById(
+            "lessonCompleteMessage"
+        );
+
+
+    if (message) {
+
+        message.textContent =
+            "පාඩම සාර්ථකව සම්පූර්ණ කළා.";
+
+    }
+
+}
+
 </script>
+
+
 </body>
+
 </html>
