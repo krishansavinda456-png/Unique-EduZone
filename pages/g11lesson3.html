@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="si">
 
@@ -203,6 +204,64 @@ margin-top:8px
 margin:5px 0
 }
 
+
+/* =========================================
+   ACTIVITY COMPLETE BUTTON
+   ========================================= */
+
+.activity-complete-btn{
+
+    margin-top:15px;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+.activity-complete-btn:hover{
+
+    background:#ffd95a;
+
+    transform:translateY(-2px);
+
+}
+
+.activity-complete-btn.completed{
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    cursor:default;
+
+}
+
+.activity-complete-btn:disabled{
+
+    opacity:1;
+
+}
+
+
+/* =========================================
+   ACTIVITY ANSWER
+   ========================================= */
+
 .activity-answer{
 margin-top:12px
 }
@@ -250,6 +309,71 @@ color:#d4af37
 display:inline-block;
 margin-top:15px;
 padding:11px 24px
+}
+
+
+/* =========================================
+   LESSON COMPLETE BUTTON
+   ========================================= */
+
+.lesson-complete-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:13px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+.lesson-complete-btn:hover{
+
+    background:#ffd95a;
+
+    transform:translateY(-2px);
+
+}
+
+.lesson-complete-btn.completed{
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    cursor:default;
+
+}
+
+.lesson-complete-message{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#7cff7c;
+
+    font-weight:bold;
+
 }
 
 
@@ -924,7 +1048,20 @@ Online මඟින් භාණ්ඩ ඇණවුම් කිරීම
 </ul>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(1,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-1"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -983,7 +1120,20 @@ Online බෙදාහැරීම – Place
 </div>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(2,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-2"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1052,7 +1202,20 @@ Promotion – එය පාරිභෝගිකයාට
 </ul>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(3,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-3"
+style="display:none;">
 
 <summary>
 උදාහරණයක් බලන්න
@@ -1129,7 +1292,20 @@ Social Media දැන්වීම් භාවිත කරයි.
 </p>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(4,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-4"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1215,7 +1391,20 @@ Promotion
 </ul>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(5,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-5"
+style="display:none;">
 
 <summary>
 උදාහරණයක් බලන්න
@@ -1301,7 +1490,20 @@ Digital Advertising
 </div>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(6,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-6"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1368,7 +1570,20 @@ Facebook දැන්වීමක් පළ කිරීම
 </ul>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(7,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-7"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1417,7 +1632,20 @@ Place හඳුනාගනිමු
 </div>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(8,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-8"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1485,7 +1713,20 @@ Product හඳුනාගනිමු
 </ul>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(9,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-9"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1545,7 +1786,20 @@ Marketing Mix සම්පූර්ණ කරමු
 </div>
 
 
-<details class="activity-answer">
+<button
+type="button"
+class="activity-complete-btn"
+onclick="completeActivity(10,this)">
+
+✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
+
+</button>
+
+
+<details
+class="activity-answer"
+id="activity-answer-10"
+style="display:none;">
 
 <summary>
 පිළිතුර පරීක්ෂා කරන්න
@@ -1656,6 +1910,28 @@ Lesson 3 Quiz ආරම්භ කරන්න →
 
 </a>
 
+
+<!-- =========================================
+     LESSON COMPLETE
+========================================= -->
+
+<button
+type="button"
+class="lesson-complete-btn"
+onclick="completeLesson()">
+
+✓ පාඩම සම්පූර්ණ කළා
+
+</button>
+
+
+<p
+id="lessonCompleteMessage"
+class="lesson-complete-message">
+
+</p>
+
+
 </section>
 
 
@@ -1671,6 +1947,334 @@ Grade 11 Business & Accounting Studies
 </footer>
 
 
+
+<!-- =========================================
+     LESSON 3 ACTIVITY + COMPLETION SYSTEM
+========================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /*
+         * =========================================
+         * RESTORE COMPLETED ACTIVITIES
+         * =========================================
+         */
+
+        let completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "g11_lesson3_activities"
+                )
+            ) || [];
+
+
+        completedActivities.forEach(
+            function (activityNumber) {
+
+                const button =
+                    document.querySelector(
+                        '.activity-complete-btn[onclick="completeActivity(' +
+                        activityNumber +
+                        ',this)"]'
+                    );
+
+
+                const answer =
+                    document.getElementById(
+                        "activity-answer-" +
+                        activityNumber
+                    );
+
+
+                if (button) {
+
+                    button.textContent =
+                        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+                    button.disabled = true;
+
+                    button.classList.add(
+                        "completed"
+                    );
+
+                }
+
+
+                if (answer) {
+
+                    answer.style.display =
+                        "block";
+
+                }
+
+            }
+        );
+
+
+
+        /*
+         * =========================================
+         * RESTORE LESSON COMPLETION
+         * =========================================
+         */
+
+        let completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+
+        if (
+            completedLessons.includes(
+                "lesson3"
+            )
+        ) {
+
+            const button =
+                document.querySelector(
+                    ".lesson-complete-btn"
+                );
+
+
+            if (button) {
+
+                button.textContent =
+                    "✓ පාඩම සම්පූර්ණයි";
+
+                button.disabled = true;
+
+                button.classList.add(
+                    "completed"
+                );
+
+            }
+
+
+            const message =
+                document.getElementById(
+                    "lessonCompleteMessage"
+                );
+
+
+            if (message) {
+
+                message.textContent =
+                    "පාඩම සාර්ථකව සම්පූර්ණ කර ඇත.";
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/*
+ * =========================================
+ * COMPLETE ACTIVITY
+ * =========================================
+ */
+
+function completeActivity(
+    activityNumber,
+    button
+) {
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    /*
+     * SHOW ANSWER
+     */
+
+    if (answer) {
+
+        answer.style.display =
+            "block";
+
+    }
+
+
+    /*
+     * CHANGE BUTTON
+     */
+
+    if (button) {
+
+        button.textContent =
+            "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+        button.disabled = true;
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+
+    /*
+     * SAVE ACTIVITY
+     */
+
+    let completedActivities =
+        JSON.parse(
+            localStorage.getItem(
+                "g11_lesson3_activities"
+            )
+        ) || [];
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "g11_lesson3_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+}
+
+
+
+/*
+ * =========================================
+ * COMPLETE LESSON
+ * =========================================
+ */
+
+function completeLesson() {
+
+    const lessonNumber =
+        "lesson3";
+
+
+    /*
+     * GET COMPLETED LESSONS
+     */
+
+    let completedLessons =
+        JSON.parse(
+            localStorage.getItem(
+                "uez_completed_lessons"
+            )
+        ) || [];
+
+
+    /*
+     * MAKE SURE ARRAY
+     */
+
+    if (
+        !Array.isArray(
+            completedLessons
+        )
+    ) {
+
+        completedLessons = [];
+
+    }
+
+
+    /*
+     * ADD LESSON 3
+     */
+
+    if (
+        !completedLessons.includes(
+            lessonNumber
+        )
+    ) {
+
+        completedLessons.push(
+            lessonNumber
+        );
+
+    }
+
+
+    /*
+     * SAVE
+     */
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    /*
+     * UPDATE BUTTON
+     */
+
+    const button =
+        document.querySelector(
+            ".lesson-complete-btn"
+        );
+
+
+    if (button) {
+
+        button.textContent =
+            "✓ පාඩම සම්පූර්ණයි";
+
+        button.disabled = true;
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+
+    /*
+     * SHOW MESSAGE
+     */
+
+    const message =
+        document.getElementById(
+            "lessonCompleteMessage"
+        );
+
+
+    if (message) {
+
+        message.textContent =
+            "පාඩම සාර්ථකව සම්පූර්ණ කළා.";
+
+    }
+
+}
+
+</script>
+
+
 </body>
 
 </html>
+```
