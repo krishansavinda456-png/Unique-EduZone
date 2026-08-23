@@ -278,14 +278,14 @@ function updateLessonCards() {
 
 
                 /*
-                 * IMPORTANT:
                  * ALL 10 LESSONS ARE UNLOCKED
+                 *
+                 * Every lesson displays
+                 * Start Lesson X
                  */
 
                 button.textContent =
-                    i <= 4
-                        ? "▶ Continue Lesson"
-                        : "▶ Start Lesson " + i;
+                    "▶ Start Lesson " + i;
 
             }
 
