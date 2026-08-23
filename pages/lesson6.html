@@ -4,204 +4,276 @@
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>
-    Lesson 06 | ගනුදෙනුවල ද්විත්ව බලපෑම | Unique EduZone
-</title>
+    <title>
+        Lesson 06 | ගනුදෙනුවල ද්විත්ව බලපෑම | Unique EduZone
+    </title>
 
-<link
-    rel="stylesheet"
-    href="../assets/css/style.css"
->
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
 
-<style>
-
-    .lesson-page {
-        max-width: 1000px;
-        margin: auto;
-        padding: 30px 20px;
-    }
-
-    .lesson-header,
-    .lesson-section,
-    .activity-card {
-        background: #1b1b1b;
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 25px;
-        margin-bottom: 22px;
-    }
-
-    .lesson-header {
-        text-align: center;
-    }
-
-    .lesson-number {
-        color: gold;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .lesson-header h1 {
-        margin-bottom: 12px;
-    }
-
-    .lesson-section h2,
-    .lesson-section h3,
-    .activity-card h3 {
-        color: gold;
-    }
-
-    .lesson-section p,
-    .lesson-section li {
-        line-height: 1.8;
-    }
-
-    .lesson-section ul,
-    .lesson-section ol {
-        padding-left: 25px;
-    }
-
-    .formula {
-        background: #111;
-        border: 1px solid gold;
-        color: gold;
-        border-radius: 10px;
-        padding: 18px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        margin: 20px 0;
-    }
-
-    .example-box {
-        background: #222;
-        border-left: 4px solid gold;
-        padding: 18px;
-        margin: 18px 0;
-        border-radius: 8px;
-    }
-
-    .important-box {
-        background: #151515;
-        border: 1px solid #555;
-        border-left: 4px solid gold;
-        padding: 18px;
-        border-radius: 8px;
-        margin: 18px 0;
-    }
-
-    .account-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
-
-    .account-table th,
-    .account-table td {
-        border: 1px solid #444;
-        padding: 12px;
-        text-align: center;
-    }
-
-    .account-table th {
-        color: gold;
-        background: #111;
-    }
-
-    .activity-number {
-        color: gold;
-        font-weight: bold;
-    }
-
-    .lesson-actions {
-        text-align: center;
-        margin: 35px 0;
-    }
-
-    .quiz-button,
-    .complete-button,
-    .back-button {
-        display: inline-block;
-        padding: 13px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 6px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .quiz-button {
-        background: gold;
-        color: #000;
-    }
-
-    .complete-button {
-        background: #2e8b57;
-        color: #fff;
-    }
-
-    .back-button {
-        background: #444;
-        color: #fff;
-    }
-
-    .progress-box {
-        text-align: center;
-        background: #111;
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 18px;
-        margin-top: 20px;
-    }
-
-    .progress-bar {
-        width: 100%;
-        height: 10px;
-        background: #333;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .progress-fill {
-        width: 0%;
-        height: 100%;
-        background: gold;
-        transition: width .4s ease;
-    }
-
-    @media (max-width: 600px) {
+    <style>
 
         .lesson-page {
-            padding: 20px 12px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
         }
 
         .lesson-header,
         .lesson-section,
         .activity-card {
-            padding: 18px;
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 22px;
+        }
+
+        .lesson-header {
+            text-align: center;
+        }
+
+        .lesson-number {
+            color: gold;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .lesson-header h1 {
+            margin-bottom: 12px;
+        }
+
+        .lesson-section h2,
+        .lesson-section h3,
+        .activity-card h3 {
+            color: gold;
+        }
+
+        .lesson-section p,
+        .lesson-section li {
+            line-height: 1.8;
+        }
+
+        .lesson-section ul,
+        .lesson-section ol {
+            padding-left: 25px;
         }
 
         .formula {
-            font-size: 20px;
+            background: #111;
+            border: 1px solid gold;
+            color: gold;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background: #222;
+            border-left: 4px solid gold;
+            padding: 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+        }
+
+        .important-box {
+            background: #151515;
+            border: 1px solid #555;
+            border-left: 4px solid gold;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 18px 0;
         }
 
         .account-table {
-            font-size: 13px;
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
         }
 
-    }
+        .account-table th,
+        .account-table td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: center;
+        }
 
-</style>
-```
+        .account-table th {
+            color: gold;
+            background: #111;
+        }
+
+        .activity-number {
+            color: gold;
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           ACTIVITY SYSTEM
+           ========================================= */
+
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
+            color: #fff;
+            cursor: default;
+        }
+
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
+        }
+
+
+        .lesson-actions {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .quiz-button,
+        .complete-button,
+        .back-button {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quiz-button {
+            background: gold;
+            color: #000;
+        }
+
+        .complete-button {
+            background: #2e8b57;
+            color: #fff;
+        }
+
+        .complete-button:disabled {
+            opacity: 0.8;
+            cursor: default;
+        }
+
+        .back-button {
+            background: #444;
+            color: #fff;
+        }
+
+        .progress-box {
+            text-align: center;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: gold;
+            transition: width .4s ease;
+        }
+
+        @media (max-width: 600px) {
+
+            .lesson-page {
+                padding: 20px 12px;
+            }
+
+            .lesson-header,
+            .lesson-section,
+            .activity-card {
+                padding: 18px;
+            }
+
+            .formula {
+                font-size: 20px;
+            }
+
+            .account-table {
+                font-size: 13px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-top: 6px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -209,874 +281,1442 @@
 
 <header class="site-header">
 
-```
-<div class="logo">
-    Unique EduZone
-</div>
+    <div class="logo">
+        Unique EduZone
+    </div>
 
-<nav>
+    <nav>
 
-    <a href="../index.html">
-        Home
-    </a>
+        <a href="../index.html">
+            Home
+        </a>
 
-    <a href="lessons.html">
-        Lessons
-    </a>
+        <a href="lessons.html">
+            Lessons
+        </a>
 
-    <a href="quiz.html">
-        MCQ
-    </a>
+        <a href="quiz.html">
+            MCQ
+        </a>
 
-    <a href="dashboard.html">
-        Dashboard
-    </a>
+        <a href="dashboard.html">
+            Dashboard
+        </a>
 
-    <a href="profile.html">
-        Profile
-    </a>
+        <a href="profile.html">
+            Profile
+        </a>
 
-</nav>
-```
+    </nav>
 
 </header>
 
 <main class="lesson-page">
 
-```
-<!-- HEADER -->
 
-<section class="lesson-header">
+    <!-- HEADER -->
 
-    <div class="lesson-number">
-        LESSON 06
-    </div>
+    <section class="lesson-header">
 
-    <h1>
-        ගනුදෙනුවල ද්විත්ව බලපෑම
-    </h1>
+        <div class="lesson-number">
+            LESSON 06
+        </div>
 
-    <p>
-        ගනුදෙනුවක් ව්‍යාපාරයක ගිණුම්වලට බලපාන ආකාරය,
-        ද්විත්ව සටහන් ක්‍රමය සහ ගිණුම් වර්ග හඳුනා ගනිමු.
-    </p>
+        <h1>
+            ගනුදෙනුවල ද්විත්ව බලපෑම
+        </h1>
 
-    <div class="progress-box">
-
-        <strong>
-            Lesson 6 Progress
-        </strong>
-
-        <p id="lessonProgressText">
-            0% completed
+        <p>
+            ගනුදෙනුවක් ව්‍යාපාරයක ගිණුම්වලට බලපාන ආකාරය,
+            ද්විත්ව සටහන් ක්‍රමය සහ ගිණුම් වර්ග හඳුනා ගනිමු.
         </p>
 
-        <div class="progress-bar">
+        <div class="progress-box">
 
-            <div
-                class="progress-fill"
-                id="lessonProgressBar"
-            ></div>
+            <strong>
+                Lesson 6 Progress
+            </strong>
+
+            <p id="lessonProgressText">
+                0% completed
+            </p>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="lessonProgressBar"
+                ></div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- 6.1 -->
+    <!-- 6.1 -->
 
-<section class="lesson-section">
+    <section class="lesson-section">
 
-    <h2>
-        6.1 ගනුදෙනුවල ද්විත්ව බලපෑම
-    </h2>
-
-    <p>
-        ව්‍යාපාරයක දෛනික කටයුතු සිදු කරන විට විවිධ ගනුදෙනු සිදු වේ.
-        එම ගනුදෙනු නිසා ව්‍යාපාරයේ වත්කම්, වගකීම්, හිමිකම,
-        ආදායම් සහ වියදම්වල වටිනාකම් වෙනස් විය හැකිය.
-    </p>
-
-    <p>
-        එක් ගනුදෙනුවක් සාමාන්‍යයෙන් ගිණුම්කරණ සමීකරණයේ
-        අයිතම දෙකකට බලපෑමක් ඇති කරයි.
-        එය <strong>ගනුදෙනුවක ද්විත්ව බලපෑම</strong> ලෙස හඳුන්වයි.
-    </p>
-
-    <div class="important-box">
-
-        <strong>
-            මතක තබාගන්න:
-        </strong>
+        <h2>
+            6.1 ගනුදෙනුවල ද්විත්ව බලපෑම
+        </h2>
 
         <p>
-            සෑම ගනුදෙනුවකම ගිණුම්කරණ බලපෑම හඳුනාගැනීමේදී
-            බලපෑමට ලක්වන ගිණුම් දෙක හඳුනාගැනීම වැදගත්ය.
-        </p>
-
-    </div>
-
-    <div class="example-box">
-
-        <h3>
-            උදාහරණ 01
-        </h3>
-
-        <p>
-            හිමිකරු රු. 500,000ක මුදලක් යොදා ව්‍යාපාරය ආරම්භ කරයි.
+            ව්‍යාපාරයක දෛනික කටයුතු සිදු කරන විට විවිධ ගනුදෙනු සිදු වේ.
+            එම ගනුදෙනු නිසා ව්‍යාපාරයේ වත්කම්, වගකීම්, හිමිකම,
+            ආදායම් සහ වියදම්වල වටිනාකම් වෙනස් විය හැකිය.
         </p>
 
         <p>
-            මෙහිදී ව්‍යාපාරයේ මුදල් වත්කම රු. 500,000කින් වැඩි වේ.
-            ඒ සමඟ හිමිකරුගේ ප්‍රාග්ධනයද රු. 500,000කින් වැඩි වේ.
+            එක් ගනුදෙනුවක් සාමාන්‍යයෙන් ගිණුම්කරණ සමීකරණයේ
+            අයිතම දෙකකට බලපෑමක් ඇති කරයි.
+            එය <strong>ගනුදෙනුවක ද්විත්ව බලපෑම</strong> ලෙස හඳුන්වයි.
+        </p>
+
+        <div class="important-box">
+
+            <strong>
+                මතක තබාගන්න:
+            </strong>
+
+            <p>
+                සෑම ගනුදෙනුවකම ගිණුම්කරණ බලපෑම හඳුනාගැනීමේදී
+                බලපෑමට ලක්වන ගිණුම් දෙක හඳුනාගැනීම වැදගත්ය.
+            </p>
+
+        </div>
+
+        <div class="example-box">
+
+            <h3>
+                උදාහරණ 01
+            </h3>
+
+            <p>
+                හිමිකරු රු. 500,000ක මුදලක් යොදා ව්‍යාපාරය ආරම්භ කරයි.
+            </p>
+
+            <p>
+                මෙහිදී ව්‍යාපාරයේ මුදල් වත්කම රු. 500,000කින් වැඩි වේ.
+                ඒ සමඟ හිමිකරුගේ ප්‍රාග්ධනයද රු. 500,000කින් වැඩි වේ.
+            </p>
+
+            <div class="formula">
+                වත්කම් = හිමිකම
+            </div>
+
+        </div>
+
+
+        <div class="example-box">
+
+            <h3>
+                උදාහරණ 02
+            </h3>
+
+            <p>
+                ව්‍යාපාරය රු. 200,000ක බැංකු ණයක් ලබා ගනී.
+            </p>
+
+            <p>
+                මුදල් වත්කම වැඩි වන අතර බැංකු ණය නමැති වගකීමද වැඩි වේ.
+            </p>
+
+            <div class="formula">
+                වත්කම් = හිමිකම + වගකීම්
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 6.2 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            6.2 ද්විත්ව සටහන් ක්‍රමය
+        </h2>
+
+        <p>
+            සෑම ගනුදෙනුවක්ම ගිණුම්කරණ සමීකරණයට ද්විත්ව බලපෑමක්
+            ඇති කරන බැවින් එම බලපෑම ගිණුම්වල සටහන් කිරීම සඳහා
+            ද්විත්ව සටහන් ක්‍රමය භාවිතා කරයි.
+        </p>
+
+        <p>
+            එක් ගනුදෙනුවක එකම වටිනාකම ගිණුම් දෙකක
+            විරුද්ධ පැතිවල සටහන් කිරීම මෙහි මූලික අදහසයි.
+        </p>
+
+        <div class="important-box">
+
+            <p>
+                <strong>Debit (Dr)</strong> — ගිණුමේ වම් පැත්ත
+            </p>
+
+            <p>
+                <strong>Credit (Cr)</strong> — ගිණුමේ දකුණු පැත්ත
+            </p>
+
+        </div>
+
+        <p>
+            ගනුදෙනුවක එක් ගිණුමක Debit සටහනක් තිබේ නම්,
+            අනෙක් ගිණුමේ එම වටිනාකමට Credit සටහනක් තිබිය යුතුය.
         </p>
 
         <div class="formula">
-            වත්කම් = හිමිකම
+            මුළු Debit = මුළු Credit
         </div>
 
-    </div>
+        <p>
+            මෙය ගිණුම්කරණ වාර්තාවල ගණිතමය නිවැරදිභාවය
+            පවත්වා ගැනීමට උපකාරී වේ.
+        </p>
+
+    </section>
 
 
-    <div class="example-box">
 
-        <h3>
-            උදාහරණ 02
-        </h3>
+    <!-- 6.3 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            6.3 ගිණුම
+        </h2>
 
         <p>
-            ව්‍යාපාරය රු. 200,000ක බැංකු ණයක් ලබා ගනී.
+            යම් කාල පරිච්ඡේදයක් තුළ වත්කමක්, හිමිකමක්,
+            වගකීමක්, ආදායමක් හෝ වියදමක් වැඩිවීම හෝ අඩුවීම
+            වාර්තා කිරීම සඳහා භාවිත කරන පිළිගත් ආකෘතිය
+            <strong>ගිණුමක්</strong> ලෙස හැඳින්වේ.
         </p>
 
         <p>
-            මුදල් වත්කම වැඩි වන අතර බැංකු ණය නමැති වගකීමද වැඩි වේ.
+            සෑම ගිණුමකටම Debit පැත්තක් සහ Credit පැත්තක් ඇත.
         </p>
 
-        <div class="formula">
-            වත්කම් = හිමිකම + වගකීම්
+        <table class="account-table">
+
+            <tr>
+                <th>
+                    Debit (Dr)
+                </th>
+
+                <th>
+                    Credit (Cr)
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    වම් පැත්ත
+                </td>
+
+                <td>
+                    දකුණු පැත්ත
+                </td>
+            </tr>
+
+        </table>
+
+        <p>
+            ගනුදෙනුවක බලපෑම අනුව අදාළ ගිණුමේ Debit හෝ Credit
+            පැත්තට වටිනාකම සටහන් කරයි.
+        </p>
+
+    </section>
+
+
+
+    <!-- 6.4 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            6.4 ගිණුම් වර්ග
+        </h2>
+
+        <p>
+            ව්‍යාපාරික ගනුදෙනු නිසා ඇතිවන වෙනස්කම් අනුව
+            ගිණුම් ප්‍රධාන වශයෙන් වර්ග පහකට හඳුනාගත හැකිය.
+        </p>
+
+        <table class="account-table">
+
+            <tr>
+
+                <th>
+                    ගිණුම් වර්ගය
+                </th>
+
+                <th>
+                    උදාහරණ
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    වත්කම් ගිණුම්
+                </td>
+
+                <td>
+                    මුදල්, බැංකු, උපකරණ, ගොඩනැගිලි
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    වගකීම් ගිණුම්
+                </td>
+
+                <td>
+                    බැංකු ණය, ණයහිමි
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    හිමිකම් ගිණුම්
+                </td>
+
+                <td>
+                    ප්‍රාග්ධනය, ගැනිලි
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    ආදායම් ගිණුම්
+                </td>
+
+                <td>
+                    විකුණුම් ආදායම, පොලී ආදායම, කොමිස් ආදායම
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    වියදම් ගිණුම්
+                </td>
+
+                <td>
+                    වැටුප්, කුලී, රක්ෂණ, විදුලි වියදම්
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ACCOUNT RULES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ගිණුම්වල වැඩිවීම හා අඩුවීම
+        </h2>
+
+        <table class="account-table">
+
+            <tr>
+
+                <th>
+                    ගිණුම් වර්ගය
+                </th>
+
+                <th>
+                    වැඩිවීම
+                </th>
+
+                <th>
+                    අඩුවීම
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    වත්කම්
+                </td>
+
+                <td>
+                    Debit
+                </td>
+
+                <td>
+                    Credit
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    වගකීම්
+                </td>
+
+                <td>
+                    Credit
+                </td>
+
+                <td>
+                    Debit
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    හිමිකම
+                </td>
+
+                <td>
+                    Credit
+                </td>
+
+                <td>
+                    Debit
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    ආදායම්
+                </td>
+
+                <td>
+                    Credit
+                </td>
+
+                <td>
+                    Debit
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    වියදම්
+                </td>
+
+                <td>
+                    Debit
+                </td>
+
+                <td>
+                    Credit
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- 6.5 -->
+
+    <section class="lesson-section">
+
+        <h2>
+            6.5 ගනුදෙනු ගිණුම්වල සටහන් කිරීම
+        </h2>
+
+        <p>
+            ගනුදෙනුවක් සිදු වූ විට පළමුව එයට බලපාන ගිණුම්
+            හඳුනාගත යුතුය. ඉන්පසු එක් එක් ගිණුමේ වැඩිවීමක්ද
+            අඩුවීමක්ද යන්න තීරණය කර Debit සහ Credit පැති
+            නිවැරදිව තෝරාගත යුතුය.
+        </p>
+
+        <div class="example-box">
+
+            <h3>
+                උදාහරණ 01 — උපකරණ මිලදී ගැනීම
+            </h3>
+
+            <p>
+                රු. 500,000කට උපකරණයක් මුදලින් මිලදී ගනී.
+            </p>
+
+            <p>
+                උපකරණ වත්කම වැඩි වේ → Debit
+            </p>
+
+            <p>
+                මුදල් වත්කම අඩු වේ → Credit
+            </p>
+
+            <p>
+                <strong>
+                    උපකරණ ගිණුම — Dr රු. 500,000
+                </strong>
+            </p>
+
+            <p>
+                <strong>
+                    මුදල් ගිණුම — Cr රු. 500,000
+                </strong>
+            </p>
+
         </div>
 
-    </div>
 
-</section>
+        <div class="example-box">
 
+            <h3>
+                උදාහරණ 02 — බැංකු ණයක් ලබා ගැනීම
+            </h3>
 
+            <p>
+                රු. 200,000ක බැංකු ණයක් ලබා ගනී.
+            </p>
 
-<!-- 6.2 -->
+            <p>
+                මුදල් වත්කම වැඩි වේ → Debit
+            </p>
 
-<section class="lesson-section">
+            <p>
+                බැංකු ණය වගකීම වැඩි වේ → Credit
+            </p>
 
-    <h2>
-        6.2 ද්විත්ව සටහන් ක්‍රමය
-    </h2>
+            <p>
+                <strong>
+                    මුදල් ගිණුම — Dr රු. 200,000
+                </strong>
+            </p>
 
-    <p>
-        සෑම ගනුදෙනුවක්ම ගිණුම්කරණ සමීකරණයට ද්විත්ව බලපෑමක්
-        ඇති කරන බැවින් එම බලපෑම ගිණුම්වල සටහන් කිරීම සඳහා
-        ද්විත්ව සටහන් ක්‍රමය භාවිතා කරයි.
-    </p>
+            <p>
+                <strong>
+                    බැංකු ණය ගිණුම — Cr රු. 200,000
+                </strong>
+            </p>
 
-    <p>
-        එක් ගනුදෙනුවක එකම වටිනාකම ගිණුම් දෙකක
-        විරුද්ධ පැතිවල සටහන් කිරීම මෙහි මූලික අදහසයි.
-    </p>
-
-    <div class="important-box">
-
-        <p>
-            <strong>Debit (Dr)</strong> — ගිණුමේ වම් පැත්ත
-        </p>
-
-        <p>
-            <strong>Credit (Cr)</strong> — ගිණුමේ දකුණු පැත්ත
-        </p>
-
-    </div>
-
-    <p>
-        ගනුදෙනුවක එක් ගිණුමක Debit සටහනක් තිබේ නම්,
-        අනෙක් ගිණුමේ එම වටිනාකමට Credit සටහනක් තිබිය යුතුය.
-    </p>
-
-    <div class="formula">
-        මුළු Debit = මුළු Credit
-    </div>
-
-    <p>
-        මෙය ගිණුම්කරණ වාර්තාවල ගණිතමය නිවැරදිභාවය
-        පවත්වා ගැනීමට උපකාරී වේ.
-    </p>
-
-</section>
-
-
-
-<!-- 6.3 -->
-
-<section class="lesson-section">
-
-    <h2>
-        6.3 ගිණුම
-    </h2>
-
-    <p>
-        යම් කාල පරිච්ඡේදයක් තුළ වත්කමක්, හිමිකමක්,
-        වගකීමක්, ආදායමක් හෝ වියදමක් වැඩිවීම හෝ අඩුවීම
-        වාර්තා කිරීම සඳහා භාවිත කරන පිළිගත් ආකෘතිය
-        <strong>ගිණුමක්</strong> ලෙස හැඳින්වේ.
-    </p>
-
-    <p>
-        සෑම ගිණුමකටම Debit පැත්තක් සහ Credit පැත්තක් ඇත.
-    </p>
-
-    <table class="account-table">
-
-        <tr>
-            <th>
-                Debit (Dr)
-            </th>
-
-            <th>
-                Credit (Cr)
-            </th>
-        </tr>
-
-        <tr>
-            <td>
-                වම් පැත්ත
-            </td>
-
-            <td>
-                දකුණු පැත්ත
-            </td>
-        </tr>
-
-    </table>
-
-    <p>
-        ගනුදෙනුවක බලපෑම අනුව අදාළ ගිණුමේ Debit හෝ Credit
-        පැත්තට වටිනාකම සටහන් කරයි.
-    </p>
-
-</section>
-
-
-
-<!-- 6.4 -->
-
-<section class="lesson-section">
-
-    <h2>
-        6.4 ගිණුම් වර්ග
-    </h2>
-
-    <p>
-        ව්‍යාපාරික ගනුදෙනු නිසා ඇතිවන වෙනස්කම් අනුව
-        ගිණුම් ප්‍රධාන වශයෙන් වර්ග පහකට හඳුනාගත හැකිය.
-    </p>
-
-    <table class="account-table">
-
-        <tr>
-
-            <th>
-                ගිණුම් වර්ගය
-            </th>
-
-            <th>
-                උදාහරණ
-            </th>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                වත්කම් ගිණුම්
-            </td>
-
-            <td>
-                මුදල්, බැංකු, උපකරණ, ගොඩනැගිලි
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                වගකීම් ගිණුම්
-            </td>
-
-            <td>
-                බැංකු ණය, ණයහිමි
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                හිමිකම් ගිණුම්
-            </td>
-
-            <td>
-                ප්‍රාග්ධනය, ගැනිලි
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                ආදායම් ගිණුම්
-            </td>
-
-            <td>
-                විකුණුම් ආදායම, පොලී ආදායම, කොමිස් ආදායම
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                වියදම් ගිණුම්
-            </td>
-
-            <td>
-                වැටුප්, කුලී, රක්ෂණ, විදුලි වියදම්
-            </td>
-
-        </tr>
-
-    </table>
-
-</section>
-
-
-
-<!-- ACCOUNT RULES -->
-
-<section class="lesson-section">
-
-    <h2>
-        ගිණුම්වල වැඩිවීම හා අඩුවීම
-    </h2>
-
-    <table class="account-table">
-
-        <tr>
-
-            <th>
-                ගිණුම් වර්ගය
-            </th>
-
-            <th>
-                වැඩිවීම
-            </th>
-
-            <th>
-                අඩුවීම
-            </th>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                වත්කම්
-            </td>
-
-            <td>
-                Debit
-            </td>
-
-            <td>
-                Credit
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                වගකීම්
-            </td>
-
-            <td>
-                Credit
-            </td>
-
-            <td>
-                Debit
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                හිමිකම
-            </td>
-
-            <td>
-                Credit
-            </td>
-
-            <td>
-                Debit
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                ආදායම්
-            </td>
-
-            <td>
-                Credit
-            </td>
-
-            <td>
-                Debit
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>
-                වියදම්
-            </td>
-
-            <td>
-                Debit
-            </td>
-
-            <td>
-                Credit
-            </td>
-
-        </tr>
-
-    </table>
-
-</section>
-
-
-
-<!-- 6.5 -->
-
-<section class="lesson-section">
-
-    <h2>
-        6.5 ගනුදෙනු ගිණුම්වල සටහන් කිරීම
-    </h2>
-
-    <p>
-        ගනුදෙනුවක් සිදු වූ විට පළමුව එයට බලපාන ගිණුම්
-        හඳුනාගත යුතුය. ඉන්පසු එක් එක් ගිණුමේ වැඩිවීමක්ද
-        අඩුවීමක්ද යන්න තීරණය කර Debit සහ Credit පැති
-        නිවැරදිව තෝරාගත යුතුය.
-    </p>
-
-    <div class="example-box">
-
-        <h3>
-            උදාහරණ 01 — උපකරණ මිලදී ගැනීම
-        </h3>
-
-        <p>
-            රු. 500,000කට උපකරණයක් මුදලින් මිලදී ගනී.
-        </p>
-
-        <p>
-            උපකරණ වත්කම වැඩි වේ → Debit
-        </p>
-
-        <p>
-            මුදල් වත්කම අඩු වේ → Credit
-        </p>
-
-        <p>
-            <strong>
-                උපකරණ ගිණුම — Dr රු. 500,000
-            </strong>
-        </p>
-
-        <p>
-            <strong>
-                මුදල් ගිණුම — Cr රු. 500,000
-            </strong>
-        </p>
-
-    </div>
-
-
-    <div class="example-box">
-
-        <h3>
-            උදාහරණ 02 — බැංකු ණයක් ලබා ගැනීම
-        </h3>
-
-        <p>
-            රු. 200,000ක බැංකු ණයක් ලබා ගනී.
-        </p>
-
-        <p>
-            මුදල් වත්කම වැඩි වේ → Debit
-        </p>
-
-        <p>
-            බැංකු ණය වගකීම වැඩි වේ → Credit
-        </p>
-
-        <p>
-            <strong>
-                මුදල් ගිණුම — Dr රු. 200,000
-            </strong>
-        </p>
-
-        <p>
-            <strong>
-                බැංකු ණය ගිණුම — Cr රු. 200,000
-            </strong>
-        </p>
-
-    </div>
-
-
-    <div class="example-box">
-
-        <h3>
-            උදාහරණ 03 — හිමිකරු ප්‍රාග්ධනය යෙදීම
-        </h3>
-
-        <p>
-            හිමිකරු රු. 300,000ක මුදලක් ව්‍යාපාරයට යොදවයි.
-        </p>
-
-        <p>
-            මුදල් වත්කම වැඩි වේ → Debit
-        </p>
-
-        <p>
-            ප්‍රාග්ධනය වැඩි වේ → Credit
-        </p>
-
-    </div>
-
-
-    <div class="example-box">
-
-        <h3>
-            උදාහරණ 04 — පොලී ආදායම ලැබීම
-        </h3>
-
-        <p>
-            රු. 20,000ක පොලී ආදායමක් ලැබේ.
-        </p>
-
-        <p>
-            මුදල් වත්කම වැඩි වේ → Debit
-        </p>
-
-        <p>
-            පොලී ආදායම වැඩි වේ → Credit
-        </p>
-
-    </div>
-
-
-    <div class="example-box">
-
-        <h3>
-            උදාහරණ 05 — වැටුප් ගෙවීම
-        </h3>
-
-        <p>
-            රු. 20,000ක වැටුප් ගෙවයි.
-        </p>
-
-        <p>
-            වැටුප් වියදම වැඩි වේ → Debit
-        </p>
-
-        <p>
-            මුදල් වත්කම අඩු වේ → Credit
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ACTIVITIES -->
-
-<section class="lesson-section">
-
-    <h2>
-        ✍️ Activities — ක්‍රියාකාරකම් 10
-    </h2>
-
-    <div class="activity-card">
-
-        <div class="activity-number">
-            ACTIVITY 01
         </div>
 
-        <h3>
-            ද්විත්ව බලපෑම හඳුනාගන්න
-        </h3>
 
-        <p>
-            රු. 500,000ක ප්‍රාග්ධනයක් යොදා ව්‍යාපාරයක් ආරම්භ කිරීමේදී
-            බලපෑමට ලක්වන ගිණුම් දෙක ලියන්න.
-        </p>
+        <div class="example-box">
 
-    </div>
+            <h3>
+                උදාහරණ 03 — හිමිකරු ප්‍රාග්ධනය යෙදීම
+            </h3>
 
+            <p>
+                හිමිකරු රු. 300,000ක මුදලක් ව්‍යාපාරයට යොදවයි.
+            </p>
 
-    <div class="activity-card">
+            <p>
+                මුදල් වත්කම වැඩි වේ → Debit
+            </p>
 
-        <div class="activity-number">
-            ACTIVITY 02
+            <p>
+                ප්‍රාග්ධනය වැඩි වේ → Credit
+            </p>
+
         </div>
 
-        <h3>
-            ගිණුම් දෙක හඳුනාගන්න
-        </h3>
 
-        <p>
-            රු. 200,000ක බැංකු ණයක් ලබා ගැනීමේදී බලපෑමට ලක්වන
-            ගිණුම් දෙක හඳුනාගෙන වැඩිවීම/අඩුවීම ලියන්න.
-        </p>
+        <div class="example-box">
 
-    </div>
+            <h3>
+                උදාහරණ 04 — පොලී ආදායම ලැබීම
+            </h3>
 
+            <p>
+                රු. 20,000ක පොලී ආදායමක් ලැබේ.
+            </p>
 
-    <div class="activity-card">
+            <p>
+                මුදල් වත්කම වැඩි වේ → Debit
+            </p>
 
-        <div class="activity-number">
-            ACTIVITY 03
+            <p>
+                පොලී ආදායම වැඩි වේ → Credit
+            </p>
+
         </div>
 
-        <h3>
-            Debit හෝ Credit?
-        </h3>
 
-        <p>
-            පහත ගිණුම්වල වැඩිවීම Debit ද Credit ද යන්න ලියන්න:
-            මුදල්, බැංකු ණය, ප්‍රාග්ධනය, විකුණුම්, වැටුප්.
-        </p>
+        <div class="example-box">
 
-    </div>
+            <h3>
+                උදාහරණ 05 — වැටුප් ගෙවීම
+            </h3>
 
+            <p>
+                රු. 20,000ක වැටුප් ගෙවයි.
+            </p>
 
-    <div class="activity-card">
+            <p>
+                වැටුප් වියදම වැඩි වේ → Debit
+            </p>
 
-        <div class="activity-number">
-            ACTIVITY 04
+            <p>
+                මුදල් වත්කම අඩු වේ → Credit
+            </p>
+
         </div>
 
-        <h3>
-            උපකරණ මිලදී ගැනීම
-        </h3>
-
-        <p>
-            රු. 100,000ක උපකරණ මුදලින් මිලදී ගත් විට
-            ද්විත්ව සටහන සකස් කරන්න.
-        </p>
-
-    </div>
+    </section>
 
 
-    <div class="activity-card">
 
-        <div class="activity-number">
-            ACTIVITY 05
+    <!-- ACTIVITIES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            ✍️ Activities — ක්‍රියාකාරකම් 10
+        </h2>
+
+
+        <!-- ACTIVITY 01 -->
+
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 01
+            </div>
+
+            <h3>
+                ද්විත්ව බලපෑම හඳුනාගන්න
+            </h3>
+
+            <p>
+                රු. 500,000ක ප්‍රාග්ධනයක් යොදා ව්‍යාපාරයක් ආරම්භ කිරීමේදී
+                බලපෑමට ලක්වන ගිණුම් දෙක ලියන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="1"
+                    onclick="completeActivity6(1)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-1"
+                    onclick="showActivityAnswer6(1)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-1"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ගිණුම Dr. රු. 500,000<br>
+                    ප්‍රාග්ධන ගිණුම Cr. රු. 500,000
+                </div>
+
+            </div>
+
         </div>
 
-        <h3>
-            ණය ලබා ගැනීම
-        </h3>
-
-        <p>
-            ව්‍යාපාරය රු. 300,000ක බැංකු ණයක් ලබා ගනී.
-            Debit සහ Credit ගිණුම් හඳුනාගන්න.
-        </p>
-
-    </div>
 
 
-    <div class="activity-card">
+        <!-- ACTIVITY 02 -->
 
-        <div class="activity-number">
-            ACTIVITY 06
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 02
+            </div>
+
+            <h3>
+                ගිණුම් දෙක හඳුනාගන්න
+            </h3>
+
+            <p>
+                රු. 200,000ක බැංකු ණයක් ලබා ගැනීමේදී බලපෑමට ලක්වන
+                ගිණුම් දෙක හඳුනාගෙන වැඩිවීම/අඩුවීම ලියන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="2"
+                    onclick="completeActivity6(2)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-2"
+                    onclick="showActivityAnswer6(2)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-2"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ගිණුම වැඩි වේ → Debit රු. 200,000<br>
+                    බැංකු ණය ගිණුම වැඩි වේ → Credit රු. 200,000
+                </div>
+
+            </div>
+
         </div>
 
-        <h3>
-            ආදායමක් ලැබීම
-        </h3>
-
-        <p>
-            රු. 50,000ක පොලී ආදායමක් මුදලින් ලැබේ.
-            ගිණුම් දෙක සහ ඒවායේ Debit/Credit පැත්ත ලියන්න.
-        </p>
-
-    </div>
 
 
-    <div class="activity-card">
+        <!-- ACTIVITY 03 -->
 
-        <div class="activity-number">
-            ACTIVITY 07
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 03
+            </div>
+
+            <h3>
+                Debit හෝ Credit?
+            </h3>
+
+            <p>
+                පහත ගිණුම්වල වැඩිවීම Debit ද Credit ද යන්න ලියන්න:
+                මුදල්, බැංකු ණය, ප්‍රාග්ධනය, විකුණුම්, වැටුප්.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="3"
+                    onclick="completeActivity6(3)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-3"
+                    onclick="showActivityAnswer6(3)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-3"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් → Debit<br>
+                    බැංකු ණය → Credit<br>
+                    ප්‍රාග්ධනය → Credit<br>
+                    විකුණුම් → Credit<br>
+                    වැටුප් → Debit
+                </div>
+
+            </div>
+
         </div>
 
-        <h3>
-            වියදමක් ගෙවීම
-        </h3>
-
-        <p>
-            රු. 25,000ක වැටුප් ගෙවීමක් සඳහා ද්විත්ව සටහන සකස් කරන්න.
-        </p>
-
-    </div>
 
 
-    <div class="activity-card">
+        <!-- ACTIVITY 04 -->
 
-        <div class="activity-number">
-            ACTIVITY 08
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 04
+            </div>
+
+            <h3>
+                උපකරණ මිලදී ගැනීම
+            </h3>
+
+            <p>
+                රු. 100,000ක උපකරණ මුදලින් මිලදී ගත් විට
+                ද්විත්ව සටහන සකස් කරන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="4"
+                    onclick="completeActivity6(4)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-4"
+                    onclick="showActivityAnswer6(4)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-4"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    උපකරණ ගිණුම Dr. රු. 100,000<br>
+                    මුදල් ගිණුම Cr. රු. 100,000
+                </div>
+
+            </div>
+
         </div>
 
-        <h3>
-            ගිණුම් වර්ග කිරීම
-        </h3>
-
-        <p>
-            පහත ගිණුම් වත්කම්, වගකීම්, හිමිකම, ආදායම් හෝ වියදම්
-            ලෙස වර්ග කරන්න:
-            මුදල්, බැංකු ණය, ප්‍රාග්ධනය, විකුණුම්, කුලී.
-        </p>
-
-    </div>
 
 
-    <div class="activity-card">
+        <!-- ACTIVITY 05 -->
 
-        <div class="activity-number">
-            ACTIVITY 09
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 05
+            </div>
+
+            <h3>
+                ණය ලබා ගැනීම
+            </h3>
+
+            <p>
+                ව්‍යාපාරය රු. 300,000ක බැංකු ණයක් ලබා ගනී.
+                Debit සහ Credit ගිණුම් හඳුනාගන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="5"
+                    onclick="completeActivity6(5)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-5"
+                    onclick="showActivityAnswer6(5)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-5"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ගිණුම Dr. රු. 300,000<br>
+                    බැංකු ණය ගිණුම Cr. රු. 300,000
+                </div>
+
+            </div>
+
         </div>
 
-        <h3>
-            ගනුදෙනු 5ක් විශ්ලේෂණය කරන්න
-        </h3>
-
-        <p>
-            ඔබ කැමති ව්‍යාපාරයක් තෝරාගෙන එහි සිදුවිය හැකි
-            ගනුදෙනු 5ක් ලියා, එක් එක් ගනුදෙනුවේ බලපෑමට ලක්වන
-            ගිණුම් දෙක හඳුනාගන්න.
-        </p>
-
-    </div>
 
 
-    <div class="activity-card">
+        <!-- ACTIVITY 06 -->
 
-        <div class="activity-number">
-            ACTIVITY 10
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 06
+            </div>
+
+            <h3>
+                ආදායමක් ලැබීම
+            </h3>
+
+            <p>
+                රු. 50,000ක පොලී ආදායමක් මුදලින් ලැබේ.
+                ගිණුම් දෙක සහ ඒවායේ Debit/Credit පැත්ත ලියන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="6"
+                    onclick="completeActivity6(6)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-6"
+                    onclick="showActivityAnswer6(6)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-6"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ගිණුම Dr. රු. 50,000<br>
+                    පොලී ආදායම් ගිණුම Cr. රු. 50,000
+                </div>
+
+            </div>
+
         </div>
 
-        <h3>
-            සම්පූර්ණ ද්විත්ව සටහන් අභ්‍යාසය
-        </h3>
-
-        <p>
-            පහත ගනුදෙනු සඳහා Debit සහ Credit ගිණුම් හඳුනාගන්න:
-        </p>
-
-        <ol>
-
-            <li>
-                රු. 200,000ක ප්‍රාග්ධනයක් යෙදීම.
-            </li>
-
-            <li>
-                රු. 50,000ක උපකරණ මුදලින් මිලදී ගැනීම.
-            </li>
-
-            <li>
-                රු. 100,000ක බැංකු ණයක් ලබා ගැනීම.
-            </li>
-
-            <li>
-                රු. 20,000ක වැටුප් ගෙවීම.
-            </li>
-
-            <li>
-                රු. 30,000ක පොලී ආදායමක් ලැබීම.
-            </li>
-
-        </ol>
-
-    </div>
-
-</section>
 
 
+        <!-- ACTIVITY 07 -->
 
-<!-- ACTIONS -->
+        <div class="activity-card">
 
-<section class="lesson-actions">
+            <div class="activity-number">
+                ACTIVITY 07
+            </div>
 
-    <a
-        href="quiz.html?lesson=6"
-        class="quiz-button"
-    >
-        📝 Lesson 6 Quiz
-    </a>
+            <h3>
+                වියදමක් ගෙවීම
+            </h3>
+
+            <p>
+                රු. 25,000ක වැටුප් ගෙවීමක් සඳහා ද්විත්ව සටහන සකස් කරන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="7"
+                    onclick="completeActivity6(7)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-7"
+                    onclick="showActivityAnswer6(7)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-7"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    වැටුප් ගිණුම Dr. රු. 25,000<br>
+                    මුදල් ගිණුම Cr. රු. 25,000
+                </div>
+
+            </div>
+
+        </div>
 
 
-    <button
-        class="complete-button"
-        onclick="completeLesson6()"
-        id="completeLessonButton"
-    >
-        ✅ Complete Lesson 6
-    </button>
+
+        <!-- ACTIVITY 08 -->
+
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 08
+            </div>
+
+            <h3>
+                ගිණුම් වර්ග කිරීම
+            </h3>
+
+            <p>
+                පහත ගිණුම් වත්කම්, වගකීම්, හිමිකම, ආදායම් හෝ වියදම්
+                ලෙස වර්ග කරන්න:
+                මුදල්, බැංකු ණය, ප්‍රාග්ධනය, විකුණුම්, කුලී.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="8"
+                    onclick="completeActivity6(8)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-8"
+                    onclick="showActivityAnswer6(8)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-8"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් → වත්කම්<br>
+                    බැංකු ණය → වගකීම්<br>
+                    ප්‍රාග්ධනය → හිමිකම<br>
+                    විකුණුම් → ආදායම්<br>
+                    කුලී → වියදම්
+                </div>
+
+            </div>
+
+        </div>
 
 
-    <a
-        href="lessons.html"
-        class="back-button"
-    >
-        ← Back to Lessons
-    </a>
 
-</section>
-```
+        <!-- ACTIVITY 09 -->
+
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 09
+            </div>
+
+            <h3>
+                ගනුදෙනු 5ක් විශ්ලේෂණය කරන්න
+            </h3>
+
+            <p>
+                ඔබ කැමති ව්‍යාපාරයක් තෝරාගෙන එහි සිදුවිය හැකි
+                ගනුදෙනු 5ක් ලියා, එක් එක් ගනුදෙනුවේ බලපෑමට ලක්වන
+                ගිණුම් දෙක හඳුනාගන්න.
+            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="9"
+                    onclick="completeActivity6(9)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-9"
+                    onclick="showActivityAnswer6(9)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-9"
+                >
+                    <strong>උදාහරණ පිළිතුර:</strong><br>
+                    1. ප්‍රාග්ධනය යෙදීම → මුදල් / ප්‍රාග්ධනය<br>
+                    2. උපකරණ මිලදී ගැනීම → උපකරණ / මුදල්<br>
+                    3. ණයක් ලබා ගැනීම → මුදල් / බැංකු ණය<br>
+                    4. වැටුප් ගෙවීම → වැටුප් / මුදල්<br>
+                    5. ආදායමක් ලැබීම → මුදල් / ආදායම
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIVITY 10 -->
+
+        <div class="activity-card">
+
+            <div class="activity-number">
+                ACTIVITY 10
+            </div>
+
+            <h3>
+                සම්පූර්ණ ද්විත්ව සටහන් අභ්‍යාසය
+            </h3>
+
+            <p>
+                පහත ගනුදෙනු සඳහා Debit සහ Credit ගිණුම් හඳුනාගන්න:
+            </p>
+
+            <ol>
+
+                <li>
+                    රු. 200,000ක ප්‍රාග්ධනයක් යෙදීම.
+                </li>
+
+                <li>
+                    රු. 50,000ක උපකරණ මුදලින් මිලදී ගැනීම.
+                </li>
+
+                <li>
+                    රු. 100,000ක බැංකු ණයක් ලබා ගැනීම.
+                </li>
+
+                <li>
+                    රු. 20,000ක වැටුප් ගෙවීම.
+                </li>
+
+                <li>
+                    රු. 30,000ක පොලී ආදායමක් ලැබීම.
+                </li>
+
+            </ol>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="10"
+                    onclick="completeActivity6(10)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-10"
+                    onclick="showActivityAnswer6(10)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-10"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    1. මුදල් Dr. රු. 200,000 / ප්‍රාග්ධනය Cr. රු. 200,000<br>
+                    2. උපකරණ Dr. රු. 50,000 / මුදල් Cr. රු. 50,000<br>
+                    3. මුදල් Dr. රු. 100,000 / බැංකු ණය Cr. රු. 100,000<br>
+                    4. වැටුප් Dr. රු. 20,000 / මුදල් Cr. රු. 20,000<br>
+                    5. මුදල් Dr. රු. 30,000 / පොලී ආදායම Cr. රු. 30,000
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ACTIONS -->
+
+    <section class="lesson-actions">
+
+        <a
+            href="quiz.html?lesson=6"
+            class="quiz-button"
+        >
+            📝 Lesson 6 Quiz
+        </a>
+
+
+        <button
+            class="complete-button"
+            onclick="completeLesson6()"
+            id="completeLessonButton"
+        >
+            ✅ Complete Lesson 6
+        </button>
+
+
+        <a
+            href="lessons.html"
+            class="back-button"
+        >
+            ← Back to Lessons
+        </a>
+
+    </section>
 
 </main>
 
 <footer class="site-footer">
 
-```
-<p>
-    © 2026 Unique EduZone. All Rights Reserved.
-</p>
-```
+    <p>
+        © 2026 Unique EduZone. All Rights Reserved.
+    </p>
 
 </footer>
 
+
+
 <script>
+
+/* =========================================
+   LESSON 06 ACTIVITY SYSTEM
+   ========================================= */
+
+
+/* -----------------------------------------
+   GET COMPLETED ACTIVITIES
+   ----------------------------------------- */
+
+function getLesson6Activities() {
+
+    let completedActivities = [];
+
+    try {
+
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson6_activities"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedActivities = [];
+
+    }
+
+
+    if (!Array.isArray(completedActivities)) {
+
+        completedActivities = [];
+
+    }
+
+
+    return completedActivities;
+
+}
+
+
+
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity6(activityNumber) {
+
+    let completedActivities =
+        getLesson6Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_lesson6_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+
+    updateActivity6(
+        activityNumber
+    );
+
+}
+
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity6(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
+        );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
+
+
+    if (!completeButton) {
+
+        return;
+
+    }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+
+/* -----------------------------------------
+   SHOW ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer6(activityNumber) {
+
+    const completedActivities =
+        getLesson6Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson6Activities() {
+
+    const completedActivities =
+        getLesson6Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity6(
+                activityNumber
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================
+   LESSON 06 PROGRESS SYSTEM
+   ========================================= */
 
 function updateLesson6Progress() {
 
@@ -1085,13 +1725,16 @@ function updateLesson6Progress() {
             "uez_completed_lessons"
         );
 
+
     let completed = [];
+
 
     if (saved) {
 
         try {
 
-            completed = JSON.parse(saved);
+            completed =
+                JSON.parse(saved);
 
         }
 
@@ -1103,14 +1746,18 @@ function updateLesson6Progress() {
 
     }
 
+
     if (!Array.isArray(completed)) {
 
         completed = [];
 
     }
 
+
     const done =
-        completed.includes("lesson6");
+        completed.includes(
+            "lesson6"
+        );
 
 
     const bar =
@@ -1118,10 +1765,12 @@ function updateLesson6Progress() {
             "lessonProgressBar"
         );
 
+
     const text =
         document.getElementById(
             "lessonProgressText"
         );
+
 
     const button =
         document.getElementById(
@@ -1133,9 +1782,11 @@ function updateLesson6Progress() {
 
         if (bar) {
 
-            bar.style.width = "100%";
+            bar.style.width =
+                "100%";
 
         }
+
 
         if (text) {
 
@@ -1144,12 +1795,14 @@ function updateLesson6Progress() {
 
         }
 
+
         if (button) {
 
             button.textContent =
                 "✓ Lesson 6 Completed";
 
-            button.disabled = true;
+            button.disabled =
+                true;
 
         }
 
@@ -1159,9 +1812,11 @@ function updateLesson6Progress() {
 
         if (bar) {
 
-            bar.style.width = "0%";
+            bar.style.width =
+                "0%";
 
         }
+
 
         if (text) {
 
@@ -1175,64 +1830,94 @@ function updateLesson6Progress() {
 }
 
 
+
+/* =========================================
+   COMPLETE LESSON 06
+   ========================================= */
+
 function completeLesson6() {
 
-    let completed = [];
+    let completedLessons = [];
 
-    const saved =
-        localStorage.getItem(
-            "uez_completed_lessons"
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson6"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson6"
         );
-
-
-    if (saved) {
-
-        try {
-
-            completed = JSON.parse(saved);
-
-        }
-
-        catch (error) {
-
-            completed = [];
-
-        }
-
-    }
-
-
-    if (!Array.isArray(completed)) {
-
-        completed = [];
-
-    }
-
-
-    if (!completed.includes("lesson6")) {
-
-        completed.push("lesson6");
 
     }
 
 
     localStorage.setItem(
         "uez_completed_lessons",
-        JSON.stringify(completed)
+        JSON.stringify(
+            completedLessons
+        )
     );
 
 
     updateLesson6Progress();
 
+
+    alert(
+        "Lesson 06 completed successfully! 🎉"
+    );
+
+
+    window.location.href =
+        "lessons.html";
+
 }
 
 
+
+/* =========================================
+   PAGE LOAD
+   ========================================= */
+
 document.addEventListener(
     "DOMContentLoaded",
-    updateLesson6Progress
+    function() {
+
+        restoreLesson6Activities();
+
+        updateLesson6Progress();
+
+    }
 );
 
 </script>
+
 
 </body>
 
