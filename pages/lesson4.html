@@ -131,10 +131,67 @@
             margin-top: 0;
         }
 
-        .activity-answer {
-            color: #aaa;
-            margin-top: 10px;
+        /* =========================================
+           LESSON 09 STYLE ACTIVITY SYSTEM
+           ========================================= */
+
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
         }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
+            color: #fff;
+            cursor: default;
+        }
+
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
+        }
+
 
         .lesson-actions {
             text-align: center;
@@ -164,12 +221,12 @@
         }
 
         .complete-button {
-            background: #333;
+            background: #198754;
             color: #fff;
         }
 
         .complete-button:hover {
-            background: #555;
+            opacity: 0.9;
         }
 
         .back-button {
@@ -183,6 +240,7 @@
             font-weight: bold;
             margin-top: 15px;
         }
+
 
         @media (max-width: 600px) {
 
@@ -201,6 +259,12 @@
             .accounting-table th,
             .accounting-table td {
                 padding: 8px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-top: 6px;
             }
 
         }
@@ -719,6 +783,8 @@
         </h2>
 
 
+        <!-- ACTIVITY 1 -->
+
         <div class="activity-box">
 
             <h3>
@@ -749,13 +815,52 @@
 
             </ul>
 
-            <p class="activity-answer">
-                💡 පිළිතුර: මුදල්, බැංකු තැන්පතු සහ ගොඩනැගිල්ල.
-            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="1"
+                    onclick="completeActivity4(1)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-1"
+                    onclick="showActivityAnswer4(1)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-1"
+                >
+
+                    <strong>
+                        පිළිතුර:
+                    </strong>
+                    <br>
+
+                    මුදල්,
+                    බැංකු තැන්පතු සහ
+                    ගොඩනැගිල්ල.
+
+                </div>
+
+            </div>
 
         </div>
 
 
+
+        <!-- ACTIVITY 2 -->
 
         <div class="activity-box">
 
@@ -769,13 +874,50 @@
                 එය වත්කමක්ද වගකීමක්ද?
             </p>
 
-            <p class="activity-answer">
-                💡 පිළිතුර: වගකීමකි.
-            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="2"
+                    onclick="completeActivity4(2)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-2"
+                    onclick="showActivityAnswer4(2)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-2"
+                >
+
+                    <strong>
+                        පිළිතුර:
+                    </strong>
+                    <br>
+
+                    වගකීමකි.
+
+                </div>
+
+            </div>
 
         </div>
 
 
+
+        <!-- ACTIVITY 3 -->
 
         <div class="activity-box">
 
@@ -788,13 +930,50 @@
                 මුදල් හඳුන්වන්නේ කුමක් ලෙසද?
             </p>
 
-            <p class="activity-answer">
-                💡 පිළිතුර: ආදායම.
-            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="3"
+                    onclick="completeActivity4(3)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-3"
+                    onclick="showActivityAnswer4(3)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-3"
+                >
+
+                    <strong>
+                        පිළිතුර:
+                    </strong>
+                    <br>
+
+                    ආදායම.
+
+                </div>
+
+            </div>
 
         </div>
 
 
+
+        <!-- ACTIVITY 4 -->
 
         <div class="activity-box">
 
@@ -807,9 +986,44 @@
                 දරන පිරිවැය හඳුන්වන්නේ කුමක් ලෙසද?
             </p>
 
-            <p class="activity-answer">
-                💡 පිළිතුර: වියදම.
-            </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="4"
+                    onclick="completeActivity4(4)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-4"
+                    onclick="showActivityAnswer4(4)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-4"
+                >
+
+                    <strong>
+                        පිළිතුර:
+                    </strong>
+                    <br>
+
+                    වියදම.
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -824,11 +1038,11 @@
     <section class="lesson-actions">
 
         <h2>
-            🎯 Lesson 04 Activities Complete කළාද?
+            🎯 Lesson 04
         </h2>
 
         <p>
-            ඊළඟට Lesson 4 MCQ Quiz එකට යන්න.
+            පාඩම අවසන් කිරීමෙන් පසු MCQ Quiz එකට සහභාගී වන්න.
         </p>
 
 
@@ -846,7 +1060,7 @@
             id="completeLessonButton"
             onclick="completeLesson4()"
         >
-            ✓ Complete Lesson 4
+            ✅ Complete Lesson 4
         </button>
 
 
@@ -884,73 +1098,372 @@
 
 <script>
 
-    /*
-     * =========================================
-     * LESSON 04 COMPLETION
-     * Uses the same localStorage key used
-     * by lessons.js
-     * =========================================
-     */
 
-    function completeLesson4() {
-
-        let completedLessons = [];
-
-        const saved =
-            localStorage.getItem(
-                "uez_completed_lessons"
-            );
+/* =========================================
+   LESSON 04 ACTIVITY SYSTEM
+   Same system as Lesson 09
+   ========================================= */
 
 
-        if (saved) {
+/* -----------------------------------------
+   GET COMPLETED ACTIVITIES
+   ----------------------------------------- */
 
-            try {
+function getLesson4Activities() {
 
-                completedLessons =
-                    JSON.parse(saved);
+    let completedActivities = [];
 
-            }
+    try {
 
-            catch (error) {
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson4_activities"
+                )
+            ) || [];
 
-                completedLessons = [];
+    }
 
-            }
+    catch(error) {
 
-        }
+        completedActivities = [];
 
-
-        if (
-            !Array.isArray(
-                completedLessons
-            )
-        ) {
-
-            completedLessons = [];
-
-        }
+    }
 
 
-        if (
-            !completedLessons.includes(
-                "lesson4"
-            )
-        ) {
+    if (!Array.isArray(completedActivities)) {
 
-            completedLessons.push(
-                "lesson4"
-            );
+        completedActivities = [];
 
-        }
+    }
 
 
-        localStorage.setItem(
-            "uez_completed_lessons",
-            JSON.stringify(
-                completedLessons
-            )
+    return completedActivities;
+
+}
+
+
+
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity4(activityNumber) {
+
+    let completedActivities =
+        getLesson4Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
         );
 
+    }
+
+
+    localStorage.setItem(
+        "uez_lesson4_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+
+    updateActivity4(
+        activityNumber
+    );
+
+}
+
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity4(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
+        );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
+
+
+    if (!completeButton) {
+
+        return;
+
+    }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+
+/* -----------------------------------------
+   SHOW ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer4(activityNumber) {
+
+    const completedActivities =
+        getLesson4Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson4Activities() {
+
+    const completedActivities =
+        getLesson4Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity4(
+                activityNumber
+            );
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        restoreLesson4Activities();
+
+    }
+);
+
+
+
+/* =========================================
+   LESSON COMPLETION SYSTEM
+   Same system as Lesson 09
+   ========================================= */
+
+function completeLesson4() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson4"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson4"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    const message =
+        document.getElementById(
+            "completeMessage"
+        );
+
+
+    const button =
+        document.getElementById(
+            "completeLessonButton"
+        );
+
+
+    if (message) {
+
+        message.style.display =
+            "block";
+
+    }
+
+
+    if (button) {
+
+        button.textContent =
+            "✓ Lesson 4 Completed";
+
+        button.style.background =
+            "gold";
+
+        button.style.color =
+            "#000";
+
+    }
+
+
+    alert(
+        "Lesson 04 completed successfully! 🎉"
+    );
+
+
+    window.location.href =
+        "lessons.html";
+
+}
+
+
+
+/* -----------------------------------------
+   RESTORE LESSON COMPLETION STATUS
+   ----------------------------------------- */
+
+function restoreLesson4Completion() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        completedLessons.includes(
+            "lesson4"
+        )
+    ) {
 
         const message =
             document.getElementById(
@@ -987,91 +1500,25 @@
 
     }
 
+}
 
 
-    /*
-     * =========================================
-     * SHOW CURRENT COMPLETION STATUS
-     * =========================================
-     */
 
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
+/* -----------------------------------------
+   PAGE LOAD
+   ----------------------------------------- */
 
-            let completedLessons = [];
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
 
+        restoreLesson4Activities();
 
-            const saved =
-                localStorage.getItem(
-                    "uez_completed_lessons"
-                );
+        restoreLesson4Completion();
 
+    }
+);
 
-            if (saved) {
-
-                try {
-
-                    completedLessons =
-                        JSON.parse(saved);
-
-                }
-
-                catch (error) {
-
-                    completedLessons = [];
-
-                }
-
-            }
-
-
-            if (
-                Array.isArray(
-                    completedLessons
-                ) &&
-                completedLessons.includes(
-                    "lesson4"
-                )
-            ) {
-
-                const message =
-                    document.getElementById(
-                        "completeMessage"
-                    );
-
-
-                const button =
-                    document.getElementById(
-                        "completeLessonButton"
-                    );
-
-
-                if (message) {
-
-                    message.style.display =
-                        "block";
-
-                }
-
-
-                if (button) {
-
-                    button.textContent =
-                        "✓ Lesson 4 Completed";
-
-                    button.style.background =
-                        "gold";
-
-                    button.style.color =
-                        "#000";
-
-                }
-
-            }
-
-        }
-    );
 
 </script>
 
