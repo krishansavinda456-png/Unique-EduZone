@@ -147,16 +147,79 @@
             background: #ddd;
         }
 
+        /* =========================================
+           ACTIVITY SYSTEM - LESSON 10
+           ========================================= */
+
         .activity {
-            background: #202020;
-            border: 1px solid #444;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 12px 0;
+            background: #111d2b;
+            border-left: 5px solid #4da3ff;
+            border-radius: 12px;
+            padding: 18px;
+            margin: 15px 0;
+            line-height: 1.8;
         }
 
         .activity strong {
             color: gold;
+        }
+
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
+            color: #fff;
+            cursor: default;
+        }
+
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            margin-left: 8px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
         }
 
         .quiz-button {
@@ -179,6 +242,11 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 15px;
+        }
+
+        .complete-button:disabled {
+            cursor: default;
+            opacity: 0.9;
         }
 
         .progress-box {
@@ -219,6 +287,13 @@
 
             .topic-card {
                 padding: 18px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 6px;
             }
 
         }
@@ -1044,9 +1119,7 @@
 
         <p class="small-note">
             මෙවැනි Trial Balance agreement errors සඳහා
-            Suspense Account භාවිතා කළ හැක. e-Thaksalawa
-            accounting-error material එකේද මෙවැනි අවස්ථාවල
-            suspense account භාවිතා කිරීම පැහැදිලි කරයි. :contentReference[oaicite:2]{index=2}
+            Suspense Account භාවිතා කළ හැක.
         </p>
 
     </section>
@@ -1330,158 +1403,1287 @@
         </h2>
 
 
+        <!-- ACTIVITY 01 -->
+
         <div class="activity">
+
             <strong>Activity 01:</strong>
             ගැනුම් ජර්නලය යනු කුමක්ද? එහි අරමුණු 3ක් ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="1"
+                    onclick="completeActivity10(1)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-1"
+                    onclick="showActivityAnswer10(1)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-1"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    නැවත විකිණීම සඳහා ණයට ලබාගත් භාණ්ඩ ගනුදෙනු
+                    ක්‍රමානුකූලව සටහන් කරන මූලික පොතකි.<br>
+                    අරමුණු: ණයට ගැනුම් සටහන් කිරීම, ලෙජරයට posting පහසු කිරීම
+                    සහ සැපයුම්කරුවන්ගේ ගිණුම් පාලනය කිරීම.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 02 -->
+
         <div class="activity">
+
             <strong>Activity 02:</strong>
             රු. 25,000ක ණය ගැනුම් ගනුදෙනුවක් Purchase Journal එකක සටහන් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="2"
+                    onclick="completeActivity10(2)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-2"
+                    onclick="showActivityAnswer10(2)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-2"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Purchase Journal:<br>
+                    ණය ගැනුම් = රු. 25,000<br>
+                    Purchases Account Dr. රු. 25,000<br>
+                    අදාළ Supplier Account Cr. රු. 25,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 03 -->
+
         <div class="activity">
+
             <strong>Activity 03:</strong>
             Purchase Invoice එකක තිබිය යුතු තොරතුරු 6ක් ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="3"
+                    onclick="completeActivity10(3)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-3"
+                    onclick="showActivityAnswer10(3)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-3"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    සැපයුම්කරුගේ නම, Invoice අංකය, දිනය,
+                    ගැනුම්කරුගේ නම, භාණ්ඩ විස්තර, ප්‍රමාණය,
+                    ඒකක මිල සහ මුළු මුදල වැනි තොරතුරු.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 04 -->
+
         <div class="activity">
+
             <strong>Activity 04:</strong>
             ABC Traders Rs.40,000, XYZ Traders Rs.25,000 යන ගනුදෙනු දෙක Purchase Journal එකකට ඇතුළත් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="4"
+                    onclick="completeActivity10(4)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-4"
+                    onclick="showActivityAnswer10(4)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-4"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ABC Traders = රු. 40,000<br>
+                    XYZ Traders = රු. 25,000<br>
+                    Purchase Journal Total = රු. 65,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 05 -->
+
         <div class="activity">
+
             <strong>Activity 05:</strong>
             Purchase Journal total එක Purchases Account එකට posting කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="5"
+                    onclick="completeActivity10(5)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-5"
+                    onclick="showActivityAnswer10(5)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-5"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Purchases Account — Debit<br>
+                    Purchase Journal Total = රු. 65,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 06 -->
+
         <div class="activity">
+
             <strong>Activity 06:</strong>
             ABC Traders Account එකට individual transaction එක posting කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="6"
+                    onclick="completeActivity10(6)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-6"
+                    onclick="showActivityAnswer10(6)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-6"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ABC Traders Account හි Credit පැත්තට
+                    Purchases රු. 40,000 ලෙස posting කළ යුතුය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 07 -->
+
         <div class="activity">
+
             <strong>Activity 07:</strong>
             Sales Journal එකේ අරමුණ පැහැදිලි කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="7"
+                    onclick="completeActivity10(7)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-7"
+                    onclick="showActivityAnswer10(7)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-7"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    නැවත විකිණීම සඳහා තබා ඇති භාණ්ඩ ණයට විකිණීමේ
+                    ගනුදෙනු ක්‍රමානුකූලව සටහන් කිරීම Sales Journal හි අරමුණයි.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 08 -->
+
         <div class="activity">
+
             <strong>Activity 08:</strong>
             Silva Stores Rs.35,000 සහ Perera Stores Rs.45,000 යන ණය විකුණුම් Sales Journal එකකට ඇතුළත් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="8"
+                    onclick="completeActivity10(8)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-8"
+                    onclick="showActivityAnswer10(8)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-8"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Silva Stores = රු. 35,000<br>
+                    Perera Stores = රු. 45,000<br>
+                    Sales Journal Total = රු. 80,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 09 -->
+
         <div class="activity">
+
             <strong>Activity 09:</strong>
             Sales Journal total එක Sales Account එකට posting කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="9"
+                    onclick="completeActivity10(9)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-9"
+                    onclick="showActivityAnswer10(9)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-9"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Sales Account හි Credit පැත්තට
+                    Sales Journal Total = රු. 80,000 ලෙස posting කළ යුතුය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 10 -->
+
         <div class="activity">
+
             <strong>Activity 10:</strong>
             Debtor Account එකකට Sales transaction එක posting කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="10"
+                    onclick="completeActivity10(10)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-10"
+                    onclick="showActivityAnswer10(10)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-10"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    අදාළ Debtor Account හි Debit පැත්තට
+                    Sales amount එක posting කළ යුතුය.
+                    උදාහරණයක් ලෙස රු. 35,000ක ණය විකිණීමක් නම්
+                    Debtor Dr. රු. 35,000.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 11 -->
+
         <div class="activity">
+
             <strong>Activity 11:</strong>
             General Journal භාවිතා කරන අවස්ථා 5ක් ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="11"
+                    onclick="completeActivity10(11)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-11"
+                    onclick="showActivityAnswer10(11)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-11"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ගැළපුම් සටහන්, ගිණුම්කරණ වැරදි නිවැරදි කිරීම,
+                    Drawings සම්බන්ධ ගනුදෙනු, වත්කම් සම්බන්ධ විශේෂ ගනුදෙනු
+                    සහ Suspense Account සම්බන්ධ නිවැරදි කිරීම්.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 12 -->
+
         <div class="activity">
+
             <strong>Activity 12:</strong>
             Furniture Rs.20,000 cash මගින් මිලදී ගැනීමේ Journal Entry එක සකස් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="12"
+                    onclick="completeActivity10(12)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-12"
+                    onclick="showActivityAnswer10(12)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-12"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Furniture A/C Dr. රු. 20,000<br>
+                    Cash A/C Cr. රු. 20,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 13 -->
+
         <div class="activity">
+
             <strong>Activity 13:</strong>
             Owner විසින් භාණ්ඩ Rs.8,000ක් පෞද්ගලික භාවිතයට ගත් විට Journal Entry එක සකස් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="13"
+                    onclick="completeActivity10(13)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-13"
+                    onclick="showActivityAnswer10(13)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-13"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Drawings A/C Dr. රු. 8,000<br>
+                    Purchases A/C Cr. රු. 8,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 14 -->
+
         <div class="activity">
+
             <strong>Activity 14:</strong>
             QR payment මගින් Rs.15,000ක් ගෙවූ ගනුදෙනුවක් සඳහා Debit/Credit accounts හඳුනාගන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="14"
+                    onclick="completeActivity10(14)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-14"
+                    onclick="showActivityAnswer10(14)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-14"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Purchases A/C Dr. රු. 15,000<br>
+                    Bank A/C Cr. රු. 15,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 15 -->
+
         <div class="activity">
+
             <strong>Activity 15:</strong>
             Trial Balance යන්න නිර්වචනය කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="15"
+                    onclick="completeActivity10(15)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-15"
+                    onclick="showActivityAnswer10(15)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-15"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ලෙජර ගිණුම්වල අවසාන ශේෂ Debit සහ Credit තීරු දෙකකට
+                    ඇතුළත් කර ඒවායේ සමානත්වය පරීක්ෂා කරන ප්‍රකාශය
+                    Trial Balance ලෙස හැඳින්වේ.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 16 -->
+
         <div class="activity">
+
             <strong>Activity 16:</strong>
             Cash Rs.20,000, Bank Rs.30,000, Purchases Rs.50,000,
             Capital Rs.70,000 සහ Sales Rs.30,000 භාවිතා කර Trial Balance එක සකස් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="16"
+                    onclick="completeActivity10(16)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-16"
+                    onclick="showActivityAnswer10(16)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-16"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Debit: Cash 20,000 + Bank 30,000 + Purchases 50,000
+                    = රු. 100,000.<br>
+                    Credit: Capital 70,000 + Sales 30,000
+                    = රු. 100,000.<br>
+                    එබැවින් Trial Balance එක සමාන වේ.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 17 -->
+
         <div class="activity">
+
             <strong>Activity 17:</strong>
             Trial Balance එක සමාන නොවීමට හේතු 5ක් ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="17"
+                    onclick="completeActivity10(17)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-17"
+                    onclick="showActivityAnswer10(17)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-17"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Posting එකක එක පැත්තක් මඟ හැරීම,
+                    වැරදි මුදලක් posting කිරීම, Debit/Credit පැත්ත මාරු කිරීම,
+                    Ledger balance එක වැරදිව ගණනය කිරීම සහ Trial Balance එක
+                    සකස් කිරීමේදී එකතුවේ දෝෂ ඇති කිරීම.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 18 -->
+
         <div class="activity">
+
             <strong>Activity 18:</strong>
             Prime Entry Book එකකින් Ledger එකකට posting කරන ක්‍රමය පැහැදිලි කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="18"
+                    onclick="completeActivity10(18)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-18"
+                    onclick="showActivityAnswer10(18)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-18"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Prime Entry Book එකේ ගනුදෙනු හඳුනාගෙන,
+                    අදාළ Ledger Accounts තීරණය කර,
+                    Debit සහ Credit පැති නිවැරදිව සටහන් කළ යුතුය.
+                    Journal totals අදාළ nominal account වලටත්,
+                    individual transactions අදාළ personal accounts වලටත්
+                    posting කළ යුතුය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 19 -->
+
         <div class="activity">
+
             <strong>Activity 19:</strong>
             Purchase Journal එකේ ගනුදෙනු 3ක් දී Purchases Account එකට posting කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="19"
+                    onclick="completeActivity10(19)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-19"
+                    onclick="showActivityAnswer10(19)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-19"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ගනුදෙනු තුනේ මුළු එකතුව ගණනය කර
+                    Purchases Account හි Debit පැත්තට
+                    එම total එක posting කළ යුතුය.<br>
+                    උදාහරණයක් ලෙස 50,000 + 30,000 + 20,000
+                    නම් Total = රු. 100,000.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 20 -->
+
         <div class="activity">
+
             <strong>Activity 20:</strong>
             වැරදි ගිණුමකට transaction එකක් සටහන් කළ විට Trial Balance එකට බලපෑමක් ඇති වේදැයි පැහැදිලි කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="20"
+                    onclick="completeActivity10(20)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-20"
+                    onclick="showActivityAnswer10(20)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-20"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Debit සහ Credit දෙපසම සමාන මුදලක් වැරදි ගිණුම්වලට
+                    ඇතුළත් වී ඇත්නම් Trial Balance එකේ සමානත්වයට
+                    බලපෑමක් නොවිය හැක. එහෙත් ගිණුම්වල අන්තර්ගතය වැරදිය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 21 -->
+
         <div class="activity">
+
             <strong>Activity 21:</strong>
             Office Equipment Rs.30,000ක් Purchases Account එකට වැරදියට Debit කර ඇති විට correction entry එක ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="21"
+                    onclick="completeActivity10(21)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-21"
+                    onclick="showActivityAnswer10(21)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-21"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Office Equipment A/C Dr. රු. 30,000<br>
+                    Purchases A/C Cr. රු. 30,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 22 -->
+
         <div class="activity">
+
             <strong>Activity 22:</strong>
             Electricity Rs.6,000 Insurance Account එකට වැරදියට Debit කර ඇති විට correction entry එක ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="22"
+                    onclick="completeActivity10(22)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-22"
+                    onclick="showActivityAnswer10(22)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-22"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Electricity A/C Dr. රු. 6,000<br>
+                    Insurance A/C Cr. රු. 6,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 23 -->
+
         <div class="activity">
+
             <strong>Activity 23:</strong>
             Trial Balance agreement එකට බලපාන වැරදි සහ බල නොපාන වැරදි අතර වෙනස ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="23"
+                    onclick="completeActivity10(23)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-23"
+                    onclick="showActivityAnswer10(23)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-23"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Agreement එකට බලපාන වැරදි නිසා Debit සහ Credit totals
+                    වෙනස් වේ. උදාහරණයක් ලෙස එක පැත්තක් පමණක් posting කිරීම.<br>
+                    බල නොපාන වැරදිවලදී Debit සහ Credit දෙපසම සමාන මුදලක්
+                    වැරදි ගිණුම්වල සටහන් විය හැකි බැවින් totals සමාන වුවත්
+                    ගිණුම් නිවැරදි නොවේ.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 24 -->
+
         <div class="activity">
+
             <strong>Activity 24:</strong>
             Stationery Rs.4,000ක් එක් entry එකක් පමණක් ලෙස සටහන් කර ඇති විට correction entry එක ලියන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="24"
+                    onclick="completeActivity10(24)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-24"
+                    onclick="showActivityAnswer10(24)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-24"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Stationery A/C Dr. රු. 4,000<br>
+                    අදාළ අනෙක් ගිණුම හෝ Suspense A/C Cr. රු. 4,000 ලෙස
+                    නිවැරදි තොරතුරු අනුව correction entry සකස් කළ යුතුය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 25 -->
+
         <div class="activity">
+
             <strong>Activity 25:</strong>
             Furniture Rs.15,000ක් වෙනුවට Rs.5,000ක් posting කර ඇති විට suspense correction entry එක සකස් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="25"
+                    onclick="completeActivity10(25)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-25"
+                    onclick="showActivityAnswer10(25)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-25"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    නිවැරදි මුදල = රු. 15,000<br>
+                    සටහන් කළ මුදල = රු. 5,000<br>
+                    වෙනස = රු. 10,000<br><br>
+                    Furniture A/C Dr. රු. 10,000<br>
+                    Suspense A/C Cr. රු. 10,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 26 -->
+
         <div class="activity">
+
             <strong>Activity 26:</strong>
             Suspense Account එක යනු කුමක්ද? එය භාවිතා කරන්නේ ඇයි?
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="26"
+                    onclick="completeActivity10(26)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-26"
+                    onclick="showActivityAnswer10(26)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-26"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Trial Balance එකේ Debit සහ Credit totals අතර
+                    ඇති වෙනස තාවකාලිකව තබා ගැනීමට භාවිතා කරන ගිණුමකි.
+                    දෝෂ හඳුනාගෙන නිවැරදි කළ පසු Suspense Account එක
+                    අවසන් කළ යුතුය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 27 -->
+
         <div class="activity">
+
             <strong>Activity 27:</strong>
             දෝෂ 3ක් ලබා දී ඒවා Trial Balance agreement එකට බලපානවාදැයි වර්ගීකරණය කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="27"
+                    onclick="completeActivity10(27)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-27"
+                    onclick="showActivityAnswer10(27)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-27"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    1. එක පැත්තක් පමණක් posting කිරීම — බලපායි.<br>
+                    2. Furniture වෙනුවට Purchases Account භාවිතා කිරීම —
+                    බල නොපායි.<br>
+                    3. Debit amount එකක් වැරදි ලෙස අඩුවෙන් posting කිරීම —
+                    බලපායි.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 28 -->
+
         <div class="activity">
+
             <strong>Activity 28:</strong>
             Suspense Account එකේ Debit සහ Credit entries ලබා දී මුල් Trial Balance difference එක සොයන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="28"
+                    onclick="completeActivity10(28)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-28"
+                    onclick="showActivityAnswer10(28)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-28"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Suspense Account හි ශේෂය Trial Balance එකේ
+                    මුල් Debit/Credit difference එක නියෝජනය කරයි.
+                    උදාහරණයක් ලෙස Suspense Credit balance රු. 5,000ක් නම්
+                    මුල් Trial Balance difference = රු. 5,000.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 29 -->
+
         <div class="activity">
+
             <strong>Activity 29:</strong>
             ගනුදෙනු 8ක් ලබාගෙන Ledger Accounts සකස් කර Trial Balance එකක් සකස් කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="29"
+                    onclick="completeActivity10(29)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-29"
+                    onclick="showActivityAnswer10(29)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-29"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    පළමුව ගනුදෙනු 8 හඳුනාගෙන අදාළ Ledger Accounts වල
+                    Debit සහ Credit entries සටහන් කරන්න.
+                    පසුව එක් එක් Ledger Account එකේ closing balance
+                    ලබාගෙන Trial Balance එකට ඇතුළත් කරන්න.
+                    අවසානයේ Total Debit = Total Credit බව පරීක්ෂා කරන්න.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 30 -->
+
         <div class="activity">
+
             <strong>Activity 30:</strong>
             Purchase Journal, Sales Journal, General Journal, Ledger,
             Trial Balance සහ Error Correction යන සියලුම කොටස් ඇතුළත්
             සම්පූර්ණ ව්‍යාපාරික ගිණුම් අභ්‍යාසයක් සම්පූර්ණ කරන්න.
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="30"
+                    onclick="completeActivity10(30)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-30"
+                    onclick="showActivityAnswer10(30)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-30"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    1. Credit purchases → Purchase Journal.<br>
+                    2. Credit sales → Sales Journal.<br>
+                    3. විශේෂ ගනුදෙනු හා correction entries →
+                    General Journal.<br>
+                    4. අදාළ accounts වලට Ledger posting කරන්න.<br>
+                    5. Ledger balances මත Trial Balance සකස් කරන්න.<br>
+                    6. Trial Balance එක පරීක්ෂා කර errors හඳුනාගන්න.<br>
+                    7. අවශ්‍ය නම් Suspense Account භාවිතා කර
+                    correcting entries සටහන් කරන්න.<br>
+                    8. අවසානයේ Trial Balance එක නැවත පරීක්ෂා කරන්න.
+                </div>
+
+            </div>
+
         </div>
+
 
     </section>
 
@@ -1540,6 +2742,38 @@
     </section>
 
 
+    <div
+        style="
+            text-align:center;
+            margin:25px 0;
+        "
+    >
+
+        <a
+            href="lessons.html"
+            style="
+                color:gold;
+                font-weight:bold;
+            "
+        >
+            ← Back to Lessons
+        </a>
+
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        <a
+            href="dashboard.html"
+            style="
+                color:gold;
+                font-weight:bold;
+            "
+        >
+            📊 Dashboard
+        </a>
+
+    </div>
+
+
 </main>
 
 
@@ -1556,133 +2790,465 @@
 
 <script>
 
-    function completeLesson10() {
-
-        let completedLessons = [];
-
-        try {
-
-            completedLessons =
-                JSON.parse(
-                    localStorage.getItem(
-                        "uez_completed_lessons"
-                    )
-                ) || [];
-
-        }
-
-        catch (error) {
-
-            completedLessons = [];
-
-        }
+/* =========================================
+   LESSON 10 ACTIVITY SYSTEM
+   Based on Lesson 09 Activity System
+   ========================================= */
 
 
-        if (!completedLessons.includes("lesson10")) {
+/* -----------------------------------------
+   GET COMPLETED ACTIVITIES
+   ----------------------------------------- */
 
-            completedLessons.push("lesson10");
+function getLesson10Activities() {
 
-        }
+    let completedActivities = [];
 
+    try {
 
-        localStorage.setItem(
-            "uez_completed_lessons",
-            JSON.stringify(completedLessons)
-        );
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson10_activities"
+                )
+            ) || [];
 
+    }
 
-        document.getElementById(
-            "lessonProgress"
-        ).style.width = "100%";
+    catch(error) {
 
-
-        document.getElementById(
-            "progressText"
-        ).textContent =
-            "100% completed";
-
-
-        document.getElementById(
-            "completionMessage"
-        ).textContent =
-            "✓ Lesson 10 completed successfully!";
-
-
-        document.getElementById(
-            "completeLessonButton"
-        ).textContent =
-            "✓ Lesson 10 Completed";
-
-
-        document.getElementById(
-            "completeLessonButton"
-        ).disabled = true;
+        completedActivities = [];
 
     }
 
 
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
+    if (!Array.isArray(completedActivities)) {
 
-            let completedLessons = [];
+        completedActivities = [];
 
-            try {
-
-                completedLessons =
-                    JSON.parse(
-                        localStorage.getItem(
-                            "uez_completed_lessons"
-                        )
-                    ) || [];
-
-            }
-
-            catch (error) {
-
-                completedLessons = [];
-
-            }
+    }
 
 
-            if (
-                completedLessons.includes(
-                    "lesson10"
-                )
-            ) {
+    return completedActivities;
 
-                document.getElementById(
-                    "lessonProgress"
-                ).style.width =
-                    "100%";
+}
 
 
-                document.getElementById(
-                    "progressText"
-                ).textContent =
-                    "100% completed";
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity10(activityNumber) {
+
+    let completedActivities =
+        getLesson10Activities();
 
 
-                document.getElementById(
-                    "completionMessage"
-                ).textContent =
-                    "✓ Lesson 10 completed successfully!";
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
 
 
-                document.getElementById(
-                    "completeLessonButton"
-                ).textContent =
-                    "✓ Lesson 10 Completed";
+    localStorage.setItem(
+        "uez_lesson10_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
 
 
-                document.getElementById(
-                    "completeLessonButton"
-                ).disabled = true;
+    updateActivity10(
+        activityNumber
+    );
 
-            }
+
+    updateLesson10Progress();
+
+}
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity10(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
+        );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
+
+
+    if (!completeButton) {
+
+        return;
+
+    }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   SHOW / HIDE ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer10(activityNumber) {
+
+    const completedActivities =
+        getLesson10Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   UPDATE LESSON PROGRESS
+   ----------------------------------------- */
+
+function updateLesson10Progress() {
+
+    const completedActivities =
+        getLesson10Activities();
+
+
+    const totalActivities =
+        30;
+
+
+    let percentage =
+        Math.round(
+            (
+                completedActivities.length /
+                totalActivities
+            ) * 100
+        );
+
+
+    if (percentage > 100) {
+
+        percentage = 100;
+
+    }
+
+
+    const progress =
+        document.getElementById(
+            "lessonProgress"
+        );
+
+
+    const progressText =
+        document.getElementById(
+            "progressText"
+        );
+
+
+    if (progress) {
+
+        progress.style.width =
+            percentage + "%";
+
+    }
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            percentage +
+            "% completed";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson10Activities() {
+
+    const completedActivities =
+        getLesson10Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity10(
+                activityNumber
+            );
 
         }
     );
+
+
+    updateLesson10Progress();
+
+}
+
+
+/* =========================================
+   LESSON COMPLETION SYSTEM
+   ========================================= */
+
+function completeLesson10() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson10"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson10"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    alert(
+        "Lesson 10 completed successfully! 🎉"
+    );
+
+
+    window.location.href =
+        "lessons.html";
+
+}
+
+
+/* -----------------------------------------
+   RESTORE LESSON COMPLETION
+   ----------------------------------------- */
+
+function restoreLesson10Completion() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        completedLessons.includes(
+            "lesson10"
+        )
+    ) {
+
+        const progress =
+            document.getElementById(
+                "lessonProgress"
+            );
+
+
+        const progressText =
+            document.getElementById(
+                "progressText"
+            );
+
+
+        const completionMessage =
+            document.getElementById(
+                "completionMessage"
+            );
+
+
+        const completeButton =
+            document.getElementById(
+                "completeLessonButton"
+            );
+
+
+        if (progress) {
+
+            progress.style.width =
+                "100%";
+
+        }
+
+
+        if (progressText) {
+
+            progressText.textContent =
+                "100% completed";
+
+        }
+
+
+        if (completionMessage) {
+
+            completionMessage.textContent =
+                "✓ Lesson 10 completed successfully!";
+
+        }
+
+
+        if (completeButton) {
+
+            completeButton.textContent =
+                "✓ Lesson 10 Completed";
+
+            completeButton.disabled =
+                true;
+
+        }
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   PAGE LOAD
+   ----------------------------------------- */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        restoreLesson10Activities();
+
+        restoreLesson10Completion();
+
+    }
+);
 
 </script>
 
