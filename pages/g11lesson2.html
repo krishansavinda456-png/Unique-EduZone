@@ -59,8 +59,7 @@ header{
     top:0;
     z-index:1000;
     backdrop-filter:blur(12px);
-    box-shadow:
-        0 4px 25px rgba(0,0,0,.45);
+    box-shadow:0 4px 25px rgba(0,0,0,.45);
 }
 
 .header-inner{
@@ -190,9 +189,6 @@ header{
         0 15px 45px rgba(0,0,0,.55);
 }
 
-
-/* Decorative gold glow */
-
 .hero::before{
 
     content:"";
@@ -248,8 +244,6 @@ header{
     font-weight:800;
 
     margin-bottom:8px;
-
-    letter-spacing:.2px;
 }
 
 .hero p{
@@ -299,7 +293,6 @@ header{
 
     transition:
         border-color .25s ease,
-        transform .25s ease,
         box-shadow .25s ease;
 }
 
@@ -311,11 +304,6 @@ header{
     box-shadow:
         0 12px 35px rgba(0,0,0,.48);
 }
-
-
-/* =========================================================
-   SECTION HEADINGS
-========================================================= */
 
 .lesson-box h2{
 
@@ -379,7 +367,7 @@ header{
 
 
 /* =========================================================
-   HIGHLIGHT BOX
+   HIGHLIGHT
 ========================================================= */
 
 .highlight{
@@ -409,13 +397,9 @@ header{
     margin:18px 0;
 
     color:#f2f2f2;
-
-    box-shadow:
-        inset 0 0 20px rgba(212,175,55,.025);
 }
 
 .highlight strong{
-
     color:#d4af37;
 }
 
@@ -475,10 +459,7 @@ header{
 }
 
 .card strong{
-
     color:#d4af37;
-
-    font-size:16px;
 }
 
 
@@ -533,36 +514,20 @@ th{
     color:#d4af37;
 
     font-weight:800;
-
-    font-size:15px;
 }
 
 tr:last-child td{
-
     border-bottom:none;
 }
 
 th:last-child,
 td:last-child{
-
     border-right:none;
-}
-
-tbody tr{
-
-    transition:
-        background .2s ease;
-}
-
-tbody tr:hover{
-
-    background:
-        rgba(212,175,55,.045);
 }
 
 
 /* =========================================================
-   ACTIVITIES SECTION
+   ACTIVITIES
 ========================================================= */
 
 .activities-title{
@@ -578,27 +543,17 @@ tbody tr:hover{
     margin-bottom:8px !important;
 }
 
-
-/* =========================================================
-   ACTIVITY CARD
-========================================================= */
-
 .activity{
 
-    background:
-        linear-gradient(
-            145deg,
-            #181818,
-            #121212
-        );
+    background:#191919;
 
-    border:1px solid #303030;
+    border:1px solid #333;
 
-    border-radius:16px;
+    border-radius:14px;
 
-    padding:21px;
+    padding:20px;
 
-    margin:18px 0;
+    margin:16px 0;
 
     transition:
         border-color .25s ease,
@@ -608,8 +563,7 @@ tbody tr:hover{
 
 .activity:hover{
 
-    border-color:
-        rgba(212,175,55,.65);
+    border-color:#d4af37;
 
     transform:translateY(-2px);
 
@@ -617,163 +571,93 @@ tbody tr:hover{
         0 10px 28px rgba(0,0,0,.4);
 }
 
-
-/* =========================================================
-   ACTIVITY NUMBER
-========================================================= */
-
 .activity-number{
 
-    display:inline-block;
+    color:#d4af37;
 
-    color:#080808;
+    font-weight:bold;
 
-    background:#d4af37;
+    font-size:17px;
 
-    padding:4px 12px;
-
-    border-radius:20px;
-
-    font-weight:800;
-
-    font-size:14px;
-
-    margin-bottom:10px;
+    margin-bottom:6px;
 }
-
-
-/* =========================================================
-   ACTIVITY TITLE
-========================================================= */
 
 .activity h3{
 
-    color:#f1cc55;
+    color:#ffd95a;
 
-    margin:5px 0 12px;
-
-    font-size:19px;
+    margin:5px 0 10px;
 }
-
-
-/* =========================================================
-   ACTIVITY TASK
-========================================================= */
 
 .activity-task{
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(212,175,55,.11),
-            rgba(212,175,55,.035)
-        );
+    background:#211d0e;
 
     border-left:4px solid #d4af37;
 
-    border-radius:9px;
+    padding:13px;
 
-    padding:15px 16px;
+    border-radius:8px;
 
-    margin:13px 0;
-
-    color:#eeeeee;
-}
-
-.activity-task strong{
-
-    color:#d4af37;
+    margin:12px 0;
 }
 
 .activity ul{
 
     padding-left:25px;
 
-    margin-top:9px;
+    margin-top:8px;
 }
 
 .activity li{
-
     margin:5px 0;
 }
 
 
 /* =========================================================
-   ACTIVITY COMPLETE BUTTON
+   ACTIVITY COMPLETE
 ========================================================= */
 
 .activity-complete-btn{
 
     margin-top:15px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #e5c55b
-        );
+    background:#d4af37;
 
     color:#080808;
 
-    border:1px solid #d4af37;
+    border:none;
 
-    padding:10px 19px;
+    padding:10px 18px;
 
-    border-radius:9px;
+    border-radius:8px;
 
-    font-weight:800;
+    font-weight:bold;
 
     cursor:pointer;
 
-    box-shadow:
-        0 4px 12px rgba(212,175,55,.15);
-
     transition:
         background .2s ease,
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .2s ease;
 }
 
 .activity-complete-btn:hover{
 
-    background:
-        linear-gradient(
-            135deg,
-            #f3d36a,
-            #d4af37
-        );
+    background:#ffd95a;
 
     transform:translateY(-2px);
-
-    box-shadow:
-        0 7px 18px rgba(212,175,55,.25);
 }
-
-
-/* =========================================================
-   COMPLETED ACTIVITY
-========================================================= */
 
 .activity-complete-btn.completed{
 
-    background:
-        linear-gradient(
-            135deg,
-            #2e7d32,
-            #3f9644
-        );
+    background:#2e7d32;
 
     color:#fff;
 
-    border-color:#2e7d32;
-
     cursor:default;
-
-    box-shadow:none;
 }
 
 .activity-complete-btn:disabled{
-
     opacity:1;
 }
 
@@ -783,8 +667,7 @@ tbody tr:hover{
 ========================================================= */
 
 .activity-answer{
-
-    margin-top:13px;
+    margin-top:12px;
 }
 
 .activity-answer summary{
@@ -793,42 +676,27 @@ tbody tr:hover{
 
     color:#d4af37;
 
-    font-weight:800;
+    font-weight:bold;
 
     padding:8px 0;
-
-    transition:
-        color .2s ease;
-}
-
-.activity-answer summary:hover{
-
-    color:#f3d36a;
 }
 
 .activity-answer p{
 
-    background:#0d0d0d;
+    background:#111;
 
-    border:1px solid #303030;
+    border:1px solid #333;
 
-    border-radius:9px;
+    border-radius:8px;
 
-    padding:15px;
+    padding:12px;
 
     margin-top:8px;
-
-    color:#eaeaea;
-}
-
-.activity-answer strong{
-
-    color:#d4af37;
 }
 
 
 /* =========================================================
-   QUIZ BUTTON
+   QUIZ
 ========================================================= */
 
 .quiz-button{
@@ -836,13 +704,11 @@ tbody tr:hover{
     margin-top:17px;
 
     padding:11px 24px;
-
-    font-size:15px;
 }
 
 
 /* =========================================================
-   LESSON COMPLETE BUTTON
+   LESSON COMPLETE
 ========================================================= */
 
 .lesson-complete-btn{
@@ -859,12 +725,7 @@ tbody tr:hover{
 
     border-radius:11px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #e5c55b
-        );
+    background:#d4af37;
 
     color:#080808;
 
@@ -874,55 +735,30 @@ tbody tr:hover{
 
     cursor:pointer;
 
-    box-shadow:
-        0 5px 18px rgba(212,175,55,.15);
-
     transition:
         background .2s ease,
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .2s ease;
 }
 
 .lesson-complete-btn:hover{
 
-    background:
-        linear-gradient(
-            135deg,
-            #f3d36a,
-            #d4af37
-        );
+    background:#f3d36a;
 
     transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 24px rgba(212,175,55,.25);
 }
-
-
-/* =========================================================
-   LESSON COMPLETED
-========================================================= */
 
 .lesson-complete-btn.completed{
 
-    background:
-        linear-gradient(
-            135deg,
-            #2e7d32,
-            #3f9644
-        );
+    background:#2e7d32;
 
     color:#fff;
 
     border-color:#2e7d32;
 
     cursor:default;
-
-    box-shadow:none;
 }
 
 .lesson-complete-btn:disabled{
-
     opacity:1;
 }
 
@@ -930,11 +766,11 @@ tbody tr:hover{
 
     text-align:center;
 
-    margin-top:11px;
+    margin-top:10px;
 
     color:#7cff7c;
 
-    font-weight:800;
+    font-weight:bold;
 }
 
 
@@ -957,50 +793,6 @@ footer{
     font-size:14px;
 }
 
-footer::first-line{
-
-    color:#aaa;
-}
-
-
-/* =========================================================
-   TEXT SELECTION
-========================================================= */
-
-::selection{
-
-    background:#d4af37;
-
-    color:#080808;
-}
-
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar{
-
-    width:9px;
-}
-
-::-webkit-scrollbar-track{
-
-    background:#080808;
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#3a3218;
-
-    border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#d4af37;
-}
-
 
 /* =========================================================
    RESPONSIVE
@@ -1009,67 +801,49 @@ footer::first-line{
 @media(max-width:750px){
 
     .container{
-
         width:94%;
-
         margin-top:25px;
     }
 
     .hero{
-
         padding:32px 20px;
-
         border-radius:18px;
     }
 
     .hero h1{
-
         font-size:27px;
     }
 
     .hero p{
-
         font-size:16px;
     }
 
     .lesson-box{
-
         padding:22px 19px;
-
         border-radius:16px;
     }
 
     .lesson-box h2{
-
         font-size:21px;
     }
 
     .grid{
-
         grid-template-columns:1fr;
     }
 
     table{
-
         display:block;
-
         overflow-x:auto;
-
-        white-space:normal;
     }
 
     th,
     td{
-
         min-width:150px;
-
         padding:11px 10px;
-
         font-size:14px;
     }
 
     .activity{
-
         padding:17px;
     }
 
@@ -1079,70 +853,42 @@ footer::first-line{
 @media(max-width:500px){
 
     header{
-
         padding:11px 4%;
     }
 
     .logo img{
-
         width:42px;
-
         height:42px;
     }
 
     .logo-text{
-
         font-size:18px;
     }
 
     .back-btn{
-
         padding:7px 13px;
-
         font-size:13px;
     }
 
     .hero h1{
-
         font-size:24px;
     }
 
     .hero{
-
         padding:28px 16px;
     }
 
     .lesson-box{
-
         padding:19px 16px;
     }
 
     .activity-complete-btn{
-
         width:100%;
-
         padding:11px;
     }
 
     .quiz-button{
-
         width:100%;
-    }
-
-}
-
-
-/* =========================================================
-   ACCESSIBILITY / REDUCED MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *{
-
-        scroll-behavior:auto !important;
-
-        transition:none !important;
     }
 
 }
@@ -1154,10 +900,6 @@ footer::first-line{
 
 <body>
 
-
-<!-- =========================================
-     HEADER
-========================================= -->
 
 <header>
 
@@ -1193,10 +935,6 @@ class="back-btn">
 <div class="container">
 
 
-<!-- =========================================
-     HERO
-========================================= -->
-
 <section class="hero">
 
 <h1>
@@ -1226,47 +964,33 @@ Lesson 2 Quiz →
 
 
 
-<!-- =========================================
-     2.1 MANAGEMENT
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 2.1 කළමනාකරණය හැඳින්වීම
 </h2>
 
-
 <p>
-
 වර්තමාන ආර්ථික හා සමාජ සංවර්ධනයත්
 සමඟ පුළුල් වූ මිනිස් අවශ්‍යතා හා
 වුවමනා සපුරාලීම සඳහා ලොව පුරා
 ව්‍යාපාර විශාල සංඛ්‍යාවක් බිහි වී ඇත.
-
 </p>
 
-
 <p>
-
 එහෙත් සෑම ව්‍යාපාරයක්ම සාර්ථක ලෙස
 ක්‍රියාත්මක නොවේ. ව්‍යාපාරයක
 සාර්ථකත්වය රඳා පවතින්නේ එහි
 අරමුණු කොතෙක් දුරට සාක්ෂාත් කරගන්නේද
 සහ සම්පත් කෙතරම් හොඳින් භාවිත
 කරන්නේද යන්න මතය.
-
 </p>
 
-
 <p>
-
 ශ්‍රමය, අමුද්‍රව්‍ය, මුදල් සහ අනෙකුත්
 සම්පත් සීමිත බැවින් ඒවා අපතේ නොයවා
 උපරිම ප්‍රයෝජනය ලබාගත යුතුය.
-
 </p>
-
 
 <div class="highlight">
 
@@ -1280,7 +1004,6 @@ Lesson 2 Quiz →
 මඟපෙන්වන්නේ කළමනාකරණයයි.
 
 </div>
-
 
 <div class="card">
 
@@ -1304,28 +1027,20 @@ Lesson 2 Quiz →
 
 
 
-<!-- =========================================
-     MEANING
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 කළමනාකරණයේ අර්ථය
 </h2>
 
-
 <p>
-
 කළමනාකරණය යනු ව්‍යාපාර අරමුණක්
 සාර්ථකව ඉටුකර ගැනීම සඳහා පවතින
 සම්පත් කාර්යක්ෂමව යොදා ගනිමින්
 ව්‍යාපාරය සැලසුම් කිරීම,
 සංවිධානය කිරීම, මෙහෙයවීම සහ
 පාලනය කිරීම සම්බන්ධ වූ ක්‍රියාවලියකි.
-
 </p>
-
 
 <div class="grid">
 
@@ -1362,24 +1077,16 @@ Lesson 2 Quiz →
 
 
 
-<!-- =========================================
-     FOUR FUNCTIONS
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 2.2 කළමනාකරණ කාර්යයන් 04
 </h2>
 
-
 <p>
-
 කළමනාකරණ ක්‍රියාවලියේ ප්‍රධාන
 කාර්යයන් හතරක් ඇත.
-
 </p>
-
 
 <table>
 
@@ -1399,7 +1106,6 @@ English
 
 </tr>
 
-
 <tr>
 
 <td>
@@ -1416,7 +1122,6 @@ Planning
 </td>
 
 </tr>
-
 
 <tr>
 
@@ -1435,7 +1140,6 @@ Organizing
 
 </tr>
 
-
 <tr>
 
 <td>
@@ -1453,7 +1157,6 @@ Directing
 </td>
 
 </tr>
-
 
 <tr>
 
@@ -1478,60 +1181,40 @@ Controlling
 
 
 
-<!-- =========================================
-     PLANNING
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 සැලසුම්කරණය – Planning
 </h2>
 
-
 <p>
-
 ව්‍යාපාරයක අරමුණු තීරණය කිරීම
 සහ එම අරමුණු ඉටුකර ගැනීම සඳහා
 සුදුසු ක්‍රියාමාර්ග තීරණය කිරීමේ
 ක්‍රියාවලිය සැලසුම්කරණයයි.
-
 </p>
-
 
 <h3>
 සැලසුම්කරණයට ඇතුළත් කරුණු
 </h3>
 
-
 <ul>
 
-<li>
-අරමුණු තීරණය කිරීම
-</li>
+<li>අරමුණු තීරණය කිරීම</li>
 
-<li>
-අරමුණු ඉටුකර ගැනීමේ ක්‍රම
-තීරණය කිරීම
-</li>
+<li>අරමුණු ඉටුකර ගැනීමේ ක්‍රම
+තීරණය කිරීම</li>
 
-<li>
-නිෂ්පාදනය හා අලෙවිකරණය සිදුකරන
-ආකාරය තීරණය කිරීම
-</li>
+<li>නිෂ්පාදනය හා අලෙවිකරණය සිදුකරන
+ආකාරය තීරණය කිරීම</li>
 
-<li>
-අවශ්‍ය සම්පත් හා සේවකයන්
-තීරණය කිරීම
-</li>
+<li>අවශ්‍ය සම්පත් හා සේවකයන්
+තීරණය කිරීම</li>
 
-<li>
-සම්පත් ලබාගන්නා ආකාරය
-තීරණය කිරීම
-</li>
+<li>සම්පත් ලබාගන්නා ආකාරය
+තීරණය කිරීම</li>
 
 </ul>
-
 
 <div class="highlight">
 
@@ -1553,49 +1236,32 @@ Controlling
 
 
 
-<!-- =========================================
-     ORGANIZING
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 සංවිධායකරණය – Organizing
 </h2>
 
-
 <p>
-
 සැලසුම් කළ ක්‍රියාමාර්ග ක්‍රියාත්මක
 කිරීමට අවශ්‍ය සම්පත්, තනතුරු,
 වැඩ සහ වගකීම් නිසි ලෙස
 බෙදාහැරීම හා සකස් කිරීම
 සංවිධායකරණයයි.
-
 </p>
-
 
 <ul>
 
-<li>
-කළමනාකරුවන් පත් කිරීම
-</li>
+<li>කළමනාකරුවන් පත් කිරීම</li>
 
-<li>
-අදාළ සේවකයන් හා සම්පත්
-ලබාදීම
-</li>
+<li>අදාළ සේවකයන් හා සම්පත්
+ලබාදීම</li>
 
-<li>
-වැඩ බෙදාහැරීම
-</li>
+<li>වැඩ බෙදාහැරීම</li>
 
-<li>
-වගකීම් හා බලතල පැවරීම
-</li>
+<li>වගකීම් හා බලතල පැවරීම</li>
 
 </ul>
-
 
 <div class="highlight">
 
@@ -1615,28 +1281,20 @@ Controlling
 
 
 
-<!-- =========================================
-     DIRECTING
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 මෙහෙයවීම – Directing
 </h2>
 
-
 <p>
-
 සැලසුම් කළ කටයුතු ක්‍රියාත්මක
 කිරීමේදී මානව සම්පත් නිසි ලෙස
 හැසිරවීම, තොරතුරු හා උපදෙස්
 ලබාදීම, සේවකයන්ට නායකත්වය
 ලබාදීම සහ ඔවුන් කාර්යයන්
 ඉටු කිරීමට පෙළඹවීම මෙහෙයවීමයි.
-
 </p>
-
 
 <ul>
 
@@ -1660,27 +1318,19 @@ Controlling
 
 
 
-<!-- =========================================
-     CONTROLLING
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 පාලනය – Controlling
 </h2>
 
-
 <p>
-
 සැලසුම් කළ ආකාරයට ව්‍යාපාර
 කටයුතු සිදුවේදැයි පරීක්ෂා කිරීම,
 අඩුපාඩු හඳුනාගැනීම සහ ඒවා
 නිවැරදි කිරීමට අවශ්‍ය පියවර
 ගැනීම පාලනයයි.
-
 </p>
-
 
 <ul>
 
@@ -1707,7 +1357,6 @@ Controlling
 
 </ul>
 
-
 <div class="highlight">
 
 <strong>
@@ -1732,9 +1381,9 @@ Controlling
 
 
 
-<!-- =========================================
+<!-- =========================================================
      ACTIVITIES
-========================================= -->
+========================================================= -->
 
 <section class="lesson-box">
 
@@ -1742,20 +1391,14 @@ Controlling
 ක්‍රියාකාරකම් – Activities
 </h2>
 
-
 <p>
-
 පහත ක්‍රියාකාරකම් මඟින් පාඩම තුළ
 ඉගෙනගත් කළමනාකරණ සංකල්ප
 ප්‍රායෝගිකව භාවිත කර බලන්න.
-
 </p>
 
 
-
-<!-- =========================================
-     ACTIVITY 01
-========================================= -->
+<!-- ACTIVITY 01 -->
 
 <div class="activity">
 
@@ -1766,7 +1409,6 @@ Controlling
 <h3>
 කළමනාකරණ කාර්යයන් හඳුනාගනිමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -1782,7 +1424,6 @@ Controlling
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -1791,7 +1432,6 @@ onclick="completeActivity(1,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -1831,9 +1471,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 02
-========================================= -->
+<!-- ACTIVITY 02 -->
 
 <div class="activity">
 
@@ -1844,7 +1482,6 @@ style="display:none;">
 <h3>
 පාසල් වාණිජ දිනය
 </h3>
-
 
 <div class="activity-task">
 
@@ -1859,7 +1496,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -1868,7 +1504,6 @@ onclick="completeActivity(2,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -1910,9 +1545,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 03
-========================================= -->
+<!-- ACTIVITY 03 -->
 
 <div class="activity">
 
@@ -1923,7 +1556,6 @@ style="display:none;">
 <h3>
 සම්පත් කාර්යක්ෂමව භාවිත කරමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -1939,7 +1571,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -1948,7 +1579,6 @@ onclick="completeActivity(3,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -1989,9 +1619,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 04
-========================================= -->
+<!-- ACTIVITY 04 -->
 
 <div class="activity">
 
@@ -2002,7 +1630,6 @@ style="display:none;">
 <h3>
 සාර්ථකත්වය සහ කාර්යක්ෂමතාව
 </h3>
-
 
 <div class="activity-task">
 
@@ -2015,7 +1642,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2024,7 +1650,6 @@ onclick="completeActivity(4,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2054,9 +1679,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 05
-========================================= -->
+<!-- ACTIVITY 05 -->
 
 <div class="activity">
 
@@ -2067,7 +1690,6 @@ style="display:none;">
 <h3>
 ඔබ කැමති ව්‍යාපාරයක් තෝරමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -2081,7 +1703,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2090,7 +1711,6 @@ onclick="completeActivity(5,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2136,9 +1756,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 06
-========================================= -->
+<!-- ACTIVITY 06 -->
 
 <div class="activity">
 
@@ -2149,7 +1767,6 @@ style="display:none;">
 <h3>
 සැලසුම්කරණය හඳුනාගනිමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -2167,7 +1784,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2176,7 +1792,6 @@ onclick="completeActivity(6,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2201,9 +1816,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 07
-========================================= -->
+<!-- ACTIVITY 07 -->
 
 <div class="activity">
 
@@ -2214,7 +1827,6 @@ style="display:none;">
 <h3>
 සංවිධායකරණය හඳුනාගනිමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -2228,7 +1840,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2237,7 +1848,6 @@ onclick="completeActivity(7,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2262,9 +1872,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 08
-========================================= -->
+<!-- ACTIVITY 08 -->
 
 <div class="activity">
 
@@ -2275,7 +1883,6 @@ style="display:none;">
 <h3>
 මෙහෙයවීම හඳුනාගනිමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -2291,7 +1898,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2300,7 +1906,6 @@ onclick="completeActivity(8,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2325,9 +1930,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 09
-========================================= -->
+<!-- ACTIVITY 09 -->
 
 <div class="activity">
 
@@ -2338,7 +1941,6 @@ style="display:none;">
 <h3>
 පාලනය හඳුනාගනිමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -2354,7 +1956,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2363,7 +1964,6 @@ onclick="completeActivity(9,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2394,9 +1994,7 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     ACTIVITY 10
-========================================= -->
+<!-- ACTIVITY 10 -->
 
 <div class="activity">
 
@@ -2407,7 +2005,6 @@ style="display:none;">
 <h3>
 කළමනාකරණ කාර්යයන් සම්පූර්ණ කරමු
 </h3>
-
 
 <div class="activity-task">
 
@@ -2435,7 +2032,6 @@ style="display:none;">
 
 </div>
 
-
 <button
 type="button"
 class="activity-complete-btn"
@@ -2444,7 +2040,6 @@ onclick="completeActivity(10,this)">
 ✓ ක්‍රියාකාරකම සම්පූර්ණ කළා
 
 </button>
-
 
 <details
 class="activity-answer"
@@ -2482,16 +2077,11 @@ style="display:none;">
 
 
 
-<!-- =========================================
-     REMEMBER
-========================================= -->
-
 <section class="lesson-box">
 
 <h2>
 මතක තබාගන්න
 </h2>
-
 
 <div class="grid">
 
@@ -2508,7 +2098,6 @@ Planning
 
 </div>
 
-
 <div class="card">
 
 <strong>
@@ -2521,7 +2110,6 @@ Organizing
 නිසි ලෙස සකස් කිරීම.
 
 </div>
-
 
 <div class="card">
 
@@ -2536,7 +2124,6 @@ Directing
 පෙළඹවීම.
 
 </div>
-
 
 <div class="card">
 
@@ -2563,11 +2150,6 @@ Lesson 2 Quiz ආරම්භ කරන්න →
 </a>
 
 
-
-<!-- =========================================
-     LESSON COMPLETE
-========================================= -->
-
 <button
 type="button"
 class="lesson-complete-btn"
@@ -2583,7 +2165,6 @@ id="lessonCompleteMessage"
 class="lesson-complete-message">
 
 </p>
-
 
 </section>
 
@@ -2601,27 +2182,22 @@ Grade 11 Business & Accounting Studies
 
 
 
-<!-- =========================================
+<!-- =========================================================
      LESSON 2 ACTIVITY + COMPLETION SYSTEM
-========================================= -->
+========================================================= -->
 
 <script>
-
-
-/*
- * =========================================
- * RESTORE SAVED DATA
- * =========================================
- */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
 
-        /* -------------------------------------
-           RESTORE ACTIVITIES
-        ------------------------------------- */
+        /*
+         * =========================================
+         * RESTORE COMPLETED ACTIVITIES
+         * =========================================
+         */
 
         let completedActivities =
             JSON.parse(
@@ -2633,7 +2209,6 @@ document.addEventListener(
 
         completedActivities.forEach(
             function (activityNumber) {
-
 
                 const button =
                     document.querySelector(
@@ -2677,9 +2252,11 @@ document.addEventListener(
 
 
 
-        /* -------------------------------------
-           RESTORE LESSON COMPLETION
-        ------------------------------------- */
+        /*
+         * =========================================
+         * RESTORE LESSON COMPLETION
+         * =========================================
+         */
 
         let completedLessons =
             JSON.parse(
@@ -2694,7 +2271,6 @@ document.addEventListener(
                 "lesson2"
             )
         ) {
-
 
             const button =
                 document.querySelector(
@@ -2749,16 +2325,16 @@ function completeActivity(
 ) {
 
 
-    /* -------------------------------------
-       SHOW ANSWER
-    ------------------------------------- */
-
     const answer =
         document.getElementById(
             "activity-answer-" +
             activityNumber
         );
 
+
+    /*
+     * SHOW ANSWER
+     */
 
     if (answer) {
 
@@ -2768,10 +2344,9 @@ function completeActivity(
     }
 
 
-
-    /* -------------------------------------
-       CHANGE BUTTON GOLD → GREEN
-    ------------------------------------- */
+    /*
+     * CHANGE BUTTON
+     */
 
     if (button) {
 
@@ -2788,10 +2363,9 @@ function completeActivity(
     }
 
 
-
-    /* -------------------------------------
-       SAVE ACTIVITY
-    ------------------------------------- */
+    /*
+     * SAVE ACTIVITY
+     */
 
     let completedActivities =
         JSON.parse(
@@ -2833,14 +2407,13 @@ function completeActivity(
 
 function completeLesson() {
 
-
     const lessonNumber =
         "lesson2";
 
 
-    /* -------------------------------------
-       GET COMPLETED LESSONS
-    ------------------------------------- */
+    /*
+     * GET COMPLETED LESSONS
+     */
 
     let completedLessons =
         JSON.parse(
@@ -2850,9 +2423,9 @@ function completeLesson() {
         ) || [];
 
 
-    /* -------------------------------------
-       MAKE SURE ARRAY
-    ------------------------------------- */
+    /*
+     * MAKE SURE ARRAY
+     */
 
     if (
         !Array.isArray(
@@ -2865,9 +2438,9 @@ function completeLesson() {
     }
 
 
-    /* -------------------------------------
-       ADD LESSON 2
-    ------------------------------------- */
+    /*
+     * ADD LESSON 2
+     */
 
     if (
         !completedLessons.includes(
@@ -2882,9 +2455,9 @@ function completeLesson() {
     }
 
 
-    /* -------------------------------------
-       SAVE
-    ------------------------------------- */
+    /*
+     * SAVE
+     */
 
     localStorage.setItem(
         "uez_completed_lessons",
@@ -2894,10 +2467,9 @@ function completeLesson() {
     );
 
 
-
-    /* -------------------------------------
-       UPDATE BUTTON
-    ------------------------------------- */
+    /*
+     * UPDATE BUTTON
+     */
 
     const button =
         document.querySelector(
@@ -2920,10 +2492,9 @@ function completeLesson() {
     }
 
 
-
-    /* -------------------------------------
-       SHOW MESSAGE
-    ------------------------------------- */
+    /*
+     * SHOW MESSAGE
+     */
 
     const message =
         document.getElementById(
