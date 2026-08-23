@@ -125,24 +125,69 @@
         }
 
         .activity-answer {
-            margin-top: 12px;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
         }
 
-        .activity-answer input,
-        .activity-answer textarea,
-        .activity-answer select {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 10px;
-            border-radius: 7px;
-            border: 1px solid #555;
-            background: #111;
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
             color: #fff;
+            cursor: default;
         }
 
-        .activity-answer textarea {
-            min-height: 80px;
-            resize: vertical;
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
         }
 
         .lesson-actions {
@@ -205,6 +250,12 @@
 
             .source-table {
                 font-size: 14px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-top: 6px;
             }
 
         }
@@ -742,11 +793,36 @@
             මූලික සටහන් පොතක් යනු කුමක්ද?
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <textarea
-                placeholder="ඔබගේ පිළිතුර මෙහි ලියන්න..."
-            ></textarea>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="1"
+                onclick="completeActivity7(1)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-1"
+                onclick="showActivityAnswer7(1)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-1"
+            >
+                <strong>පිළිතුර:</strong><br>
+                ව්‍යාපාරයක සිදුවන ගනුදෙනු ඒවායේ ස්වභාවය
+                හා වර්ගය අනුව මුලින්ම කාලානුක්‍රමිකව
+                සටහන් කිරීමට භාවිත කරන පොත්
+                මූලික සටහන් පොත් ලෙස හැඳින්වේ.
+            </div>
 
         </div>
 
@@ -767,31 +843,33 @@
             සටහන් කිරීමට භාවිත කරන පොත කුමක්ද?
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <select>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="2"
+                onclick="completeActivity7(2)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
 
-                <option>
-                    පිළිතුර තෝරන්න
-                </option>
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-2"
+                onclick="showActivityAnswer7(2)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
 
-                <option>
-                    මුදල් පොත
-                </option>
-
-                <option>
-                    ගැනුම් ජර්නලය
-                </option>
-
-                <option>
-                    විකුණුම් ජර්නලය
-                </option>
-
-                <option>
-                    පොදු ජර්නලය
-                </option>
-
-            </select>
+            <div
+                class="activity-answer"
+                id="activity-answer-2"
+            >
+                <strong>පිළිතුර:</strong><br>
+                මුදල් පොත.
+            </div>
 
         </div>
 
@@ -812,12 +890,33 @@
             භාවිත කරන මූලික සටහන් පොත නම් කරන්න.
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <input
-                type="text"
-                placeholder="පිළිතුර..."
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="3"
+                onclick="completeActivity7(3)"
             >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-3"
+                onclick="showActivityAnswer7(3)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-3"
+            >
+                <strong>පිළිතුර:</strong><br>
+                ගැනුම් ජර්නලය.
+            </div>
 
         </div>
 
@@ -838,12 +937,33 @@
             භාවිත කරන පොත නම් කරන්න.
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <input
-                type="text"
-                placeholder="පිළිතුර..."
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="4"
+                onclick="completeActivity7(4)"
             >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-4"
+                onclick="showActivityAnswer7(4)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-4"
+            >
+                <strong>පිළිතුර:</strong><br>
+                විකුණුම් ජර්නලය.
+            </div>
 
         </div>
 
@@ -864,11 +984,37 @@
             කරුණු 3ක් ලියන්න.
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <textarea
-                placeholder="කරුණු 3ක් ලියන්න..."
-            ></textarea>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="5"
+                onclick="completeActivity7(5)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-5"
+                onclick="showActivityAnswer7(5)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-5"
+            >
+                <strong>පිළිතුර:</strong><br>
+                උදාහරණ ලෙස ව්‍යාපාරයේ නම හා ලිපිනය,
+                අනුක්‍රමික අංකය, ගනුදෙනුව සිදුවූ දිනය,
+                සම්බන්ධ පාර්ශ්වය, ගනුදෙනුවේ විස්තර,
+                මූල්‍ය වටිනාකම හෝ වගකිවයුතු නිලධාරියාගේ
+                අත්සන යන කරුණු සඳහන් කළ හැක.
+            </div>
 
         </div>
 
@@ -889,31 +1035,33 @@
             ලේඛනය තෝරන්න.
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <select>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="6"
+                onclick="completeActivity7(6)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
 
-                <option>
-                    තෝරන්න
-                </option>
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-6"
+                onclick="showActivityAnswer7(6)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
 
-                <option>
-                    ගැනුම් ඉන්වොයිසිය
-                </option>
-
-                <option>
-                    ලදුපත
-                </option>
-
-                <option>
-                    සුළු මුදල් වවුචරය
-                </option>
-
-                <option>
-                    බැංකු ප්‍රකාශය
-                </option>
-
-            </select>
+            <div
+                class="activity-answer"
+                id="activity-answer-6"
+            >
+                <strong>පිළිතුර:</strong><br>
+                ගැනුම් ඉන්වොයිසිය.
+            </div>
 
         </div>
 
@@ -934,11 +1082,36 @@
             අත්සන තිබීම වැදගත් වන්නේ ඇයි?
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <textarea
-                placeholder="ඔබගේ අදහස ලියන්න..."
-            ></textarea>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="7"
+                onclick="completeActivity7(7)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-7"
+                onclick="showActivityAnswer7(7)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-7"
+            >
+                <strong>පිළිතුර:</strong><br>
+                ගනුදෙනුව සම්බන්ධ වගකීම සහ අනුමැතිය
+                තහවුරු කිරීමටත්, ගනුදෙනුව පිළිබඳ
+                වගකිවයුතු පුද්ගලයා හඳුනා ගැනීමටත්
+                අත්සන වැදගත් වේ.
+            </div>
 
         </div>
 
@@ -961,12 +1134,33 @@
             සුදුසු මූලික සටහන් පොත කුමක්ද?
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <input
-                type="text"
-                placeholder="පිළිතුර..."
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="8"
+                onclick="completeActivity7(8)"
             >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-8"
+                onclick="showActivityAnswer7(8)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-8"
+            >
+                <strong>පිළිතුර:</strong><br>
+                මුදල් පොත.
+            </div>
 
         </div>
 
@@ -986,11 +1180,36 @@
             මූලාශ්‍ර ලේඛනවල ප්‍රයෝජන 4ක් ලියන්න.
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <textarea
-                placeholder="ප්‍රයෝජන 4ක් ලියන්න..."
-            ></textarea>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="9"
+                onclick="completeActivity7(9)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-9"
+                onclick="showActivityAnswer7(9)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-9"
+            >
+                <strong>පිළිතුර:</strong><br>
+                1. ගනුදෙනුවේ සාක්ෂියක් වීම.<br>
+                2. ගනුදෙනුවේ තොරතුරු ලබා ගැනීමට හැකි වීම.<br>
+                3. ගනුදෙනු සනාථ කිරීමට හැකි වීම.<br>
+                4. ගිණුම්කරණ දෝෂ හඳුනා ගැනීමට හැකි වීම.
+            </div>
 
         </div>
 
@@ -1025,11 +1244,39 @@
             කාර්යය පැහැදිලි කරන්න.
         </p>
 
-        <div class="activity-answer">
+        <div class="activity-action-area">
 
-            <textarea
-                placeholder="විස්තර කරන්න..."
-            ></textarea>
+            <button
+                type="button"
+                class="activity-complete-btn"
+                data-activity="10"
+                onclick="completeActivity7(10)"
+            >
+                ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+            </button>
+
+            <button
+                type="button"
+                class="show-answer-btn"
+                id="answer-btn-10"
+                onclick="showActivityAnswer7(10)"
+            >
+                👁️ පිළිතුර බලන්න
+            </button>
+
+            <div
+                class="activity-answer"
+                id="activity-answer-10"
+            >
+                <strong>පිළිතුර:</strong><br>
+                1. ගනුදෙනුව – ව්‍යාපාරයේ සිදුවන ආර්ථික සිදුවීමයි.<br>
+                2. මූලාශ්‍ර ලේඛනය – ගනුදෙනුව සිදුවූ බවට
+                සාක්ෂියක් සහ අවශ්‍ය තොරතුරු සපයයි.<br>
+                3. මූලික සටහන් පොත – ගනුදෙනුව
+                මුලින්ම සුදුසු ආකාරයෙන් සටහන් කරයි.<br>
+                4. ලෙජර් ගිණුම් – මූලික සටහන් පොත්වල
+                තොරතුරු අදාළ ගිණුම්වලට පළ කරයි.
+            </div>
 
         </div>
 
@@ -1095,70 +1342,295 @@
 
 <script>
 
-    function completeLesson7() {
-
-        let completedLessons = [];
-
-        try {
-
-            completedLessons =
-                JSON.parse(
-                    localStorage.getItem(
-                        "uez_completed_lessons"
-                    )
-                ) || [];
-
-        }
-
-        catch (error) {
-
-            completedLessons = [];
-
-        }
+/* =========================================
+   LESSON 07 ACTIVITY SYSTEM
+   BASED ON LESSON 09 SYSTEM
+   ========================================= */
 
 
-        if (!Array.isArray(completedLessons)) {
+/* -----------------------------------------
+   GET COMPLETED ACTIVITIES
+   ----------------------------------------- */
 
-            completedLessons = [];
+function getLesson7Activities() {
 
-        }
+    let completedActivities = [];
+
+    try {
+
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson7_activities"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedActivities = [];
+
+    }
 
 
-        if (
-            !completedLessons.includes(
-                "lesson7"
-            )
-        ) {
+    if (!Array.isArray(completedActivities)) {
 
-            completedLessons.push(
-                "lesson7"
-            );
+        completedActivities = [];
 
-        }
+    }
 
 
-        localStorage.setItem(
-            "uez_completed_lessons",
-            JSON.stringify(
-                completedLessons
-            )
+    return completedActivities;
+
+}
+
+
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity7(activityNumber) {
+
+    let completedActivities =
+        getLesson7Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_lesson7_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+
+    updateActivity7(
+        activityNumber
+    );
+
+}
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity7(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
         );
 
 
-        const message =
-            document.getElementById(
-                "completionMessage"
-            );
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
 
 
-        if (message) {
+    if (!completeButton) {
 
-            message.style.display =
-                "block";
-
-        }
+        return;
 
     }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   SHOW / HIDE ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer7(activityNumber) {
+
+    const completedActivities =
+        getLesson7Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson7Activities() {
+
+    const completedActivities =
+        getLesson7Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity7(
+                activityNumber
+            );
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        restoreLesson7Activities();
+
+    }
+);
+
+
+/* =========================================
+   LESSON 07 COMPLETION SYSTEM
+   ========================================= */
+
+function completeLesson7() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson7"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson7"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    const message =
+        document.getElementById(
+            "completionMessage"
+        );
+
+
+    if (message) {
+
+        message.style.display =
+            "block";
+
+    }
+
+}
 
 </script>
 
