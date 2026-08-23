@@ -22,7 +22,7 @@
     <style>
 
         .lesson-page {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: auto;
             padding: 30px 20px;
         }
@@ -44,6 +44,7 @@
 
         .lesson-header h1 {
             margin: 10px 0;
+            color: gold;
         }
 
         .lesson-section {
@@ -60,7 +61,7 @@
         }
 
         .lesson-section h3 {
-            color: #fff;
+            color: #f5d76e;
         }
 
         .formula-box {
@@ -109,20 +110,121 @@
             font-weight: bold;
         }
 
-        .lesson-actions {
+
+        /* =========================================
+           ACTIVITY SYSTEM
+           ========================================= */
+
+        .activity-list li {
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .activity-box {
+            background: #111d2b;
+            border-left: 5px solid #4da3ff;
+            border-radius: 12px;
+            padding: 18px;
+            margin: 18px 0;
+        }
+
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
+            color: #fff;
+            cursor: default;
+        }
+
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
+        }
+
+
+        /* =========================================
+           LESSON COMPLETE SYSTEM
+           ========================================= */
+
+        .complete-area {
             text-align: center;
+            background: #151515;
+            border: 1px solid #444;
+            border-radius: 16px;
+            padding: 25px;
             margin-top: 30px;
         }
 
-        .quiz-button {
+        .quiz-button,
+        .complete-button {
             display: inline-block;
-            padding: 13px 25px;
-            background: gold;
-            color: #000;
+            padding: 12px 22px;
+            margin: 8px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            margin: 5px;
+        }
+
+        .quiz-button {
+            background: gold;
+            color: #000;
+        }
+
+        .complete-button {
+            background: #198754;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        .lesson-actions {
+            text-align: center;
+            margin-top: 30px;
         }
 
         .back-button {
@@ -135,6 +237,7 @@
             font-weight: bold;
             margin: 5px;
         }
+
 
         @media (max-width: 600px) {
 
@@ -149,6 +252,12 @@
 
             .formula {
                 font-size: 20px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-top: 6px;
             }
 
         }
@@ -631,7 +740,594 @@
 
 
 
-    <!-- ACTIONS -->
+    <!-- ACTIVITIES -->
+
+    <section class="lesson-section">
+
+        <h2>
+            📝 ක්‍රියාකාරකම් 10
+        </h2>
+
+        <ol class="activity-list">
+
+
+            <!-- ACTIVITY 1 -->
+
+            <li class="activity-box">
+
+                වත්කම් රු. 100,000ක් සහ වගකීම් රු. 30,000ක් නම්
+                හිමිකම සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="1"
+                        onclick="completeActivity5(1)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-1"
+                        onclick="showActivityAnswer5(1)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-1"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        හිමිකම = වත්කම් − වගකීම්<br>
+
+                        = 100,000 − 30,000<br>
+
+                        හිමිකම = <strong>රු. 70,000</strong>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 2 -->
+
+            <li class="activity-box">
+
+                හිමිකම රු. 80,000ක් සහ වගකීම් රු. 20,000ක් නම්
+                වත්කම් සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="2"
+                        onclick="completeActivity5(2)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-2"
+                        onclick="showActivityAnswer5(2)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-2"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        වත්කම් = හිමිකම + වගකීම්<br>
+
+                        = 80,000 + 20,000<br>
+
+                        වත්කම් = <strong>රු. 100,000</strong>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 3 -->
+
+            <li class="activity-box">
+
+                ව්‍යාපාරයක් රු. 150,000ක මුදලක් යොදා ආරම්භ කරන ලදී.
+                මෙම ගනුදෙනුව ගිණුම්කරණ සමීකරණයට බලපාන ආකාරය
+                දක්වන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="3"
+                        onclick="completeActivity5(3)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-3"
+                        onclick="showActivityAnswer5(3)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-3"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        වත්කම් + රු. 150,000<br>
+
+                        හිමිකම + රු. 150,000<br>
+
+                        වගකීම් = රු. 0<br><br>
+
+                        150,000 = 150,000 + 0
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 4 -->
+
+            <li class="activity-box">
+
+                ව්‍යාපාරය රු. 50,000ක බැංකු ණයක් ලබා ගත්තේ නම්
+                ගිණුම්කරණ සමීකරණයේ සිදුවන වෙනස්කම් දක්වන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="4"
+                        onclick="completeActivity5(4)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-4"
+                        onclick="showActivityAnswer5(4)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-4"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        වත්කම් + රු. 50,000<br>
+
+                        වගකීම් + රු. 50,000<br>
+
+                        හිමිකම වෙනස් නොවේ.<br><br>
+
+                        150,000 + 50,000 = 150,000 + 50,000
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 5 -->
+
+            <li class="activity-box">
+
+                ව්‍යාපාරය රු. 20,000ක භාණ්ඩ මුදලට මිලදී ගත්තේ නම්
+                වත්කම්වල සිදුවන වෙනස පැහැදිලි කරන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="5"
+                        onclick="completeActivity5(5)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-5"
+                        onclick="showActivityAnswer5(5)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-5"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        මුදල් වත්කම රු. 20,000කින් අඩු වේ.<br>
+
+                        තොග වත්කම රු. 20,000කින් වැඩි වේ.<br>
+
+                        සමස්ත වත්කම් වටිනාකම වෙනස් නොවේ.
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 6 -->
+
+            <li class="activity-box">
+
+                වත්කම් රු. 200,000ක් සහ හිමිකම රු. 140,000ක් නම්
+                වගකීම් සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="6"
+                        onclick="completeActivity5(6)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-6"
+                        onclick="showActivityAnswer5(6)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-6"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        වගකීම් = වත්කම් − හිමිකම<br>
+
+                        = 200,000 − 140,000<br>
+
+                        වගකීම් = <strong>රු. 60,000</strong>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 7 -->
+
+            <li class="activity-box">
+
+                පහත අයිතම වත්කම්, වගකීම් හෝ හිමිකම ලෙස
+                වර්ගීකරණය කරන්න:
+                මුදල්, බැංකු ණය, තොග, ගොඩනැගිලි,
+                වෙළෙඳ ගෙවිය යුතු.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="7"
+                        onclick="completeActivity5(7)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-7"
+                        onclick="showActivityAnswer5(7)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-7"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        වත්කම්:
+                        මුදල්, තොග, ගොඩනැගිලි.<br>
+
+                        වගකීම්:
+                        බැංකු ණය, වෙළෙඳ ගෙවිය යුතු.<br>
+
+                        මෙම ප්‍රශ්නයේ හිමිකමට අදාළ අයිතමයක් ලබා දී නැත.
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 8 -->
+
+            <li class="activity-box">
+
+                ආරම්භක වත්කම් රු. 300,000කි.
+                වගකීම් රු. 80,000කි.
+                ව්‍යාපාරය රු. 40,000ක ආදායමක් උපයා
+                රු. 15,000ක වියදමක් දැරීය.
+                අවසාන හිමිකම සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="8"
+                        onclick="completeActivity5(8)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-8"
+                        onclick="showActivityAnswer5(8)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-8"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        ආරම්භක හිමිකම =
+                        300,000 − 80,000 =
+                        රු. 220,000<br><br>
+
+                        ආදායම නිසා හිමිකම වැඩි වේ:
+                        220,000 + 40,000 =
+                        රු. 260,000<br><br>
+
+                        වියදම නිසා හිමිකම අඩු වේ:
+                        260,000 − 15,000 =
+                        <strong>රු. 245,000</strong>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 9 -->
+
+            <li class="activity-box">
+
+                ව්‍යාපාරයක වත්කම් රු. 500,000ක් සහ
+                වගකීම් රු. 180,000ක් වේ.
+                ව්‍යාපාරය රු. 50,000ක බැංකු ණයක් ලබා ගත්තේ නම්
+                නව වත්කම්, වගකීම් සහ හිමිකම සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="9"
+                        onclick="completeActivity5(9)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-9"
+                        onclick="showActivityAnswer5(9)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-9"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        ආරම්භක හිමිකම =
+                        500,000 − 180,000 =
+                        රු. 320,000<br><br>
+
+                        නව වත්කම් =
+                        500,000 + 50,000 =
+                        <strong>රු. 550,000</strong><br>
+
+                        නව වගකීම් =
+                        180,000 + 50,000 =
+                        <strong>රු. 230,000</strong><br>
+
+                        හිමිකම =
+                        <strong>රු. 320,000</strong><br><br>
+
+                        550,000 = 320,000 + 230,000
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+
+            <!-- ACTIVITY 10 -->
+
+            <li class="activity-box">
+
+                පහත ගනුදෙනු අනුපිළිවෙළින් සලකා
+                සෑම ගනුදෙනුවකටම පසු ගිණුම්කරණ සමීකරණය
+                සකස් කරන්න.
+
+                <br><br>
+
+                1. හිමිකරු රු. 200,000ක් මුදලින් යොදවයි.<br>
+
+                2. රු. 50,000ක බැංකු ණයක් ලබා ගනී.<br>
+
+                3. රු. 30,000ක භාණ්ඩ මුදලට මිලදී ගනී.<br>
+
+                4. රු. 20,000ක ආදායමක් උපයයි.<br>
+
+                5. රු. 5,000ක වියදමක් ගෙවයි.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="10"
+                        onclick="completeActivity5(10)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-10"
+                        onclick="showActivityAnswer5(10)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-10"
+                    >
+
+                        <strong>පිළිතුර:</strong><br>
+
+                        1. 200,000 = 200,000 + 0<br><br>
+
+                        2. 250,000 = 200,000 + 50,000<br><br>
+
+                        3. සමස්ත වත්කම් නොවෙනස් වේ:
+                        250,000 = 200,000 + 50,000<br><br>
+
+                        4. ආදායම නිසා හිමිකම 20,000කින් වැඩි වේ:
+                        270,000 = 220,000 + 50,000<br><br>
+
+                        5. වියදම නිසා හිමිකම 5,000කින් අඩු වේ:
+                        265,000 = 215,000 + 50,000<br><br>
+
+                        අවසාන ගිණුම්කරණ සමීකරණය:
+                        <strong>
+                            වත්කම් රු. 265,000 =
+                            හිමිකම රු. 215,000 +
+                            වගකීම් රු. 50,000
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+        </ol>
+
+    </section>
+
+
+
+    <!-- QUIZ AND LESSON COMPLETE -->
+
+    <section class="complete-area">
+
+        <h2>
+            🎯 Lesson 05 Quiz
+        </h2>
+
+        <p>
+            පාඩම අවසන් කිරීමෙන් පසු MCQ Quiz එකට සහභාගී වන්න.
+        </p>
+
+        <a
+            href="quiz.html?lesson=5"
+            class="quiz-button"
+        >
+            📝 Lesson 5 MCQ කරන්න
+        </a>
+
+        <br>
+
+        <button
+            type="button"
+            class="complete-button"
+            onclick="completeLesson5()"
+        >
+            ✅ Complete Lesson 05
+        </button>
+
+    </section>
+
+
+
+    <!-- ORIGINAL ACTIONS -->
 
     <div class="lesson-actions">
 
@@ -663,6 +1359,298 @@
     </p>
 
 </footer>
+
+
+
+<script>
+
+
+/* =========================================
+   LESSON 05 ACTIVITY SYSTEM
+   ========================================= */
+
+
+/* -----------------------------------------
+   GET COMPLETED ACTIVITIES
+   ----------------------------------------- */
+
+function getLesson5Activities() {
+
+    let completedActivities = [];
+
+    try {
+
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson5_activities"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedActivities = [];
+
+    }
+
+
+    if (!Array.isArray(completedActivities)) {
+
+        completedActivities = [];
+
+    }
+
+
+    return completedActivities;
+
+}
+
+
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity5(activityNumber) {
+
+    let completedActivities =
+        getLesson5Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_lesson5_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+
+    updateActivity5(
+        activityNumber
+    );
+
+}
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity5(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
+        );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
+
+
+    if (!completeButton) {
+
+        return;
+
+    }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   SHOW ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer5(activityNumber) {
+
+    const completedActivities =
+        getLesson5Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson5Activities() {
+
+    const completedActivities =
+        getLesson5Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity5(
+                activityNumber
+            );
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        restoreLesson5Activities();
+
+    }
+);
+
+
+/* =========================================
+   LESSON COMPLETION SYSTEM
+   ========================================= */
+
+function completeLesson5() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson5"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson5"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    alert(
+        "Lesson 05 completed successfully! 🎉"
+    );
+
+
+    window.location.href =
+        "lessons.html";
+
+}
+
+
+</script>
 
 
 </body>
