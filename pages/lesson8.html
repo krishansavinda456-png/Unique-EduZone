@@ -235,6 +235,70 @@
             opacity: 0.85;
         }
 
+
+        /* =========================================
+           ACTIVITY SYSTEM
+           ========================================= */
+
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
+            color: #fff;
+            cursor: default;
+        }
+
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            margin-left: 8px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
+        }
+
+
         @media (max-width: 650px) {
 
             .lesson-page {
@@ -253,6 +317,13 @@
 
             .formula {
                 font-size: 19px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 6px;
             }
 
         }
@@ -1579,6 +1650,8 @@
         </h2>
 
 
+        <!-- ACTIVITY 01 -->
+
         <div class="activity">
 
             <div class="activity-number">
@@ -1589,8 +1662,42 @@
                 මුදල් පොත යන්නෙහි අර්ථය ඔබේම වචනවලින් ලියන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="1"
+                    onclick="completeActivity8(1)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-1"
+                    onclick="showActivityAnswer8(1)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-1"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ව්‍යාපාරයක සිදුවන මුදල් ලැබීම් සහ මුදල් ගෙවීම්
+                    කාලානුක්‍රමිකව වාර්තා කරන මූලික සටහන් පොත
+                    මුදල් පොත ලෙස හැඳින්වේ.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 02 -->
 
         <div class="activity">
 
@@ -1610,8 +1717,43 @@
                 විදුලි බිල රු.5,000.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="2"
+                    onclick="completeActivity8(2)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-2"
+                    onclick="showActivityAnswer8(2)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-2"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ලැබීම්: ප්‍රාග්ධනය රු.100,000 සහ
+                    විකුණුම් රු.30,000.<br>
+                    මුදල් ගෙවීම්: වැටුප් රු.20,000 සහ
+                    විදුලි බිල රු.5,000.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 03 -->
 
         <div class="activity">
 
@@ -1624,8 +1766,43 @@
                 ලදුපතක තිබිය යුතු කරුණු ලැයිස්තුගත කරන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="3"
+                    onclick="completeActivity8(3)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-3"
+                    onclick="showActivityAnswer8(3)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-3"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    ලදුපත් අංකය, දිනය, මුදල් ගෙවූ පුද්ගලයාගේ නම,
+                    ලැබුණු හේතුව, ලැබුණු මුදල,
+                    මුදලින් / චෙක්පතකින් යන ආකාරය සහ
+                    මුදල් භාරගත් අයගේ අත්සන වැනි කරුණු ඇතුළත් කළ හැකිය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 04 -->
 
         <div class="activity">
 
@@ -1638,8 +1815,45 @@
                 ගෙවීම් වවුචරයක් සකස් කරන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="4"
+                    onclick="completeActivity8(4)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-4"
+                    onclick="showActivityAnswer8(4)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-4"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    Payment Voucher – Electricity Payment<br>
+                    ගෙවීමේ හේතුව: විදුලි බිල<br>
+                    ගෙවූ මුදල: රු. 8,000<br>
+                    චෙක්පත් අංකය / ගෙවීම් ක්‍රමය සහ
+                    සකස් කළ, අනුමත කළ හා මුදල් ලබාගත් අයගේ
+                    අත්සන් ඇතුළත් කළ යුතුය.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 05 -->
 
         <div class="activity">
 
@@ -1653,8 +1867,42 @@
                 හේතුවද සඳහන් කරන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="5"
+                    onclick="completeActivity8(5)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-5"
+                    onclick="showActivityAnswer8(5)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-5"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ලැබීමක් මුදල් පොතේ
+                    <strong>හර පැත්තේ</strong> සටහන් කරයි.
+                    මුදල් වත්කම වැඩි වන බැවින් එය හර පැත්තට සටහන් කරයි.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 06 -->
 
         <div class="activity">
 
@@ -1668,8 +1916,41 @@
                 හර/බැර ලෙස සටහන් කරන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="6"
+                    onclick="completeActivity8(6)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-6"
+                    onclick="showActivityAnswer8(6)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-6"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මුදල් ගිණුම Dr. රු. 25,000<br>
+                    විකුණුම් ගිණුම Cr. රු. 25,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 07 -->
 
         <div class="activity">
 
@@ -1684,8 +1965,43 @@
                 සුළු මුදල් පොත් සටහනක් සකස් කරන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="7"
+                    onclick="completeActivity8(7)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-7"
+                    onclick="showActivityAnswer8(7)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-7"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    තැපැල් ගාස්තු = රු. 60<br>
+                    ගමන් වියදම් = රු. 70<br>
+                    පිරිසිදු කිරීමේ වියදම් = රු. 150<br>
+                    <strong>මුළු සුළු මුදල් ගෙවීම = රු. 280</strong>
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 08 -->
 
         <div class="activity">
 
@@ -1698,8 +2014,47 @@
                 වෙනස්කම් 3ක් ලියන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="8"
+                    onclick="completeActivity8(8)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-8"
+                    onclick="showActivityAnswer8(8)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-8"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    1. ලදුපත මුදල් ලැබීමක් සනාථ කරයි;
+                    ගෙවීම් වවුචරය මුදල් ගෙවීමක් සනාථ කරයි.<br>
+                    2. ලදුපත මුදල් ගෙවූ පාර්ශ්වයට නිකුත් කරයි;
+                    ගෙවීම් වවුචරය ව්‍යාපාරය තුළ ගෙවීමේ සාක්ෂියක් ලෙස
+                    සකස් කරයි.<br>
+                    3. ලදුපතේ ලැබුණු මුදල හා ලැබීමට හේතුව දැක්වෙන අතර,
+                    ගෙවීම් වවුචරයේ ගෙවීමේ හේතුව, ගෙවූ මුදල,
+                    චෙක්පත් අංකය සහ අනුමැතිය වැනි තොරතුරු ඇතුළත් වේ.
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 09 -->
 
         <div class="activity">
 
@@ -1713,8 +2068,43 @@
                 එම ගනුදෙනුවේ ගිණුම් දෙක හඳුනාගන්න.
             </p>
 
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="9"
+                    onclick="completeActivity8(9)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-9"
+                    onclick="showActivityAnswer8(9)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-9"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    මූලාශ්‍ර ලේඛනය: <strong>බැංකු තැන්පතු කුවිතාන්සිය
+                    (Bank Deposit Slip)</strong>.<br>
+                    බැංකු ගිණුම Dr. රු. 50,000<br>
+                    මුදල් ගිණුම Cr. රු. 50,000
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- ACTIVITY 10 -->
 
         <div class="activity">
 
@@ -1740,6 +2130,47 @@
                 රු. 20,000 ක භාණ්ඩ මුදලට විකිණීමක්
                 උදාහරණයට ගන්න.
             </p>
+
+            <div class="activity-action-area">
+
+                <button
+                    type="button"
+                    class="activity-complete-btn"
+                    data-activity="10"
+                    onclick="completeActivity8(10)"
+                >
+                    ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                </button>
+
+                <button
+                    type="button"
+                    class="show-answer-btn"
+                    id="answer-btn-10"
+                    onclick="showActivityAnswer8(10)"
+                >
+                    👁️ පිළිතුර බලන්න
+                </button>
+
+                <div
+                    class="activity-answer"
+                    id="activity-answer-10"
+                >
+                    <strong>පිළිතුර:</strong><br>
+                    <strong>ගනුදෙනුව:</strong>
+                    රු. 20,000 ක භාණ්ඩ මුදලට විකිණීම.<br>
+                    ↓<br>
+                    <strong>මූලාශ්‍ර ලේඛනය:</strong>
+                    මුදල් ලදුපත.<br>
+                    ↓<br>
+                    <strong>මුදල් පොත:</strong>
+                    මුදල් ලැබීම හර පැත්තේ රු. 20,000 ලෙස සටහන් කරයි.<br>
+                    ↓<br>
+                    <strong>ලෙජර් ගිණුම:</strong>
+                    මුදල් ගිණුම Dr. රු. 20,000;
+                    විකුණුම් ගිණුම Cr. රු. 20,000.
+                </div>
+
+            </div>
 
         </div>
 
@@ -1815,27 +2246,7 @@
 
         <button
             class="complete-button"
-            onclick="
-                localStorage.setItem(
-                    'uez_completed_lessons',
-                    JSON.stringify(
-                        Array.from(
-                            new Set(
-                                [
-                                    ...JSON.parse(
-                                        localStorage.getItem(
-                                            'uez_completed_lessons'
-                                        ) || '[]'
-                                    ),
-                                    'lesson8'
-                                ]
-                            )
-                        )
-                    )
-                );
-                alert('Lesson 8 Completed! ✓');
-                window.location.href='lessons.html';
-            "
+            onclick="completeLesson8()"
         >
             ✓ Complete Lesson 8
         </button>
@@ -1862,6 +2273,291 @@
     </p>
 
 </footer>
+
+
+
+<script>
+
+/* =========================================
+   LESSON 08 ACTIVITY SYSTEM
+   ========================================= */
+
+function getLesson8Activities() {
+
+    let completedActivities = [];
+
+    try {
+
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson8_activities"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedActivities = [];
+
+    }
+
+
+    if (!Array.isArray(completedActivities)) {
+
+        completedActivities = [];
+
+    }
+
+
+    return completedActivities;
+
+}
+
+
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity8(activityNumber) {
+
+    let completedActivities =
+        getLesson8Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_lesson8_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+
+    updateActivity8(
+        activityNumber
+    );
+
+}
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity8(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
+        );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
+
+
+    if (!completeButton) {
+
+        return;
+
+    }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   SHOW ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer8(activityNumber) {
+
+    const completedActivities =
+        getLesson8Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson8Activities() {
+
+    const completedActivities =
+        getLesson8Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity8(
+                activityNumber
+            );
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        restoreLesson8Activities();
+
+    }
+);
+
+
+/* =========================================
+   LESSON 08 COMPLETION SYSTEM
+   ========================================= */
+
+function completeLesson8() {
+
+    let completedLessons = [];
+
+    try {
+
+        completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (!Array.isArray(completedLessons)) {
+
+        completedLessons = [];
+
+    }
+
+
+    if (
+        !completedLessons.includes(
+            "lesson8"
+        )
+    ) {
+
+        completedLessons.push(
+            "lesson8"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    alert(
+        "Lesson 08 completed successfully! 🎉"
+    );
+
+
+    window.location.href =
+        "lessons.html";
+
+}
+
+</script>
 
 
 </body>
