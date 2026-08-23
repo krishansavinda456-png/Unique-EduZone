@@ -2332,6 +2332,26 @@ Lesson 8 Quiz ආරම්භ කරන්න →
 
 </a>
 
+<!-- =========================================
+     LESSON COMPLETE
+========================================= -->
+
+<button
+type="button"
+class="lesson-complete-btn"
+onclick="completeLesson()">
+
+✓ පාඩම සම්පූර්ණ කළා
+
+</button>
+
+
+<p
+id="lessonCompleteMessage"
+class="lesson-complete-message">
+
+</p>
+    
 
 </section>
 
@@ -2350,6 +2370,189 @@ Grade 11 Business & Accounting Studies
 
 
 <script>
+
+/*
+ * =========================================
+ * RESTORE LESSON COMPLETION
+ * =========================================
+ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        let completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+
+        if (
+            completedLessons.includes(
+                "lesson8"
+            )
+        ) {
+
+            const button =
+                document.querySelector(
+                    ".lesson-complete-btn"
+                );
+
+
+            if (button) {
+
+                button.textContent =
+                    "✓ පාඩම සම්පූර්ණයි";
+
+                button.disabled = true;
+
+                button.classList.add(
+                    "completed"
+                );
+
+            }
+
+
+            const message =
+                document.getElementById(
+                    "lessonCompleteMessage"
+                );
+
+
+            if (message) {
+
+                message.textContent =
+                    "පාඩම සාර්ථකව සම්පූර්ණ කර ඇත.";
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/*
+ * =========================================
+ * COMPLETE LESSON
+ * =========================================
+ */
+
+function completeLesson() {
+
+    const lessonNumber =
+        "lesson8";
+
+
+    /*
+     * GET COMPLETED LESSONS
+     */
+
+    let completedLessons =
+        JSON.parse(
+            localStorage.getItem(
+                "uez_completed_lessons"
+            )
+        ) || [];
+
+
+    /*
+     * MAKE SURE ARRAY
+     */
+
+    if (
+        !Array.isArray(
+            completedLessons
+        )
+    ) {
+
+        completedLessons = [];
+
+    }
+
+
+    /*
+     * ADD LESSON 8
+     */
+
+    if (
+        !completedLessons.includes(
+            lessonNumber
+        )
+    ) {
+
+        completedLessons.push(
+            lessonNumber
+        );
+
+    }
+
+
+    /*
+     * SAVE
+     */
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    /*
+     * UPDATE BUTTON
+     */
+
+    const button =
+        document.querySelector(
+            ".lesson-complete-btn"
+        );
+
+
+    if (button) {
+
+        button.textContent =
+            "✓ පාඩම සම්පූර්ණයි";
+
+        button.disabled = true;
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+
+    /*
+     * SHOW MESSAGE
+     */
+
+    const message =
+        document.getElementById(
+            "lessonCompleteMessage"
+        );
+
+
+    if (message) {
+
+        message.textContent =
+            "පාඩම සාර්ථකව සම්පූර්ණ කළා.";
+
+    }
+
+}
+
+
+
+/*
+ * =========================================
+ * SHOW SOLUTION
+ * =========================================
+ */
 
 function showSolution(id){
 
