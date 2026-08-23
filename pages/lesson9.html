@@ -256,6 +256,69 @@
             font-weight: bold;
         }
 
+
+        /* =========================================
+           ACTIVITY SYSTEM
+           ========================================= */
+
+        .activity-action-area {
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        .activity-complete-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .activity-complete-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .activity-complete-btn.completed {
+            background: #198754;
+            color: #fff;
+            cursor: default;
+        }
+
+        .show-answer-btn {
+            display: none;
+            margin-top: 10px;
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+            border-radius: 8px;
+            padding: 9px 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .show-answer-btn:hover {
+            background: rgba(56, 193, 114, 0.08);
+        }
+
+        .activity-answer {
+            display: none;
+            margin-top: 14px;
+            padding: 5px 0;
+            background: transparent;
+            color: #38c172;
+            border: none;
+            line-height: 1.8;
+        }
+
+        .activity-answer strong {
+            color: #38c172;
+        }
+
+
         @media(max-width:600px) {
 
             .lesson-page {
@@ -273,6 +336,12 @@
 
             .formula {
                 font-size: 18px;
+            }
+
+            .activity-complete-btn,
+            .show-answer-btn {
+                width: 100%;
+                margin-top: 6px;
             }
 
         }
@@ -1323,67 +1392,444 @@
 
         <ol class="activity-list">
 
-            <li class="activity-box">
-                රු. 25,000ක් මුදල් ලෙස බැංකුවේ තැන්පත් කළ විට
-                අදාළ ද්විත්ව සටහන ලියන්න.
-            </li>
+
+            <!-- ACTIVITY 1 -->
 
             <li class="activity-box">
+
+                රු. 25,000ක් මුදල් ලෙස බැංකුවේ තැන්පත් කළ විට
+                අදාළ ද්විත්ව සටහන ලියන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="1"
+                        onclick="completeActivity9(1)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-1"
+                        onclick="showActivityAnswer9(1)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-1"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        බැංකු ගිණුම Dr. රු. 25,000<br>
+                        මුදල් ගිණුම Cr. රු. 25,000
+                    </div>
+
+                </div>
+
+            </li>
+
+
+            <!-- ACTIVITY 2 -->
+
+            <li class="activity-box">
+
                 ණයගැතියෙකුගෙන් ලැබුණු රු. 12,000ක චෙක්පතක්
                 බැංකුවේ තැන්පත් කළේ නම් බැංකු ගිණුම සහ
                 ණයගැති ගිණුම සටහන් කරන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="2"
+                        onclick="completeActivity9(2)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-2"
+                        onclick="showActivityAnswer9(2)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-2"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        බැංකු ගිණුම Dr. රු. 12,000<br>
+                        ණයගැති ගිණුම Cr. රු. 12,000
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 3 -->
+
             <li class="activity-box">
+
                 රු. 8,000ක විදුලි ගාස්තු චෙක්පතක් නිකුත් කළ විට
                 payment voucher එකක් නිර්මාණය කර අදාළ ledger entry
                 ලියන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="3"
+                        onclick="completeActivity9(3)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-3"
+                        onclick="showActivityAnswer9(3)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-3"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        විදුලි ගාස්තු ගිණුම Dr. රු. 8,000<br>
+                        බැංකු ගිණුම Cr. රු. 8,000<br><br>
+                        Payment Voucher: Electricity Payment – Rs. 8,000
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 4 -->
+
             <li class="activity-box">
+
                 රු. 10,000ක තැන්පත් කළ චෙක්පතක් අගරු වුවහොත්
                 ණයගැති ගිණුම සහ බැංකු ගිණුම සටහන් කරන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="4"
+                        onclick="completeActivity9(4)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-4"
+                        onclick="showActivityAnswer9(4)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-4"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        ණයගැති ගිණුම Dr. රු. 10,000<br>
+                        බැංකු ගිණුම Cr. රු. 10,000
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 5 -->
+
             <li class="activity-box">
+
                 රු. 15,000ක ණයහිමියාට නිකුත් කළ චෙක්පතක්
                 අගරු වූ විට reversal entry එක සකස් කරන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="5"
+                        onclick="completeActivity9(5)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-5"
+                        onclick="showActivityAnswer9(5)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-5"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        බැංකු ගිණුම Dr. රු. 15,000<br>
+                        ණයහිමි ගිණුම Cr. රු. 15,000
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 6 -->
+
             <li class="activity-box">
+
                 ආරම්භක බැංකු ශේෂය රු. 30,000කි.
                 තැන්පතු රු. 20,000ක් සහ ගෙවීම් රු. 45,000ක් නම්
                 අවසාන ශේෂය හෝ overdraft තත්ත්වය සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="6"
+                        onclick="completeActivity9(6)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-6"
+                        onclick="showActivityAnswer9(6)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-6"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        30,000 + 20,000 − 45,000 = රු. 5,000<br>
+                        අවසාන බැංකු ශේෂය = <strong>රු. 5,000</strong>
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 7 -->
+
             <li class="activity-box">
+
                 පහත items අතරින් bank statement එකේ පමණක්
                 සටහන් වී ඇති items හඳුනාගන්න:
                 bank charges, direct remittance, standing order,
                 unpresented cheque.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="7"
+                        onclick="completeActivity9(7)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-7"
+                        onclick="showActivityAnswer9(7)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-7"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        Bank statement එකේ පමණක් මුලින් සටහන් විය හැකි items:
+                        <strong>Bank Charges, Direct Remittance සහ Standing Order.</strong><br>
+                        Unpresented cheque එක bank statement එකේ තවමත් සටහන් නොවූ
+                        ගනුදෙනුවකි.
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 8 -->
+
             <li class="activity-box">
+
                 බැංකු ගිණුමේ ශේෂය රු. 40,000කි.
                 Direct remittance රු. 6,000,
                 standing order රු. 4,000,
                 bank charges රු. 1,000 නම්
                 සංශෝධිත බැංකු ශේෂය සොයන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="8"
+                        onclick="completeActivity9(8)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-8"
+                        onclick="showActivityAnswer9(8)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-8"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        40,000 + 6,000 − 4,000 − 1,000<br>
+                        සංශෝධිත බැංකු ශේෂය = <strong>රු. 41,000</strong>
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 9 -->
+
             <li class="activity-box">
+
                 සංශෝධිත බැංකු ශේෂය රු. 41,000කි.
                 ඉදිරිපත් නොකළ චෙක්පත් රු. 9,000ක් සහ
                 realization නොවූ චෙක්පත් රු. 5,000ක් නම්
                 bank reconciliation statement එක සකස් කරන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="9"
+                        onclick="completeActivity9(9)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-9"
+                        onclick="showActivityAnswer9(9)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-9"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        සංශෝධිත බැංකු ශේෂය = රු. 41,000<br>
+                        එකතු කරන්න: ඉදිරිපත් නොකළ චෙක්පත් = රු. 9,000<br>
+                        අඩු කරන්න: realization නොවූ චෙක්පත් = රු. 5,000<br>
+                        බැංකු ප්‍රකාශයේ ශේෂය =
+                        41,000 + 9,000 − 5,000 =
+                        <strong>රු. 45,000</strong>
+                    </div>
+
+                </div>
+
             </li>
 
+
+            <!-- ACTIVITY 10 -->
+
             <li class="activity-box">
+
                 ව්‍යාපාරයක bank account එක සහ bank statement එක
                 ලබාගෙන ඒ දෙක සසඳා වෙනස්කම් හඳුනාගෙන,
                 adjusted bank account එක සහ bank reconciliation statement එක
                 සම්පූර්ණයෙන් සකස් කරන්න.
+
+                <div class="activity-action-area">
+
+                    <button
+                        type="button"
+                        class="activity-complete-btn"
+                        data-activity="10"
+                        onclick="completeActivity9(10)"
+                    >
+                        ✅ ක්‍රියාකාරකම සම්පූර්ණ කළා
+                    </button>
+
+                    <button
+                        type="button"
+                        class="show-answer-btn"
+                        id="answer-btn-10"
+                        onclick="showActivityAnswer9(10)"
+                    >
+                        👁️ පිළිතුර බලන්න
+                    </button>
+
+                    <div
+                        class="activity-answer"
+                        id="activity-answer-10"
+                    >
+                        <strong>පිළිතුර:</strong><br>
+                        පළමුව bank account එක හා bank statement එක
+                        line-by-line සසඳන්න.<br>
+                        Direct remittances, standing orders සහ bank charges
+                        වැනි bank statement එකේ පමණක් ඇති ගනුදෙනු
+                        adjusted bank account එකට ඇතුළත් කරන්න.<br>
+                        ඉන්පසුව unpresented cheques සහ
+                        uncleared/unrealized deposits හඳුනාගෙන
+                        bank reconciliation statement එක සකස් කරන්න.<br><br>
+                        අවසානයේ adjusted bank account balance එක
+                        සහ bank statement balance එක
+                        reconciliation items සලකා සමාන විය යුතුය.
+                    </div>
+
+                </div>
+
             </li>
+
 
         </ol>
 
@@ -1453,6 +1899,223 @@
 
 
 <script>
+
+/* =========================================
+   LESSON 09 ACTIVITY SYSTEM
+   ========================================= */
+
+function getLesson9Activities() {
+
+    let completedActivities = [];
+
+    try {
+
+        completedActivities =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_lesson9_activities"
+                )
+            ) || [];
+
+    }
+
+    catch(error) {
+
+        completedActivities = [];
+
+    }
+
+    if (!Array.isArray(completedActivities)) {
+
+        completedActivities = [];
+
+    }
+
+    return completedActivities;
+
+}
+
+
+/* -----------------------------------------
+   COMPLETE ACTIVITY
+   ----------------------------------------- */
+
+function completeActivity9(activityNumber) {
+
+    let completedActivities =
+        getLesson9Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        completedActivities.push(
+            activityNumber
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "uez_lesson9_activities",
+        JSON.stringify(
+            completedActivities
+        )
+    );
+
+
+    updateActivity9(
+        activityNumber
+    );
+
+}
+
+
+/* -----------------------------------------
+   UPDATE ACTIVITY BUTTON
+   ----------------------------------------- */
+
+function updateActivity9(activityNumber) {
+
+    const completeButton =
+        document.querySelector(
+            '.activity-complete-btn[data-activity="' +
+            activityNumber +
+            '"]'
+        );
+
+
+    const answerButton =
+        document.getElementById(
+            "answer-btn-" +
+            activityNumber
+        );
+
+
+    if (!completeButton) {
+
+        return;
+
+    }
+
+
+    completeButton.classList.add(
+        "completed"
+    );
+
+
+    completeButton.textContent =
+        "✓ ක්‍රියාකාරකම සම්පූර්ණයි";
+
+
+    completeButton.disabled =
+        true;
+
+
+    if (answerButton) {
+
+        answerButton.style.display =
+            "inline-block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   SHOW ANSWER
+   ----------------------------------------- */
+
+function showActivityAnswer9(activityNumber) {
+
+    const completedActivities =
+        getLesson9Activities();
+
+
+    if (
+        !completedActivities.includes(
+            activityNumber
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    const answer =
+        document.getElementById(
+            "activity-answer-" +
+            activityNumber
+        );
+
+
+    if (!answer) {
+
+        return;
+
+    }
+
+
+    if (
+        answer.style.display ===
+        "block"
+    ) {
+
+        answer.style.display =
+            "none";
+
+    }
+
+    else {
+
+        answer.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* -----------------------------------------
+   RESTORE ACTIVITY STATUS AFTER REFRESH
+   ----------------------------------------- */
+
+function restoreLesson9Activities() {
+
+    const completedActivities =
+        getLesson9Activities();
+
+
+    completedActivities.forEach(
+        function(activityNumber) {
+
+            updateActivity9(
+                activityNumber
+            );
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        restoreLesson9Activities();
+
+    }
+);
+
+
+/* =========================================
+   ORIGINAL LESSON COMPLETION SYSTEM
+   ========================================= */
 
 function completeLesson9() {
 
