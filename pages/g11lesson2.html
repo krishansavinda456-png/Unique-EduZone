@@ -16,344 +16,834 @@ Grade 11 - Lesson 2 | Unique EduZone
 
 <style>
 
+/* =========================================================
+   UNIQUE EDUZONE
+   GRADE 11 LESSON 02
+   PREMIUM DARK MODE + GOLD + WHITE
+========================================================= */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,"Noto Sans Sinhala",sans-serif;
-background:#080808;
-color:#f5f5f5;
-line-height:1.8
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,.08),
+            transparent 35%
+        ),
+        #080808;
+    color:#f5f5f5;
+    line-height:1.8;
+    min-height:100vh;
 }
 
 
-/* =========================================
+/* =========================================================
    HEADER
-========================================= */
+========================================================= */
 
 header{
-background:#111;
-border-bottom:2px solid #d4af37;
-padding:16px 6%;
-position:sticky;
-top:0;
-z-index:10
+    background:rgba(8,8,8,.96);
+    border-bottom:1px solid rgba(212,175,55,.55);
+    padding:14px 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(12px);
+    box-shadow:
+        0 4px 25px rgba(0,0,0,.45);
 }
 
 .header-inner{
-max-width:1000px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:12px
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .logo img{
-width:52px;
-height:52px;
-object-fit:contain
+    width:48px;
+    height:48px;
+    object-fit:contain;
 }
 
 .logo-text{
-color:#d4af37;
-font-size:21px;
-font-weight:bold
+    color:#d4af37;
+    font-size:21px;
+    font-weight:700;
+    letter-spacing:.3px;
 }
+
+
+/* =========================================================
+   HEADER BUTTON
+========================================================= */
 
 .back-btn,
 .quiz-button{
-color:#080808;
-background:#d4af37;
-text-decoration:none;
-padding:7px 17px;
-border-radius:25px;
-font-weight:bold
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#080808;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f3d36a
+        );
+
+    text-decoration:none;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    border:1px solid #d4af37;
+
+    box-shadow:
+        0 4px 15px rgba(212,175,55,.18);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.back-btn:hover,
+.quiz-button:hover{
+
+    transform:translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3d36a,
+            #d4af37
+        );
+
+    box-shadow:
+        0 7px 22px rgba(212,175,55,.3);
 }
 
 
-/* =========================================
-   CONTAINER
-========================================= */
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
 
 .container{
-width:92%;
-max-width:1000px;
-margin:30px auto 70px
+    width:92%;
+    max-width:1050px;
+    margin:38px auto 75px;
 }
 
 
-/* =========================================
+/* =========================================================
    HERO
-========================================= */
-
-.hero,
-.lesson-box{
-background:#111;
-border:1px solid #d4af37;
-border-radius:18px;
-padding:28px;
-margin-bottom:24px
-}
+========================================================= */
 
 .hero{
-text-align:center;
-background:linear-gradient(
-135deg,
-#111,
-#1d1d1d
-)
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0d0d0d
+        );
+
+    border:1px solid rgba(212,175,55,.65);
+
+    border-radius:22px;
+
+    padding:42px 28px;
+
+    margin-bottom:28px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.55);
+}
+
+
+/* Decorative gold glow */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    top:-120px;
+    right:-80px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.16),
+            transparent 70%
+        );
+
+    pointer-events:none;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    bottom:-120px;
+    left:-70px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.10),
+            transparent 70%
+        );
+
+    pointer-events:none;
 }
 
 .hero h1{
-color:#d4af37;
-font-size:31px
+
+    position:relative;
+
+    color:#d4af37;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+
+    letter-spacing:.2px;
 }
 
 .hero p{
-color:#ddd
+
+    position:relative;
+
+    color:#f5f5f5;
+
+    font-size:18px;
+
+    margin-top:3px;
+}
+
+.hero p[style]{
+
+    color:#aaa !important;
+
+    font-size:14px;
+
+    letter-spacing:.5px;
 }
 
 
-/* =========================================
-   LESSON CONTENT
-========================================= */
+/* =========================================================
+   LESSON BOX
+========================================================= */
+
+.lesson-box{
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #101010
+        );
+
+    border:1px solid #292929;
+
+    border-radius:18px;
+
+    padding:28px;
+
+    margin-bottom:24px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.35);
+
+    transition:
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.lesson-box:hover{
+
+    border-color:
+        rgba(212,175,55,.38);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.48);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
 
 .lesson-box h2{
-color:#d4af37;
-margin-bottom:10px
+
+    color:#d4af37;
+
+    font-size:23px;
+
+    font-weight:800;
+
+    margin-bottom:14px;
+
+    padding-bottom:9px;
+
+    border-bottom:1px solid
+        rgba(212,175,55,.22);
 }
 
 .lesson-box h3{
-color:#ffd95a;
-margin:18px 0 8px
+
+    color:#f1cc55;
+
+    font-size:18px;
+
+    margin:22px 0 9px;
 }
 
+.lesson-box p{
+
+    color:#eeeeee;
+
+    font-size:15.5px;
+
+    margin-bottom:14px;
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
 .lesson-box ul{
-padding-left:25px
+
+    padding-left:25px;
+
+    margin:10px 0 15px;
 }
 
 .lesson-box li{
-margin:6px 0
+
+    color:#e8e8e8;
+
+    margin:7px 0;
+
+    padding-left:3px;
 }
+
+.lesson-box li::marker{
+
+    color:#d4af37;
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
 
 .highlight{
-background:#211d0e;
-border-left:4px solid #d4af37;
-padding:14px;
-border-radius:8px;
-margin:14px 0
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,.12),
+            rgba(212,175,55,.045)
+        );
+
+    border-left:4px solid #d4af37;
+
+    border-top:1px solid
+        rgba(212,175,55,.12);
+
+    border-right:1px solid
+        rgba(212,175,55,.08);
+
+    border-bottom:1px solid
+        rgba(212,175,55,.08);
+
+    padding:16px 18px;
+
+    border-radius:10px;
+
+    margin:18px 0;
+
+    color:#f2f2f2;
+
+    box-shadow:
+        inset 0 0 20px rgba(212,175,55,.025);
 }
+
+.highlight strong{
+
+    color:#d4af37;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
 
 .grid{
-display:grid;
-grid-template-columns:
-repeat(2,1fr);
-gap:14px
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:16px;
 }
 
+
+/* =========================================================
+   CARD
+========================================================= */
+
 .card{
-background:#191919;
-border:1px solid #333;
-border-radius:12px;
-padding:15px
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #141414
+        );
+
+    border:1px solid #303030;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    color:#eeeeee;
+
+    transition:
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.card:hover{
+
+    border-color:#d4af37;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.4);
 }
 
 .card strong{
-color:#d4af37
+
+    color:#d4af37;
+
+    font-size:16px;
 }
 
 
-/* =========================================
+/* =========================================================
    TABLE
-========================================= */
+========================================================= */
 
 table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px
+
+    width:100%;
+
+    border-collapse:separate;
+
+    border-spacing:0;
+
+    margin-top:18px;
+
+    overflow:hidden;
+
+    border:1px solid #333;
+
+    border-radius:12px;
+
+    background:#111;
 }
 
 th,
 td{
-border:1px solid #444;
-padding:10px;
-text-align:left
+
+    border-right:1px solid #333;
+
+    border-bottom:1px solid #333;
+
+    padding:13px 12px;
+
+    text-align:left;
+
+    color:#ededed;
+
+    vertical-align:top;
 }
 
 th{
-background:#211d0e;
-color:#d4af37
+
+    background:
+        linear-gradient(
+            135deg,
+            #211d0e,
+            #18150b
+        );
+
+    color:#d4af37;
+
+    font-weight:800;
+
+    font-size:15px;
+}
+
+tr:last-child td{
+
+    border-bottom:none;
+}
+
+th:last-child,
+td:last-child{
+
+    border-right:none;
+}
+
+tbody tr{
+
+    transition:
+        background .2s ease;
+}
+
+tbody tr:hover{
+
+    background:
+        rgba(212,175,55,.045);
 }
 
 
-/* =========================================
-   ACTIVITIES
-========================================= */
+/* =========================================================
+   ACTIVITIES SECTION
+========================================================= */
 
 .activities-title{
-color:#d4af37;
-font-size:25px;
-margin-bottom:8px
+
+    color:#d4af37 !important;
+
+    font-size:25px !important;
+
+    border-bottom:none !important;
+
+    padding-bottom:0 !important;
+
+    margin-bottom:8px !important;
 }
 
+
+/* =========================================================
+   ACTIVITY CARD
+========================================================= */
+
 .activity{
-background:#191919;
-border:1px solid #333;
-border-radius:14px;
-padding:20px;
-margin:16px 0;
-transition:
-border-color .2s ease,
-box-shadow .2s ease
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #121212
+        );
+
+    border:1px solid #303030;
+
+    border-radius:16px;
+
+    padding:21px;
+
+    margin:18px 0;
+
+    transition:
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 .activity:hover{
-border-color:#d4af37
+
+    border-color:
+        rgba(212,175,55,.65);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.4);
 }
+
+
+/* =========================================================
+   ACTIVITY NUMBER
+========================================================= */
 
 .activity-number{
-color:#d4af37;
-font-weight:bold;
-font-size:17px;
-margin-bottom:6px
+
+    display:inline-block;
+
+    color:#080808;
+
+    background:#d4af37;
+
+    padding:4px 12px;
+
+    border-radius:20px;
+
+    font-weight:800;
+
+    font-size:14px;
+
+    margin-bottom:10px;
 }
+
+
+/* =========================================================
+   ACTIVITY TITLE
+========================================================= */
 
 .activity h3{
-color:#ffd95a;
-margin:5px 0 10px
+
+    color:#f1cc55;
+
+    margin:5px 0 12px;
+
+    font-size:19px;
 }
 
+
+/* =========================================================
+   ACTIVITY TASK
+========================================================= */
+
 .activity-task{
-background:#211d0e;
-border-left:4px solid #d4af37;
-padding:13px;
-border-radius:8px;
-margin:12px 0
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,.11),
+            rgba(212,175,55,.035)
+        );
+
+    border-left:4px solid #d4af37;
+
+    border-radius:9px;
+
+    padding:15px 16px;
+
+    margin:13px 0;
+
+    color:#eeeeee;
+}
+
+.activity-task strong{
+
+    color:#d4af37;
 }
 
 .activity ul{
-padding-left:25px;
-margin-top:8px
+
+    padding-left:25px;
+
+    margin-top:9px;
 }
 
 .activity li{
-margin:5px 0
+
+    margin:5px 0;
 }
 
 
-/* =========================================
+/* =========================================================
    ACTIVITY COMPLETE BUTTON
-   GOLD → GREEN
-========================================= */
+========================================================= */
 
 .activity-complete-btn{
 
     margin-top:15px;
 
-    background:#d4af37;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #e5c55b
+        );
 
     color:#080808;
 
-    border:none;
+    border:1px solid #d4af37;
 
-    padding:10px 18px;
+    padding:10px 19px;
 
-    border-radius:8px;
+    border-radius:9px;
 
-    font-weight:bold;
+    font-weight:800;
 
     cursor:pointer;
 
+    box-shadow:
+        0 4px 12px rgba(212,175,55,.15);
+
     transition:
         background .2s ease,
-        transform .2s ease;
-
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 .activity-complete-btn:hover{
 
-    background:#ffd95a;
+    background:
+        linear-gradient(
+            135deg,
+            #f3d36a,
+            #d4af37
+        );
 
     transform:translateY(-2px);
 
+    box-shadow:
+        0 7px 18px rgba(212,175,55,.25);
 }
 
 
-/* COMPLETED = GREEN */
+/* =========================================================
+   COMPLETED ACTIVITY
+========================================================= */
 
 .activity-complete-btn.completed{
 
-    background:#2e7d32;
+    background:
+        linear-gradient(
+            135deg,
+            #2e7d32,
+            #3f9644
+        );
 
     color:#fff;
 
+    border-color:#2e7d32;
+
     cursor:default;
 
+    box-shadow:none;
 }
-
-
-/* Disabled button stays green */
 
 .activity-complete-btn:disabled{
 
     opacity:1;
-
 }
 
 
-/* =========================================
+/* =========================================================
    ACTIVITY ANSWER
-========================================= */
+========================================================= */
 
 .activity-answer{
-margin-top:12px
+
+    margin-top:13px;
 }
 
 .activity-answer summary{
-cursor:pointer;
-color:#d4af37;
-font-weight:bold;
-padding:8px 0
+
+    cursor:pointer;
+
+    color:#d4af37;
+
+    font-weight:800;
+
+    padding:8px 0;
+
+    transition:
+        color .2s ease;
+}
+
+.activity-answer summary:hover{
+
+    color:#f3d36a;
 }
 
 .activity-answer p{
 
-background:#111;
+    background:#0d0d0d;
 
-border:1px solid #333;
+    border:1px solid #303030;
 
-border-radius:8px;
+    border-radius:9px;
 
-padding:12px;
+    padding:15px;
 
-margin-top:8px
+    margin-top:8px;
 
+    color:#eaeaea;
+}
+
+.activity-answer strong{
+
+    color:#d4af37;
 }
 
 
-/* =========================================
+/* =========================================================
    QUIZ BUTTON
-========================================= */
+========================================================= */
 
 .quiz-button{
-display:inline-block;
-margin-top:15px;
-padding:11px 24px
+
+    margin-top:17px;
+
+    padding:11px 24px;
+
+    font-size:15px;
 }
 
 
-/* =========================================
-   LESSON COMPLETE
-========================================= */
+/* =========================================================
+   LESSON COMPLETE BUTTON
+========================================================= */
 
 .lesson-complete-btn{
 
@@ -361,103 +851,299 @@ padding:11px 24px
 
     width:100%;
 
-    margin-top:18px;
+    margin-top:20px;
 
-    padding:13px 20px;
+    padding:14px 20px;
 
-    border:none;
+    border:1px solid #d4af37;
 
-    border-radius:10px;
+    border-radius:11px;
 
-    background:#d4af37;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #e5c55b
+        );
 
     color:#080808;
 
     font-size:16px;
 
-    font-weight:bold;
+    font-weight:800;
 
     cursor:pointer;
 
+    box-shadow:
+        0 5px 18px rgba(212,175,55,.15);
+
     transition:
         background .2s ease,
-        transform .2s ease;
-
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 .lesson-complete-btn:hover{
 
-    background:#ffd95a;
+    background:
+        linear-gradient(
+            135deg,
+            #f3d36a,
+            #d4af37
+        );
 
     transform:translateY(-2px);
 
+    box-shadow:
+        0 8px 24px rgba(212,175,55,.25);
 }
 
 
-/* LESSON COMPLETED = GREEN */
+/* =========================================================
+   LESSON COMPLETED
+========================================================= */
 
 .lesson-complete-btn.completed{
 
-    background:#2e7d32;
+    background:
+        linear-gradient(
+            135deg,
+            #2e7d32,
+            #3f9644
+        );
 
     color:#fff;
 
+    border-color:#2e7d32;
+
     cursor:default;
 
+    box-shadow:none;
 }
 
 .lesson-complete-btn:disabled{
 
     opacity:1;
-
 }
 
 .lesson-complete-message{
 
     text-align:center;
 
-    margin-top:10px;
+    margin-top:11px;
 
     color:#7cff7c;
 
-    font-weight:bold;
-
+    font-weight:800;
 }
 
 
-/* =========================================
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
 
 footer{
-text-align:center;
-padding:25px;
-color:#aaa;
-border-top:1px solid #333
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#999;
+
+    background:#080808;
+
+    border-top:1px solid #292929;
+
+    font-size:14px;
+}
+
+footer::first-line{
+
+    color:#aaa;
 }
 
 
-/* =========================================
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection{
+
+    background:#d4af37;
+
+    color:#080808;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#080808;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3a3218;
+
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#d4af37;
+}
+
+
+/* =========================================================
    RESPONSIVE
-========================================= */
+========================================================= */
 
-@media(max-width:650px){
+@media(max-width:750px){
 
-.hero h1{
-font-size:25px
+    .container{
+
+        width:94%;
+
+        margin-top:25px;
+    }
+
+    .hero{
+
+        padding:32px 20px;
+
+        border-radius:18px;
+    }
+
+    .hero h1{
+
+        font-size:27px;
+    }
+
+    .hero p{
+
+        font-size:16px;
+    }
+
+    .lesson-box{
+
+        padding:22px 19px;
+
+        border-radius:16px;
+    }
+
+    .lesson-box h2{
+
+        font-size:21px;
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:normal;
+    }
+
+    th,
+    td{
+
+        min-width:150px;
+
+        padding:11px 10px;
+
+        font-size:14px;
+    }
+
+    .activity{
+
+        padding:17px;
+    }
+
 }
 
-.grid{
-grid-template-columns:1fr
+
+@media(max-width:500px){
+
+    header{
+
+        padding:11px 4%;
+    }
+
+    .logo img{
+
+        width:42px;
+
+        height:42px;
+    }
+
+    .logo-text{
+
+        font-size:18px;
+    }
+
+    .back-btn{
+
+        padding:7px 13px;
+
+        font-size:13px;
+    }
+
+    .hero h1{
+
+        font-size:24px;
+    }
+
+    .hero{
+
+        padding:28px 16px;
+    }
+
+    .lesson-box{
+
+        padding:19px 16px;
+    }
+
+    .activity-complete-btn{
+
+        width:100%;
+
+        padding:11px;
+    }
+
+    .quiz-button{
+
+        width:100%;
+    }
+
 }
 
-.lesson-box{
-padding:19px
-}
 
-.activity{
-padding:16px
-}
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        scroll-behavior:auto !important;
+
+        transition:none !important;
+    }
 
 }
 
