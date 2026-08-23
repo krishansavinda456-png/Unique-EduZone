@@ -610,3 +610,115 @@ main{padding:24px}
     }
 
 }
+
+/* ================================
+   ACTIVITY COMPLETION SYSTEM
+================================ */
+
+.activity-complete-btn{
+    background:#d4af37;
+
+    color:#080808;
+
+    border:0;
+
+    border-radius:22px;
+
+    padding:9px 18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    transition:0.3s;
+}
+
+.activity-complete-btn:hover{
+    background:#ffd95a;
+}
+
+.activity-complete-btn.completed{
+    background:#198754;
+
+    color:#fff;
+
+    cursor:default;
+}
+
+
+/* ================================
+   LESSON COMPLETION
+================================ */
+
+.lesson-complete-area{
+    text-align:center;
+
+    margin-top:30px;
+
+    padding:25px;
+
+    background:#111;
+
+    border:
+        1px solid #d4af37;
+
+    border-radius:15px;
+}
+
+.lesson-complete-btn{
+    background:#d4af37;
+
+    color:#080808;
+
+    border:0;
+
+    border-radius:25px;
+
+    padding:
+        12px 25px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.lesson-complete-btn:hover{
+    background:#ffd95a;
+}
+
+.lesson-complete-btn.completed{
+    background:#198754;
+
+    color:#fff;
+
+    cursor:default;
+}
+
+.lesson-complete-message{
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    background:#16351f;
+
+    border:
+        1px solid #198754;
+
+    border-radius:8px;
+
+    color:#8ff0a4;
+
+    font-weight:bold;
+}
+
+.lesson-complete-message.show{
+    display:block;
+}
