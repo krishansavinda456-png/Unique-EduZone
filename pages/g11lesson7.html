@@ -490,6 +490,81 @@ header{
 }
 
 
+/* =========================================
+   LESSON COMPLETE BUTTON
+========================================= */
+
+.lesson-complete-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:13px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.lesson-complete-btn:hover{
+
+    background:#ffd95a;
+
+    transform:translateY(-2px);
+
+}
+
+
+.lesson-complete-btn.completed{
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    cursor:default;
+
+}
+
+
+.lesson-complete-btn:disabled{
+
+    opacity:1;
+
+}
+
+
+.lesson-complete-message{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#7cff7c;
+
+    font-weight:bold;
+
+}
+
+
 /* ================================
    FOOTER
 ================================ */
@@ -3443,6 +3518,27 @@ Lesson 7 Quiz ආරම්භ කරන්න →
 </a>
 
 
+<!-- =========================================
+     LESSON COMPLETE
+========================================= -->
+
+<button
+type="button"
+class="lesson-complete-btn"
+onclick="completeLesson()">
+
+✓ පාඩම සම්පූර්ණ කළා
+
+</button>
+
+
+<p
+id="lessonCompleteMessage"
+class="lesson-complete-message">
+
+</p>
+
+
 </section>
 
 
@@ -3460,6 +3556,79 @@ Grade 11 Business & Accounting Studies
 
 
 <script>
+
+
+/* =========================================
+   LESSON 7 COMPLETION SYSTEM
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /*
+         * =========================================
+         * RESTORE LESSON COMPLETION
+         * =========================================
+         */
+
+        let completedLessons =
+            JSON.parse(
+                localStorage.getItem(
+                    "uez_completed_lessons"
+                )
+            ) || [];
+
+
+        if (
+            completedLessons.includes(
+                "lesson7"
+            )
+        ) {
+
+            const button =
+                document.querySelector(
+                    ".lesson-complete-btn"
+                );
+
+
+            if (button) {
+
+                button.textContent =
+                    "✓ පාඩම සම්පූර්ණයි";
+
+                button.disabled = true;
+
+                button.classList.add(
+                    "completed"
+                );
+
+            }
+
+
+            const message =
+                document.getElementById(
+                    "lessonCompleteMessage"
+                );
+
+
+            if (message) {
+
+                message.textContent =
+                    "පාඩම සාර්ථකව සම්පූර්ණ කර ඇත.";
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/* =========================================
+   SHOW SOLUTION
+========================================= */
 
 function showSolution(id){
 
@@ -3482,6 +3651,117 @@ function showSolution(id){
 
         box.style.display =
             "block";
+
+    }
+
+}
+
+
+
+/* =========================================
+   COMPLETE LESSON 7
+========================================= */
+
+function completeLesson() {
+
+    const lessonNumber =
+        "lesson7";
+
+
+    /*
+     * GET COMPLETED LESSONS
+     */
+
+    let completedLessons =
+        JSON.parse(
+            localStorage.getItem(
+                "uez_completed_lessons"
+            )
+        ) || [];
+
+
+    /*
+     * MAKE SURE ARRAY
+     */
+
+    if (
+        !Array.isArray(
+            completedLessons
+        )
+    ) {
+
+        completedLessons = [];
+
+    }
+
+
+    /*
+     * ADD LESSON 7
+     */
+
+    if (
+        !completedLessons.includes(
+            lessonNumber
+        )
+    ) {
+
+        completedLessons.push(
+            lessonNumber
+        );
+
+    }
+
+
+    /*
+     * SAVE
+     */
+
+    localStorage.setItem(
+        "uez_completed_lessons",
+        JSON.stringify(
+            completedLessons
+        )
+    );
+
+
+    /*
+     * UPDATE BUTTON
+     */
+
+    const button =
+        document.querySelector(
+            ".lesson-complete-btn"
+        );
+
+
+    if (button) {
+
+        button.textContent =
+            "✓ පාඩම සම්පූර්ණයි";
+
+        button.disabled = true;
+
+        button.classList.add(
+            "completed"
+        );
+
+    }
+
+
+    /*
+     * SHOW MESSAGE
+     */
+
+    const message =
+        document.getElementById(
+            "lessonCompleteMessage"
+        );
+
+
+    if (message) {
+
+        message.textContent =
+            "පාඩම සාර්ථකව සම්පූර්ණ කළා.";
 
     }
 
