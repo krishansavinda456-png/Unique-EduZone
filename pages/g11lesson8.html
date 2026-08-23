@@ -450,6 +450,74 @@ header{
 
 
 /* ================================
+   LESSON COMPLETE BUTTON
+================================ */
+
+.lesson-complete-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:13px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.lesson-complete-btn:hover{
+
+    background:#ffd95a;
+
+    transform:translateY(-2px);
+
+}
+
+
+.lesson-complete-btn.completed{
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    cursor:default;
+
+}
+
+
+.lesson-complete-message{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#7cff7c;
+
+    font-weight:bold;
+
+}
+
+
+/* ================================
    MEMORY
 ================================ */
 
@@ -2332,6 +2400,7 @@ Lesson 8 Quiz ආරම්භ කරන්න →
 
 </a>
 
+
 <!-- =========================================
      LESSON COMPLETE
 ========================================= -->
@@ -2351,7 +2420,7 @@ id="lessonCompleteMessage"
 class="lesson-complete-message">
 
 </p>
-    
+
 
 </section>
 
@@ -2370,6 +2439,7 @@ Grade 11 Business & Accounting Studies
 
 
 <script>
+
 
 /*
  * =========================================
