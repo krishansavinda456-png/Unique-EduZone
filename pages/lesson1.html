@@ -22,6 +22,89 @@
     <style>
 
         /* =====================================================
+           LANGUAGE SWITCHER
+           SINHALA / TAMIL / ENGLISH
+           Added without changing the existing lesson system
+        ===================================================== */
+
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 18px auto 0;
+            padding: 10px;
+        }
+
+        .language-switcher button {
+            appearance: none;
+            border: 1px solid #d4af37;
+            background: #151515;
+            color: #ffffff;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .language-switcher button:hover,
+        .language-switcher button.active {
+            background: #d4af37;
+            color: #080808;
+        }
+
+        .language-switcher-label {
+            color: #d4af37;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        /* Hide Google's original translation UI */
+        .google-translate-hidden {
+            display: none !important;
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0 !important;
+        }
+
+        .goog-tooltip,
+        .goog-tooltip:hover {
+            display: none !important;
+        }
+
+        .goog-text-highlight {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 650px) {
+            .language-switcher {
+                gap: 6px;
+            }
+
+            .language-switcher button {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .language-switcher-label {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                margin-bottom: 2px;
+            }
+        }
+
+
+        /* =====================================================
            UNIQUE EDUZONE
            LESSON 01
            DARK / GOLD / WHITE THEME
@@ -918,6 +1001,50 @@
 
 
 <body>
+
+    <!-- =====================================================
+         LANGUAGE SWITCHER
+         ===================================================== -->
+    <div class="language-switcher" aria-label="Language selector">
+
+        <span class="language-switcher-label">
+            Language:
+        </span>
+
+        <button
+            type="button"
+            id="lang-si"
+            class="active"
+            onclick="changeLanguage('si')"
+        >
+            සිංහල
+        </button>
+
+        <button
+            type="button"
+            id="lang-ta"
+            onclick="changeLanguage('ta')"
+        >
+            தமிழ்
+        </button>
+
+        <button
+            type="button"
+            id="lang-en"
+            onclick="changeLanguage('en')"
+        >
+            English
+        </button>
+
+    </div>
+
+    <!-- Hidden Google Translate element used only by the custom buttons -->
+    <div
+        id="google_translate_element"
+        class="google-translate-hidden"
+        aria-hidden="true"
+    ></div>
+
 
 
 <!-- =====================================================
@@ -2736,6 +2863,117 @@ function showActivityResult(
 
 </script>
 
+
+
+
+<!-- =====================================================
+     CUSTOM SINHALA / TAMIL / ENGLISH LANGUAGE SWITCHER
+     Uses Google Translate only for translation.
+     Existing lesson JavaScript is kept unchanged.
+===================================================== -->
+
+<script>
+
+    let currentLessonLanguage = "si";
+
+    function setLanguageButtonState(language) {
+
+        const buttons = {
+            si: document.getElementById("lang-si"),
+            ta: document.getElementById("lang-ta"),
+            en: document.getElementById("lang-en")
+        };
+
+        Object.keys(buttons).forEach(function (key) {
+
+            if (buttons[key]) {
+                buttons[key].classList.toggle(
+                    "active",
+                    key === language
+                );
+            }
+
+        });
+
+    }
+
+
+    function changeLanguage(language) {
+
+        currentLessonLanguage = language;
+
+        setLanguageButtonState(language);
+
+        /*
+         * Sinhala is the original language of this page.
+         * Selecting Sinhala resets Google Translate.
+         */
+        if (language === "si") {
+
+            const combo =
+                document.querySelector(".goog-te-combo");
+
+            if (combo) {
+
+                combo.value = "";
+
+                combo.dispatchEvent(
+                    new Event("change")
+                );
+
+            }
+
+            return;
+        }
+
+
+        const combo =
+            document.querySelector(".goog-te-combo");
+
+        /*
+         * Google Translate may take a moment to initialize.
+         * Try again automatically if the selector is not ready.
+         */
+        if (!combo) {
+
+            setTimeout(function () {
+
+                changeLanguage(language);
+
+            }, 250);
+
+            return;
+        }
+
+
+        combo.value = language;
+
+        combo.dispatchEvent(
+            new Event("change")
+        );
+
+    }
+
+
+    function googleTranslateElementInit() {
+
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: "si",
+                includedLanguages: "si,ta,en",
+                autoDisplay: false,
+                multilanguagePage: true
+            },
+            "google_translate_element"
+        );
+
+    }
+
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
 
 </body>
 
