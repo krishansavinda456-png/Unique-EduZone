@@ -1373,152 +1373,179 @@ main{padding:24px}
 }
 
 /* =====================================================
-   PROFILE + DASHBOARD
-   FIT NAVIGATION WITHOUT BROWSER ZOOM
+   HEADER - FULL WIDTH NAVIGATION ADJUSTMENT
+   PROFILE + DASHBOARD INCLUDED
    ===================================================== */
+
+.home-header-inner {
+    gap: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+/* LOGO */
+
+.home-logo {
+    min-width: 245px;
+    gap: 9px;
+}
+
+.home-logo-symbol {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+}
+
+.home-logo-title {
+    font-size: 23px;
+}
+
+.home-logo-tagline {
+    font-size: 10px;
+}
+
+
+/* NAVIGATION */
+
+.home-nav {
+    gap: 0;
+}
+
+.home-nav a {
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 11px;
+}
+
+
+/* PROFILE + DASHBOARD */
 
 .profile-link,
 .dashboard-link {
-
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-
-    font-size: 13px !important;
-
-    white-space: nowrap;
-
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    font-size: 10px !important;
 }
 
 
-/* Medium screens */
+/* SEARCH */
 
-@media (max-width: 1350px) {
+.home-tools {
+    gap: 6px;
+}
+
+.home-search {
+    width: 170px;
+    height: 38px;
+}
+
+
+/* DARK MODE */
+
+.dark-toggle {
+    gap: 5px;
+    padding: 6px 8px;
+    font-size: 11px;
+}
+
+.dark-switch {
+    width: 38px;
+    height: 21px;
+}
+
+
+/* =====================================================
+   1250px
+   ===================================================== */
+
+@media (max-width: 1250px) {
 
     .home-header-inner {
-
-        gap: 12px;
-
-        padding-left: 18px;
-        padding-right: 18px;
-
+        gap: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-
 
     .home-logo {
-
-        min-width: 260px;
-
+        min-width: 205px;
     }
-
 
     .home-logo-title {
-
-        font-size: 27px;
-
+        font-size: 20px;
     }
 
-
-    .home-nav {
-
-        gap: 0;
-
+    .home-logo-tagline {
+        font-size: 9px;
     }
-
 
     .home-nav a {
-
-        padding-left: 7px;
-        padding-right: 7px;
-
-        font-size: 12px;
-
+        padding-left: 4px;
+        padding-right: 4px;
+        font-size: 10px;
     }
-
 
     .profile-link,
     .dashboard-link {
-
-        padding-left: 6px !important;
-        padding-right: 6px !important;
-
-        font-size: 11px !important;
-
+        font-size: 9px !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
     }
-
-
-    .home-tools {
-
-        gap: 7px;
-
-    }
-
 
     .home-search {
+        width: 140px;
+    }
 
-        width: 190px;
-
+    .dark-toggle {
+        padding: 5px 6px;
     }
 
 }
 
 
-/* Smaller desktop screens */
+/* =====================================================
+   1100px
+   ===================================================== */
 
-@media (max-width: 1150px) {
+@media (max-width: 1100px) {
+
+    .home-header-inner {
+        gap: 4px;
+    }
 
     .home-logo {
-
-        min-width: 220px;
-
+        min-width: 185px;
     }
-
 
     .home-logo-symbol {
-
-        width: 55px;
-        height: 55px;
-
-        font-size: 25px;
-
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
     }
-
 
     .home-logo-title {
-
-        font-size: 23px;
-
+        font-size: 18px;
     }
-
 
     .home-logo-tagline {
-
-        font-size: 10px;
-
+        font-size: 8px;
     }
-
 
     .home-nav a {
-
-        padding-left: 5px;
-        padding-right: 5px;
-
-        font-size: 11px;
-
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: 9px;
     }
-
 
     .profile-link,
     .dashboard-link {
-
-        font-size: 10px !important;
-
+        font-size: 8px !important;
+        padding-left: 3px !important;
+        padding-right: 3px !important;
     }
 
-
     .home-search {
-
-        width: 160px;
-
+        width: 120px;
     }
 
 }
