@@ -1020,3 +1020,120 @@ main{padding:24px}
     }
 
 }
+
+/* =========================================================
+   TECHNOLOGICAL ENVIRONMENT TABLE
+   ========================================================= */
+
+.technology-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 20px;
+
+}
+
+
+.technology-table {
+
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    color: #ffffff !important;
+
+}
+
+
+.technology-table th,
+.technology-table td {
+
+    border:
+        1px solid #3a3a3a;
+
+    padding: 14px;
+
+    text-align: left;
+
+    color: #eeeeee !important;
+
+    line-height: 1.7;
+
+}
+
+
+.technology-table th {
+
+    background:
+        #242424;
+
+    color:
+        var(--gold) !important;
+
+    font-weight: 700;
+
+    text-align: center;
+
+}
+
+
+.technology-table td {
+
+    background:
+        #151515;
+
+}
+
+
+.technology-table tr:hover td {
+
+    background:
+        #1d1d1d;
+
+}
+
+
+.technology-table td:first-child {
+
+    width: 60px;
+
+    text-align: center;
+
+    color:
+        var(--gold) !important;
+
+    font-weight: bold;
+
+}
+
+
+.technology-table td:nth-child(2) {
+
+    color:
+        var(--gold-light) !important;
+
+    font-weight: 600;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .technology-table-wrapper {
+
+        overflow-x: auto;
+
+    }
+
+
+    .technology-table {
+
+        min-width: 700px;
+
+    }
+
+}
