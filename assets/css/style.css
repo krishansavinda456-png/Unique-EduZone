@@ -1371,3 +1371,154 @@ main{padding:24px}
     }
 
 }
+
+/* =====================================================
+   PROFILE + DASHBOARD
+   FIT NAVIGATION WITHOUT BROWSER ZOOM
+   ===================================================== */
+
+.profile-link,
+.dashboard-link {
+
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+
+    font-size: 13px !important;
+
+    white-space: nowrap;
+
+}
+
+
+/* Medium screens */
+
+@media (max-width: 1350px) {
+
+    .home-header-inner {
+
+        gap: 12px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+    }
+
+
+    .home-logo {
+
+        min-width: 260px;
+
+    }
+
+
+    .home-logo-title {
+
+        font-size: 27px;
+
+    }
+
+
+    .home-nav {
+
+        gap: 0;
+
+    }
+
+
+    .home-nav a {
+
+        padding-left: 7px;
+        padding-right: 7px;
+
+        font-size: 12px;
+
+    }
+
+
+    .profile-link,
+    .dashboard-link {
+
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+
+        font-size: 11px !important;
+
+    }
+
+
+    .home-tools {
+
+        gap: 7px;
+
+    }
+
+
+    .home-search {
+
+        width: 190px;
+
+    }
+
+}
+
+
+/* Smaller desktop screens */
+
+@media (max-width: 1150px) {
+
+    .home-logo {
+
+        min-width: 220px;
+
+    }
+
+
+    .home-logo-symbol {
+
+        width: 55px;
+        height: 55px;
+
+        font-size: 25px;
+
+    }
+
+
+    .home-logo-title {
+
+        font-size: 23px;
+
+    }
+
+
+    .home-logo-tagline {
+
+        font-size: 10px;
+
+    }
+
+
+    .home-nav a {
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        font-size: 11px;
+
+    }
+
+
+    .profile-link,
+    .dashboard-link {
+
+        font-size: 10px !important;
+
+    }
+
+
+    .home-search {
+
+        width: 160px;
+
+    }
+
+}
