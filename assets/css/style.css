@@ -1137,3 +1137,120 @@ main{padding:24px}
     }
 
 }
+
+/* =========================================================
+   ECONOMIC ENVIRONMENT TABLE
+   ========================================================= */
+
+.economic-table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 20px;
+
+}
+
+
+.economic-table {
+
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    color: #ffffff !important;
+
+}
+
+
+.economic-table th,
+.economic-table td {
+
+    border:
+        1px solid #3a3a3a;
+
+    padding: 14px;
+
+    text-align: left;
+
+    color: #eeeeee !important;
+
+    line-height: 1.7;
+
+}
+
+
+.economic-table th {
+
+    background:
+        #242424;
+
+    color:
+        var(--gold) !important;
+
+    font-weight: 700;
+
+    text-align: center;
+
+}
+
+
+.economic-table td {
+
+    background:
+        #151515;
+
+}
+
+
+.economic-table tr:hover td {
+
+    background:
+        #1d1d1d;
+
+}
+
+
+.economic-table td:first-child {
+
+    width: 60px;
+
+    text-align: center;
+
+    color:
+        var(--gold) !important;
+
+    font-weight: bold;
+
+}
+
+
+.economic-table td:nth-child(2) {
+
+    color:
+        var(--gold-light) !important;
+
+    font-weight: 600;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .economic-table-wrapper {
+
+        overflow-x: auto;
+
+    }
+
+
+    .economic-table {
+
+        min-width: 700px;
+
+    }
+
+}
