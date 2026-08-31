@@ -838,12 +838,363 @@
 .bo-question-card{background:#202020;border:1px solid #444;border-radius:12px;padding:22px;margin:20px 0}.bo-question-number{display:inline-block;background:#252525;border:1px solid #555;color:#ffd700;border-radius:20px;padding:6px 13px;font-weight:bold}.bo-question-card h3{color:#fff;margin:12px 0}.bo-case{background:#151515;border-left:4px solid #ffd700;border-radius:7px;padding:16px;margin:14px 0}.bo-case p{color:#eee;line-height:1.9;margin:0}.bo-question{color:#ffd700;font-weight:bold}.bo-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0}.bo-options label{background:#303030;border:1px solid #555;border-radius:8px;padding:12px;color:#fff;cursor:pointer;line-height:1.5}.bo-options label:hover{border-color:#ffd700;background:#383838}.bo-options input{margin-right:8px}.bo-check-btn,.bo-retry-btn{padding:12px 19px;border:0;border-radius:8px;background:#ffd700;color:#000;font-weight:bold;cursor:pointer}.bo-check-btn:hover,.bo-retry-btn:hover{background:#fff}.bo-hint-btn{padding:11px 17px;border:1px solid #555;border-radius:8px;background:#252525;color:#ffd700;font-weight:bold;cursor:pointer;margin-left:7px}.bo-feedback{display:none;margin-top:15px;padding:14px;border-radius:9px;line-height:1.8}.bo-feedback.bo-correct{display:block;background:rgba(40,180,100,.12);border:1px solid rgba(40,180,100,.45);color:#7ff0a5}.bo-feedback.bo-wrong{display:block;background:rgba(220,50,50,.12);border:1px solid rgba(220,50,50,.45);color:#ff9999}.bo-final-result{display:none;text-align:center;background:#252525;border:1px solid #ffd700;border-radius:14px;padding:28px 18px;margin-top:25px}.bo-final-icon{font-size:48px}.bo-final-result h2{color:#ffd700}.bo-final-score strong{font-size:42px;color:#fff}.bo-final-result p{color:#ddd;line-height:1.8}
 @media(max-width:700px){.bo-challenge-section{padding:18px;margin:25px 0}.bo-challenge-header h2{font-size:25px}.bo-options{grid-template-columns:1fr}.bo-check-btn,.bo-hint-btn{width:100%;margin:5px 0}.bo-score-panel{gap:7px}.bo-score-panel strong{font-size:20px}}
 
-    </style>
+    
+
+        /* =====================================================
+           LANGUAGE SWITCHER - FROM LESSON 01
+           ===================================================== */
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 18px auto 0;
+            padding: 10px;
+        }
+
+        .language-switcher button {
+            appearance: none;
+            border: 1px solid #d4af37;
+            background: #151515;
+            color: #ffffff;
+            padding: 9px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .language-switcher button:hover,
+        .language-switcher button.active {
+            background: #d4af37;
+            color: #080808;
+        }
+
+        .language-switcher-label {
+            color: #d4af37;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        .google-translate-hidden {
+            display: none !important;
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0 !important;
+        }
+
+        .goog-tooltip,
+        .goog-tooltip:hover {
+            display: none !important;
+        }
+
+        .goog-text-highlight {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 650px) {
+            .language-switcher {
+                gap: 6px;
+            }
+
+            .language-switcher button {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .language-switcher-label {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                margin-bottom: 2px;
+            }
+        }
+
+        /* =====================================================
+           LESSON 01 HEADER STYLE - APPLIED TO LESSON 03
+           ===================================================== */
+        .lesson-header {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 50px 30px 45px;
+            margin-bottom: 30px;
+            border-radius: 22px;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(212,175,55,0.18),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    145deg,
+                    #1b1b1b 0%,
+                    #111111 55%,
+                    #090909 100%
+                );
+            border: 1px solid rgba(212,175,55,0.65);
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.55),
+                0 0 35px rgba(212,175,55,0.08);
+        }
+
+        .lesson-header::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            height: 180px;
+            background: rgba(212,175,55,0.12);
+            filter: blur(50px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .lesson-header::after {
+            content: "";
+            position: absolute;
+            right: -80px;
+            bottom: -100px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid rgba(212,175,55,0.15);
+            box-shadow:
+                0 0 0 25px rgba(212,175,55,0.025),
+                0 0 0 50px rgba(212,175,55,0.015);
+            pointer-events: none;
+        }
+
+        .lesson-header-badge {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 18px;
+            margin-bottom: 18px;
+            border-radius: 50px;
+            background: rgba(212,175,55,0.10);
+            border: 1px solid rgba(212,175,55,0.65);
+            color: #d4af37;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 0 18px rgba(212,175,55,0.08);
+        }
+
+        .lesson-header-icon {
+            position: relative;
+            z-index: 2;
+            width: 74px;
+            height: 74px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #d4af37, #a98518);
+            color: #080808;
+            font-size: 34px;
+            box-shadow: 0 8px 25px rgba(212,175,55,0.22);
+            transform: rotate(-2deg);
+        }
+
+        .lesson-header h1 {
+            position: relative;
+            z-index: 2;
+            margin: 0 0 8px;
+            color: #ffffff !important;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .lesson-header h2 {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            color: #d4af37 !important;
+            font-size: 38px;
+            line-height: 1.25;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 15px rgba(212,175,55,0.12);
+        }
+
+        .lesson-header p {
+            position: relative;
+            z-index: 2;
+            margin: 15px 0 25px;
+            color: #d2d2d2 !important;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .lesson-header-divider {
+            position: relative;
+            z-index: 2;
+            width: 80px;
+            height: 3px;
+            margin: 0 auto 25px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        .lesson-header-info {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .lesson-info-item {
+            min-width: 150px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: #ffffff;
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .lesson-info-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(212,175,55,0.55);
+            background: rgba(212,175,55,0.06);
+        }
+
+        .lesson-info-label {
+            display: block;
+            margin-bottom: 4px;
+            color: #9f9f9f;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lesson-info-value {
+            display: block;
+            color: #d4af37;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        @media (max-width: 600px) {
+            .lesson-header {
+                padding: 38px 18px 32px;
+                border-radius: 18px;
+            }
+
+            .lesson-header-badge {
+                font-size: 12px;
+                padding: 7px 14px;
+            }
+
+            .lesson-header-icon {
+                width: 62px;
+                height: 62px;
+                font-size: 28px;
+                border-radius: 17px;
+                margin-bottom: 16px;
+            }
+
+            .lesson-header h1 {
+                font-size: 13px;
+                letter-spacing: 2px;
+            }
+
+            .lesson-header h2 {
+                font-size: 28px;
+                line-height: 1.35;
+            }
+
+            .lesson-header p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .lesson-info-item {
+                width: 100%;
+                min-width: 0;
+                box-sizing: border-box;
+            }
+        }
+
+</style>
 
 </head>
 
 
 <body>
+
+
+<!-- =====================================================
+     LANGUAGE SWITCHER
+     ===================================================== -->
+
+<div
+    class="language-switcher"
+    aria-label="Language selector"
+>
+
+    <span class="language-switcher-label">
+        Language:
+    </span>
+
+    <button
+        type="button"
+        id="lang-si"
+        class="active"
+        onclick="changeLanguage('si')"
+    >
+        සිංහල
+    </button>
+
+    <button
+        type="button"
+        id="lang-ta"
+        onclick="changeLanguage('ta')"
+    >
+        தமிழ்
+    </button>
+
+    <button
+        type="button"
+        id="lang-en"
+        onclick="changeLanguage('en')"
+    >
+        English
+    </button>
+
+</div>
+
+<!-- Hidden Google Translate element -->
+
+<div
+    id="google_translate_element"
+    class="google-translate-hidden"
+    aria-hidden="true"
+></div>
 
 
 <header class="site-header">
@@ -890,17 +1241,63 @@
 
     <section class="lesson-header">
 
+        <div class="lesson-header-badge">
+            ✦ UNIQUE EDUZONE • LESSON 03
+        </div>
+
+        <div class="lesson-header-icon">
+            📚
+        </div>
+
         <h1>
-            පාඩම 03
+            11 ශ්‍රේණිය
         </h1>
 
         <h2>
             ව්‍යාපාර සංවිධාන
         </h2>
 
+        <div class="lesson-header-divider"></div>
+
         <p>
-            Business Organizations
+            ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය
+            <br>
+            ව්‍යාපාර සංවිධාන පිළිබඳ මූලික කරුණු හඳුනා ගනිමු.
         </p>
+
+        <div class="lesson-header-info">
+
+            <div class="lesson-info-item">
+                <span class="lesson-info-label">
+                    පාඩම
+                </span>
+
+                <span class="lesson-info-value">
+                    Lesson 03
+                </span>
+            </div>
+
+            <div class="lesson-info-item">
+                <span class="lesson-info-label">
+                    විෂය
+                </span>
+
+                <span class="lesson-info-value">
+                    Business &amp; Accounting
+                </span>
+            </div>
+
+            <div class="lesson-info-item">
+                <span class="lesson-info-label">
+                    මට්ටම
+                </span>
+
+                <span class="lesson-info-value">
+                    Grade 11
+                </span>
+            </div>
+
+        </div>
 
     </section>
 
@@ -5391,6 +5788,90 @@ function showActivityResult(
 
 </script>
 
+
+
+    <!-- =====================================================
+         CUSTOM SINHALA / TAMIL / ENGLISH LANGUAGE SWITCHER
+         ===================================================== -->
+    <script>
+        let currentLessonLanguage = "si";
+
+        function setLanguageButtonState(language) {
+            const buttons = {
+                si: document.getElementById("lang-si"),
+                ta: document.getElementById("lang-ta"),
+                en: document.getElementById("lang-en")
+            };
+
+            Object.keys(buttons).forEach(function (key) {
+                if (buttons[key]) {
+                    buttons[key].classList.toggle(
+                        "active",
+                        key === language
+                    );
+                }
+            });
+        }
+
+        function changeLanguage(language) {
+            currentLessonLanguage = language;
+            setLanguageButtonState(language);
+
+            /*
+             * Sinhala is the original language.
+             * Selecting Sinhala resets Google Translate.
+             */
+            if (language === "si") {
+                const combo =
+                    document.querySelector(".goog-te-combo");
+
+                if (combo) {
+                    combo.value = "";
+                    combo.dispatchEvent(
+                        new Event("change")
+                    );
+                }
+
+                return;
+            }
+
+            const combo =
+                document.querySelector(".goog-te-combo");
+
+            /*
+             * Google Translate may take a moment
+             * to initialize.
+             */
+            if (!combo) {
+                setTimeout(function () {
+                    changeLanguage(language);
+                }, 250);
+                return;
+            }
+
+            combo.value = language;
+
+            combo.dispatchEvent(
+                new Event("change")
+            );
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: "si",
+                    includedLanguages: "si,ta,en",
+                    autoDisplay: false,
+                    multilanguagePage: true
+                },
+                "google_translate_element"
+            );
+        }
+    </script>
+
+    <script
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
 
 </body>
 
