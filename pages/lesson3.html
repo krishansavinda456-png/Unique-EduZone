@@ -818,6 +818,25 @@
         .comparison-table-wrapper::-webkit-scrollbar-thumb:hover {
             background: #ffd700;
         }
+        
+            
+
+/* =========================================================
+   BUSINESS ORGANIZATION CHALLENGE
+   Separate namespace: bo-
+   ========================================================= */
+.bo-challenge-section{max-width:1100px;margin:35px auto;padding:25px;background:#1b1b1b;border:1px solid #444;border-radius:15px;box-shadow:0 12px 35px rgba(0,0,0,.35)}
+.bo-challenge-header{text-align:center;margin-bottom:25px}
+.bo-badge{display:inline-block;padding:7px 16px;border-radius:30px;background:#252525;border:1px solid #555;color:#ffd700;font-weight:bold;margin-bottom:10px}
+.bo-challenge-header h2{color:#ffd700;margin:6px 0;font-size:30px}
+.bo-challenge-header h3{color:#fff;margin:6px 0 14px}
+.bo-challenge-header p{line-height:1.8;color:#ddd;max-width:900px;margin:auto}
+.bo-progress-box{background:#252525;border:1px solid #444;border-radius:12px;padding:16px;margin:20px 0}
+.bo-progress-top{display:flex;justify-content:space-between;color:#ddd;margin-bottom:9px}.bo-progress-top strong{color:#ffd700}
+.bo-progress-bar{height:11px;background:#111;border-radius:20px;overflow:hidden}.bo-progress-fill{height:100%;width:0;background:#ffd700;transition:width .35s ease}
+.bo-score-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:25px}.bo-score-panel div{background:#252525;border:1px solid #444;border-radius:10px;padding:13px;text-align:center}.bo-score-panel span{display:block;color:#aaa;font-size:13px}.bo-score-panel strong{display:block;color:#ffd700;font-size:24px;margin-top:4px}
+.bo-question-card{background:#202020;border:1px solid #444;border-radius:12px;padding:22px;margin:20px 0}.bo-question-number{display:inline-block;background:#252525;border:1px solid #555;color:#ffd700;border-radius:20px;padding:6px 13px;font-weight:bold}.bo-question-card h3{color:#fff;margin:12px 0}.bo-case{background:#151515;border-left:4px solid #ffd700;border-radius:7px;padding:16px;margin:14px 0}.bo-case p{color:#eee;line-height:1.9;margin:0}.bo-question{color:#ffd700;font-weight:bold}.bo-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0}.bo-options label{background:#303030;border:1px solid #555;border-radius:8px;padding:12px;color:#fff;cursor:pointer;line-height:1.5}.bo-options label:hover{border-color:#ffd700;background:#383838}.bo-options input{margin-right:8px}.bo-check-btn,.bo-retry-btn{padding:12px 19px;border:0;border-radius:8px;background:#ffd700;color:#000;font-weight:bold;cursor:pointer}.bo-check-btn:hover,.bo-retry-btn:hover{background:#fff}.bo-hint-btn{padding:11px 17px;border:1px solid #555;border-radius:8px;background:#252525;color:#ffd700;font-weight:bold;cursor:pointer;margin-left:7px}.bo-feedback{display:none;margin-top:15px;padding:14px;border-radius:9px;line-height:1.8}.bo-feedback.bo-correct{display:block;background:rgba(40,180,100,.12);border:1px solid rgba(40,180,100,.45);color:#7ff0a5}.bo-feedback.bo-wrong{display:block;background:rgba(220,50,50,.12);border:1px solid rgba(220,50,50,.45);color:#ff9999}.bo-final-result{display:none;text-align:center;background:#252525;border:1px solid #ffd700;border-radius:14px;padding:28px 18px;margin-top:25px}.bo-final-icon{font-size:48px}.bo-final-result h2{color:#ffd700}.bo-final-score strong{font-size:42px;color:#fff}.bo-final-result p{color:#ddd;line-height:1.8}
+@media(max-width:700px){.bo-challenge-section{padding:18px;margin:25px 0}.bo-challenge-header h2{font-size:25px}.bo-options{grid-template-columns:1fr}.bo-check-btn,.bo-hint-btn{width:100%;margin:5px 0}.bo-score-panel{gap:7px}.bo-score-panel strong{font-size:20px}}
 
     </style>
 
@@ -2743,8 +2762,8 @@
                     </td>
 
                     <td>
-                        හවුල්කරුවන් අවම 02 හෝ
-                        වැඩිම 20 වන පිරිසක් සතුය.
+                        හවුල්කරුවන් දෙදෙනෙකු හෝ
+                        වැඩි පිරිසක් සතුය.
                     </td>
 
                     <td>
@@ -2985,11 +3004,11 @@
                     </td>
 
                     <td>
-                        අසීමිතය.
+                        සාමාන්‍යයෙන් අසීමිතය.
                     </td>
 
                     <td>
-                        සීමිතය.
+                        සාමාන්‍යයෙන් සීමිතය.
                     </td>
 
                     <td>
@@ -3123,7 +3142,8 @@
                     <th>තීරණ ගැනීම</th>
 
                     <td>
-                        හිමිකරු විසින්.
+                        සාමාන්‍යයෙන් ඉක්මනින්
+                        තීරණ ගත හැකිය.
                     </td>
 
                     <td>
@@ -3223,11 +3243,13 @@
                     <th>ලියාපදිංචිය</th>
 
                     <td>
-                        අනිවාර්ය නොවේ. නමුත් හිමිකරුගේ සම්පූර්ණ නමින් පවත්වාගෙන නොයන්නේ නම් ලියාපදිංචි කල යුතුවේ.
+                        නීතිය හා ව්‍යාපාරයේ
+                        ස්වභාවය අනුව.
                     </td>
 
                     <td>
-                        අනිවාර්ය නොවේ. නමුත් හිමිකරුවන්ගේ සම්පූර්ණ නමින් පවත්වාගෙන නොයන්නේ නම් ලියාපදිංචි කල යුතුවේ.
+                        නීතිය හා ව්‍යාපාරයේ
+                        ස්වභාවය අනුව.
                     </td>
 
                     <td>
@@ -3246,7 +3268,8 @@
                     </td>
 
                     <td>
-                        රජයේ නීති අනුව ක්‍රියාත්මක වේ.
+                        සමාගමක් ලෙස
+                        ලියාපදිංචි නොවේ.
                     </td>
 
                     <td>
@@ -3334,7 +3357,8 @@
                     </td>
 
                     <td>
-                        දේශපාලන බලපෑම්.
+                        තීරණ ගැනීම
+                        ප්‍රමාද විය හැකිය.
                     </td>
 
                     <td>
@@ -3344,7 +3368,8 @@
                     </td>
 
                     <td>
-                        අතිරික්ත සේවක ප්‍රමාණය වැඩිවීම මත ශ්‍රම පිරිවැය වැඩිවීම.
+                        රතු පටි ක්‍රමය හා
+                        තීරණ ගැනීමේ ප්‍රමාද.
                     </td>
 
                     <td>
@@ -3353,7 +3378,9 @@
                     </td>
 
                     <td>
-                        පාඩු ඇති වුවහොත් රජයට බරක් විය හැකිය.
+                        දේශපාලන බලපෑම්,
+                        පාඩු හා අකාර්යක්ෂමතාව
+                        ඇති විය හැකිය.
                     </td>
 
                 </tr>
@@ -3442,7 +3469,6 @@
     </div>
 
 </section>
-
 
 
     <!-- =========================================
@@ -3741,6 +3767,51 @@
 
 
 
+
+
+    <!-- =========================================
+         ⭐ BUSINESS ORGANIZATION CHALLENGE
+         Added without removing the original comparison
+         or existing Activities.
+         ========================================= -->
+    <section class="bo-challenge-section">
+
+        <div class="bo-challenge-header">
+            <div class="bo-badge">⭐ විශේෂ අභියෝගය</div>
+            <h2>Business Organization Challenge</h2>
+            <h3>ව්‍යාපාර සංවිධානය හඳුනාගැනීමේ අභියෝගය</h3>
+            <p>
+                එක් එක් ව්‍යාපාරය පිළිබඳ තොරතුරු හොඳින් කියවා,
+                එයට ගැළපෙන ව්‍යාපාර සංවිධාන වර්ගය තෝරන්න.
+                පිළිතුර පරීක්ෂා කළ පසු නිවැරදි පිළිතුර සහ පැහැදිලි කිරීමද ලබා ගත හැකිය.
+            </p>
+        </div>
+
+        <div class="bo-progress-box">
+            <div class="bo-progress-top"><span>අභියෝග ප්‍රගතිය</span><strong id="boProgressText">0 / 8</strong></div>
+            <div class="bo-progress-bar"><div id="boProgressFill" class="bo-progress-fill"></div></div>
+        </div>
+
+        <div class="bo-score-panel">
+            <div><span>ලකුණු</span><strong id="boScore">0</strong></div>
+            <div><span>නිවැරදි</span><strong id="boCorrect">0</strong></div>
+            <div><span>වැරදි</span><strong id="boWrong">0</strong></div>
+        </div>
+
+        <div id="boQuestionCards"></div>
+
+        <div id="boFinalResult" class="bo-final-result">
+            <div class="bo-final-icon">🏆</div>
+            <h2>අභියෝගය සම්පූර්ණයි!</h2>
+            <p>ඔබගේ අවසාන ප්‍රතිඵලය</p>
+            <div class="bo-final-score"><strong id="boFinalScore">0 / 8</strong></div>
+            <p id="boFinalMessage"></p>
+            <button class="bo-retry-btn" onclick="resetBOChallenge()">🔄 නැවත උත්සාහ කරන්න</button>
+        </div>
+
+    </section>
+
+
     <!-- =========================================
          QUIZ
          ========================================= -->
@@ -3825,6 +3896,143 @@
 </footer>
 
 
+
+
+
+
+<!-- =========================================
+     BUSINESS ORGANIZATION CHALLENGE SCRIPT
+     Separate from the original Activity system.
+     ========================================= -->
+<script>
+(function(){
+    "use strict";
+
+    const boData = [
+        {
+            title:"🏪 ව්‍යාපාරික තත්ත්වය 01",
+            text:"සුනිල් තම ඉතිරිකරගත් මුදල් යොදාගෙන කුඩා සිල්ලර වෙළෙඳසලක් ආරම්භ කළේය. ව්‍යාපාරයේ සියලු තීරණ ඔහු විසින්ම ගනී. ලාභය ඔහුට හිමි වන අතර ව්‍යාපාරයේ ණය සම්බන්ධයෙන්ද ඔහු පෞද්ගලිකව වගකිව යුතුය.",
+            options:["තනි පුද්ගල ව්‍යාපාර","හවුල් ව්‍යාපාර","සමාගම","සමූපකාර සමිතිය"], answer:0,
+            hint:"ව්‍යාපාරයේ හිමිකරු එක් පුද්ගලයෙකි.",
+            explanation:"එක් පුද්ගලයෙකු විසින් හිමිකරගෙන පාලනය කරන අතර ලාභය ඔහුට හිමිවීම සහ වගකීම ඔහු මත පැවතීම තනි පුද්ගල ව්‍යාපාරයක ලක්ෂණ වේ."
+        },
+        {
+            title:"🤝 ව්‍යාපාරික තත්ත්වය 02",
+            text:"කසුන් සහ නුවන් එක්ව ගිණුම්කරණ සේවා ව්‍යාපාරයක් ආරම්භ කළහ. ඔවුන් දෙදෙනාම ප්‍රාග්ධනය ලබා දී ව්‍යාපාරය පවත්වාගෙන යති. ලාභය ඔවුන් අතර කලින් එකඟ වූ අනුපාතයකට අනුව බෙදා ගනී.",
+            options:["තනි පුද්ගල ව්‍යාපාර","හවුල් ව්‍යාපාර","සමාගම","රාජ්‍ය සමාගම"], answer:1,
+            hint:"පුද්ගලයන් දෙදෙනෙකු එක්ව ව්‍යාපාරය පවත්වාගෙන යයි.",
+            explanation:"පුද්ගලයන් දෙදෙනෙකු හෝ වැඩි පිරිසක් එක්ව ප්‍රාග්ධනය යොදවා ව්‍යාපාරය පවත්වාගෙන යාම සහ එකඟ වූ පදනමකට ලාභය බෙදාගැනීම හවුල් ව්‍යාපාරයක ලක්ෂණ වේ."
+        },
+        {
+            title:"🏢 ව්‍යාපාරික තත්ත්වය 03",
+            text:"සමාගමක් නීතිය යටතේ සංස්ථාපිත කර ඇත. සමාගමට එහි හිමිකරුවන්ගෙන් වෙන් වූ නීතිමය පුද්ගලභාවයක් ඇත. කොටස්කරුවන්ගේ වගකීම නීතියෙන් සහ ඔවුන්ගේ කොටස් සම්බන්ධ වගකීම් අනුව සීමිත වේ.",
+            options:["හවුල් ව්‍යාපාර","සමාගම","සමිති සංවිධානය","රජයේ දෙපාර්තමේන්තුව"], answer:1,
+            hint:"වෙනම නීතිමය පුද්ගලභාවය සහ සීමිත වගකීම ගැන අවධානය යොමු කරන්න.",
+            explanation:"සමාගමක් එහි හිමිකරුවන්ගෙන් වෙන් වූ නීතිමය පුද්ගලභාවයක් සහිත සංස්ථාපිත ආයතනයක් වන අතර සීමිත වගකීම එහි වැදගත් ලක්ෂණයකි."
+        },
+        {
+            title:"👥 ව්‍යාපාරික තත්ත්වය 04",
+            text:"ගොවීන් පිරිසක් එක්ව තම නිෂ්පාදන සාධාරණ මිලකට අලෙවි කර ගැනීමටත් අවශ්‍ය යෙදවුම් සාමූහිකව මිලදී ගැනීමටත් සංවිධානයක් පිහිටුවා ඇත. සාමාජිකයන්ගේ ආර්ථික අවශ්‍යතා ඉටු කිරීම එහි ප්‍රධාන අරමුණකි.",
+            options:["සමූපකාර සමිතිය","සමාගම","තනි පුද්ගල ව්‍යාපාර","රජයේ දෙපාර්තමේන්තුව"], answer:0,
+            hint:"සාමාජිකයන්ගේ ආර්ථික අවශ්‍යතා සාමූහිකව ඉටු කිරීම ගැන අවධානය යොමු කරන්න.",
+            explanation:"සාමාජිකයන්ගේ පොදු ආර්ථික අවශ්‍යතා සාමූහිකව ඉටු කිරීම සමූපකාර සමිතියක ප්‍රධාන ලක්ෂණයකි."
+        },
+        {
+            title:"🏘️ ව්‍යාපාරික තත්ත්වය 05",
+            text:"ගමේ තරුණයන් පිරිසක් ක්‍රීඩා කටයුතු ප්‍රවර්ධනය කිරීම සඳහා එකතු වී සංවිධානයක් පිහිටුවා ඇත. සාමාජිකයන්ගෙන් ගාස්තු එකතු කර ක්‍රීඩා උපකරණ මිලදී ගන්නා අතර සාමාජිකයන්ගේ පොදු අරමුණ ඉටු කිරීම එහි ප්‍රධාන අරමුණයි.",
+            options:["සමාගම","සමිති සංවිධානය","හවුල් ව්‍යාපාර","රාජ්‍ය සමාගම"], answer:1,
+            hint:"සාමාජිකයන් පොදු අරමුණක් සඳහා එකතු වී ඇත.",
+            explanation:"පොදු අරමුණක් ඉටු කිරීම සඳහා සාමාජිකයන් එක්ව සංවිධානයක් පිහිටුවීම සමිති සංවිධානයක ලක්ෂණයකි."
+        },
+        {
+            title:"🏛️ රාජ්‍ය සේවා තත්ත්වය 06",
+            text:"මෙම ආයතනය රජයේ පරිපාලන ව්‍යුහය යටතේ ක්‍රියාත්මක වේ. එහි ප්‍රධාන අරමුණ ලාභ ඉපයීම නොව ජනතාවට රාජ්‍ය සේවා සැපයීමයි. එහි කටයුතු රජයේ නීති හා පරිපාලන ක්‍රමවේද අනුව සිදු වේ.",
+            options:["රජයේ දෙපාර්තමේන්තුව","සමාගම","සමූපකාර සමිතිය","හවුල් ව්‍යාපාර"], answer:0,
+            hint:"රජයේ පරිපාලන ව්‍යුහයේ කොටසක් ලෙස මහජන සේවා සපයයි.",
+            explanation:"රජයේ පරිපාලන ව්‍යුහය තුළ ක්‍රියාත්මක වී මහජන සේවා සැපයීම රජයේ දෙපාර්තමේන්තුවල ප්‍රධාන ලක්ෂණයකි."
+        },
+        {
+            title:"🏢 රාජ්‍ය ආයතන තත්ත්වය 07",
+            text:"රජය විසින් විශේෂ නීතිමය ක්‍රමයක් යටතේ ආයතනයක් පිහිටුවා ඇත. එම ආයතනයට වෙනම නීතිමය පුද්ගලභාවයක් ඇති අතර තම කටයුතු යම් පරිපාලන ස්වාධීනත්වයකින් සිදු කරයි.",
+            options:["රජයේ දෙපාර්තමේන්තුව","රාජ්‍ය සංස්ථාව","තනි පුද්ගල ව්‍යාපාර","සමිති සංවිධානය"], answer:1,
+            hint:"විශේෂ නීතිමය ක්‍රමයක් යටතේ පිහිටුවන ලද රාජ්‍ය ආයතනයක් ගැනයි.",
+            explanation:"විශේෂ පනතක් හෝ නීතිමය ක්‍රමයක් යටතේ පිහිටුවා වෙනම නීතිමය පුද්ගලභාවයක් සහිතව ක්‍රියා කරන ආයතනයක් රාජ්‍ය සංස්ථාවක් විය හැකිය."
+        },
+        {
+            title:"📊 රාජ්‍ය සමාගම් තත්ත්වය 08",
+            text:"රජය ප්‍රධාන කොටස් හිමිකරුවෙකු වන සමාගමක් ව්‍යාපාරික ආකාරයෙන් ක්‍රියා කරයි. සමාගමට වෙනම නීතිමය පුද්ගලභාවයක් ඇත. එහි කටයුතු අධ්‍යක්ෂ මණ්ඩලයක් හා කළමනාකාරීත්වයක් මඟින් පවත්වාගෙන යයි.",
+            options:["සාමාන්‍ය සමාගම","රාජ්‍ය සමාගම","රජයේ දෙපාර්තමේන්තුව","සමූපකාර සමිතිය"], answer:1,
+            hint:"රජය ප්‍රධාන කොටස් හිමිකරුවෙකු වන සමාගමක් ගැනයි.",
+            explanation:"රජය ප්‍රධාන කොටස් හිමිකරුවෙකු වන අතර සමාගමක් ලෙස වෙනම නීතිමය පුද්ගලභාවයකින් ක්‍රියා කරන ආයතනයක් රාජ්‍ය සමාගමක් ලෙස හඳුනාගත හැකිය."
+        }
+    ];
+
+    let boScore=0, boCorrect=0, boWrong=0, boAnswered=0;
+    const boDone={};
+    const holder=document.getElementById('boQuestionCards');
+
+    holder.innerHTML=boData.map((q,i)=>`
+        <div class="bo-question-card" id="boQuestion${i+1}">
+            <div class="bo-question-number">${q.title}</div>
+            <div class="bo-case"><p>${q.text}</p></div>
+            <p class="bo-question">මෙම තත්ත්වයට වඩාත් ගැළපෙන ව්‍යාපාර සංවිධානය කුමක්ද?</p>
+            <div class="bo-options">
+                ${q.options.map((o,j)=>`<label><input type="radio" name="boq${i+1}" value="${j}"> ${o}</label>`).join('')}
+            </div>
+            <button class="bo-check-btn" onclick="checkBOQuestion(${i+1})">✓ පිළිතුර පරීක්ෂා කරන්න</button>
+            <button class="bo-hint-btn" onclick="showBOHint(${i+1})">💡 ඉඟිය</button>
+            <div id="boFeedback${i+1}" class="bo-feedback"></div>
+        </div>`).join('');
+
+    window.checkBOQuestion=function(n){
+        if(boDone[n]) return;
+        const q=boData[n-1], selected=document.querySelector(`input[name="boq${n}"]:checked`), fb=document.getElementById(`boFeedback${n}`);
+        if(!selected){fb.className='bo-feedback bo-wrong';fb.innerHTML='⚠️ කරුණාකර පිළිතුරක් තෝරන්න.';return;}
+        boDone[n]=true; boAnswered++;
+        const ok=Number(selected.value)===q.answer;
+        if(ok){boScore++;boCorrect++;fb.className='bo-feedback bo-correct';fb.innerHTML='✅ <strong>නිවැරදියි!</strong><br>'+q.explanation;}
+        else{boWrong++;fb.className='bo-feedback bo-wrong';fb.innerHTML='❌ <strong>නිවැරදි පිළිතුර නොවේ.</strong><br>'+q.explanation;}
+        document.querySelectorAll(`input[name="boq${n}"]`).forEach(x=>x.disabled=true);
+        const btn=document.querySelector(`#boQuestion${n} .bo-check-btn`); if(btn){btn.disabled=true;btn.style.opacity='.5';}
+        updateBO();
+        if(boAnswered===boData.length) setTimeout(showBOFinal,350);
+    };
+
+    window.showBOHint=function(n){
+        const fb=document.getElementById(`boFeedback${n}`);
+        fb.className='bo-feedback';fb.style.display='block';fb.style.background='rgba(255,215,0,.08)';fb.style.border='1px solid rgba(255,215,0,.3)';fb.style.color='#ffd700';fb.innerHTML='💡 '+boData[n-1].hint;
+    };
+
+    function updateBO(){
+        const pct=(boAnswered/boData.length)*100;
+        document.getElementById('boProgressText').textContent=`${boAnswered} / ${boData.length}`;
+        document.getElementById('boProgressFill').style.width=pct+'%';
+        document.getElementById('boScore').textContent=boScore;
+        document.getElementById('boCorrect').textContent=boCorrect;
+        document.getElementById('boWrong').textContent=boWrong;
+    }
+
+    function showBOFinal(){
+        const pct=(boScore/boData.length)*100;
+        document.getElementById('boFinalScore').textContent=`${boScore} / ${boData.length}`;
+        document.getElementById('boFinalMessage').innerHTML=
+            pct===100?'🏆 විශිෂ්ටයි! සියලුම අභියෝග නිවැරදිව විසඳා ඇත.':
+            pct>=75?'🌟 ඉතා හොඳයි! ව්‍යාපාර සංවිධාන පිළිබඳ ඔබගේ අවබෝධය ඉතා හොඳයි.':
+            pct>=50?'👍 හොඳ උත්සාහයක්! වැරදුණු අභියෝගවල පැහැදිලි කිරීම් නැවත කියවා බලන්න.':
+            '📚 නැවත උත්සාහ කරන්න. පාඩමේ අදාළ කරුණු නැවත අධ්‍යයනය කරන්න.';
+        document.getElementById('boFinalResult').style.display='block';
+        document.getElementById('boFinalResult').scrollIntoView({behavior:'smooth',block:'center'});
+    }
+
+    window.resetBOChallenge=function(){
+        boScore=0;boCorrect=0;boWrong=0;boAnswered=0;Object.keys(boDone).forEach(k=>delete boDone[k]);
+        boData.forEach((q,i)=>{document.querySelectorAll(`input[name="boq${i+1}"]`).forEach(x=>{x.checked=false;x.disabled=false;});const fb=document.getElementById(`boFeedback${i+1}`);fb.innerHTML='';fb.className='bo-feedback';fb.removeAttribute('style');const btn=document.querySelector(`#boQuestion${i+1} .bo-check-btn`);if(btn){btn.disabled=false;btn.style.opacity='1';}});
+        document.getElementById('boFinalResult').style.display='none';updateBO();
+    };
+
+    updateBO();
+})();
+</script>
 
 
 <!-- =========================================
