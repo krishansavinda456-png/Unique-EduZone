@@ -551,25 +551,173 @@ const questions = [
 
 
 // =====================================================
+// SHUFFLED QUESTIONS
+// =====================================================
+//
+// ප්‍රශ්න අනුපිළිවෙල වෙනස් නොකරයි.
+// Options 4 පමණක් shuffle කරයි.
+// Correct answer index එක අලුත් ස්ථානයට update කරයි.
+// =====================================================
+
+let shuffledQuestions = [];
+
+
+// =====================================================
+// SHUFFLE ONE QUESTION
+// =====================================================
+
+function shuffleQuestion(question){
+
+    const questionText =
+        question[0];
+
+    const originalOptions =
+        question[1];
+
+    const originalCorrectIndex =
+        question[2];
+
+    const explanation =
+        question[3];
+
+
+    /*
+     * Option එක සහ එහි original index
+     * එකට තබා ගනී.
+     */
+
+    let options =
+        originalOptions.map(
+            function(option,index){
+
+                return {
+
+                    text: option,
+
+                    originalIndex: index
+
+                };
+
+            }
+        );
+
+
+    // Fisher-Yates Shuffle
+
+    for(
+        let i = options.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+
+        const temp =
+            options[i];
+
+
+        options[i] =
+            options[j];
+
+
+        options[j] =
+            temp;
+
+    }
+
+
+    /*
+     * Shuffle වූ පසු නිවැරදි පිළිතුර
+     * තිබෙන අලුත් index එක සොයයි.
+     */
+
+    const newCorrectIndex =
+        options.findIndex(
+            function(option){
+
+                return (
+                    option.originalIndex ===
+                    originalCorrectIndex
+                );
+
+            }
+        );
+
+
+    return [
+
+        questionText,
+
+        options.map(
+            function(option){
+
+                return option.text;
+
+            }
+        ),
+
+        newCorrectIndex,
+
+        explanation
+
+    ];
+
+}
+
+
+// =====================================================
+// SHUFFLE ALL OPTIONS
+// =====================================================
+
+function shuffleAllOptions(){
+
+    shuffledQuestions =
+        questions.map(
+            function(question){
+
+                return shuffleQuestion(
+                    question
+                );
+
+            }
+        );
+
+}
+
+
+// =====================================================
 // QUIZ SETTINGS
 // =====================================================
 
-const QUIZ_TIME = 10 * 60;
+const QUIZ_TIME =
+    10 * 60;
 
-let current = 0;
+let current =
+    0;
 
 let answers =
-    Array(questions.length).fill(null);
+    Array(
+        questions.length
+    ).fill(null);
 
-let finished = false;
+let finished =
+    false;
 
-let timeLeft = QUIZ_TIME;
+let timeLeft =
+    QUIZ_TIME;
 
-let timer = null;
+let timer =
+    null;
 
-let quizStartedAt = null;
+let quizStartedAt =
+    null;
 
-let quizFinishedAt = null;
+let quizFinishedAt =
+    null;
 
 
 // =====================================================
@@ -582,36 +730,52 @@ function startTimer(){
         return;
     }
 
+
     quizStartedAt =
         new Date().toISOString();
 
+
     timer =
-        setInterval(function(){
+        setInterval(
+            function(){
 
-            timeLeft--;
+                timeLeft--;
 
-            updateTimer();
+                updateTimer();
 
-            if(timeLeft <= 0){
 
-                clearInterval(timer);
+                if(timeLeft <= 0){
 
-                timer = null;
+                    clearInterval(
+                        timer
+                    );
 
-                alert(
-                    "⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ."
-                );
+                    timer =
+                        null;
 
-                autoSubmitQuiz();
 
-            }
+                    alert(
+                        "⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ."
+                    );
 
-        },1000);
+
+                    autoSubmitQuiz();
+
+                }
+
+            },
+            1000
+        );
+
 
     updateTimer();
 
 }
 
+
+// =====================================================
+// UPDATE TIMER
+// =====================================================
 
 function updateTimer(){
 
@@ -620,17 +784,21 @@ function updateTimer(){
             "quizTimer"
         );
 
+
     if(!timerElement){
         return;
     }
+
 
     let minutes =
         Math.floor(
             timeLeft / 60
         );
 
+
     let seconds =
         timeLeft % 60;
+
 
     minutes =
         String(minutes).padStart(
@@ -638,11 +806,13 @@ function updateTimer(){
             "0"
         );
 
+
     seconds =
         String(seconds).padStart(
             2,
             "0"
         );
+
 
     timerElement.textContent =
         "⏱️ ඉතිරි කාලය: " +
@@ -689,53 +859,68 @@ function createTimer(){
             ".hero"
         );
 
+
     if(!hero){
         return;
     }
+
 
     const oldTimer =
         document.getElementById(
             "quizTimer"
         );
 
+
     if(oldTimer){
         return;
     }
+
 
     const timerBox =
         document.createElement(
             "div"
         );
 
+
     timerBox.id =
         "quizTimer";
+
 
     timerBox.style.marginTop =
         "18px";
 
+
     timerBox.style.padding =
         "12px 20px";
+
 
     timerBox.style.border =
         "2px solid #d4af37";
 
+
     timerBox.style.borderRadius =
         "30px";
+
 
     timerBox.style.display =
         "inline-block";
 
+
     timerBox.style.background =
         "#211d0e";
+
 
     timerBox.style.color =
         "#d4af37";
 
+
     timerBox.style.fontWeight =
         "bold";
 
+
     timerBox.style.fontSize =
         "18px";
+
 
     hero.appendChild(
         timerBox
@@ -751,7 +936,8 @@ function createTimer(){
 function render(){
 
     const q =
-        questions[current];
+        shuffledQuestions[current];
+
 
     const box =
         document.getElementById(
@@ -760,19 +946,25 @@ function render(){
 
 
     let h =
+
         '<div class="question active">' +
 
         '<div class="question-number">' +
 
         'ප්‍රශ්නය ' +
+
         (current + 1) +
+
         ' / ' +
-        questions.length +
+
+        shuffledQuestions.length +
 
         '</div>' +
 
         '<h2>' +
+
         q[0] +
+
         '</h2>';
 
 
@@ -792,11 +984,13 @@ function render(){
                 ) +
 
                 '" onclick="selectOption(' +
+
                 i +
+
                 ')">' +
 
                 String.fromCharCode(
-                    65+i
+                    65 + i
                 ) +
 
                 '. ' +
@@ -841,7 +1035,7 @@ function render(){
 
     if(
         current <
-        questions.length - 1
+        shuffledQuestions.length - 1
     ){
 
         h +=
@@ -879,7 +1073,7 @@ function render(){
 
         (
             (current + 1) /
-            questions.length *
+            shuffledQuestions.length *
             100
         ) +
 
@@ -891,9 +1085,12 @@ function render(){
     ).textContent =
 
         'ප්‍රශ්නය ' +
+
         (current + 1) +
+
         ' / ' +
-        questions.length;
+
+        shuffledQuestions.length;
 
 
     updateTimer();
@@ -930,7 +1127,9 @@ function next(){
         );
 
         return;
+
     }
+
 
     current++;
 
@@ -968,6 +1167,7 @@ function submitQuiz(){
         return;
     }
 
+
     if(
         answers.some(
             function(a){
@@ -983,7 +1183,9 @@ function submitQuiz(){
         );
 
         return;
+
     }
+
 
     finishQuiz(false);
 
@@ -1000,6 +1202,7 @@ function autoSubmitQuiz(){
         return;
     }
 
+
     finishQuiz(true);
 
 }
@@ -1013,14 +1216,18 @@ function finishQuiz(
     timeExpired
 ){
 
-    finished = true;
+    finished =
+        true;
 
 
     if(timer !== null){
 
-        clearInterval(timer);
+        clearInterval(
+            timer
+        );
 
-        timer = null;
+        timer =
+            null;
 
     }
 
@@ -1029,10 +1236,22 @@ function finishQuiz(
         new Date().toISOString();
 
 
-    let score = 0;
+    let score =
+        0;
 
 
-    questions.forEach(
+    /*
+     * IMPORTANT:
+     *
+     * මෙහි questions වෙනුවට
+     * shuffledQuestions භාවිතා කරයි.
+     *
+     * එම නිසා Random වූ option එක
+     * අනුව correct answer index එක
+     * නිවැරදිව පරීක්ෂා වේ.
+     */
+
+    shuffledQuestions.forEach(
         function(q,i){
 
             if(
@@ -1049,10 +1268,12 @@ function finishQuiz(
 
     const percentage =
         Math.round(
+
             (
                 score /
-                questions.length
+                shuffledQuestions.length
             ) * 100
+
         );
 
 
@@ -1114,11 +1335,14 @@ function finishQuiz(
     ).textContent =
 
         score +
+
         " / " +
-        questions.length;
+
+        shuffledQuestions.length;
 
 
-    let resultMessage = "";
+    let resultMessage =
+        "";
 
 
     if(timeExpired){
@@ -1130,7 +1354,7 @@ function finishQuiz(
 
     else if(
         score ===
-        questions.length
+        shuffledQuestions.length
     ){
 
         resultMessage =
@@ -1164,19 +1388,25 @@ function finishQuiz(
         "<br><br>" +
 
         "ලකුණු: " +
+
         score +
+
         " / " +
-        questions.length +
+
+        shuffledQuestions.length +
 
         "<br>" +
 
         "ප්‍රතිශතය: " +
+
         percentage +
+
         "%" +
 
         "<br>" +
 
         "ගත වූ කාලය: " +
+
         timeUsedText;
 
 
@@ -1184,10 +1414,16 @@ function finishQuiz(
     // REVIEW
     // =================================================
 
-    let r = "";
+    let r =
+        "";
 
 
-    questions.forEach(
+    /*
+     * Review එකේදීත්
+     * shuffledQuestions භාවිතා කරයි.
+     */
+
+    shuffledQuestions.forEach(
         function(q,i){
 
             r +=
@@ -1249,15 +1485,17 @@ function finishQuiz(
 
     const quizResult = {
 
-        grade: 11,
+        grade:
+            11,
 
-        lesson: 2,
+        lesson:
+            2,
 
         lessonTitle:
             "කළමණාකරණය",
 
         totalQuestions:
-            questions.length,
+            shuffledQuestions.length,
 
         score:
             score,
@@ -1410,7 +1648,8 @@ function finishQuiz(
     // GENERAL LESSON COMPLETION
     // =================================================
 
-    let completedLessons = {};
+    let completedLessons =
+        {};
 
 
     try{
@@ -1430,7 +1669,8 @@ function finishQuiz(
 
     }catch(error){
 
-        completedLessons = {};
+        completedLessons =
+            {};
 
     }
 
@@ -1460,14 +1700,18 @@ function restartQuiz(){
 
     if(timer !== null){
 
-        clearInterval(timer);
+        clearInterval(
+            timer
+        );
 
-        timer = null;
+        timer =
+            null;
 
     }
 
 
-    current = 0;
+    current =
+        0;
 
 
     answers =
@@ -1476,7 +1720,8 @@ function restartQuiz(){
         ).fill(null);
 
 
-    finished = false;
+    finished =
+        false;
 
 
     timeLeft =
@@ -1489,6 +1734,14 @@ function restartQuiz(){
 
     quizFinishedAt =
         null;
+
+
+    /*
+     * Restart කරන විට Options 4
+     * නැවත Shuffle කරයි.
+     */
+
+    shuffleAllOptions();
 
 
     document.getElementById(
@@ -1569,11 +1822,17 @@ function completeQuiz(){
 // PAGE START
 // =====================================================
 
+// Page එක පළමු වරට open කරන විට
+// Options 4 shuffle කරයි.
+
+shuffleAllOptions();
+
 createTimer();
 
 render();
 
 startTimer();
+
 
 </script>
 
