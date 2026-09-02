@@ -4,104 +4,623 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grade 11 - Lesson 1 Quiz | Unique EduZone</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,"Noto Sans Sinhala",sans-serif;background:#080808;color:#f5f5f5;line-height:1.7}
-header{background:#111;border-bottom:2px solid #d4af37;padding:16px 6%;position:sticky;top:0;z-index:10}
-.header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px}.logo img{width:52px;height:52px;object-fit:contain}
-.logo-text{color:#d4af37;font-size:21px;font-weight:bold}
-.back-btn{color:#080808;background:#d4af37;text-decoration:none;padding:7px 17px;border-radius:25px;font-weight:bold}
-.container{width:92%;max-width:1000px;margin:30px auto 70px}
-.hero,.quiz-box,.result-box{background:#111;border:1px solid #d4af37;border-radius:18px;padding:28px;margin-bottom:24px}
-.hero{text-align:center;background:linear-gradient(135deg,#111,#1d1d1d)}
-.hero h1{color:#d4af37;font-size:31px;margin-bottom:8px}.hero p{color:#ddd}
-.progress{height:12px;background:#333;border-radius:20px;overflow:hidden;margin-top:16px}
-.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#b8860b,#ffd700);transition:.3s}
-.question{display:none}.question.active{display:block}
-.question-number{color:#d4af37;font-weight:bold;margin-bottom:8px}
-.question h2{font-size:21px;margin-bottom:18px}
-.option{display:block;width:100%;text-align:left;background:#191919;color:#f5f5f5;border:1px solid #3b3b3b;border-radius:10px;padding:12px 15px;margin:9px 0;cursor:pointer;font-size:16px}
-.option:hover,.option.selected{border-color:#d4af37;background:#2a2410}
-.controls{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
-button{border:0;border-radius:25px;padding:11px 24px;font-weight:bold;cursor:pointer;font-size:15px}
-.next,.submit{background:#d4af37;color:#080808}.prev{background:#333;color:#fff}
-button:disabled{opacity:.4;cursor:not-allowed}
-.note{margin-top:16px;background:#211d0e;border-left:4px solid #d4af37;padding:13px;border-radius:8px}
-.result-box{display:none;text-align:center}.score{font-size:42px;color:#d4af37;font-weight:bold}
-.result-box h2{color:#d4af37;margin-bottom:10px}.result-box button{margin:7px;background:#d4af37;color:#080808}
-.review{margin-top:20px;text-align:left}.review-item{padding:13px;border-bottom:1px solid #333}.review-item strong{color:#d4af37}
-footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #333}
-@media(max-width:650px){.hero h1{font-size:25px}.quiz-box{padding:19px}.question h2{font-size:19px}.controls{flex-direction:column}.controls button{width:100%}}
+
+body{
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.7
+}
+
+header{
+    background:#111;
+    border-bottom:2px solid #d4af37;
+    padding:16px 6%;
+    position:sticky;
+    top:0;
+    z-index:10
+}
+
+.header-inner{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px
+}
+
+.logo img{
+    width:52px;
+    height:52px;
+    object-fit:contain
+}
+
+.logo-text{
+    color:#d4af37;
+    font-size:21px;
+    font-weight:bold
+}
+
+.back-btn{
+    color:#080808;
+    background:#d4af37;
+    text-decoration:none;
+    padding:7px 17px;
+    border-radius:25px;
+    font-weight:bold
+}
+
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:30px auto 70px
+}
+
+.hero,
+.quiz-box,
+.result-box{
+    background:#111;
+    border:1px solid #d4af37;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:24px
+}
+
+.hero{
+    text-align:center;
+    background:linear-gradient(135deg,#111,#1d1d1d)
+}
+
+.hero h1{
+    color:#d4af37;
+    font-size:31px;
+    margin-bottom:8px
+}
+
+.hero p{
+    color:#ddd
+}
+
+.progress{
+    height:12px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:16px
+}
+
+.progress-fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#b8860b,#ffd700);
+    transition:.3s
+}
+
+.question{
+    display:none
+}
+
+.question.active{
+    display:block
+}
+
+.question-number{
+    color:#d4af37;
+    font-weight:bold;
+    margin-bottom:8px
+}
+
+.question h2{
+    font-size:21px;
+    margin-bottom:18px
+}
+
+.option{
+    display:block;
+    width:100%;
+    text-align:left;
+    background:#191919;
+    color:#f5f5f5;
+    border:1px solid #3b3b3b;
+    border-radius:10px;
+    padding:12px 15px;
+    margin:9px 0;
+    cursor:pointer;
+    font-size:16px
+}
+
+.option:hover,
+.option.selected{
+    border-color:#d4af37;
+    background:#2a2410
+}
+
+.controls{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:24px
+}
+
+button{
+    border:0;
+    border-radius:25px;
+    padding:11px 24px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px
+}
+
+.next,
+.submit{
+    background:#d4af37;
+    color:#080808
+}
+
+.prev{
+    background:#333;
+    color:#fff
+}
+
+button:disabled{
+    opacity:.4;
+    cursor:not-allowed
+}
+
+.note{
+    margin-top:16px;
+    background:#211d0e;
+    border-left:4px solid #d4af37;
+    padding:13px;
+    border-radius:8px
+}
+
+.result-box{
+    display:none;
+    text-align:center
+}
+
+.score{
+    font-size:42px;
+    color:#d4af37;
+    font-weight:bold
+}
+
+.result-box h2{
+    color:#d4af37;
+    margin-bottom:10px
+}
+
+.result-box button{
+    margin:7px;
+    background:#d4af37;
+    color:#080808
+}
+
+.review{
+    margin-top:20px;
+    text-align:left
+}
+
+.review-item{
+    padding:13px;
+    border-bottom:1px solid #333
+}
+
+.review-item strong{
+    color:#d4af37
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#aaa;
+    border-top:1px solid #333
+}
+
+@media(max-width:650px){
+
+    .hero h1{
+        font-size:25px
+    }
+
+    .quiz-box{
+        padding:19px
+    }
+
+    .question h2{
+        font-size:19px
+    }
+
+    .controls{
+        flex-direction:column
+    }
+
+    .controls button{
+        width:100%
+    }
+
+}
 </style>
 </head>
+
 <body>
-<header><div class="header-inner">
-<div class="logo"><img src="../assets/images/logo.png"
-         alt="Unique EduZone Logo"><div class="logo-text">Unique EduZone</div></div>
-<a href="../index.html" class="back-btn">← Home</a>
-</div></header>
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+
+<img
+    src="../assets/images/logo.png"
+    alt="Unique EduZone Logo"
+>
+
+<div class="logo-text">
+Unique EduZone
+</div>
+
+</div>
+
+<a
+    href="../index.html"
+    class="back-btn"
+>
+← Home
+</a>
+
+</div>
+
+</header>
+
 
 <div class="container">
+
 <section class="hero">
-<h1>11 ශ්‍රේණිය – පාඩම 01 Quiz</h1>
-<p>වෙළෙඳාම සහ උපකාරක සේවා</p>
-<p style="margin-top:8px;color:#aaa">ප්‍රශ්න 10 • එක් ප්‍රශ්නයකට එක් නිවැරදි පිළිතුරක්</p>
-<div class="progress"><div class="progress-fill" id="progressFill"></div></div>
-<p id="progressText" style="margin-top:7px;color:#d4af37;font-weight:bold">ප්‍රශ්නය 1 / 10</p>
-</section>
 
-<section class="quiz-box" id="quizBox"></section>
+<h1>
+11 ශ්‍රේණිය – පාඩම 01 Quiz
+</h1>
 
-<section class="result-box" id="resultBox">
-<h2>Quiz ප්‍රතිඵලය</h2>
-<div class="score" id="score"></div>
-<p id="resultMessage"></p>
-<div class="review" id="review"></div>
-<button onclick="restartQuiz()">නැවත Quiz කරන්න</button>
-<button onclick="completeQuiz()">✓ Quiz Complete</button>
-</section>
+<p>
+වෙළෙඳාම සහ උපකාරක සේවා
+</p>
+
+<p
+    style="margin-top:8px;color:#aaa"
+>
+ප්‍රශ්න 10 • එක් ප්‍රශ්නයකට එක් නිවැරදි පිළිතුරක්
+</p>
+
+<div class="progress">
+
+<div
+    class="progress-fill"
+    id="progressFill"
+></div>
+
 </div>
-<footer>© 2026 Unique EduZone | Grade 11 Business & Accounting Studies</footer>
+
+<p
+    id="progressText"
+    style="margin-top:7px;color:#d4af37;font-weight:bold"
+>
+ප්‍රශ්නය 1 / 10
+</p>
+
+</section>
+
+
+<section
+    class="quiz-box"
+    id="quizBox"
+></section>
+
+
+<section
+    class="result-box"
+    id="resultBox"
+>
+
+<h2>
+Quiz ප්‍රතිඵලය
+</h2>
+
+<div
+    class="score"
+    id="score"
+></div>
+
+<p
+    id="resultMessage"
+></p>
+
+<div
+    class="review"
+    id="review"
+></div>
+
+<button onclick="restartQuiz()">
+නැවත Quiz කරන්න
+</button>
+
+<button onclick="completeQuiz()">
+✓ Quiz Complete
+</button>
+
+</section>
+
+</div>
+
+
+<footer>
+© 2026 Unique EduZone | Grade 11 Business & Accounting Studies
+</footer>
+
 
 <script>
 
-const questions=[
-["භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම හඳුන්වන්නේ කුමක් ලෙසද?",["නිෂ්පාදනය","වෙළෙඳාම","ප්‍රවාහනය","රක්ෂණය"],1,"භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම වෙළෙඳාමයි."],
 
-["අවසාන පරිභෝජනය සඳහා පාරිභෝගිකයන්ට භාණ්ඩ හා සේවා විකිණීම කුමක්ද?",["තොග වෙළෙඳාම","ආනයන වෙළෙඳාම","සිල්ලර වෙළෙඳාම","අපනයන වෙළෙඳාම"],2,"අවසාන පාරිභෝගිකයා සඳහා විකිණීම සිල්ලර වෙළෙඳාමයි."],
+// =====================================================
+// ORIGINAL QUESTIONS
+// =====================================================
 
-["නැවත විකිණීමේ අරමුණින් විශාල ප්‍රමාණයකින් භාණ්ඩ මිලදීගෙන වෙළෙඳුන්ට විකිණීම කුමක්ද?",["සිල්ලර වෙළෙඳාම","තොග වෙළෙඳාම","ආනයනය","අපනයනය"],1,"වෙළෙඳුන්ට නැවත විකිණීම සඳහා විශාල ප්‍රමාණයෙන් භාණ්ඩ විකිණීම තොග වෙළෙඳාමයි."],
+const questions = [
 
-["විදේශ රටකින් භාණ්ඩ හෝ සේවා තම රටට ලබාගැනීම කුමක්ද?",["ආනයන වෙළෙඳාම","අපනයන වෙළෙඳාම","සිල්ලර වෙළෙඳාම","දේශීය වෙළෙඳාම"],0,"විදේශ රටකින් තම රටට ලබාගැනීම ආනයන වෙළෙඳාමයි."],
+[
+"භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම හඳුන්වන්නේ කුමක් ලෙසද?",
+[
+"නිෂ්පාදනය",
+"වෙළෙඳාම",
+"ප්‍රවාහනය",
+"රක්ෂණය"
+],
+1,
+"භාණ්ඩ හා සේවා මිලදී ගැනීම හා විකිණීම වෙළෙඳාමයි."
+],
 
-["නිශ්චිත මුදලක් නිශ්චිත කාලයකට නියමිත පොලී අනුපාතයක් යටතේ බැංකුවක තැන්පත් කිරීම කුමක්ද?",["ජංගම ගිණුම","ඉතිරි කිරීමේ ගිණුම","ස්ථාවර තැන්පතුව","බැංකු අයිරාව"],2,"නිශ්චිත කාලයකට නියමිත පොලී අනුපාතයක් යටතේ තබන තැන්පතුව ස්ථාවර තැන්පතුවකි."],
+[
+"අවසාන පරිභෝජනය සඳහා පාරිභෝගිකයන්ට භාණ්ඩ හා සේවා විකිණීම කුමක්ද?",
+[
+"තොග වෙළෙඳාම",
+"ආනයන වෙළෙඳාම",
+"සිල්ලර වෙළෙඳාම",
+"අපනයන වෙළෙඳාම"
+],
+2,
+"අවසාන පාරිභෝගිකයා සඳහා විකිණීම සිල්ලර වෙළෙඳාමයි."
+],
 
-["චෙක්පත් මගින් නිතර ගනුදෙනු කිරීමට වඩාත් සම්බන්ධ ගිණුම කුමක්ද?",["ජංගම ගිණුම","ස්ථාවර තැන්පතුව","ඉතිරි කිරීමේ ගිණුම","ණය ගිණුම"],0,"ජංගම ගිණුම ව්‍යාපාරික ගනුදෙනු සහ චෙක්පත් සඳහා භාවිත කරයි."],
+[
+"නැවත විකිණීමේ අරමුණින් විශාල ප්‍රමාණයකින් භාණ්ඩ මිලදීගෙන වෙළෙඳුන්ට විකිණීම කුමක්ද?",
+[
+"සිල්ලර වෙළෙඳාම",
+"තොග වෙළෙඳාම",
+"ආනයනය",
+"අපනයනය"
+],
+1,
+"වෙළෙඳුන්ට නැවත විකිණීම සඳහා විශාල ප්‍රමාණයෙන් භාණ්ඩ විකිණීම තොග වෙළෙඳාමයි."
+],
 
-["බැංකු ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කිරීමට භාවිත කරන කාඩ්පත කුමක්ද?",["Credit Card","Debit Card","Insurance Card","ATM Receipt"],1,"Debit Card මගින් ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කළ හැක."],
+[
+"විදේශ රටකින් භාණ්ඩ හෝ සේවා තම රටට ලබාගැනීම කුමක්ද?",
+[
+"ආනයන වෙළෙඳාම",
+"අපනයන වෙළෙඳාම",
+"සිල්ලර වෙළෙඳාම",
+"දේශීය වෙළෙඳාම"
+],
+0,
+"විදේශ රටකින් තම රටට ලබාගැනීම ආනයන වෙළෙඳාමයි."
+],
 
-["රක්ෂණ ගිවිසුමට අදාළ වැදගත් තොරතුරු නිවැරදිව හෙළි කිරීමේ මූලධර්මය කුමක්ද?",["හානි පූරණය","රක්ෂ්‍ය හිමිකම","උපරිම විශ්වාසය","ප්‍රවාහනය"],2,"වැදගත් කරුණු නිවැරදිව හෙළි කිරීම උපරිම විශ්වාසයේ මූලධර්මයට අදාළ වේ."],
+[
+"නිශ්චිත මුදලක් නිශ්චිත කාලයකට නියමිත පොලී අනුපාතයක් යටතේ බැංකුවක තැන්පත් කිරීම කුමක්ද?",
+[
+"ජංගම ගිණුම",
+"ඉතිරි කිරීමේ ගිණුම",
+"ස්ථාවර තැන්පතුව",
+"බැංකු අයිරාව"
+],
+2,
+"නිශ්චිත කාලයකට නියමිත පොලී අනුපාතයක් යටතේ තබන තැන්පතුව ස්ථාවර තැන්පතුවකි."
+],
 
-["දේපළ රක්ෂණයට වඩාත් අදාළ නිදසුන කුමක්ද?",["ගොඩනැගිල්ලකට ගින්නකින් සිදුවන හානිය","දරුවෙකුගේ අධ්‍යාපන අරමුදල","සේවක වැටුප් ගෙවීම","බැංකු ගිණුමක් විවෘත කිරීම"],0,"ගොඩනැගිලි, යන්ත්‍ර සූත්‍ර, රථවාහන සහ භාණ්ඩ තොග වැනි දේපළ සඳහා දේපළ රක්ෂණය අදාළ වේ."],
+[
+"චෙක්පත් මගින් නිතර ගනුදෙනු කිරීමට වඩාත් සම්බන්ධ ගිණුම කුමක්ද?",
+[
+"ජංගම ගිණුම",
+"ස්ථාවර තැන්පතුව",
+"ඉතිරි කිරීමේ ගිණුම",
+"ණය ගිණුම"
+],
+0,
+"ජංගම ගිණුම ව්‍යාපාරික ගනුදෙනු සහ චෙක්පත් සඳහා භාවිත කරයි."
+],
 
-["ජංගම ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට බැංකුව ලබාදෙන පහසුකම කුමක්ද?",["ස්ථාවර තැන්පතුව","බැංකු අයිරාව","Debit Card","රක්ෂණ සේවාව"],1,"ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට අවසර දෙන පහසුකම බැංකු අයිරාවයි."]
+[
+"බැංකු ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කිරීමට භාවිත කරන කාඩ්පත කුමක්ද?",
+[
+"Credit Card",
+"Debit Card",
+"Insurance Card",
+"ATM Receipt"
+],
+1,
+"Debit Card මගින් ගිණුමේ ඇති මුදලින් සෘජුව ගෙවීම් කළ හැක."
+],
+
+[
+"රක්ෂණ ගිවිසුමට අදාළ වැදගත් තොරතුරු නිවැරදිව හෙළි කිරීමේ මූලධර්මය කුමක්ද?",
+[
+"හානි පූරණය",
+"රක්ෂ්‍ය හිමිකම",
+"උපරිම විශ්වාසය",
+"ප්‍රවාහනය"
+],
+2,
+"වැදගත් කරුණු නිවැරදිව හෙළි කිරීම උපරිම විශ්වාසයේ මූලධර්මයට අදාළ වේ."
+],
+
+[
+"දේපළ රක්ෂණයට වඩාත් අදාළ නිදසුන කුමක්ද?",
+[
+"ගොඩනැගිල්ලකට ගින්නකින් සිදුවන හානිය",
+"දරුවෙකුගේ අධ්‍යාපන අරමුදල",
+"සේවක වැටුප් ගෙවීම",
+"බැංකු ගිණුමක් විවෘත කිරීම"
+],
+0,
+"ගොඩනැගිලි, යන්ත්‍ර සූත්‍ර, රථවාහන සහ භාණ්ඩ තොග වැනි දේපළ සඳහා දේපළ රක්ෂණය අදාළ වේ."
+],
+
+[
+"ජංගම ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට බැංකුව ලබාදෙන පහසුකම කුමක්ද?",
+[
+"ස්ථාවර තැන්පතුව",
+"බැංකු අයිරාව",
+"Debit Card",
+"රක්ෂණ සේවාව"
+],
+1,
+"ගිණුමේ ශේෂයට වඩා වැඩි මුදලක් සඳහා ගෙවීමට අවසර දෙන පහසුකම බැංකු අයිරාවයි."
+]
+
 ];
+
+
+// =====================================================
+// SHUFFLED QUESTIONS
+// =====================================================
+//
+// questions = Original data
+// shuffledQuestions = Quiz එකේ පෙන්වන data
+//
+// මෙහිදී ප්‍රශ්න අනුපිළිවෙල වෙනස් නොවේ.
+// Options 4 පමණක් shuffle වේ.
+// Correct answer index එකද අලුත් ස්ථානයට update වේ.
+// =====================================================
+
+let shuffledQuestions = [];
+
+
+// =====================================================
+// SHUFFLE ONE QUESTION'S OPTIONS
+// =====================================================
+
+function shuffleQuestion(question){
+
+    const questionText = question[0];
+
+    const originalOptions = question[1];
+
+    const originalCorrectIndex = question[2];
+
+    const explanation = question[3];
+
+
+    // Option එකත් එහි original index එකත් එකට තබා ගන්නවා.
+
+    let options = originalOptions.map(function(option,index){
+
+        return {
+            text: option,
+            originalIndex: index
+        };
+
+    });
+
+
+    // Fisher-Yates Shuffle
+
+    for(let i = options.length - 1; i > 0; i--){
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        const temp = options[i];
+
+        options[i] = options[j];
+
+        options[j] = temp;
+
+    }
+
+
+    // Shuffle වූ පසු correct answer එකේ අලුත් index එක සොයනවා.
+
+    const newCorrectIndex =
+        options.findIndex(function(option){
+
+            return option.originalIndex === originalCorrectIndex;
+
+        });
+
+
+    return [
+
+        questionText,
+
+        options.map(function(option){
+
+            return option.text;
+
+        }),
+
+        newCorrectIndex,
+
+        explanation
+
+    ];
+
+}
+
+
+// =====================================================
+// SHUFFLE ALL OPTIONS
+// =====================================================
+
+function shuffleAllOptions(){
+
+    shuffledQuestions =
+        questions.map(function(question){
+
+            return shuffleQuestion(question);
+
+        });
+
+}
 
 
 // =====================================================
 // QUIZ SETTINGS
 // =====================================================
 
-const QUIZ_TIME = 10 * 60; // 10 minutes
+const QUIZ_TIME = 10 * 60;
 
 let current = 0;
-let answers = Array(questions.length).fill(null);
+
+let answers =
+    Array(questions.length).fill(null);
+
 let finished = false;
 
 let timeLeft = QUIZ_TIME;
+
 let timer = null;
+
 let quizStartedAt = null;
+
 let quizFinishedAt = null;
 
 
@@ -115,7 +634,9 @@ function startTimer(){
         return;
     }
 
-    quizStartedAt = new Date().toISOString();
+    quizStartedAt =
+        new Date().toISOString();
+
 
     timer = setInterval(function(){
 
@@ -123,86 +644,163 @@ function startTimer(){
 
         updateTimer();
 
+
         if(timeLeft <= 0){
 
             clearInterval(timer);
+
             timer = null;
 
-            alert("⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ.");
+
+            alert(
+                "⏰ Quiz කාලය අවසන් වී ඇත. Quiz එක ස්වයංක්‍රීයව Submit වේ."
+            );
+
 
             autoSubmitQuiz();
+
         }
 
     },1000);
 
+
     updateTimer();
+
 }
 
 
+// =====================================================
+// UPDATE TIMER
+// =====================================================
+
 function updateTimer(){
 
-    const timerElement = document.getElementById("quizTimer");
+    const timerElement =
+        document.getElementById("quizTimer");
+
 
     if(!timerElement){
         return;
     }
 
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
 
-    minutes = String(minutes).padStart(2,"0");
-    seconds = String(seconds).padStart(2,"0");
+    let minutes =
+        Math.floor(timeLeft / 60);
+
+
+    let seconds =
+        timeLeft % 60;
+
+
+    minutes =
+        String(minutes).padStart(2,"0");
+
+
+    seconds =
+        String(seconds).padStart(2,"0");
+
 
     timerElement.textContent =
-        "⏱️ ඉතිරි කාලය: " + minutes + ":" + seconds;
+        "⏱️ ඉතිරි කාලය: " +
+        minutes +
+        ":" +
+        seconds;
+
 
     if(timeLeft <= 60){
 
-        timerElement.style.color = "#ff4444";
-        timerElement.style.borderColor = "#ff4444";
-        timerElement.style.background = "#2b1010";
+        timerElement.style.color =
+            "#ff4444";
+
+        timerElement.style.borderColor =
+            "#ff4444";
+
+        timerElement.style.background =
+            "#2b1010";
 
     }else{
 
-        timerElement.style.color = "#d4af37";
-        timerElement.style.borderColor = "#d4af37";
-        timerElement.style.background = "#211d0e";
+        timerElement.style.color =
+            "#d4af37";
+
+        timerElement.style.borderColor =
+            "#d4af37";
+
+        timerElement.style.background =
+            "#211d0e";
 
     }
+
 }
 
 
 // =====================================================
-// TIMER HTML
+// CREATE TIMER
 // =====================================================
 
 function createTimer(){
 
-    const hero = document.querySelector(".hero");
+    const hero =
+        document.querySelector(".hero");
+
 
     if(!hero){
         return;
     }
 
-    const oldTimer = document.getElementById("quizTimer");
+
+    const oldTimer =
+        document.getElementById("quizTimer");
+
 
     if(oldTimer){
         return;
     }
 
-    const timerBox = document.createElement("div");
 
-    timerBox.id = "quizTimer";
+    const timerBox =
+        document.createElement("div");
 
-    timerBox.style.marginTop = "18px";
-    timerBox.style.padding = "12px 20px";
-    timerBox.style.border = "2px solid #d4af37";
-    timerBox.style.borderRadius = "30px";
-    timerBox.style.display = "inline-block";
-    timerBox.style.background = "#211d0e";
-    timerBox.style.color = "#d4af37";
-    timerBox.style.fontWeight = "bold";
-    timerBox.style.fontSize = "18px";
+
+    timerBox.id =
+        "quizTimer";
+
+
+    timerBox.style.marginTop =
+        "18px";
+
+
+    timerBox.style.padding =
+        "12px 20px";
+
+
+    timerBox.style.border =
+        "2px solid #d4af37";
+
+
+    timerBox.style.borderRadius =
+        "30px";
+
+
+    timerBox.style.display =
+        "inline-block";
+
+
+    timerBox.style.background =
+        "#211d0e";
+
+
+    timerBox.style.color =
+        "#d4af37";
+
+
+    timerBox.style.fontWeight =
+        "bold";
+
+
+    timerBox.style.fontSize =
+        "18px";
+
 
     hero.appendChild(timerBox);
 
@@ -215,31 +813,54 @@ function createTimer(){
 
 function render(){
 
-    const q = questions[current];
+    const q =
+        shuffledQuestions[current];
 
-    const box = document.getElementById("quizBox");
+
+    const box =
+        document.getElementById("quizBox");
+
 
     let h =
+
         '<div class="question active">' +
 
         '<div class="question-number">' +
-        'ප්‍රශ්නය ' + (current + 1) +
-        ' / ' + questions.length +
+
+        'ප්‍රශ්නය ' +
+        (current + 1) +
+        ' / ' +
+        shuffledQuestions.length +
+
         '</div>' +
 
         '<h2>' +
+
         q[0] +
+
         '</h2>';
+
 
     q[1].forEach(function(o,i){
 
         h +=
+
             '<button class="option ' +
-            (answers[current] === i ? 'selected' : '') +
-            '" onclick="selectOption(' + i + ')">' +
+
+            (
+                answers[current] === i
+                ? 'selected'
+                : ''
+            ) +
+
+            '" onclick="selectOption(' +
+            i +
+            ')">' +
 
             String.fromCharCode(65+i) +
+
             '. ' +
+
             o +
 
             '</button>';
@@ -248,52 +869,88 @@ function render(){
 
 
     h +=
+
         '<div class="note">' +
+
         'ඉඟිය: ප්‍රශ්නයේ අර්ථය සහ පාඩමේ අදාළ සංකල්පය සසඳන්න.' +
+
         '</div>' +
 
         '<div class="controls">';
 
 
     h +=
+
         '<button class="prev" onclick="previous()" ' +
-        (current === 0 ? 'disabled' : '') +
+
+        (
+            current === 0
+            ? 'disabled'
+            : ''
+        ) +
+
         '>' +
+
         '← පෙර' +
+
         '</button>';
 
 
-    if(current < questions.length - 1){
+    if(current < shuffledQuestions.length - 1){
 
         h +=
+
             '<button class="next" onclick="next()">' +
+
             'ඊළඟ →' +
+
             '</button>';
 
     }else{
 
         h +=
+
             '<button class="submit" onclick="submitQuiz()">' +
+
             'Quiz Submit ✓' +
+
             '</button>';
 
     }
 
 
-    h += '</div></div>';
-
-    box.innerHTML = h;
-
-
-    document.getElementById("progressFill").style.width =
-        ((current + 1) / questions.length * 100) + "%";
+    h +=
+        '</div></div>';
 
 
-    document.getElementById("progressText").textContent =
+    box.innerHTML =
+        h;
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+
+        (
+            (current + 1) /
+            shuffledQuestions.length *
+            100
+        ) +
+
+        "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+
         'ප්‍රශ්නය ' +
+
         (current + 1) +
+
         ' / ' +
-        questions.length;
+
+        shuffledQuestions.length;
 
 
     updateTimer();
@@ -307,7 +964,9 @@ function render(){
 
 function selectOption(i){
 
-    answers[current] = i;
+    answers[current] =
+        i;
+
 
     render();
 
@@ -320,12 +979,18 @@ function selectOption(i){
 
 function next(){
 
-    if(answers[current] === null){
+    if(
+        answers[current] === null
+    ){
 
-        alert("කරුණාකර පිළිතුරක් තෝරන්න.");
+        alert(
+            "කරුණාකර පිළිතුරක් තෝරන්න."
+        );
 
         return;
+
     }
+
 
     current++;
 
@@ -361,16 +1026,23 @@ function submitQuiz(){
         return;
     }
 
-    if(answers.some(function(a){
-        return a === null;
-    })){
+
+    if(
+        answers.some(function(a){
+
+            return a === null;
+
+        })
+    ){
 
         alert(
             "සියලුම ප්‍රශ්නවලට පිළිතුරු ලබාදී පසුව Submit කරන්න."
         );
 
         return;
+
     }
+
 
     finishQuiz(false);
 
@@ -387,6 +1059,7 @@ function autoSubmitQuiz(){
         return;
     }
 
+
     finishQuiz(true);
 
 }
@@ -400,6 +1073,7 @@ function finishQuiz(timeExpired){
 
     finished = true;
 
+
     if(timer !== null){
 
         clearInterval(timer);
@@ -409,68 +1083,107 @@ function finishQuiz(timeExpired){
     }
 
 
-    quizFinishedAt = new Date().toISOString();
+    quizFinishedAt =
+        new Date().toISOString();
 
 
     let score = 0;
 
-    questions.forEach(function(q,i){
 
-        if(answers[i] === q[2]){
+    shuffledQuestions.forEach(
+        function(q,i){
 
-            score++;
+            if(
+                answers[i] === q[2]
+            ){
+
+                score++;
+
+            }
 
         }
-
-    });
+    );
 
 
     const percentage =
+
         Math.round(
-            (score / questions.length) * 100
+
+            (
+                score /
+                shuffledQuestions.length
+            ) *
+
+            100
+
         );
 
 
     const timeUsed =
-        QUIZ_TIME - Math.max(timeLeft,0);
+
+        QUIZ_TIME -
+        Math.max(timeLeft,0);
 
 
     const minutesUsed =
-        Math.floor(timeUsed / 60);
+
+        Math.floor(
+            timeUsed / 60
+        );
+
 
     const secondsUsed =
+
         timeUsed % 60;
 
 
     const timeUsedText =
-        String(minutesUsed).padStart(2,"0") +
+
+        String(minutesUsed)
+            .padStart(2,"0") +
+
         ":" +
-        String(secondsUsed).padStart(2,"0");
+
+        String(secondsUsed)
+            .padStart(2,"0");
 
 
     // =================================================
     // RESULT DISPLAY
     // =================================================
 
-    document.getElementById("quizBox").style.display =
+    document.getElementById(
+        "quizBox"
+    ).style.display =
         "none";
 
-    document.getElementById("resultBox").style.display =
+
+    document.getElementById(
+        "resultBox"
+    ).style.display =
         "block";
 
 
-    document.getElementById("score").textContent =
-        score + " / " + questions.length;
+    document.getElementById(
+        "score"
+    ).textContent =
+
+        score +
+        " / " +
+        shuffledQuestions.length;
 
 
     let resultMessage = "";
+
 
     if(timeExpired){
 
         resultMessage =
             "⏰ කාලය අවසන් වීම නිසා Quiz එක ස්වයංක්‍රීයව Submit කරන ලදී.";
 
-    }else if(score === questions.length){
+    }else if(
+        score === shuffledQuestions.length
+    ){
 
         resultMessage =
             "විශිෂ්ටයි! පාඩම ඉතා හොඳින් අවබෝධ කරගෙන ඇත.";
@@ -488,14 +1201,29 @@ function finishQuiz(timeExpired){
     }
 
 
-    document.getElementById("resultMessage").innerHTML =
+    document.getElementById(
+        "resultMessage"
+    ).innerHTML =
+
         resultMessage +
+
         "<br><br>" +
-        "ලකුණු: " + score + " / " + questions.length +
+
+        "ලකුණු: " +
+        score +
+        " / " +
+        shuffledQuestions.length +
+
         "<br>" +
-        "ප්‍රතිශතය: " + percentage + "%" +
+
+        "ප්‍රතිශතය: " +
+        percentage +
+        "%" +
+
         "<br>" +
-        "ගත වූ කාලය: " + timeUsedText;
+
+        "ගත වූ කාලය: " +
+        timeUsedText;
 
 
     // =================================================
@@ -504,42 +1232,61 @@ function finishQuiz(timeExpired){
 
     let r = "";
 
-    questions.forEach(function(q,i){
 
-        r +=
-            '<div class="review-item">' +
-
-            '<strong>' +
-            (i+1) +
-            '. ' +
-            q[0] +
-            '</strong><br>';
-
-
-        if(answers[i] === q[2]){
+    shuffledQuestions.forEach(
+        function(q,i){
 
             r +=
-                "✓ ඔබගේ පිළිතුර නිවැරදියි.";
 
-        }else{
+                '<div class="review-item">' +
+
+                '<strong>' +
+
+                (i+1) +
+
+                '. ' +
+
+                q[0] +
+
+                '</strong><br>';
+
+
+            if(
+                answers[i] === q[2]
+            ){
+
+                r +=
+                    "✓ ඔබගේ පිළිතුර නිවැරදියි.";
+
+            }else{
+
+                r +=
+
+                    "✗ නිවැරදි පිළිතුර: " +
+
+                    q[1][q[2]] +
+
+                    ".";
+
+            }
+
 
             r +=
-                "✗ නිවැරදි පිළිතුර: " +
-                q[1][q[2]] +
-                ".";
+
+                "<br>" +
+
+                q[3] +
+
+                "</div>";
 
         }
+    );
 
 
-        r +=
-            "<br>" +
-            q[3] +
-            "</div>";
-
-    });
-
-
-    document.getElementById("review").innerHTML = r;
+    document.getElementById(
+        "review"
+    ).innerHTML =
+        r;
 
 
     // =================================================
@@ -556,7 +1303,7 @@ function finishQuiz(timeExpired){
             "වෙළෙඳාම සහ උපකාරක සේවා",
 
         totalQuestions:
-            questions.length,
+            shuffledQuestions.length,
 
         score:
             score,
@@ -589,28 +1336,42 @@ function finishQuiz(timeExpired){
 
 
     // Main quiz result
+
     localStorage.setItem(
+
         "grade11_lesson1_quiz_result",
+
         JSON.stringify(quizResult)
+
     );
 
 
     // Existing keys – compatibility
+
     localStorage.setItem(
+
         "grade11_lesson1_quiz_score",
+
         score
+
     );
 
 
     localStorage.setItem(
+
         "grade11_lesson1_quiz_percentage",
+
         percentage
+
     );
 
 
     localStorage.setItem(
+
         "grade11_lesson1_quiz_completed",
+
         "true"
+
     );
 
 
@@ -651,8 +1412,13 @@ function finishQuiz(timeExpired){
     try{
 
         const oldData =
+
             JSON.parse(
-                localStorage.getItem("grade11Progress") || "{}"
+
+                localStorage.getItem(
+                    "grade11Progress"
+                ) || "{}"
+
             );
 
 
@@ -661,16 +1427,22 @@ function finishQuiz(timeExpired){
 
 
         localStorage.setItem(
+
             "grade11Progress",
+
             JSON.stringify(oldData)
+
         );
 
 
     }catch(error){
 
         localStorage.setItem(
+
             "grade11Progress",
+
             JSON.stringify(grade11Data)
+
         );
 
     }
@@ -682,13 +1454,19 @@ function finishQuiz(timeExpired){
 
     let completedLessons = {};
 
+
     try{
 
         completedLessons =
+
             JSON.parse(
+
                 localStorage.getItem(
+
                     "grade11CompletedLessons"
+
                 ) || "{}"
+
             );
 
     }catch(error){
@@ -698,14 +1476,19 @@ function finishQuiz(timeExpired){
     }
 
 
-    completedLessons["1"] = true;
+    completedLessons["1"] =
+        true;
 
 
     localStorage.setItem(
-        "grade11CompletedLessons",
-        JSON.stringify(completedLessons)
-    );
 
+        "grade11CompletedLessons",
+
+        JSON.stringify(
+            completedLessons
+        )
+
+    );
 
 }
 
@@ -727,23 +1510,42 @@ function restartQuiz(){
 
     current = 0;
 
+
     answers =
         Array(questions.length).fill(null);
 
+
     finished = false;
 
-    timeLeft = QUIZ_TIME;
 
-    quizStartedAt = null;
-
-    quizFinishedAt = null;
+    timeLeft =
+        QUIZ_TIME;
 
 
-    document.getElementById("resultBox").style.display =
+    quizStartedAt =
+        null;
+
+
+    quizFinishedAt =
+        null;
+
+
+    // =================================================
+    // RESTART කරන විට Options නැවත Shuffle කිරීම
+    // =================================================
+
+    shuffleAllOptions();
+
+
+    document.getElementById(
+        "resultBox"
+    ).style.display =
         "none";
 
 
-    document.getElementById("quizBox").style.display =
+    document.getElementById(
+        "quizBox"
+    ).style.display =
         "block";
 
 
@@ -761,15 +1563,20 @@ function restartQuiz(){
 function completeQuiz(){
 
     const result =
+
         localStorage.getItem(
+
             "grade11_lesson1_quiz_result"
+
         );
 
 
     if(!result){
 
         alert(
+
             "කරුණාකර පළමුව Quiz එක සම්පූර්ණ කරන්න."
+
         );
 
         return;
@@ -778,19 +1585,27 @@ function completeQuiz(){
 
 
     localStorage.setItem(
+
         "grade11_lesson1_quiz_completed",
+
         "true"
+
     );
 
 
     localStorage.setItem(
+
         "grade11_lesson1_completed",
+
         "true"
+
     );
 
 
     alert(
+
         "✓ Grade 11 Lesson 1 Quiz සම්පූර්ණ කරන ලදී!"
+
     );
 
 }
@@ -800,12 +1615,19 @@ function completeQuiz(){
 // PAGE START
 // =====================================================
 
+// පළමු වරට Quiz එක open කරන විට
+// Options 4 shuffle කිරීම.
+
+shuffleAllOptions();
+
 createTimer();
 
 render();
 
 startTimer();
 
+
 </script>
+
 </body>
 </html>
