@@ -650,6 +650,98 @@ let quizFinishedAt = null;
 
 
 // =====================================================
+// SHUFFLED QUESTIONS
+// =====================================================
+
+let shuffledQuestions = [];
+
+
+/*
+ * පිළිතුරු විකල්ප පමණක් Shuffle කරයි.
+ * ප්‍රශ්නවල අනුපිළිවෙල වෙනස් නොවේ.
+ *
+ * Original questions array එක වෙනස් නොකර,
+ * shuffledQuestions තුළ වෙනම copy එකක් සාදයි.
+ */
+
+function shuffleQuestions(){
+
+    shuffledQuestions =
+        questions.map(function(q){
+
+            const originalOptions =
+                q[1];
+
+            const correctAnswer =
+                originalOptions[q[2]];
+
+            const shuffledOptions =
+                [...originalOptions];
+
+
+            // Fisher-Yates Shuffle
+
+            for(
+                let i =
+                    shuffledOptions.length - 1;
+
+                i > 0;
+
+                i--
+            ){
+
+                const j =
+                    Math.floor(
+                        Math.random() *
+                        (i + 1)
+                    );
+
+
+                [
+                    shuffledOptions[i],
+                    shuffledOptions[j]
+
+                ] = [
+
+                    shuffledOptions[j],
+                    shuffledOptions[i]
+
+                ];
+
+            }
+
+
+            /*
+             * Shuffle වූ options අතර
+             * නිවැරදි පිළිතුර තිබෙන
+             * නව index එක සොයාගැනීම
+             */
+
+            const newCorrectIndex =
+                shuffledOptions.indexOf(
+                    correctAnswer
+                );
+
+
+            return [
+
+                q[0],
+
+                shuffledOptions,
+
+                newCorrectIndex,
+
+                q[3]
+
+            ];
+
+        });
+
+}
+
+
+
+// =====================================================
 // TIMER
 // =====================================================
 
@@ -831,7 +923,7 @@ function createTimer(){
 function render(){
 
     const q =
-        questions[current];
+        shuffledQuestions[current];
 
     const box =
         document.getElementById(
@@ -847,7 +939,7 @@ function render(){
         'ප්‍රශ්නය ' +
         (current + 1) +
         ' / ' +
-        questions.length +
+        shuffledQuestions.length +
 
         '</div>' +
 
@@ -921,7 +1013,7 @@ function render(){
 
     if(
         current <
-        questions.length - 1
+        shuffledQuestions.length - 1
     ){
 
         h +=
@@ -959,7 +1051,7 @@ function render(){
 
         (
             (current + 1) /
-            questions.length *
+            shuffledQuestions.length *
             100
         ) +
 
@@ -973,7 +1065,7 @@ function render(){
         'ප්‍රශ්නය ' +
         (current + 1) +
         ' / ' +
-        questions.length;
+        shuffledQuestions.length;
 
 
     updateTimer();
@@ -1118,7 +1210,17 @@ function finishQuiz(
     let score = 0;
 
 
-    questions.forEach(
+    /*
+     * IMPORTANT:
+     * Original questions වෙනුවට
+     * shuffledQuestions භාවිතා කරයි.
+     *
+     * ඒ නිසා options random වුවත්
+     * නිවැරදි පිළිතුර නිවැරදිව
+     * පරීක්ෂා වේ.
+     */
+
+    shuffledQuestions.forEach(
         function(q,i){
 
             if(
@@ -1137,7 +1239,7 @@ function finishQuiz(
         Math.round(
             (
                 score /
-                questions.length
+                shuffledQuestions.length
             ) * 100
         );
 
@@ -1202,7 +1304,7 @@ function finishQuiz(
 
         score +
         " / " +
-        questions.length;
+        shuffledQuestions.length;
 
 
     let resultMessage = "";
@@ -1217,7 +1319,7 @@ function finishQuiz(
 
     else if(
         score ===
-        questions.length
+        shuffledQuestions.length
     ){
 
         resultMessage =
@@ -1253,7 +1355,7 @@ function finishQuiz(
         "ලකුණු: " +
         score +
         " / " +
-        questions.length +
+        shuffledQuestions.length +
 
         "<br>" +
 
@@ -1275,7 +1377,7 @@ function finishQuiz(
     let r = "";
 
 
-    questions.forEach(
+    shuffledQuestions.forEach(
         function(q,i){
 
             r +=
@@ -1346,7 +1448,7 @@ function finishQuiz(
             "ගැලපුම් සටහන් සහිත මූල්‍ය ප්‍රකාශන",
 
         totalQuestions:
-            questions.length,
+            shuffledQuestions.length,
 
         score:
             score,
@@ -1541,12 +1643,20 @@ function restartQuiz(){
     }
 
 
+    /*
+     * Restart කරන විට
+     * options නැවත Shuffle කරයි.
+     */
+
+    shuffleQuestions();
+
+
     current = 0;
 
 
     answers =
         Array(
-            questions.length
+            shuffledQuestions.length
         ).fill(null);
 
 
@@ -1644,6 +1754,13 @@ function completeQuiz(){
 // =====================================================
 // PAGE START
 // =====================================================
+
+/*
+ * Page එක load වන විට පළමුව
+ * options Shuffle කරයි.
+ */
+
+shuffleQuestions();
 
 createTimer();
 
