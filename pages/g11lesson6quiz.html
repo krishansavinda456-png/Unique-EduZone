@@ -628,6 +628,115 @@ const questions = [
 
 
 // =====================================================
+// SHUFFLED QUESTIONS
+// =====================================================
+
+let shuffledQuestions = [];
+
+
+// =====================================================
+// SHUFFLE ANSWER OPTIONS
+// =====================================================
+//
+// ප්‍රශ්න අනුපිළිවෙළ වෙනස් නොකරයි.
+// පිළිතුරු විකල්ප පමණක් Random කරයි.
+//
+// originalIndex භාවිතා කරන නිසා,
+// එකම පිළිතුරු text එකක් තිබුණත්
+// correct answer එක නිවැරදිව හඳුනාගනී.
+// =====================================================
+
+function shuffleQuestions(){
+
+    shuffledQuestions =
+        questions.map(function(q){
+
+            const optionObjects =
+                q[1].map(function(option,index){
+
+                    return {
+
+                        text: option,
+
+                        originalIndex: index
+
+                    };
+
+                });
+
+
+            // Fisher-Yates Shuffle
+
+            for(
+                let i =
+                optionObjects.length - 1;
+
+                i > 0;
+
+                i--
+            ){
+
+                const j =
+                    Math.floor(
+                        Math.random() *
+                        (i + 1)
+                    );
+
+
+                [
+                    optionObjects[i],
+                    optionObjects[j]
+                ] =
+                [
+                    optionObjects[j],
+                    optionObjects[i]
+                ];
+
+            }
+
+
+            const shuffledOptions =
+                optionObjects.map(
+                    function(item){
+
+                        return item.text;
+
+                    }
+                );
+
+
+            const newCorrectIndex =
+                optionObjects.findIndex(
+                    function(item){
+
+                        return (
+                            item.originalIndex ===
+                            q[2]
+                        );
+
+                    }
+                );
+
+
+            return [
+
+                q[0],
+
+                shuffledOptions,
+
+                newCorrectIndex,
+
+                q[3]
+
+            ];
+
+        });
+
+}
+
+
+
+// =====================================================
 // QUIZ SETTINGS
 // =====================================================
 
@@ -832,7 +941,7 @@ function createTimer(){
 function render(){
 
     const q =
-        questions[current];
+        shuffledQuestions[current];
 
     const box =
         document.getElementById(
@@ -848,7 +957,7 @@ function render(){
         'ප්‍රශ්නය ' +
         (current + 1) +
         ' / ' +
-        questions.length +
+        shuffledQuestions.length +
 
         '</div>' +
 
@@ -922,7 +1031,7 @@ function render(){
 
     if(
         current <
-        questions.length - 1
+        shuffledQuestions.length - 1
     ){
 
         h +=
@@ -960,7 +1069,7 @@ function render(){
 
         (
             (current + 1) /
-            questions.length *
+            shuffledQuestions.length *
             100
         ) +
 
@@ -974,7 +1083,7 @@ function render(){
         'ප්‍රශ්නය ' +
         (current + 1) +
         ' / ' +
-        questions.length;
+        shuffledQuestions.length;
 
 
     updateTimer();
@@ -1119,7 +1228,7 @@ function finishQuiz(
     let score = 0;
 
 
-    questions.forEach(
+    shuffledQuestions.forEach(
         function(q,i){
 
             if(
@@ -1138,7 +1247,7 @@ function finishQuiz(
         Math.round(
             (
                 score /
-                questions.length
+                shuffledQuestions.length
             ) * 100
         );
 
@@ -1203,7 +1312,7 @@ function finishQuiz(
 
         score +
         " / " +
-        questions.length;
+        shuffledQuestions.length;
 
 
     let resultMessage = "";
@@ -1218,7 +1327,7 @@ function finishQuiz(
 
     else if(
         score ===
-        questions.length
+        shuffledQuestions.length
     ){
 
         resultMessage =
@@ -1254,7 +1363,7 @@ function finishQuiz(
         "ලකුණු: " +
         score +
         " / " +
-        questions.length +
+        shuffledQuestions.length +
 
         "<br>" +
 
@@ -1276,7 +1385,7 @@ function finishQuiz(
     let r = "";
 
 
-    questions.forEach(
+    shuffledQuestions.forEach(
         function(q,i){
 
             r +=
@@ -1347,7 +1456,7 @@ function finishQuiz(
             "ලාභ අරමුණු කර නොගත් සංවිධාන",
 
         totalQuestions:
-            questions.length,
+            shuffledQuestions.length,
 
         score:
             score,
@@ -1566,6 +1675,11 @@ function restartQuiz(){
         null;
 
 
+    // පිළිතුරු නැවත Random කිරීම
+
+    shuffleQuestions();
+
+
     document.getElementById(
         "resultBox"
     ).style.display =
@@ -1645,6 +1759,11 @@ function completeQuiz(){
 // =====================================================
 // PAGE START
 // =====================================================
+
+// පළමු වරට Quiz එක ආරම්භ වන විට
+// පිළිතුරු Random කිරීම
+
+shuffleQuestions();
 
 createTimer();
 
