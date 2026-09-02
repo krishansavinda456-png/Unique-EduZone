@@ -551,6 +551,77 @@ const questions = [
 
 
 // =====================================================
+// SHUFFLED QUIZ DATA
+// =====================================================
+
+let shuffledQuestions = [];
+
+
+// =====================================================
+// SHUFFLE OPTIONS ONLY
+// =====================================================
+
+function shuffleQuestions(){
+
+    shuffledQuestions = questions.map(function(q){
+
+        const originalOptions = q[1];
+
+        const correctAnswer =
+            originalOptions[q[2]];
+
+        const shuffledOptions =
+            [...originalOptions];
+
+        // Fisher-Yates shuffle
+        for(
+            let i = shuffledOptions.length - 1;
+            i > 0;
+            i--
+        ){
+
+            const j =
+                Math.floor(
+                    Math.random() * (i + 1)
+                );
+
+            [
+                shuffledOptions[i],
+                shuffledOptions[j]
+            ] =
+            [
+                shuffledOptions[j],
+                shuffledOptions[i]
+            ];
+
+        }
+
+
+        // Find new position of correct answer
+        const newCorrectIndex =
+            shuffledOptions.indexOf(
+                correctAnswer
+            );
+
+
+        return [
+
+            q[0],
+
+            shuffledOptions,
+
+            newCorrectIndex,
+
+            q[3]
+
+        ];
+
+    });
+
+}
+
+
+// =====================================================
 // QUIZ SETTINGS
 // =====================================================
 
@@ -751,7 +822,7 @@ function createTimer(){
 function render(){
 
     const q =
-        questions[current];
+        shuffledQuestions[current];
 
     const box =
         document.getElementById(
@@ -1032,7 +1103,7 @@ function finishQuiz(
     let score = 0;
 
 
-    questions.forEach(
+    shuffledQuestions.forEach(
         function(q,i){
 
             if(
@@ -1051,7 +1122,7 @@ function finishQuiz(
         Math.round(
             (
                 score /
-                questions.length
+                shuffledQuestions.length
             ) * 100
         );
 
@@ -1115,7 +1186,7 @@ function finishQuiz(
 
         score +
         " / " +
-        questions.length;
+        shuffledQuestions.length;
 
 
     let resultMessage = "";
@@ -1130,7 +1201,7 @@ function finishQuiz(
 
     else if(
         score ===
-        questions.length
+        shuffledQuestions.length
     ){
 
         resultMessage =
@@ -1166,7 +1237,7 @@ function finishQuiz(
         "ලකුණු: " +
         score +
         " / " +
-        questions.length +
+        shuffledQuestions.length +
 
         "<br>" +
 
@@ -1187,7 +1258,7 @@ function finishQuiz(
     let r = "";
 
 
-    questions.forEach(
+    shuffledQuestions.forEach(
         function(q,i){
 
             r +=
@@ -1463,6 +1534,10 @@ function restartQuiz(){
     }
 
 
+    // New random option order
+    shuffleQuestions();
+
+
     current = 0;
 
 
@@ -1564,6 +1639,9 @@ function completeQuiz(){
 // =====================================================
 // PAGE START
 // =====================================================
+
+// Create first random option order
+shuffleQuestions();
 
 createTimer();
 
