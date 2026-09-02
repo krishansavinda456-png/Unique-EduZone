@@ -1409,6 +1409,90 @@ const quizData = {
 
 /*
  * =========================================
+ * SHUFFLE ANSWER OPTIONS
+ * =========================================
+ */
+
+function shuffleQuestion(item) {
+
+    const optionObjects =
+        item.options.map(
+            function (option, index) {
+
+                return {
+                    text: option,
+                    originalIndex: index
+                };
+
+            }
+        );
+
+
+    /*
+     * Fisher-Yates Shuffle
+     */
+
+    for (
+        let i = optionObjects.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+
+        [
+            optionObjects[i],
+            optionObjects[randomIndex]
+        ] =
+        [
+            optionObjects[randomIndex],
+            optionObjects[i]
+        ];
+
+    }
+
+
+    /*
+     * Find the new position of
+     * the original correct answer
+     */
+
+    const newAnswerIndex =
+        optionObjects.findIndex(
+            function (option) {
+
+                return (
+                    option.originalIndex ===
+                    item.answer
+                );
+
+            }
+        );
+
+
+    return {
+
+        question: item.question,
+
+        options:
+            optionObjects.map(
+                function (option) {
+                    return option.text;
+                }
+            ),
+
+        answer: newAnswerIndex
+
+    };
+
+}
+
+/*
+ * =========================================
  * GET SELECTED LESSON
  * =========================================
  */
@@ -1546,9 +1630,17 @@ function loadQuiz() {
 
 
     quizQuestions =
+    (
         quizData[
             String(currentLesson)
-        ] || [];
+        ] || []
+    ).map(
+        function (item) {
+
+            return shuffleQuestion(item);
+
+        }
+    );
 
 
     const title =
