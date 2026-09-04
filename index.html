@@ -186,6 +186,19 @@
         }
 
 
+        .home-logo-symbol img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+        }
+
+
         .home-logo-text {
 
             line-height: 1;
@@ -293,6 +306,24 @@
 
             background:
                 var(--gold);
+
+        }
+
+
+        /* ACCOUNTING PRACTICE NAV */
+
+        .home-nav .accounting-practice-link {
+
+            color: var(--gold);
+
+            font-weight: 800;
+
+        }
+
+
+        .home-nav .accounting-practice-link:hover {
+
+            color: var(--gold-light);
 
         }
 
@@ -672,6 +703,35 @@
 
 
         /* =====================================================
+           ACCOUNTING PRACTICE HERO BUTTON
+           ===================================================== */
+
+        .hero-btn-accounting {
+
+            border:
+                1px solid
+                rgba(245,197,66,0.6);
+
+            color: var(--gold);
+
+            background:
+                rgba(245,197,66,0.06);
+
+        }
+
+
+        .hero-btn-accounting:hover {
+
+            background:
+                var(--gold);
+
+            color: #000;
+
+        }
+
+
+
+        /* =====================================================
            HERO VISUAL
            ===================================================== */
 
@@ -689,11 +749,6 @@
 
         }
 
-
-        /*
-         * BUSINESS STUDIES IMAGE
-         * ONLY SIZE INCREASED
-         */
 
         .hero-book {
 
@@ -1146,6 +1201,26 @@
 
             padding: 25px;
 
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .learning-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(245,197,66,0.55);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.35);
+
         }
 
 
@@ -1172,7 +1247,124 @@
 
             line-height: 1.7;
 
-            margin: 0;
+            margin: 0 0 18px;
+
+        }
+
+
+        /* =====================================================
+           ACCOUNTING PRACTICE CARD
+           ===================================================== */
+
+        .accounting-practice-card {
+
+            border:
+                1px solid
+                rgba(245,197,66,0.65);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #171717,
+                    #0b0b0b
+                );
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .accounting-practice-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+
+            height: 150px;
+
+            right: -55px;
+
+            top: -55px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(245,197,66,0.08);
+
+        }
+
+
+        .accounting-practice-card:hover {
+
+            border-color:
+                var(--gold);
+
+            box-shadow:
+                0 15px 35px
+                rgba(245,197,66,0.14);
+
+        }
+
+
+        .accounting-practice-card .learning-card-icon {
+
+            color: var(--gold);
+
+        }
+
+
+        .accounting-practice-card h3 {
+
+            color: var(--gold);
+
+        }
+
+
+        .practice-card-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding:
+                10px 18px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .practice-card-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(245,197,66,0.18);
 
         }
 
@@ -1225,6 +1417,54 @@
             color: #aaa;
 
             margin-bottom: 25px;
+
+        }
+
+
+        /* =====================================================
+           ACCOUNTING CTA BUTTON
+           ===================================================== */
+
+        .accounting-cta-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-left: 10px;
+
+            padding:
+                14px 25px;
+
+            border:
+                1px solid
+                var(--gold);
+
+            border-radius: 10px;
+
+            color: var(--gold);
+
+            font-weight: 800;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+
+        .accounting-cta-button:hover {
+
+            background:
+                var(--gold);
+
+            color: #000;
+
+            transform:
+                translateY(-3px);
 
         }
 
@@ -1490,6 +1730,14 @@
 
             }
 
+            .accounting-cta-button {
+
+                margin-left: 0;
+
+                margin-top: 12px;
+
+            }
+
         }
 
 
@@ -1572,6 +1820,20 @@
             .section-title::after {
 
                 display: none;
+
+            }
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+            .hero-btn {
+
+                justify-content: center;
 
             }
 
@@ -1668,6 +1930,17 @@
                 MCQ
             </a>
 
+
+            <!-- NEW ACCOUNTING PRACTICE LINK -->
+
+            <a
+                href="accounting-practice.html"
+                class="accounting-practice-link"
+            >
+                🧮 ACCOUNTING
+            </a>
+
+
             <a href="pages/downloads.html">
                 DOWNLOADS
             </a>
@@ -1680,11 +1953,17 @@
                 CONTACT
             </a>
 
-            <a href="pages/profile.html" class="home-nav-special profile-link">
+            <a
+                href="pages/profile.html"
+                class="home-nav-special profile-link"
+            >
                 👤 PROFILE
             </a>
-            
-            <a href="pages/dashboard.html" class="home-nav-special dashboard-link">
+
+            <a
+                href="pages/dashboard.html"
+                class="home-nav-special dashboard-link"
+            >
                 📊 DASHBOARD
             </a>
 
@@ -1792,6 +2071,17 @@
             >
                 ▶
                 විභාගය හරඹන්න
+            </a>
+
+
+            <!-- NEW ACCOUNTING PRACTICE BUTTON -->
+
+            <a
+                href="accounting-practice.html"
+                class="hero-btn hero-btn-accounting"
+            >
+                🧮
+                ගිණුම්කරණ පුහුණුව
             </a>
 
         </div>
@@ -2240,6 +2530,41 @@
         </article>
 
 
+
+        <!-- =================================================
+             NEW ACCOUNTING PRACTICE CARD
+             ================================================= -->
+
+        <article class="learning-card accounting-practice-card">
+
+            <div class="learning-card-icon">
+                🧮
+            </div>
+
+            <h3>
+                Accounting Practice
+            </h3>
+
+            <p>
+                ගනුදෙනු වල සිට
+                මූලික සටහන් පොත්,
+                ද්විත්ව සටහන්,
+                ලෙජර්,
+                ශේෂ පිරික්සුම සහ
+                මූල්‍ය ප්‍රකාශන දක්වා
+                ප්‍රායෝගිකව පුහුණු වන්න.
+            </p>
+
+            <a
+                href="accounting-practice.html"
+                class="practice-card-button"
+            >
+                🧮 Practice Now →
+            </a>
+
+        </article>
+
+
     </div>
 
 
@@ -2261,6 +2586,7 @@
 
     <p>
         පාඩම් කරන්න • ක්‍රියාකාරකම් කරන්න • MCQ කරන්න •
+        ගිණුම්කරණය පුහුණු වන්න •
         ඔබේ Progress එක බලන්න
     </p>
 
@@ -2270,6 +2596,14 @@
         class="hero-btn hero-btn-primary"
     >
         📚 Continue Learning
+    </a>
+
+
+    <a
+        href="accounting-practice.html"
+        class="accounting-cta-button"
+    >
+        🧮 Accounting Practice
     </a>
 
 
@@ -2317,30 +2651,50 @@
             </div>
 
             <div class="footer-item">
+
                 <a
                     href="pages/lessons.html"
                     style="color:#bbb;"
                 >
                     📚 Lessons
                 </a>
+
             </div>
 
             <div class="footer-item">
+
                 <a
                     href="pages/quiz.html"
                     style="color:#bbb;"
                 >
                     📝 MCQ
                 </a>
+
             </div>
 
             <div class="footer-item">
+
                 <a
                     href="pages/dashboard.html"
                     style="color:#bbb;"
                 >
                     📊 Dashboard
                 </a>
+
+            </div>
+
+
+            <!-- NEW QUICK LINK -->
+
+            <div class="footer-item">
+
+                <a
+                    href="accounting-practice.html"
+                    style="color:#f5c542;"
+                >
+                    🧮 Accounting Practice
+                </a>
+
             </div>
 
         </div>
@@ -2513,10 +2867,23 @@
 
 
         /*
-         * Existing pages are not modified.
-         * Search currently provides navigation
-         * suggestions only.
+         * ACCOUNTING PRACTICE SEARCH
          */
+
+        if (
+            value.includes("accounting") ||
+            value.includes("ගිණුම්") ||
+            value.includes("ගිණුම්කරණ") ||
+            value.includes("practice")
+        ) {
+
+            window.location.href =
+                "accounting-practice.html";
+
+            return;
+
+        }
+
 
         if (
             value.includes("lesson") ||
