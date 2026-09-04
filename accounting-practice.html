@@ -13,11 +13,87 @@
 }
 body{font-family:Arial,"Noto Sans Sinhala",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 button,select,input{font:inherit}
-.header{position:sticky;top:0;z-index:20;background:#090909ee;border-bottom:1px solid #292929;backdrop-filter:blur(10px)}
-.nav{max-width:1250px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.logo{color:var(--gold);font-weight:800;font-size:20px;text-decoration:none}
-.nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}
-.nav a:hover{color:var(--gold)}
+.header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(7,7,7,.92);
+    border-bottom:1px solid rgba(245,197,66,.18);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+.nav{
+    max-width:1250px;
+    margin:auto;
+    padding:11px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:var(--gold);
+    font-weight:900;
+    font-size:21px;
+    text-decoration:none;
+    letter-spacing:.3px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 13px;
+    border-radius:12px;
+    transition:.25s ease;
+}
+
+.logo:hover{
+    background:rgba(245,197,66,.08);
+    color:#ffd95c;
+    transform:translateY(-1px);
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.nav-menu a{
+    color:#d6d6d6;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    padding:9px 13px;
+    border:1px solid transparent;
+    border-radius:10px;
+    transition:.25s ease;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.nav-menu a:hover{
+    color:var(--gold);
+    background:rgba(245,197,66,.07);
+    border-color:rgba(245,197,66,.25);
+    transform:translateY(-1px);
+}
+
+.nav-menu a.back-btn{
+    color:#111;
+    background:var(--gold);
+    border-color:var(--gold);
+    box-shadow:0 4px 15px rgba(245,197,66,.15);
+}
+
+.nav-menu a.back-btn:hover{
+    color:#111;
+    background:#ffd95c;
+    border-color:#ffd95c;
+    box-shadow:0 6px 20px rgba(245,197,66,.25);
+}
 .container{max-width:1250px;margin:auto;padding:25px 18px 60px}
 .hero{text-align:center;padding:25px 10px 20px}
 .badge{display:inline-block;border:1px solid #6f5710;color:var(--gold);padding:5px 13px;border-radius:30px;font-size:13px}
@@ -69,14 +145,29 @@ td input{width:100%;min-width:90px}
 </head>
 <body>
 <header class="header">
- <div class="nav">
-  <a class="logo" href="index.html">✦ Unique EduZone</a>
-  <div>
-   <a href="index.html">මුල් පිටුව</a>
-   <a href="g11.html">11 ශ්‍රේණිය</a>
-   <a href="index.html">ආපසු</a>
-  </div>
- </div>
+    <div class="nav">
+
+        <a class="logo" href="index.html">
+            ✦ Unique EduZone
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                ⌂ <span>මුල් පිටුව</span>
+            </a>
+
+            <a href="g11.html">
+                ▣ <span>11 ශ්‍රේණිය</span>
+            </a>
+
+            <a href="index.html" class="back-btn">
+                ← <span>ආපසු</span>
+            </a>
+
+        </nav>
+
+    </div>
 </header>
 
 <main class="container">
