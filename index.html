@@ -244,17 +244,71 @@
 
         .home-nav {
 
-            display: flex;
+    display: flex;
 
-            align-items: center;
+    align-items: center;
 
-            justify-content: center;
+    justify-content: flex-start;
 
-            gap: 4px;
+    gap: 4px;
 
-            flex: 1;
+    flex: 1;
 
-        }
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: var(--gold) #111;
+
+    -webkit-overflow-scrolling: touch;
+
+    padding-bottom: 3px;
+
+}
+
+
+/* Navigation links එකම පේළියේ තබාගැනීම */
+
+.home-nav a {
+
+    flex: 0 0 auto;
+
+}
+
+
+/* Chrome / Edge / Firefox scrollbar */
+
+.home-nav::-webkit-scrollbar {
+
+    height: 5px;
+
+}
+
+.home-nav::-webkit-scrollbar-track {
+
+    background: #111;
+
+    border-radius: 10px;
+
+}
+
+.home-nav::-webkit-scrollbar-thumb {
+
+    background: var(--gold);
+
+    border-radius: 10px;
+
+}
+
+.home-nav::-webkit-scrollbar-thumb:hover {
+
+    background: var(--gold-light);
+
+}
 
 
         .home-nav a {
