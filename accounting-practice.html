@@ -137,9 +137,58 @@ td input{width:100%;min-width:90px}
 .small{font-size:12px;color:var(--muted)}
 .footer{text-align:center;color:#777;padding:20px;border-top:1px solid #222}
 @media(max-width:700px){
- .nav{padding:12px}.nav a{display:none}.container{padding:15px 10px 45px}
- .panel{padding:14px}.result-box{grid-template-columns:1fr 1fr}
- table{font-size:13px}.entry-grid{grid-template-columns:1fr}
+
+   .nav{
+      padding:10px;
+      gap:8px;
+   }
+
+   .logo{
+      font-size:17px;
+      padding:7px 8px;
+   }
+
+   .nav-menu{
+      display:flex;
+      gap:4px;
+   }
+
+   .nav-menu a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 9px;
+      font-size:13px;
+   }
+
+   .nav-menu a span{
+      display:none;
+   }
+
+   .nav-menu a.back-btn{
+      padding:8px 11px;
+   }
+
+   .container{
+      padding:15px 10px 45px;
+   }
+
+   .panel{
+      padding:14px;
+   }
+
+   .result-box{
+      grid-template-columns:1fr 1fr;
+   }
+
+   table{
+      font-size:13px;
+   }
+
+   .entry-grid{
+      grid-template-columns:1fr;
+   }
+
 }
 </style>
 </head>
