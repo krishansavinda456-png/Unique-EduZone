@@ -1,0 +1,3830 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Accounting Practice | Unique EduZone
+</title>
+
+<style>
+
+/* =========================================================
+   UNIQUE EDUZONE - ACCOUNTING PRACTICE
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        Arial,
+        "Noto Sans Sinhala",
+        "Noto Sans Tamil",
+        sans-serif;
+
+    background:#080808;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080808,
+            #161616
+        );
+
+    border-bottom:1px solid #c9a227;
+
+    padding:16px 20px;
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,.55);
+}
+
+.header-inner{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:46px;
+    height:46px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#c9a227;
+    color:#080808;
+
+    font-weight:bold;
+    font-size:22px;
+}
+
+.brand{
+    font-size:20px;
+    font-weight:bold;
+    color:#fff;
+}
+
+.brand span{
+    color:#d6b33f;
+}
+
+.back-btn{
+    text-decoration:none;
+
+    padding:9px 16px;
+
+    border:1px solid #c9a227;
+    border-radius:8px;
+
+    color:#f5d76e;
+    background:#111;
+
+    transition:.25s;
+}
+
+.back-btn:hover{
+    background:#c9a227;
+    color:#000;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    max-width:1400px;
+    margin:30px auto 20px;
+
+    padding:35px 25px;
+
+    border:1px solid #2b2b2b;
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #181818
+        );
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.4);
+
+    text-align:center;
+}
+
+.hero h1{
+    color:#f5d76e;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    color:#bbb;
+    font-size:16px;
+}
+
+.hero .subtitle{
+    margin-top:10px;
+    color:#fff;
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-wrapper{
+    max-width:1400px;
+    margin:20px auto;
+
+    padding:0 20px;
+}
+
+.progress-info{
+    display:flex;
+    justify-content:space-between;
+
+    color:#bbb;
+
+    margin-bottom:7px;
+}
+
+.progress-bar{
+    height:10px;
+
+    background:#242424;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+
+    height:100%;
+
+    background:#c9a227;
+
+    transition:.4s;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.practice-nav{
+    max-width:1400px;
+    margin:20px auto;
+
+    padding:0 20px;
+
+    display:flex;
+
+    gap:8px;
+
+    overflow-x:auto;
+}
+
+.nav-btn{
+    white-space:nowrap;
+
+    padding:11px 15px;
+
+    border:1px solid #333;
+
+    border-radius:9px;
+
+    background:#111;
+
+    color:#bbb;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.nav-btn:hover{
+    border-color:#c9a227;
+    color:#f5d76e;
+}
+
+.nav-btn.active{
+    background:#c9a227;
+    color:#000;
+
+    border-color:#c9a227;
+
+    font-weight:bold;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.container{
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:0 20px 60px;
+}
+
+.section{
+    display:none;
+
+    animation:fadeIn .3s ease;
+}
+
+.section.active{
+    display:block;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card{
+    background:#111;
+
+    border:1px solid #292929;
+
+    border-radius:15px;
+
+    padding:22px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
+}
+
+.card h2{
+    color:#f5d76e;
+
+    margin-bottom:15px;
+
+    font-size:23px;
+}
+
+.card h3{
+    color:#fff;
+
+    margin:18px 0 10px;
+}
+
+.info-box{
+    padding:17px;
+
+    border-left:4px solid #c9a227;
+
+    background:#191919;
+
+    border-radius:8px;
+
+    margin:15px 0;
+
+    color:#ddd;
+}
+
+/* =========================================================
+   PROBLEM
+   ========================================================= */
+
+.problem-box{
+    background:#0d0d0d;
+
+    border:1px solid #3a3a3a;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    margin-top:15px;
+}
+
+.problem-box ol{
+    padding-left:25px;
+}
+
+.problem-box li{
+    margin:8px 0;
+
+    color:#ddd;
+}
+
+.transaction-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+}
+
+.transaction-table th,
+.transaction-table td{
+    border:1px solid #333;
+
+    padding:10px;
+
+    text-align:left;
+}
+
+.transaction-table th{
+    background:#c9a227;
+    color:#000;
+}
+
+.transaction-table td{
+    background:#101010;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table-wrapper{
+    width:100%;
+
+    overflow-x:auto;
+
+    margin-top:15px;
+}
+
+.practice-table{
+    width:100%;
+
+    min-width:700px;
+
+    border-collapse:collapse;
+}
+
+.practice-table th,
+.practice-table td{
+    border:1px solid #343434;
+
+    padding:7px;
+
+    text-align:center;
+}
+
+.practice-table th{
+    background:#c9a227;
+    color:#000;
+
+    font-weight:bold;
+}
+
+.practice-table td{
+    background:#101010;
+}
+
+.practice-table tr:nth-child(even) td{
+    background:#151515;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+select{
+    width:100%;
+
+    padding:8px 9px;
+
+    background:#080808;
+
+    color:#fff;
+
+    border:1px solid #444;
+
+    border-radius:6px;
+
+    outline:none;
+
+    font-size:14px;
+}
+
+input:focus,
+select:focus{
+    border-color:#c9a227;
+
+    box-shadow:
+        0 0 0 2px rgba(201,162,39,.12);
+}
+
+input.correct{
+    border:2px solid #36c275 !important;
+    background:#102319;
+}
+
+input.wrong{
+    border:2px solid #e74c3c !important;
+    background:#241010;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn-row{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.btn{
+    border:none;
+
+    border-radius:8px;
+
+    padding:11px 18px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.btn-primary{
+    background:#c9a227;
+    color:#000;
+}
+
+.btn-primary:hover{
+    background:#e2c34d;
+}
+
+.btn-secondary{
+    background:#222;
+    color:#fff;
+
+    border:1px solid #444;
+}
+
+.btn-secondary:hover{
+    border-color:#c9a227;
+    color:#f5d76e;
+}
+
+.btn-success{
+    background:#1e6f42;
+    color:#fff;
+}
+
+.btn-danger{
+    background:#8e2c25;
+    color:#fff;
+}
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+.feedback{
+    display:none;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+}
+
+.feedback.show{
+    display:block;
+}
+
+.feedback.success{
+    background:#10291c;
+    color:#65df96;
+
+    border:1px solid #2b8c55;
+}
+
+.feedback.error{
+    background:#2a1110;
+    color:#ff8d83;
+
+    border:1px solid #9b3b34;
+}
+
+.feedback.warning{
+    background:#29240e;
+    color:#f5d76e;
+
+    border:1px solid #9b8127;
+}
+
+/* =========================================================
+   LEDGER
+   ========================================================= */
+
+.ledger-title{
+    text-align:center;
+
+    color:#f5d76e;
+
+    margin-bottom:5px;
+}
+
+.ledger-subtitle{
+    text-align:center;
+
+    color:#aaa;
+
+    margin-bottom:12px;
+}
+
+.t-account{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:0;
+
+    margin-top:15px;
+
+    border:1px solid #444;
+}
+
+.t-side{
+    min-height:220px;
+}
+
+.t-side:first-child{
+    border-right:1px solid #444;
+}
+
+.t-side h4{
+    text-align:center;
+
+    background:#c9a227;
+
+    color:#000;
+
+    padding:8px;
+}
+
+.ledger-row{
+    display:grid;
+
+    grid-template-columns:70px 1fr 110px;
+
+    gap:4px;
+
+    padding:6px;
+
+    border-bottom:1px solid #292929;
+}
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.score-card{
+    text-align:center;
+
+    padding:35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #1b1b1b
+        );
+
+    border:1px solid #c9a227;
+
+    border-radius:18px;
+}
+
+.score-number{
+    font-size:55px;
+
+    color:#f5d76e;
+
+    font-weight:bold;
+
+    margin:10px 0;
+}
+
+.score-message{
+    color:#ccc;
+
+    font-size:18px;
+}
+
+/* =========================================================
+   ANSWER BOX
+   ========================================================= */
+
+.answer-box{
+    display:none;
+
+    background:#161616;
+
+    border:1px solid #c9a227;
+
+    border-radius:10px;
+
+    padding:18px;
+
+    margin-top:15px;
+}
+
+.answer-box.show{
+    display:block;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    text-align:center;
+
+    padding:30px 15px;
+
+    border-top:1px solid #292929;
+
+    color:#777;
+}
+
+footer strong{
+    color:#c9a227;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    .header-inner{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero{
+        margin-top:20px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .practice-nav{
+        padding:0 10px;
+    }
+
+    .container{
+        padding:0 10px 40px;
+    }
+
+    .t-account{
+        grid-template-columns:1fr;
+    }
+
+    .t-side:first-child{
+        border-right:none;
+
+        border-bottom:1px solid #444;
+    }
+
+    .score-number{
+        font-size:45px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <div class="logo-area">
+
+            <div class="logo">
+                U
+            </div>
+
+            <div class="brand">
+                Unique <span>EduZone</span>
+            </div>
+
+        </div>
+
+        <a href="index.html"
+           class="back-btn">
+            ← Back
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <h1>
+        Accounting Practice
+    </h1>
+
+    <p>
+        ගිණුම්කරණය – ප්‍රායෝගික පුහුණු මධ්‍යස්ථානය
+    </p>
+
+    <p class="subtitle">
+        ගනුදෙනු සිට මූල්‍ය ප්‍රකාශන දක්වා සම්පූර්ණ ගිණුම්කරණ ක්‍රියාවලිය පුහුණු වන්න.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRESS
+     ===================================================== -->
+
+<div class="progress-wrapper">
+
+    <div class="progress-info">
+
+        <span>
+            Practice Progress
+        </span>
+
+        <span id="progressText">
+            0%
+        </span>
+
+    </div>
+
+    <div class="progress-bar">
+
+        <div class="progress-fill"
+             id="progressFill">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<nav class="practice-nav">
+
+    <button class="nav-btn active"
+            onclick="showSection('problem',this)">
+        1. Problem
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('original',this)">
+        2. Original Entry
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('double',this)">
+        3. Double Entry
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('ledger',this)">
+        4. Ledger
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('trial',this)">
+        5. Trial Balance
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('adjustments',this)">
+        6. Adjustments
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('statements',this)">
+        7. Financial Statements
+    </button>
+
+    <button class="nav-btn"
+            onclick="showSection('result',this)">
+        8. Result
+    </button>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     1. PROBLEM
+     ===================================================== -->
+
+<section id="problem"
+         class="section active">
+
+    <div class="card">
+
+        <h2>
+            📘 Practice Problem 01
+        </h2>
+
+        <div class="info-box">
+
+            <strong>ව්‍යාපාරය:</strong>
+            Sahan Traders
+
+            <br>
+
+            <strong>මාසය:</strong>
+            2026 ජනවාරි
+
+            <br>
+
+            පහත ගනුදෙනු භාවිතා කරමින් සම්පූර්ණ ගිණුම්කරණ ක්‍රියාවලිය සකස් කරන්න.
+
+        </div>
+
+
+        <div class="problem-box">
+
+            <h3>
+                ගනුදෙනු
+            </h3>
+
+            <ol>
+
+                <li>
+                    ජනවාරි 01 – ව්‍යාපාරය ආරම්භ කිරීමට රු. 500,000 මුදල් ආයෝජනය කරන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 03 – රු. 100,000 ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 05 – රු. 80,000 ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 08 – රු. 150,000 ක භාණ්ඩ මුදලට විකුණන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 10 – රු. 90,000 ක භාණ්ඩ ණයට විකුණන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 12 – ණයට මිලදී ගත් භාණ්ඩවලින් රු. 10,000 ක් ආපසු යවන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 15 – ණයට විකුණූ භාණ්ඩවලින් රු. 15,000 ක් ආපසු ලැබුණි.
+                </li>
+
+                <li>
+                    ජනවාරි 18 – කුලී වියදම ලෙස රු. 20,000 ගෙවන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 20 – ණයගැතියෙකුගෙන් රු. 50,000 ලැබුණි.
+                </li>
+
+                <li>
+                    ජනවාරි 22 – ණයහිමියෙකුට රු. 40,000 ගෙවන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 25 – විදුලි වියදම ලෙස රු. 10,000 ගෙවන ලදී.
+                </li>
+
+                <li>
+                    ජනවාරි 28 – හිමිකරු පෞද්ගලික භාවිතය සඳහා රු. 15,000 මුදල් ලබා ගන්නා ලදී.
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <strong>
+                අවසාන තොරතුරු:
+            </strong>
+
+            <br><br>
+
+            ජනවාරි 31 දින අවසන් තොගය =
+            <strong>රු. 60,000</strong>
+
+            <br>
+
+            මාසික ක්ෂය වීම =
+            <strong>රු. 5,000</strong>
+
+            <br>
+
+            ගෙවිය යුතු වැටුප් =
+            <strong>රු. 8,000</strong>
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="showSectionById('original')">
+
+                Start Practice →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. ORIGINAL ENTRY
+     ===================================================== -->
+
+<section id="original"
+         class="section">
+
+    <div class="card">
+
+        <h2>
+            📒 මුල් සටහන් පොත්
+        </h2>
+
+        <p>
+            පහත ගනුදෙනු නිවැරදි මුල් සටහන් පොතට ඇතුළත් කරන්න.
+        </p>
+
+        <!-- CASH BOOK -->
+
+        <h3>
+            Cash Book
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Particulars</th>
+                    <th>Debit (Rs.)</th>
+                    <th>Credit (Rs.)</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td>01/01</td>
+
+                    <td>
+                        <input value="Capital">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="500000"
+                            class="check-original">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>03/01</td>
+
+                    <td>
+                        <input value="Purchases">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="100000"
+                            class="check-original">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>18/01</td>
+
+                    <td>
+                        <input value="Rent">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="20000"
+                            class="check-original">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>20/01</td>
+
+                    <td>
+                        <input value="Debtor">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="50000"
+                            class="check-original">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>22/01</td>
+
+                    <td>
+                        <input value="Creditor">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="40000"
+                            class="check-original">
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PURCHASE JOURNAL -->
+
+        <h3>
+            Purchases Journal
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Supplier</th>
+                    <th>Amount</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>05/01</td>
+
+                    <td>
+                        <input value="Creditor">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="80000"
+                            class="check-original">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- SALES JOURNAL -->
+
+        <h3>
+            Sales Journal
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>10/01</td>
+
+                    <td>
+                        <input value="Debtor">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="90000"
+                            class="check-original">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- RETURNS -->
+
+        <h3>
+            Returns
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+                    <th>Transaction</th>
+                    <th>Amount</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Purchase Returns
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="10000"
+                            class="check-original">
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        Sales Returns
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="15000"
+                            class="check-original">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="checkOriginal()">
+
+                ✓ Check Answers
+
+            </button>
+
+            <button class="btn btn-secondary"
+                    onclick="showOriginalAnswers()">
+
+                💡 Show Answers
+
+            </button>
+
+        </div>
+
+        <div id="originalFeedback"
+             class="feedback">
+        </div>
+
+        <div id="originalAnswers"
+             class="answer-box">
+
+            <strong>
+                Correct Answers
+            </strong>
+
+            <br><br>
+
+            Cash Book:
+            500,000 / 100,000 / 20,000 / 50,000 / 40,000
+
+            <br>
+
+            Purchases Journal:
+            80,000
+
+            <br>
+
+            Sales Journal:
+            90,000
+
+            <br>
+
+            Purchase Returns:
+            10,000
+
+            <br>
+
+            Sales Returns:
+            15,000
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. DOUBLE ENTRY
+     ===================================================== -->
+
+<section id="double"
+         class="section">
+
+    <div class="card">
+
+        <h2>
+            🔄 ද්විත්ව සටහන්
+        </h2>
+
+        <p>
+            එක් එක් ගනුදෙනුව සඳහා Debit සහ Credit ගිණුම් හඳුනාගෙන මුදල ඇතුළත් කරන්න.
+        </p>
+
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+                    <th>Transaction</th>
+                    <th>Debit Account</th>
+                    <th>Credit Account</th>
+                    <th>Amount</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Capital introduced
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="cash"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="capital"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="500000"
+                            class="double-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Cash purchases
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="purchases"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="cash"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="100000"
+                            class="double-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Credit sales
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="debtor"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="sales"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="90000"
+                            class="double-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Rent paid
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="rent"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="cash"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="20000"
+                            class="double-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Drawings
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="drawings"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="cash"
+                            class="double-input">
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="15000"
+                            class="double-input">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="checkDoubleEntry()">
+
+                ✓ Check Double Entry
+
+            </button>
+
+            <button class="btn btn-secondary"
+                    onclick="showDoubleAnswers()">
+
+                💡 Show Answers
+
+            </button>
+
+        </div>
+
+
+        <div id="doubleFeedback"
+             class="feedback">
+        </div>
+
+
+        <div id="doubleAnswers"
+             class="answer-box">
+
+            <strong>
+                Correct Answers
+            </strong>
+
+            <br><br>
+
+            Capital:
+            Cash Dr / Capital Cr – Rs.500,000
+
+            <br>
+
+            Cash Purchase:
+            Purchases Dr / Cash Cr – Rs.100,000
+
+            <br>
+
+            Credit Sale:
+            Debtor Dr / Sales Cr – Rs.90,000
+
+            <br>
+
+            Rent:
+            Rent Dr / Cash Cr – Rs.20,000
+
+            <br>
+
+            Drawings:
+            Drawings Dr / Cash Cr – Rs.15,000
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. LEDGER
+     ===================================================== -->
+
+<section id="ledger"
+         class="section">
+
+    <div class="card">
+
+        <h2>
+            📚 Ledger Practice
+        </h2>
+
+        <p>
+            Cash Account එකේ අවසාන ශේෂය සොයන්න.
+        </p>
+
+
+        <div class="t-account">
+
+            <div class="t-side">
+
+                <h4>
+                    Debit
+                </h4>
+
+                <div class="ledger-row">
+
+                    <span>
+                        Date
+                    </span>
+
+                    <span>
+                        Particulars
+                    </span>
+
+                    <span>
+                        Amount
+                    </span>
+
+                </div>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        01/01
+                    </span>
+
+                    <span>
+                        Capital
+                    </span>
+
+                    <input
+                        data-answer="500000"
+                        class="ledger-input">
+
+                </div>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        20/01
+                    </span>
+
+                    <span>
+                        Debtor
+                    </span>
+
+                    <input
+                        data-answer="50000"
+                        class="ledger-input">
+
+                </div>
+
+            </div>
+
+
+            <div class="t-side">
+
+                <h4>
+                    Credit
+                </h4>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        Date
+                    </span>
+
+                    <span>
+                        Particulars
+                    </span>
+
+                    <span>
+                        Amount
+                    </span>
+
+                </div>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        03/01
+                    </span>
+
+                    <span>
+                        Purchases
+                    </span>
+
+                    <input
+                        data-answer="100000"
+                        class="ledger-input">
+
+                </div>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        18/01
+                    </span>
+
+                    <span>
+                        Rent
+                    </span>
+
+                    <input
+                        data-answer="20000"
+                        class="ledger-input">
+
+                </div>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        22/01
+                    </span>
+
+                    <span>
+                        Creditor
+                    </span>
+
+                    <input
+                        data-answer="40000"
+                        class="ledger-input">
+
+                </div>
+
+
+                <div class="ledger-row">
+
+                    <span>
+                        28/01
+                    </span>
+
+                    <span>
+                        Drawings
+                    </span>
+
+                    <input
+                        data-answer="15000"
+                        class="ledger-input">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <h3>
+            Closing Balance
+        </h3>
+
+        <input
+            id="cashBalance"
+            data-answer="375000"
+            placeholder="Enter closing balance">
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="checkLedger()">
+
+                ✓ Check Ledger
+
+            </button>
+
+            <button class="btn btn-secondary"
+                    onclick="showLedgerAnswer()">
+
+                💡 Show Answer
+
+            </button>
+
+        </div>
+
+
+        <div id="ledgerFeedback"
+             class="feedback">
+        </div>
+
+
+        <div id="ledgerAnswer"
+             class="answer-box">
+
+            Cash Account closing balance =
+            <strong>Rs. 375,000</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. TRIAL BALANCE
+     ===================================================== -->
+
+<section id="trial"
+         class="section">
+
+    <div class="card">
+
+        <h2>
+            ⚖️ Trial Balance
+        </h2>
+
+        <p>
+            පහත ගිණුම්වල නිවැරදි Debit සහ Credit balances ඇතුළත් කරන්න.
+        </p>
+
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        Account
+                    </th>
+
+                    <th>
+                        Debit (Rs.)
+                    </th>
+
+                    <th>
+                        Credit (Rs.)
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Cash
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="375000"
+                            class="trial-input">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Purchases
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="180000"
+                            class="trial-input">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Sales
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="240000"
+                            class="trial-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Capital
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="500000"
+                            class="trial-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Rent
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="20000"
+                            class="trial-input">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Drawings
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="15000"
+                            class="trial-input">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Debtor
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="25000"
+                            class="trial-input">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Creditor
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="30000"
+                            class="trial-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Electricity
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="10000"
+                            class="trial-input">
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+
+                <tfoot>
+
+                <tr>
+
+                    <th>
+                        Total
+                    </th>
+
+                    <th>
+                        <input id="trialDebitTotal">
+                    </th>
+
+                    <th>
+                        <input id="trialCreditTotal">
+                    </th>
+
+                </tr>
+
+                </tfoot>
+
+            </table>
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="checkTrialBalance()">
+
+                ✓ Check Trial Balance
+
+            </button>
+
+            <button class="btn btn-secondary"
+                    onclick="calculateTrialTotals()">
+
+                Calculate Totals
+
+            </button>
+
+        </div>
+
+
+        <div id="trialFeedback"
+             class="feedback">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. ADJUSTMENTS
+     ===================================================== -->
+
+<section id="adjustments"
+         class="section">
+
+    <div class="card">
+
+        <h2>
+            📝 Adjustments
+        </h2>
+
+        <p>
+            අවසාන ගිණුම් සකස් කිරීමට අවශ්‍ය adjustments ඇතුළත් කරන්න.
+        </p>
+
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        Adjustment
+                    </th>
+
+                    <th>
+                        Amount (Rs.)
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Closing Stock
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="60000"
+                            class="adjust-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Depreciation
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="5000"
+                            class="adjust-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Accrued Salaries
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="8000"
+                            class="adjust-input">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="checkAdjustments()">
+
+                ✓ Check Adjustments
+
+            </button>
+
+        </div>
+
+
+        <div id="adjustFeedback"
+             class="feedback">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     7. FINANCIAL STATEMENTS
+     ===================================================== -->
+
+<section id="statements"
+         class="section">
+
+    <div class="card">
+
+        <h2>
+            📊 Financial Statements
+        </h2>
+
+        <p>
+            අවසාන මූල්‍ය ප්‍රකාශන සඳහා අවශ්‍ය අගයන් සොයා ඇතුළත් කරන්න.
+        </p>
+
+
+        <!-- TRADING -->
+
+        <h3>
+            Trading Account
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Sales
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="225000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Net Purchases
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="170000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Closing Stock
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="60000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Gross Profit
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="115000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- P&L -->
+
+        <h3>
+            Profit & Loss Account
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Gross Profit
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="115000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Rent
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="20000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Electricity
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="10000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Depreciation
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="5000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Salaries
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="8000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Net Profit
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="72000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- SOFP -->
+
+        <h3>
+            Statement of Financial Position
+        </h3>
+
+        <div class="table-wrapper">
+
+            <table class="practice-table">
+
+                <tbody>
+
+                <tr>
+
+                    <td>
+                        Cash
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="375000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Closing Stock
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="60000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Debtors
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="25000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Creditors
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="30000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Capital
+                    </td>
+
+                    <td>
+                        <input
+                            data-answer="557000"
+                            class="statement-input">
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="btn-row">
+
+            <button class="btn btn-primary"
+                    onclick="checkStatements()">
+
+                ✓ Check Financial Statements
+
+            </button>
+
+            <button class="btn btn-secondary"
+                    onclick="showStatementAnswers()">
+
+                💡 Show Answers
+
+            </button>
+
+        </div>
+
+
+        <div id="statementFeedback"
+             class="feedback">
+        </div>
+
+
+        <div id="statementAnswers"
+             class="answer-box">
+
+            <strong>
+                Correct Answers
+            </strong>
+
+            <br><br>
+
+            Net Sales = Rs.225,000
+
+            <br>
+
+            Net Purchases = Rs.170,000
+
+            <br>
+
+            Closing Stock = Rs.60,000
+
+            <br>
+
+            Gross Profit = Rs.115,000
+
+            <br>
+
+            Net Profit = Rs.72,000
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     8. RESULT
+     ===================================================== -->
+
+<section id="result"
+         class="section">
+
+    <div class="score-card">
+
+        <h2>
+            🏆 Practice Result
+        </h2>
+
+        <div class="score-number"
+             id="finalScore">
+
+            0%
+
+        </div>
+
+        <div class="score-message"
+             id="scoreMessage">
+
+            Practice sections complete කර Check කරන්න.
+
+        </div>
+
+
+        <div class="btn-row"
+             style="justify-content:center">
+
+            <button class="btn btn-primary"
+                    onclick="calculateFinalScore()">
+
+                Calculate Final Score
+
+            </button>
+
+            <button class="btn btn-danger"
+                    onclick="resetPractice()">
+
+                Reset Practice
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>
+            📋 Practice Summary
+        </h2>
+
+        <div id="summary">
+
+            තවමත් ප්‍රතිඵල සකස් කර නැත.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    © 2026
+    <strong>
+        Unique EduZone
+    </strong>
+
+    <br>
+
+    Accounting Practice Centre
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+function showSection(id, button){
+
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
+
+            section.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(".nav-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    if(button){
+
+        button.classList.add("active");
+
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    updateProgress();
+
+}
+
+
+function showSectionById(id){
+
+    const button =
+        [...document.querySelectorAll(".nav-btn")]
+        .find(btn =>
+            btn.getAttribute("onclick")
+            &&
+            btn.getAttribute("onclick").includes("'" + id + "'")
+        );
+
+    showSection(id,button);
+
+}
+
+
+/* =========================================================
+   NORMALIZE
+   ========================================================= */
+
+function normalize(value){
+
+    return String(value)
+        .toLowerCase()
+        .trim()
+        .replace(/,/g,"")
+        .replace(/rs\.?/g,"")
+        .replace(/\s+/g," ");
+
+}
+
+
+/* =========================================================
+   NUMBER CHECK
+   ========================================================= */
+
+function numberMatch(value,answer){
+
+    const a =
+        parseFloat(
+            normalize(value)
+        );
+
+    const b =
+        parseFloat(
+            normalize(answer)
+        );
+
+    return !isNaN(a)
+        &&
+        !isNaN(b)
+        &&
+        a === b;
+
+}
+
+
+/* =========================================================
+   TEXT CHECK
+   ========================================================= */
+
+function textMatch(value,answer){
+
+    const v =
+        normalize(value);
+
+    const a =
+        normalize(answer);
+
+    return v === a;
+
+}
+
+
+/* =========================================================
+   GENERIC INPUT CHECK
+   ========================================================= */
+
+function checkInputs(selector){
+
+    const inputs =
+        document.querySelectorAll(selector);
+
+    let correct = 0;
+
+    inputs.forEach(input => {
+
+        const answer =
+            input.dataset.answer;
+
+        let ok;
+
+        if(
+            answer &&
+            !isNaN(parseFloat(answer))
+        ){
+
+            ok =
+                numberMatch(
+                    input.value,
+                    answer
+                );
+
+        }
+        else{
+
+            ok =
+                textMatch(
+                    input.value,
+                    answer
+                );
+
+        }
+
+
+        input.classList.remove(
+            "correct",
+            "wrong"
+        );
+
+
+        if(ok){
+
+            input.classList.add(
+                "correct"
+            );
+
+            correct++;
+
+        }
+        else{
+
+            input.classList.add(
+                "wrong"
+            );
+
+        }
+
+    });
+
+
+    return {
+        correct,
+        total:inputs.length
+    };
+
+}
+
+
+/* =========================================================
+   ORIGINAL ENTRY
+   ========================================================= */
+
+function checkOriginal(){
+
+    const result =
+        checkInputs(
+            ".check-original"
+        );
+
+    const feedback =
+        document.getElementById(
+            "originalFeedback"
+        );
+
+    feedback.className =
+        "feedback show";
+
+
+    if(result.correct === result.total){
+
+        feedback.classList.add(
+            "success"
+        );
+
+        feedback.innerHTML =
+            "✓ Excellent! මුල් සටහන් සියල්ල නිවැරදියි.";
+
+    }
+    else{
+
+        feedback.classList.add(
+            "error"
+        );
+
+        feedback.innerHTML =
+            "❌ " +
+            result.correct +
+            " / " +
+            result.total +
+            " නිවැරදියි. රතු පැහැති කොටු නැවත පරීක්ෂා කරන්න.";
+
+    }
+
+    saveProgress();
+
+    updateProgress();
+
+}
+
+
+function showOriginalAnswers(){
+
+    document
+        .getElementById(
+            "originalAnswers"
+        )
+        .classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   DOUBLE ENTRY
+   ========================================================= */
+
+function checkDoubleEntry(){
+
+    const result =
+        checkInputs(
+            ".double-input"
+        );
+
+    const feedback =
+        document.getElementById(
+            "doubleFeedback"
+        );
+
+    feedback.className =
+        "feedback show";
+
+
+    if(result.correct === result.total){
+
+        feedback.classList.add(
+            "success"
+        );
+
+        feedback.innerHTML =
+            "✓ Double Entry සම්පූර්ණයෙන්ම නිවැරදියි.";
+
+    }
+    else{
+
+        feedback.classList.add(
+            "error"
+        );
+
+        feedback.innerHTML =
+            "❌ " +
+            result.correct +
+            " / " +
+            result.total +
+            " නිවැරදියි.";
+
+    }
+
+    saveProgress();
+
+    updateProgress();
+
+}
+
+
+function showDoubleAnswers(){
+
+    document
+        .getElementById(
+            "doubleAnswers"
+        )
+        .classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   LEDGER
+   ========================================================= */
+
+function checkLedger(){
+
+    const result =
+        checkInputs(
+            ".ledger-input"
+        );
+
+
+    const balance =
+        document.getElementById(
+            "cashBalance"
+        );
+
+
+    const balanceOK =
+        numberMatch(
+            balance.value,
+            balance.dataset.answer
+        );
+
+
+    balance.classList.remove(
+        "correct",
+        "wrong"
+    );
+
+
+    if(balanceOK){
+
+        balance.classList.add(
+            "correct"
+        );
+
+    }
+    else{
+
+        balance.classList.add(
+            "wrong"
+        );
+
+    }
+
+
+    const totalCorrect =
+        result.correct +
+        (balanceOK ? 1 : 0);
+
+
+    const total =
+        result.total + 1;
+
+
+    const feedback =
+        document.getElementById(
+            "ledgerFeedback"
+        );
+
+    feedback.className =
+        "feedback show";
+
+
+    if(totalCorrect === total){
+
+        feedback.classList.add(
+            "success"
+        );
+
+        feedback.innerHTML =
+            "✓ Ledger එක නිවැරදියි. Cash Balance = Rs.375,000";
+
+    }
+    else{
+
+        feedback.classList.add(
+            "error"
+        );
+
+        feedback.innerHTML =
+            "❌ " +
+            totalCorrect +
+            " / " +
+            total +
+            " නිවැරදියි.";
+
+    }
+
+    saveProgress();
+
+    updateProgress();
+
+}
+
+
+function showLedgerAnswer(){
+
+    document
+        .getElementById(
+            "ledgerAnswer"
+        )
+        .classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   TRIAL BALANCE
+   ========================================================= */
+
+function calculateTrialTotals(){
+
+    const inputs =
+        document.querySelectorAll(
+            ".trial-input"
+        );
+
+    let debit = 0;
+
+    let credit = 0;
+
+
+    inputs.forEach(input => {
+
+        const answer =
+            parseFloat(
+                input.dataset.answer
+            );
+
+
+        const cell =
+            input.closest("td");
+
+
+        if(cell){
+
+            const row =
+                input.closest("tr");
+
+            const cells =
+                row.querySelectorAll("td");
+
+
+            const index =
+                [...cells].indexOf(cell);
+
+
+            if(index === 1){
+
+                debit += answer;
+
+            }
+
+            if(index === 2){
+
+                credit += answer;
+
+            }
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "trialDebitTotal"
+    ).value =
+        debit;
+
+
+    document.getElementById(
+        "trialCreditTotal"
+    ).value =
+        credit;
+
+}
+
+
+function checkTrialBalance(){
+
+    calculateTrialTotals();
+
+
+    const result =
+        checkInputs(
+            ".trial-input"
+        );
+
+
+    const debit =
+        parseFloat(
+            document.getElementById(
+                "trialDebitTotal"
+            ).value
+        );
+
+
+    const credit =
+        parseFloat(
+            document.getElementById(
+                "trialCreditTotal"
+            ).value
+        );
+
+
+    const balanced =
+        debit === credit;
+
+
+    const feedback =
+        document.getElementById(
+            "trialFeedback"
+        );
+
+    feedback.className =
+        "feedback show";
+
+
+    if(
+        result.correct === result.total
+        &&
+        balanced
+    ){
+
+        feedback.classList.add(
+            "success"
+        );
+
+        feedback.innerHTML =
+            "✓ Trial Balance නිවැරදියි. Debit = Credit = Rs." +
+            debit.toLocaleString();
+
+    }
+    else{
+
+        feedback.classList.add(
+            "error"
+        );
+
+        feedback.innerHTML =
+            "❌ Trial Balance නැවත පරීක්ෂා කරන්න.";
+
+    }
+
+    saveProgress();
+
+    updateProgress();
+
+}
+
+
+/* =========================================================
+   ADJUSTMENTS
+   ========================================================= */
+
+function checkAdjustments(){
+
+    const result =
+        checkInputs(
+            ".adjust-input"
+        );
+
+
+    const feedback =
+        document.getElementById(
+            "adjustFeedback"
+        );
+
+    feedback.className =
+        "feedback show";
+
+
+    if(result.correct === result.total){
+
+        feedback.classList.add(
+            "success"
+        );
+
+        feedback.innerHTML =
+            "✓ සියලුම Adjustments නිවැරදියි.";
+
+    }
+    else{
+
+        feedback.classList.add(
+            "error"
+        );
+
+        feedback.innerHTML =
+            "❌ " +
+            result.correct +
+            " / " +
+            result.total +
+            " නිවැරදියි.";
+
+    }
+
+    saveProgress();
+
+    updateProgress();
+
+}
+
+
+/* =========================================================
+   FINANCIAL STATEMENTS
+   ========================================================= */
+
+function checkStatements(){
+
+    const result =
+        checkInputs(
+            ".statement-input"
+        );
+
+
+    const feedback =
+        document.getElementById(
+            "statementFeedback"
+        );
+
+    feedback.className =
+        "feedback show";
+
+
+    if(result.correct === result.total){
+
+        feedback.classList.add(
+            "success"
+        );
+
+        feedback.innerHTML =
+            "✓ Financial Statements නිවැරදියි.";
+
+    }
+    else{
+
+        feedback.classList.add(
+            "error"
+        );
+
+        feedback.innerHTML =
+            "❌ " +
+            result.correct +
+            " / " +
+            result.total +
+            " නිවැරදියි.";
+
+    }
+
+    saveProgress();
+
+    updateProgress();
+
+}
+
+
+function showStatementAnswers(){
+
+    document
+        .getElementById(
+            "statementAnswers"
+        )
+        .classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+function updateProgress(){
+
+    const sections = [
+
+        ".check-original",
+        ".double-input",
+        ".ledger-input",
+        ".trial-input",
+        ".adjust-input",
+        ".statement-input"
+
+    ];
+
+
+    let total = 0;
+
+    let completed = 0;
+
+
+    sections.forEach(selector => {
+
+        const inputs =
+            document.querySelectorAll(
+                selector
+            );
+
+        inputs.forEach(input => {
+
+            total++;
+
+            if(
+                input.classList.contains(
+                    "correct"
+                )
+            ){
+
+                completed++;
+
+            }
+
+        });
+
+    });
+
+
+    let percentage =
+        total === 0
+        ? 0
+        : Math.round(
+            (completed / total) * 100
+        );
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        percentage + "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).innerText =
+        percentage + "%";
+
+}
+
+
+/* =========================================================
+   FINAL SCORE
+   ========================================================= */
+
+function calculateFinalScore(){
+
+    const groups = [
+
+        ".check-original",
+        ".double-input",
+        ".ledger-input",
+        ".trial-input",
+        ".adjust-input",
+        ".statement-input"
+
+    ];
+
+
+    let total = 0;
+
+    let correct = 0;
+
+
+    groups.forEach(selector => {
+
+        const inputs =
+            document.querySelectorAll(
+                selector
+            );
+
+        inputs.forEach(input => {
+
+            total++;
+
+            if(
+                input.classList.contains(
+                    "correct"
+                )
+            ){
+
+                correct++;
+
+            }
+
+        });
+
+    });
+
+
+    const percentage =
+        total === 0
+        ? 0
+        : Math.round(
+            (correct / total) * 100
+        );
+
+
+    document.getElementById(
+        "finalScore"
+    ).innerText =
+        percentage + "%";
+
+
+    let message;
+
+
+    if(percentage >= 90){
+
+        message =
+            "🏆 Excellent! ඔබගේ ගිණුම්කරණ දැනුම ඉතා හොඳයි.";
+
+    }
+    else if(percentage >= 75){
+
+        message =
+            "👏 Very Good! තව ටිකක් පුහුණු වුවහොත් විශිෂ්ට ප්‍රතිඵලයක් ලබාගත හැක.";
+
+    }
+    else if(percentage >= 50){
+
+        message =
+            "👍 Good Attempt! වැරදි කොටස් නැවත පුහුණු කරන්න.";
+
+    }
+    else{
+
+        message =
+            "📚 තවදුරටත් පුහුණු වන්න. Correct Answers බලමින් නැවත උත්සාහ කරන්න.";
+
+    }
+
+
+    document.getElementById(
+        "scoreMessage"
+    ).innerText =
+        message;
+
+
+    document.getElementById(
+        "summary"
+    ).innerHTML =
+
+        "<strong>Correct:</strong> " +
+        correct +
+
+        " / " +
+
+        total +
+
+        "<br><br>" +
+
+        "<strong>Score:</strong> " +
+        percentage +
+        "%";
+
+
+    localStorage.setItem(
+        "accountingPracticeScore",
+        percentage
+    );
+
+
+    updateProgress();
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+function resetPractice(){
+
+    if(
+        !confirm(
+            "ඔබගේ සියලුම Practice answers මකා Reset කිරීමට අවශ්‍යද?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    document
+        .querySelectorAll(
+            "input"
+        )
+        .forEach(input => {
+
+            if(
+                !input.readOnly
+                &&
+                !input.value.includes(
+                    "Capital"
+                )
+                &&
+                !input.value.includes(
+                    "Purchases"
+                )
+                &&
+                !input.value.includes(
+                    "Sales"
+                )
+                &&
+                !input.value.includes(
+                    "Rent"
+                )
+                &&
+                !input.value.includes(
+                    "Debtor"
+                )
+                &&
+                !input.value.includes(
+                    "Creditor"
+                )
+            ){
+
+                input.value = "";
+
+            }
+
+            input.classList.remove(
+                "correct",
+                "wrong"
+            );
+
+        });
+
+
+    document
+        .querySelectorAll(
+            ".feedback"
+        )
+        .forEach(box => {
+
+            box.className =
+                "feedback";
+
+            box.innerHTML =
+                "";
+
+        });
+
+
+    document
+        .querySelectorAll(
+            ".answer-box"
+        )
+        .forEach(box => {
+
+            box.classList.remove(
+                "show"
+            );
+
+        });
+
+
+    localStorage.removeItem(
+        "accountingPracticeData"
+    );
+
+    localStorage.removeItem(
+        "accountingPracticeScore"
+    );
+
+
+    document.getElementById(
+        "finalScore"
+    ).innerText =
+        "0%";
+
+
+    document.getElementById(
+        "scoreMessage"
+    ).innerText =
+        "Practice sections complete කර Check කරන්න.";
+
+
+    document.getElementById(
+        "summary"
+    ).innerHTML =
+        "තවමත් ප්‍රතිඵල සකස් කර නැත.";
+
+
+    updateProgress();
+
+}
+
+
+/* =========================================================
+   SAVE PROGRESS
+   ========================================================= */
+
+function saveProgress(){
+
+    const data = [];
+
+
+    document
+        .querySelectorAll(
+            "input"
+        )
+        .forEach((input,index) => {
+
+            data.push({
+
+                index:index,
+
+                value:input.value,
+
+                state:
+                    input.classList.contains(
+                        "correct"
+                    )
+                    ? "correct"
+
+                    :
+
+                    input.classList.contains(
+                        "wrong"
+                    )
+                    ? "wrong"
+
+                    :
+                    ""
+
+            });
+
+        });
+
+
+    localStorage.setItem(
+        "accountingPracticeData",
+        JSON.stringify(data)
+    );
+
+}
+
+
+/* =========================================================
+   LOAD PROGRESS
+   ========================================================= */
+
+function loadProgress(){
+
+    const saved =
+        localStorage.getItem(
+            "accountingPracticeData"
+        );
+
+
+    if(!saved){
+
+        return;
+
+    }
+
+
+    try{
+
+        const data =
+            JSON.parse(saved);
+
+
+        const inputs =
+            document.querySelectorAll(
+                "input"
+            );
+
+
+        data.forEach(item => {
+
+            if(inputs[item.index]){
+
+                inputs[item.index].value =
+                    item.value;
+
+                if(item.state){
+
+                    inputs[item.index]
+                        .classList.add(
+                            item.state
+                        );
+
+                }
+
+            }
+
+        });
+
+    }
+    catch(error){
+
+        console.log(
+            "Could not load saved progress."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTO SAVE
+   ========================================================= */
+
+document.addEventListener(
+    "input",
+    function(){
+
+        saveProgress();
+
+        updateProgress();
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        loadProgress();
+
+        updateProgress();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
