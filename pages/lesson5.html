@@ -262,6 +262,301 @@
 
         }
 
+        /* =====================================================
+   ACCOUNTING DETECTIVE CHALLENGE
+   ===================================================== */
+
+.adc-section{
+    margin-top:35px;
+    background:linear-gradient(145deg,#111,#1b1b1b);
+    border:1px solid #444;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.adc-title{
+    text-align:center;
+    color:gold;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.adc-subtitle{
+    text-align:center;
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.adc-badge{
+    display:inline-block;
+    padding:7px 14px;
+    border:1px solid gold;
+    border-radius:20px;
+    color:gold;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.adc-challenge-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.adc-challenge-card{
+    background:#181818;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:20px;
+    text-align:center;
+    transition:.25s;
+}
+
+.adc-challenge-card:hover{
+    transform:translateY(-3px);
+    border-color:gold;
+}
+
+.adc-challenge-card h3{
+    color:gold;
+    margin-bottom:10px;
+}
+
+.adc-challenge-card p{
+    color:#ccc;
+    line-height:1.7;
+    min-height:65px;
+}
+
+.adc-button{
+    border:none;
+    padding:12px 20px;
+    border-radius:9px;
+    background:gold;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:12px;
+    transition:.2s;
+}
+
+.adc-button:hover{
+    transform:scale(1.03);
+}
+
+.adc-button:disabled{
+    background:#444;
+    color:#888;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.adc-hidden{
+    display:none;
+}
+
+.adc-game{
+    margin-top:25px;
+    background:#0d0d0d;
+    border:1px solid #333;
+    border-radius:15px;
+    padding:22px;
+}
+
+.adc-game-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.adc-progress{
+    color:#ddd;
+    font-weight:bold;
+}
+
+.adc-score{
+    color:gold;
+    font-weight:bold;
+}
+
+.adc-transaction{
+    background:#1c1c1c;
+    border-left:4px solid gold;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.adc-transaction h3{
+    color:gold;
+    margin-bottom:12px;
+}
+
+.adc-transaction p{
+    color:#eee;
+    line-height:1.8;
+}
+
+.adc-details{
+    margin-top:10px;
+    color:#bbb;
+    font-size:14px;
+}
+
+.adc-equation-box{
+    background:#050505;
+    border:2px solid gold;
+    border-radius:12px;
+    padding:20px;
+    margin:20px 0;
+    text-align:center;
+}
+
+.adc-equation-label{
+    color:#aaa;
+    margin-bottom:8px;
+}
+
+.adc-equation{
+    color:gold;
+    font-size:25px;
+    font-weight:bold;
+    line-height:1.7;
+}
+
+.adc-choice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.adc-choice{
+    background:#171717;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:15px;
+}
+
+.adc-choice label{
+    display:block;
+    color:gold;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.adc-choice select{
+    width:100%;
+    padding:11px;
+    border-radius:7px;
+    border:1px solid #555;
+    background:#0c0c0c;
+    color:#fff;
+    font-size:15px;
+}
+
+.adc-action-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.adc-feedback{
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+    line-height:1.8;
+}
+
+.adc-correct{
+    background:#123b20;
+    border:1px solid #28a745;
+    color:#d8ffe2;
+}
+
+.adc-wrong{
+    background:#3b1515;
+    border:1px solid #dc3545;
+    color:#ffdada;
+}
+
+.adc-result{
+    background:#171717;
+    border:2px solid gold;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.adc-result h2{
+    color:gold;
+    margin-bottom:12px;
+}
+
+.adc-result-score{
+    font-size:38px;
+    color:#fff;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.adc-answer-list{
+    margin-top:20px;
+    text-align:left;
+}
+
+.adc-answer-item{
+    background:#111;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:12px;
+}
+
+.adc-answer-item strong{
+    color:gold;
+}
+
+.adc-complete{
+    color:#65e878;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.adc-lock{
+    color:#888;
+    font-size:14px;
+}
+
+@media(max-width:700px){
+
+    .adc-challenge-list{
+        grid-template-columns:1fr;
+    }
+
+    .adc-choice-grid{
+        grid-template-columns:1fr;
+    }
+
+    .adc-equation{
+        font-size:20px;
+    }
+
+    .adc-section{
+        padding:20px 15px;
+    }
+
+}
+
     </style>
 
 </head>
@@ -1820,6 +2115,321 @@
 
     </section>
 
+    <!-- =====================================================
+     ACCOUNTING DETECTIVE CHALLENGE
+     ===================================================== -->
+
+<section class="lesson-section adc-section" id="accountingDetective">
+
+    <div style="text-align:center;">
+        <span class="adc-badge">
+            🕵️ SPECIAL CHALLENGE
+        </span>
+
+        <h2 class="adc-title">
+            🔎 Accounting Detective Challenge
+        </h2>
+
+        <p class="adc-subtitle">
+            <strong>ගිණුම්කරණ පරීක්ෂක විශේෂ අභියෝගය</strong><br>
+            එක් එක් ගනුදෙනුව හඳුනාගෙන එය
+            <span class="important">ගිණුම්කරණ සමීකරණයට</span>
+            නිවැරදිව ඇතුළත් කරන්න.
+        </p>
+    </div>
+
+    <!-- CHALLENGE BUTTONS -->
+
+    <div class="adc-challenge-list">
+
+        <div class="adc-challenge-card">
+
+            <h3>
+                🔎 Detective Challenge 01
+            </h3>
+
+            <p>
+                මූලික ගනුදෙනු 10ක්.
+                වත්කම්, වගකීම් සහ හිමිකම හඳුනා ගනිමු.
+            </p>
+
+            <button
+                class="adc-button"
+                id="adcBtn1"
+                onclick="startADC(1)"
+            >
+                Challenge 01 ආරම්භ කරන්න
+            </button>
+
+            <div
+                class="adc-complete"
+                id="adcComplete1"
+            ></div>
+
+        </div>
+
+
+        <div class="adc-challenge-card">
+
+            <h3>
+                🕵️ Detective Challenge 02
+            </h3>
+
+            <p>
+                මිශ්‍ර ගනුදෙනු 10ක්.
+                ආදායම්, වියදම්, ගැනිලි සහ ණය ගනුදෙනු ඇතුළත් වේ.
+            </p>
+
+            <button
+                class="adc-button"
+                id="adcBtn2"
+                onclick="startADC(2)"
+            >
+                Challenge 02 ආරම්භ කරන්න
+            </button>
+
+            <div
+                class="adc-complete"
+                id="adcComplete2"
+            ></div>
+
+        </div>
+
+
+        <div class="adc-challenge-card">
+
+            <h3>
+                🏆 Final Detective Challenge
+            </h3>
+
+            <p>
+                පාඩම සම්පූර්ණයෙන් ආවරණය කරන
+                අභියෝගාත්මක ගනුදෙනු 10ක්.
+            </p>
+
+            <button
+                class="adc-button"
+                id="adcBtn3"
+                onclick="startADC(3)"
+            >
+                Final Challenge ආරම්භ කරන්න
+            </button>
+
+            <div
+                class="adc-complete"
+                id="adcComplete3"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- GAME AREA -->
+
+    <div
+        id="adcGame"
+        class="adc-game adc-hidden"
+    >
+
+        <div class="adc-game-header">
+
+            <div
+                class="adc-progress"
+                id="adcProgress"
+            >
+                ගනුදෙනුව 1 / 10
+            </div>
+
+            <div
+                class="adc-score"
+                id="adcScore"
+            >
+                ලකුණු: 0
+            </div>
+
+        </div>
+
+
+        <!-- TRANSACTION -->
+
+        <div
+            class="adc-transaction"
+            id="adcTransaction"
+        ></div>
+
+
+        <!-- CURRENT EQUATION -->
+
+        <div class="adc-equation-box">
+
+            <div class="adc-equation-label">
+                ඔබගේ පිළිතුර අනුව ගිණුම්කරණ සමීකරණය
+            </div>
+
+            <div
+                class="adc-equation"
+                id="adcEquation"
+            >
+                වත්කම් = හිමිකම + වගකීම්
+            </div>
+
+        </div>
+
+
+        <!-- ANSWER CHOICES -->
+
+        <div class="adc-choice-grid">
+
+            <div class="adc-choice">
+
+                <label>
+                    💰 වත්කම්
+                </label>
+
+                <select
+                    id="adcAsset"
+                    onchange="updateADCEquation()"
+                >
+
+                    <option value="">
+                        -- තෝරන්න --
+                    </option>
+
+                    <option value="increase">
+                        ⬆️ වැඩි වේ
+                    </option>
+
+                    <option value="decrease">
+                        ⬇️ අඩු වේ
+                    </option>
+
+                    <option value="same">
+                        ➖ වෙනසක් නැත
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="adc-choice">
+
+                <label>
+                    📌 වගකීම්
+                </label>
+
+                <select
+                    id="adcLiability"
+                    onchange="updateADCEquation()"
+                >
+
+                    <option value="">
+                        -- තෝරන්න --
+                    </option>
+
+                    <option value="increase">
+                        ⬆️ වැඩි වේ
+                    </option>
+
+                    <option value="decrease">
+                        ⬇️ අඩු වේ
+                    </option>
+
+                    <option value="same">
+                        ➖ වෙනසක් නැත
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="adc-choice">
+
+                <label>
+                    👤 හිමිකම
+                </label>
+
+                <select
+                    id="adcEquity"
+                    onchange="updateADCEquation()"
+                >
+
+                    <option value="">
+                        -- තෝරන්න --
+                    </option>
+
+                    <option value="increase">
+                        ⬆️ වැඩි වේ
+                    </option>
+
+                    <option value="decrease">
+                        ⬇️ අඩු වේ
+                    </option>
+
+                    <option value="same">
+                        ➖ වෙනසක් නැත
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEEDBACK -->
+
+        <div
+            id="adcFeedback"
+            class="adc-hidden"
+        ></div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="adc-action-row">
+
+            <button
+                class="adc-button"
+                id="adcCheckBtn"
+                onclick="checkADCAnswer()"
+            >
+                ✅ පිළිතුර පරීක්ෂා කරන්න
+            </button>
+
+            <button
+                class="adc-button"
+                id="adcNextBtn"
+                onclick="nextADCQuestion()"
+                style="display:none;"
+            >
+                ➡️ ඊළඟ ගනුදෙනුව
+            </button>
+
+            <button
+                class="adc-button"
+                onclick="closeADC()"
+                style="background:#444;color:#fff;"
+            >
+                ✖ වසා දමන්න
+            </button>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div
+            id="adcResult"
+            class="adc-result adc-hidden"
+        ></div>
+
+    </div>
+
+</section>
+
 
 
     <!-- QUIZ AND LESSON COMPLETE -->
@@ -2177,6 +2787,948 @@ function completeLesson5() {
 
 }
 
+
+</script>
+
+    <script>
+
+/* =====================================================
+   ACCOUNTING DETECTIVE CHALLENGE
+   ===================================================== */
+
+const adcChallenges = {
+
+1: {
+
+    title: "Detective Challenge 01",
+
+    startAssets: 100000,
+    startEquity: 100000,
+    startLiabilities: 0,
+
+    transactions: [
+
+        {
+            text:"හිමිකරු විසින් ව්‍යාපාරයට අමතරව රු. 30,000ක මුදල් යොදවන ලදී.",
+            detail:"මුදල් ↑ රු.30,000 | හිමිකම ↑ රු.30,000",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:30000
+        },
+
+        {
+            text:"ව්‍යාපාරය රු. 20,000ක ගෘහ භාණ්ඩ මුදලින් මිලදී ගන්නා ලදී.",
+            detail:"මුදල් ↓ රු.20,000 | ගෘහ භාණ්ඩ ↑ රු.20,000 | මුළු වත්කම් වෙනසක් නැත",
+            asset:"same",
+            liability:"same",
+            equity:"same",
+            amount:20000
+        },
+
+        {
+            text:"රු. 25,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+            detail:"තොග ↑ රු.25,000 | වෙළෙඳ ගෙවිය යුතු ↑ රු.25,000",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:25000
+        },
+
+        {
+            text:"ණයට මිලදී ගත් භාණ්ඩ සඳහා රු. 10,000ක් ගෙවන ලදී.",
+            detail:"මුදල් ↓ රු.10,000 | වගකීම ↓ රු.10,000",
+            asset:"decrease",
+            liability:"decrease",
+            equity:"same",
+            amount:10000
+        },
+
+        {
+            text:"ව්‍යාපාරයට සේවා ආදායමක් ලෙස රු. 20,000ක් මුදලින් ලැබුණි.",
+            detail:"මුදල් ↑ රු.20,000 | ආදායම ↑ | හිමිකම ↑ රු.20,000",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:20000
+        },
+
+        {
+            text:"රු. 5,000ක විදුලි වියදමක් මුදලින් ගෙවන ලදී.",
+            detail:"මුදල් ↓ රු.5,000 | වියදම ↑ | හිමිකම ↓ රු.5,000",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:5000
+        },
+
+        {
+            text:"හිමිකරු පෞද්ගලික භාවිතය සඳහා ව්‍යාපාරයෙන් රු. 8,000ක් ලබා ගත්තේය.",
+            detail:"මුදල් ↓ රු.8,000 | ගැනිලි ↑ | හිමිකම ↓ රු.8,000",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:8000
+        },
+
+        {
+            text:"ව්‍යාපාරය රු. 40,000ක බැංකු ණයක් ලබා ගත්තේය.",
+            detail:"බැංකු මුදල් ↑ රු.40,000 | බැංකු ණය ↑ රු.40,000",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:40000
+        },
+
+        {
+            text:"පෙර ලබාගත් ණයකින් රු. 3,000ක් ගෙවන ලදී.",
+            detail:"මුදල් ↓ රු.3,000 | වගකීම ↓ රු.3,000",
+            asset:"decrease",
+            liability:"decrease",
+            equity:"same",
+            amount:3000
+        },
+
+        {
+            text:"හිමිකරු විසින් ව්‍යාපාරයට තවත් රු. 15,000ක මුදල් යොදවන ලදී.",
+            detail:"මුදල් ↑ රු.15,000 | හිමිකම ↑ රු.15,000",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:15000
+        }
+
+    ]
+},
+
+
+2: {
+
+    title:"Detective Challenge 02",
+
+    startAssets:250000,
+    startEquity:200000,
+    startLiabilities:50000,
+
+    transactions:[
+
+        {
+            text:"ව්‍යාපාරය රු. 15,000ක භාණ්ඩ මුදලින් මිලදී ගත්තේය.",
+            detail:"මුදල් ↓ | තොග ↑ | මුළු වත්කම් වෙනසක් නැත",
+            asset:"same",
+            liability:"same",
+            equity:"same",
+            amount:15000
+        },
+
+        {
+            text:"රු. 30,000ක සේවා ආදායමක් මුදලින් ලැබුණි.",
+            detail:"මුදල් ↑ | ආදායම ↑ | හිමිකම ↑",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:30000
+        },
+
+        {
+            text:"රු. 20,000ක කාර්යාල උපකරණ ණයට මිලදී ගන්නා ලදී.",
+            detail:"උපකරණ ↑ | වගකීම ↑",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:20000
+        },
+
+        {
+            text:"කාර්යාල කුලිය ලෙස රු. 12,000ක් මුදලින් ගෙවන ලදී.",
+            detail:"මුදල් ↓ | වියදම ↑ | හිමිකම ↓",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:12000
+        },
+
+        {
+            text:"හිමිකරු රු. 10,000ක් පෞද්ගලික භාවිතයට ලබා ගත්තේය.",
+            detail:"මුදල් ↓ | ගැනිලි ↑ | හිමිකම ↓",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:10000
+        },
+
+        {
+            text:"රු. 25,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+            detail:"තොග ↑ | වෙළෙඳ ගෙවිය යුතු ↑",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:25000
+        },
+
+        {
+            text:"වෙළෙඳ ගෙවිය යුතු මුදලින් රු. 15,000ක් ගෙවන ලදී.",
+            detail:"මුදල් ↓ | වගකීම ↓",
+            asset:"decrease",
+            liability:"decrease",
+            equity:"same",
+            amount:15000
+        },
+
+        {
+            text:"රු. 18,000ක ආදායමක් ණයට උපයා ගන්නා ලදී.",
+            detail:"ලැබිය යුතු මුදල් ↑ | ආදායම ↑ | හිමිකම ↑",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:18000
+        },
+
+        {
+            text:"රු. 6,000ක රක්ෂණ වියදමක් මුදලින් ගෙවන ලදී.",
+            detail:"මුදල් ↓ | වියදම ↑ | හිමිකම ↓",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:6000
+        },
+
+        {
+            text:"ව්‍යාපාරය රු. 35,000ක නව බැංකු ණයක් ලබා ගත්තේය.",
+            detail:"බැංකු මුදල් ↑ | බැංකු ණය ↑",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:35000
+        }
+
+    ]
+},
+
+
+3: {
+
+    title:"Final Detective Challenge",
+
+    startAssets:300000,
+    startEquity:220000,
+    startLiabilities:80000,
+
+    transactions:[
+
+        {
+            text:"හිමිකරු විසින් රු. 25,000ක අමතර ප්‍රාග්ධනයක් මුදලින් යොදවන ලදී.",
+            detail:"මුදල් ↑ | හිමිකම ↑",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:25000
+        },
+
+        {
+            text:"රු. 40,000ක භාණ්ඩ මුදලින් මිලදී ගන්නා ලදී.",
+            detail:"මුදල් ↓ | තොග ↑ | මුළු වත්කම් වෙනසක් නැත",
+            asset:"same",
+            liability:"same",
+            equity:"same",
+            amount:40000
+        },
+
+        {
+            text:"රු. 35,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+            detail:"තොග ↑ | වෙළෙඳ ගෙවිය යුතු ↑",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:35000
+        },
+
+        {
+            text:"රු. 45,000ක සේවා ආදායමක් මුදලින් ලැබුණි.",
+            detail:"මුදල් ↑ | ආදායම ↑ | හිමිකම ↑",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:45000
+        },
+
+        {
+            text:"රු. 15,000ක වැටුප් වියදමක් ගෙවන ලදී.",
+            detail:"මුදල් ↓ | වියදම ↑ | හිමිකම ↓",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:15000
+        },
+
+        {
+            text:"හිමිකරු රු. 12,000ක් ගැනිලි ලෙස ලබා ගත්තේය.",
+            detail:"මුදල් ↓ | ගැනිලි ↑ | හිමිකම ↓",
+            asset:"decrease",
+            liability:"same",
+            equity:"decrease",
+            amount:12000
+        },
+
+        {
+            text:"වෙළෙඳ ගෙවිය යුතු මුදලින් රු. 20,000ක් ගෙවන ලදී.",
+            detail:"මුදල් ↓ | වගකීම ↓",
+            asset:"decrease",
+            liability:"decrease",
+            equity:"same",
+            amount:20000
+        },
+
+        {
+            text:"ව්‍යාපාරය රු. 50,000ක බැංකු ණයක් ලබා ගත්තේය.",
+            detail:"බැංකු මුදල් ↑ | බැංකු ණය ↑",
+            asset:"increase",
+            liability:"increase",
+            equity:"same",
+            amount:50000
+        },
+
+        {
+            text:"රු. 8,000ක විදුලි වියදමක් ණයට ඇති විය.",
+            detail:"වත්කම් වෙනසක් නැත | ගෙවිය යුතු වියදම් ↑ | හිමිකම ↓",
+            asset:"same",
+            liability:"increase",
+            equity:"decrease",
+            amount:8000
+        },
+
+        {
+            text:"හිමිකරු විසින් තවත් රු. 20,000ක ප්‍රාග්ධනයක් ව්‍යාපාරයට යොදවන ලදී.",
+            detail:"මුදල් ↑ | හිමිකම ↑",
+            asset:"increase",
+            liability:"same",
+            equity:"increase",
+            amount:20000
+        }
+
+    ]
+}
+
+};
+
+
+/* =====================================================
+   GAME VARIABLES
+   ===================================================== */
+
+let adcCurrentChallenge = 1;
+let adcCurrentQuestion = 0;
+let adcScoreValue = 0;
+let adcAnswered = false;
+let adcAssets = 0;
+let adcEquity = 0;
+let adcLiabilities = 0;
+
+
+/* =====================================================
+   START CHALLENGE
+   ===================================================== */
+
+function startADC(challengeNumber){
+
+    adcCurrentChallenge = challengeNumber;
+    adcCurrentQuestion = 0;
+    adcScoreValue = 0;
+    adcAnswered = false;
+
+    const data = adcChallenges[challengeNumber];
+
+    adcAssets = data.startAssets;
+    adcEquity = data.startEquity;
+    adcLiabilities = data.startLiabilities;
+
+    document.getElementById("adcGame")
+        .classList.remove("adc-hidden");
+
+    document.getElementById("adcResult")
+        .classList.add("adc-hidden");
+
+    document.getElementById("adcGame")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    loadADCQuestion();
+
+}
+
+
+/* =====================================================
+   LOAD QUESTION
+   ===================================================== */
+
+function loadADCQuestion(){
+
+    const data =
+        adcChallenges[adcCurrentChallenge];
+
+    const q =
+        data.transactions[adcCurrentQuestion];
+
+    adcAnswered = false;
+
+    document.getElementById("adcProgress").textContent =
+        "ගනුදෙනුව " +
+        (adcCurrentQuestion + 1) +
+        " / " +
+        data.transactions.length;
+
+    document.getElementById("adcScore").textContent =
+        "ලකුණු: " + adcScoreValue;
+
+
+    document.getElementById("adcTransaction").innerHTML =
+
+        "<h3>🔎 ගනුදෙනුව " +
+        (adcCurrentQuestion + 1) +
+        "</h3>" +
+
+        "<p><strong>" +
+        q.text +
+        "</strong></p>" +
+
+        "<p class='adc-details'>" +
+        "💡 සලකා බලන්න: " +
+        q.detail +
+        "</p>";
+
+
+    document.getElementById("adcAsset").value = "";
+    document.getElementById("adcLiability").value = "";
+    document.getElementById("adcEquity").value = "";
+
+    document.getElementById("adcFeedback")
+        .className = "adc-hidden";
+
+    document.getElementById("adcFeedback")
+        .innerHTML = "";
+
+    document.getElementById("adcCheckBtn")
+        .style.display = "inline-block";
+
+    document.getElementById("adcNextBtn")
+        .style.display = "none";
+
+    document.getElementById("adcEquation").innerHTML =
+        "වත්කම් = හිමිකම + වගකීම්";
+
+}
+
+
+/* =====================================================
+   UPDATE EQUATION
+   ===================================================== */
+
+function updateADCEquation(){
+
+    const data =
+        adcChallenges[adcCurrentChallenge];
+
+    const q =
+        data.transactions[adcCurrentQuestion];
+
+    const asset =
+        document.getElementById("adcAsset").value;
+
+    const liability =
+        document.getElementById("adcLiability").value;
+
+    const equity =
+        document.getElementById("adcEquity").value;
+
+
+    let newAssets = adcAssets;
+    let newLiabilities = adcLiabilities;
+    let newEquity = adcEquity;
+
+
+    if(asset === "increase")
+        newAssets += q.amount;
+
+    if(asset === "decrease")
+        newAssets -= q.amount;
+
+    if(liability === "increase")
+        newLiabilities += q.amount;
+
+    if(liability === "decrease")
+        newLiabilities -= q.amount;
+
+    if(equity === "increase")
+        newEquity += q.amount;
+
+    if(equity === "decrease")
+        newEquity -= q.amount;
+
+
+    document.getElementById("adcEquation").innerHTML =
+
+        "රු. " +
+        newAssets.toLocaleString() +
+
+        " = රු. " +
+
+        newEquity.toLocaleString() +
+
+        " + රු. " +
+
+        newLiabilities.toLocaleString();
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+   ===================================================== */
+
+function checkADCAnswer(){
+
+    if(adcAnswered)
+        return;
+
+
+    const data =
+        adcChallenges[adcCurrentChallenge];
+
+    const q =
+        data.transactions[adcCurrentQuestion];
+
+
+    const asset =
+        document.getElementById("adcAsset").value;
+
+    const liability =
+        document.getElementById("adcLiability").value;
+
+    const equity =
+        document.getElementById("adcEquity").value;
+
+
+    if(!asset || !liability || !equity){
+
+        alert(
+            "කරුණාකර වත්කම්, වගකීම් සහ හිමිකම යන කොටස් තුනම තෝරන්න."
+        );
+
+        return;
+    }
+
+
+    adcAnswered = true;
+
+
+    const correct =
+        asset === q.asset &&
+        liability === q.liability &&
+        equity === q.equity;
+
+
+    const feedback =
+        document.getElementById("adcFeedback");
+
+
+    if(correct){
+
+        adcScoreValue++;
+
+        feedback.className =
+            "adc-feedback adc-correct";
+
+        feedback.innerHTML =
+
+            "✅ <strong>නිවැරදියි!</strong><br>" +
+
+            "ඔබ ගනුදෙනුව ගිණුම්කරණ සමීකරණයට නිවැරදිව ඇතුළත් කර ඇත.";
+
+    }
+    else{
+
+        feedback.className =
+            "adc-feedback adc-wrong";
+
+        feedback.innerHTML =
+
+            "❌ <strong>මෙය නිවැරදි පිළිතුර නොවේ.</strong><br>" +
+
+            "වත්කම්: " +
+            getADCLabel(q.asset) +
+
+            "<br>වගකීම්: " +
+            getADCLabel(q.liability) +
+
+            "<br>හිමිකම: " +
+            getADCLabel(q.equity);
+    }
+
+
+    /* UPDATE BALANCES ONLY WITH CORRECT TRANSACTION */
+
+    if(q.asset === "increase")
+        adcAssets += q.amount;
+
+    if(q.asset === "decrease")
+        adcAssets -= q.amount;
+
+
+    if(q.liability === "increase")
+        adcLiabilities += q.amount;
+
+    if(q.liability === "decrease")
+        adcLiabilities -= q.amount;
+
+
+    if(q.equity === "increase")
+        adcEquity += q.amount;
+
+    if(q.equity === "decrease")
+        adcEquity -= q.amount;
+
+
+    document.getElementById("adcScore").textContent =
+        "ලකුණු: " + adcScoreValue;
+
+
+    document.getElementById("adcCheckBtn")
+        .style.display = "none";
+
+
+    if(adcCurrentQuestion <
+       data.transactions.length - 1){
+
+        document.getElementById("adcNextBtn")
+            .style.display = "inline-block";
+
+    }
+    else{
+
+        document.getElementById("adcNextBtn")
+            .style.display = "none";
+
+        finishADC();
+
+    }
+
+}
+
+
+/* =====================================================
+   NEXT QUESTION
+   ===================================================== */
+
+function nextADCQuestion(){
+
+    adcCurrentQuestion++;
+
+    loadADCQuestion();
+
+}
+
+
+/* =====================================================
+   LABELS
+   ===================================================== */
+
+function getADCLabel(value){
+
+    if(value === "increase")
+        return "⬆️ වැඩි වේ";
+
+    if(value === "decrease")
+        return "⬇️ අඩු වේ";
+
+    return "➖ වෙනසක් නැත";
+
+}
+
+
+/* =====================================================
+   FINISH CHALLENGE
+   ===================================================== */
+
+function finishADC(){
+
+    const data =
+        adcChallenges[adcCurrentChallenge];
+
+    const total =
+        data.transactions.length;
+
+    const percentage =
+        Math.round((adcScoreValue / total) * 100);
+
+
+    localStorage.setItem(
+        "uez_accounting_detective_" +
+        adcCurrentChallenge,
+        JSON.stringify({
+            score:adcScoreValue,
+            total:total,
+            percentage:percentage,
+            completed:true
+        })
+    );
+
+
+    const result =
+        document.getElementById("adcResult");
+
+
+    let message = "";
+
+    if(percentage === 100){
+
+        message =
+            "🏆 විශිෂ්ටයි! සියලුම ගනුදෙනු නිවැරදිව හඳුනාගෙන ඇත.";
+
+    }
+    else if(percentage >= 70){
+
+        message =
+            "👏 ඉතා හොඳයි! තවත් පුහුණුවක් සමඟ ඔබට 100% ලබාගත හැක.";
+
+    }
+    else if(percentage >= 50){
+
+        message =
+            "👍 හොඳ ආරම්භයක්. ගනුදෙනු නැවත අධ්‍යයනය කරන්න.";
+
+    }
+    else{
+
+        message =
+            "📚 ගිණුම්කරණ සමීකරණය නැවත අධ්‍යයනය කර නැවත උත්සාහ කරන්න.";
+
+    }
+
+
+    result.className = "adc-result";
+
+    result.innerHTML =
+
+        "<h2>🏁 " +
+        data.title +
+        " අවසන්!</h2>" +
+
+        "<div class='adc-result-score'>" +
+        adcScoreValue +
+        " / " +
+        total +
+        "</div>" +
+
+        "<p>" +
+        "<strong>ප්‍රතිශතය: " +
+        percentage +
+        "%</strong>" +
+        "</p>" +
+
+        "<p style='margin-top:12px;'>" +
+        message +
+        "</p>" +
+
+        "<div class='adc-action-row'>" +
+
+        "<button class='adc-button' " +
+        "onclick='showADCAnswers()'>" +
+
+        "📖 නිවැරදි පිළිතුරු බලන්න" +
+
+        "</button>" +
+
+        "</div>" +
+
+        "<div id='adcAnswers' class='adc-answer-list'></div>";
+
+
+    result.classList.remove("adc-hidden");
+
+
+    updateADCButtons();
+
+}
+
+
+/* =====================================================
+   SHOW CORRECT ANSWERS
+   ===================================================== */
+
+function showADCAnswers(){
+
+    const data =
+        adcChallenges[adcCurrentChallenge];
+
+    const box =
+        document.getElementById("adcAnswers");
+
+
+    let html =
+        "<h3 style='color:gold;margin-bottom:15px;'>" +
+        "📖 නිවැරදි පිළිතුරු" +
+        "</h3>";
+
+
+    data.transactions.forEach(function(q,index){
+
+        html +=
+
+            "<div class='adc-answer-item'>" +
+
+            "<strong>ගනුදෙනුව " +
+            (index + 1) +
+            "</strong><br><br>" +
+
+            q.text +
+
+            "<br><br>" +
+
+            "💰 වත්කම්: " +
+            getADCLabel(q.asset) +
+
+            "<br>" +
+
+            "📌 වගකීම්: " +
+            getADCLabel(q.liability) +
+
+            "<br>" +
+
+            "👤 හිමිකම: " +
+            getADCLabel(q.equity) +
+
+            "<br><br>" +
+
+            "💡 " +
+            q.detail +
+
+            "</div>";
+
+    });
+
+
+    box.innerHTML = html;
+
+}
+
+
+/* =====================================================
+   CLOSE GAME
+   ===================================================== */
+
+function closeADC(){
+
+    document.getElementById("adcGame")
+        .classList.add("adc-hidden");
+
+}
+
+
+/* =====================================================
+   UPDATE BUTTONS / PROGRESS
+   ===================================================== */
+
+function updateADCButtons(){
+
+    for(let i=1;i<=3;i++){
+
+        const saved =
+            localStorage.getItem(
+                "uez_accounting_detective_" + i
+            );
+
+        const complete =
+            document.getElementById(
+                "adcComplete" + i
+            );
+
+
+        if(saved){
+
+            const result =
+                JSON.parse(saved);
+
+            complete.textContent =
+                "✓ සම්පූර්ණයි – " +
+                result.score +
+                "/" +
+                result.total +
+                " (" +
+                result.percentage +
+                "%)";
+
+        }
+
+    }
+
+
+    const result1 =
+        localStorage.getItem(
+            "uez_accounting_detective_1"
+        );
+
+    const result2 =
+        localStorage.getItem(
+            "uez_accounting_detective_2"
+        );
+
+
+    document.getElementById("adcBtn2")
+        .disabled = !result1;
+
+
+    document.getElementById("adcBtn3")
+        .disabled = !result2;
+
+
+    if(!result1){
+
+        document.getElementById("adcBtn2")
+            .textContent =
+            "🔒 පළමුව Challenge 01";
+
+    }
+    else{
+
+        document.getElementById("adcBtn2")
+            .textContent =
+            "🕵️ Challenge 02 ආරම්භ කරන්න";
+
+    }
+
+
+    if(!result2){
+
+        document.getElementById("adcBtn3")
+            .textContent =
+            "🔒 පළමුව Challenge 02";
+
+    }
+    else{
+
+        document.getElementById("adcBtn3")
+            .textContent =
+            "🏆 Final Challenge ආරම්භ කරන්න";
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateADCButtons();
+
+    }
+);
 
 </script>
 
