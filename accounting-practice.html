@@ -1,3830 +1,504 @@
 <!DOCTYPE html>
 <html lang="si">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>
-Accounting Practice | Unique EduZone
-</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ගිණුම්කරණ ප්‍රායෝගික පුහුණුව | Unique EduZone</title>
 <style>
-
-/* =========================================================
-   UNIQUE EDUZONE - ACCOUNTING PRACTICE
-   ========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:
-        Arial,
-        "Noto Sans Sinhala",
-        "Noto Sans Tamil",
-        sans-serif;
-
-    background:#080808;
-    color:#f5f5f5;
-    line-height:1.6;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:
-        linear-gradient(
-            135deg,
-            #080808,
-            #161616
-        );
-
-    border-bottom:1px solid #c9a227;
-
-    padding:16px 20px;
-
-    box-shadow:
-        0 4px 20px rgba(0,0,0,.55);
-}
-
-.header-inner{
-    max-width:1400px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:20px;
-}
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo{
-    width:46px;
-    height:46px;
-
-    border-radius:12px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#c9a227;
-    color:#080808;
-
-    font-weight:bold;
-    font-size:22px;
-}
-
-.brand{
-    font-size:20px;
-    font-weight:bold;
-    color:#fff;
-}
-
-.brand span{
-    color:#d6b33f;
-}
-
-.back-btn{
-    text-decoration:none;
-
-    padding:9px 16px;
-
-    border:1px solid #c9a227;
-    border-radius:8px;
-
-    color:#f5d76e;
-    background:#111;
-
-    transition:.25s;
-}
-
-.back-btn:hover{
-    background:#c9a227;
-    color:#000;
-}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero{
-    max-width:1400px;
-    margin:30px auto 20px;
-
-    padding:35px 25px;
-
-    border:1px solid #2b2b2b;
-    border-radius:18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #181818
-        );
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.4);
-
-    text-align:center;
-}
-
-.hero h1{
-    color:#f5d76e;
-    font-size:34px;
-    margin-bottom:8px;
-}
-
-.hero p{
-    color:#bbb;
-    font-size:16px;
-}
-
-.hero .subtitle{
-    margin-top:10px;
-    color:#fff;
-}
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-.progress-wrapper{
-    max-width:1400px;
-    margin:20px auto;
-
-    padding:0 20px;
-}
-
-.progress-info{
-    display:flex;
-    justify-content:space-between;
-
-    color:#bbb;
-
-    margin-bottom:7px;
-}
-
-.progress-bar{
-    height:10px;
-
-    background:#242424;
-
-    border-radius:20px;
-
-    overflow:hidden;
-}
-
-.progress-fill{
-    width:0%;
-
-    height:100%;
-
-    background:#c9a227;
-
-    transition:.4s;
-}
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.practice-nav{
-    max-width:1400px;
-    margin:20px auto;
-
-    padding:0 20px;
-
-    display:flex;
-
-    gap:8px;
-
-    overflow-x:auto;
-}
-
-.nav-btn{
-    white-space:nowrap;
-
-    padding:11px 15px;
-
-    border:1px solid #333;
-
-    border-radius:9px;
-
-    background:#111;
-
-    color:#bbb;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.nav-btn:hover{
-    border-color:#c9a227;
-    color:#f5d76e;
-}
-
-.nav-btn.active{
-    background:#c9a227;
-    color:#000;
-
-    border-color:#c9a227;
-
-    font-weight:bold;
-}
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-.container{
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:0 20px 60px;
-}
-
-.section{
-    display:none;
-
-    animation:fadeIn .3s ease;
-}
-
-.section.active{
-    display:block;
-}
-
-@keyframes fadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(8px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-
-.card{
-    background:#111;
-
-    border:1px solid #292929;
-
-    border-radius:15px;
-
-    padding:22px;
-
-    margin-bottom:20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.35);
-}
-
-.card h2{
-    color:#f5d76e;
-
-    margin-bottom:15px;
-
-    font-size:23px;
-}
-
-.card h3{
-    color:#fff;
-
-    margin:18px 0 10px;
-}
-
-.info-box{
-    padding:17px;
-
-    border-left:4px solid #c9a227;
-
-    background:#191919;
-
-    border-radius:8px;
-
-    margin:15px 0;
-
-    color:#ddd;
-}
-
-/* =========================================================
-   PROBLEM
-   ========================================================= */
-
-.problem-box{
-    background:#0d0d0d;
-
-    border:1px solid #3a3a3a;
-
-    border-radius:12px;
-
-    padding:20px;
-
-    margin-top:15px;
-}
-
-.problem-box ol{
-    padding-left:25px;
-}
-
-.problem-box li{
-    margin:8px 0;
-
-    color:#ddd;
-}
-
-.transaction-table{
-    width:100%;
-
-    border-collapse:collapse;
-
-    margin-top:15px;
-}
-
-.transaction-table th,
-.transaction-table td{
-    border:1px solid #333;
-
-    padding:10px;
-
-    text-align:left;
-}
-
-.transaction-table th{
-    background:#c9a227;
-    color:#000;
-}
-
-.transaction-table td{
-    background:#101010;
-}
-
-/* =========================================================
-   TABLES
-   ========================================================= */
-
-.table-wrapper{
-    width:100%;
-
-    overflow-x:auto;
-
-    margin-top:15px;
-}
-
-.practice-table{
-    width:100%;
-
-    min-width:700px;
-
-    border-collapse:collapse;
-}
-
-.practice-table th,
-.practice-table td{
-    border:1px solid #343434;
-
-    padding:7px;
-
-    text-align:center;
-}
-
-.practice-table th{
-    background:#c9a227;
-    color:#000;
-
-    font-weight:bold;
-}
-
-.practice-table td{
-    background:#101010;
-}
-
-.practice-table tr:nth-child(even) td{
-    background:#151515;
-}
-
-/* =========================================================
-   INPUTS
-   ========================================================= */
-
-input,
-select{
-    width:100%;
-
-    padding:8px 9px;
-
-    background:#080808;
-
-    color:#fff;
-
-    border:1px solid #444;
-
-    border-radius:6px;
-
-    outline:none;
-
-    font-size:14px;
-}
-
-input:focus,
-select:focus{
-    border-color:#c9a227;
-
-    box-shadow:
-        0 0 0 2px rgba(201,162,39,.12);
-}
-
-input.correct{
-    border:2px solid #36c275 !important;
-    background:#102319;
-}
-
-input.wrong{
-    border:2px solid #e74c3c !important;
-    background:#241010;
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
-.btn-row{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-top:20px;
-}
-
-.btn{
-    border:none;
-
-    border-radius:8px;
-
-    padding:11px 18px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.25s;
-}
-
-.btn-primary{
-    background:#c9a227;
-    color:#000;
-}
-
-.btn-primary:hover{
-    background:#e2c34d;
-}
-
-.btn-secondary{
-    background:#222;
-    color:#fff;
-
-    border:1px solid #444;
-}
-
-.btn-secondary:hover{
-    border-color:#c9a227;
-    color:#f5d76e;
-}
-
-.btn-success{
-    background:#1e6f42;
-    color:#fff;
-}
-
-.btn-danger{
-    background:#8e2c25;
-    color:#fff;
-}
-
-/* =========================================================
-   FEEDBACK
-   ========================================================= */
-
-.feedback{
-    display:none;
-
-    margin-top:15px;
-
-    padding:14px;
-
-    border-radius:8px;
-
-    font-weight:bold;
-}
-
-.feedback.show{
-    display:block;
-}
-
-.feedback.success{
-    background:#10291c;
-    color:#65df96;
-
-    border:1px solid #2b8c55;
-}
-
-.feedback.error{
-    background:#2a1110;
-    color:#ff8d83;
-
-    border:1px solid #9b3b34;
-}
-
-.feedback.warning{
-    background:#29240e;
-    color:#f5d76e;
-
-    border:1px solid #9b8127;
-}
-
-/* =========================================================
-   LEDGER
-   ========================================================= */
-
-.ledger-title{
-    text-align:center;
-
-    color:#f5d76e;
-
-    margin-bottom:5px;
-}
-
-.ledger-subtitle{
-    text-align:center;
-
-    color:#aaa;
-
-    margin-bottom:12px;
-}
-
-.t-account{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:0;
-
-    margin-top:15px;
-
-    border:1px solid #444;
-}
-
-.t-side{
-    min-height:220px;
-}
-
-.t-side:first-child{
-    border-right:1px solid #444;
-}
-
-.t-side h4{
-    text-align:center;
-
-    background:#c9a227;
-
-    color:#000;
-
-    padding:8px;
-}
-
-.ledger-row{
-    display:grid;
-
-    grid-template-columns:70px 1fr 110px;
-
-    gap:4px;
-
-    padding:6px;
-
-    border-bottom:1px solid #292929;
-}
-
-/* =========================================================
-   SCORE
-   ========================================================= */
-
-.score-card{
-    text-align:center;
-
-    padding:35px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #1b1b1b
-        );
-
-    border:1px solid #c9a227;
-
-    border-radius:18px;
-}
-
-.score-number{
-    font-size:55px;
-
-    color:#f5d76e;
-
-    font-weight:bold;
-
-    margin:10px 0;
-}
-
-.score-message{
-    color:#ccc;
-
-    font-size:18px;
-}
-
-/* =========================================================
-   ANSWER BOX
-   ========================================================= */
-
-.answer-box{
-    display:none;
-
-    background:#161616;
-
-    border:1px solid #c9a227;
-
-    border-radius:10px;
-
-    padding:18px;
-
-    margin-top:15px;
-}
-
-.answer-box.show{
-    display:block;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer{
-    text-align:center;
-
-    padding:30px 15px;
-
-    border-top:1px solid #292929;
-
-    color:#777;
-}
-
-footer strong{
-    color:#c9a227;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --bg:#070707;--card:#111;--card2:#171717;--gold:#f5c542;--gold2:#d9a91a;
+ --text:#f5f5f5;--muted:#b8b8b8;--green:#39d98a;--red:#ff5c67;--blue:#5aa9ff;
+ --border:#303030;
+}
+body{font-family:Arial,"Noto Sans Sinhala",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+button,select,input{font:inherit}
+.header{position:sticky;top:0;z-index:20;background:#090909ee;border-bottom:1px solid #292929;backdrop-filter:blur(10px)}
+.nav{max-width:1250px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{color:var(--gold);font-weight:800;font-size:20px;text-decoration:none}
+.nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}
+.nav a:hover{color:var(--gold)}
+.container{max-width:1250px;margin:auto;padding:25px 18px 60px}
+.hero{text-align:center;padding:25px 10px 20px}
+.badge{display:inline-block;border:1px solid #6f5710;color:var(--gold);padding:5px 13px;border-radius:30px;font-size:13px}
+h1{font-size:clamp(27px,5vw,46px);margin:13px 0 5px}
+.hero p{color:var(--muted);max-width:850px;margin:auto}
+.panel{background:linear-gradient(145deg,#141414,#0d0d0d);border:1px solid var(--border);border-radius:18px;padding:20px;margin-bottom:18px;box-shadow:0 12px 35px #0005}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+select,input{background:#0b0b0b;color:#fff;border:1px solid #444;border-radius:9px;padding:9px 11px;outline:none}
+select:focus,input:focus{border-color:var(--gold)}
+.btn{border:0;border-radius:9px;padding:10px 15px;cursor:pointer;font-weight:700;background:var(--gold);color:#111}
+.btn:hover{filter:brightness(1.08)}
+.btn.dark{background:#242424;color:#fff;border:1px solid #444}
+.btn.green{background:var(--green)}
+.btn.red{background:var(--red);color:#111}
+.problem-title{color:var(--gold);font-size:22px;margin-bottom:5px}
+.problem-meta{color:var(--muted);font-size:13px;margin-bottom:15px}
+.transaction-list{display:grid;gap:8px}
+.tx{background:#0c0c0c;border:1px solid #292929;border-radius:9px;padding:10px 12px}
+.tx b{color:var(--gold)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;margin-bottom:15px}
+.tab{white-space:nowrap;background:#181818;border:1px solid #333;color:#ddd;border-radius:9px;padding:9px 13px;cursor:pointer}
+.tab.active{background:var(--gold);color:#111;border-color:var(--gold)}
+.section{display:none}.section.active{display:block}
+h2{font-size:22px;margin-bottom:6px;color:var(--gold)}
+h3{font-size:17px;margin:15px 0 8px}
+.note{background:#18150a;border-left:4px solid var(--gold);padding:12px;border-radius:8px;color:#ddd;margin:10px 0 15px}
+table{width:100%;border-collapse:collapse;min-width:650px}
+.table-wrap{overflow:auto;border:1px solid #292929;border-radius:10px}
+th,td{border-bottom:1px solid #292929;padding:8px;text-align:left}
+th{background:#1b1b1b;color:var(--gold)}
+td input{width:100%;min-width:90px}
+.num{text-align:right}
+.entry-grid{display:grid;grid-template-columns:1.3fr .8fr .8fr;gap:8px}
+.form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.score{font-size:34px;color:var(--gold);font-weight:800}
+.result-box{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.stat{background:#0c0c0c;border:1px solid #292929;border-radius:10px;padding:14px;text-align:center}
+.stat strong{display:block;font-size:22px;color:var(--gold)}
+.feedback{margin-top:15px;padding:14px;border-radius:10px;background:#0d0d0d;border:1px solid #333}
+.correct{color:var(--green)}.wrong{color:var(--red)}.partial{color:#ffd45a}
+.small{font-size:12px;color:var(--muted)}
+.footer{text-align:center;color:#777;padding:20px;border-top:1px solid #222}
 @media(max-width:700px){
-
-    .header-inner{
-        flex-direction:column;
-    }
-
-    .hero h1{
-        font-size:27px;
-    }
-
-    .hero{
-        margin-top:20px;
-    }
-
-    .card{
-        padding:15px;
-    }
-
-    .practice-nav{
-        padding:0 10px;
-    }
-
-    .container{
-        padding:0 10px 40px;
-    }
-
-    .t-account{
-        grid-template-columns:1fr;
-    }
-
-    .t-side:first-child{
-        border-right:none;
-
-        border-bottom:1px solid #444;
-    }
-
-    .score-number{
-        font-size:45px;
-    }
-
+ .nav{padding:12px}.nav a{display:none}.container{padding:15px 10px 45px}
+ .panel{padding:14px}.result-box{grid-template-columns:1fr 1fr}
+ table{font-size:13px}.entry-grid{grid-template-columns:1fr}
 }
-
 </style>
-
 </head>
-
-
 <body>
-
-
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
-
 <header class="header">
-
-    <div class="header-inner">
-
-        <div class="logo-area">
-
-            <div class="logo">
-                U
-            </div>
-
-            <div class="brand">
-                Unique <span>EduZone</span>
-            </div>
-
-        </div>
-
-        <a href="index.html"
-           class="back-btn">
-            ← Back
-        </a>
-
-    </div>
-
+ <div class="nav">
+  <a class="logo" href="index.html">✦ Unique EduZone</a>
+  <div>
+   <a href="index.html">මුල් පිටුව</a>
+   <a href="g11.html">11 ශ්‍රේණිය</a>
+   <a href="index.html">ආපසු</a>
+  </div>
+ </div>
 </header>
 
-
-<!-- =====================================================
-     HERO
-     ===================================================== -->
-
-<section class="hero">
-
-    <h1>
-        Accounting Practice
-    </h1>
-
-    <p>
-        ගිණුම්කරණය – ප්‍රායෝගික පුහුණු මධ්‍යස්ථානය
-    </p>
-
-    <p class="subtitle">
-        ගනුදෙනු සිට මූල්‍ය ප්‍රකාශන දක්වා සම්පූර්ණ ගිණුම්කරණ ක්‍රියාවලිය පුහුණු වන්න.
-    </p>
-
-</section>
-
-
-<!-- =====================================================
-     PROGRESS
-     ===================================================== -->
-
-<div class="progress-wrapper">
-
-    <div class="progress-info">
-
-        <span>
-            Practice Progress
-        </span>
-
-        <span id="progressText">
-            0%
-        </span>
-
-    </div>
-
-    <div class="progress-bar">
-
-        <div class="progress-fill"
-             id="progressFill">
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     NAVIGATION
-     ===================================================== -->
-
-<nav class="practice-nav">
-
-    <button class="nav-btn active"
-            onclick="showSection('problem',this)">
-        1. Problem
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('original',this)">
-        2. Original Entry
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('double',this)">
-        3. Double Entry
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('ledger',this)">
-        4. Ledger
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('trial',this)">
-        5. Trial Balance
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('adjustments',this)">
-        6. Adjustments
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('statements',this)">
-        7. Financial Statements
-    </button>
-
-    <button class="nav-btn"
-            onclick="showSection('result',this)">
-        8. Result
-    </button>
-
-</nav>
-
-
 <main class="container">
-
-
-<!-- =====================================================
-     1. PROBLEM
-     ===================================================== -->
-
-<section id="problem"
-         class="section active">
-
-    <div class="card">
-
-        <h2>
-            📘 Practice Problem 01
-        </h2>
-
-        <div class="info-box">
-
-            <strong>ව්‍යාපාරය:</strong>
-            Sahan Traders
-
-            <br>
-
-            <strong>මාසය:</strong>
-            2026 ජනවාරි
-
-            <br>
-
-            පහත ගනුදෙනු භාවිතා කරමින් සම්පූර්ණ ගිණුම්කරණ ක්‍රියාවලිය සකස් කරන්න.
-
-        </div>
-
-
-        <div class="problem-box">
-
-            <h3>
-                ගනුදෙනු
-            </h3>
-
-            <ol>
-
-                <li>
-                    ජනවාරි 01 – ව්‍යාපාරය ආරම්භ කිරීමට රු. 500,000 මුදල් ආයෝජනය කරන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 03 – රු. 100,000 ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 05 – රු. 80,000 ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 08 – රු. 150,000 ක භාණ්ඩ මුදලට විකුණන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 10 – රු. 90,000 ක භාණ්ඩ ණයට විකුණන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 12 – ණයට මිලදී ගත් භාණ්ඩවලින් රු. 10,000 ක් ආපසු යවන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 15 – ණයට විකුණූ භාණ්ඩවලින් රු. 15,000 ක් ආපසු ලැබුණි.
-                </li>
-
-                <li>
-                    ජනවාරි 18 – කුලී වියදම ලෙස රු. 20,000 ගෙවන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 20 – ණයගැතියෙකුගෙන් රු. 50,000 ලැබුණි.
-                </li>
-
-                <li>
-                    ජනවාරි 22 – ණයහිමියෙකුට රු. 40,000 ගෙවන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 25 – විදුලි වියදම ලෙස රු. 10,000 ගෙවන ලදී.
-                </li>
-
-                <li>
-                    ජනවාරි 28 – හිමිකරු පෞද්ගලික භාවිතය සඳහා රු. 15,000 මුදල් ලබා ගන්නා ලදී.
-                </li>
-
-            </ol>
-
-        </div>
-
-
-        <div class="info-box">
-
-            <strong>
-                අවසාන තොරතුරු:
-            </strong>
-
-            <br><br>
-
-            ජනවාරි 31 දින අවසන් තොගය =
-            <strong>රු. 60,000</strong>
-
-            <br>
-
-            මාසික ක්ෂය වීම =
-            <strong>රු. 5,000</strong>
-
-            <br>
-
-            ගෙවිය යුතු වැටුප් =
-            <strong>රු. 8,000</strong>
-
-        </div>
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="showSectionById('original')">
-
-                Start Practice →
-
-            </button>
-
-        </div>
-
-    </div>
-
+<section class="hero">
+ <span class="badge">10 / 11 ශ්‍රේණි • ප්‍රායෝගික ගිණුම්කරණය</span>
+ <h1>🧮 ගිණුම්කරණ ප්‍රායෝගික පුහුණුව</h1>
+ <p>විශාල ව්‍යාපාරික ගැටලු විසඳමින් මූලාශ්‍ර පොත්වල සිට අවසාන ගිණුම් දක්වා ගිණුම්කරණය ප්‍රායෝගිකව පුහුණු වන්න.</p>
 </section>
 
-
-<!-- =====================================================
-     2. ORIGINAL ENTRY
-     ===================================================== -->
-
-<section id="original"
-         class="section">
-
-    <div class="card">
-
-        <h2>
-            📒 මුල් සටහන් පොත්
-        </h2>
-
-        <p>
-            පහත ගනුදෙනු නිවැරදි මුල් සටහන් පොතට ඇතුළත් කරන්න.
-        </p>
-
-        <!-- CASH BOOK -->
-
-        <h3>
-            Cash Book
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-                    <th>Date</th>
-                    <th>Particulars</th>
-                    <th>Debit (Rs.)</th>
-                    <th>Credit (Rs.)</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-
-                <tr>
-                    <td>01/01</td>
-
-                    <td>
-                        <input value="Capital">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="500000"
-                            class="check-original">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>03/01</td>
-
-                    <td>
-                        <input value="Purchases">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="100000"
-                            class="check-original">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>18/01</td>
-
-                    <td>
-                        <input value="Rent">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="20000"
-                            class="check-original">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>20/01</td>
-
-                    <td>
-                        <input value="Debtor">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="50000"
-                            class="check-original">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>22/01</td>
-
-                    <td>
-                        <input value="Creditor">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="40000"
-                            class="check-original">
-                    </td>
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- PURCHASE JOURNAL -->
-
-        <h3>
-            Purchases Journal
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-                    <th>Date</th>
-                    <th>Supplier</th>
-                    <th>Amount</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-
-                <tr>
-
-                    <td>05/01</td>
-
-                    <td>
-                        <input value="Creditor">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="80000"
-                            class="check-original">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- SALES JOURNAL -->
-
-        <h3>
-            Sales Journal
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-                    <th>Date</th>
-                    <th>Customer</th>
-                    <th>Amount</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-
-                <tr>
-
-                    <td>10/01</td>
-
-                    <td>
-                        <input value="Debtor">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="90000"
-                            class="check-original">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- RETURNS -->
-
-        <h3>
-            Returns
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-                    <th>Transaction</th>
-                    <th>Amount</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Purchase Returns
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="10000"
-                            class="check-original">
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        Sales Returns
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="15000"
-                            class="check-original">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="checkOriginal()">
-
-                ✓ Check Answers
-
-            </button>
-
-            <button class="btn btn-secondary"
-                    onclick="showOriginalAnswers()">
-
-                💡 Show Answers
-
-            </button>
-
-        </div>
-
-        <div id="originalFeedback"
-             class="feedback">
-        </div>
-
-        <div id="originalAnswers"
-             class="answer-box">
-
-            <strong>
-                Correct Answers
-            </strong>
-
-            <br><br>
-
-            Cash Book:
-            500,000 / 100,000 / 20,000 / 50,000 / 40,000
-
-            <br>
-
-            Purchases Journal:
-            80,000
-
-            <br>
-
-            Sales Journal:
-            90,000
-
-            <br>
-
-            Purchase Returns:
-            10,000
-
-            <br>
-
-            Sales Returns:
-            15,000
-
-        </div>
-
-    </div>
-
+<section class="panel">
+ <div class="toolbar">
+  <div>
+   <b>ප්‍රශ්නය තෝරන්න</b><br>
+   <select id="problemSelect" onchange="loadProblem()"></select>
+  </div>
+  <div class="form-row">
+   <button class="btn dark" onclick="resetCurrent()">↻ නැවත සකසන්න</button>
+   <button class="btn green" onclick="checkAll()">✓ පිළිතුරු පරීක්ෂා කරන්න</button>
+  </div>
+ </div>
 </section>
 
-
-<!-- =====================================================
-     3. DOUBLE ENTRY
-     ===================================================== -->
-
-<section id="double"
-         class="section">
-
-    <div class="card">
-
-        <h2>
-            🔄 ද්විත්ව සටහන්
-        </h2>
-
-        <p>
-            එක් එක් ගනුදෙනුව සඳහා Debit සහ Credit ගිණුම් හඳුනාගෙන මුදල ඇතුළත් කරන්න.
-        </p>
-
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-                    <th>Transaction</th>
-                    <th>Debit Account</th>
-                    <th>Credit Account</th>
-                    <th>Amount</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Capital introduced
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="cash"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="capital"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="500000"
-                            class="double-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Cash purchases
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="purchases"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="cash"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="100000"
-                            class="double-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Credit sales
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="debtor"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="sales"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="90000"
-                            class="double-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Rent paid
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="rent"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="cash"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="20000"
-                            class="double-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Drawings
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="drawings"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="cash"
-                            class="double-input">
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="15000"
-                            class="double-input">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="checkDoubleEntry()">
-
-                ✓ Check Double Entry
-
-            </button>
-
-            <button class="btn btn-secondary"
-                    onclick="showDoubleAnswers()">
-
-                💡 Show Answers
-
-            </button>
-
-        </div>
-
-
-        <div id="doubleFeedback"
-             class="feedback">
-        </div>
-
-
-        <div id="doubleAnswers"
-             class="answer-box">
-
-            <strong>
-                Correct Answers
-            </strong>
-
-            <br><br>
-
-            Capital:
-            Cash Dr / Capital Cr – Rs.500,000
-
-            <br>
-
-            Cash Purchase:
-            Purchases Dr / Cash Cr – Rs.100,000
-
-            <br>
-
-            Credit Sale:
-            Debtor Dr / Sales Cr – Rs.90,000
-
-            <br>
-
-            Rent:
-            Rent Dr / Cash Cr – Rs.20,000
-
-            <br>
-
-            Drawings:
-            Drawings Dr / Cash Cr – Rs.15,000
-
-        </div>
-
-    </div>
-
+<section class="panel" id="problemPanel"></section>
+
+<section class="panel">
+ <div class="tabs">
+  <button class="tab active" onclick="showTab('source',this)">1. මූලාශ්‍ර පොත්</button>
+  <button class="tab" onclick="showTab('double',this)">2. ද්විත්ව සටහන්</button>
+  <button class="tab" onclick="showTab('ledger',this)">3. ලෙජර්</button>
+  <button class="tab" onclick="showTab('trial',this)">4. ශේෂ පිරික්සුම</button>
+  <button class="tab" onclick="showTab('adjust',this)">5. ගැලපීම්</button>
+  <button class="tab" onclick="showTab('final',this)">6. අවසාන ගිණුම්</button>
+  <button class="tab" onclick="showTab('result',this)">7. ප්‍රතිඵල</button>
+ </div>
+
+ <div id="source" class="section active">
+  <h2>මූලාශ්‍ර / මුල් සටහන් පොත්</h2>
+  <div class="note">දී ඇති ගනුදෙනු අනුව අදාළ ගනුදෙනුවට සුදුසු පොත තෝරා, මුදල ඇතුළත් කරන්න.</div>
+  <div class="table-wrap"><table><thead><tr><th>ගනුදෙනු අංකය</th><th>සුදුසු පොත</th><th>මුදල (රු.)</th></tr></thead><tbody id="sourceRows"></tbody></table></div>
+ </div>
+
+ <div id="double" class="section">
+  <h2>ද්විත්ව සටහන්</h2>
+  <div class="note">එක් එක් ගනුදෙනුව සඳහා හර (Debit) සහ බැර (Credit) ගිණුම් හඳුනාගන්න.</div>
+  <div class="table-wrap"><table><thead><tr><th>ගනුදෙනුව</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>මුදල</th></tr></thead><tbody id="doubleRows"></tbody></table></div>
+ </div>
+
+ <div id="ledger" class="section">
+  <h2>ලෙජර් ගිණුම්</h2>
+  <div class="note">පහත ගනුදෙනු සඳහා ප්‍රධාන ලෙජර් ගිණුම්වල හර හා බැර ශේෂ ඇතුළත් කරන්න.</div>
+  <div class="table-wrap"><table><thead><tr><th>ගිණුම</th><th>හර (රු.)</th><th>බැර (රු.)</th></tr></thead><tbody id="ledgerRows"></tbody></table></div>
+ </div>
+
+ <div id="trial" class="section">
+  <h2>ශේෂ පිරික්සුම</h2>
+  <div class="note">ලෙජර් ගිණුම්වලින් ලබාගත් අවසාන ශේෂ නිවැරදි තීරුවට ඇතුළත් කරන්න.</div>
+  <div class="table-wrap"><table><thead><tr><th>ගිණුම</th><th>හර ශේෂය (රු.)</th><th>බැර ශේෂය (රු.)</th></tr></thead><tbody id="trialRows"></tbody><tfoot><tr><th>එකතුව</th><th id="trialDebitTotal">0.00</th><th id="trialCreditTotal">0.00</th></tr></tfoot></table></div>
+ </div>
+
+ <div id="adjust" class="section">
+  <h2>ගැලපීම්</h2>
+  <div class="note">ගැලපීම් තිබේ නම් අදාළ ගිණුමට බලපෑම නිවැරදිව ඇතුළත් කරන්න.</div>
+  <div class="table-wrap"><table><thead><tr><th>ගැලපීම</th><th>හර බලපෑම</th><th>බැර බලපෑම</th></tr></thead><tbody id="adjustRows"></tbody></table></div>
+ </div>
+
+ <div id="final" class="section">
+  <h2>අවසාන ගිණුම්</h2>
+  <div class="note">පහත අවසාන ගිණුම්වල අවශ්‍ය අගයන් ඇතුළත් කරන්න. සෑම ප්‍රශ්නයකටම අවශ්‍ය ක්ෂේත්‍ර වෙනස් විය හැක.</div>
+  <h3>වෙළඳ ගිණුම</h3>
+  <div class="table-wrap"><table><thead><tr><th>අයිතමය</th><th>මුදල (රු.)</th></tr></thead><tbody id="tradingRows"></tbody></table></div>
+  <h3>ලාභ හා අලාභ ගිණුම</h3>
+  <div class="table-wrap"><table><thead><tr><th>අයිතමය</th><th>මුදල (රු.)</th></tr></thead><tbody id="profitRows"></tbody></table></div>
+  <h3>මූල්‍ය තත්ත්ව ප්‍රකාශය</h3>
+  <div class="table-wrap"><table><thead><tr><th>අයිතමය</th><th>මුදල (රු.)</th></tr></thead><tbody id="sfpRows"></tbody></table></div>
+ </div>
+
+ <div id="result" class="section">
+  <h2>ප්‍රතිඵල</h2>
+  <div class="score" id="scoreText">තවම පරීක්ෂා කර නැත</div>
+  <div class="result-box">
+   <div class="stat"><span>මූලාශ්‍ර පොත්</span><strong id="s1">0%</strong></div>
+   <div class="stat"><span>ද්විත්ව සටහන්</span><strong id="s2">0%</strong></div>
+   <div class="stat"><span>ලෙජර්</span><strong id="s3">0%</strong></div>
+   <div class="stat"><span>ශේෂ පිරික්සුම</span><strong id="s4">0%</strong></div>
+  </div>
+  <div class="result-box">
+   <div class="stat"><span>ගැලපීම්</span><strong id="s5">0%</strong></div>
+   <div class="stat"><span>අවසාන ගිණුම්</span><strong id="s6">0%</strong></div>
+   <div class="stat"><span>සම්පූර්ණ ලකුණු</span><strong id="finalScore">0/100</strong></div>
+   <div class="stat"><span>තත්ත්වය</span><strong id="status">—</strong></div>
+  </div>
+  <div class="feedback" id="feedback">“පිළිතුරු පරීක්ෂා කරන්න” බොත්තම ඔබන්න.</div>
+ </div>
 </section>
-
-
-<!-- =====================================================
-     4. LEDGER
-     ===================================================== -->
-
-<section id="ledger"
-         class="section">
-
-    <div class="card">
-
-        <h2>
-            📚 Ledger Practice
-        </h2>
-
-        <p>
-            Cash Account එකේ අවසාන ශේෂය සොයන්න.
-        </p>
-
-
-        <div class="t-account">
-
-            <div class="t-side">
-
-                <h4>
-                    Debit
-                </h4>
-
-                <div class="ledger-row">
-
-                    <span>
-                        Date
-                    </span>
-
-                    <span>
-                        Particulars
-                    </span>
-
-                    <span>
-                        Amount
-                    </span>
-
-                </div>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        01/01
-                    </span>
-
-                    <span>
-                        Capital
-                    </span>
-
-                    <input
-                        data-answer="500000"
-                        class="ledger-input">
-
-                </div>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        20/01
-                    </span>
-
-                    <span>
-                        Debtor
-                    </span>
-
-                    <input
-                        data-answer="50000"
-                        class="ledger-input">
-
-                </div>
-
-            </div>
-
-
-            <div class="t-side">
-
-                <h4>
-                    Credit
-                </h4>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        Date
-                    </span>
-
-                    <span>
-                        Particulars
-                    </span>
-
-                    <span>
-                        Amount
-                    </span>
-
-                </div>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        03/01
-                    </span>
-
-                    <span>
-                        Purchases
-                    </span>
-
-                    <input
-                        data-answer="100000"
-                        class="ledger-input">
-
-                </div>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        18/01
-                    </span>
-
-                    <span>
-                        Rent
-                    </span>
-
-                    <input
-                        data-answer="20000"
-                        class="ledger-input">
-
-                </div>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        22/01
-                    </span>
-
-                    <span>
-                        Creditor
-                    </span>
-
-                    <input
-                        data-answer="40000"
-                        class="ledger-input">
-
-                </div>
-
-
-                <div class="ledger-row">
-
-                    <span>
-                        28/01
-                    </span>
-
-                    <span>
-                        Drawings
-                    </span>
-
-                    <input
-                        data-answer="15000"
-                        class="ledger-input">
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <h3>
-            Closing Balance
-        </h3>
-
-        <input
-            id="cashBalance"
-            data-answer="375000"
-            placeholder="Enter closing balance">
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="checkLedger()">
-
-                ✓ Check Ledger
-
-            </button>
-
-            <button class="btn btn-secondary"
-                    onclick="showLedgerAnswer()">
-
-                💡 Show Answer
-
-            </button>
-
-        </div>
-
-
-        <div id="ledgerFeedback"
-             class="feedback">
-        </div>
-
-
-        <div id="ledgerAnswer"
-             class="answer-box">
-
-            Cash Account closing balance =
-            <strong>Rs. 375,000</strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     5. TRIAL BALANCE
-     ===================================================== -->
-
-<section id="trial"
-         class="section">
-
-    <div class="card">
-
-        <h2>
-            ⚖️ Trial Balance
-        </h2>
-
-        <p>
-            පහත ගිණුම්වල නිවැරදි Debit සහ Credit balances ඇතුළත් කරන්න.
-        </p>
-
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-
-                    <th>
-                        Account
-                    </th>
-
-                    <th>
-                        Debit (Rs.)
-                    </th>
-
-                    <th>
-                        Credit (Rs.)
-                    </th>
-
-                </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Cash
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="375000"
-                            class="trial-input">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Purchases
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="180000"
-                            class="trial-input">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Sales
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="240000"
-                            class="trial-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Capital
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="500000"
-                            class="trial-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Rent
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="20000"
-                            class="trial-input">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Drawings
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="15000"
-                            class="trial-input">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Debtor
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="25000"
-                            class="trial-input">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Creditor
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="30000"
-                            class="trial-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Electricity
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="10000"
-                            class="trial-input">
-                    </td>
-
-                    <td>
-                        -
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-
-                <tfoot>
-
-                <tr>
-
-                    <th>
-                        Total
-                    </th>
-
-                    <th>
-                        <input id="trialDebitTotal">
-                    </th>
-
-                    <th>
-                        <input id="trialCreditTotal">
-                    </th>
-
-                </tr>
-
-                </tfoot>
-
-            </table>
-
-        </div>
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="checkTrialBalance()">
-
-                ✓ Check Trial Balance
-
-            </button>
-
-            <button class="btn btn-secondary"
-                    onclick="calculateTrialTotals()">
-
-                Calculate Totals
-
-            </button>
-
-        </div>
-
-
-        <div id="trialFeedback"
-             class="feedback">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     6. ADJUSTMENTS
-     ===================================================== -->
-
-<section id="adjustments"
-         class="section">
-
-    <div class="card">
-
-        <h2>
-            📝 Adjustments
-        </h2>
-
-        <p>
-            අවසාන ගිණුම් සකස් කිරීමට අවශ්‍ය adjustments ඇතුළත් කරන්න.
-        </p>
-
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <thead>
-
-                <tr>
-
-                    <th>
-                        Adjustment
-                    </th>
-
-                    <th>
-                        Amount (Rs.)
-                    </th>
-
-                </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Closing Stock
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="60000"
-                            class="adjust-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Depreciation
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="5000"
-                            class="adjust-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Accrued Salaries
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="8000"
-                            class="adjust-input">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="checkAdjustments()">
-
-                ✓ Check Adjustments
-
-            </button>
-
-        </div>
-
-
-        <div id="adjustFeedback"
-             class="feedback">
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     7. FINANCIAL STATEMENTS
-     ===================================================== -->
-
-<section id="statements"
-         class="section">
-
-    <div class="card">
-
-        <h2>
-            📊 Financial Statements
-        </h2>
-
-        <p>
-            අවසාන මූල්‍ය ප්‍රකාශන සඳහා අවශ්‍ය අගයන් සොයා ඇතුළත් කරන්න.
-        </p>
-
-
-        <!-- TRADING -->
-
-        <h3>
-            Trading Account
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Sales
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="225000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Net Purchases
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="170000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Closing Stock
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="60000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Gross Profit
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="115000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- P&L -->
-
-        <h3>
-            Profit & Loss Account
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Gross Profit
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="115000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Rent
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="20000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Electricity
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="10000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Depreciation
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="5000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Salaries
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="8000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Net Profit
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="72000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- SOFP -->
-
-        <h3>
-            Statement of Financial Position
-        </h3>
-
-        <div class="table-wrapper">
-
-            <table class="practice-table">
-
-                <tbody>
-
-                <tr>
-
-                    <td>
-                        Cash
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="375000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Closing Stock
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="60000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Debtors
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="25000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Creditors
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="30000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td>
-                        Capital
-                    </td>
-
-                    <td>
-                        <input
-                            data-answer="557000"
-                            class="statement-input">
-                    </td>
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <div class="btn-row">
-
-            <button class="btn btn-primary"
-                    onclick="checkStatements()">
-
-                ✓ Check Financial Statements
-
-            </button>
-
-            <button class="btn btn-secondary"
-                    onclick="showStatementAnswers()">
-
-                💡 Show Answers
-
-            </button>
-
-        </div>
-
-
-        <div id="statementFeedback"
-             class="feedback">
-        </div>
-
-
-        <div id="statementAnswers"
-             class="answer-box">
-
-            <strong>
-                Correct Answers
-            </strong>
-
-            <br><br>
-
-            Net Sales = Rs.225,000
-
-            <br>
-
-            Net Purchases = Rs.170,000
-
-            <br>
-
-            Closing Stock = Rs.60,000
-
-            <br>
-
-            Gross Profit = Rs.115,000
-
-            <br>
-
-            Net Profit = Rs.72,000
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     8. RESULT
-     ===================================================== -->
-
-<section id="result"
-         class="section">
-
-    <div class="score-card">
-
-        <h2>
-            🏆 Practice Result
-        </h2>
-
-        <div class="score-number"
-             id="finalScore">
-
-            0%
-
-        </div>
-
-        <div class="score-message"
-             id="scoreMessage">
-
-            Practice sections complete කර Check කරන්න.
-
-        </div>
-
-
-        <div class="btn-row"
-             style="justify-content:center">
-
-            <button class="btn btn-primary"
-                    onclick="calculateFinalScore()">
-
-                Calculate Final Score
-
-            </button>
-
-            <button class="btn btn-danger"
-                    onclick="resetPractice()">
-
-                Reset Practice
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <div class="card">
-
-        <h2>
-            📋 Practice Summary
-        </h2>
-
-        <div id="summary">
-
-            තවමත් ප්‍රතිඵල සකස් කර නැත.
-
-        </div>
-
-    </div>
-
-</section>
-
-
 </main>
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-    © 2026
-    <strong>
-        Unique EduZone
-    </strong>
-
-    <br>
-
-    Accounting Practice Centre
-
-</footer>
-
+<footer class="footer">© 2026 Unique EduZone • ගිණුම්කරණ ප්‍රායෝගික පුහුණුව</footer>
 
 <script>
+const problems=[
+{
+ id:1,title:"ප්‍රශ්නය 01 – සුරංග ව්‍යාපාරය",level:"මූලික",
+ desc:"සුරංග 2026 ජනවාරි 1 දින රු.100,000ක මුදල් ප්‍රාග්ධනයක් යොදා ව්‍යාපාරයක් ආරම්භ කළේය.",
+ tx:[
+  ["01","මුදල් ප්‍රාග්ධනය රු.100,000ක් යොදන ලදී.",100000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.20,000කට භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",20000,"මුදල් පොත","ගැනුම්","මුදල්"],
+  ["03","රු.30,000කට භාණ්ඩ ණයට විකුණන ලදී – නිමල්ට.",30000,"විකුණුම් පොත","නිමල්","විකුණුම්"],
+  ["04","රු.10,000කට භාණ්ඩ මුදලට විකුණන ලදී.",10000,"මුදල් පොත","මුදල්","විකුණුම්"],
+  ["05","රු.5,000ක කුලී මුදලට ගෙවන ලදී.",5000,"මුදල් පොත","කුලී","මුදල්"],
+  ["06","නිමල්ගෙන් රු.20,000ක් මුදලින් ලැබුණි.",20000,"මුදල් පොත","මුදල්","නිමල්"]
+ ],
+ accounts:[
+  ["මුදල්",110000,0],["ගැනුම්",20000,0],["නිමල්",10000,0],["කුලී",5000,0],["ප්‍රාග්ධන",0,100000],["විකුණුම්",0,40000]
+ ],
+ trial:[["මුදල්",110000,0],["ගැනුම්",20000,0],["නිමල්",10000,0],["කුලී",5000,0],["ප්‍රාග්ධන",0,100000],["විකුණුම්",0,40000]],
+ adjustments:[["විශේෂ ගැලපීමක් නොමැත",0,0]],
+ trading:[["විකුණුම්",40000],["ගැනුම්",20000],["දළ ලාභය",20000]],
+ profit:[["දළ ලාභය",20000],["කුලී",5000],["ශුද්ධ ලාභය",15000]],
+ sfp:[["මුදල්",110000],["නිමල් – ලැබිය යුතු",10000],["ප්‍රාග්ධන",100000],["ශුද්ධ ලාභය",15000],["ශුද්ධ වත්කම්",120000]]
+},
+{
+ id:2,title:"ප්‍රශ්නය 02 – නදීකා වෙළඳසැල",level:"මූලික / සාමාන්‍ය",
+ desc:"නදීකා වෙළඳසැලේ එක් මාසයක ගනුදෙනු පහත දැක්වේ. ණයට ගනුදෙනු හඳුනාගන්න.",
+ tx:[
+  ["01","ව්‍යාපාරයට රු.150,000ක මුදල් ප්‍රාග්ධනයක් යොදන ලදී.",150000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.40,000ක භාණ්ඩ ණයට ගන්නා ලදී – කමල්ගෙන්.",40000,"ගැනුම් පොත","ගැනුම්","කමල්"],
+  ["03","රු.60,000ක භාණ්ඩ ණයට විකුණන ලදී – අමල්ට.",60000,"විකුණුම් පොත","අමල්","විකුණුම්"],
+  ["04","කමල්ට රු.15,000ක් මුදලින් ගෙවන ලදී.",15000,"මුදල් පොත","කමල්","මුදල්"],
+  ["05","අමල්ගෙන් රු.25,000ක් ලැබුණි.",25000,"මුදල් පොත","මුදල්","අමල්"],
+  ["06","රු.5,000ක ගැනුම් ආපසු කමල්ට යවන ලදී.",5000,"ගැනුම් ආපසු යැවීම් පොත","කමල්","ගැනුම් ආපසු යැවීම්"],
+  ["07","අමල්ගෙන් රු.4,000ක විකුණුම් ආපසු ලැබුණි.",4000,"විකුණුම් ආපසු ලැබීම් පොත","විකුණුම් ආපසු ලැබීම්","අමල්"],
+  ["08","විදුලි ගාස්තු රු.6,000ක් ගෙවන ලදී.",6000,"මුදල් පොත","විදුලි ගාස්තු","මුදල්"]
+ ],
+ accounts:[
+  ["මුදල්",154000,0],["ගැනුම්",40000,0],["අමල්",31000,0],["කමල්",0,35000],["විකුණුම්",0,60000],["ගැනුම් ආපසු යැවීම්",0,5000],["විකුණුම් ආපසු ලැබීම්",4000,0],["විදුලි ගාස්තු",6000,0],["ප්‍රාග්ධන",0,150000]
+ ],
+ trial:[["මුදල්",154000,0],["ගැනුම්",40000,0],["අමල්",31000,0],["කමල්",0,35000],["විකුණුම්",0,60000],["ගැනුම් ආපසු යැවීම්",0,5000],["විකුණුම් ආපසු ලැබීම්",4000,0],["විදුලි ගාස්තු",6000,0],["ප්‍රාග්ධන",0,150000]],
+ adjustments:[["විශේෂ ගැලපීමක් නොමැත",0,0]],
+ trading:[["විකුණුම්",60000],["විකුණුම් ආපසු ලැබීම්",4000],["ශුද්ධ විකුණුම්",56000],["ගැනුම්",40000],["ගැනුම් ආපසු යැවීම්",5000],["ශුද්ධ ගැනුම්",35000],["දළ ලාභය",21000]],
+ profit:[["දළ ලාභය",21000],["විදුලි ගාස්තු",6000],["ශුද්ධ ලාභය",15000]],
+ sfp:[["මුදල්",154000],["අමල් – ලැබිය යුතු",31000],["කමල් – ගෙවිය යුතු",35000],["ප්‍රාග්ධන",150000],["ශුද්ධ ලාභය",15000],["ශුද්ධ වත්කම්",150000]]
+},
+{
+ id:3,title:"ප්‍රශ්නය 03 – රුවන් ව්‍යාපාරය",level:"සාමාන්‍ය",
+ desc:"මුදල් පොත, ගැනුම්/විකුණුම් පොත් සහ ලෙජර් ශේෂ සකස් කිරීමට සුදුසු ගැටලුවකි.",
+ tx:[
+  ["01","මුදල් ප්‍රාග්ධනය රු.200,000කි.",200000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.50,000ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",50000,"මුදල් පොත","ගැනුම්","මුදල්"],
+  ["03","රු.70,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී – සමාන්ගෙන්.",70000,"ගැනුම් පොත","ගැනුම්","සමාන්"],
+  ["04","රු.90,000ක භාණ්ඩ ණයට විකුණන ලදී – දිනේෂ්ට.",90000,"විකුණුම් පොත","දිනේෂ්","විකුණුම්"],
+  ["05","වැටුප් රු.12,000ක් ගෙවන ලදී.",12000,"මුදල් පොත","වැටුප්","මුදල්"],
+  ["06","දිනේෂ්ගෙන් රු.50,000ක් ලැබුණි.",50000,"මුදල් පොත","මුදල්","දිනේෂ්"],
+  ["07","සමාන්ට රු.30,000ක් ගෙවන ලදී.",30000,"මුදල් පොත","සමාන්","මුදල්"],
+  ["08","රු.8,000ක කුලී ගෙවන ලදී.",8000,"මුදල් පොත","කුලී","මුදල්"]
+ ],
+ accounts:[
+  ["මුදල්",150000,0],["ගැනුම්",120000,0],["දිනේෂ්",40000,0],["වැටුප්",12000,0],["කුලී",8000,0],["සමාන්",0,40000],["විකුණුම්",0,90000],["ප්‍රාග්ධන",0,200000]
+ ],
+ trial:[["මුදල්",150000,0],["ගැනුම්",120000,0],["දිනේෂ්",40000,0],["වැටුප්",12000,0],["කුලී",8000,0],["සමාන්",0,40000],["විකුණුම්",0,90000],["ප්‍රාග්ධන",0,200000]],
+ adjustments:[["විශේෂ ගැලපීමක් නොමැත",0,0]],
+ trading:[["විකුණුම්",90000],["ගැනුම්",120000],["දළ අලාභය",30000]],
+ profit:[["දළ අලාභය",30000],["වැටුප්",12000],["කුලී",8000],["ශුද්ධ අලාභය",50000]],
+ sfp:[["මුදල්",150000],["දිනේෂ් – ලැබිය යුතු",40000],["සමාන් – ගෙවිය යුතු",40000],["ප්‍රාග්ධන",200000],["ශුද්ධ අලාභය",50000],["ශුද්ධ වත්කම්",150000]]
+},
+{
+ id:4,title:"ප්‍රශ්නය 04 – හසිත වෙළඳ ව්‍යාපාරය",level:"මධ්‍යම",
+ desc:"වියදම් සහ ණයගැතියන්/ණයහිමියන් ඇතුළත් ගනුදෙනු සමඟ පුහුණුව.",
+ tx:[
+  ["01","රු.250,000ක් ප්‍රාග්ධනය ලෙස මුදලින් යොදන ලදී.",250000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.80,000ක භාණ්ඩ ණයට ගන්නා ලදී – ලක්මාල්ගෙන්.",80000,"ගැනුම් පොත","ගැනුම්","ලක්මාල්"],
+  ["03","රු.110,000ක භාණ්ඩ ණයට විකුණන ලදී – චමින්දට.",110000,"විකුණුම් පොත","චමින්ද","විකුණුම්"],
+  ["04","ප්‍රවාහන වියදම රු.7,000ක් ගෙවන ලදී.",7000,"මුදල් පොත","ප්‍රවාහන","මුදල්"],
+  ["05","චමින්දගෙන් රු.60,000ක් ලැබුණි.",60000,"මුදල් පොත","මුදල්","චමින්ද"],
+  ["06","ලක්මාල්ට රු.50,000ක් ගෙවන ලදී.",50000,"මුදල් පොත","ලක්මාල්","මුදල්"],
+  ["07","රු.10,000ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",10000,"මුදල් පොත","ගැනුම්","මුදල්"],
+  ["08","දුරකථන ගාස්තු රු.5,000ක් ගෙවන ලදී.",5000,"මුදල් පොත","දුරකථන ගාස්තු","මුදල්"]
+ ],
+ accounts:[
+  ["මුදල්",248000,0],["ගැනුම්",90000,0],["චමින්ද",50000,0],["ප්‍රවාහන",7000,0],["දුරකථන ගාස්තු",5000,0],["ලක්මාල්",0,30000],["විකුණුම්",0,110000],["ප්‍රාග්ධන",0,250000]
+ ],
+ trial:[["මුදල්",248000,0],["ගැනුම්",90000,0],["චමින්ද",50000,0],["ප්‍රවාහන",7000,0],["දුරකථන ගාස්තු",5000,0],["ලක්මාල්",0,30000],["විකුණුම්",0,110000],["ප්‍රාග්ධන",0,250000]],
+ adjustments:[["විශේෂ ගැලපීමක් නොමැත",0,0]],
+ trading:[["විකුණුම්",110000],["ගැනුම්",90000],["දළ ලාභය",20000]],
+ profit:[["දළ ලාභය",20000],["ප්‍රවාහන",7000],["දුරකථන ගාස්තු",5000],["ශුද්ධ ලාභය",8000]],
+ sfp:[["මුදල්",248000],["චමින්ද – ලැබිය යුතු",50000],["ලක්මාල් – ගෙවිය යුතු",30000],["ප්‍රාග්ධන",250000],["ශුද්ධ ලාභය",8000],["ශුද්ධ වත්කම්",268000]]
+},
+{
+ id:5,title:"ප්‍රශ්නය 05 – මධු ව්‍යාපාරය",level:"මධ්‍යම / උසස්",
+ desc:"බැංකු, වට්ටම් සහ ආපසු ගනුදෙනු හඳුනාගැනීම සඳහා.",
+ tx:[
+  ["01","මුදල් ප්‍රාග්ධනය රු.300,000ක් යොදන ලදී.",300000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.100,000ක් බැංකු ගිණුමට තැන්පත් කරන ලදී.",100000,"මුදල් පොත","බැංකුව","මුදල්"],
+  ["03","රු.60,000ක භාණ්ඩ ණයට ගන්නා ලදී – සුමිත්ගෙන්.",60000,"ගැනුම් පොත","ගැනුම්","සුමිත්"],
+  ["04","රු.95,000ක භාණ්ඩ ණයට විකුණන ලදී – නිපුන්ට.",95000,"විකුණුම් පොත","නිපුන්","විකුණුම්"],
+  ["05","නිපුන්ගෙන් රු.45,000ක් බැංකුවට ලැබුණි.",45000,"මුදල් පොත","බැංකුව","නිපුන්"],
+  ["06","සුමිත්ට රු.30,000ක් බැංකුවෙන් ගෙවන ලදී.",30000,"මුදල් පොත","සුමිත්","බැංකුව"],
+  ["07","රු.5,000ක විකුණුම් ආපසු ලැබුණි.",5000,"විකුණුම් ආපසු ලැබීම් පොත","විකුණුම් ආපසු ලැබීම්","නිපුන්"],
+  ["08","රු.4,000ක ගැනුම් ආපසු යවන ලදී.",4000,"ගැනුම් ආපසු යැවීම් පොත","සුමිත්","ගැනුම් ආපසු යැවීම්"]
+ ],
+ accounts:[
+  ["මුදල්",200000,0],["බැංකුව",115000,0],["ගැනුම්",60000,0],["නිපුන්",50000,0],["සුමිත්",0,26000],["විකුණුම්",0,95000],["විකුණුම් ආපසු ලැබීම්",5000,0],["ගැනුම් ආපසු යැවීම්",0,4000],["ප්‍රාග්ධන",0,300000]
+ ],
+ trial:[["මුදල්",200000,0],["බැංකුව",115000,0],["ගැනුම්",60000,0],["නිපුන්",50000,0],["සුමිත්",0,26000],["විකුණුම්",0,95000],["විකුණුම් ආපසු ලැබීම්",5000,0],["ගැනුම් ආපසු යැවීම්",0,4000],["ප්‍රාග්ධන",0,300000]],
+ adjustments:[["විශේෂ ගැලපීමක් නොමැත",0,0]],
+ trading:[["විකුණුම්",95000],["විකුණුම් ආපසු ලැබීම්",5000],["ශුද්ධ විකුණුම්",90000],["ගැනුම්",60000],["ගැනුම් ආපසු යැවීම්",4000],["ශුද්ධ ගැනුම්",56000],["දළ ලාභය",34000]],
+ profit:[["දළ ලාභය",34000],["වෙනත් වියදම්",0],["ශුද්ධ ලාභය",34000]],
+ sfp:[["මුදල්",200000],["බැංකුව",115000],["නිපුන් – ලැබිය යුතු",50000],["සුමිත් – ගෙවිය යුතු",26000],["ප්‍රාග්ධන",300000],["ශුද්ධ ලාභය",34000],["ශුද්ධ වත්කම්",334000]]
+},
+{
+ id:6,title:"ප්‍රශ්නය 06 – ඉෂාරා ව්‍යාපාරය",level:"උසස්",
+ desc:"ණයට ගනුදෙනු, වියදම් සහ බැංකු ගනුදෙනු එකට ඇතුළත් වේ.",
+ tx:[
+  ["01","රු.350,000ක් මුදල් ප්‍රාග්ධනය ලෙස යොදන ලදී.",350000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.120,000ක් බැංකුවට තැන්පත් කරන ලදී.",120000,"මුදල් පොත","බැංකුව","මුදල්"],
+  ["03","රු.100,000ක භාණ්ඩ ණයට ගන්නා ලදී – අරුණගෙන්.",100000,"ගැනුම් පොත","ගැනුම්","අරුණ"],
+  ["04","රු.140,000ක භාණ්ඩ ණයට විකුණන ලදී – කවිඳුට.",140000,"විකුණුම් පොත","කවිඳු","විකුණුම්"],
+  ["05","වැටුප් රු.20,000ක් මුදලින් ගෙවන ලදී.",20000,"මුදල් පොත","වැටුප්","මුදල්"],
+  ["06","කවිඳුගෙන් රු.80,000ක් බැංකුවෙන් ලැබුණි.",80000,"මුදල් පොත","බැංකුව","කවිඳු"],
+  ["07","අරුණට රු.60,000ක් බැංකුවෙන් ගෙවන ලදී.",60000,"මුදල් පොත","අරුණ","බැංකුව"],
+  ["08","රු.10,000ක කුලී බැංකුවෙන් ගෙවන ලදී.",10000,"මුදල් පොත","කුලී","බැංකුව"]
+ ],
+ accounts:[
+  ["මුදල්",210000,0],["බැංකුව",130000,0],["ගැනුම්",100000,0],["කවිඳු",60000,0],["වැටුප්",20000,0],["කුලී",10000,0],["අරුණ",0,40000],["විකුණුම්",0,140000],["ප්‍රාග්ධන",0,350000]
+ ],
+ trial:[["මුදල්",210000,0],["බැංකුව",130000,0],["ගැනුම්",100000,0],["කවිඳු",60000,0],["වැටුප්",20000,0],["කුලී",10000,0],["අරුණ",0,40000],["විකුණුම්",0,140000],["ප්‍රාග්ධන",0,350000]],
+ adjustments:[["විශේෂ ගැලපීමක් නොමැත",0,0]],
+ trading:[["විකුණුම්",140000],["ගැනුම්",100000],["දළ ලාභය",40000]],
+ profit:[["දළ ලාභය",40000],["වැටුප්",20000],["කුලී",10000],["ශුද්ධ ලාභය",10000]],
+ sfp:[["මුදල්",210000],["බැංකුව",130000],["කවිඳු – ලැබිය යුතු",60000],["අරුණ – ගෙවිය යුතු",40000],["ප්‍රාග්ධන",350000],["ශුද්ධ ලාභය",10000],["ශුද්ධ වත්කම්",360000]]
+},
+{
+ id:7,title:"ප්‍රශ්නය 07 – චතුර ව්‍යාපාරය",level:"උසස්",
+ desc:"ගැලපීම් සහිත අවසාන ගිණුම් සඳහා පදනම් ප්‍රශ්නය.",
+ tx:[
+  ["01","රු.400,000ක මුදල් ප්‍රාග්ධනයක් යොදන ලදී.",400000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.150,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී – රවිගෙන්.",150000,"ගැනුම් පොත","ගැනුම්","රවි"],
+  ["03","රු.220,000ක භාණ්ඩ ණයට විකුණන ලදී – සචින්ට.",220000,"විකුණුම් පොත","සචින්","විකුණුම්"],
+  ["04","රු.50,000ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",50000,"මුදල් පොත","ගැනුම්","මුදල්"],
+  ["05","සචින්ගෙන් රු.100,000ක් ලැබුණි.",100000,"මුදල් පොත","මුදල්","සචින්"],
+  ["06","රවිට රු.70,000ක් ගෙවන ලදී.",70000,"මුදල් පොත","රවි","මුදල්"],
+  ["07","වැටුප් රු.25,000ක් ගෙවන ලදී.",25000,"මුදල් පොත","වැටුප්","මුදල්"],
+  ["08","රු.15,000ක කුලී ගෙවන ලදී.",15000,"මුදල් පොත","කුලී","මුදල්"]
+ ],
+ accounts:[
+  ["මුදල්",340000,0],["ගැනුම්",200000,0],["සචින්",120000,0],["වැටුප්",25000,0],["කුලී",15000,0],["රවි",0,80000],["විකුණුම්",0,220000],["ප්‍රාග්ධන",0,400000]
+ ],
+ trial:[["මුදල්",340000,0],["ගැනුම්",200000,0],["සචින්",120000,0],["වැටුප්",25000,0],["කුලී",15000,0],["රවි",0,80000],["විකුණුම්",0,220000],["ප්‍රාග්ධන",0,400000]],
+ adjustments:[["අවසාන තොගය",60000,60000],["ගෙවිය යුතු වැටුප්",5000,5000]],
+ trading:[["විකුණුම්",220000],["ගැනුම්",200000],["අවසාන තොගය",60000],["දළ ලාභය",80000]],
+ profit:[["දළ ලාභය",80000],["වැටුප්",30000],["කුලී",15000],["ශුද්ධ ලාභය",35000]],
+ sfp:[["මුදල්",340000],["සචින් – ලැබිය යුතු",120000],["අවසාන තොගය",60000],["රවි – ගෙවිය යුතු",80000],["ගෙවිය යුතු වැටුප්",5000],["ප්‍රාග්ධන",400000],["ශුද්ධ ලාභය",35000],["ශුද්ධ වත්කම්",515000]]
+},
+{
+ id:8,title:"ප්‍රශ්නය 08 – විභාග ආකෘතිය I",level:"විභාග මට්ටම",
+ desc:"මූලාශ්‍ර පොත් → ද්විත්ව සටහන් → ලෙජර් → ශේෂ පිරික්සුම දක්වා සම්පූර්ණ පුහුණුව.",
+ tx:[
+  ["01","රු.500,000ක් ප්‍රාග්ධනය ලෙස මුදලින් යොදන ලදී.",500000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.200,000ක් බැංකුවට තැන්පත් කරන ලදී.",200000,"මුදල් පොත","බැංකුව","මුදල්"],
+  ["03","රු.180,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී – නිශාන්තගෙන්.",180000,"ගැනුම් පොත","ගැනුම්","නිශාන්ත"],
+  ["04","රු.260,000ක භාණ්ඩ ණයට විකුණන ලදී – රමේෂ්ට.",260000,"විකුණුම් පොත","රමේෂ්","විකුණුම්"],
+  ["05","රු.20,000ක ගැනුම් ආපසු යවන ලදී.",20000,"ගැනුම් ආපසු යැවීම් පොත","නිශාන්ත","ගැනුම් ආපසු යැවීම්"],
+  ["06","රු.10,000ක විකුණුම් ආපසු ලැබුණි.",10000,"විකුණුම් ආපසු ලැබීම් පොත","විකුණුම් ආපසු ලැබීම්","රමේෂ්"],
+  ["07","රමේෂ්ගෙන් රු.150,000ක් බැංකුවෙන් ලැබුණි.",150000,"මුදල් පොත","බැංකුව","රමේෂ්"],
+  ["08","නිශාන්තට රු.100,000ක් බැංකුවෙන් ගෙවන ලදී.",100000,"මුදල් පොත","නිශාන්ත","බැංකුව"],
+  ["09","වැටුප් රු.30,000ක් ගෙවන ලදී.",30000,"මුදල් පොත","වැටුප්","මුදල්"],
+  ["10","කුලී රු.20,000ක් ගෙවන ලදී.",20000,"මුදල් පොත","කුලී","මුදල්"]
+ ],
+ accounts:[
+  ["මුදල්",250000,0],["බැංකුව",230000,0],["ගැනුම්",180000,0],["රමේෂ්",100000,0],["විකුණුම් ආපසු ලැබීම්",10000,0],["වැටුප්",30000,0],["කුලී",20000,0],["නිශාන්ත",0,60000],["විකුණුම්",0,260000],["ගැනුම් ආපසු යැවීම්",0,20000],["ප්‍රාග්ධන",0,500000]
+ ],
+ trial:[["මුදල්",250000,0],["බැංකුව",230000,0],["ගැනුම්",180000,0],["රමේෂ්",100000,0],["විකුණුම් ආපසු ලැබීම්",10000,0],["වැටුප්",30000,0],["කුලී",20000,0],["නිශාන්ත",0,60000],["විකුණුම්",0,260000],["ගැනුම් ආපසු යැවීම්",0,20000],["ප්‍රාග්ධන",0,500000]],
+ adjustments:[["අවසාන තොගය",90000,90000],["ගෙවිය යුතු කුලී",5000,5000]],
+ trading:[["විකුණුම්",260000],["විකුණුම් ආපසු ලැබීම්",10000],["ශුද්ධ විකුණුම්",250000],["ගැනුම්",180000],["ගැනුම් ආපසු යැවීම්",20000],["ශුද්ධ ගැනුම්",160000],["අවසාන තොගය",90000],["දළ ලාභය",180000]],
+ profit:[["දළ ලාභය",180000],["වැටුප්",30000],["කුලී",25000],["ශුද්ධ ලාභය",125000]],
+ sfp:[["මුදල්",250000],["බැංකුව",230000],["රමේෂ් – ලැබිය යුතු",100000],["අවසාන තොගය",90000],["නිශාන්ත – ගෙවිය යුතු",60000],["ගෙවිය යුතු කුලී",5000],["ප්‍රාග්ධන",500000],["ශුද්ධ ලාභය",125000],["ශුද්ධ වත්කම්",595000]]
+},
+{
+ id:9,title:"ප්‍රශ්නය 09 – විභාග ආකෘතිය II",level:"විභාග මට්ටම",
+ desc:"ගනුදෙනු 10ක් සහ අවසාන ගිණුම් සමඟ වැඩි පුහුණුවක්.",
+ tx:[
+  ["01","රු.600,000ක ප්‍රාග්ධනයක් යොදන ලදී.",600000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.250,000ක් බැංකුවට තැන්පත් කරන ලදී.",250000,"මුදල් පොත","බැංකුව","මුදල්"],
+  ["03","රු.200,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී – මාලිංගගෙන්.",200000,"ගැනුම් පොත","ගැනුම්","මාලිංග"],
+  ["04","රු.320,000ක භාණ්ඩ ණයට විකුණන ලදී – දිනුකට.",320000,"විකුණුම් පොත","දිනුක","විකුණුම්"],
+  ["05","රු.20,000ක භාණ්ඩ ගැනුම් ආපසු යවන ලදී.",20000,"ගැනුම් ආපසු යැවීම් පොත","මාලිංග","ගැනුම් ආපසු යැවීම්"],
+  ["06","රු.15,000ක භාණ්ඩ විකුණුම් ආපසු ලැබුණි.",15000,"විකුණුම් ආපසු ලැබීම් පොත","විකුණුම් ආපසු ලැබීම්","දිනුක"],
+  ["07","දිනුකගෙන් රු.200,000ක් ලැබුණි.",200000,"මුදල් පොත","මුදල්","දිනුක"],
+  ["08","මාලිංගට රු.120,000ක් ගෙවන ලදී.",120000,"මුදල් පොත","මාලිංග","මුදල්"],
+  ["09","වෙළඳ ප්‍රචාරණ වියදම රු.25,000ක් ගෙවන ලදී.",25000,"මුදල් පොත","වෙළඳ ප්‍රචාරණ","මුදල්"],
+  ["10","වැටුප් රු.35,000ක් ගෙවන ලදී.",35000,"මුදල් පොත","වැටුප්","මුදල්"]
+ ],
+ accounts:[
+  ["මුදල්",620000,0],["බැංකුව",250000,0],["ගැනුම්",200000,0],["දිනුක",105000,0],["විකුණුම් ආපසු ලැබීම්",15000,0],["වෙළඳ ප්‍රචාරණ",25000,0],["වැටුප්",35000,0],["මාලිංග",0,80000],["විකුණුම්",0,320000],["ගැනුම් ආපසු යැවීම්",0,20000],["ප්‍රාග්ධන",0,600000]
+ ],
+ trial:[["මුදල්",620000,0],["බැංකුව",250000,0],["ගැනුම්",200000,0],["දිනුක",105000,0],["විකුණුම් ආපසු ලැබීම්",15000,0],["වෙළඳ ප්‍රචාරණ",25000,0],["වැටුප්",35000,0],["මාලිංග",0,80000],["විකුණුම්",0,320000],["ගැනුම් ආපසු යැවීම්",0,20000],["ප්‍රාග්ධන",0,600000]],
+ adjustments:[["අවසාන තොගය",100000,100000],["ගෙවිය යුතු වැටුප්",5000,5000]],
+ trading:[["විකුණුම්",320000],["විකුණුම් ආපසු ලැබීම්",15000],["ශුද්ධ විකුණුම්",305000],["ගැනුම්",200000],["ගැනුම් ආපසු යැවීම්",20000],["ශුද්ධ ගැනුම්",180000],["අවසාන තොගය",100000],["දළ ලාභය",225000]],
+ profit:[["දළ ලාභය",225000],["වෙළඳ ප්‍රචාරණ",25000],["වැටුප්",40000],["ශුද්ධ ලාභය",160000]],
+ sfp:[["මුදල්",620000],["බැංකුව",250000],["දිනුක – ලැබිය යුතු",105000],["අවසාන තොගය",100000],["මාලිංග – ගෙවිය යුතු",80000],["ගෙවිය යුතු වැටුප්",5000],["ප්‍රාග්ධන",600000],["ශුද්ධ ලාභය",160000],["ශුද්ධ වත්කම්",790000]]
+},
+{
+ id:10,title:"ප්‍රශ්නය 10 – මහා විභාග ප්‍රශ්නය",level:"🔴 සම්පූර්ණ ප්‍රායෝගික අභියෝගය",
+ desc:"ගනුදෙනු 15ක් සමඟ මූලාශ්‍ර පොත්වල සිට මූල්‍ය තත්ත්ව ප්‍රකාශය දක්වා සම්පූර්ණ ක්‍රියාවලිය පුහුණු කරන්න.",
+ tx:[
+  ["01","රු.800,000ක් ප්‍රාග්ධනය ලෙස මුදලින් යොදන ලදී.",800000,"මුදල් පොත","මුදල්","ප්‍රාග්ධන"],
+  ["02","රු.300,000ක් බැංකුවට තැන්පත් කරන ලදී.",300000,"මුදල් පොත","බැංකුව","මුදල්"],
+  ["03","රු.250,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී – රොෂාන්ගෙන්.",250000,"ගැනුම් පොත","ගැනුම්","රොෂාන්"],
+  ["04","රු.400,000ක භාණ්ඩ ණයට විකුණන ලදී – තරිඳුට.",400000,"විකුණුම් පොත","තරිඳු","විකුණුම්"],
+  ["05","රු.30,000ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",30000,"මුදල් පොත","ගැනුම්","මුදල්"],
+  ["06","රු.25,000ක ගැනුම් ආපසු රොෂාන්ට යවන ලදී.",25000,"ගැනුම් ආපසු යැවීම් පොත","රොෂාන්","ගැනුම් ආපසු යැවීම්"],
+  ["07","රු.20,000ක විකුණුම් ආපසු තරිඳුගෙන් ලැබුණි.",20000,"විකුණුම් ආපසු ලැබීම් පොත","විකුණුම් ආපසු ලැබීම්","තරිඳු"],
+  ["08","තරිඳුගෙන් රු.250,000ක් බැංකුවෙන් ලැබුණි.",250000,"මුදල් පොත","බැංකුව","තරිඳු"],
+  ["09","රොෂාන්ට රු.150,000ක් බැංකුවෙන් ගෙවන ලදී.",150000,"මුදල් පොත","රොෂාන්","බැංකුව"],
+  ["10","වැටුප් රු.45,000ක් මුදලින් ගෙවන ලදී.",45000,"මුදල් පොත","වැටුප්","මුදල්"],
+  ["11","කුලී රු.30,000ක් බැංකුවෙන් ගෙවන ලදී.",30000,"මුදල් පොත","කුලී","බැංකුව"],
+  ["12","විදුලි ගාස්තු රු.12,000ක් මුදලින් ගෙවන ලදී.",12000,"මුදල් පොත","විදුලි ගාස්තු","මුදල්"],
+  ["13","කාර්යාල උපකරණ රු.40,000කට මුදලින් මිලදී ගන්නා ලදී.",40000,"මුදල් පොත","කාර්යාල උපකරණ","මුදල්"],
+  ["14","ප්‍රවාහන වියදම රු.10,000ක් ගෙවන ලදී.",10000,"මුදල් පොත","ප්‍රවාහන","මුදල්"],
+  ["15","තරිඳුගෙන් තවත් රු.50,000ක් මුදලින් ලැබුණි.",50000,"මුදල් පොත","මුදල්","තරිඳු"]
+ ],
+ accounts:[
+  ["මුදල්",713000,0],["බැංකුව",370000,0],["ගැනුම්",280000,0],["තරිඳු",100000,0],["විකුණුම් ආපසු ලැබීම්",20000,0],["වැටුප්",45000,0],["කුලී",30000,0],["විදුලි ගාස්තු",12000,0],["කාර්යාල උපකරණ",40000,0],["ප්‍රවාහන",10000,0],["රොෂාන්",0,100000],["විකුණුම්",0,400000],["ගැනුම් ආපසු යැවීම්",0,25000],["ප්‍රාග්ධන",0,800000]
+ ],
+ trial:[["මුදල්",713000,0],["බැංකුව",370000,0],["ගැනුම්",280000,0],["තරිඳු",100000,0],["විකුණුම් ආපසු ලැබීම්",20000,0],["වැටුප්",45000,0],["කුලී",30000,0],["විදුලි ගාස්තු",12000,0],["කාර්යාල උපකරණ",40000,0],["ප්‍රවාහන",10000,0],["රොෂාන්",0,100000],["විකුණුම්",0,400000],["ගැනුම් ආපසු යැවීම්",0,25000],["ප්‍රාග්ධන",0,800000]],
+ adjustments:[["අවසාන තොගය",120000,120000],["ගෙවිය යුතු වැටුප්",8000,8000],["අඩු කළ යුතු කාර්යාල උපකරණ ක්ෂය",4000,4000]],
+ trading:[["විකුණුම්",400000],["විකුණුම් ආපසු ලැබීම්",20000],["ශුද්ධ විකුණුම්",380000],["ගැනුම්",280000],["ගැනුම් ආපසු යැවීම්",25000],["ශුද්ධ ගැනුම්",255000],["අවසාන තොගය",120000],["දළ ලාභය",245000]],
+ profit:[["දළ ලාභය",245000],["වැටුප්",53000],["කුලී",30000],["විදුලි ගාස්තු",12000],["ප්‍රවාහන",10000],["ක්ෂය",4000],["ශුද්ධ ලාභය",136000]],
+ sfp:[["මුදල්",713000],["බැංකුව",370000],["තරිඳු – ලැබිය යුතු",100000],["අවසාන තොගය",120000],["කාර්යාල උපකරණ – ශුද්ධ",36000],["රොෂාන් – ගෙවිය යුතු",100000],["ගෙවිය යුතු වැටුප්",8000],["ප්‍රාග්ධන",800000],["ශුද්ධ ලාභය",136000],["ශුද්ධ වත්කම්",1231000]]
+}
+];
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+const bookOptions=["මුදල් පොත","ගැනුම් පොත","විකුණුම් පොත","ගැනුම් ආපසු යැවීම් පොත","විකුණුම් ආපසු ලැබීම් පොත","සාමාන්‍ය ජර්නලය"];
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+let current=0;
 
-function showSection(id, button){
+function inp(value="",cls=""){return `<input class="${cls}" value="${value}" data-answer="${esc(value)}">`}
+function numInp(value){return `<input type="number" step="0.01" value="" data-answer="${value}">`}
 
-    document
-        .querySelectorAll(".section")
-        .forEach(section => {
-
-            section.classList.remove("active");
-
-        });
-
-
-    document
-        .getElementById(id)
-        .classList.add("active");
-
-
-    document
-        .querySelectorAll(".nav-btn")
-        .forEach(btn => {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    if(button){
-
-        button.classList.add("active");
-
-    }
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-    updateProgress();
-
+function loadProblem(){
+ current=+document.getElementById("problemSelect").value;
+ const p=problems[current];
+ document.getElementById("problemPanel").innerHTML=
+ `<div class="problem-title">${p.title}</div><div class="problem-meta">මට්ටම: ${p.level}</div>
+ <p>${p.desc}</p><h3>දී ඇති ගනුදෙනු</h3><div class="transaction-list">${
+ p.tx.map(x=>`<div class="tx"><b>${x[0]}.</b> ${x[1]} <span class="small">(${Number(x[2]).toLocaleString()} රු.)</span></div>`).join("")
+ }</div>`;
+ buildSource(p);buildDouble(p);buildLedger(p);buildTrial(p);buildAdjust(p);buildFinal(p);
+ document.getElementById("scoreText").textContent="තවම පරීක්ෂා කර නැත";
+ document.getElementById("feedback").textContent="“පිළිතුරු පරීක්ෂා කරන්න” බොත්තම ඔබන්න.";
+ document.querySelectorAll(".tab").forEach((b,i)=>{b.classList.toggle("active",i===0)});
+ document.querySelectorAll(".section").forEach((s,i)=>{s.classList.toggle("active",i===0)});
 }
 
-
-function showSectionById(id){
-
-    const button =
-        [...document.querySelectorAll(".nav-btn")]
-        .find(btn =>
-            btn.getAttribute("onclick")
-            &&
-            btn.getAttribute("onclick").includes("'" + id + "'")
-        );
-
-    showSection(id,button);
-
+function buildSource(p){
+ document.getElementById("sourceRows").innerHTML=p.tx.map((x,i)=>`<tr><td>${x[0]}. ${esc(x[1])}</td><td><select data-answer="${esc(x[3])}"><option value="">තෝරන්න</option>${bookOptions.map(o=>`<option>${o}</option>`).join("")}</select></td><td>${numInp(x[2])}</td></tr>`).join("");
 }
-
-
-/* =========================================================
-   NORMALIZE
-   ========================================================= */
-
-function normalize(value){
-
-    return String(value)
-        .toLowerCase()
-        .trim()
-        .replace(/,/g,"")
-        .replace(/rs\.?/g,"")
-        .replace(/\s+/g," ");
-
+function buildDouble(p){
+ document.getElementById("doubleRows").innerHTML=p.tx.map(x=>`<tr><td>${x[0]}. ${esc(x[1])}</td><td>${inp("","debit")}</td><td>${inp("","credit")}</td><td>${numInp(x[2])}</td></tr>`).join("");
+ document.querySelectorAll("#doubleRows input").forEach((e,i)=>{
+   if(i%3===0)e.dataset.answer=p.tx[Math.floor(i/3)][4];
+   if(i%3===1)e.dataset.answer=p.tx[Math.floor(i/3)][5];
+ });
 }
-
-
-/* =========================================================
-   NUMBER CHECK
-   ========================================================= */
-
-function numberMatch(value,answer){
-
-    const a =
-        parseFloat(
-            normalize(value)
-        );
-
-    const b =
-        parseFloat(
-            normalize(answer)
-        );
-
-    return !isNaN(a)
-        &&
-        !isNaN(b)
-        &&
-        a === b;
-
+function buildLedger(p){
+ document.getElementById("ledgerRows").innerHTML=p.accounts.map(x=>`<tr><td>${esc(x[0])}</td><td>${numInp(x[1])}</td><td>${numInp(x[2])}</td></tr>`).join("");
 }
-
-
-/* =========================================================
-   TEXT CHECK
-   ========================================================= */
-
-function textMatch(value,answer){
-
-    const v =
-        normalize(value);
-
-    const a =
-        normalize(answer);
-
-    return v === a;
-
+function buildTrial(p){
+ document.getElementById("trialRows").innerHTML=p.trial.map(x=>`<tr><td>${esc(x[0])}</td><td>${numInp(x[1])}</td><td>${numInp(x[2])}</td></tr>`).join("");
 }
-
-
-/* =========================================================
-   GENERIC INPUT CHECK
-   ========================================================= */
-
-function checkInputs(selector){
-
-    const inputs =
-        document.querySelectorAll(selector);
-
-    let correct = 0;
-
-    inputs.forEach(input => {
-
-        const answer =
-            input.dataset.answer;
-
-        let ok;
-
-        if(
-            answer &&
-            !isNaN(parseFloat(answer))
-        ){
-
-            ok =
-                numberMatch(
-                    input.value,
-                    answer
-                );
-
-        }
-        else{
-
-            ok =
-                textMatch(
-                    input.value,
-                    answer
-                );
-
-        }
-
-
-        input.classList.remove(
-            "correct",
-            "wrong"
-        );
-
-
-        if(ok){
-
-            input.classList.add(
-                "correct"
-            );
-
-            correct++;
-
-        }
-        else{
-
-            input.classList.add(
-                "wrong"
-            );
-
-        }
-
-    });
-
-
-    return {
-        correct,
-        total:inputs.length
-    };
-
+function buildAdjust(p){
+ document.getElementById("adjustRows").innerHTML=p.adjustments.map(x=>`<tr><td>${esc(x[0])}</td><td>${numInp(x[1])}</td><td>${numInp(x[2])}</td></tr>`).join("");
 }
-
-
-/* =========================================================
-   ORIGINAL ENTRY
-   ========================================================= */
-
-function checkOriginal(){
-
-    const result =
-        checkInputs(
-            ".check-original"
-        );
-
-    const feedback =
-        document.getElementById(
-            "originalFeedback"
-        );
-
-    feedback.className =
-        "feedback show";
-
-
-    if(result.correct === result.total){
-
-        feedback.classList.add(
-            "success"
-        );
-
-        feedback.innerHTML =
-            "✓ Excellent! මුල් සටහන් සියල්ල නිවැරදියි.";
-
-    }
-    else{
-
-        feedback.classList.add(
-            "error"
-        );
-
-        feedback.innerHTML =
-            "❌ " +
-            result.correct +
-            " / " +
-            result.total +
-            " නිවැරදියි. රතු පැහැති කොටු නැවත පරීක්ෂා කරන්න.";
-
-    }
-
-    saveProgress();
-
-    updateProgress();
-
+function buildFinal(p){
+ const make=(id,arr)=>document.getElementById(id).innerHTML=arr.map(x=>`<tr><td>${esc(x[0])}</td><td>${numInp(x[1])}</td></tr>`).join("");
+ make("tradingRows",p.trading);make("profitRows",p.profit);make("sfpRows",p.sfp);
 }
-
-
-function showOriginalAnswers(){
-
-    document
-        .getElementById(
-            "originalAnswers"
-        )
-        .classList.toggle("show");
-
+function showTab(id,btn){
+ document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+ document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+ document.getElementById(id).classList.add("active");btn.classList.add("active");
 }
-
-
-/* =========================================================
-   DOUBLE ENTRY
-   ========================================================= */
-
-function checkDoubleEntry(){
-
-    const result =
-        checkInputs(
-            ".double-input"
-        );
-
-    const feedback =
-        document.getElementById(
-            "doubleFeedback"
-        );
-
-    feedback.className =
-        "feedback show";
-
-
-    if(result.correct === result.total){
-
-        feedback.classList.add(
-            "success"
-        );
-
-        feedback.innerHTML =
-            "✓ Double Entry සම්පූර්ණයෙන්ම නිවැරදියි.";
-
-    }
-    else{
-
-        feedback.classList.add(
-            "error"
-        );
-
-        feedback.innerHTML =
-            "❌ " +
-            result.correct +
-            " / " +
-            result.total +
-            " නිවැරදියි.";
-
-    }
-
-    saveProgress();
-
-    updateProgress();
-
+function values(section){
+ return [...document.querySelectorAll("#"+section+" input, #"+section+" select")];
 }
-
-
-function showDoubleAnswers(){
-
-    document
-        .getElementById(
-            "doubleAnswers"
-        )
-        .classList.toggle("show");
-
+function scoreSection(section){
+ const els=values(section); if(!els.length)return 100;
+ let ok=0;
+ els.forEach(e=>{
+  let a=(e.dataset.answer||"").trim().toLowerCase();
+  let v=(e.value||"").trim().toLowerCase();
+  if(e.type==="number"){if(Math.abs(Number(v||0)-Number(a))<0.01)ok++}
+  else if(a===v)ok++;
+ });
+ return Math.round(ok/els.length*100);
 }
-
-
-/* =========================================================
-   LEDGER
-   ========================================================= */
-
-function checkLedger(){
-
-    const result =
-        checkInputs(
-            ".ledger-input"
-        );
-
-
-    const balance =
-        document.getElementById(
-            "cashBalance"
-        );
-
-
-    const balanceOK =
-        numberMatch(
-            balance.value,
-            balance.dataset.answer
-        );
-
-
-    balance.classList.remove(
-        "correct",
-        "wrong"
-    );
-
-
-    if(balanceOK){
-
-        balance.classList.add(
-            "correct"
-        );
-
-    }
-    else{
-
-        balance.classList.add(
-            "wrong"
-        );
-
-    }
-
-
-    const totalCorrect =
-        result.correct +
-        (balanceOK ? 1 : 0);
-
-
-    const total =
-        result.total + 1;
-
-
-    const feedback =
-        document.getElementById(
-            "ledgerFeedback"
-        );
-
-    feedback.className =
-        "feedback show";
-
-
-    if(totalCorrect === total){
-
-        feedback.classList.add(
-            "success"
-        );
-
-        feedback.innerHTML =
-            "✓ Ledger එක නිවැරදියි. Cash Balance = Rs.375,000";
-
-    }
-    else{
-
-        feedback.classList.add(
-            "error"
-        );
-
-        feedback.innerHTML =
-            "❌ " +
-            totalCorrect +
-            " / " +
-            total +
-            " නිවැරදියි.";
-
-    }
-
-    saveProgress();
-
-    updateProgress();
-
+function checkAll(){
+ const scores=[
+  scoreSection("source"),scoreSection("double"),scoreSection("ledger"),
+  scoreSection("trial"),scoreSection("adjust"),scoreSection("final")
+ ];
+ scores.forEach((s,i)=>document.getElementById("s"+(i+1)).textContent=s+"%");
+ const total=Math.round(scores.reduce((a,b)=>a+b,0)/scores.length);
+ document.getElementById("finalScore").textContent=total+"/100";
+ const status=document.getElementById("status");
+ status.textContent=total>=80?"විශිෂ්ටයි":total>=50?"හොඳයි":"තව පුහුණු වන්න";
+ status.className=total>=80?"correct":total>=50?"partial":"wrong";
+ document.getElementById("scoreText").textContent=total>=80?"🎉 විශිෂ්ට ප්‍රතිඵලයක්!":total>=50?"👍 හොඳ උත්සාහයක්!":"📚 තවත් පුහුණුව අවශ්‍යයි.";
+ const weak=scores.map((s,i)=>s<70?["මූලාශ්‍ර පොත්","ද්විත්ව සටහන්","ලෙජර්","ශේෂ පිරික්සුම","ගැලපීම්","අවසාන ගිණුම්"][i]:null).filter(Boolean);
+ document.getElementById("feedback").innerHTML=weak.length?
+ `<span class="wrong">අවධානය යොමු කළ යුතු කොටස්:</span> ${weak.join(" • ")}<br><span class="small">ඔබේ පිළිතුරු නැවත පරීක්ෂා කර නිවැරදි කිරීමෙන් පසු නැවත ලකුණු ලබාගත හැක.</span>`:
+ `<span class="correct">සියලු ප්‍රධාන කොටස්වල හොඳ ප්‍රගතියක් පෙන්වා ඇත.</span>`;
+ localStorage.setItem("uezAccountingLastProblem",current);
+ localStorage.setItem("uezAccountingScore_"+current,total);
+ document.getElementById("result").scrollIntoView({behavior:"smooth"});
 }
-
-
-function showLedgerAnswer(){
-
-    document
-        .getElementById(
-            "ledgerAnswer"
-        )
-        .classList.toggle("show");
-
+function resetCurrent(){
+ loadProblem();
+ window.scrollTo({top:0,behavior:"smooth"});
 }
-
-
-/* =========================================================
-   TRIAL BALANCE
-   ========================================================= */
-
-function calculateTrialTotals(){
-
-    const inputs =
-        document.querySelectorAll(
-            ".trial-input"
-        );
-
-    let debit = 0;
-
-    let credit = 0;
-
-
-    inputs.forEach(input => {
-
-        const answer =
-            parseFloat(
-                input.dataset.answer
-            );
-
-
-        const cell =
-            input.closest("td");
-
-
-        if(cell){
-
-            const row =
-                input.closest("tr");
-
-            const cells =
-                row.querySelectorAll("td");
-
-
-            const index =
-                [...cells].indexOf(cell);
-
-
-            if(index === 1){
-
-                debit += answer;
-
-            }
-
-            if(index === 2){
-
-                credit += answer;
-
-            }
-
-        }
-
-    });
-
-
-    document.getElementById(
-        "trialDebitTotal"
-    ).value =
-        debit;
-
-
-    document.getElementById(
-        "trialCreditTotal"
-    ).value =
-        credit;
-
-}
-
-
-function checkTrialBalance(){
-
-    calculateTrialTotals();
-
-
-    const result =
-        checkInputs(
-            ".trial-input"
-        );
-
-
-    const debit =
-        parseFloat(
-            document.getElementById(
-                "trialDebitTotal"
-            ).value
-        );
-
-
-    const credit =
-        parseFloat(
-            document.getElementById(
-                "trialCreditTotal"
-            ).value
-        );
-
-
-    const balanced =
-        debit === credit;
-
-
-    const feedback =
-        document.getElementById(
-            "trialFeedback"
-        );
-
-    feedback.className =
-        "feedback show";
-
-
-    if(
-        result.correct === result.total
-        &&
-        balanced
-    ){
-
-        feedback.classList.add(
-            "success"
-        );
-
-        feedback.innerHTML =
-            "✓ Trial Balance නිවැරදියි. Debit = Credit = Rs." +
-            debit.toLocaleString();
-
-    }
-    else{
-
-        feedback.classList.add(
-            "error"
-        );
-
-        feedback.innerHTML =
-            "❌ Trial Balance නැවත පරීක්ෂා කරන්න.";
-
-    }
-
-    saveProgress();
-
-    updateProgress();
-
-}
-
-
-/* =========================================================
-   ADJUSTMENTS
-   ========================================================= */
-
-function checkAdjustments(){
-
-    const result =
-        checkInputs(
-            ".adjust-input"
-        );
-
-
-    const feedback =
-        document.getElementById(
-            "adjustFeedback"
-        );
-
-    feedback.className =
-        "feedback show";
-
-
-    if(result.correct === result.total){
-
-        feedback.classList.add(
-            "success"
-        );
-
-        feedback.innerHTML =
-            "✓ සියලුම Adjustments නිවැරදියි.";
-
-    }
-    else{
-
-        feedback.classList.add(
-            "error"
-        );
-
-        feedback.innerHTML =
-            "❌ " +
-            result.correct +
-            " / " +
-            result.total +
-            " නිවැරදියි.";
-
-    }
-
-    saveProgress();
-
-    updateProgress();
-
-}
-
-
-/* =========================================================
-   FINANCIAL STATEMENTS
-   ========================================================= */
-
-function checkStatements(){
-
-    const result =
-        checkInputs(
-            ".statement-input"
-        );
-
-
-    const feedback =
-        document.getElementById(
-            "statementFeedback"
-        );
-
-    feedback.className =
-        "feedback show";
-
-
-    if(result.correct === result.total){
-
-        feedback.classList.add(
-            "success"
-        );
-
-        feedback.innerHTML =
-            "✓ Financial Statements නිවැරදියි.";
-
-    }
-    else{
-
-        feedback.classList.add(
-            "error"
-        );
-
-        feedback.innerHTML =
-            "❌ " +
-            result.correct +
-            " / " +
-            result.total +
-            " නිවැරදියි.";
-
-    }
-
-    saveProgress();
-
-    updateProgress();
-
-}
-
-
-function showStatementAnswers(){
-
-    document
-        .getElementById(
-            "statementAnswers"
-        )
-        .classList.toggle("show");
-
-}
-
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-function updateProgress(){
-
-    const sections = [
-
-        ".check-original",
-        ".double-input",
-        ".ledger-input",
-        ".trial-input",
-        ".adjust-input",
-        ".statement-input"
-
-    ];
-
-
-    let total = 0;
-
-    let completed = 0;
-
-
-    sections.forEach(selector => {
-
-        const inputs =
-            document.querySelectorAll(
-                selector
-            );
-
-        inputs.forEach(input => {
-
-            total++;
-
-            if(
-                input.classList.contains(
-                    "correct"
-                )
-            ){
-
-                completed++;
-
-            }
-
-        });
-
-    });
-
-
-    let percentage =
-        total === 0
-        ? 0
-        : Math.round(
-            (completed / total) * 100
-        );
-
-
-    document.getElementById(
-        "progressFill"
-    ).style.width =
-        percentage + "%";
-
-
-    document.getElementById(
-        "progressText"
-    ).innerText =
-        percentage + "%";
-
-}
-
-
-/* =========================================================
-   FINAL SCORE
-   ========================================================= */
-
-function calculateFinalScore(){
-
-    const groups = [
-
-        ".check-original",
-        ".double-input",
-        ".ledger-input",
-        ".trial-input",
-        ".adjust-input",
-        ".statement-input"
-
-    ];
-
-
-    let total = 0;
-
-    let correct = 0;
-
-
-    groups.forEach(selector => {
-
-        const inputs =
-            document.querySelectorAll(
-                selector
-            );
-
-        inputs.forEach(input => {
-
-            total++;
-
-            if(
-                input.classList.contains(
-                    "correct"
-                )
-            ){
-
-                correct++;
-
-            }
-
-        });
-
-    });
-
-
-    const percentage =
-        total === 0
-        ? 0
-        : Math.round(
-            (correct / total) * 100
-        );
-
-
-    document.getElementById(
-        "finalScore"
-    ).innerText =
-        percentage + "%";
-
-
-    let message;
-
-
-    if(percentage >= 90){
-
-        message =
-            "🏆 Excellent! ඔබගේ ගිණුම්කරණ දැනුම ඉතා හොඳයි.";
-
-    }
-    else if(percentage >= 75){
-
-        message =
-            "👏 Very Good! තව ටිකක් පුහුණු වුවහොත් විශිෂ්ට ප්‍රතිඵලයක් ලබාගත හැක.";
-
-    }
-    else if(percentage >= 50){
-
-        message =
-            "👍 Good Attempt! වැරදි කොටස් නැවත පුහුණු කරන්න.";
-
-    }
-    else{
-
-        message =
-            "📚 තවදුරටත් පුහුණු වන්න. Correct Answers බලමින් නැවත උත්සාහ කරන්න.";
-
-    }
-
-
-    document.getElementById(
-        "scoreMessage"
-    ).innerText =
-        message;
-
-
-    document.getElementById(
-        "summary"
-    ).innerHTML =
-
-        "<strong>Correct:</strong> " +
-        correct +
-
-        " / " +
-
-        total +
-
-        "<br><br>" +
-
-        "<strong>Score:</strong> " +
-        percentage +
-        "%";
-
-
-    localStorage.setItem(
-        "accountingPracticeScore",
-        percentage
-    );
-
-
-    updateProgress();
-
-}
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-function resetPractice(){
-
-    if(
-        !confirm(
-            "ඔබගේ සියලුම Practice answers මකා Reset කිරීමට අවශ්‍යද?"
-        )
-    ){
-
-        return;
-
-    }
-
-
-    document
-        .querySelectorAll(
-            "input"
-        )
-        .forEach(input => {
-
-            if(
-                !input.readOnly
-                &&
-                !input.value.includes(
-                    "Capital"
-                )
-                &&
-                !input.value.includes(
-                    "Purchases"
-                )
-                &&
-                !input.value.includes(
-                    "Sales"
-                )
-                &&
-                !input.value.includes(
-                    "Rent"
-                )
-                &&
-                !input.value.includes(
-                    "Debtor"
-                )
-                &&
-                !input.value.includes(
-                    "Creditor"
-                )
-            ){
-
-                input.value = "";
-
-            }
-
-            input.classList.remove(
-                "correct",
-                "wrong"
-            );
-
-        });
-
-
-    document
-        .querySelectorAll(
-            ".feedback"
-        )
-        .forEach(box => {
-
-            box.className =
-                "feedback";
-
-            box.innerHTML =
-                "";
-
-        });
-
-
-    document
-        .querySelectorAll(
-            ".answer-box"
-        )
-        .forEach(box => {
-
-            box.classList.remove(
-                "show"
-            );
-
-        });
-
-
-    localStorage.removeItem(
-        "accountingPracticeData"
-    );
-
-    localStorage.removeItem(
-        "accountingPracticeScore"
-    );
-
-
-    document.getElementById(
-        "finalScore"
-    ).innerText =
-        "0%";
-
-
-    document.getElementById(
-        "scoreMessage"
-    ).innerText =
-        "Practice sections complete කර Check කරන්න.";
-
-
-    document.getElementById(
-        "summary"
-    ).innerHTML =
-        "තවමත් ප්‍රතිඵල සකස් කර නැත.";
-
-
-    updateProgress();
-
-}
-
-
-/* =========================================================
-   SAVE PROGRESS
-   ========================================================= */
-
-function saveProgress(){
-
-    const data = [];
-
-
-    document
-        .querySelectorAll(
-            "input"
-        )
-        .forEach((input,index) => {
-
-            data.push({
-
-                index:index,
-
-                value:input.value,
-
-                state:
-                    input.classList.contains(
-                        "correct"
-                    )
-                    ? "correct"
-
-                    :
-
-                    input.classList.contains(
-                        "wrong"
-                    )
-                    ? "wrong"
-
-                    :
-                    ""
-
-            });
-
-        });
-
-
-    localStorage.setItem(
-        "accountingPracticeData",
-        JSON.stringify(data)
-    );
-
-}
-
-
-/* =========================================================
-   LOAD PROGRESS
-   ========================================================= */
-
-function loadProgress(){
-
-    const saved =
-        localStorage.getItem(
-            "accountingPracticeData"
-        );
-
-
-    if(!saved){
-
-        return;
-
-    }
-
-
-    try{
-
-        const data =
-            JSON.parse(saved);
-
-
-        const inputs =
-            document.querySelectorAll(
-                "input"
-            );
-
-
-        data.forEach(item => {
-
-            if(inputs[item.index]){
-
-                inputs[item.index].value =
-                    item.value;
-
-                if(item.state){
-
-                    inputs[item.index]
-                        .classList.add(
-                            item.state
-                        );
-
-                }
-
-            }
-
-        });
-
-    }
-    catch(error){
-
-        console.log(
-            "Could not load saved progress."
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   AUTO SAVE
-   ========================================================= */
-
-document.addEventListener(
-    "input",
-    function(){
-
-        saveProgress();
-
-        updateProgress();
-
-    }
-);
-
-
-/* =========================================================
-   INITIALIZE
-   ========================================================= */
-
-window.addEventListener(
-    "load",
-    function(){
-
-        loadProgress();
-
-        updateProgress();
-
-    }
-);
-
+document.getElementById("problemSelect").innerHTML=problems.map((p,i)=>`<option value="${i}">${p.id}. ${p.title} — ${p.level}</option>`).join("");
+const saved=localStorage.getItem("uezAccountingLastProblem");
+if(saved!==null && problems[+saved])document.getElementById("problemSelect").value=saved;
+loadProblem();
 </script>
-
-
 </body>
-
 </html>
