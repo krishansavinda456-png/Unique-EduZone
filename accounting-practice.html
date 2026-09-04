@@ -1535,11 +1535,73 @@ function numInp(value){return `<input type="number" step="0.01" value="" data-an
 function loadProblem(){
  current=+document.getElementById("problemSelect").value;
  const p=problems[current];
- document.getElementById("problemPanel").innerHTML=
- `<div class="problem-title">${p.title}</div><div class="problem-meta">මට්ටම: ${p.level}</div>
- <p>${p.desc}</p><h3>දී ඇති ගනුදෙනු</h3><div class="transaction-list">${
- p.tx.map(x=>`<div class="tx"><b>${x[0]}.</b> ${x[1]} <span class="small">(${Number(x[2]).toLocaleString()} රු.)</span></div>`).join("")
- }</div>`;
+document.getElementById("problemPanel").innerHTML = `
+
+<div class="problem-main">
+
+    <div class="problem-title">
+        ${p.title}
+    </div>
+
+    <div class="problem-meta">
+        මට්ටම: ${p.level}
+    </div>
+
+    <div class="problem-description">
+        ${p.desc}
+    </div>
+
+    <div class="transaction-workspace">
+
+        <div class="workspace-title">
+            <span>01</span>
+            දී ඇති ගනුදෙනු
+        </div>
+
+        <div class="transaction-list">
+
+            ${
+                p.tx.map(x => `
+                    <div class="tx">
+
+                        <b>${x[0]}</b>
+
+                        ${x[1]}
+
+                        <span class="small">
+                            (${Number(x[2]).toLocaleString()} රු.)
+                        </span>
+
+                    </div>
+                `).join("")
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="problem-side">
+
+    <div class="problem-side-icon">
+        📊
+    </div>
+
+    <div>
+
+        <span>ගනුදෙනු</span>
+
+        <strong>
+            ${p.tx.length}
+        </strong>
+
+    </div>
+
+</div>
+
+`;
  buildSource(p);buildDouble(p);buildLedger(p);buildTrial(p);buildAdjust(p);buildFinal(p);
  document.getElementById("scoreText").textContent="තවම පරීක්ෂා කර නැත";
  document.getElementById("feedback").textContent="“පිළිතුරු පරීක්ෂා කරන්න” බොත්තම ඔබන්න.";
