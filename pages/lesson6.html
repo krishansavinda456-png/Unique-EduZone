@@ -120,6 +120,74 @@
             font-weight: bold;
         }
 
+        /* =========================================
+   6.3 ACCOUNT FORMAT - T ACCOUNT
+   ========================================= */
+
+.account-format-wrapper {
+    margin: 25px 0;
+    overflow-x: auto;
+}
+
+.t-account {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #111;
+}
+
+.t-account th,
+.t-account td {
+    border: 1px solid #555;
+    padding: 12px;
+    text-align: center;
+}
+
+.t-account .side-title {
+    background: #222;
+    color: gold;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.t-account .account-name {
+    background: #111;
+    color: gold;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.t-account .column-heading {
+    background: #1b1b1b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.t-account td {
+    height: 48px;
+    color: #ddd;
+}
+
+.account-note {
+    background: #151515;
+    border-left: 4px solid gold;
+    border-radius: 8px;
+    padding: 18px;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.account-note h3 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.account-note strong {
+    color: #fff;
+}
+
 
         /* =========================================
            ACTIVITY SYSTEM
@@ -503,29 +571,209 @@
             සෑම ගිණුමකටම Debit පැත්තක් සහ Credit පැත්තක් ඇත.
         </p>
 
-        <table class="account-table">
+        <!-- =========================================
+     6.3 ACCOUNT FORMAT
+     ========================================= -->
 
-            <tr>
-                <th>
-                    Debit (Dr)
-                </th>
+<div class="account-format-wrapper">
 
-                <th>
-                    Credit (Cr)
-                </th>
-            </tr>
+    <table class="t-account">
 
-            <tr>
-                <td>
-                    වම් පැත්ත
-                </td>
+        <!-- ACCOUNT SIDE TITLES -->
 
-                <td>
-                    දකුණු පැත්ත
-                </td>
-            </tr>
+        <tr>
 
-        </table>
+            <th
+                colspan="4"
+                class="side-title"
+            >
+                හර (Debit / Dr)
+            </th>
+
+            <th
+                rowspan="2"
+                class="account-name"
+            >
+                ගිණුමේ නම
+            </th>
+
+            <th
+                colspan="4"
+                class="side-title"
+            >
+                බැර (Credit / Cr)
+            </th>
+
+        </tr>
+
+
+        <!-- COLUMN HEADINGS -->
+
+        <tr>
+
+            <!-- DEBIT SIDE -->
+
+            <th class="column-heading">
+                දිනය
+            </th>
+
+            <th class="column-heading">
+                විස්තරය
+            </th>
+
+            <th class="column-heading">
+                ස.පි.
+            </th>
+
+            <th class="column-heading">
+                වටිනාකම<br>
+                (රු.)
+            </th>
+
+
+            <!-- CREDIT SIDE -->
+
+            <th class="column-heading">
+                දිනය
+            </th>
+
+            <th class="column-heading">
+                විස්තරය
+            </th>
+
+            <th class="column-heading">
+                ස.පි.
+            </th>
+
+            <th class="column-heading">
+                වටිනාකම<br>
+                (රු.)
+            </th>
+
+        </tr>
+
+
+        <!-- EMPTY ACCOUNT ROWS -->
+
+        <tr>
+
+            <!-- DEBIT -->
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <!-- ACCOUNT NAME -->
+
+            <td>
+                ගිණුම
+            </td>
+
+            <!-- CREDIT -->
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+
+        <tr>
+
+            <!-- DEBIT -->
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <!-- ACCOUNT NAME -->
+
+            <td></td>
+
+            <!-- CREDIT -->
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+
+        <tr>
+
+            <!-- DEBIT -->
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <!-- ACCOUNT NAME -->
+
+            <td></td>
+
+            <!-- CREDIT -->
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- ACCOUNT FORMAT NOTE -->
+
+<div class="account-note">
+
+    <h3>
+        📝 සටහන — ගිණුමේ ආකෘතිය
+    </h3>
+
+    <p>
+        ගිණුමක <strong>වම් පැත්ත</strong>
+        <strong>හර (Debit / Dr)</strong> පැත්ත ලෙසත්,
+        <strong>දකුණු පැත්ත</strong>
+        <strong>බැර (Credit / Cr)</strong> පැත්ත ලෙසත්
+        හඳුන්වයි.
+    </p>
+
+    <p>
+        <strong>දිනය</strong> — ගනුදෙනුව සිදු වූ දිනය
+        සටහන් කරයි.
+    </p>
+
+    <p>
+        <strong>විස්තරය</strong> — ගනුදෙනුවට අදාළ
+        ගිණුමේ නම හෝ විස්තරය සටහන් කරයි.
+    </p>
+
+    <p>
+        <strong>ස.පි.</strong> — සටහන් පිටුව
+        (Journal / Ledger reference) දැක්වීම සඳහා
+        භාවිත කරයි.
+    </p>
+
+    <p>
+        <strong>වටිනාකම (රු.)</strong> — ගනුදෙනුවේ
+        මුදල් වටිනාකම රුපියල් වලින් සටහන් කරයි.
+    </p>
+
+    <p>
+        ඒ අනුව, ගනුදෙනුවකට අදාළ වටිනාකම
+        <strong>හර පැත්තේ හෝ බැර පැත්තේ</strong>
+        නිවැරදිව සටහන් කළ යුතුය.
+    </p>
+
+</div>
 
         <p>
             ගනුදෙනුවක බලපෑම අනුව අදාළ ගිණුමේ Debit හෝ Credit
