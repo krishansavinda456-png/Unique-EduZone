@@ -207,6 +207,48 @@
 }
 
         /* =========================================
+   6.5 EXAMPLE T-ACCOUNT
+   ========================================= */
+
+.example-t-account {
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.example-t-account .account-title-row {
+    min-width: 850px;
+}
+
+.example-t-account .account-side-title {
+    font-size: 17px;
+}
+
+.example-t-account .account-name-title {
+    font-size: 19px;
+}
+
+.example-t-account .t-account {
+    min-width: 850px;
+}
+
+.example-t-account .t-account td {
+    height: 45px;
+}
+
+.transaction-explanation {
+    background: #151515;
+    border-left: 4px solid gold;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.transaction-explanation strong {
+    color: gold;
+}
+
+        /* =========================================
            ACTIVITY SYSTEM
            ========================================= */
 
@@ -983,132 +1025,691 @@
 
         <div class="example-box">
 
-            <h3>
-                උදාහරණ 01 — උපකරණ මිලදී ගැනීම
-            </h3>
+    <h3>
+        උදාහරණ 01 — උපකරණ මිලදී ගැනීම
+    </h3>
 
-            <p>
-                රු. 500,000කට උපකරණයක් මුදලින් මිලදී ගනී.
-            </p>
+    <p>
+        රු. 500,000කට උපකරණයක් මුදලින් මිලදී ගනී.
+    </p>
 
-            <p>
-                උපකරණ වත්කම වැඩි වේ → Debit
-            </p>
+    <div class="transaction-explanation">
 
-            <p>
-                මුදල් වත්කම අඩු වේ → Credit
-            </p>
+        <strong>ගනුදෙනුවේ බලපෑම:</strong><br>
 
-            <p>
-                <strong>
-                    උපකරණ ගිණුම — Dr රු. 500,000
-                </strong>
-            </p>
+        උපකරණ වත්කම වැඩි වේ → Debit<br>
+        මුදල් වත්කම අඩු වේ → Credit
 
-            <p>
-                <strong>
-                    මුදල් ගිණුම — Cr රු. 500,000
-                </strong>
-            </p>
-
-        </div>
+    </div>
 
 
-        <div class="example-box">
+    <div class="example-t-account">
 
-            <h3>
-                උදාහරණ 02 — බැංකු ණයක් ලබා ගැනීම
-            </h3>
+        <div class="account-title-row">
 
-            <p>
-                රු. 200,000ක බැංකු ණයක් ලබා ගනී.
-            </p>
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
 
-            <p>
-                මුදල් වත්කම වැඩි වේ → Debit
-            </p>
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
 
-            <p>
-                බැංකු ණය වගකීම වැඩි වේ → Credit
-            </p>
-
-            <p>
-                <strong>
-                    මුදල් ගිණුම — Dr රු. 200,000
-                </strong>
-            </p>
-
-            <p>
-                <strong>
-                    බැංකු ණය ගිණුම — Cr රු. 200,000
-                </strong>
-            </p>
+            <div class="account-name-title">
+                උපකරණ ගිණුම
+            </div>
 
         </div>
 
 
-        <div class="example-box">
+        <table class="t-account">
 
-            <h3>
-                උදාහරණ 03 — හිමිකරු ප්‍රාග්ධනය යෙදීම
-            </h3>
+            <tr>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
 
-            <p>
-                හිමිකරු රු. 300,000ක මුදලක් ව්‍යාපාරයට යොදවයි.
-            </p>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+            </tr>
 
-            <p>
-                මුදල් වත්කම වැඩි වේ → Debit
-            </p>
+            <tr>
 
-            <p>
-                ප්‍රාග්ධනය වැඩි වේ → Credit
-            </p>
+                <td>—</td>
+                <td>මුදල්</td>
+                <td>—</td>
+                <td>500,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                මුදල් ගිණුම
+            </div>
+
+        </div>
+
+
+        <table class="t-account">
+
+            <tr>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+            </tr>
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>—</td>
+                <td>උපකරණ</td>
+                <td>—</td>
+                <td>500,000</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+        <!-- =========================================
+     EXAMPLE 02 - බැංකු ණයක් ලබා ගැනීම
+     ========================================= -->
+
+<div class="example-box">
+
+    <h3>📘 Example 02 – බැංකු ණයක් ලබා ගැනීම</h3>
+
+    <p>
+        ව්‍යාපාරය විසින් රු. 200,000 ක බැංකු ණයක් ලබා ගන්නා ලදී.
+    </p>
+
+    <div class="transaction-explanation">
+
+        <strong>ගනුදෙනුව විශ්ලේෂණය:</strong><br>
+
+        මුදල් ගිණුම වැඩි වන බැවින්
+        <strong>මුදල් ගිණුම හර</strong> වේ.
+
+        <br>
+
+        බැංකු ණය ගිණුම වැඩි වන බැවින්
+        <strong>බැංකු ණය ගිණුම බැර</strong> වේ.
+
+    </div>
+
+
+    <!-- මුදල් ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                මුදල් ගිණුම
+            </div>
 
         </div>
 
 
-        <div class="example-box">
+        <table class="t-account">
 
-            <h3>
-                උදාහරණ 04 — පොලී ආදායම ලැබීම
-            </h3>
+            <tr>
 
-            <p>
-                රු. 20,000ක පොලී ආදායමක් ලැබේ.
-            </p>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
 
-            <p>
-                මුදල් වත්කම වැඩි වේ → Debit
-            </p>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
 
-            <p>
-                පොලී ආදායම වැඩි වේ → Credit
-            </p>
+            </tr>
+
+            <tr>
+
+                <td>—</td>
+                <td>බැංකු ණය</td>
+                <td>—</td>
+                <td>200,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- බැංකු ණය ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                බැංකු ණය ගිණුම
+            </div>
 
         </div>
 
 
-        <div class="example-box">
+        <table class="t-account">
 
-            <h3>
-                උදාහරණ 05 — වැටුප් ගෙවීම
-            </h3>
+            <tr>
 
-            <p>
-                රු. 20,000ක වැටුප් ගෙවයි.
-            </p>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
 
-            <p>
-                වැටුප් වියදම වැඩි වේ → Debit
-            </p>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
 
-            <p>
-                මුදල් වත්කම අඩු වේ → Credit
-            </p>
+            </tr>
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>—</td>
+                <td>මුදල්</td>
+                <td>—</td>
+                <td>200,000</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+        <!-- =========================================
+     EXAMPLE 03 - හිමිකරු ප්‍රාග්ධනය යෙදීම
+     ========================================= -->
+
+<div class="example-box">
+
+    <h3>📘 Example 03 – හිමිකරු ප්‍රාග්ධනය යෙදීම</h3>
+
+    <p>
+        හිමිකරු විසින් ව්‍යාපාරයට රු. 300,000 ක මුදල් ප්‍රාග්ධනයක් යොදවන ලදී.
+    </p>
+
+    <div class="transaction-explanation">
+
+        <strong>ගනුදෙනුව විශ්ලේෂණය:</strong><br>
+
+        මුදල් ගිණුම වැඩි වන බැවින්
+        <strong>මුදල් ගිණුම හර</strong> වේ.
+
+        <br>
+
+        ප්‍රාග්ධන ගිණුම වැඩි වන බැවින්
+        <strong>ප්‍රාග්ධන ගිණුම බැර</strong> වේ.
+
+    </div>
+
+
+    <!-- මුදල් ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                මුදල් ගිණුම
+            </div>
 
         </div>
 
+
+        <table class="t-account">
+
+            <tr>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+            </tr>
+
+            <tr>
+
+                <td>—</td>
+                <td>ප්‍රාග්ධනය</td>
+                <td>—</td>
+                <td>300,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- ප්‍රාග්ධන ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                ප්‍රාග්ධන ගිණුම
+            </div>
+
+        </div>
+
+
+        <table class="t-account">
+
+            <tr>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>—</td>
+                <td>මුදල්</td>
+                <td>—</td>
+                <td>300,000</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+        <!-- =========================================
+     EXAMPLE 04 - පොලී ආදායම ලැබීම
+     ========================================= -->
+
+<div class="example-box">
+
+    <h3>📘 Example 04 – පොලී ආදායම ලැබීම</h3>
+
+    <p>
+        ව්‍යාපාරයට රු. 20,000 ක පොලී ආදායමක් මුදලින් ලැබුණි.
+    </p>
+
+    <div class="transaction-explanation">
+
+        <strong>ගනුදෙනුව විශ්ලේෂණය:</strong><br>
+
+        මුදල් ගිණුම වැඩි වන බැවින්
+        <strong>මුදල් ගිණුම හර</strong> වේ.
+
+        <br>
+
+        පොලී ආදායම් ගිණුම වැඩි වන බැවින්
+        <strong>පොලී ආදායම් ගිණුම බැර</strong> වේ.
+
+    </div>
+
+
+    <!-- මුදල් ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                මුදල් ගිණුම
+            </div>
+
+        </div>
+
+
+        <table class="t-account">
+
+            <tr>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+            </tr>
+
+            <tr>
+
+                <td>—</td>
+                <td>පොලී ආදායම</td>
+                <td>—</td>
+                <td>20,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- පොලී ආදායම් ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                පොලී ආදායම් ගිණුම
+            </div>
+
+        </div>
+
+
+        <table class="t-account">
+
+            <tr>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>—</td>
+                <td>මුදල්</td>
+                <td>—</td>
+                <td>20,000</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+        <!-- =========================================
+     EXAMPLE 05 - වැටුප් ගෙවීම
+     ========================================= -->
+
+<div class="example-box">
+
+    <h3>📘 Example 05 – වැටුප් ගෙවීම</h3>
+
+    <p>
+        ව්‍යාපාරය විසින් සේවකයින්ට රු. 20,000 ක වැටුපක් මුදලින් ගෙවන ලදී.
+    </p>
+
+    <div class="transaction-explanation">
+
+        <strong>ගනුදෙනුව විශ්ලේෂණය:</strong><br>
+
+        වැටුප් වියදම වැඩි වන බැවින්
+        <strong>වැටුප් ගිණුම හර</strong> වේ.
+
+        <br>
+
+        මුදල් ගිණුම අඩු වන බැවින්
+        <strong>මුදල් ගිණුම බැර</strong> වේ.
+
+    </div>
+
+
+    <!-- වැටුප් ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                වැටුප් ගිණුම
+            </div>
+
+        </div>
+
+
+        <table class="t-account">
+
+            <tr>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+            </tr>
+
+            <tr>
+
+                <td>—</td>
+                <td>මුදල්</td>
+                <td>—</td>
+                <td>20,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- මුදල් ගිණුම -->
+
+    <div class="example-t-account">
+
+        <div class="account-title-row">
+
+            <div class="account-side-title debit-title">
+                හර (Debit / Dr)
+            </div>
+
+            <div class="account-side-title credit-title">
+                බැර (Credit / Cr)
+            </div>
+
+            <div class="account-name-title">
+                මුදල් ගිණුම
+            </div>
+
+        </div>
+
+
+        <table class="t-account">
+
+            <tr>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>ස.පි.</th>
+                <th>වටිනාකම<br>(රු.)</th>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>—</td>
+                <td>වැටුප්</td>
+                <td>—</td>
+                <td>20,000</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
     </section>
 
 
