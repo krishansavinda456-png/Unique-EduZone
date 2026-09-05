@@ -470,6 +470,155 @@
 
         }
 
+        /* =========================================================
+   LESSON 07 - SIDE CARTOON ILLUSTRATIONS
+   ========================================================= */
+
+body {
+    overflow-x: hidden;
+}
+
+.lesson-side-cartoon {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 190px;
+    height: 300px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.88;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.45));
+}
+
+.lesson-side-cartoon.left {
+    left: 10px;
+}
+
+.lesson-side-cartoon.right {
+    right: 10px;
+}
+
+.lesson-side-cartoon svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Main content stays above illustrations */
+
+.site-header,
+.lesson-page,
+.site-footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* Left cartoon */
+
+.detective-body {
+    fill: #202020;
+    stroke: gold;
+    stroke-width: 3;
+}
+
+.detective-face {
+    fill: #f2c7a5;
+    stroke: #111;
+    stroke-width: 2;
+}
+
+.detective-hat {
+    fill: #151515;
+    stroke: gold;
+    stroke-width: 3;
+}
+
+.detective-coat {
+    fill: #242424;
+    stroke: #d4af37;
+    stroke-width: 3;
+}
+
+.detective-paper {
+    fill: #f5f5f5;
+    stroke: #111;
+    stroke-width: 2;
+}
+
+.detective-line {
+    stroke: #777;
+    stroke-width: 2;
+}
+
+.detective-gold {
+    fill: gold;
+}
+
+/* Right accounting cartoon */
+
+.book-cover {
+    fill: #222;
+    stroke: gold;
+    stroke-width: 3;
+}
+
+.book-page {
+    fill: #f4f4f4;
+    stroke: #111;
+    stroke-width: 2;
+}
+
+.calculator-body {
+    fill: #292929;
+    stroke: gold;
+    stroke-width: 3;
+}
+
+.calculator-screen {
+    fill: #dce8d8;
+    stroke: #111;
+    stroke-width: 2;
+}
+
+.calculator-button {
+    fill: #444;
+    stroke: #777;
+    stroke-width: 1;
+}
+
+.money-symbol {
+    fill: gold;
+    font-weight: bold;
+}
+
+/* Smaller screens */
+
+@media (max-width: 1250px) {
+
+    .lesson-side-cartoon {
+        width: 135px;
+        height: 230px;
+        opacity: 0.55;
+    }
+
+    .lesson-side-cartoon.left {
+        left: 0;
+    }
+
+    .lesson-side-cartoon.right {
+        right: 0;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .lesson-side-cartoon {
+        display: none;
+    }
+
+}
+
     </style>
 
 </head>
