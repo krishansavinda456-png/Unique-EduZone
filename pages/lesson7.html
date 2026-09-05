@@ -21,6 +21,71 @@
 
     <style>
 
+        /* =========================================================
+   ORIGINAL CARTOON SIDE BACKGROUND
+   ========================================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.lesson-side-decoration {
+    position: fixed;
+    top: 125px;
+    width: 175px;
+    height: 520px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.20;
+}
+
+.lesson-side-decoration.left {
+    left: 5px;
+}
+
+.lesson-side-decoration.right {
+    right: 5px;
+}
+
+.side-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+
+/* Main content stays above decorations */
+
+.site-header,
+.lesson-page,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Smaller desktop screens */
+
+@media (max-width: 1200px) {
+
+    .lesson-side-decoration {
+        display: none;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .lesson-side-decoration {
+        display: none;
+    }
+
+}
+
         .lesson-page {
             max-width: 1000px;
             margin: auto;
