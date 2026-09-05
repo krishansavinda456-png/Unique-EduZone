@@ -236,6 +236,216 @@
             margin-top: 15px;
         }
 
+        /* =========================================================
+           ACCOUNTING DETECTIVE CHALLENGE - LESSON 07
+           ========================================================= */
+        
+        .detective7-section {
+            background: linear-gradient(145deg, #171717, #0f0f0f);
+            border: 1px solid #4b4b4b;
+            border-radius: 18px;
+            padding: 28px;
+            margin: 35px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+        }
+        
+        .detective7-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .detective7-header h2 {
+            color: gold;
+            margin-bottom: 10px;
+        }
+        
+        .detective7-header p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+        
+        .detective7-intro {
+            background: #202020;
+            border-left: 5px solid gold;
+            padding: 18px;
+            border-radius: 10px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .detective7-score {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .detective7-score-box {
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 12px 20px;
+            text-align: center;
+            min-width: 130px;
+        }
+        
+        .detective7-score-box strong {
+            display: block;
+            color: gold;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        
+        .detective7-card {
+            background: #1c1c1c;
+            border: 1px solid #3d3d3d;
+            border-radius: 14px;
+            padding: 22px;
+            margin: 20px 0;
+        }
+        
+        .detective7-card h3 {
+            color: gold;
+            margin-top: 0;
+        }
+        
+        .detective7-question {
+            background: #242424;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .detective7-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .detective7-option {
+            background: #111;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 9px;
+            padding: 12px;
+            cursor: pointer;
+            text-align: left;
+            transition: 0.2s ease;
+        }
+        
+        .detective7-option:hover {
+            border-color: gold;
+            transform: translateY(-1px);
+        }
+        
+        .detective7-option.selected {
+            border-color: gold;
+            background: #292300;
+        }
+        
+        .detective7-option.correct {
+            border-color: #38c172;
+            background: #153b25;
+        }
+        
+        .detective7-option.wrong {
+            border-color: #dc3545;
+            background: #35171b;
+        }
+        
+        .detective7-result {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            line-height: 1.7;
+        }
+        
+        .detective7-result.correct {
+            display: block;
+            color: #38c172;
+            background: #153b25;
+        }
+        
+        .detective7-result.wrong {
+            display: block;
+            color: #ff7b86;
+            background: #35171b;
+        }
+        
+        .detective7-action {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .detective7-btn {
+            background: gold;
+            color: #000;
+            border: none;
+            border-radius: 9px;
+            padding: 12px 22px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .detective7-btn.secondary {
+            background: #444;
+            color: #fff;
+        }
+        
+        .detective7-btn.success {
+            background: #198754;
+            color: #fff;
+        }
+        
+        .detective7-final {
+            display: none;
+            text-align: center;
+            background: #202020;
+            border: 1px solid gold;
+            border-radius: 14px;
+            padding: 25px;
+            margin-top: 25px;
+        }
+        
+        .detective7-final h3 {
+            color: gold;
+        }
+        
+        .detective7-final-score {
+            font-size: 28px;
+            color: #38c172;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+        
+        .detective7-level {
+            color: gold;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+        
+            .detective7-section {
+                padding: 18px;
+            }
+        
+            .detective7-options {
+                grid-template-columns: 1fr;
+            }
+        
+            .detective7-btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        
+        }
+
         @media (max-width: 600px) {
 
             .lesson-page {
@@ -1282,6 +1492,201 @@
 
     </div>
 
+    <!-- =========================================================
+     ACCOUNTING DETECTIVE CHALLENGE - LESSON 07
+     ========================================================= -->
+
+<section class="detective7-section">
+
+    <div class="detective7-header">
+
+        <h2>
+            🕵️ Accounting Detective Challenge
+        </h2>
+
+        <p>
+            ⭐ විශේෂ අභියෝගය
+        </p>
+
+    </div>
+
+
+    <div class="detective7-intro">
+
+        <strong style="color:gold;">
+            🎯 ඔබේ මෙහෙයුම:
+        </strong>
+
+        <p>
+            ඔබ අද ගිණුම්කරණ රහස් පරීක්ෂකයෙකි.
+            ලබා දී ඇති ගනුදෙනු සහ සිද්ධි හොඳින්
+            විශ්ලේෂණය කර නිවැරදි මූලික සටහන් පොත,
+            මූලාශ්‍ර ලේඛනය සහ ගිණුම්කරණ ක්‍රියාවලිය
+            හඳුනා ගන්න.
+        </p>
+
+        <p>
+            නිවැරදි පිළිතුරක් සඳහා ලකුණු 1ක් ලැබේ.
+            Challenge 5 අවසානයේ ඔබගේ අවසන්
+            ලකුණු සහ මට්ටම පෙන්වනු ලැබේ.
+        </p>
+
+    </div>
+
+
+    <div class="detective7-score">
+
+        <div class="detective7-score-box">
+            සම්පූර්ණ ලකුණු
+            <strong id="detective7TotalScore">0</strong>
+        </div>
+
+        <div class="detective7-score-box">
+            උත්සාහ කළ
+            <strong id="detective7Answered">0</strong>
+        </div>
+
+        <div class="detective7-score-box">
+            නිවැරදි
+            <strong id="detective7Correct">0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- CHALLENGE 01 -->
+
+    <div class="detective7-card">
+
+        <h3>
+            🔎 Challenge 01 – මූලික සටහන් පොත හඳුනාගන්න
+        </h3>
+
+        <p>
+            පහත ගනුදෙනු 10 සඳහා සුදුසු
+            මූලික සටහන් පොත තෝරන්න.
+        </p>
+
+        <div id="detective7Challenge1"></div>
+
+    </div>
+
+
+    <!-- CHALLENGE 02 -->
+
+    <div class="detective7-card">
+
+        <h3>
+            🧾 Challenge 02 – මූලාශ්‍ර ලේඛනය හඳුනාගන්න
+        </h3>
+
+        <p>
+            ලබා දී ඇති අවස්ථාවට ගැළපෙන
+            මූලාශ්‍ර ලේඛනය තෝරන්න.
+        </p>
+
+        <div id="detective7Challenge2"></div>
+
+    </div>
+
+
+    <!-- CHALLENGE 03 -->
+
+    <div class="detective7-card">
+
+        <h3>
+            🔗 Challenge 03 – නිවැරදි සම්බන්ධතාවය
+        </h3>
+
+        <p>
+            මූලික සටහන් පොත සහ එයට අදාළ
+            මූලාශ්‍ර ලේඛනය නිවැරදිව හඳුනාගන්න.
+        </p>
+
+        <div id="detective7Challenge3"></div>
+
+    </div>
+
+
+    <!-- CHALLENGE 04 -->
+
+    <div class="detective7-card">
+
+        <h3>
+            🚨 Challenge 04 – ගිණුම්කරණ රහස් පරීක්ෂකයා
+        </h3>
+
+        <p>
+            පහත සිද්ධිවල ඇති වැරදි තේරීම හඳුනාගෙන
+            නිවැරදි පිළිතුර තෝරන්න.
+        </p>
+
+        <div id="detective7Challenge4"></div>
+
+    </div>
+
+
+    <!-- CHALLENGE 05 -->
+
+    <div class="detective7-card">
+
+        <h3>
+            🏆 Challenge 05 – Final Detective Challenge
+        </h3>
+
+        <p>
+            දැන් ඔබගේ අවසාන පරීක්ෂණයයි.
+            ගනුදෙනුවේ සිට ලෙජර් ගිණුම දක්වා
+            සම්පූර්ණ ක්‍රියාවලිය හඳුනාගන්න.
+        </p>
+
+        <div id="detective7Challenge5"></div>
+
+    </div>
+
+
+    <div class="detective7-final" id="detective7Final">
+
+        <h3>
+            🎉 Accounting Detective Challenge අවසන්!
+        </h3>
+
+        <div class="detective7-final-score"
+             id="detective7FinalScore">
+            0 / 50
+        </div>
+
+        <p id="detective7Percentage">
+            ප්‍රතිශතය: 0%
+        </p>
+
+        <p class="detective7-level"
+           id="detective7Level">
+            Detective Level
+        </p>
+
+        <p>
+            ඔබ Lesson 07 හි මූලික සටහන් පොත්
+            සහ මූලාශ්‍ර ලේඛන පිළිබඳ දැනුම
+            සාර්ථකව පරීක්ෂා කර ඇත.
+        </p>
+
+    </div>
+
+
+    <div class="detective7-action">
+
+        <button
+            type="button"
+            class="detective7-btn secondary"
+            onclick="resetDetective7()"
+        >
+            🔄 නැවත ආරම්භ කරන්න
+        </button>
+
+    </div>
+
+</section>
 
 
     <!-- ACTIONS -->
