@@ -400,6 +400,401 @@
 
         }
 
+        /* =========================================================
+   ⭐ LESSON 06 - ACCOUNTING DETECTIVE CHALLENGE
+   ========================================================= */
+
+.detective6-section {
+    background: linear-gradient(145deg, #151515, #0b0b0b);
+    border: 1px solid #555;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 35px 0;
+    box-shadow: 0 10px 35px rgba(0,0,0,.35);
+}
+
+.detective6-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.detective6-badge {
+    display: inline-block;
+    background: gold;
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.detective6-header h2 {
+    color: #fff;
+    margin: 8px 0;
+}
+
+.detective6-header h3 {
+    color: gold;
+    margin: 8px 0 12px;
+}
+
+.detective6-header p {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+
+/* OVERALL PROGRESS */
+
+.detective6-overall {
+    background: #191919;
+    border: 1px solid #444;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 25px;
+}
+
+.detective6-progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.detective6-progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #292929;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.detective6-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: gold;
+    transition: width .4s ease;
+}
+
+
+/* SCORE CARDS */
+
+.detective6-score-panel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0 30px;
+}
+
+.detective6-score-card {
+    background: #1d1d1d;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+}
+
+.detective6-score-card span {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.detective6-score-card strong {
+    color: gold;
+    font-size: 22px;
+}
+
+
+/* INDIVIDUAL ACTIVITY */
+
+.detective6-activity {
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 25px;
+}
+
+.detective6-activity-title {
+    color: gold;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.detective6-activity-description {
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* TRANSACTION */
+
+.detective6-transaction {
+    background: #191919;
+    border: 1px solid #3d3d3d;
+    border-radius: 12px;
+    padding: 17px;
+    margin: 14px 0;
+}
+
+.detective6-transaction-number {
+    color: gold;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.detective6-transaction-text {
+    color: #eee;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+
+/* SELECT AREA */
+
+.detective6-select-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.detective6-select-box label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.detective6-select-box select {
+    width: 100%;
+    background: #0c0c0c;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 11px;
+    font-size: 15px;
+}
+
+.detective6-select-box select:focus {
+    border-color: gold;
+    outline: none;
+}
+
+
+/* BUTTONS */
+
+.detective6-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.detective6-check-btn,
+.detective6-answer-btn,
+.detective6-reset-btn {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.detective6-check-btn {
+    background: gold;
+    color: #000;
+}
+
+.detective6-answer-btn {
+    background: transparent;
+    color: #38c172;
+    border: 1px solid #38c172;
+}
+
+.detective6-reset-btn {
+    background: #292929;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.detective6-check-btn:hover,
+.detective6-answer-btn:hover,
+.detective6-reset-btn:hover {
+    transform: translateY(-1px);
+    opacity: .9;
+}
+
+
+/* RESULT */
+
+.detective6-result {
+    display: none;
+    margin-top: 20px;
+    padding: 17px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.detective6-result.success {
+    display: block;
+    background: rgba(25,135,84,.12);
+    border: 1px solid #198754;
+    color: #38c172;
+}
+
+.detective6-result.warning {
+    display: block;
+    background: rgba(255,193,7,.08);
+    border: 1px solid #b8860b;
+    color: #ffd75a;
+}
+
+
+/* ANSWER AREA */
+
+.detective6-answer {
+    display: none;
+    margin-top: 22px;
+    padding: 20px;
+    background: #0d0d0d;
+    border: 1px solid #555;
+    border-radius: 14px;
+}
+
+.detective6-answer h4 {
+    color: gold;
+    margin-bottom: 18px;
+}
+
+
+/* T ACCOUNT */
+
+.detective6-t-wrapper {
+    overflow-x: auto;
+    margin: 20px 0 30px;
+}
+
+.detective6-account-title-row {
+    min-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.detective6-side-title {
+    color: gold;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+}
+
+.detective6-account-name {
+    color: gold;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.detective6-t-account {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #111;
+}
+
+.detective6-t-account th,
+.detective6-t-account td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+}
+
+.detective6-t-account th {
+    background: #1d1d1d;
+    color: #fff;
+}
+
+.detective6-t-account td {
+    color: #ddd;
+    height: 42px;
+}
+
+.detective6-answer-note {
+    background: #181818;
+    border-left: 4px solid gold;
+    padding: 15px;
+    border-radius: 8px;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+
+/* FINAL RESULT */
+
+.detective6-final {
+    display: none;
+    background: linear-gradient(145deg,#1c1c1c,#101010);
+    border: 2px solid gold;
+    border-radius: 18px;
+    padding: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.detective6-final h3 {
+    color: gold;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.detective6-final-score {
+    font-size: 38px;
+    color: gold;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.detective6-final p {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .detective6-section {
+        padding: 16px;
+    }
+
+    .detective6-score-panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detective6-select-area {
+        grid-template-columns: 1fr;
+    }
+
+    .detective6-buttons {
+        flex-direction: column;
+    }
+
+    .detective6-check-btn,
+    .detective6-answer-btn,
+    .detective6-reset-btn {
+        width: 100%;
+    }
+}
+
     </style>
 
 </head>
@@ -2279,6 +2674,129 @@
 
     </section>
 
+    <!-- =========================================================
+     ⭐ ACCOUNTING DETECTIVE CHALLENGE
+     LESSON 06
+     ========================================================= -->
+
+<section class="detective6-section">
+
+    <div class="detective6-header">
+
+        <span class="detective6-badge">
+            ⭐ විශේෂ අභියෝගය
+        </span>
+
+        <h2>
+            Accounting Detective Challenge
+        </h2>
+
+        <h3>
+            ගිණුම්කරණ රහස් පරීක්ෂක අභියෝගය
+        </h3>
+
+        <p>
+            පහත ගනුදෙනු හොඳින් අධ්‍යයනය කර,
+            එක් එක් ගනුදෙනුවට අදාළ
+            <strong>හර ගිණුම</strong> සහ
+            <strong>බැර ගිණුම</strong>
+            නිවැරදිව තෝරන්න.
+        </p>
+
+        <p>
+            සියලුම ගනුදෙනු සම්පූර්ණ කළ පසු
+            <strong>ලකුණු ලබාගන්න</strong>.
+            ඉන්පසු නිවැරදි පිළිතුරු
+            <strong>T-ගිණුම් ආකෘතියෙන්</strong>
+            පරීක්ෂා කළ හැකිය.
+        </p>
+
+    </div>
+
+
+    <!-- OVERALL PROGRESS -->
+
+    <div class="detective6-overall">
+
+        <div class="detective6-progress-info">
+
+            <span>
+                සමස්ත ප්‍රගතිය
+            </span>
+
+            <span id="detective6ProgressText">
+                0 / 50
+            </span>
+
+        </div>
+
+        <div class="detective6-progress-bar">
+
+            <div
+                class="detective6-progress-fill"
+                id="detective6ProgressFill"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCORE PANEL -->
+
+    <div class="detective6-score-panel">
+
+        <div class="detective6-score-card">
+            <span>මුළු ලකුණු</span>
+            <strong id="detective6TotalScore">0</strong>
+        </div>
+
+        <div class="detective6-score-card">
+            <span>නිවැරදි</span>
+            <strong id="detective6Correct">0</strong>
+        </div>
+
+        <div class="detective6-score-card">
+            <span>වැරදි</span>
+            <strong id="detective6Wrong">0</strong>
+        </div>
+
+        <div class="detective6-score-card">
+            <span>ප්‍රගතිය</span>
+            <strong id="detective6Percentage">0%</strong>
+        </div>
+
+    </div>
+
+
+    <!-- CHALLENGES WILL LOAD HERE -->
+
+    <div id="detective6Activities"></div>
+
+
+    <!-- FINAL RESULT -->
+
+    <div
+        class="detective6-final"
+        id="detective6FinalResult"
+    >
+
+        <h3>
+            🏆 Accounting Detective Challenge අවසන්!
+        </h3>
+
+        <div
+            class="detective6-final-score"
+            id="detective6FinalScore"
+        >
+            0 / 50
+        </div>
+
+        <p id="detective6FinalMessage"></p>
+
+    </div>
+
+</section>
 
 
     <!-- ACTIONS -->
@@ -2741,6 +3259,1454 @@ document.addEventListener(
 
     }
 );
+
+    <script>
+
+/* =========================================================
+   ⭐ ACCOUNTING DETECTIVE CHALLENGE - LESSON 06
+   ========================================================= */
+
+const detective6StorageKey =
+    "uez_lesson6_accounting_detective";
+
+
+/* =========================================================
+   CHALLENGE DATA
+   5 ACTIVITIES × 10 TRANSACTIONS = 50
+   ========================================================= */
+
+const detective6Data = [
+
+    /* =====================================================
+       ACTIVITY 01
+       BASIC TRANSACTIONS
+       ===================================================== */
+
+    {
+        title: "ක්‍රියාකාරකම 01 – මූලික ගනුදෙනු",
+
+        description:
+            "මූලික ගනුදෙනු හඳුනාගෙන හර හා බැර ගිණුම් තෝරන්න.",
+
+        transactions: [
+
+            {
+                text: "ව්‍යාපාරය ආරම්භ කිරීම සඳහා හිමිකරු රු. 100,000 ක මුදල් ප්‍රාග්ධනයක් යොදවන ලදී.",
+                debit: "මුදල්",
+                credit: "ප්‍රාග්ධන",
+                amount: 100000
+            },
+
+            {
+                text: "රු. 20,000 ක උපකරණ මුදලට මිලදී ගන්නා ලදී.",
+                debit: "උපකරණ",
+                credit: "මුදල්",
+                amount: 20000
+            },
+
+            {
+                text: "රු. 10,000 ක ගෘහ භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",
+                debit: "ගෘහ භාණ්ඩ",
+                credit: "මුදල්",
+                amount: 10000
+            },
+
+            {
+                text: "රු. 15,000 ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",
+                debit: "ගැනුම්",
+                credit: "මුදල්",
+                amount: 15000
+            },
+
+            {
+                text: "රු. 25,000 ක භාණ්ඩ මුදලට විකුණන ලදී.",
+                debit: "මුදල්",
+                credit: "විකුණුම්",
+                amount: 25000
+            },
+
+            {
+                text: "රු. 5,000 ක වැටුප් මුදලින් ගෙවන ලදී.",
+                debit: "වැටුප්",
+                credit: "මුදල්",
+                amount: 5000
+            },
+
+            {
+                text: "රු. 3,000 ක විදුලි ගාස්තු මුදලින් ගෙවන ලදී.",
+                debit: "විදුලි ගාස්තු",
+                credit: "මුදල්",
+                amount: 3000
+            },
+
+            {
+                text: "රු. 4,000 ක ප්‍රවාහන වියදම් මුදලින් ගෙවන ලදී.",
+                debit: "ප්‍රවාහන වියදම්",
+                credit: "මුදල්",
+                amount: 4000
+            },
+
+            {
+                text: "රු. 6,000 ක කොමිස් ආදායමක් මුදලින් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "කොමිස් ආදායම",
+                amount: 6000
+            },
+
+            {
+                text: "රු. 8,000 ක රක්ෂණ වාරිකයක් මුදලින් ගෙවන ලදී.",
+                debit: "රක්ෂණ වියදම්",
+                credit: "මුදල්",
+                amount: 8000
+            }
+
+        ]
+    },
+
+
+    /* =====================================================
+       ACTIVITY 02
+       ASSET + LIABILITY TRANSACTIONS
+       ===================================================== */
+
+    {
+        title: "ක්‍රියාකාරකම 02 – වත්කම් හා වගකීම්",
+
+        description:
+            "වත්කම් සහ වගකීම් සම්බන්ධ ගනුදෙනු නිවැරදිව හඳුනාගන්න.",
+
+        transactions: [
+
+            {
+                text: "ව්‍යාපාරය රු. 200,000 ක බැංකු ණයක් ලබා ගත්තේය.",
+                debit: "මුදල්",
+                credit: "බැංකු ණය",
+                amount: 200000
+            },
+
+            {
+                text: "රු. 50,000 ක යන්ත්‍රයක් මුදලට මිලදී ගන්නා ලදී.",
+                debit: "යන්ත්‍රෝපකරණ",
+                credit: "මුදල්",
+                amount: 50000
+            },
+
+            {
+                text: "රු. 30,000 ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+                debit: "ගැනුම්",
+                credit: "ණයහිමි",
+                amount: 30000
+            },
+
+            {
+                text: "ණයහිමියෙකුට රු. 10,000 ක් මුදලින් ගෙවන ලදී.",
+                debit: "ණයහිමි",
+                credit: "මුදල්",
+                amount: 10000
+            },
+
+            {
+                text: "ණයගැතියෙකුගෙන් රු. 15,000 ක් මුදලින් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "ණයගැති",
+                amount: 15000
+            },
+
+            {
+                text: "රු. 40,000 ක ගෘහ භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+                debit: "ගෘහ භාණ්ඩ",
+                credit: "ණයහිමි",
+                amount: 40000
+            },
+
+            {
+                text: "බැංකු ණයෙන් රු. 20,000 ක් මුදලින් පියවන ලදී.",
+                debit: "බැංකු ණය",
+                credit: "මුදල්",
+                amount: 20000
+            },
+
+            {
+                text: "රු. 12,000 ක භාණ්ඩ ණයට විකුණන ලදී.",
+                debit: "ණයගැති",
+                credit: "විකුණුම්",
+                amount: 12000
+            },
+
+            {
+                text: "රු. 5,000 ක ණයගැති මුදලක් බැංකුවට ලැබුණි.",
+                debit: "බැංකු",
+                credit: "ණයගැති",
+                amount: 5000
+            },
+
+            {
+                text: "රු. 7,000 ක කාර්යාල උපකරණයක් ණයට මිලදී ගන්නා ලදී.",
+                debit: "කාර්යාල උපකරණ",
+                credit: "ණයහිමි",
+                amount: 7000
+            }
+
+        ]
+    },
+
+
+    /* =====================================================
+       ACTIVITY 03
+       INCOME + EXPENSE
+       ===================================================== */
+
+    {
+        title: "ක්‍රියාකාරකම 03 – ආදායම් හා වියදම්",
+
+        description:
+            "ආදායම් සහ වියදම් සම්බන්ධ ගනුදෙනුවල ද්විත්ව බලපෑම හඳුනාගන්න.",
+
+        transactions: [
+
+            {
+                text: "රු. 20,000 ක පොලී ආදායමක් මුදලින් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "පොලී ආදායම",
+                amount: 20000
+            },
+
+            {
+                text: "රු. 8,000 ක වැටුප් මුදලින් ගෙවන ලදී.",
+                debit: "වැටුප්",
+                credit: "මුදල්",
+                amount: 8000
+            },
+
+            {
+                text: "රු. 4,000 ක විදුලි ගාස්තු මුදලින් ගෙවන ලදී.",
+                debit: "විදුලි ගාස්තු",
+                credit: "මුදල්",
+                amount: 4000
+            },
+
+            {
+                text: "රු. 6,000 ක කුලී ආදායමක් මුදලින් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "කුලී ආදායම",
+                amount: 6000
+            },
+
+            {
+                text: "රු. 3,000 ක දැන්වීම් වියදමක් මුදලින් ගෙවන ලදී.",
+                debit: "දැන්වීම් වියදම්",
+                credit: "මුදල්",
+                amount: 3000
+            },
+
+            {
+                text: "රු. 5,000 ක කොමිස් ආදායමක් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "කොමිස් ආදායම",
+                amount: 5000
+            },
+
+            {
+                text: "රු. 2,500 ක දුරකථන ගාස්තුවක් ගෙවන ලදී.",
+                debit: "දුරකථන වියදම්",
+                credit: "මුදල්",
+                amount: 2500
+            },
+
+            {
+                text: "රු. 3,500 ක ප්‍රවාහන වියදමක් ගෙවන ලදී.",
+                debit: "ප්‍රවාහන වියදම්",
+                credit: "මුදල්",
+                amount: 3500
+            },
+
+            {
+                text: "රු. 10,000 ක සේවා ආදායමක් මුදලින් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "සේවා ආදායම",
+                amount: 10000
+            },
+
+            {
+                text: "රු. 2,000 ක රක්ෂණ වියදමක් මුදලින් ගෙවන ලදී.",
+                debit: "රක්ෂණ වියදම්",
+                credit: "මුදල්",
+                amount: 2000
+            }
+
+        ]
+    },
+
+
+    /* =====================================================
+       ACTIVITY 04
+       MIXED TRANSACTIONS
+       ===================================================== */
+
+    {
+        title: "ක්‍රියාකාරකම 04 – මිශ්‍ර ගනුදෙනු",
+
+        description:
+            "විවිධ වර්ගයේ ගනුදෙනු අතරින් නිවැරදි හර හා බැර ගිණුම් හඳුනාගන්න.",
+
+        transactions: [
+
+            {
+                text: "හිමිකරු විසින් තවත් රු. 50,000 ක මුදල් ප්‍රාග්ධනයක් යොදවන ලදී.",
+                debit: "මුදල්",
+                credit: "ප්‍රාග්ධන",
+                amount: 50000
+            },
+
+            {
+                text: "රු. 25,000 ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+                debit: "ගැනුම්",
+                credit: "ණයහිමි",
+                amount: 25000
+            },
+
+            {
+                text: "රු. 18,000 ක භාණ්ඩ මුදලට විකුණන ලදී.",
+                debit: "මුදල්",
+                credit: "විකුණුම්",
+                amount: 18000
+            },
+
+            {
+                text: "රු. 7,000 ක වැටුප් ගෙවන ලදී.",
+                debit: "වැටුප්",
+                credit: "මුදල්",
+                amount: 7000
+            },
+
+            {
+                text: "රු. 5,000 ක ණයහිමි මුදලක් පියවන ලදී.",
+                debit: "ණයහිමි",
+                credit: "මුදල්",
+                amount: 5000
+            },
+
+            {
+                text: "රු. 9,000 ක ණයගැති මුදලක් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "ණයගැති",
+                amount: 9000
+            },
+
+            {
+                text: "රු. 15,000 ක උපකරණයක් මුදලට මිලදී ගන්නා ලදී.",
+                debit: "උපකරණ",
+                credit: "මුදල්",
+                amount: 15000
+            },
+
+            {
+                text: "රු. 4,000 ක පොලී ආදායමක් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "පොලී ආදායම",
+                amount: 4000
+            },
+
+            {
+                text: "රු. 3,000 ක විදුලි ගාස්තුවක් ගෙවන ලදී.",
+                debit: "විදුලි ගාස්තු",
+                credit: "මුදල්",
+                amount: 3000
+            },
+
+            {
+                text: "රු. 6,000 ක කුලී ගාස්තුවක් ගෙවන ලදී.",
+                debit: "කුලී වියදම්",
+                credit: "මුදල්",
+                amount: 6000
+            }
+
+        ]
+    },
+
+
+    /* =====================================================
+       ACTIVITY 05
+       ACCOUNTING DETECTIVE - ADVANCED
+       ===================================================== */
+
+    {
+        title: "ක්‍රියාකාරකම 05 – Accounting Detective Final Case",
+
+        description:
+            "මෙය අවසාන අභියෝගයයි. ගනුදෙනු 10ම විශ්ලේෂණය කර නිවැරදි ගිණුම් තෝරන්න.",
+
+        transactions: [
+
+            {
+                text: "ව්‍යාපාරය රු. 100,000 ක මුදල් ප්‍රාග්ධනයක් ලබා ගත්තේය.",
+                debit: "මුදල්",
+                credit: "ප්‍රාග්ධන",
+                amount: 100000
+            },
+
+            {
+                text: "රු. 30,000 ක භාණ්ඩ මුදලට මිලදී ගන්නා ලදී.",
+                debit: "ගැනුම්",
+                credit: "මුදල්",
+                amount: 30000
+            },
+
+            {
+                text: "රු. 45,000 ක භාණ්ඩ මුදලට විකුණන ලදී.",
+                debit: "මුදල්",
+                credit: "විකුණුම්",
+                amount: 45000
+            },
+
+            {
+                text: "රු. 20,000 ක බැංකු ණයක් ලබා ගන්නා ලදී.",
+                debit: "මුදල්",
+                credit: "බැංකු ණය",
+                amount: 20000
+            },
+
+            {
+                text: "රු. 10,000 ක උපකරණයක් මුදලට මිලදී ගන්නා ලදී.",
+                debit: "උපකරණ",
+                credit: "මුදල්",
+                amount: 10000
+            },
+
+            {
+                text: "රු. 5,000 ක වැටුප් ගෙවන ලදී.",
+                debit: "වැටුප්",
+                credit: "මුදල්",
+                amount: 5000
+            },
+
+            {
+                text: "රු. 8,000 ක පොලී ආදායමක් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "පොලී ආදායම",
+                amount: 8000
+            },
+
+            {
+                text: "රු. 12,000 ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.",
+                debit: "ගැනුම්",
+                credit: "ණයහිමි",
+                amount: 12000
+            },
+
+            {
+                text: "රු. 6,000 ක ණයහිමි මුදලක් මුදලින් ගෙවන ලදී.",
+                debit: "ණයහිමි",
+                credit: "මුදල්",
+                amount: 6000
+            },
+
+            {
+                text: "රු. 15,000 ක ණයගැති මුදලක් මුදලින් ලැබුණි.",
+                debit: "මුදල්",
+                credit: "ණයගැති",
+                amount: 15000
+            }
+
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   ACCOUNT OPTIONS
+   ========================================================= */
+
+const detective6Accounts = [
+
+    "මුදල්",
+    "බැංකු",
+    "ප්‍රාග්ධන",
+    "උපකරණ",
+    "යන්ත්‍රෝපකරණ",
+    "ගෘහ භාණ්ඩ",
+    "කාර්යාල උපකරණ",
+    "ගැනුම්",
+    "විකුණුම්",
+    "ණයගැති",
+    "ණයහිමි",
+    "බැංකු ණය",
+    "වැටුප්",
+    "විදුලි ගාස්තු",
+    "ප්‍රවාහන වියදම්",
+    "රක්ෂණ වියදම්",
+    "දැන්වීම් වියදම්",
+    "දුරකථන වියදම්",
+    "කුලී වියදම්",
+    "පොලී ආදායම",
+    "කුලී ආදායම",
+    "කොමිස් ආදායම",
+    "සේවා ආදායම"
+];
+
+
+/* =========================================================
+   LOAD / SAVE
+   ========================================================= */
+
+function getDetective6State() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(detective6StorageKey);
+
+        if (saved) {
+            return JSON.parse(saved);
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Detective 6 state could not be loaded.",
+            error
+        );
+
+    }
+
+    return {
+        answers: {},
+        scores: {},
+        completed: {}
+    };
+}
+
+
+function saveDetective6State(state) {
+
+    try {
+
+        localStorage.setItem(
+            detective6StorageKey,
+            JSON.stringify(state)
+        );
+
+    } catch (error) {
+
+        console.warn(
+            "Detective 6 state could not be saved.",
+            error
+        );
+
+    }
+}
+
+
+/* =========================================================
+   RENDER ACTIVITIES
+   ========================================================= */
+
+function renderDetective6Activities() {
+
+    const container =
+        document.getElementById(
+            "detective6Activities"
+        );
+
+    if (!container) return;
+
+    const state = getDetective6State();
+
+    container.innerHTML = "";
+
+    detective6Data.forEach(
+        (activity, activityIndex) => {
+
+            const activityNumber =
+                activityIndex + 1;
+
+            let html = `
+
+                <div class="detective6-activity">
+
+                    <div class="detective6-activity-title">
+                        ${activity.title}
+                    </div>
+
+                    <div class="detective6-activity-description">
+                        ${activity.description}
+                    </div>
+
+            `;
+
+
+            activity.transactions.forEach(
+                (transaction, transactionIndex) => {
+
+                    const key =
+                        `${activityNumber}_${transactionIndex}`;
+
+                    const savedAnswer =
+                        state.answers[key] || {};
+
+                    html += `
+
+                        <div
+                            class="detective6-transaction"
+                        >
+
+                            <div
+                                class="detective6-transaction-number"
+                            >
+                                ගනුදෙනුව ${transactionIndex + 1}
+                            </div>
+
+                            <div
+                                class="detective6-transaction-text"
+                            >
+                                ${transaction.text}
+                            </div>
+
+                            <div
+                                class="detective6-select-area"
+                            >
+
+                                <div
+                                    class="detective6-select-box"
+                                >
+
+                                    <label>
+                                        හර ගිණුම
+                                    </label>
+
+                                    <select
+                                        id="d6-debit-${key}"
+                                    >
+
+                                        <option value="">
+                                            -- හර ගිණුම තෝරන්න --
+                                        </option>
+
+                                        ${detective6Accounts.map(
+                                            account => `
+                                                <option
+                                                    value="${account}"
+                                                    ${
+                                                        savedAnswer.debit === account
+                                                        ? "selected"
+                                                        : ""
+                                                    }
+                                                >
+                                                    ${account}
+                                                </option>
+                                            `
+                                        ).join("")}
+
+                                    </select>
+
+                                </div>
+
+
+                                <div
+                                    class="detective6-select-box"
+                                >
+
+                                    <label>
+                                        බැර ගිණුම
+                                    </label>
+
+                                    <select
+                                        id="d6-credit-${key}"
+                                    >
+
+                                        <option value="">
+                                            -- බැර ගිණුම තෝරන්න --
+                                        </option>
+
+                                        ${detective6Accounts.map(
+                                            account => `
+                                                <option
+                                                    value="${account}"
+                                                    ${
+                                                        savedAnswer.credit === account
+                                                        ? "selected"
+                                                        : ""
+                                                    }
+                                                >
+                                                    ${account}
+                                                </option>
+                                            `
+                                        ).join("")}
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            const savedScore =
+                state.scores[activityNumber];
+
+            html += `
+
+                    <div class="detective6-buttons">
+
+                        <button
+                            type="button"
+                            class="detective6-check-btn"
+                            onclick="
+                                checkDetective6Activity(
+                                    ${activityNumber}
+                                )
+                            "
+                        >
+                            ✅ පිළිතුරු පරීක්ෂා කරන්න
+                        </button>
+
+                        <button
+                            type="button"
+                            class="detective6-answer-btn"
+                            onclick="
+                                showDetective6Answer(
+                                    ${activityNumber}
+                                )
+                            "
+                        >
+                            👁️ නිවැරදි T-ගිණුම් බලන්න
+                        </button>
+
+                        <button
+                            type="button"
+                            class="detective6-reset-btn"
+                            onclick="
+                                resetDetective6Activity(
+                                    ${activityNumber}
+                                )
+                            "
+                        >
+                            🔄 නැවත කරන්න
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="detective6-result-${activityNumber}"
+                        class="detective6-result"
+                    >
+                    </div>
+
+
+                    <div
+                        id="detective6-answer-${activityNumber}"
+                        class="detective6-answer"
+                    >
+                    </div>
+
+                </div>
+
+            `;
+
+            container.innerHTML += html;
+
+        }
+    );
+
+    updateDetective6Progress();
+
+}
+
+
+/* =========================================================
+   CHECK ACTIVITY
+   ========================================================= */
+
+function checkDetective6Activity(
+    activityNumber
+) {
+
+    const activity =
+        detective6Data[
+            activityNumber - 1
+        ];
+
+    const state =
+        getDetective6State();
+
+    let score = 0;
+    let unanswered = 0;
+
+    activity.transactions.forEach(
+        (transaction, transactionIndex) => {
+
+            const key =
+                `${activityNumber}_${transactionIndex}`;
+
+            const debitElement =
+                document.getElementById(
+                    `d6-debit-${key}`
+                );
+
+            const creditElement =
+                document.getElementById(
+                    `d6-credit-${key}`
+                );
+
+            const debit =
+                debitElement.value;
+
+            const credit =
+                creditElement.value;
+
+
+            if (!debit || !credit) {
+
+                unanswered++;
+
+                return;
+            }
+
+
+            state.answers[key] = {
+
+                debit: debit,
+
+                credit: credit
+
+            };
+
+
+            if (
+                debit === transaction.debit &&
+                credit === transaction.credit
+            ) {
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    if (unanswered > 0) {
+
+        const result =
+            document.getElementById(
+                `detective6-result-${activityNumber}`
+            );
+
+        result.className =
+            "detective6-result warning";
+
+        result.innerHTML = `
+
+            ⚠️ සියලුම ගනුදෙනු සඳහා
+            <strong>හර ගිණුම</strong> සහ
+            <strong>බැර ගිණුම</strong>
+            තෝරන්න.
+
+            <br><br>
+
+            තව ${unanswered} ගනුදෙනුවක්
+            සම්පූර්ණ කර නොමැත.
+
+        `;
+
+        return;
+    }
+
+
+    state.scores[activityNumber] =
+        score;
+
+    state.completed[activityNumber] =
+        true;
+
+
+    saveDetective6State(state);
+
+
+    const result =
+        document.getElementById(
+            `detective6-result-${activityNumber}`
+        );
+
+
+    if (score === 10) {
+
+        result.className =
+            "detective6-result success";
+
+        result.innerHTML = `
+
+            🎉 විශිෂ්ටයි!
+
+            <br>
+
+            ඔබ ලබාගත් ලකුණු:
+            <strong>10 / 10</strong>
+
+            <br>
+
+            සියලුම ගනුදෙනු නිවැරදිව
+            හඳුනාගෙන ඇත.
+
+        `;
+
+    } else {
+
+        result.className =
+            "detective6-result warning";
+
+        result.innerHTML = `
+
+            📊 ඔබ ලබාගත් ලකුණු:
+
+            <strong>
+                ${score} / 10
+            </strong>
+
+            <br>
+
+            දැන්
+            <strong>
+                👁️ නිවැරදි T-ගිණුම් බලන්න
+            </strong>
+            බොත්තම භාවිතයෙන්
+            නිවැරදි පිළිතුරු පරීක්ෂා කළ හැකිය.
+
+        `;
+
+    }
+
+
+    updateDetective6Progress();
+
+}
+
+
+/* =========================================================
+   SHOW CORRECT ANSWER
+   ========================================================= */
+
+function showDetective6Answer(
+    activityNumber
+) {
+
+    const activity =
+        detective6Data[
+            activityNumber - 1
+        ];
+
+    const answerContainer =
+        document.getElementById(
+            `detective6-answer-${activityNumber}`
+        );
+
+    if (!answerContainer) return;
+
+
+    /*
+       GROUP TRANSACTIONS BY ACCOUNT
+
+       මෙහිදී එකම ගිණුමට අදාළ
+       ගනුදෙනු සියල්ල එකම T-account එකකට
+       එකතු වේ.
+    */
+
+    const accounts = {};
+
+
+    activity.transactions.forEach(
+        (transaction, index) => {
+
+            if (!accounts[transaction.debit]) {
+
+                accounts[transaction.debit] = {
+
+                    debit: [],
+                    credit: []
+
+                };
+
+            }
+
+
+            if (!accounts[transaction.credit]) {
+
+                accounts[transaction.credit] = {
+
+                    debit: [],
+                    credit: []
+
+                };
+
+            }
+
+
+            accounts[
+                transaction.debit
+            ].debit.push({
+
+                number: index + 1,
+
+                description:
+                    transaction.credit,
+
+                amount:
+                    transaction.amount
+
+            });
+
+
+            accounts[
+                transaction.credit
+            ].credit.push({
+
+                number: index + 1,
+
+                description:
+                    transaction.debit,
+
+                amount:
+                    transaction.amount
+
+            });
+
+        }
+    );
+
+
+    let html = `
+
+        <h4>
+            🧾 නිවැරදි පිළිතුර –
+            T-ගිණුම් ආකෘතිය
+        </h4>
+
+        <div class="detective6-answer-note">
+
+            <strong>
+                සටහන:
+            </strong>
+
+            එකම ගිණුමට බලපාන ගනුදෙනු කිහිපයක්
+            තිබේ නම් ඒවා වෙන වෙනම ගිණුම් ලෙස නොව
+            <strong>එකම T-ගිණුම තුළ</strong>
+            අදාළ පැත්තේ සටහන් කර ඇත.
+
+        </div>
+
+    `;
+
+
+    Object.keys(accounts).forEach(
+        accountName => {
+
+            const account =
+                accounts[accountName];
+
+            const maxRows =
+                Math.max(
+                    account.debit.length,
+                    account.credit.length,
+                    1
+                );
+
+
+            html += `
+
+                <div class="detective6-t-wrapper">
+
+                    <div
+                        class="detective6-account-title-row"
+                    >
+
+                        <div
+                            class="detective6-side-title"
+                        >
+                            හර (Debit / Dr)
+                        </div>
+
+                        <div
+                            class="detective6-account-name"
+                        >
+                            ${accountName}
+                        </div>
+
+                        <div
+                            class="detective6-side-title"
+                        >
+                            බැර (Credit / Cr)
+                        </div>
+
+                    </div>
+
+
+                    <table
+                        class="detective6-t-account"
+                    >
+
+                        <tr>
+
+                            <th>දිනය</th>
+                            <th>විස්තරය</th>
+                            <th>ස.පි.</th>
+                            <th>වටිනාකම<br>(රු.)</th>
+
+                            <th>දිනය</th>
+                            <th>විස්තරය</th>
+                            <th>ස.පි.</th>
+                            <th>වටිනාකම<br>(රු.)</th>
+
+                        </tr>
+
+            `;
+
+
+            for (
+                let row = 0;
+                row < maxRows;
+                row++
+            ) {
+
+                const debitEntry =
+                    account.debit[row];
+
+                const creditEntry =
+                    account.credit[row];
+
+
+                html += `
+
+                    <tr>
+
+                        ${
+                            debitEntry
+                            ? `
+                                <td>—</td>
+
+                                <td>
+                                    ${debitEntry.description}
+                                </td>
+
+                                <td>
+                                    — 
+                                </td>
+
+                                <td>
+                                    ${debitEntry.amount.toLocaleString()}
+                                </td>
+                            `
+                            : `
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            `
+                        }
+
+
+                        ${
+                            creditEntry
+                            ? `
+                                <td>—</td>
+
+                                <td>
+                                    ${creditEntry.description}
+                                </td>
+
+                                <td>
+                                    —
+                                </td>
+
+                                <td>
+                                    ${creditEntry.amount.toLocaleString()}
+                                </td>
+                            `
+                            : `
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            `
+                        }
+
+                    </tr>
+
+                `;
+
+            }
+
+
+            html += `
+
+                    </table>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    answerContainer.innerHTML =
+        html;
+
+    answerContainer.style.display =
+        "block";
+
+}
+
+
+/* =========================================================
+   RESET INDIVIDUAL ACTIVITY
+   ========================================================= */
+
+function resetDetective6Activity(
+    activityNumber
+) {
+
+    const state =
+        getDetective6State();
+
+
+    detective6Data[
+        activityNumber - 1
+    ].transactions.forEach(
+        (_, transactionIndex) => {
+
+            const key =
+                `${activityNumber}_${transactionIndex}`;
+
+            delete state.answers[key];
+
+        }
+    );
+
+
+    delete state.scores[
+        activityNumber
+    ];
+
+    delete state.completed[
+        activityNumber
+    ];
+
+
+    saveDetective6State(state);
+
+    renderDetective6Activities();
+
+}
+
+
+/* =========================================================
+   UPDATE OVERALL PROGRESS
+   ========================================================= */
+
+function updateDetective6Progress() {
+
+    const state =
+        getDetective6State();
+
+    let totalScore = 0;
+
+    let completedActivities = 0;
+
+
+    Object.keys(state.scores)
+        .forEach(activityNumber => {
+
+            totalScore +=
+                Number(
+                    state.scores[activityNumber]
+                );
+
+        });
+
+
+    completedActivities =
+        Object.keys(
+            state.completed
+        ).length;
+
+
+    const totalQuestions = 50;
+
+    const percentage =
+        Math.round(
+            (totalScore / totalQuestions) * 100
+        );
+
+
+    const progressText =
+        document.getElementById(
+            "detective6ProgressText"
+        );
+
+    const progressFill =
+        document.getElementById(
+            "detective6ProgressFill"
+        );
+
+    const totalScoreElement =
+        document.getElementById(
+            "detective6TotalScore"
+        );
+
+    const correctElement =
+        document.getElementById(
+            "detective6Correct"
+        );
+
+    const wrongElement =
+        document.getElementById(
+            "detective6Wrong"
+        );
+
+    const percentageElement =
+        document.getElementById(
+            "detective6Percentage"
+        );
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            `${totalScore} / ${totalQuestions}`;
+
+    }
+
+
+    if (progressFill) {
+
+        progressFill.style.width =
+            `${percentage}%`;
+
+    }
+
+
+    if (totalScoreElement) {
+
+        totalScoreElement.textContent =
+            totalScore;
+
+    }
+
+
+    if (correctElement) {
+
+        correctElement.textContent =
+            totalScore;
+
+    }
+
+
+    if (wrongElement) {
+
+        wrongElement.textContent =
+            totalQuestions - totalScore;
+
+    }
+
+
+    if (percentageElement) {
+
+        percentageElement.textContent =
+            `${percentage}%`;
+
+    }
+
+
+    /*
+       සියලු Activities සම්පූර්ණ කළ විට
+       Final Result පෙන්වීම
+    */
+
+    if (
+        completedActivities ===
+        detective6Data.length
+    ) {
+
+        const finalResult =
+            document.getElementById(
+                "detective6FinalResult"
+            );
+
+        const finalScore =
+            document.getElementById(
+                "detective6FinalScore"
+            );
+
+        const finalMessage =
+            document.getElementById(
+                "detective6FinalMessage"
+            );
+
+
+        if (finalResult) {
+
+            finalResult.style.display =
+                "block";
+
+        }
+
+
+        if (finalScore) {
+
+            finalScore.textContent =
+                `${totalScore} / 50`;
+
+        }
+
+
+        if (finalMessage) {
+
+            if (percentage >= 80) {
+
+                finalMessage.innerHTML =
+                    "🏆 විශිෂ්ට ප්‍රතිඵලයක්! ඔබ ඉතා හොඳ Accounting Detective කෙනෙකි.";
+
+            } else if (percentage >= 60) {
+
+                finalMessage.innerHTML =
+                    "👏 හොඳ ප්‍රතිඵලයක්! තවත් පුහුණුවෙන් ඔබට ඉහළ ලකුණු ලබාගත හැකිය.";
+
+            } else {
+
+                finalMessage.innerHTML =
+                    "📚 ගනුදෙනු නැවත අධ්‍යයනය කර නිවැරදි T-ගිණුම් පිළිතුරු පරීක්ෂා කරන්න.";
+
+            }
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        renderDetective6Activities();
+
+    }
+);
+
+</script>
 
 </script>
 
