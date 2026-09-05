@@ -1342,12 +1342,256 @@
 
         }
 
+
+        /* =====================================================
+           UNIQUE EDUZONE - RELAXING SIDE WALLPAPER
+           ORIGINAL CSS ART - NO EXTERNAL IMAGE / COPYRIGHT
+           ===================================================== */
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Decorative side panels */
+        .lesson-side-decoration {
+            position: fixed;
+            top: 145px;
+            width: 175px;
+            height: 560px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.88;
+        }
+
+        .lesson-side-decoration.left {
+            left: 8px;
+        }
+
+        .lesson-side-decoration.right {
+            right: 8px;
+        }
+
+        /* Soft relaxing landscape */
+        .side-wallpaper {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            border-radius: 22px;
+            background:
+                radial-gradient(circle at 50% 20%,
+                    rgba(255,224,145,0.20) 0 10%,
+                    transparent 31%),
+                linear-gradient(180deg,
+                    rgba(239,226,175,0.10) 0%,
+                    rgba(101,139,91,0.12) 55%,
+                    rgba(24,57,34,0.30) 100%);
+        }
+
+        /* distant hills */
+        .side-wallpaper::before {
+            content: "";
+            position: absolute;
+            left: -25%;
+            right: -25%;
+            bottom: 80px;
+            height: 230px;
+            background:
+                radial-gradient(ellipse at 25% 100%,
+                    rgba(89,128,77,0.50) 0 32%,
+                    transparent 33%),
+                radial-gradient(ellipse at 72% 100%,
+                    rgba(65,104,67,0.48) 0 36%,
+                    transparent 37%);
+            filter: blur(1px);
+        }
+
+        /* foreground ground */
+        .side-wallpaper::after {
+            content: "";
+            position: absolute;
+            left: -20%;
+            right: -20%;
+            bottom: 0;
+            height: 125px;
+            background:
+                radial-gradient(ellipse at 20% 100%,
+                    rgba(34,75,42,0.72) 0 35%,
+                    transparent 36%),
+                radial-gradient(ellipse at 78% 100%,
+                    rgba(45,87,49,0.68) 0 42%,
+                    transparent 43%);
+        }
+
+        /* Motivational text */
+        .side-motivation {
+            position: absolute;
+            top: 28px;
+            left: 10px;
+            right: 10px;
+            z-index: 4;
+            text-align: center;
+            color: #dce9c9;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px;
+            line-height: 1.45;
+            font-weight: 700;
+            text-shadow:
+                0 2px 10px rgba(0,0,0,0.80);
+        }
+
+        .side-motivation .big-word {
+            display: block;
+            margin-bottom: 4px;
+            color: #f1cf67;
+            font-size: 31px;
+            line-height: 1.05;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .side-motivation .small-line {
+            display: block;
+        }
+
+        .side-heart {
+            margin-top: 9px;
+            font-size: 24px;
+            color: #f1cf67;
+        }
+
+        /* Simple original CSS bookshelf */
+        .side-books {
+            position: absolute;
+            z-index: 5;
+            left: 16px;
+            bottom: 26px;
+            width: 143px;
+            height: 92px;
+        }
+
+        .side-books::before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 70px;
+            filter: drop-shadow(0 7px 5px rgba(0,0,0,0.45));
+        }
+
+        .side-plant {
+            position: absolute;
+            z-index: 5;
+            right: 4px;
+            bottom: 22px;
+            font-size: 58px;
+            filter: drop-shadow(0 7px 5px rgba(0,0,0,0.45));
+        }
+
+        /* Tiny decorative sun/birds */
+        .side-sun {
+            position: absolute;
+            z-index: 2;
+            top: 128px;
+            left: 50%;
+            width: 48px;
+            height: 48px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: rgba(245,211,113,0.22);
+            box-shadow: 0 0 35px rgba(245,211,113,0.16);
+        }
+
+        .side-birds {
+            position: absolute;
+            z-index: 3;
+            top: 155px;
+            left: 18px;
+            color: rgba(218,230,202,0.75);
+            font-size: 16px;
+            letter-spacing: 18px;
+        }
+
+        /* Right panel variation */
+        .right .side-wallpaper {
+            background:
+                radial-gradient(circle at 50% 20%,
+                    rgba(212,184,105,0.20) 0 10%,
+                    transparent 31%),
+                linear-gradient(180deg,
+                    rgba(229,218,177,0.09) 0%,
+                    rgba(80,120,89,0.12) 55%,
+                    rgba(24,57,34,0.31) 100%);
+        }
+
+        /* Keep the real lesson completely above decorations */
+        .site-header,
+        .lesson-container,
+        .lesson-section,
+        .lesson-header,
+        footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hide side art where there is not enough room */
+        @media (max-width: 1250px) {
+            .lesson-side-decoration {
+                opacity: 0.32;
+                width: 135px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .lesson-side-decoration {
+                display: none;
+            }
+        }
+
     </style>
 
 </head>
 
 
 <body>
+
+    <!-- =====================================================
+         RELAXING SIDE WALLPAPER
+         Original CSS artwork - no external image required
+         ===================================================== -->
+
+    <aside class="lesson-side-decoration left" aria-hidden="true">
+        <div class="side-wallpaper"></div>
+        <div class="side-sun"></div>
+        <div class="side-birds">⌁ ⌁</div>
+
+        <div class="side-motivation">
+            <span class="big-word">Believe</span>
+            <span class="small-line">in yourself</span>
+            <span class="small-line">and keep going.</span>
+            <div class="side-heart">♡</div>
+        </div>
+
+        <div class="side-books"></div>
+        <div class="side-plant">🌱</div>
+    </aside>
+
+    <aside class="lesson-side-decoration right" aria-hidden="true">
+        <div class="side-wallpaper"></div>
+        <div class="side-sun"></div>
+        <div class="side-birds">⌁ ⌁</div>
+
+        <div class="side-motivation">
+            <span class="big-word">Stay</span>
+            <span class="small-line">focused</span>
+            <span class="small-line">and never give up.</span>
+            <div class="side-heart">✦</div>
+        </div>
+
+        <div class="side-books"> </div>
+        <div class="side-plant">🌿</div>
+    </aside>
+
 
 
     <!-- =====================================================
