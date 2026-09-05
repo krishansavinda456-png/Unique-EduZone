@@ -547,13 +547,193 @@
 
         }
 
-    </style>
+    
+/* ===== LESSON 3 STYLE LANGUAGE SWITCHER ===== */
+.language-switcher{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:18px auto 0;
+  padding:10px;
+}
+.language-switcher button{
+  border:1px solid #d4af37;
+  background:#151515;
+  color:#fff;
+  padding:9px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:700;
+  transition:.25s ease;
+}
+.language-switcher button:hover,
+.language-switcher button.active{
+  background:#d4af37;
+  color:#000;
+}
+.language-switcher-label{
+  color:#d4af37;
+  font-weight:700;
+}
+.google-translate-hidden{display:none!important;}
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon,
+.goog-tooltip,
+.goog-te-balloon-frame{display:none!important;}
+body{top:0!important;}
+.goog-text-highlight{
+  background:none!important;
+  box-shadow:none!important;
+}
+@media(max-width:650px){
+  .language-switcher{gap:6px;padding:8px;}
+  .language-switcher button{padding:8px 12px;font-size:13px;}
+}
+
+/* ===== LESSON 3 STYLE LESSON HEADER ===== */
+.lesson-header{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:50px 30px 45px;
+  margin-bottom:30px;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(212,175,55,.16),transparent 42%),
+    linear-gradient(145deg,#171717,#090909);
+  border:1px solid #d4af37;
+  box-shadow:0 14px 45px rgba(0,0,0,.45),inset 0 0 35px rgba(212,175,55,.035);
+}
+.lesson-header::before{
+  content:"";
+  position:absolute;
+  width:280px;height:280px;
+  left:50%;top:-185px;
+  transform:translateX(-50%);
+  border:1px solid rgba(212,175,55,.16);
+  border-radius:50%;
+  pointer-events:none;
+}
+.lesson-header::after{
+  content:"";
+  position:absolute;
+  width:430px;height:430px;
+  left:50%;top:-260px;
+  transform:translateX(-50%);
+  border:1px solid rgba(212,175,55,.07);
+  border-radius:50%;
+  pointer-events:none;
+}
+.lesson-header-badge{
+  position:relative;
+  z-index:1;
+  display:inline-block;
+  color:#d4af37;
+  border:1px solid rgba(212,175,55,.5);
+  background:rgba(212,175,55,.07);
+  border-radius:999px;
+  padding:7px 15px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+.lesson-header-icon{
+  position:relative;
+  z-index:1;
+  font-size:46px;
+  line-height:1;
+  margin-bottom:13px;
+}
+.lesson-header h1{
+  position:relative;
+  z-index:1;
+  margin:0;
+  color:#fff;
+  font-size:34px;
+  font-weight:800;
+}
+.lesson-header h2{
+  position:relative;
+  z-index:1;
+  margin:8px 0 0;
+  color:#d4af37;
+  font-size:27px;
+  font-weight:800;
+}
+.lesson-header-divider{
+  position:relative;
+  z-index:1;
+  width:80px;
+  height:2px;
+  margin:18px auto;
+  background:#d4af37;
+  border-radius:2px;
+}
+.lesson-header p{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto;
+  color:#ddd;
+  line-height:1.8;
+  font-size:15px;
+}
+.lesson-header-info{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+.lesson-info-item{
+  min-width:145px;
+  padding:11px 15px;
+  border:1px solid #333;
+  border-radius:11px;
+  background:#111;
+}
+.lesson-info-label{
+  display:block;
+  color:#999;
+  font-size:11px;
+  margin-bottom:4px;
+}
+.lesson-info-value{
+  display:block;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+}
+@media(max-width:650px){
+  .lesson-header{padding:38px 18px 32px;border-radius:17px;}
+  .lesson-header h1{font-size:27px;}
+  .lesson-header h2{font-size:22px;}
+  .lesson-header-icon{font-size:38px;}
+  .lesson-header p{font-size:14px;}
+  .lesson-info-item{min-width:125px;padding:9px 11px;}
+}
+
+</style>
 
 </head>
 
 
 <body>
 
+
+<div class="language-switcher" aria-label="Language selector">
+  <span class="language-switcher-label">Language:</span>
+  <button type="button" id="lang-si" class="active" onclick="changeLanguage('si')">සිංහල</button>
+  <button type="button" id="lang-ta" onclick="changeLanguage('ta')">தமிழ்</button>
+  <button type="button" id="lang-en" onclick="changeLanguage('en')">English</button>
+</div>
+<div id="google_translate_element" class="google-translate-hidden" aria-hidden="true"></div>
 
 <header class="site-header">
 
@@ -593,20 +773,29 @@
 
 
 <section class="lesson-header">
-
-    <div class="lesson-number">
-        LESSON 04
+  <div class="lesson-header-badge">✦ UNIQUE EDUZONE • LESSON 04</div>
+  <div class="lesson-header-icon">🧮</div>
+  <h1>11 ශ්‍රේණිය</h1>
+  <h2>ගිණුම්කරණය</h2>
+  <div class="lesson-header-divider"></div>
+  <p>
+    ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය<br>
+    ගිණුම්කරණයේ මූලික සංකල්ප, වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
+  </p>
+  <div class="lesson-header-info">
+    <div class="lesson-info-item">
+      <span class="lesson-info-label">පාඩම</span>
+      <span class="lesson-info-value">Lesson 04</span>
     </div>
-
-    <h1>
-        ගිණුම්කරණය
-    </h1>
-
-    <p>
-        ගිණුම්කරණයේ මූලික සංකල්ප, වත්කම්, වගකීම්,
-        හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
-    </p>
-
+    <div class="lesson-info-item">
+      <span class="lesson-info-label">විෂය</span>
+      <span class="lesson-info-value">Business &amp; Accounting</span>
+    </div>
+    <div class="lesson-info-item">
+      <span class="lesson-info-label">මට්ටම</span>
+      <span class="lesson-info-value">Grade 11</span>
+    </div>
+  </div>
 </section>
 
 
@@ -2980,6 +3169,63 @@ document.addEventListener(
 
 </script>
 
+
+
+<script>
+let currentLessonLanguage = "si";
+
+function setLanguageButtonState(language){
+  const buttons = {
+    si: document.getElementById("lang-si"),
+    ta: document.getElementById("lang-ta"),
+    en: document.getElementById("lang-en")
+  };
+
+  Object.keys(buttons).forEach(function(key){
+    if(buttons[key]){
+      buttons[key].classList.toggle("active", key === language);
+    }
+  });
+}
+
+function changeLanguage(language){
+  currentLessonLanguage = language;
+  setLanguageButtonState(language);
+
+  if(language === "si"){
+    const combo = document.querySelector(".goog-te-combo");
+    if(combo){
+      combo.value = "";
+      combo.dispatchEvent(new Event("change"));
+    }
+    return;
+  }
+
+  const combo = document.querySelector(".goog-te-combo");
+  if(!combo){
+    setTimeout(function(){
+      changeLanguage(language);
+    },250);
+    return;
+  }
+
+  combo.value = language;
+  combo.dispatchEvent(new Event("change"));
+}
+
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement(
+    {
+      pageLanguage:"si",
+      includedLanguages:"si,ta,en",
+      autoDisplay:false,
+      multilanguagePage:true
+    },
+    "google_translate_element"
+  );
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 
