@@ -19,28 +19,513 @@
 
     <style>
 
+        /* =========================================================
+           PAGE BACKGROUND
+        ========================================================= */
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef7f1 0%,
+                    #f7f4e9 45%,
+                    #edf5f8 100%
+                );
+        }
+
+
+        /* =========================================================
+           CODING WALLPAPER
+           No external image required
+        ========================================================= */
+
+        .learning-wallpaper {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+
+        .learning-wallpaper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 8% 35%,
+                    rgba(121, 178, 143, 0.24),
+                    transparent 24%
+                ),
+                radial-gradient(
+                    circle at 92% 65%,
+                    rgba(102, 166, 190, 0.20),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(226, 241, 230, 0.88) 0%,
+                    rgba(247, 244, 233, 0.18) 28%,
+                    rgba(255,255,255,0) 42%,
+                    rgba(255,255,255,0) 58%,
+                    rgba(247,244,233,0.18) 72%,
+                    rgba(226,239,244,0.88) 100%
+                );
+        }
+
+
+        /* Left decorative area */
+
+        .wallpaper-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24vw;
+            min-width: 220px;
+            height: 100%;
+        }
+
+
+        /* Right decorative area */
+
+        .wallpaper-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24vw;
+            min-width: 220px;
+            height: 100%;
+        }
+
+
+        /* =========================================================
+           LEAF DECORATIONS
+        ========================================================= */
+
+        .leaf {
+            position: absolute;
+            width: 85px;
+            height: 42px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #78a987,
+                    #b8d5ae
+                );
+
+            border-radius: 100% 0 100% 0;
+
+            opacity: 0.58;
+            transform: rotate(-25deg);
+        }
+
+
+        .leaf::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 70px;
+            background: rgba(75, 115, 79, 0.45);
+            left: 42px;
+            top: -12px;
+            transform: rotate(42deg);
+        }
+
+
+        .leaf-1 {
+            left: -22px;
+            top: 17%;
+            transform: rotate(20deg);
+        }
+
+        .leaf-2 {
+            left: 65px;
+            top: 11%;
+            transform: rotate(-30deg) scale(.75);
+        }
+
+        .leaf-3 {
+            left: -30px;
+            bottom: 19%;
+            transform: rotate(35deg) scale(.85);
+        }
+
+        .leaf-4 {
+            right: -20px;
+            top: 20%;
+            transform: rotate(155deg);
+        }
+
+        .leaf-5 {
+            right: 60px;
+            top: 12%;
+            transform: rotate(125deg) scale(.75);
+        }
+
+        .leaf-6 {
+            right: -25px;
+            bottom: 18%;
+            transform: rotate(150deg) scale(.9);
+        }
+
+
+        /* =========================================================
+           FLOATING LIGHT
+        ========================================================= */
+
+        .light-orb {
+            position: absolute;
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.95),
+                    rgba(255,255,255,.05) 70%
+                );
+
+            filter: blur(1px);
+        }
+
+        .orb-1 {
+            width: 90px;
+            height: 90px;
+            left: 5%;
+            top: 23%;
+        }
+
+        .orb-2 {
+            width: 55px;
+            height: 55px;
+            left: 16%;
+            top: 67%;
+        }
+
+        .orb-3 {
+            width: 80px;
+            height: 80px;
+            right: 5%;
+            top: 31%;
+        }
+
+        .orb-4 {
+            width: 45px;
+            height: 45px;
+            right: 16%;
+            bottom: 24%;
+        }
+
+
+        /* =========================================================
+           MOTIVATIONAL WORDS
+        ========================================================= */
+
+        .motivation {
+            position: absolute;
+
+            font-family:
+                Arial,
+                "Noto Sans",
+                sans-serif;
+
+            font-weight: 900;
+            letter-spacing: 5px;
+
+            color: rgba(45, 93, 67, 0.20);
+
+            user-select: none;
+            white-space: nowrap;
+
+            text-shadow:
+                1px 1px 0 rgba(255,255,255,.55);
+        }
+
+
+        .left-learn {
+            left: 20px;
+            top: 28%;
+            font-size: clamp(25px, 3vw, 52px);
+            transform: rotate(-90deg);
+            transform-origin: left top;
+        }
+
+
+        .left-focus {
+            left: 30px;
+            top: 51%;
+            font-size: clamp(19px, 2vw, 34px);
+            transform: rotate(-90deg);
+            transform-origin: left top;
+        }
+
+
+        .left-grow {
+            left: 22px;
+            bottom: 12%;
+            font-size: clamp(20px, 2.2vw, 38px);
+            transform: rotate(-90deg);
+            transform-origin: left top;
+        }
+
+
+        .right-dream {
+            right: 20px;
+            top: 27%;
+            font-size: clamp(22px, 2.7vw, 46px);
+            transform: rotate(90deg);
+            transform-origin: right top;
+            color: rgba(45, 90, 108, 0.21);
+        }
+
+
+        .right-believe {
+            right: 28px;
+            top: 51%;
+            font-size: clamp(18px, 2vw, 34px);
+            transform: rotate(90deg);
+            transform-origin: right top;
+            color: rgba(45, 90, 108, 0.20);
+        }
+
+
+        .right-achieve {
+            right: 18px;
+            bottom: 12%;
+            font-size: clamp(19px, 2.2vw, 38px);
+            transform: rotate(90deg);
+            transform-origin: right top;
+            color: rgba(45, 90, 108, 0.20);
+        }
+
+
+        /* =========================================================
+           DECORATIVE BOOKS
+        ========================================================= */
+
+        .books {
+            position: absolute;
+            left: 7%;
+            bottom: 7%;
+
+            width: 150px;
+            height: 115px;
+
+            transform: rotate(-4deg);
+        }
+
+
+        .book {
+            position: absolute;
+
+            width: 135px;
+            height: 24px;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 7px 14px rgba(0,0,0,.10);
+        }
+
+
+        .book-1 {
+            bottom: 0;
+            left: 8px;
+            background: #d9b77d;
+            transform: rotate(-4deg);
+        }
+
+
+        .book-2 {
+            bottom: 25px;
+            left: 0;
+            background: #86b5a0;
+            transform: rotate(5deg);
+        }
+
+
+        .book-3 {
+            bottom: 50px;
+            left: 12px;
+            background: #9dbbd0;
+            transform: rotate(-3deg);
+        }
+
+
+        .book-4 {
+            bottom: 74px;
+            left: 2px;
+            background: #e8d9b8;
+            transform: rotate(5deg);
+        }
+
+
+        /* =========================================================
+           NOTEBOOK ON RIGHT
+        ========================================================= */
+
+        .notebook {
+            position: absolute;
+            right: 7%;
+            bottom: 8%;
+
+            width: 140px;
+            height: 105px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffdf4,
+                    #e9f1ec
+                );
+
+            border-radius: 7px;
+
+            transform: rotate(8deg);
+
+            box-shadow:
+                0 12px 25px rgba(0,0,0,.12);
+
+            border-left: 7px solid #83a994;
+        }
+
+
+        .notebook::before {
+            content: "✦  ✦  ✦";
+
+            position: absolute;
+
+            top: 20px;
+            left: 22px;
+
+            font-size: 13px;
+
+            color: #7ca18b;
+            letter-spacing: 7px;
+        }
+
+
+        .notebook::after {
+            content: "LEARN";
+
+            position: absolute;
+
+            left: 24px;
+            bottom: 20px;
+
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 3px;
+
+            color: #71927e;
+        }
+
+
+        /* =========================================================
+           SIMPLE DESK LAMP
+        ========================================================= */
+
+        .lamp {
+            position: absolute;
+            left: 12%;
+            top: 12%;
+
+            width: 95px;
+            height: 110px;
+        }
+
+
+        .lamp-head {
+            position: absolute;
+
+            width: 65px;
+            height: 32px;
+
+            background: #d6c89c;
+
+            border-radius:
+                50% 50% 35% 35%;
+
+            left: 15px;
+            top: 0;
+
+            transform: rotate(-12deg);
+
+            box-shadow:
+                0 8px 20px rgba(210,180,90,.22);
+        }
+
+
+        .lamp-neck {
+            position: absolute;
+
+            width: 7px;
+            height: 70px;
+
+            background: #9b9a87;
+
+            left: 48px;
+            top: 27px;
+
+            transform: rotate(12deg);
+        }
+
+
+        .lamp-base {
+            position: absolute;
+
+            width: 52px;
+            height: 9px;
+
+            background: #88897b;
+
+            border-radius: 20px;
+
+            left: 25px;
+            bottom: 0;
+        }
+
+
+        /* =========================================================
+           MAIN CONTENT
+        ========================================================= */
+
         .lessons-page {
+            position: relative;
+            z-index: 2;
+
             max-width: 1000px;
             margin: auto;
             padding: 30px 20px;
         }
+
 
         .lessons-header {
             text-align: center;
             margin-bottom: 30px;
         }
 
+
         .lessons-header h1 {
             margin-bottom: 10px;
         }
 
+
         .overall-progress-card {
-            background: #1b1b1b;
+            background: rgba(27,27,27,.96);
             border: 1px solid #333;
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 30px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.12);
         }
+
 
         .overall-progress-top {
             display: flex;
@@ -48,6 +533,7 @@
             align-items: center;
             margin-bottom: 10px;
         }
+
 
         .overall-progress-bar {
             width: 100%;
@@ -57,6 +543,7 @@
             overflow: hidden;
         }
 
+
         .overall-progress-fill {
             height: 100%;
             width: 0%;
@@ -64,13 +551,18 @@
             transition: width 0.4s ease;
         }
 
+
         .lesson-card {
-            background: #1b1b1b;
+            background: rgba(27,27,27,.96);
             border: 1px solid #333;
             border-radius: 15px;
             padding: 22px;
             margin-bottom: 20px;
+
+            box-shadow:
+                0 10px 28px rgba(0,0,0,.10);
         }
+
 
         .lesson-card-header {
             display: flex;
@@ -79,20 +571,24 @@
             gap: 15px;
         }
 
+
         .lesson-number {
             color: gold;
             font-weight: bold;
         }
+
 
         .lesson-status {
             font-size: 14px;
             font-weight: bold;
         }
 
+
         .lesson-description {
             margin: 15px 0;
             line-height: 1.7;
         }
+
 
         .lesson-progress-container {
             width: 100%;
@@ -103,6 +599,7 @@
             margin: 15px 0 8px;
         }
 
+
         .lesson-progress-bar {
             height: 100%;
             width: 0%;
@@ -110,13 +607,16 @@
             transition: width 0.4s ease;
         }
 
+
         .lesson-progress-text {
             font-size: 13px;
         }
 
+
         .lesson-actions {
             margin-top: 18px;
         }
+
 
         .lesson-button {
             display: inline-block;
@@ -129,19 +629,23 @@
             transition: 0.2s;
         }
 
+
         .lesson-button:hover {
             transform: translateY(-2px);
         }
+
 
         .lesson-button.completed {
             background: #555;
             color: #fff;
         }
 
+
         .dashboard-link {
             text-align: center;
             margin-top: 30px;
         }
+
 
         .dashboard-link a {
             color: gold;
@@ -149,312 +653,78 @@
         }
 
 
-        /* =========================================
-           UNIQUE EDUZONE
-           RELAXING SIDE WALLPAPER
-           ========================================= */
-
-        body {
+        .site-header,
+        .site-footer {
             position: relative;
-            overflow-x: hidden;
+            z-index: 3;
         }
 
 
-        /* Left and Right Background Areas */
-
-        body::before,
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0;
-            bottom: 0;
-
-            width: 22vw;
-            max-width: 330px;
-            min-width: 180px;
-
-            z-index: -1;
-            pointer-events: none;
-
-            background:
-                radial-gradient(
-                    circle at 50% 25%,
-                    rgba(255, 215, 0, 0.12),
-                    transparent 35%
-                ),
-
-                radial-gradient(
-                    circle at 30% 70%,
-                    rgba(80, 140, 255, 0.08),
-                    transparent 40%
-                ),
-
-                linear-gradient(
-                    160deg,
-                    #090909,
-                    #101014 45%,
-                    #080808
-                );
-        }
-
-
-        /* LEFT SIDE */
-
-        body::before {
-            left: 0;
-
-            border-right:
-                1px solid
-                rgba(255, 215, 0, 0.08);
-
-            box-shadow:
-                inset -30px 0 50px
-                rgba(0, 0, 0, 0.7);
-
-            clip-path:
-                polygon(
-                    0 0,
-                    100% 0,
-                    88% 15%,
-                    96% 30%,
-                    86% 45%,
-                    95% 60%,
-                    85% 75%,
-                    96% 90%,
-                    100% 100%,
-                    0 100%
-                );
-        }
-
-
-        /* RIGHT SIDE */
-
-        body::after {
-            right: 0;
-
-            border-left:
-                1px solid
-                rgba(255, 215, 0, 0.08);
-
-            box-shadow:
-                inset 30px 0 50px
-                rgba(0, 0, 0, 0.7);
-
-            clip-path:
-                polygon(
-                    0 0,
-                    100% 0,
-                    100% 100%,
-                    0 100%,
-                    15% 90%,
-                    4% 75%,
-                    14% 60%,
-                    5% 45%,
-                    14% 30%,
-                    4% 15%
-                );
-        }
-
-
-        /* =========================================
-           MOTIVATIONAL WORDS
-           ========================================= */
-
-        /* LEFT MOTIVATIONAL WORDS */
-
-        .lessons-page::before {
-            content:
-                "LEARN\A"
-                "FOCUS\A"
-                "GROW";
-
-            white-space: pre;
-
-            position: fixed;
-
-            left: 2.5vw;
-            top: 50%;
-
-            transform:
-                translateY(-50%);
-
-            font-size:
-                clamp(
-                    18px,
-                    2vw,
-                    30px
-                );
-
-            line-height: 3.2;
-
-            font-weight: 900;
-
-            letter-spacing: 4px;
-
-            color:
-                rgba(
-                    255,
-                    215,
-                    0,
-                    0.16
-                );
-
-            text-shadow:
-                0 0 15px
-                rgba(
-                    255,
-                    215,
-                    0,
-                    0.15
-                );
-
-            pointer-events: none;
-
-            z-index: -1;
-        }
-
-
-        /* RIGHT MOTIVATIONAL WORDS */
-
-        .lessons-page::after {
-            content:
-                "BELIEVE\A"
-                "ACHIEVE\A"
-                "SUCCESS";
-
-            white-space: pre;
-
-            position: fixed;
-
-            right: 2vw;
-            top: 50%;
-
-            transform:
-                translateY(-50%);
-
-            font-size:
-                clamp(
-                    16px,
-                    1.8vw,
-                    28px
-                );
-
-            line-height: 3.2;
-
-            font-weight: 900;
-
-            letter-spacing: 3px;
-
-            color:
-                rgba(
-                    255,
-                    215,
-                    0,
-                    0.16
-                );
-
-            text-shadow:
-                0 0 15px
-                rgba(
-                    255,
-                    215,
-                    0,
-                    0.15
-                );
-
-            pointer-events: none;
-
-            z-index: -1;
-        }
-
-
-        /* =========================================
-           MAIN CONTENT
-           ========================================= */
-
-        .lessons-page {
-            position: relative;
-            z-index: 1;
-        }
-
-
-        /* =========================================
-           GLASS EFFECT
-           ========================================= */
-
-        .overall-progress-card,
-        .lesson-card {
-
-            backdrop-filter:
-                blur(5px);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(
-                        27,
-                        27,
-                        27,
-                        0.96
-                    ),
-                    rgba(
-                        15,
-                        15,
-                        15,
-                        0.94
-                    )
-                );
-
-            box-shadow:
-                0 10px 30px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.35
-                );
-        }
-
-
-        /* =========================================
+        /* =========================================================
            TABLET
-           ========================================= */
+        ========================================================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
-            body::before,
-            body::after {
-
-                width: 12vw;
-
-                min-width: 80px;
+            .wallpaper-left,
+            .wallpaper-right {
+                width: 15vw;
+                min-width: 100px;
             }
 
-            .lessons-page::before,
-            .lessons-page::after {
+            .motivation {
+                letter-spacing: 3px;
+            }
 
+            .books,
+            .notebook,
+            .lamp {
+                transform: scale(.75);
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .learning-wallpaper {
+                opacity: .55;
+            }
+
+            .wallpaper-left,
+            .wallpaper-right {
+                width: 10vw;
+                min-width: 45px;
+            }
+
+            .books,
+            .notebook,
+            .lamp,
+            .leaf,
+            .light-orb {
+                opacity: .45;
+            }
+
+            .motivation {
                 display: none;
             }
 
+            .lessons-page {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
         }
 
-
-        /* =========================================
-           MOBILE
-           ========================================= */
 
         @media (max-width: 600px) {
 
-            body::before,
-            body::after {
-
-                display: none;
-            }
-
             .lesson-card-header {
-
                 flex-direction: column;
-
                 align-items: flex-start;
             }
 
@@ -468,6 +738,93 @@
 <body>
 
 
+<!-- =========================================================
+     CODING-BASED WALLPAPER
+     ========================================================= -->
+
+<div class="learning-wallpaper" aria-hidden="true">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="wallpaper-left">
+
+        <div class="leaf leaf-1"></div>
+        <div class="leaf leaf-2"></div>
+        <div class="leaf leaf-3"></div>
+
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-2"></div>
+
+
+        <div class="lamp">
+
+            <div class="lamp-head"></div>
+            <div class="lamp-neck"></div>
+            <div class="lamp-base"></div>
+
+        </div>
+
+
+        <div class="books">
+
+            <div class="book book-1"></div>
+            <div class="book book-2"></div>
+            <div class="book book-3"></div>
+            <div class="book book-4"></div>
+
+        </div>
+
+
+        <div class="motivation left-learn">
+            LEARN
+        </div>
+
+        <div class="motivation left-focus">
+            FOCUS
+        </div>
+
+        <div class="motivation left-grow">
+            GROW
+        </div>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="wallpaper-right">
+
+        <div class="leaf leaf-4"></div>
+        <div class="leaf leaf-5"></div>
+        <div class="leaf leaf-6"></div>
+
+        <div class="light-orb orb-3"></div>
+        <div class="light-orb orb-4"></div>
+
+
+        <div class="notebook"></div>
+
+
+        <div class="motivation right-dream">
+            DREAM
+        </div>
+
+        <div class="motivation right-believe">
+            BELIEVE
+        </div>
+
+        <div class="motivation right-achieve">
+            ACHIEVE
+        </div>
+
+    </div>
+
+</div>
+
+
+
 <header class="site-header">
 
     <div class="logo">
@@ -476,25 +833,15 @@
 
     <nav>
 
-        <a href="../index.html">
-            Home
-        </a>
+        <a href="../index.html">Home</a>
 
-        <a href="lessons.html">
-            Lessons
-        </a>
+        <a href="lessons.html">Lessons</a>
 
-        <a href="quiz.html">
-            MCQ
-        </a>
+        <a href="quiz.html">MCQ</a>
 
-        <a href="dashboard.html">
-            Dashboard
-        </a>
+        <a href="dashboard.html">Dashboard</a>
 
-        <a href="profile.html">
-            Profile
-        </a>
+        <a href="profile.html">Profile</a>
 
     </nav>
 
@@ -507,9 +854,7 @@
 
     <section class="lessons-header">
 
-        <h1>
-            📚 My Lessons
-        </h1>
+        <h1>📚 My Lessons</h1>
 
         <p>
             Continue your learning journey with Unique EduZone.
@@ -552,10 +897,7 @@
 
     <!-- LESSON 1 -->
 
-    <article
-        class="lesson-card"
-        id="lesson1Card"
-    >
+    <article class="lesson-card" id="lesson1Card">
 
         <div class="lesson-card-header">
 
@@ -618,10 +960,7 @@
 
     <!-- LESSON 2 -->
 
-    <article
-        class="lesson-card"
-        id="lesson2Card"
-    >
+    <article class="lesson-card" id="lesson2Card">
 
         <div class="lesson-card-header">
 
@@ -684,10 +1023,7 @@
 
     <!-- LESSON 3 -->
 
-    <article
-        class="lesson-card"
-        id="lesson3Card"
-    >
+    <article class="lesson-card" id="lesson3Card">
 
         <div class="lesson-card-header">
 
@@ -751,10 +1087,7 @@
 
     <!-- LESSON 4 -->
 
-    <article
-        class="lesson-card"
-        id="lesson4Card"
-    >
+    <article class="lesson-card" id="lesson4Card">
 
         <div class="lesson-card-header">
 
@@ -818,10 +1151,7 @@
 
     <!-- LESSON 5 -->
 
-    <article
-        class="lesson-card"
-        id="lesson5Card"
-    >
+    <article class="lesson-card" id="lesson5Card">
 
         <div class="lesson-card-header">
 
@@ -886,10 +1216,7 @@
 
     <!-- LESSON 6 -->
 
-    <article
-        class="lesson-card"
-        id="lesson6Card"
-    >
+    <article class="lesson-card" id="lesson6Card">
 
         <div class="lesson-card-header">
 
@@ -952,10 +1279,7 @@
 
     <!-- LESSON 7 -->
 
-    <article
-        class="lesson-card"
-        id="lesson7Card"
-    >
+    <article class="lesson-card" id="lesson7Card">
 
         <div class="lesson-card-header">
 
@@ -1019,10 +1343,7 @@
 
     <!-- LESSON 8 -->
 
-    <article
-        class="lesson-card"
-        id="lesson8Card"
-    >
+    <article class="lesson-card" id="lesson8Card">
 
         <div class="lesson-card-header">
 
@@ -1085,10 +1406,7 @@
 
     <!-- LESSON 9 -->
 
-    <article
-        class="lesson-card"
-        id="lesson9Card"
-    >
+    <article class="lesson-card" id="lesson9Card">
 
         <div class="lesson-card-header">
 
@@ -1152,10 +1470,7 @@
 
     <!-- LESSON 10 -->
 
-    <article
-        class="lesson-card"
-        id="lesson10Card"
-    >
+    <article class="lesson-card" id="lesson10Card">
 
         <div class="lesson-card-header">
 
