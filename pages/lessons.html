@@ -10,7 +10,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Lessons | Unique EduZone</title>
+    <title>
+        Lessons | Unique EduZone
+    </title>
 
     <link
         rel="stylesheet"
@@ -19,140 +21,1077 @@
 
     <style>
 
-        .lessons-page {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px 20px;
+        /* =====================================================
+           UNIQUE EDUZONE
+           LESSONS PAGE
+           DARK / GOLD / WHITE THEME
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
         }
+
+
+        html {
+            min-height: 100%;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background: #080808 !important;
+
+            color: #ffffff !important;
+
+            position: relative;
+
+            overflow-x: hidden;
+
+            font-family:
+                Arial,
+                "Noto Sans Sinhala",
+                "Noto Sans Tamil",
+                sans-serif;
+        }
+
+
+
+        /* =====================================================
+           CSS ART SIDE WALLPAPER
+           ORIGINAL CSS ART
+           NO EXTERNAL IMAGE REQUIRED
+           ===================================================== */
+
+        .lesson-side-decoration {
+
+            position: fixed;
+
+            top: 145px;
+
+            width: 175px;
+
+            height: 560px;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            opacity: 0.88;
+        }
+
+
+        .lesson-side-decoration.left {
+
+            left: 8px;
+        }
+
+
+        .lesson-side-decoration.right {
+
+            right: 8px;
+        }
+
+
+
+        /* =====================================================
+           SOFT RELAXING LANDSCAPE
+           ===================================================== */
+
+        .side-wallpaper {
+
+            position: absolute;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255,224,145,0.20) 0 10%,
+                    transparent 31%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    rgba(239,226,175,0.10) 0%,
+                    rgba(101,139,91,0.12) 55%,
+                    rgba(24,57,34,0.30) 100%
+                );
+        }
+
+
+
+        /* =====================================================
+           DISTANT HILLS
+           ===================================================== */
+
+        .side-wallpaper::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -25%;
+
+            right: -25%;
+
+            bottom: 80px;
+
+            height: 230px;
+
+            background:
+
+                radial-gradient(
+                    ellipse at 25% 100%,
+                    rgba(89,128,77,0.50) 0 32%,
+                    transparent 33%
+                ),
+
+                radial-gradient(
+                    ellipse at 72% 100%,
+                    rgba(65,104,67,0.48) 0 36%,
+                    transparent 37%
+                );
+
+            filter: blur(1px);
+        }
+
+
+
+        /* =====================================================
+           FOREGROUND GROUND
+           ===================================================== */
+
+        .side-wallpaper::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: -20%;
+
+            right: -20%;
+
+            bottom: 0;
+
+            height: 125px;
+
+            background:
+
+                radial-gradient(
+                    ellipse at 20% 100%,
+                    rgba(34,75,42,0.72) 0 35%,
+                    transparent 36%
+                ),
+
+                radial-gradient(
+                    ellipse at 78% 100%,
+                    rgba(45,87,49,0.68) 0 42%,
+                    transparent 43%
+                );
+        }
+
+
+
+        /* =====================================================
+           MOTIVATIONAL TEXT
+           ===================================================== */
+
+        .side-motivation {
+
+            position: absolute;
+
+            top: 28px;
+
+            left: 10px;
+
+            right: 10px;
+
+            z-index: 4;
+
+            text-align: center;
+
+            color: #dce9c9;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 15px;
+
+            line-height: 1.45;
+
+            font-weight: 700;
+
+            text-shadow:
+                0 2px 10px rgba(0,0,0,0.80);
+        }
+
+
+        .side-motivation .big-word {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: #f1cf67;
+
+            font-size: 31px;
+
+            line-height: 1.05;
+
+            font-style: italic;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .side-motivation .small-line {
+
+            display: block;
+        }
+
+
+        .side-heart {
+
+            margin-top: 9px;
+
+            font-size: 24px;
+
+            color: #f1cf67;
+        }
+
+
+
+        /* =====================================================
+           CSS BOOKS
+           ===================================================== */
+
+        .side-books {
+
+            position: absolute;
+
+            z-index: 5;
+
+            left: 16px;
+
+            bottom: 26px;
+
+            width: 143px;
+
+            height: 92px;
+        }
+
+
+        .side-books::before {
+
+            content: "📚";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            font-size: 70px;
+
+            filter:
+                drop-shadow(
+                    0 7px 5px rgba(0,0,0,0.45)
+                );
+        }
+
+
+
+        /* =====================================================
+           PLANT
+           ===================================================== */
+
+        .side-plant {
+
+            position: absolute;
+
+            z-index: 5;
+
+            right: 4px;
+
+            bottom: 22px;
+
+            font-size: 58px;
+
+            filter:
+                drop-shadow(
+                    0 7px 5px rgba(0,0,0,0.45)
+                );
+        }
+
+
+
+        /* =====================================================
+           SUN
+           ===================================================== */
+
+        .side-sun {
+
+            position: absolute;
+
+            z-index: 2;
+
+            top: 128px;
+
+            left: 50%;
+
+            width: 48px;
+
+            height: 48px;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                rgba(245,211,113,0.22);
+
+            box-shadow:
+                0 0 35px
+                rgba(245,211,113,0.16);
+        }
+
+
+
+        /* =====================================================
+           BIRDS
+           ===================================================== */
+
+        .side-birds {
+
+            position: absolute;
+
+            z-index: 3;
+
+            top: 155px;
+
+            left: 18px;
+
+            color:
+                rgba(218,230,202,0.75);
+
+            font-size: 16px;
+
+            letter-spacing: 18px;
+        }
+
+
+
+        /* =====================================================
+           RIGHT SIDE VARIATION
+           ===================================================== */
+
+        .right .side-wallpaper {
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(212,184,105,0.20) 0 10%,
+                    transparent 31%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    rgba(229,218,177,0.09) 0%,
+                    rgba(80,120,89,0.12) 55%,
+                    rgba(24,57,34,0.31) 100%
+                );
+        }
+
+
+
+        /* =====================================================
+           MAIN CONTENT
+           ===================================================== */
+
+        .lessons-page {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding:
+                30px 20px 50px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+
+        /* =====================================================
+           PAGE HEADER
+           ===================================================== */
 
         .lessons-header {
+
+            position: relative;
+
+            overflow: hidden;
+
             text-align: center;
+
             margin-bottom: 30px;
+
+            padding:
+                35px 25px;
+
+            border-radius: 18px;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(212,175,55,0.16),
+                    transparent 45%
+                ),
+
+                linear-gradient(
+                    145deg,
+                    #1b1b1b 0%,
+                    #111111 55%,
+                    #090909 100%
+                );
+
+            border:
+                1px solid
+                rgba(212,175,55,0.65);
+
+            box-shadow:
+
+                0 10px 35px
+                rgba(0,0,0,0.55),
+
+                0 0 35px
+                rgba(212,175,55,0.08);
         }
+
+
+        .lessons-header::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: -90px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 280px;
+
+            height: 160px;
+
+            background:
+                rgba(212,175,55,0.10);
+
+            filter:
+                blur(45px);
+
+            border-radius: 50%;
+        }
+
 
         .lessons-header h1 {
-            margin-bottom: 10px;
+
+            position: relative;
+
+            z-index: 2;
+
+            margin:
+                0 0 10px;
+
+            color:
+                #d4af37 !important;
+
+            font-size: 32px;
+
+            font-weight: 900;
         }
+
+
+        .lessons-header p {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin: 0;
+
+            color:
+                #d2d2d2 !important;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+
+        /* =====================================================
+           OVERALL PROGRESS CARD
+           ===================================================== */
 
         .overall-progress-card {
-            background: #1b1b1b;
-            border: 1px solid #333;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #1b1b1b,
+                    #111111
+                );
+
+            border:
+                1px solid #444;
+
             border-radius: 15px;
+
             padding: 20px;
+
             margin-bottom: 30px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,0.35);
         }
 
+
         .overall-progress-top {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 10px;
         }
 
+
+        .overall-progress-top strong {
+
+            color:
+                #ffffff;
+        }
+
+
+        .overall-progress-top strong:last-child {
+
+            color:
+                #d4af37;
+        }
+
+
         .overall-progress-bar {
+
             width: 100%;
+
             height: 12px;
-            background: #333;
+
+            background:
+                #333;
+
             border-radius: 10px;
+
             overflow: hidden;
         }
 
+
         .overall-progress-fill {
+
             height: 100%;
+
             width: 0%;
-            background: gold;
-            transition: width 0.4s ease;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #a98518,
+                    #d4af37,
+                    #f1cf67
+                );
+
+            transition:
+                width 0.4s ease;
         }
+
+
+        #overallLessonText {
+
+            color:
+                #cccccc;
+
+            font-size: 14px;
+
+            margin-bottom: 0;
+        }
+
+
+
+        /* =====================================================
+           LESSON CARD
+           ===================================================== */
 
         .lesson-card {
-            background: #1b1b1b;
-            border: 1px solid #333;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #1b1b1b,
+                    #111111
+                );
+
+            border:
+                1px solid #333;
+
             border-radius: 15px;
+
             padding: 22px;
+
             margin-bottom: 20px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(0,0,0,0.35);
+
+            transition:
+                0.25s ease;
         }
 
+
+        .lesson-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 4px;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    #d4af37,
+                    #806900
+                );
+        }
+
+
+        .lesson-card:hover {
+
+            border-color:
+                #806900;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 9px 25px
+                rgba(0,0,0,0.45);
+        }
+
+
+
+        /* =====================================================
+           LESSON CARD HEADER
+           ===================================================== */
+
         .lesson-card-header {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             gap: 15px;
         }
 
+
         .lesson-number {
-            color: gold;
+
+            color:
+                #d4af37;
+
             font-weight: bold;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 5px;
         }
+
+
+        .lesson-card h2 {
+
+            margin: 0;
+
+            color:
+                #ffffff;
+
+            font-size: 22px;
+
+            line-height: 1.5;
+        }
+
 
         .lesson-status {
+
             font-size: 14px;
+
             font-weight: bold;
+
+            color:
+                #aaaaaa;
+
+            white-space: nowrap;
         }
+
+
+
+        /* =====================================================
+           DESCRIPTION
+           ===================================================== */
 
         .lesson-description {
-            margin: 15px 0;
-            line-height: 1.7;
+
+            margin:
+                15px 0;
+
+            line-height: 1.8;
+
+            color:
+                #dddddd;
+
+            font-size: 15px;
         }
+
+
+
+        /* =====================================================
+           LESSON PROGRESS
+           ===================================================== */
 
         .lesson-progress-container {
+
             width: 100%;
+
             height: 8px;
-            background: #333;
+
+            background:
+                #333;
+
             border-radius: 10px;
+
             overflow: hidden;
-            margin: 15px 0 8px;
+
+            margin:
+                15px 0 8px;
         }
+
 
         .lesson-progress-bar {
+
             height: 100%;
+
             width: 0%;
-            background: gold;
-            transition: width 0.4s ease;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #a98518,
+                    #d4af37
+                );
+
+            transition:
+                width 0.4s ease;
         }
+
 
         .lesson-progress-text {
+
             font-size: 13px;
+
+            color:
+                #aaaaaa;
         }
 
+
+
+        /* =====================================================
+           LESSON ACTIONS
+           ===================================================== */
+
         .lesson-actions {
+
             margin-top: 18px;
         }
 
+
         .lesson-button {
+
             display: inline-block;
-            padding: 10px 18px;
+
+            padding:
+                10px 18px;
+
             border-radius: 8px;
+
             text-decoration: none;
+
             font-weight: bold;
-            background: gold;
-            color: #000;
-            transition: 0.2s;
+
+            background:
+                #d4af37;
+
+            color:
+                #000;
+
+            transition:
+                0.2s ease;
         }
+
 
         .lesson-button:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
+
+            background:
+                #ffffff;
+
+            color:
+                #000;
         }
+
 
         .lesson-button.completed {
-            background: #555;
-            color: #fff;
+
+            background:
+                #555;
+
+            color:
+                #fff;
         }
+
+
+
+        /* =====================================================
+           DASHBOARD LINK
+           ===================================================== */
 
         .dashboard-link {
+
             text-align: center;
+
             margin-top: 30px;
+
+            padding:
+                10px;
         }
 
+
         .dashboard-link a {
-            color: gold;
+
+            color:
+                #d4af37;
+
             font-weight: bold;
+
+            text-decoration: none;
+
+            transition:
+                0.2s ease;
         }
+
+
+        .dashboard-link a:hover {
+
+            color:
+                #ffffff;
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .site-footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            background:
+                #080808;
+
+            border-top:
+                1px solid #222;
+
+            text-align: center;
+
+            padding:
+                20px;
+
+            color:
+                #888;
+
+            font-size: 13px;
+        }
+
+
+
+        /* =====================================================
+           KEEP MAIN CONTENT ABOVE SIDE ART
+           ===================================================== */
+
+        .site-header,
+        .lessons-page,
+        .site-footer {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+
+        /* =====================================================
+           SIDE ART RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 1250px) {
+
+            .lesson-side-decoration {
+
+                opacity: 0.32;
+
+                width: 135px;
+            }
+
+        }
+
+
+        @media (max-width: 1000px) {
+
+            .lesson-side-decoration {
+
+                display: none;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
 
         @media (max-width: 600px) {
 
+            .lessons-page {
+
+                padding:
+                    20px 15px 40px;
+            }
+
+
+            .lessons-header {
+
+                padding:
+                    25px 18px;
+            }
+
+
+            .lessons-header h1 {
+
+                font-size: 25px;
+            }
+
+
+            .lessons-header p {
+
+                font-size: 14px;
+            }
+
+
+            .overall-progress-card {
+
+                padding:
+                    18px;
+            }
+
+
+            .lesson-card {
+
+                padding:
+                    20px;
+            }
+
+
             .lesson-card-header {
+
                 flex-direction: column;
+
                 align-items: flex-start;
+            }
+
+
+            .lesson-card h2 {
+
+                font-size: 19px;
+            }
+
+
+            .lesson-description {
+
+                font-size: 14px;
+
+                line-height: 1.8;
+            }
+
+
+            .lesson-button {
+
+                width: 100%;
+
+                text-align: center;
             }
 
         }
@@ -162,8 +1101,110 @@
 </head>
 
 
+
 <body>
 
+
+<!-- =========================================================
+     RELAXING SIDE WALLPAPER
+     ORIGINAL CSS ART
+     NO EXTERNAL IMAGE
+     ========================================================= -->
+
+
+<aside
+    class="lesson-side-decoration left"
+    aria-hidden="true"
+>
+
+    <div class="side-wallpaper"></div>
+
+    <div class="side-sun"></div>
+
+    <div class="side-birds">
+        ⌁ ⌁
+    </div>
+
+
+    <div class="side-motivation">
+
+        <span class="big-word">
+            Believe
+        </span>
+
+        <span class="small-line">
+            in yourself
+        </span>
+
+        <span class="small-line">
+            and keep going.
+        </span>
+
+        <div class="side-heart">
+            ♡
+        </div>
+
+    </div>
+
+
+    <div class="side-books"></div>
+
+    <div class="side-plant">
+        🌱
+    </div>
+
+</aside>
+
+
+
+<aside
+    class="lesson-side-decoration right"
+    aria-hidden="true"
+>
+
+    <div class="side-wallpaper"></div>
+
+    <div class="side-sun"></div>
+
+    <div class="side-birds">
+        ⌁ ⌁
+    </div>
+
+
+    <div class="side-motivation">
+
+        <span class="big-word">
+            Stay
+        </span>
+
+        <span class="small-line">
+            focused
+        </span>
+
+        <span class="small-line">
+            and never give up.
+        </span>
+
+        <div class="side-heart">
+            ✦
+        </div>
+
+    </div>
+
+
+    <div class="side-books"></div>
+
+    <div class="side-plant">
+        🌿
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
 <header class="site-header">
 
@@ -171,17 +1212,28 @@
         Unique EduZone
     </div>
 
+
     <nav>
 
-        <a href="../index.html">Home</a>
+        <a href="../index.html">
+            Home
+        </a>
 
-        <a href="lessons.html">Lessons</a>
+        <a href="lessons.html">
+            Lessons
+        </a>
 
-        <a href="quiz.html">MCQ</a>
+        <a href="quiz.html">
+            MCQ
+        </a>
 
-        <a href="dashboard.html">Dashboard</a>
+        <a href="dashboard.html">
+            Dashboard
+        </a>
 
-        <a href="profile.html">Profile</a>
+        <a href="profile.html">
+            Profile
+        </a>
 
     </nav>
 
@@ -189,12 +1241,22 @@
 
 
 
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
 <main class="lessons-page">
 
 
+    <!-- =====================================================
+         LESSONS HEADER
+         ===================================================== -->
+
     <section class="lessons-header">
 
-        <h1>📚 My Lessons</h1>
+        <h1>
+            📚 My Lessons
+        </h1>
 
         <p>
             Continue your learning journey with Unique EduZone.
@@ -203,6 +1265,10 @@
     </section>
 
 
+
+    <!-- =====================================================
+         OVERALL PROGRESS
+         ===================================================== -->
 
     <section class="overall-progress-card">
 
@@ -218,6 +1284,7 @@
 
         </div>
 
+
         <div class="overall-progress-bar">
 
             <div
@@ -227,6 +1294,7 @@
 
         </div>
 
+
         <p id="overallLessonText">
             0 / 10 lessons completed
         </p>
@@ -235,9 +1303,14 @@
 
 
 
-    <!-- LESSON 1 -->
+    <!-- =====================================================
+         LESSON 1
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson1Card">
+    <article
+        class="lesson-card"
+        id="lesson1Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -253,6 +1326,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson1Status"
@@ -262,9 +1336,14 @@
 
         </div>
 
+
         <p class="lesson-description">
-            ව්‍යාපාර අධ්‍යනයේ මූලික හැඳින්වීම සහ ව්‍යාපාර අධ්‍යනය පිළිබඳ මූලික පදනම.
+
+            ව්‍යාපාර අධ්‍යනයේ මූලික හැඳින්වීම සහ
+            ව්‍යාපාර අධ්‍යනය පිළිබඳ මූලික පදනම.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -275,12 +1354,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson1ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -298,9 +1379,14 @@
 
 
 
-    <!-- LESSON 2 -->
+    <!-- =====================================================
+         LESSON 2
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson2Card">
+    <article
+        class="lesson-card"
+        id="lesson2Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -316,6 +1402,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson2Status"
@@ -325,9 +1412,14 @@
 
         </div>
 
+
         <p class="lesson-description">
-            ව්‍යාපාර අභ්‍යන්තර පරිසරය හා බාහිර පරිසරය අධ්‍යනය.
+
+            ව්‍යාපාර අභ්‍යන්තර පරිසරය හා
+            බාහිර පරිසරය අධ්‍යනය.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -338,12 +1430,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson2ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -361,9 +1455,14 @@
 
 
 
-    <!-- LESSON 3 -->
+    <!-- =====================================================
+         LESSON 3
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson3Card">
+    <article
+        class="lesson-card"
+        id="lesson3Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -379,6 +1478,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson3Status"
@@ -388,10 +1488,14 @@
 
         </div>
 
+
         <p class="lesson-description">
+
             හිමිකාරිත්වය/අරමුණ/පරිමාණය අනුව ව්‍යාපාර සංවිධාන,
             පෞද්ගලික අංශය සහ රාජ්‍ය අංශය පිළිබඳ අධ්‍යයනය කරමු.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -402,12 +1506,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson3ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -425,9 +1531,14 @@
 
 
 
-    <!-- LESSON 4 -->
+    <!-- =====================================================
+         LESSON 4
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson4Card">
+    <article
+        class="lesson-card"
+        id="lesson4Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -443,6 +1554,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson4Status"
@@ -452,10 +1564,15 @@
 
         </div>
 
+
         <p class="lesson-description">
+
             ගිණුම් කරණය හැඳින්වීම ගිණුම්කරණයේ මූලික සංකල්ප,
-            වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම් පිළිබඳ අධ්‍යයනය කරමු.
+            වත්කම්, වගකීම්, හිමිකම, ආදායම් සහ වියදම්
+            පිළිබඳ අධ්‍යයනය කරමු.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -466,12 +1583,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson4ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -489,9 +1608,14 @@
 
 
 
-    <!-- LESSON 5 -->
+    <!-- =====================================================
+         LESSON 5
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson5Card">
+    <article
+        class="lesson-card"
+        id="lesson5Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -507,6 +1631,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson5Status"
@@ -516,11 +1641,15 @@
 
         </div>
 
+
         <p class="lesson-description">
+
             ගිණුම්කරණ සමීකරණය,
             වත්කම්, වගකීම් සහ හිමිකම අතර සම්බන්ධතාවය
             උදාහරණ සමඟ අධ්‍යයනය කරමු.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -531,12 +1660,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson5ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -554,9 +1685,14 @@
 
 
 
-    <!-- LESSON 6 -->
+    <!-- =====================================================
+         LESSON 6
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson6Card">
+    <article
+        class="lesson-card"
+        id="lesson6Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -572,6 +1708,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson6Status"
@@ -581,9 +1718,14 @@
 
         </div>
 
+
         <p class="lesson-description">
-            ගනුදෙනු වල ද්විත්ව බලපෑම/ද්විතව සටහන් ක්‍රමය/ගිණුම/ගිණුම් වර්ග/ගනුදෙනු සටහන් කිරීම.
+
+            ගනුදෙනු වල ද්විත්ව බලපෑම/ද්විතව සටහන් ක්‍රමය/
+            ගිණුම/ගිණුම් වර්ග/ගනුදෙනු සටහන් කිරීම.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -594,12 +1736,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson6ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -617,9 +1761,14 @@
 
 
 
-    <!-- LESSON 7 -->
+    <!-- =====================================================
+         LESSON 7
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson7Card">
+    <article
+        class="lesson-card"
+        id="lesson7Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -635,6 +1784,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson7Status"
@@ -644,10 +1794,15 @@
 
         </div>
 
+
         <p class="lesson-description">
-            මූලික සටහන් පොත් යනු කුමක්ද, ඒවායේ වැදගත්කම, ප්‍රධාන වර්ග, 
-            එක් එක් සටහන් පොතේ භාවිතය සහ එහි සටහන් කරන ගනුදෙනු.
+
+            මූලික සටහන් පොත් යනු කුමක්ද, ඒවායේ වැදගත්කම,
+            ප්‍රධාන වර්ග, එක් එක් සටහන් පොතේ භාවිතය
+            සහ එහි සටහන් කරන ගනුදෙනු.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -658,12 +1813,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson7ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -681,9 +1838,14 @@
 
 
 
-    <!-- LESSON 8 -->
+    <!-- =====================================================
+         LESSON 8
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson8Card">
+    <article
+        class="lesson-card"
+        id="lesson8Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -699,6 +1861,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson8Status"
@@ -708,9 +1871,14 @@
 
         </div>
 
+
         <p class="lesson-description">
-            මුදල් පොත සහ සුළු මුදල් පොත හඳුනාගැනීම, ගනුදෙනු සටහන් තැබීම,ගිණුම් තුලනය.
+
+            මුදල් පොත සහ සුළු මුදල් පොත හඳුනාගැනීම,
+            ගනුදෙනු සටහන් තැබීම,ගිණුම් තුලනය.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -721,12 +1889,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson8ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -744,9 +1914,14 @@
 
 
 
-    <!-- LESSON 9 -->
+    <!-- =====================================================
+         LESSON 9
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson9Card">
+    <article
+        class="lesson-card"
+        id="lesson9Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -762,6 +1937,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson9Status"
@@ -771,10 +1947,14 @@
 
         </div>
 
+
         <p class="lesson-description">
-            ව්‍යාපාරයක් ගනුදෙනු කරන බැංකු ගිණුම් හඳුනාගැනීම, ගනුදෙනු වර්ග
-            සහ බැංකු සැසඳුම සකස් කිරීම.
+
+            ව්‍යාපාරයක් ගනුදෙනු කරන බැංකු ගිණුම් හඳුනාගැනීම,
+            ගනුදෙනු වර්ග සහ බැංකු සැසඳුම සකස් කිරීම.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -785,12 +1965,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson9ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -808,9 +1990,14 @@
 
 
 
-    <!-- LESSON 10 -->
+    <!-- =====================================================
+         LESSON 10
+         ===================================================== -->
 
-    <article class="lesson-card" id="lesson10Card">
+    <article
+        class="lesson-card"
+        id="lesson10Card"
+    >
 
         <div class="lesson-card-header">
 
@@ -826,6 +2013,7 @@
 
             </div>
 
+
             <div
                 class="lesson-status"
                 id="lesson10Status"
@@ -835,10 +2023,15 @@
 
         </div>
 
+
         <p class="lesson-description">
-            ජර්නල් සකස් කිරීම, ජර්නල් සටහන් ලෙජරයේ සටහන් කිරීම,ශේෂපිරික්සුම සකස් කිරීම සහ 
-            ගිණුම්කරණ වැරදි නිවැරදි කිරීමට අදාල අවබෝධය.
+
+            ජර්නල් සකස් කිරීම, ජර්නල් සටහන් ලෙජරයේ සටහන් කිරීම,
+            ශේෂපිරික්සුම සකස් කිරීම සහ ගිණුම්කරණ වැරදි
+            නිවැරදි කිරීමට අදාල අවබෝධය.
+
         </p>
+
 
         <div class="lesson-progress-container">
 
@@ -849,12 +2042,14 @@
 
         </div>
 
+
         <div
             class="lesson-progress-text"
             id="lesson10ProgressText"
         >
             0% completed
         </div>
+
 
         <div class="lesson-actions">
 
@@ -872,6 +2067,10 @@
 
 
 
+    <!-- =====================================================
+         DASHBOARD
+         ===================================================== -->
+
     <div class="dashboard-link">
 
         <a href="dashboard.html">
@@ -885,6 +2084,10 @@
 
 
 
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
 <footer class="site-footer">
 
     <p>
@@ -895,7 +2098,12 @@
 
 
 
+<!-- =========================================================
+     LESSON JAVASCRIPT
+     ========================================================= -->
+
 <script src="../assets/js/lessons.js"></script>
+
 
 </body>
 
