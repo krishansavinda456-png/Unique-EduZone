@@ -1140,12 +1140,258 @@
             }
         }
 
+
+
+/* =========================================================
+   UNIQUE EDUZONE • LESSON 03 PREMIUM SIDE WORLD
+   Theme: BUSINESS ORGANIZATION / MODERN CITY & GROWTH
+   Self-contained CSS artwork — no external image required.
+   ========================================================= */
+body{
+    position:relative;
+    overflow-x:hidden;
+    background:
+      radial-gradient(circle at 50% 8%, rgba(212,175,55,.08), transparent 28%),
+      linear-gradient(180deg,#07090a 0%,#0b0d0f 55%,#070707 100%);
+}
+
+.lesson3-premium-side{
+    position:fixed;
+    top:108px;
+    bottom:18px;
+    width:235px;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+    border:1px solid rgba(212,175,55,.24);
+    border-radius:24px;
+    background:
+      radial-gradient(circle at 50% 22%,rgba(255,207,73,.22),transparent 24%),
+      linear-gradient(180deg,rgba(18,32,39,.96),rgba(5,10,13,.98));
+    box-shadow:0 18px 55px rgba(0,0,0,.42), inset 0 0 35px rgba(255,255,255,.025);
+}
+.lesson3-premium-side.left{left:10px}
+.lesson3-premium-side.right{right:10px}
+
+/* sunrise glow */
+.lesson3-premium-side::before{
+    content:"";
+    position:absolute;
+    width:150px;height:150px;
+    top:145px;left:50%;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,219,105,.95) 0%,rgba(255,184,52,.38) 23%,rgba(255,174,30,.08) 48%,transparent 70%);
+    filter:blur(2px);
+}
+
+/* distant skyline / hills */
+.lesson3-premium-side::after{
+    content:"";
+    position:absolute;
+    left:-25px;right:-25px;
+    top:235px;height:185px;
+    background:
+      linear-gradient(150deg,transparent 0 20%,rgba(23,54,63,.92) 21% 34%,transparent 35%),
+      linear-gradient(35deg,transparent 0 27%,rgba(14,42,49,.96) 28% 45%,transparent 46%),
+      linear-gradient(155deg,transparent 0 47%,rgba(8,25,31,.98) 48% 66%,transparent 67%);
+    clip-path:polygon(0 55%,10% 42%,18% 51%,29% 25%,39% 44%,51% 18%,62% 48%,73% 29%,84% 45%,100% 18%,100% 100%,0 100%);
+    opacity:.96;
+}
+
+/* premium quote card */
+.lesson3-side-content{
+    position:absolute;
+    inset:22px 16px 18px;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    text-align:center;
+}
+.lesson3-side-topline{
+    font-size:10px;
+    letter-spacing:2.5px;
+    color:#d4af37;
+    font-weight:800;
+    text-transform:uppercase;
+}
+.lesson3-side-quote{
+    margin-top:48px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-style:italic;
+    font-weight:700;
+    line-height:1.18;
+    font-size:29px;
+    color:#fff;
+    text-shadow:0 3px 16px rgba(0,0,0,.8);
+}
+.lesson3-side-quote span{color:#f1c84b}
+.lesson3-side-sub{
+    margin-top:12px;
+    color:#d9d9d9;
+    font-size:13px;
+    line-height:1.65;
+}
+.lesson3-side-divider{
+    width:72px;height:2px;
+    margin:15px auto;
+    background:linear-gradient(90deg,transparent,#d4af37,transparent);
+}
+
+/* business growth graphic */
+.lesson3-growth-card{
+    width:100%;
+    padding:14px 12px;
+    border:1px solid rgba(212,175,55,.38);
+    border-radius:15px;
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+    backdrop-filter:blur(3px);
+    box-shadow:0 12px 25px rgba(0,0,0,.28);
+}
+.lesson3-growth-title{
+    color:#d4af37;font-size:11px;font-weight:800;letter-spacing:1.4px;
+}
+.lesson3-chart{
+    height:74px;
+    margin:10px 4px 4px;
+    position:relative;
+    border-bottom:1px solid rgba(255,255,255,.18);
+    background:repeating-linear-gradient(to bottom,transparent 0 23px,rgba(255,255,255,.055) 24px);
+}
+.lesson3-chart i{
+    position:absolute;bottom:0;width:20px;border-radius:5px 5px 0 0;
+    background:linear-gradient(180deg,#f5d15c,#a77d16);
+    box-shadow:0 0 14px rgba(212,175,55,.16);
+}
+.lesson3-chart i:nth-child(1){left:9%;height:25%}
+.lesson3-chart i:nth-child(2){left:27%;height:39%}
+.lesson3-chart i:nth-child(3){left:45%;height:52%}
+.lesson3-chart i:nth-child(4){left:63%;height:69%}
+.lesson3-chart i:nth-child(5){left:81%;height:88%}
+.lesson3-arrow{color:#7ff0a5;font-size:12px;font-weight:800}
+
+/* bottom business desk */
+.lesson3-desk{
+    width:calc(100% + 32px);
+    margin-left:-16px;
+    padding:13px 12px 12px;
+    border-top:1px solid rgba(212,175,55,.32);
+    background:linear-gradient(180deg,rgba(105,70,35,.20),rgba(20,14,10,.72));
+    border-radius:18px 18px 0 0;
+}
+.lesson3-desk-books{
+    display:flex;flex-direction:column;gap:4px;align-items:center;
+}
+.lesson3-book{
+    width:82%;height:19px;border-radius:5px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:9px;letter-spacing:1.2px;font-weight:900;
+    color:#f7e6a6;border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 4px 9px rgba(0,0,0,.4);
+}
+.lesson3-book.b1{background:#173b3a;transform:rotate(-2deg)}
+.lesson3-book.b2{background:#4b3518;transform:rotate(2deg)}
+.lesson3-book.b3{background:#202d42;transform:rotate(-1deg)}
+.lesson3-mug{
+    margin:10px auto 0;width:57px;height:49px;border-radius:7px 7px 17px 17px;
+    border:2px solid #d4af37;background:#121212;color:#d4af37;
+    display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;
+    position:relative;
+}
+.lesson3-mug::after{content:"";position:absolute;right:-13px;top:11px;width:14px;height:19px;border:2px solid #d4af37;border-left:0;border-radius:0 10px 10px 0}
+.lesson3-checklist{margin:9px auto 0;color:#ddd;font-size:11px;line-height:1.65}
+.lesson3-checklist b{color:#d4af37}
+
+/* side variation: right side uses a stronger modern/business mood */
+.lesson3-premium-side.right{background:
+    radial-gradient(circle at 50% 25%,rgba(31,123,145,.20),transparent 28%),
+    linear-gradient(180deg,rgba(9,25,33,.98),rgba(4,8,11,.99));
+}
+.lesson3-premium-side.right .lesson3-side-quote{font-size:28px}
+
+/* ensure lesson itself stays above the scenery */
+.site-header,header,main,.lesson-container,footer,
+.lesson-header,.lesson-section,.bo-challenge-section,
+.more-info-modal{position:relative;z-index:2}
+
+/* subtle premium lift on the lesson cards */
+.lesson-section,.bo-challenge-section,.quiz-section{
+    box-shadow:0 12px 34px rgba(0,0,0,.30);
+}
+
+@media(max-width:1250px){
+    .lesson3-premium-side{width:165px;opacity:.86}
+    .lesson3-side-quote{font-size:23px}
+    .lesson3-premium-side.right .lesson3-side-quote{font-size:22px}
+}
+@media(max-width:950px){
+    .lesson3-premium-side{width:120px;opacity:.55}
+    .lesson3-side-quote{font-size:18px}
+    .lesson3-side-sub,.lesson3-growth-card,.lesson3-desk{display:none}
+}
+@media(max-width:700px){
+    .lesson3-premium-side{display:none}
+}
+
 </style>
 
 </head>
 
 
 <body>
+
+<!-- =====================================================
+     LESSON 03 PREMIUM SIDE DECORATIONS
+     ===================================================== -->
+<aside class="lesson3-premium-side left" aria-hidden="true">
+    <div class="lesson3-side-content">
+        <div>
+            <div class="lesson3-side-topline">UNIQUE EDUZONE</div>
+            <div class="lesson3-side-quote">Build it.<br><span>Grow it.</span><br>Believe in it.</div>
+            <div class="lesson3-side-divider"></div>
+            <div class="lesson3-side-sub">සැලසුම් කරන්න • සංවිධානය කරන්න • වර්ධනය කරන්න</div>
+        </div>
+        <div class="lesson3-growth-card">
+            <div class="lesson3-growth-title">BUSINESS GROWTH</div>
+            <div class="lesson3-chart"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="lesson3-arrow">↗ PLAN • ORGANIZE • SUCCEED</div>
+        </div>
+        <div class="lesson3-desk">
+            <div class="lesson3-desk-books">
+                <div class="lesson3-book b1">ORGANIZE</div>
+                <div class="lesson3-book b2">BUSINESS</div>
+                <div class="lesson3-book b3">GROWTH</div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<aside class="lesson3-premium-side right" aria-hidden="true">
+    <div class="lesson3-side-content">
+        <div>
+            <div class="lesson3-side-topline">LESSON 03 • BUSINESS</div>
+            <div class="lesson3-side-quote">Think smart.<br><span>Choose your</span><br>structure.</div>
+            <div class="lesson3-side-divider"></div>
+            <div class="lesson3-side-sub">නිවැරදි සංවිධානයක්<br>සාර්ථක ව්‍යාපාරයක පදනමයි.</div>
+        </div>
+        <div class="lesson3-growth-card">
+            <div class="lesson3-growth-title">FOCUS • STUDY • ACHIEVE</div>
+            <div class="lesson3-mug">IDEA</div>
+            <div class="lesson3-checklist">
+                <b>✓</b> Understand<br>
+                <b>✓</b> Compare<br>
+                <b>✓</b> Apply<br>
+                <b>✓</b> Achieve
+            </div>
+        </div>
+        <div class="lesson3-desk">
+            <div class="lesson3-side-sub">“Knowledge is the<br>best business asset.”</div>
+        </div>
+    </div>
+</aside>
+
 
 
 <!-- =====================================================
