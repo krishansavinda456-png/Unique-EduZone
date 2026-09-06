@@ -1130,64 +1130,83 @@
         </table>
 
 
-        <div class="example-box">
+<div class="example-box">
 
-            <div class="example-title">
-                නිදසුන 02 – මුදල් ගෙවීම
-            </div>
+    <div class="example-title">
+        📌 නිදසුන 02 – මුදල් ගෙවීම
+    </div>
 
-            <p>
-                2026.01.10 දින සේවක වැටුප් ලෙස
-                රු. 30,000 ක් මුදලින් ගෙවන ලදී.
-            </p>
+    <p>
+        2026.01.10 දින ව්‍යාපාරය විසින් සේවකයින්ගේ
+        වැටුප් සඳහා රු. 30,000ක මුදලක් ගෙවන ලදී.
+    </p>
 
-            <table class="account-table">
+    <p>
+        මෙහිදී මුදල් ගෙවීමක් සිදුවන බැවින් එය
+        <span class="important">මුදල් පොතේ බැර පැත්තේ</span>
+        වාර්තා කරනු ලැබේ.
+    </p>
+
+    <div class="cash-book-table-wrapper">
+
+        <table class="cash-book-table">
+
+            <thead>
+                <tr>
+                    <th class="debit-side">දිනය</th>
+                    <th class="debit-side">ල:අ:</th>
+                    <th class="debit-side">විස්තරය</th>
+                    <th class="debit-side">ස:පි:</th>
+                    <th class="debit-side">මුදල්<br>රු.</th>
+
+                    <th class="credit-side">දිනය</th>
+                    <th class="credit-side">ව:අ:</th>
+                    <th class="credit-side">විස්තරය</th>
+                    <th class="credit-side">ස:පි:</th>
+                    <th class="credit-side">මුදල්<br>රු.</th>
+                </tr>
+            </thead>
+
+            <tbody>
 
                 <tr>
-                    <th>
-                        ගිණුම
-                    </th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
 
-                    <th>
-                        හර
-                    </th>
-
-                    <th>
-                        බැර
-                    </th>
+                    <td>2026.01.10</td>
+                    <td>015</td>
+                    <td>වැටුප්</td>
+                    <td>-</td>
+                    <td class="amount">30,000</td>
                 </tr>
 
-                <tr>
-                    <td>
-                        වැටුප් ගිණුම
-                    </td>
+            </tbody>
 
-                    <td class="debit">
-                        රු. 30,000
-                    </td>
+        </table>
 
-                    <td>
-                        -
-                    </td>
-                </tr>
+    </div>
 
-                <tr>
-                    <td>
-                        මුදල් ගිණුම
-                    </td>
+    <div class="info-box">
 
-                    <td>
-                        -
-                    </td>
+        <p>
+            <strong>විස්තරය:</strong>
+            සේවකයින්ගේ වැටුප් සඳහා මුදල් ගෙවූ බැවින්
+            රු. 30,000 මුදල් පොතේ
+            <span class="credit">බැර පැත්තේ</span>
+            සටහන් කරයි.
+        </p>
 
-                    <td class="credit">
-                        රු. 30,000
-                    </td>
-                </tr>
+        <p>
+            <strong>මූලධර්මය:</strong>
+            මුදල් ගෙවීම → <span class="credit">බැර</span>
+        </p>
 
-            </table>
+    </div>
 
-        </div>
+</div>
 
     </section>
 
@@ -1197,78 +1216,315 @@
          PAYMENT VOUCHER
          ===================================== -->
 
-    <section class="lesson-section">
+<section class="lesson-section">
 
-        <h2>
-            📄 ගෙවීම් වවුචරය
-        </h2>
+    <h2>📄 ගෙවීම් වවුචරය</h2>
+
+    <p>
+        ව්‍යාපාරයකින් මුදල් ගෙවීමක් සිදු කළ බවට සාක්ෂි
+        වශයෙන් සකස් කරන මූලාශ්‍ර ලේඛනය
+        <span class="important">ගෙවීම් වවුචරය</span>
+        ලෙස හැඳින්වේ.
+    </p>
+
+    <div class="info-box">
 
         <p>
-            ව්‍යාපාරයක් විසින් මුදල් ගෙවීමක් සිදු කළ
-            බවට ලිඛිත සාක්ෂියක් ලෙස සකස් කරන
-            ලේඛනය
-            <span class="important">
+            <strong>ගෙවීම් වවුචරයේ ප්‍රධාන අරමුණ:</strong>
+            ව්‍යාපාරයෙන් මුදල් ගෙවීමක් සිදු වූ බවට
+            ලිඛිත සාක්ෂියක් පවත්වා ගැනීමයි.
+        </p>
+
+    </div>
+
+    <h3>🧾 ගෙවීම් වවුචරයක ආකෘතිය – නිදසුන</h3>
+
+    <div class="document-example"
+         style="
+         max-width:720px;
+         margin:25px auto;
+         background:#f5f5f5;
+         color:#111;
+         border:2px solid #222;
+         border-radius:10px;
+         padding:30px;
+         box-shadow:0 8px 20px rgba(0,0,0,.35);
+         ">
+
+        <!-- ශීර්ෂය -->
+        <div style="
+            text-align:center;
+            border-bottom:2px solid #222;
+            padding-bottom:15px;
+            margin-bottom:20px;
+        ">
+
+            <h2 style="
+                margin:0;
+                color:#111;
+                font-size:28px;
+            ">
                 ගෙවීම් වවුචරය
-            </span>
-            ලෙස හැඳින්වේ.
-        </p>
+            </h2>
 
-        <p>
-            ගෙවීම් වවුචරයක අනුක්‍රමික අංකය,
-            දිනය, ගෙවූ මුදල, ගෙවීමට හේතුව,
-            චෙක්පත් අංකය සහ වගකිවයුතු පුද්ගලයන්ගේ
-            අත්සන් වැනි තොරතුරු ඇතුළත් කළ හැකිය.
-        </p>
+            <p style="
+                margin:6px 0 0;
+                font-weight:bold;
+            ">
+                PAYMENT VOUCHER
+            </p>
 
+        </div>
 
-        <div class="document-example">
+        <!-- වවුචර අංකය සහ දිනය -->
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            gap:20px;
+            margin-bottom:20px;
+            font-weight:bold;
+        ">
 
-            <div class="document-title">
-                📄 ගෙවීම් වවුචරය – නිදසුන
+            <div>
+                වවුචර අංකය:
+                <span style="font-weight:normal;">
+                    PV-00125
+                </span>
             </div>
 
-            <div class="document-line">
-                වවුචර් අංකය: PV-001
-            </div>
-
-            <div class="document-line">
-                දිනය: 2026.01.10
-            </div>
-
-            <div class="document-line">
-                ගෙවීමේ හේතුව:
-                සේවක වැටුප්
-            </div>
-
-            <div class="document-line">
-                ගෙවූ මුදල:
-                රු. 30,000
-            </div>
-
-            <div class="document-line">
-                චෙක්පත් අංකය:
-                10235
-            </div>
-
-            <div class="document-line">
-                සකස් කළ අය:
-                __________________
-            </div>
-
-            <div class="document-line">
-                අනුමත කළ අය:
-                __________________
-            </div>
-
-            <div class="document-line">
-                මුදල් භාරගත් අය:
-                __________________
+            <div>
+                දිනය:
+                <span style="font-weight:normal;">
+                    2026.01.10
+                </span>
             </div>
 
         </div>
 
-    </section>
+        <!-- ගෙවීම ලබන්නා -->
+        <div style="
+            border-bottom:1px dotted #555;
+            padding:12px 0;
+        ">
 
+            <strong>ගෙවීම ලබන්නා:</strong>
+
+            <span style="margin-left:10px;">
+                සේවකයින්
+            </span>
+
+        </div>
+
+        <!-- ගෙවීමේ හේතුව -->
+        <div style="
+            border-bottom:1px dotted #555;
+            padding:12px 0;
+        ">
+
+            <strong>ගෙවීමේ හේතුව:</strong>
+
+            <span style="margin-left:10px;">
+                සේවක වැටුප්
+            </span>
+
+        </div>
+
+        <!-- මුදල -->
+        <div style="
+            border-bottom:1px dotted #555;
+            padding:12px 0;
+        ">
+
+            <strong>මුදල:</strong>
+
+            <span style="margin-left:10px;">
+                රු. 30,000.00
+            </span>
+
+        </div>
+
+        <!-- වචනයෙන් -->
+        <div style="
+            border-bottom:1px dotted #555;
+            padding:12px 0;
+        ">
+
+            <strong>මුදල වචනයෙන්:</strong>
+
+            <span style="margin-left:10px;">
+                රුපියල් තිස්දහසක් පමණි.
+            </span>
+
+        </div>
+
+        <!-- ගෙවීම් ක්‍රමය -->
+        <div style="
+            border-bottom:1px dotted #555;
+            padding:12px 0;
+        ">
+
+            <strong>ගෙවීම් ක්‍රමය:</strong>
+
+            <span style="margin-left:10px;">
+                මුදල්
+            </span>
+
+        </div>
+
+        <!-- අමතර විස්තර -->
+        <div style="
+            border-bottom:1px dotted #555;
+            padding:12px 0;
+        ">
+
+            <strong>අමතර විස්තර:</strong>
+
+            <span style="margin-left:10px;">
+                ජනවාරි මාසයේ වැටුප්
+            </span>
+
+        </div>
+
+        <!-- අත්සන් -->
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            gap:20px;
+            margin-top:45px;
+        ">
+
+            <div style="
+                text-align:center;
+                width:30%;
+            ">
+
+                <div style="
+                    border-top:1px solid #222;
+                    padding-top:8px;
+                ">
+                    සකස් කළේ
+                </div>
+
+            </div>
+
+            <div style="
+                text-align:center;
+                width:30%;
+            ">
+
+                <div style="
+                    border-top:1px solid #222;
+                    padding-top:8px;
+                ">
+                    පරීක්ෂා කළේ
+                </div>
+
+            </div>
+
+            <div style="
+                text-align:center;
+                width:30%;
+            ">
+
+                <div style="
+                    border-top:1px solid #222;
+                    padding-top:8px;
+                ">
+                    අනුමත කළේ
+                </div>
+
+            </div>
+
+        </div>
+
+        <div style="
+            margin-top:35px;
+            text-align:center;
+            font-size:13px;
+            color:#555;
+        ">
+            ගෙවීම සිදු කළ බව තහවුරු කරමි.
+        </div>
+
+    </div>
+
+    <h3>🔎 ගෙවීම් වවුචරයේ ප්‍රධාන අංග</h3>
+
+    <table class="lesson-table">
+
+        <thead>
+            <tr>
+                <th>අංගය</th>
+                <th>විස්තරය</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>වවුචර අංකය</td>
+                <td>ගෙවීම් වවුචරය හඳුනාගැනීම සඳහා ලබාදෙන අංකයයි.</td>
+            </tr>
+
+            <tr>
+                <td>දිනය</td>
+                <td>මුදල් ගෙවූ දිනයයි.</td>
+            </tr>
+
+            <tr>
+                <td>ගෙවීම ලබන්නා</td>
+                <td>මුදල් ලබාගත් පුද්ගලයා හෝ ආයතනයයි.</td>
+            </tr>
+
+            <tr>
+                <td>ගෙවීමේ හේතුව</td>
+                <td>මුදල් ගෙවීමට හේතුව සඳහන් කරයි.</td>
+            </tr>
+
+            <tr>
+                <td>මුදල</td>
+                <td>ගෙවන ලද මුදල් ප්‍රමාණයයි.</td>
+            </tr>
+
+            <tr>
+                <td>ගෙවීම් ක්‍රමය</td>
+                <td>මුදල්, චෙක්පත් ආදී ගෙවීම් ක්‍රමය සඳහන් කරයි.</td>
+            </tr>
+
+            <tr>
+                <td>අත්සන්</td>
+                <td>වවුචරය සකස් කළ, පරීක්ෂා කළ සහ අනුමත කළ අයගේ අත්සන් වේ.</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="example-box">
+
+        <div class="example-title">
+            💡 ගෙවීම් වවුචරය සහ මුදල් පොත අතර සම්බන්ධය
+        </div>
+
+        <p>
+            2026.01.10 දින සේවකයින්ගේ වැටුප් සඳහා
+            රු.30,000ක මුදලක් ගෙවන ලදී.
+        </p>
+
+        <p>
+            එම ගෙවීම සඳහා ගෙවීම් වවුචරයක් සකස් කරනු ලබන අතර,
+            එම වවුචරය මත පදනම්ව රු.30,000
+            <span class="credit">මුදල් පොතේ බැර පැත්තේ</span>
+            වාර්තා කරනු ලැබේ.
+        </p>
+
+        <p class="important">
+            ගෙවීම් වවුචරය → මුදල් ගෙවීමේ සාක්ෂිය → මුදල් පොතේ බැර සටහන
+        </p>
+
+    </div>
+
+</section>
 
 
     <!-- =====================================
