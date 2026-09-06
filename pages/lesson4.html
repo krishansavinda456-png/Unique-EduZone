@@ -719,6 +719,539 @@ body{top:0!important;}
   .lesson-info-item{min-width:125px;padding:9px 11px;}
 }
 
+/* =========================================================
+   UNIQUE EDUZONE – LESSON 04 PREMIUM ACCOUNTING THEME
+   ========================================================= */
+
+:root{
+    --l4-gold:#d9ad45;
+    --l4-gold2:#f3d27a;
+}
+
+/* Premium background */
+body{
+    position:relative;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 30%,
+            rgba(217,173,69,.13),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 92% 58%,
+            rgba(65,105,170,.12),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            #03060d 0%,
+            #07101d 52%,
+            #03060d 100%
+        );
+}
+
+/* =========================================================
+   SIDE PREMIUM DECORATION
+   ========================================================= */
+
+.uez-l4-side{
+    position:fixed;
+    top:0;
+    bottom:0;
+    width:225px;
+
+    pointer-events:none;
+    z-index:0;
+
+    overflow:hidden;
+    opacity:.88;
+}
+
+.uez-l4-side.left{
+    left:0;
+}
+
+.uez-l4-side.right{
+    right:0;
+    transform:scaleX(-1);
+}
+
+/* Soft side overlay */
+.uez-l4-side::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,6,13,.15),
+            rgba(3,6,13,.82)
+        ),
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(217,173,69,.14),
+            transparent 30%
+        );
+}
+
+/* =========================================================
+   MOON / LIGHT
+   ========================================================= */
+
+.l4-moon{
+    position:absolute;
+
+    width:82px;
+    height:82px;
+
+    top:105px;
+    left:65px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #fff4c9 0 8%,
+            #f3d27a 34%,
+            rgba(217,173,69,.22) 67%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 38px rgba(243,210,122,.28);
+}
+
+/* =========================================================
+   FINANCIAL GROWTH CHART
+   ========================================================= */
+
+.l4-chart{
+    position:absolute;
+
+    left:28px;
+    right:28px;
+
+    top:235px;
+    height:175px;
+
+    border-left:
+        2px solid rgba(217,173,69,.28);
+
+    border-bottom:
+        2px solid rgba(217,173,69,.28);
+}
+
+.l4-chart::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0 16%,
+            rgba(217,173,69,.9) 16.5% 18%,
+            transparent 18.5% 31%,
+            rgba(243,210,122,.95) 31.5% 33%,
+            transparent 33.5% 47%,
+            rgba(217,173,69,.9) 47.5% 49%,
+            transparent 49.5% 65%,
+            rgba(243,210,122,.95) 65.5% 67%,
+            transparent 67.5% 79%,
+            rgba(217,173,69,.9) 79.5% 81%,
+            transparent 81.5%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(217,173,69,.42)
+        );
+}
+
+.l4-chart::after{
+    content:"↗";
+
+    position:absolute;
+
+    right:-10px;
+    top:-26px;
+
+    color:var(--l4-gold2);
+
+    font-size:28px;
+    font-weight:900;
+
+    text-shadow:
+        0 0 15px
+        rgba(243,210,122,.45);
+}
+
+/* =========================================================
+   ACCOUNTING BARS
+   ========================================================= */
+
+.l4-bars{
+    position:absolute;
+
+    top:440px;
+    left:35px;
+
+    display:flex;
+    align-items:flex-end;
+
+    gap:9px;
+
+    height:105px;
+}
+
+.l4-bars span{
+    width:20px;
+
+    border:
+        1px solid
+        rgba(243,210,122,.5);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(243,210,122,.75),
+            rgba(217,173,69,.12)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(217,173,69,.15);
+}
+
+.l4-bars span:nth-child(1){
+    height:34px;
+}
+
+.l4-bars span:nth-child(2){
+    height:52px;
+}
+
+.l4-bars span:nth-child(3){
+    height:43px;
+}
+
+.l4-bars span:nth-child(4){
+    height:75px;
+}
+
+.l4-bars span:nth-child(5){
+    height:96px;
+}
+
+/* =========================================================
+   LEDGER / ACCOUNTING BOOK
+   ========================================================= */
+
+.l4-ledger{
+    position:absolute;
+
+    left:26px;
+    top:575px;
+
+    width:174px;
+    height:105px;
+
+    border:
+        1px solid
+        rgba(217,173,69,.26);
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.012)
+        );
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.06);
+
+    transform:rotate(-5deg);
+}
+
+.l4-ledger::before,
+.l4-ledger::after{
+    content:"";
+
+    position:absolute;
+
+    left:18px;
+    right:18px;
+
+    height:1px;
+
+    background:
+        rgba(217,173,69,.25);
+}
+
+.l4-ledger::before{
+    top:32px;
+
+    box-shadow:
+        0 18px rgba(217,173,69,.25),
+        0 36px rgba(217,173,69,.25),
+        0 54px rgba(217,173,69,.25);
+}
+
+.l4-ledger::after{
+    top:16px;
+
+    left:65px;
+
+    width:1px;
+    height:72px;
+
+    box-shadow:
+        38px 0 rgba(217,173,69,.22);
+}
+
+/* =========================================================
+   BACKGROUND CITY / MOUNTAIN SILHOUETTE
+   ========================================================= */
+
+.l4-horizon{
+    position:absolute;
+
+    left:-20px;
+    right:-20px;
+    bottom:0;
+
+    height:245px;
+
+    background:
+        linear-gradient(
+            160deg,
+            transparent 0 18%,
+            rgba(14,30,51,.95) 18.5% 45%,
+            transparent 45.5%
+        ),
+
+        linear-gradient(
+            200deg,
+            transparent 0 28%,
+            rgba(9,21,37,.98) 28.5% 55%,
+            transparent 55.5%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(5,10,20,.15),
+            #02050b 72%
+        );
+
+    clip-path:
+        polygon(
+            0 35%,
+            14% 25%,
+            27% 39%,
+            42% 17%,
+            56% 34%,
+            71% 20%,
+            84% 38%,
+            100% 22%,
+            100% 100%,
+            0 100%
+        );
+}
+
+/* =========================================================
+   FLOATING GOLD PARTICLES
+   ========================================================= */
+
+.uez-l4-particles span{
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:
+        var(--l4-gold2);
+
+    box-shadow:
+        0 0 12px
+        rgba(243,210,122,.8);
+
+    animation:
+        l4Float 4s
+        ease-in-out infinite;
+}
+
+.uez-l4-particles span:nth-child(1){
+    left:28px;
+    top:185px;
+}
+
+.uez-l4-particles span:nth-child(2){
+    left:177px;
+    top:330px;
+    animation-delay:1s;
+}
+
+.uez-l4-particles span:nth-child(3){
+    left:45px;
+    top:530px;
+    animation-delay:2s;
+}
+
+.uez-l4-particles span:nth-child(4){
+    left:160px;
+    top:710px;
+    animation-delay:3s;
+}
+
+@keyframes l4Float{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:.35;
+    }
+
+    50%{
+        transform:translateY(-15px);
+        opacity:1;
+    }
+}
+
+/* =========================================================
+   MOTIVATIONAL WORDS
+   ========================================================= */
+
+.uez-l4-quote{
+    position:absolute;
+
+    top:770px;
+
+    left:22px;
+    right:22px;
+
+    text-align:center;
+
+    color:
+        rgba(255,255,255,.78);
+
+    font-size:12px;
+
+    line-height:1.65;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+}
+
+.uez-l4-quote strong{
+    display:block;
+
+    color:
+        var(--l4-gold2);
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+    margin-bottom:4px;
+
+    text-shadow:
+        0 0 16px
+        rgba(243,210,122,.25);
+}
+
+/* =========================================================
+   PREMIUM DEPTH FOR EXISTING CONTENT
+   ========================================================= */
+
+.lesson-header,
+.lesson-section,
+.activity-box,
+.acc-challenge-section,
+.quiz-area{
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.28),
+
+        0 0 0 1px
+        rgba(217,173,69,.045);
+}
+
+.lesson-section,
+.activity-box,
+.acc-challenge-section{
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.lesson-section:hover,
+.activity-box:hover,
+.acc-challenge-section:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 22px 52px
+        rgba(0,0,0,.36),
+
+        0 0 24px
+        rgba(217,173,69,.06);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1150px){
+
+    .uez-l4-side{
+        width:155px;
+    }
+
+    .l4-chart{
+        left:18px;
+        right:18px;
+    }
+
+    .l4-bars{
+        left:20px;
+    }
+
+    .l4-ledger{
+        left:15px;
+        width:125px;
+    }
+
+    .uez-l4-quote{
+        left:10px;
+        right:10px;
+        font-size:10px;
+    }
+}
+
+@media(max-width:900px){
+
+    .uez-l4-side{
+        display:none;
+    }
+}
+
 </style>
 
 </head>
