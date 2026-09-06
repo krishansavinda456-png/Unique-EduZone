@@ -10,9 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Lessons | Unique EduZone
-    </title>
+    <title>Lessons | Unique EduZone</title>
 
     <link
         rel="stylesheet"
@@ -22,49 +20,325 @@
     <style>
 
         /* =====================================================
-           UNIQUE EDUZONE
            LESSONS PAGE
-           DARK / GOLD / WHITE THEME
            ===================================================== */
 
-        * {
-            box-sizing: border-box;
-        }
+        .lessons-page {
 
+            max-width: 1000px;
 
-        html {
-            min-height: 100%;
-        }
+            margin: auto;
 
-
-        body {
-
-            margin: 0;
-
-            min-height: 100vh;
-
-            background: #080808 !important;
-
-            color: #ffffff !important;
+            padding: 30px 20px;
 
             position: relative;
 
-            overflow-x: hidden;
+            z-index: 2;
+        }
 
-            font-family:
-                Arial,
-                "Noto Sans Sinhala",
-                "Noto Sans Tamil",
-                sans-serif;
+
+        .lessons-header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .lessons-header h1 {
+
+            margin-bottom: 10px;
+
+            color: #d4af37;
+        }
+
+
+        .lessons-header p {
+
+            color: #d2d2d2;
         }
 
 
 
         /* =====================================================
-           CSS ART SIDE WALLPAPER
-           ORIGINAL CSS ART
-           NO EXTERNAL IMAGE REQUIRED
+           OVERALL PROGRESS
            ===================================================== */
+
+        .overall-progress-card {
+
+            background: #1b1b1b;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .overall-progress-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 10px;
+        }
+
+
+        .overall-progress-top strong:last-child {
+
+            color: #d4af37;
+        }
+
+
+        .overall-progress-bar {
+
+            width: 100%;
+
+            height: 12px;
+
+            background: #333;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+
+        .overall-progress-fill {
+
+            height: 100%;
+
+            width: 0%;
+
+            background: gold;
+
+            transition: width 0.4s ease;
+        }
+
+
+
+        /* =====================================================
+           LESSON CARD
+           ===================================================== */
+
+        .lesson-card {
+
+            background: #1b1b1b;
+
+            border: 1px solid #333;
+
+            border-radius: 15px;
+
+            padding: 22px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            z-index: 2;
+
+            transition: 0.2s ease;
+        }
+
+
+        .lesson-card:hover {
+
+            border-color: #8e761d;
+
+            transform: translateY(-2px);
+        }
+
+
+        .lesson-card-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .lesson-number {
+
+            color: gold;
+
+            font-weight: bold;
+        }
+
+
+        .lesson-card h2 {
+
+            color: #fff;
+
+            margin-top: 5px;
+
+            line-height: 1.5;
+        }
+
+
+        .lesson-status {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            color: #aaa;
+
+            white-space: nowrap;
+        }
+
+
+        .lesson-description {
+
+            margin: 15px 0;
+
+            line-height: 1.7;
+
+            color: #ddd;
+        }
+
+
+
+        /* =====================================================
+           LESSON PROGRESS
+           ===================================================== */
+
+        .lesson-progress-container {
+
+            width: 100%;
+
+            height: 8px;
+
+            background: #333;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            margin: 15px 0 8px;
+        }
+
+
+        .lesson-progress-bar {
+
+            height: 100%;
+
+            width: 0%;
+
+            background: gold;
+
+            transition: width 0.4s ease;
+        }
+
+
+        .lesson-progress-text {
+
+            font-size: 13px;
+
+            color: #aaa;
+        }
+
+
+
+        /* =====================================================
+           BUTTON
+           ===================================================== */
+
+        .lesson-actions {
+
+            margin-top: 18px;
+        }
+
+
+        .lesson-button {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            background: gold;
+
+            color: #000;
+
+            transition: 0.2s;
+        }
+
+
+        .lesson-button:hover {
+
+            transform: translateY(-2px);
+
+            background: #fff;
+        }
+
+
+        .lesson-button.completed {
+
+            background: #555;
+
+            color: #fff;
+        }
+
+
+
+        /* =====================================================
+           DASHBOARD LINK
+           ===================================================== */
+
+        .dashboard-link {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .dashboard-link a {
+
+            color: gold;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+
+        /* =====================================================
+           UNIQUE EDUZONE
+           RELAXING SIDE WALLPAPER
+           ORIGINAL CSS ART
+           NO EXTERNAL IMAGE
+           ===================================================== */
+
+        body {
+
+            position: relative;
+
+            overflow-x: hidden;
+        }
+
+
+        /* Decorative side panels */
 
         .lesson-side-decoration {
 
@@ -273,7 +547,7 @@
 
 
         /* =====================================================
-           CSS BOOKS
+           SIMPLE ORIGINAL CSS BOOKSHELF
            ===================================================== */
 
         .side-books {
@@ -394,606 +668,7 @@
 
 
         /* =====================================================
-           RIGHT SIDE VARIATION
-           ===================================================== */
-
-        .right .side-wallpaper {
-
-            background:
-
-                radial-gradient(
-                    circle at 50% 20%,
-                    rgba(212,184,105,0.20) 0 10%,
-                    transparent 31%
-                ),
-
-                linear-gradient(
-                    180deg,
-                    rgba(229,218,177,0.09) 0%,
-                    rgba(80,120,89,0.12) 55%,
-                    rgba(24,57,34,0.31) 100%
-                );
-        }
-
-
-
-        /* =====================================================
-           MAIN CONTENT
-           ===================================================== */
-
-        .lessons-page {
-
-            max-width: 1000px;
-
-            margin: auto;
-
-            padding:
-                30px 20px 50px;
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-
-        /* =====================================================
-           PAGE HEADER
-           ===================================================== */
-
-        .lessons-header {
-
-            position: relative;
-
-            overflow: hidden;
-
-            text-align: center;
-
-            margin-bottom: 30px;
-
-            padding:
-                35px 25px;
-
-            border-radius: 18px;
-
-            background:
-
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(212,175,55,0.16),
-                    transparent 45%
-                ),
-
-                linear-gradient(
-                    145deg,
-                    #1b1b1b 0%,
-                    #111111 55%,
-                    #090909 100%
-                );
-
-            border:
-                1px solid
-                rgba(212,175,55,0.65);
-
-            box-shadow:
-
-                0 10px 35px
-                rgba(0,0,0,0.55),
-
-                0 0 35px
-                rgba(212,175,55,0.08);
-        }
-
-
-        .lessons-header::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: -90px;
-
-            left: 50%;
-
-            transform:
-                translateX(-50%);
-
-            width: 280px;
-
-            height: 160px;
-
-            background:
-                rgba(212,175,55,0.10);
-
-            filter:
-                blur(45px);
-
-            border-radius: 50%;
-        }
-
-
-        .lessons-header h1 {
-
-            position: relative;
-
-            z-index: 2;
-
-            margin:
-                0 0 10px;
-
-            color:
-                #d4af37 !important;
-
-            font-size: 32px;
-
-            font-weight: 900;
-        }
-
-
-        .lessons-header p {
-
-            position: relative;
-
-            z-index: 2;
-
-            margin: 0;
-
-            color:
-                #d2d2d2 !important;
-
-            line-height: 1.8;
-
-            font-size: 15px;
-        }
-
-
-
-        /* =====================================================
-           OVERALL PROGRESS CARD
-           ===================================================== */
-
-        .overall-progress-card {
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    #1b1b1b,
-                    #111111
-                );
-
-            border:
-                1px solid #444;
-
-            border-radius: 15px;
-
-            padding: 20px;
-
-            margin-bottom: 30px;
-
-            box-shadow:
-                0 5px 20px
-                rgba(0,0,0,0.35);
-        }
-
-
-        .overall-progress-top {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            margin-bottom: 10px;
-        }
-
-
-        .overall-progress-top strong {
-
-            color:
-                #ffffff;
-        }
-
-
-        .overall-progress-top strong:last-child {
-
-            color:
-                #d4af37;
-        }
-
-
-        .overall-progress-bar {
-
-            width: 100%;
-
-            height: 12px;
-
-            background:
-                #333;
-
-            border-radius: 10px;
-
-            overflow: hidden;
-        }
-
-
-        .overall-progress-fill {
-
-            height: 100%;
-
-            width: 0%;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #a98518,
-                    #d4af37,
-                    #f1cf67
-                );
-
-            transition:
-                width 0.4s ease;
-        }
-
-
-        #overallLessonText {
-
-            color:
-                #cccccc;
-
-            font-size: 14px;
-
-            margin-bottom: 0;
-        }
-
-
-
-        /* =====================================================
-           LESSON CARD
-           ===================================================== */
-
-        .lesson-card {
-
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    #1b1b1b,
-                    #111111
-                );
-
-            border:
-                1px solid #333;
-
-            border-radius: 15px;
-
-            padding: 22px;
-
-            margin-bottom: 20px;
-
-            box-shadow:
-                0 5px 18px
-                rgba(0,0,0,0.35);
-
-            transition:
-                0.25s ease;
-        }
-
-
-        .lesson-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            top: 0;
-
-            bottom: 0;
-
-            width: 4px;
-
-            background:
-
-                linear-gradient(
-                    to bottom,
-                    #d4af37,
-                    #806900
-                );
-        }
-
-
-        .lesson-card:hover {
-
-            border-color:
-                #806900;
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 9px 25px
-                rgba(0,0,0,0.45);
-        }
-
-
-
-        /* =====================================================
-           LESSON CARD HEADER
-           ===================================================== */
-
-        .lesson-card-header {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 15px;
-        }
-
-
-        .lesson-number {
-
-            color:
-                #d4af37;
-
-            font-weight: bold;
-
-            font-size: 14px;
-
-            letter-spacing: 1px;
-
-            margin-bottom: 5px;
-        }
-
-
-        .lesson-card h2 {
-
-            margin: 0;
-
-            color:
-                #ffffff;
-
-            font-size: 22px;
-
-            line-height: 1.5;
-        }
-
-
-        .lesson-status {
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            color:
-                #aaaaaa;
-
-            white-space: nowrap;
-        }
-
-
-
-        /* =====================================================
-           DESCRIPTION
-           ===================================================== */
-
-        .lesson-description {
-
-            margin:
-                15px 0;
-
-            line-height: 1.8;
-
-            color:
-                #dddddd;
-
-            font-size: 15px;
-        }
-
-
-
-        /* =====================================================
-           LESSON PROGRESS
-           ===================================================== */
-
-        .lesson-progress-container {
-
-            width: 100%;
-
-            height: 8px;
-
-            background:
-                #333;
-
-            border-radius: 10px;
-
-            overflow: hidden;
-
-            margin:
-                15px 0 8px;
-        }
-
-
-        .lesson-progress-bar {
-
-            height: 100%;
-
-            width: 0%;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #a98518,
-                    #d4af37
-                );
-
-            transition:
-                width 0.4s ease;
-        }
-
-
-        .lesson-progress-text {
-
-            font-size: 13px;
-
-            color:
-                #aaaaaa;
-        }
-
-
-
-        /* =====================================================
-           LESSON ACTIONS
-           ===================================================== */
-
-        .lesson-actions {
-
-            margin-top: 18px;
-        }
-
-
-        .lesson-button {
-
-            display: inline-block;
-
-            padding:
-                10px 18px;
-
-            border-radius: 8px;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            background:
-                #d4af37;
-
-            color:
-                #000;
-
-            transition:
-                0.2s ease;
-        }
-
-
-        .lesson-button:hover {
-
-            transform:
-                translateY(-2px);
-
-            background:
-                #ffffff;
-
-            color:
-                #000;
-        }
-
-
-        .lesson-button.completed {
-
-            background:
-                #555;
-
-            color:
-                #fff;
-        }
-
-
-
-        /* =====================================================
-           DASHBOARD LINK
-           ===================================================== */
-
-        .dashboard-link {
-
-            text-align: center;
-
-            margin-top: 30px;
-
-            padding:
-                10px;
-        }
-
-
-        .dashboard-link a {
-
-            color:
-                #d4af37;
-
-            font-weight: bold;
-
-            text-decoration: none;
-
-            transition:
-                0.2s ease;
-        }
-
-
-        .dashboard-link a:hover {
-
-            color:
-                #ffffff;
-        }
-
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        .site-footer {
-
-            position: relative;
-
-            z-index: 2;
-
-            background:
-                #080808;
-
-            border-top:
-                1px solid #222;
-
-            text-align: center;
-
-            padding:
-                20px;
-
-            color:
-                #888;
-
-            font-size: 13px;
-        }
-
-
-
-        /* =====================================================
-           KEEP MAIN CONTENT ABOVE SIDE ART
-           ===================================================== */
-
-        .site-header,
-        .lessons-page,
-        .site-footer {
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-
-        /* =====================================================
-           SIDE ART RESPONSIVE
+           RESPONSIVE SIDE ART
            ===================================================== */
 
         @media (max-width: 1250px) {
@@ -1025,65 +700,11 @@
 
         @media (max-width: 600px) {
 
-            .lessons-page {
-
-                padding:
-                    20px 15px 40px;
-            }
-
-
-            .lessons-header {
-
-                padding:
-                    25px 18px;
-            }
-
-
-            .lessons-header h1 {
-
-                font-size: 25px;
-            }
-
-
-            .lessons-header p {
-
-                font-size: 14px;
-            }
-
-
-            .overall-progress-card {
-
-                padding:
-                    18px;
-            }
-
-
-            .lesson-card {
-
-                padding:
-                    20px;
-            }
-
-
             .lesson-card-header {
 
                 flex-direction: column;
 
                 align-items: flex-start;
-            }
-
-
-            .lesson-card h2 {
-
-                font-size: 19px;
-            }
-
-
-            .lesson-description {
-
-                font-size: 14px;
-
-                line-height: 1.8;
             }
 
 
@@ -1094,6 +715,13 @@
                 text-align: center;
             }
 
+
+            .lessons-page {
+
+                padding:
+                    25px 15px;
+            }
+
         }
 
     </style>
@@ -1101,14 +729,11 @@
 </head>
 
 
-
 <body>
 
 
 <!-- =========================================================
      RELAXING SIDE WALLPAPER
-     ORIGINAL CSS ART
-     NO EXTERNAL IMAGE
      ========================================================= -->
 
 
@@ -1248,9 +873,7 @@
 <main class="lessons-page">
 
 
-    <!-- =====================================================
-         LESSONS HEADER
-         ===================================================== -->
+    <!-- PAGE HEADER -->
 
     <section class="lessons-header">
 
@@ -1266,9 +889,7 @@
 
 
 
-    <!-- =====================================================
-         OVERALL PROGRESS
-         ===================================================== -->
+    <!-- OVERALL PROGRESS -->
 
     <section class="overall-progress-card">
 
@@ -1296,7 +917,9 @@
 
 
         <p id="overallLessonText">
+
             0 / 10 lessons completed
+
         </p>
 
     </section>
@@ -2067,9 +1690,7 @@
 
 
 
-    <!-- =====================================================
-         DASHBOARD
-         ===================================================== -->
+    <!-- DASHBOARD -->
 
     <div class="dashboard-link">
 
