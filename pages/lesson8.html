@@ -328,6 +328,69 @@
 
         }
 
+        /* =========================================
+           CASH BOOK FORMAT
+           ========================================= */
+        
+        .cash-book-title {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr 1fr;
+            margin-top: 25px;
+            text-align: center;
+            font-weight: bold;
+            color: gold;
+        }
+        
+        .cash-book-title div {
+            background: #111;
+            border: 1px solid #555;
+            padding: 12px;
+        }
+        
+        .cash-book-title .cash-book-center {
+            color: #fff;
+        }
+        
+        .cash-book-table-wrapper {
+            overflow-x: auto;
+            margin-top: 0;
+        }
+        
+        .cash-book-table {
+            width: 100%;
+            min-width: 850px;
+            border-collapse: collapse;
+        }
+        
+        .cash-book-table th,
+        .cash-book-table td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .cash-book-table th {
+            background: #111;
+            color: gold;
+        }
+        
+        .cash-book-table td {
+            background: #181818;
+        }
+        
+        .cash-book-table .debit-side {
+            color: #7ee787;
+        }
+        
+        .cash-book-table .credit-side {
+            color: #ff8a8a;
+        }
+        
+        .cash-book-table .amount {
+            text-align: right;
+            white-space: nowrap;
+        }
+
     </style>
 
 </head>
@@ -437,6 +500,130 @@
             </div>
 
         </div>
+
+        <div class="cash-book-table-wrapper">
+    <table class="cash-book-table">
+
+        <thead>
+            <tr>
+                <th class="debit-side">දිනය</th>
+                <th class="debit-side">ල:අ:</th>
+                <th class="debit-side">විස්තරය</th>
+                <th class="debit-side">ස:පි:</th>
+                <th class="debit-side">මුදල්<br>රු.</th>
+
+                <th class="credit-side">දිනය</th>
+                <th class="credit-side">ව:අ:</th>
+                <th class="credit-side">විස්තරය</th>
+                <th class="credit-side">ස:පි:</th>
+                <th class="credit-side">මුදල්<br>රු.</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <!-- ආරම්භක මුදල් ලැබීම -->
+            <tr>
+                <td>2026.01.01</td>
+                <td>001</td>
+                <td>ප්‍රාග්ධනය</td>
+                <td>-</td>
+                <td class="amount">100,000</td>
+
+                <td>2026.01.10</td>
+                <td>015</td>
+                <td>වැටුප්</td>
+                <td>-</td>
+                <td class="amount">30,000</td>
+            </tr>
+
+            <!-- විකුණුම් -->
+            <tr>
+                <td>2026.01.05</td>
+                <td>002</td>
+                <td>විකුණුම්</td>
+                <td>-</td>
+                <td class="amount">25,000</td>
+
+                <td>2026.01.12</td>
+                <td>018</td>
+                <td>විදුලි වියදම්</td>
+                <td>-</td>
+                <td class="amount">8,000</td>
+            </tr>
+
+            <!-- ණයගැතියන්ගෙන් ලැබුණු මුදල් -->
+            <tr>
+                <td>2026.01.08</td>
+                <td>005</td>
+                <td>ණයගැතියන්</td>
+                <td>-</td>
+                <td class="amount">15,000</td>
+
+                <td>2026.01.15</td>
+                <td>021</td>
+                <td>කුලී</td>
+                <td>-</td>
+                <td class="amount">20,000</td>
+            </tr>
+
+            <!-- හිස් හර පැත්ත + ගැනීම් -->
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+
+                <td>2026.01.18</td>
+                <td>025</td>
+                <td>ගැනීම්</td>
+                <td>-</td>
+                <td class="amount">5,000</td>
+            </tr>
+
+            <!-- පහලට ගෙන ආ ශේෂය -->
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+
+                <td>2026.01.31</td>
+                <td>-</td>
+                <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
+                <td>-</td>
+                <td class="amount"><strong>77,000</strong></td>
+            </tr>
+
+            <!-- තුලනය කළ එකතුව -->
+            <tr>
+                <th colspan="4">එකතුව</th>
+                <th>140,000</th>
+
+                <th colspan="4">එකතුව</th>
+                <th>140,000</th>
+            </tr>
+
+            <!-- ඉහලට ගෙන ආ ශේෂය -->
+            <tr>
+                <td>2026.02.01</td>
+                <td>-</td>
+                <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
+                <td>-</td>
+                <td class="amount"><strong>77,000</strong></td>
+
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
 
     </section>
 
