@@ -252,6 +252,267 @@
 .adc-result{display:none;text-align:center;padding:18px;border-radius:14px;background:rgba(155,231,164,.08);margin-top:15px}
 @media(max-width:650px){.adc-stats{grid-template-columns:1fr}.activity-card,.adc-card{padding:16px}}
 
+/* =========================================================
+   UNIQUE EDUZONE — LESSON 05 PREMIUM EDITION
+   Visual upgrade only — existing content & JS preserved
+   ========================================================= */
+:root{
+  --premium-gold:#f1cf67;
+  --premium-gold2:#ffe9a3;
+  --premium-bg:#060606;
+  --premium-card:rgba(18,18,18,.86);
+  --premium-border:rgba(241,207,103,.22);
+  --premium-text:#f5f5f5;
+  --premium-muted:#bdbdbd;
+}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 50% -10%,rgba(241,207,103,.12),transparent 32%),
+    radial-gradient(circle at 8% 55%,rgba(62,100,67,.10),transparent 24%),
+    radial-gradient(circle at 92% 70%,rgba(241,207,103,.06),transparent 24%),
+    #050505 !important;
+  color:var(--premium-text);
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:linear-gradient(120deg,transparent 0 48%,rgba(255,255,255,.018) 50%,transparent 52%);
+}
+.site-header{
+  background:rgba(7,7,7,.88) !important;
+  border-bottom:1px solid rgba(241,207,103,.18) !important;
+  box-shadow:0 10px 35px rgba(0,0,0,.45),0 1px 0 rgba(241,207,103,.08) inset;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.site-header .logo{
+  color:var(--premium-gold) !important;
+  letter-spacing:.5px;
+  text-shadow:0 0 22px rgba(241,207,103,.18);
+}
+.site-header nav a{
+  transition:.25s ease !important;
+}
+.site-header nav a:hover{
+  color:var(--premium-gold) !important;
+  text-shadow:0 0 14px rgba(241,207,103,.35);
+}
+.lesson-page{
+  max-width:1080px !important;
+  padding:42px 22px 70px !important;
+}
+.lesson-header{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(145deg,rgba(31,28,20,.96),rgba(12,12,12,.96)) !important;
+  border:1px solid rgba(241,207,103,.34) !important;
+  border-radius:26px !important;
+  padding:48px 35px !important;
+  margin-bottom:30px !important;
+  box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.025) inset,0 0 45px rgba(241,207,103,.055);
+}
+.lesson-header::before{
+  content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+  right:-120px;top:-150px;
+  background:radial-gradient(circle,rgba(241,207,103,.16),transparent 68%);
+  pointer-events:none;
+}
+.lesson-header::after{
+  content:"";position:absolute;left:8%;right:8%;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--premium-gold),transparent);
+  opacity:.55;
+}
+.lesson-number{
+  display:inline-block !important;
+  padding:7px 16px !important;
+  border:1px solid rgba(241,207,103,.38);
+  border-radius:999px;
+  background:rgba(241,207,103,.08);
+  color:var(--premium-gold) !important;
+  letter-spacing:2.5px;
+  font-size:13px !important;
+  box-shadow:0 0 24px rgba(241,207,103,.07) inset;
+}
+.lesson-header h1{
+  position:relative;z-index:1;
+  font-size:clamp(30px,4vw,48px) !important;
+  line-height:1.15;
+  margin:18px 0 12px !important;
+  background:linear-gradient(90deg,#fff,var(--premium-gold2),#fff);
+  -webkit-background-clip:text;background-clip:text;color:transparent !important;
+  text-shadow:none !important;
+}
+.lesson-header p{
+  max-width:760px;margin:0 auto !important;color:#c9c9c9;line-height:1.9;
+}
+.lesson-section{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg,rgba(22,22,22,.94),rgba(12,12,12,.92)) !important;
+  border:1px solid rgba(255,255,255,.075) !important;
+  border-radius:22px !important;
+  padding:30px !important;
+  margin-bottom:22px !important;
+  box-shadow:0 16px 45px rgba(0,0,0,.38),0 1px 0 rgba(255,255,255,.035) inset;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.lesson-section::before{
+  content:"";position:absolute;top:0;left:0;width:95px;height:2px;
+  background:linear-gradient(90deg,var(--premium-gold),transparent);
+  opacity:.8;
+}
+.lesson-section:hover{
+  transform:translateY(-2px);
+  border-color:rgba(241,207,103,.20) !important;
+  box-shadow:0 22px 55px rgba(0,0,0,.46),0 0 28px rgba(241,207,103,.035);
+}
+.lesson-section h2{
+  color:var(--premium-gold) !important;
+  font-size:22px;
+  letter-spacing:.15px;
+  margin-bottom:16px;
+}
+.lesson-section h3{color:#f3f3f3 !important;margin:18px 0 10px}
+.lesson-section p,.lesson-section li{color:#ddd;line-height:1.95}
+.lesson-section ul{padding-left:25px}
+.important{color:var(--premium-gold) !important}
+.formula-box{
+  position:relative;
+  background:linear-gradient(145deg,#090909,#15130d) !important;
+  border:1px solid rgba(241,207,103,.52) !important;
+  border-radius:18px !important;
+  padding:25px !important;
+  margin:24px 0 !important;
+  box-shadow:0 0 35px rgba(241,207,103,.055),0 14px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);
+}
+.formula-box::after{
+  content:"";position:absolute;inset:7px;border:1px solid rgba(241,207,103,.07);border-radius:13px;pointer-events:none;
+}
+.formula{
+  color:var(--premium-gold2) !important;
+  font-size:clamp(22px,3vw,31px) !important;
+  letter-spacing:.5px;
+  text-shadow:0 0 22px rgba(241,207,103,.18);
+}
+.example-box{
+  background:linear-gradient(135deg,rgba(241,207,103,.07),rgba(255,255,255,.025)) !important;
+  border-left:3px solid var(--premium-gold) !important;
+  border-top:1px solid rgba(241,207,103,.12);
+  border-right:1px solid rgba(241,207,103,.06);
+  border-bottom:1px solid rgba(241,207,103,.06);
+  border-radius:0 15px 15px 0 !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.equation-table{
+  overflow:hidden;border-radius:15px;box-shadow:0 12px 32px rgba(0,0,0,.28);
+}
+.equation-table th,.equation-table td{border:1px solid #303030 !important;padding:14px !important}
+.equation-table th{
+  background:linear-gradient(180deg,#1b1912,#0e0e0e) !important;
+  color:var(--premium-gold2) !important;
+}
+.equation-table tr:nth-child(even) td{background:rgba(255,255,255,.018)}
+.lesson-actions{padding-top:12px}
+.quiz-button,.back-button{
+  border:1px solid rgba(241,207,103,.30) !important;
+  border-radius:999px !important;
+  padding:13px 24px !important;
+  transition:.25s ease !important;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+.quiz-button{
+  background:linear-gradient(135deg,#f7d96f,#c99f32) !important;
+  color:#080808 !important;
+}
+.quiz-button:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(241,207,103,.18)}
+.back-button{background:linear-gradient(145deg,#252525,#151515) !important}
+.back-button:hover{transform:translateY(-2px);border-color:rgba(241,207,103,.45) !important}
+.activities-wrap{margin-top:42px !important}
+.activities-wrap > h2,.adc-card > h2{
+  color:var(--premium-gold2);
+  text-align:center;
+  font-size:28px;
+  margin-bottom:20px;
+  text-shadow:0 0 20px rgba(241,207,103,.10);
+}
+.activity-card,.adc-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,rgba(23,23,23,.97),rgba(10,10,10,.97)) !important;
+  border:1px solid rgba(241,207,103,.16) !important;
+  border-radius:20px !important;
+  padding:25px !important;
+  margin:20px 0 !important;
+  box-shadow:0 18px 45px rgba(0,0,0,.36),inset 0 1px 0 rgba(255,255,255,.035);
+}
+.activity-card::before,.adc-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--premium-gold),transparent);opacity:.65;
+}
+.activity-card h3,.adc-card h3{color:var(--premium-gold2) !important;font-size:20px}
+.activity-input,.activity-select,.adc-select{
+  background:#080808 !important;color:#f4f4f4 !important;
+  border:1px solid #3b3b3b !important;border-radius:12px !important;
+  transition:.2s ease;
+}
+.activity-input:focus,.activity-select:focus,.adc-select:focus{
+  outline:none;border-color:rgba(241,207,103,.65) !important;
+  box-shadow:0 0 0 3px rgba(241,207,103,.08);
+}
+.activity-btn,.adc-btn{
+  background:linear-gradient(135deg,#f5d56d,#c59a31) !important;
+  color:#0a0a0a !important;border:1px solid rgba(255,236,167,.35) !important;
+  border-radius:999px !important;padding:11px 20px !important;
+  box-shadow:0 9px 22px rgba(0,0,0,.25);transition:.22s ease !important;
+}
+.activity-btn:hover,.adc-btn:hover{transform:translateY(-2px);filter:none !important;box-shadow:0 13px 28px rgba(241,207,103,.15)}
+.answer-box,.feedback-box{
+  background:linear-gradient(135deg,rgba(241,207,103,.08),rgba(255,255,255,.025)) !important;
+  border-left:3px solid var(--premium-gold) !important;border-radius:0 12px 12px 0 !important;
+}
+.adc-panel{
+  background:linear-gradient(145deg,#090909,#11100c) !important;
+  border:1px solid rgba(241,207,103,.24) !important;
+  box-shadow:0 20px 50px rgba(0,0,0,.38);
+}
+.adc-stats{gap:14px !important}
+.adc-stat{
+  background:linear-gradient(145deg,#181818,#0e0e0e) !important;
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+.adc-stat b{color:var(--premium-gold2) !important}
+.adc-equation{
+  background:linear-gradient(135deg,#16140e,#0d0d0d) !important;
+  border:1px solid rgba(241,207,103,.17);
+  box-shadow:0 10px 25px rgba(0,0,0,.28);
+}
+.adc-progress{background:#222 !important;border:1px solid #2f2f2f}
+.adc-progress span{background:linear-gradient(90deg,#b88b27,#ffe28a,#c99b31) !important}
+.adc-result{border:1px solid rgba(155,231,164,.16)}
+.lesson-side-decoration{
+  filter:drop-shadow(0 18px 35px rgba(0,0,0,.32));
+}
+.side-wallpaper{
+  border:1px solid rgba(241,207,103,.16);
+  box-shadow:0 0 35px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.08);
+}
+.side-motivation .big-word{text-shadow:0 0 18px rgba(241,207,103,.18) !important}
+@media(max-width:1250px){
+  .lesson-side-decoration{opacity:.22 !important}
+}
+@media(max-width:1000px){
+  .lesson-page{max-width:900px !important}
+}
+@media(max-width:650px){
+  .lesson-page{padding:25px 12px 50px !important}
+  .lesson-header{padding:34px 20px !important;border-radius:20px !important}
+  .lesson-section{padding:22px 18px !important;border-radius:18px !important}
+  .lesson-header h1{font-size:31px !important}
+  .formula-box{padding:20px 12px !important}
+  .activity-card,.adc-card{padding:19px !important}
+}
+
 </style>
 
 </head>
