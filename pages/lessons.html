@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,461 +21,529 @@
     <style>
 
         /* =====================================================
-           ORIGINAL LESSONS PAGE BACKGROUND
-           Nature / Lake inspired SVG-style atmosphere
-        ===================================================== */
+           UNIQUE EDUZONE - LESSONS PAGE
+           SIDE NATURE WALLPAPER ONLY
+           ===================================================== */
 
-        body {
-            position: relative;
-            overflow-x: hidden;
+        html,
+        body{
+            margin:0;
+            padding:0;
+            min-height:100%;
+        }
 
-            background:
+        body{
+            position:relative;
+            overflow-x:hidden;
+        }
+
+
+        /* =====================================================
+           SIDE NATURE WALLPAPER
+           ONLY THE EMPTY SIDE AREAS ARE DECORATED
+           ===================================================== */
+
+        body::before,
+        body::after{
+
+            content:"";
+
+            position:fixed;
+
+            top:0;
+            bottom:0;
+
+            width:calc((100vw - 1000px) / 2);
+
+            min-width:90px;
+
+            z-index:0;
+
+            pointer-events:none;
+
+            background-image:
+
                 linear-gradient(
-                    180deg,
-                    #dcefe9 0%,
-                    #edf4ef 45%,
-                    #dce9e5 100%
-                );
+                    to bottom,
+                    rgba(8,25,32,0.28),
+                    rgba(8,25,32,0.08) 45%,
+                    rgba(0,0,0,0.38)
+                ),
+
+                url("https://cdn.pixabay.com/photo/2018/01/16/17/03/nature-3082832_1280.jpg");
+
+            background-size:cover;
+
+            background-repeat:no-repeat;
+
+            background-position:center;
         }
 
 
-        /* -----------------------------------------------------
-           BACKGROUND CONTAINER
-        ----------------------------------------------------- */
+        /* LEFT SIDE */
 
-        .nature-background {
-            position: fixed;
-            inset: 0;
+        body::before{
 
-            width: 100%;
-            height: 100%;
+            left:0;
 
-            z-index: 0;
-            pointer-events: none;
+            border-right:
+                1px solid
+                rgba(255,255,255,0.10);
 
-            overflow: hidden;
+            background-position:
+                48% center;
         }
 
 
-        .nature-background svg {
-            width: 100%;
-            height: 100%;
+        /* RIGHT SIDE */
 
-            display: block;
+        body::after{
+
+            right:0;
+
+            border-left:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            background-position:
+                52% center;
         }
 
 
-        /* -----------------------------------------------------
-           SOFT OVERLAY
-           Keeps lesson cards readable
-        ----------------------------------------------------- */
-
-        .nature-background::after {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(236,246,241,.28) 0%,
-                    rgba(255,255,255,.08) 23%,
-                    rgba(255,255,255,.76) 39%,
-                    rgba(255,255,255,.82) 50%,
-                    rgba(255,255,255,.76) 61%,
-                    rgba(255,255,255,.08) 77%,
-                    rgba(236,246,241,.28) 100%
-                );
-        }
-
-
-        /* -----------------------------------------------------
-           MAIN PAGE
-        ----------------------------------------------------- */
+        /* =====================================================
+           KEEP ALL MAIN CONTENT ABOVE THE WALLPAPER
+           ===================================================== */
 
         .site-header,
         .lessons-page,
-        .site-footer {
-            position: relative;
-            z-index: 2;
+        .site-footer{
+
+            position:relative;
+
+            z-index:2;
         }
 
 
-        .lessons-page {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px 20px;
+        /* =====================================================
+           MAIN LESSON AREA
+           ===================================================== */
+
+        .lessons-page{
+
+            max-width:1000px;
+
+            margin:auto;
+
+            padding:30px 20px;
+
+            position:relative;
+
+            z-index:2;
         }
 
 
-        /* -----------------------------------------------------
+        /* =====================================================
            HEADER
-        ----------------------------------------------------- */
+           ===================================================== */
 
-        .lessons-header {
-            text-align: center;
-            margin-bottom: 30px;
+        .lessons-header{
+
+            text-align:center;
+
+            margin-bottom:30px;
+
+            position:relative;
         }
 
 
-        .lessons-header h1 {
-            margin-bottom: 10px;
+        .lessons-header h1{
+
+            margin-bottom:10px;
 
             text-shadow:
-                0 2px 8px rgba(255,255,255,.8);
+                0 2px 8px rgba(0,0,0,0.7);
         }
 
 
-        .lessons-header p {
+        .lessons-header p{
+
             text-shadow:
-                0 1px 5px rgba(255,255,255,.8);
+                0 1px 5px rgba(0,0,0,0.7);
         }
 
 
-        /* -----------------------------------------------------
+        /* =====================================================
            OVERALL PROGRESS
-        ----------------------------------------------------- */
+           ===================================================== */
 
-        .overall-progress-card {
-            background: rgba(27,27,27,.95);
+        .overall-progress-card{
 
-            border: 1px solid #333;
-            border-radius: 15px;
+            background:
+                rgba(27,27,27,0.97);
 
-            padding: 20px;
-            margin-bottom: 30px;
+            border:
+                1px solid
+                rgba(255,215,0,0.25);
+
+            border-radius:15px;
+
+            padding:20px;
+
+            margin-bottom:30px;
 
             box-shadow:
-                0 12px 30px rgba(0,0,0,.18);
+                0 10px 30px
+                rgba(0,0,0,0.35);
 
-            backdrop-filter: blur(5px);
+            backdrop-filter:
+                blur(4px);
         }
 
 
-        .overall-progress-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .overall-progress-top{
 
-            margin-bottom: 10px;
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            margin-bottom:10px;
         }
 
 
-        .overall-progress-bar {
-            width: 100%;
-            height: 12px;
+        .overall-progress-bar{
 
-            background: #333;
+            width:100%;
 
-            border-radius: 10px;
-            overflow: hidden;
+            height:12px;
+
+            background:#333;
+
+            border-radius:10px;
+
+            overflow:hidden;
         }
 
 
-        .overall-progress-fill {
-            height: 100%;
-            width: 0%;
+        .overall-progress-fill{
 
-            background: gold;
+            height:100%;
+
+            width:0%;
+
+            background:gold;
 
             transition:
-                width .4s ease;
+                width 0.4s ease;
         }
 
 
-        /* -----------------------------------------------------
+        /* =====================================================
            LESSON CARDS
-        ----------------------------------------------------- */
+           ===================================================== */
 
-        .lesson-card {
-            background: rgba(27,27,27,.95);
+        .lesson-card{
 
-            border: 1px solid #333;
-            border-radius: 15px;
+            background:
+                rgba(27,27,27,0.97);
 
-            padding: 22px;
-            margin-bottom: 20px;
+            border:
+                1px solid #333;
 
-            box-shadow:
-                0 12px 30px rgba(0,0,0,.18);
+            border-radius:15px;
 
-            backdrop-filter: blur(5px);
-        }
+            padding:22px;
 
-
-        .lesson-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 15px;
-        }
-
-
-        .lesson-number {
-            color: gold;
-            font-weight: bold;
-        }
-
-
-        .lesson-status {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-
-        .lesson-description {
-            margin: 15px 0;
-            line-height: 1.7;
-        }
-
-
-        .lesson-progress-container {
-            width: 100%;
-            height: 8px;
-
-            background: #333;
-
-            border-radius: 10px;
-            overflow: hidden;
-
-            margin: 15px 0 8px;
-        }
-
-
-        .lesson-progress-bar {
-            height: 100%;
-            width: 0%;
-
-            background: gold;
-
-            transition:
-                width .4s ease;
-        }
-
-
-        .lesson-progress-text {
-            font-size: 13px;
-        }
-
-
-        .lesson-actions {
-            margin-top: 18px;
-        }
-
-
-        .lesson-button {
-            display: inline-block;
-
-            padding: 10px 18px;
-
-            border-radius: 8px;
-
-            text-decoration: none;
-            font-weight: bold;
-
-            background: gold;
-            color: #000;
-
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
-
-
-        .lesson-button:hover {
-            transform: translateY(-2px);
+            margin-bottom:20px;
 
             box-shadow:
-                0 7px 16px rgba(0,0,0,.18);
+                0 10px 28px
+                rgba(0,0,0,0.30);
+
+            position:relative;
+
+            z-index:3;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
 
-        .lesson-button.completed {
-            background: #555;
-            color: #fff;
+        .lesson-card:hover{
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(255,215,0,0.35);
+
+            box-shadow:
+                0 14px 34px
+                rgba(0,0,0,0.40);
         }
 
 
-        /* -----------------------------------------------------
+        .lesson-card-header{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            gap:15px;
+        }
+
+
+        .lesson-number{
+
+            color:gold;
+
+            font-weight:bold;
+
+            letter-spacing:1px;
+        }
+
+
+        .lesson-status{
+
+            font-size:14px;
+
+            font-weight:bold;
+        }
+
+
+        .lesson-description{
+
+            margin:15px 0;
+
+            line-height:1.7;
+        }
+
+
+        /* =====================================================
+           LESSON PROGRESS
+           ===================================================== */
+
+        .lesson-progress-container{
+
+            width:100%;
+
+            height:8px;
+
+            background:#333;
+
+            border-radius:10px;
+
+            overflow:hidden;
+
+            margin:15px 0 8px;
+        }
+
+
+        .lesson-progress-bar{
+
+            height:100%;
+
+            width:0%;
+
+            background:gold;
+
+            transition:
+                width 0.4s ease;
+        }
+
+
+        .lesson-progress-text{
+
+            font-size:13px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+           ===================================================== */
+
+        .lesson-actions{
+
+            margin-top:18px;
+        }
+
+
+        .lesson-button{
+
+            display:inline-block;
+
+            padding:10px 18px;
+
+            border-radius:8px;
+
+            text-decoration:none;
+
+            font-weight:bold;
+
+            background:gold;
+
+            color:#000;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .lesson-button:hover{
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 5px 15px
+                rgba(255,215,0,0.20);
+        }
+
+
+        .lesson-button.completed{
+
+            background:#555;
+
+            color:#fff;
+        }
+
+
+        /* =====================================================
            DASHBOARD LINK
-        ----------------------------------------------------- */
+           ===================================================== */
 
-        .dashboard-link {
-            text-align: center;
-            margin-top: 30px;
+        .dashboard-link{
+
+            text-align:center;
+
+            margin-top:30px;
+
+            position:relative;
+
+            z-index:3;
         }
 
 
-        .dashboard-link a {
-            color: #176b54;
+        .dashboard-link a{
 
-            font-weight: bold;
+            color:gold;
 
-            text-shadow:
-                0 1px 4px rgba(255,255,255,.9);
-        }
-
-
-        /* =====================================================
-           MOTIVATIONAL WORDS
-        ===================================================== */
-
-        .motivation-word {
-            position: absolute;
-
-            font-family:
-                Arial,
-                sans-serif;
-
-            font-weight: 900;
-
-            letter-spacing: 6px;
-
-            white-space: nowrap;
-
-            user-select: none;
-
-            opacity: .30;
-
-            text-shadow:
-                0 2px 8px rgba(255,255,255,.7);
-        }
-
-
-        .word-learn {
-            left: 3%;
-            top: 25%;
-
-            color: #285f4a;
-
-            font-size:
-                clamp(25px, 3vw, 48px);
-
-            transform:
-                rotate(-90deg);
-        }
-
-
-        .word-focus {
-            left: 2%;
-            top: 48%;
-
-            color: #3c6d63;
-
-            font-size:
-                clamp(18px, 2vw, 32px);
-
-            transform:
-                rotate(-90deg);
-        }
-
-
-        .word-grow {
-            left: 3%;
-            bottom: 17%;
-
-            color: #285f4a;
-
-            font-size:
-                clamp(20px, 2.2vw, 36px);
-
-            transform:
-                rotate(-90deg);
-        }
-
-
-        .word-dream {
-            right: 3%;
-            top: 23%;
-
-            color: #356778;
-
-            font-size:
-                clamp(23px, 2.8vw, 45px);
-
-            transform:
-                rotate(90deg);
-        }
-
-
-        .word-believe {
-            right: 2%;
-            top: 48%;
-
-            color: #356778;
-
-            font-size:
-                clamp(18px, 2vw, 32px);
-
-            transform:
-                rotate(90deg);
-        }
-
-
-        .word-achieve {
-            right: 3%;
-            bottom: 17%;
-
-            color: #356778;
-
-            font-size:
-                clamp(20px, 2.2vw, 36px);
-
-            transform:
-                rotate(90deg);
+            font-weight:bold;
         }
 
 
         /* =====================================================
-           RESPONSIVE
-        ===================================================== */
+           SMALL SIDE MOTIVATION
+           These appear only inside the empty side areas
+           ===================================================== */
 
-        @media (max-width: 1200px) {
+        @media (min-width:1001px){
 
-            .motivation-word {
-                opacity: .18;
+            body{
+
+                --side-width:
+                    calc((100vw - 1000px) / 2);
+            }
+
+            body::before{
+
+                box-shadow:
+                    inset -25px 0 45px
+                    rgba(0,0,0,0.30);
+            }
+
+            body::after{
+
+                box-shadow:
+                    inset 25px 0 45px
+                    rgba(0,0,0,0.30);
             }
 
         }
 
 
-        @media (max-width: 900px) {
+        /* =====================================================
+           TABLET
+           ===================================================== */
 
-            .motivation-word {
-                display: none;
+        @media (max-width:1100px){
+
+            body::before,
+            body::after{
+
+                width:
+                    75px;
             }
 
-            .nature-background::after {
-                background:
-                    linear-gradient(
-                        90deg,
-                        rgba(255,255,255,.35),
-                        rgba(255,255,255,.72),
-                        rgba(255,255,255,.35)
-                    );
+            .lessons-page{
+
+                max-width:
+                    calc(100% - 150px);
             }
 
         }
 
 
-        @media (max-width: 600px) {
+        /* =====================================================
+           MOBILE
+           REMOVE SIDE IMAGE COMPLETELY
+           ===================================================== */
 
-            .lessons-page {
+        @media (max-width:700px){
+
+            body::before,
+            body::after{
+
+                display:none;
+            }
+
+
+            .lessons-page{
+
+                max-width:100%;
+
                 padding:
-                    22px 14px;
+                    25px 15px;
             }
 
 
-            .lesson-card-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .lesson-card-header{
+
+                flex-direction:column;
+
+                align-items:flex-start;
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+           ===================================================== */
+
+        @media (max-width:420px){
+
+            .lessons-page{
+
+                padding:
+                    20px 12px;
             }
 
 
-            .nature-background {
-                opacity: .60;
+            .overall-progress-card{
+
+                padding:16px;
+            }
+
+
+            .lesson-card{
+
+                padding:18px;
             }
 
         }
@@ -485,559 +554,6 @@
 
 
 <body>
-
-
-<!-- =========================================================
-     ORIGINAL NATURE BACKGROUND
-     Created completely inside HTML using SVG
-========================================================= -->
-
-<div class="nature-background" aria-hidden="true">
-
-    <svg
-        viewBox="0 0 1600 900"
-        preserveAspectRatio="xMidYMid slice"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-
-        <defs>
-
-            <!-- Sky -->
-
-            <linearGradient
-                id="sky"
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-            >
-
-                <stop
-                    offset="0%"
-                    stop-color="#b9dce3"
-                />
-
-                <stop
-                    offset="55%"
-                    stop-color="#dceee9"
-                />
-
-                <stop
-                    offset="100%"
-                    stop-color="#f3f0dc"
-                />
-
-            </linearGradient>
-
-
-            <!-- Mountain -->
-
-            <linearGradient
-                id="mountain"
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-            >
-
-                <stop
-                    offset="0%"
-                    stop-color="#759a8c"
-                />
-
-                <stop
-                    offset="100%"
-                    stop-color="#486f67"
-                />
-
-            </linearGradient>
-
-
-            <!-- Water -->
-
-            <linearGradient
-                id="water"
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="1"
-            >
-
-                <stop
-                    offset="0%"
-                    stop-color="#9cc7ca"
-                />
-
-                <stop
-                    offset="100%"
-                    stop-color="#d8e7df"
-                />
-
-            </linearGradient>
-
-
-            <!-- Sun -->
-
-            <radialGradient
-                id="sun"
-            >
-
-                <stop
-                    offset="0%"
-                    stop-color="#fff8c7"
-                    stop-opacity=".95"
-                />
-
-                <stop
-                    offset="55%"
-                    stop-color="#f8dfa0"
-                    stop-opacity=".40"
-                />
-
-                <stop
-                    offset="100%"
-                    stop-color="#f8dfa0"
-                    stop-opacity="0"
-                />
-
-            </radialGradient>
-
-
-            <!-- Soft shadow -->
-
-            <filter
-                id="blur"
-            >
-
-                <feGaussianBlur
-                    stdDeviation="18"
-                />
-
-            </filter>
-
-        </defs>
-
-
-        <!-- SKY -->
-
-        <rect
-            width="1600"
-            height="900"
-            fill="url(#sky)"
-        />
-
-
-        <!-- SUN -->
-
-        <circle
-            cx="790"
-            cy="170"
-            r="150"
-            fill="url(#sun)"
-        />
-
-
-        <!-- DISTANT MOUNTAINS -->
-
-        <path
-            d="
-                M0 430
-                L130 330
-                L250 400
-                L390 270
-                L510 390
-                L650 285
-                L780 405
-                L920 300
-                L1060 390
-                L1190 260
-                L1340 380
-                L1460 300
-                L1600 410
-                L1600 560
-                L0 560
-                Z
-            "
-            fill="#a2bdb2"
-            opacity=".62"
-        />
-
-
-        <!-- MAIN MOUNTAINS -->
-
-        <path
-            d="
-                M0 510
-                L160 380
-                L280 475
-                L440 330
-                L590 470
-                L740 350
-                L890 480
-                L1030 355
-                L1180 470
-                L1330 340
-                L1470 455
-                L1600 370
-                L1600 600
-                L0 600
-                Z
-            "
-            fill="url(#mountain)"
-            opacity=".82"
-        />
-
-
-        <!-- FAR FOREST -->
-
-        <path
-            d="
-                M0 535
-                Q90 500 180 535
-                T360 535
-                T540 535
-                T720 535
-                T900 535
-                T1080 535
-                T1260 535
-                T1440 535
-                T1600 535
-                L1600 610
-                L0 610
-                Z
-            "
-            fill="#3f685c"
-            opacity=".78"
-        />
-
-
-        <!-- LAKE -->
-
-        <path
-            d="
-                M0 560
-                C300 535 520 575 800 555
-                C1080 535 1320 570 1600 550
-                L1600 900
-                L0 900
-                Z
-            "
-            fill="url(#water)"
-        />
-
-
-        <!-- WATER LIGHT -->
-
-        <g
-            opacity=".35"
-            filter="url(#blur)"
-        >
-
-            <ellipse
-                cx="790"
-                cy="650"
-                rx="410"
-                ry="42"
-                fill="#ffffff"
-            />
-
-            <ellipse
-                cx="800"
-                cy="750"
-                rx="300"
-                ry="30"
-                fill="#ffffff"
-            />
-
-        </g>
-
-
-        <!-- ISLAND LEFT -->
-
-        <path
-            d="
-                M0 560
-                Q130 515 290 545
-                Q380 560 450 590
-                Q310 615 0 610
-                Z
-            "
-            fill="#365c50"
-        />
-
-
-        <!-- ISLAND RIGHT -->
-
-        <path
-            d="
-                M1180 560
-                Q1320 520 1460 550
-                Q1540 565 1600 550
-                L1600 620
-                Q1400 605 1180 590
-                Z
-            "
-            fill="#3c6255"
-        />
-
-
-        <!-- LEFT TREES -->
-
-        <g
-            fill="#294f45"
-            opacity=".95"
-        >
-
-            <path
-                d="
-                    M80 565
-                    L110 425
-                    L140 565
-                    Z
-                "
-            />
-
-            <path
-                d="
-                    M125 565
-                    L165 390
-                    L205 565
-                    Z
-                "
-            />
-
-            <path
-                d="
-                    M190 565
-                    L225 430
-                    L260 565
-                    Z
-                "
-            />
-
-            <path
-                d="
-                    M250 565
-                    L285 410
-                    L320 565
-                    Z
-                "
-            />
-
-        </g>
-
-
-        <!-- RIGHT TREES -->
-
-        <g
-            fill="#294f45"
-            opacity=".95"
-        >
-
-            <path
-                d="
-                    M1330 570
-                    L1365 420
-                    L1400 570
-                    Z
-                "
-            />
-
-            <path
-                d="
-                    M1390 570
-                    L1435 380
-                    L1480 570
-                    Z
-                "
-            />
-
-            <path
-                d="
-                    M1460 570
-                    L1500 425
-                    L1540 570
-                    Z
-                "
-            />
-
-            <path
-                d="
-                    M1510 570
-                    L1550 405
-                    L1590 570
-                    Z
-                "
-            />
-
-        </g>
-
-
-        <!-- LEFT FOREGROUND LEAVES -->
-
-        <g
-            fill="#5d9079"
-            opacity=".55"
-        >
-
-            <ellipse
-                cx="70"
-                cy="150"
-                rx="95"
-                ry="35"
-                transform="rotate(35 70 150)"
-            />
-
-            <ellipse
-                cx="25"
-                cy="250"
-                rx="115"
-                ry="38"
-                transform="rotate(-25 25 250)"
-            />
-
-            <ellipse
-                cx="90"
-                cy="760"
-                rx="120"
-                ry="42"
-                transform="rotate(22 90 760)"
-            />
-
-        </g>
-
-
-        <!-- RIGHT FOREGROUND LEAVES -->
-
-        <g
-            fill="#568776"
-            opacity=".55"
-        >
-
-            <ellipse
-                cx="1530"
-                cy="150"
-                rx="100"
-                ry="36"
-                transform="rotate(-35 1530 150)"
-            />
-
-            <ellipse
-                cx="1570"
-                cy="270"
-                rx="120"
-                ry="40"
-                transform="rotate(25 1570 270)"
-            />
-
-            <ellipse
-                cx="1510"
-                cy="770"
-                rx="125"
-                ry="43"
-                transform="rotate(-20 1510 770)"
-            />
-
-        </g>
-
-
-        <!-- SOFT FLOATING LIGHT -->
-
-        <g
-            fill="#ffffff"
-            opacity=".45"
-        >
-
-            <circle
-                cx="180"
-                cy="290"
-                r="5"
-            />
-
-            <circle
-                cx="250"
-                cy="220"
-                r="3"
-            />
-
-            <circle
-                cx="1370"
-                cy="300"
-                r="5"
-            />
-
-            <circle
-                cx="1450"
-                cy="230"
-                r="3"
-            />
-
-            <circle
-                cx="1510"
-                cy="430"
-                r="4"
-            />
-
-            <circle
-                cx="100"
-                cy="420"
-                r="4"
-            />
-
-        </g>
-
-
-        <!-- WATER HORIZONTAL REFLECTIONS -->
-
-        <g
-            stroke="#ffffff"
-            stroke-width="3"
-            opacity=".18"
-            stroke-linecap="round"
-        >
-
-            <line x1="80" y1="650" x2="390" y2="650"/>
-            <line x1="1180" y1="660" x2="1510" y2="660"/>
-
-            <line x1="40" y1="710" x2="300" y2="710"/>
-            <line x1="1300" y1="730" x2="1580" y2="730"/>
-
-            <line x1="110" y1="790" x2="420" y2="790"/>
-            <line x1="1180" y1="805" x2="1490" y2="805"/>
-
-        </g>
-
-    </svg>
-
-
-    <!-- MOTIVATIONAL WORDS -->
-
-    <div class="motivation-word word-learn">
-        LEARN
-    </div>
-
-    <div class="motivation-word word-focus">
-        FOCUS
-    </div>
-
-    <div class="motivation-word word-grow">
-        GROW
-    </div>
-
-    <div class="motivation-word word-dream">
-        DREAM
-    </div>
-
-    <div class="motivation-word word-believe">
-        BELIEVE
-    </div>
-
-    <div class="motivation-word word-achieve">
-        ACHIEVE
-    </div>
-
-</div>
-
 
 
 <header class="site-header">
@@ -1775,3 +1291,4 @@
 </body>
 
 </html>
+```
