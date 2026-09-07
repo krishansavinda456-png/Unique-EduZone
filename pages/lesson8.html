@@ -391,6 +391,258 @@
             white-space: nowrap;
         }
 
+        /* =========================================================
+   LESSON 08 - 8.1 විශේෂ උදාහරණය
+   ========================================================= */
+
+.lesson8-example{
+    margin-top:30px;
+    margin-bottom:35px;
+}
+
+.lesson8-example .example-title{
+    color:#ffd700;
+    text-align:center;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.lesson8-example .example-intro{
+    background:#151515;
+    border-left:4px solid #ffd700;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    line-height:1.9;
+}
+
+.lesson8-example .transaction-box{
+    background:#111;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:30px;
+}
+
+.lesson8-example .transaction-box h3{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+.lesson8-example .transaction-box ol{
+    padding-left:25px;
+}
+
+.lesson8-example .transaction-box li{
+    margin-bottom:10px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   මුදල් පොත
+   ========================================================= */
+
+.lesson8-example .table-scroll{
+    width:100%;
+    overflow-x:auto;
+    margin-top:15px;
+}
+
+.lesson8-example table{
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+}
+
+.lesson8-example th,
+.lesson8-example td{
+    border:1px solid #555;
+    padding:11px 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.lesson8-example th{
+    background:#1c1c1c;
+    color:#ffd700;
+    font-weight:bold;
+}
+
+.lesson8-example td{
+    background:#101010;
+    color:#f2f2f2;
+}
+
+.lesson8-example .total-row td{
+    background:#191919;
+    color:#ffd700;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   ලෙජර් ගිණුම්
+   හර | ගිණුමේ නම | බැර
+   ========================================================= */
+
+.lesson8-account{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.lesson8-account .account-format-wrapper{
+    width:100%;
+    overflow-x:auto;
+}
+
+
+/* ඉහළ title row */
+
+.lesson8-account .account-title-row{
+    min-width:850px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    position:relative;
+    text-align:center;
+    align-items:center;
+    min-height:58px;
+    border:1px solid #555;
+    border-bottom:none;
+    background:#111;
+}
+
+
+/* මැද ගිණුමේ නම */
+
+.lesson8-account .account-name-title{
+    grid-column:1 / 3;
+    grid-row:1;
+    color:#ffd700;
+    font-size:20px;
+    font-weight:bold;
+    z-index:2;
+    text-align:center;
+}
+
+
+/* හර */
+
+.lesson8-account .debit-title{
+    grid-column:1;
+    grid-row:1;
+    text-align:left;
+    padding-left:20px;
+}
+
+
+/* බැර */
+
+.lesson8-account .credit-title{
+    grid-column:2;
+    grid-row:1;
+    text-align:right;
+    padding-right:20px;
+}
+
+
+.lesson8-account .account-side-title{
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    z-index:3;
+}
+
+
+/* ලෙජර් table */
+
+.lesson8-account .ledger-table{
+    min-width:850px;
+    width:100%;
+    border-collapse:collapse;
+}
+
+.lesson8-account .ledger-table th,
+.lesson8-account .ledger-table td{
+    border:1px solid #555;
+    padding:11px 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.lesson8-account .ledger-table th{
+    background:#191919;
+    color:#ffd700;
+}
+
+.lesson8-account .ledger-table td{
+    background:#101010;
+    color:#f2f2f2;
+}
+
+.lesson8-account .ledger-total td{
+    background:#191919;
+    color:#ffd700;
+    font-weight:bold;
+}
+
+
+/* ශේෂ පේළි */
+
+.lesson8-account .balance-row td{
+    color:#ffd700;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   සාරාංශය
+   ========================================================= */
+
+.lesson8-example .summary-box{
+    background:#151515;
+    border:1px solid #444;
+    border-left:4px solid #ffd700;
+    border-radius:10px;
+    padding:20px;
+    margin-top:30px;
+}
+
+.lesson8-example .summary-box h3{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+.lesson8-example .summary-box li{
+    margin-bottom:8px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media(max-width:650px){
+
+    .lesson8-example .example-title{
+        font-size:21px;
+    }
+
+    .lesson8-account .account-title-row{
+        min-width:750px;
+    }
+
+    .lesson8-account .account-name-title{
+        font-size:17px;
+    }
+
+    .lesson8-account .account-side-title{
+        font-size:15px;
+    }
+
+}
+
     </style>
 
 </head>
@@ -3981,31 +4233,37 @@
 </section>
 <!-- ==================== වට්ටම් අවසන් ==================== -->
 
-    <!-- =========================================================
-     8.1 අවසාන උදාහරණය
-     ගනුදෙනු 10ක් - වට්ටම් සහිත මුදල් පොත හා ලෙජර් ගිණුම්
-========================================================= -->
+<!-- =========================================================
+     8.1 විශේෂ උදාහරණය
+     ========================================================= -->
 
-<section class="lesson-section">
+<section class="lesson8-example">
 
-    <h2>🧾 8.1 විශේෂ උදාහරණය – වට්ටම් සහිත ගනුදෙනු 10ක්</h2>
+    <h2 class="example-title">
+        🧾 8.1 විශේෂ උදාහරණය – වට්ටම් සහිත ගනුදෙනු
+    </h2>
 
-    <div class="info-box">
+
+    <div class="example-intro">
+
         <p>
-            පහත උදාහරණයේ වට්ටම් වර්ග, මුදල් ගනුදෙනු සහ ණයට සිදු කරන
-            ගනුදෙනු එකට ඇතුළත් කර ඇත. මුදල් පොතේ වට්ටම් තීරු වෙනම
-            පෙන්වා ඇති අතර, එම වට්ටම් ගිණුම්වලටද මාරු කර පෙන්වා ඇත.
+            පහත උදාහරණයේ වෙළෙඳ වට්ටම්, දුන් වට්ටම්,
+            ලද වට්ටම් සහිත ගනුදෙනු ඇතුළත් කර ඇත.
+            මුදල් පොතේ වට්ටම් තීරු වෙනම පෙන්වා ඇති අතර,
+            එම වට්ටම් තීරුවල එකතුව අදාළ වට්ටම් ගිණුම්වලට
+            මාරු කර පෙන්වා ඇත.
         </p>
+
     </div>
 
 
-    <!-- =========================
+    <!-- =====================================================
          ගනුදෙනු 10
-    ========================== -->
+         ===================================================== -->
 
-    <div class="example-card">
+    <div class="transaction-box">
 
-        <h3>📌 ගනුදෙනු</h3>
+        <h3>📌 ගනුදෙනු 10</h3>
 
         <ol>
 
@@ -4019,22 +4277,25 @@
             </li>
 
             <li>
-                නිමල්ට රු.30,000ක භාණ්ඩ 10% වෙළෙඳ වට්ටමක් සහිතව
-                ණයට අලෙවි කරන ලදී.
+                නිමල්ට රු.30,000ක භාණ්ඩ 10% වෙළෙඳ වට්ටමක්
+                සහිතව ණයට අලෙවි කරන ලදී.
             </li>
 
             <li>
-                නිමල්ගෙන් ණය මුදල පියවීම සඳහා 5% මුදල් වට්ටමක් ලබාදී
-                රු.25,650ක මුදලක් ලබා ගන්නා ලදී.
+                නිමල්ගෙන් ලැබිය යුතු මුදල පියවීමේදී 5%
+                මුදල් වට්ටමක් ලබාදී රු.25,650ක මුදලක්
+                ලබා ගන්නා ලදී.
             </li>
 
             <li>
-                සැපයුම්කරුවෙකුගෙන් රු.20,000ක භාණ්ඩ ණයට මිලදී ගන්නා ලදී.
+                සැපයුම්කරුවෙකුගෙන් රු.20,000ක භාණ්ඩ
+                ණයට මිලදී ගන්නා ලදී.
             </li>
 
             <li>
-                සැපයුම්කරුට ගෙවිය යුතු මුදල පියවීමේදී 5% මුදල් වට්ටමක්
-                ලබාගෙන රු.19,000ක මුදලක් ගෙවන ලදී.
+                සැපයුම්කරුට ගෙවිය යුතු මුදල පියවීමේදී 5%
+                මුදල් වට්ටමක් ලබාගෙන රු.19,000ක මුදලක්
+                ගෙවන ලදී.
             </li>
 
             <li>
@@ -4042,13 +4303,14 @@
             </li>
 
             <li>
-                සුරංගට රු.40,000ක භාණ්ඩ 10% වෙළෙඳ වට්ටමක් සහිතව
-                ණයට අලෙවි කරන ලදී.
+                සුරංගට රු.40,000ක භාණ්ඩ 10% වෙළෙඳ වට්ටමක්
+                සහිතව ණයට අලෙවි කරන ලදී.
             </li>
 
             <li>
-                සුරංගගෙන් ණය මුදල පියවීම සඳහා 5% මුදල් වට්ටමක් ලබාදී
-                රු.34,200ක මුදලක් ලබා ගන්නා ලදී.
+                සුරංගගෙන් ලැබිය යුතු මුදල පියවීමේදී 5%
+                මුදල් වට්ටමක් ලබාදී රු.34,200ක මුදලක්
+                ලබා ගන්නා ලදී.
             </li>
 
             <li>
@@ -4060,26 +4322,20 @@
     </div>
 
 
-    <!-- =========================
-         මුදල් පොත
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         මුදල් පොත
+         ===================================================== -->
+
+    <div class="transaction-box">
 
         <h3>💰 මුදල් පොත</h3>
 
         <div class="table-scroll">
 
-            <table class="t-account">
+            <table>
 
                 <thead>
-
-                    <tr>
-
-                        <th colspan="5">හර පැත්ත</th>
-                        <th colspan="5">බැර පැත්ත</th>
-
-                    </tr>
 
                     <tr>
 
@@ -4099,6 +4355,7 @@
 
                 </thead>
 
+
                 <tbody>
 
                     <tr>
@@ -4110,12 +4367,13 @@
                         <td>100,000</td>
 
                         <td>04/01</td>
-                        <td>නිමල්</td>
+                        <td>නිමල් ගිණුම</td>
                         <td></td>
                         <td>1,350</td>
                         <td>25,650</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4126,17 +4384,18 @@
                         <td>20,000</td>
 
                         <td>06/01</td>
-                        <td>සැපයුම්කරු</td>
+                        <td>සැපයුම්කරු ගිණුම</td>
                         <td></td>
                         <td>1,000</td>
                         <td>19,000</td>
 
                     </tr>
 
+
                     <tr>
 
                         <td>04/01</td>
-                        <td>නිමල්</td>
+                        <td>නිමල් ගිණුම</td>
                         <td></td>
                         <td>1,350</td>
                         <td>25,650</td>
@@ -4149,10 +4408,11 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td>09/01</td>
-                        <td>සුරංග</td>
+                        <td>සුරංග ගිණුම</td>
                         <td></td>
                         <td>1,800</td>
                         <td>34,200</td>
@@ -4164,6 +4424,7 @@
                         <td>8,000</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4179,31 +4440,58 @@
                         </td>
                         <td></td>
                         <td>-</td>
-                        <td><strong>142,850</strong></td>
+                        <td>
+                            <strong>142,850</strong>
+                        </td>
 
                     </tr>
+
 
                     <tr class="total-row">
 
-                        <td colspan="3"><strong>එකතුව</strong></td>
-                        <td><strong>3,150</strong></td>
-                        <td><strong>179,850</strong></td>
+                        <td colspan="3">
+                            එකතුව
+                        </td>
 
-                        <td colspan="3"><strong>එකතුව</strong></td>
-                        <td><strong>1,000</strong></td>
-                        <td><strong>179,850</strong></td>
+                        <td>
+                            3,150
+                        </td>
+
+                        <td>
+                            179,850
+                        </td>
+
+
+                        <td colspan="3">
+                            එකතුව
+                        </td>
+
+                        <td>
+                            1,000
+                        </td>
+
+                        <td>
+                            179,850
+                        </td>
 
                     </tr>
+
 
                     <tr>
 
                         <td>01/02</td>
+
                         <td>
                             <strong>ඉහලට ගෙන ආ ශේෂය</strong>
                         </td>
+
                         <td></td>
+
                         <td>-</td>
-                        <td><strong>142,850</strong></td>
+
+                        <td>
+                            <strong>142,850</strong>
+                        </td>
 
                         <td></td>
                         <td></td>
@@ -4222,11 +4510,12 @@
     </div>
 
 
-    <!-- =========================
-         මුදල් ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         මුදල් ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
@@ -4247,9 +4536,9 @@
             </div>
 
 
-            <table class="t-account">
+            <table class="ledger-table">
 
-                <thead>
+                <tbody>
 
                     <tr>
 
@@ -4263,9 +4552,6 @@
 
                     </tr>
 
-                </thead>
-
-                <tbody>
 
                     <tr>
 
@@ -4274,10 +4560,11 @@
                         <td>100,000</td>
 
                         <td>04/01</td>
-                        <td>නිමල්</td>
+                        <td>නිමල් ගිණුම</td>
                         <td>25,650</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4286,15 +4573,16 @@
                         <td>20,000</td>
 
                         <td>06/01</td>
-                        <td>සැපයුම්කරු</td>
+                        <td>සැපයුම්කරු ගිණුම</td>
                         <td>19,000</td>
 
                     </tr>
 
+
                     <tr>
 
                         <td>04/01</td>
-                        <td>නිමල්</td>
+                        <td>නිමල් ගිණුම</td>
                         <td>25,650</td>
 
                         <td>07/01</td>
@@ -4303,10 +4591,11 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td>09/01</td>
-                        <td>සුරංග</td>
+                        <td>සුරංග ගිණුම</td>
                         <td>34,200</td>
 
                         <td>10/01</td>
@@ -4314,6 +4603,7 @@
                         <td>8,000</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4325,29 +4615,23 @@
                         <td>
                             <strong>පහලට ගෙන ආ ශේෂය</strong>
                         </td>
-                        <td><strong>142,850</strong></td>
+                        <td>
+                            <strong>142,850</strong>
+                        </td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2">
-                            <strong>එකතුව</strong>
-                        </td>
+                    <tr class="ledger-total">
 
-                        <td>
-                            <strong>179,850</strong>
-                        </td>
+                        <td colspan="2">එකතුව</td>
+                        <td>179,850</td>
 
-                        <td colspan="2">
-                            <strong>එකතුව</strong>
-                        </td>
-
-                        <td>
-                            <strong>179,850</strong>
-                        </td>
+                        <td colspan="2">එකතුව</td>
+                        <td>179,850</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4357,7 +4641,9 @@
                             <strong>ඉහලට ගෙන ආ ශේෂය</strong>
                         </td>
 
-                        <td><strong>142,850</strong></td>
+                        <td>
+                            <strong>142,850</strong>
+                        </td>
 
                         <td></td>
                         <td></td>
@@ -4374,32 +4660,57 @@
     </div>
 
 
-    <!-- =========================
-         අලෙවි ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         අලෙවි ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">අලෙවි ගිණුම</div>
+                <div class="account-name-title">
+                    අලෙවි ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
 
                     <tr>
 
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
+
+                    <tr>
+
                         <td>31/01</td>
-                        <td>පහලට ගෙන ආ ශේෂය</td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
                         <td>83,000</td>
 
                         <td>02/01</td>
@@ -4408,6 +4719,7 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td></td>
@@ -4415,10 +4727,11 @@
                         <td></td>
 
                         <td>03/01</td>
-                        <td>නිමල්</td>
+                        <td>නිමල් ගිණුම</td>
                         <td>27,000</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4427,20 +4740,22 @@
                         <td></td>
 
                         <td>08/01</td>
-                        <td>සුරංග</td>
+                        <td>සුරංග ගිණුම</td>
                         <td>36,000</td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>83,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>83,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>83,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>83,000</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4449,8 +4764,14 @@
                         <td></td>
 
                         <td>01/02</td>
-                        <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>83,000</strong></td>
+
+                        <td>
+                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>83,000</strong>
+                        </td>
 
                     </tr>
 
@@ -4463,55 +4784,88 @@
     </div>
 
 
-    <!-- =========================
-         ගැනුම් ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         ගැනුම් ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">ගැනුම් ගිණුම</div>
+                <div class="account-name-title">
+                    ගැනුම් ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
                         <td>05/01</td>
-                        <td>සැපයුම්කරු</td>
+                        <td>සැපයුම්කරු ගිණුම</td>
                         <td>20,000</td>
 
                         <td>31/01</td>
-                        <td>පහලට ගෙන ආ ශේෂය</td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
                         <td>20,000</td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>20,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>20,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>20,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>20,000</td>
 
                     </tr>
+
 
                     <tr>
 
                         <td>01/02</td>
-                        <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>20,000</strong></td>
+
+                        <td>
+                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>20,000</strong>
+                        </td>
 
                         <td></td>
                         <td></td>
@@ -4528,27 +4882,48 @@
     </div>
 
 
-    <!-- =========================
-         නිමල් ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         නිමල් ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">නිමල් ගිණුම</div>
+                <div class="account-name-title">
+                    නිමල් ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
@@ -4561,6 +4936,7 @@
                         <td>25,650</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4574,6 +4950,7 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td></td>
@@ -4581,18 +4958,25 @@
                         <td></td>
 
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>0</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>0</strong>
+                        </td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>27,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>27,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>27,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>27,000</td>
 
                     </tr>
 
@@ -4605,27 +4989,48 @@
     </div>
 
 
-    <!-- =========================
-         සුරංග ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         සුරංග ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">සුරංග ගිණුම</div>
+                <div class="account-name-title">
+                    සුරංග ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
@@ -4639,6 +5044,7 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td></td>
@@ -4651,6 +5057,7 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td></td>
@@ -4658,18 +5065,25 @@
                         <td></td>
 
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>0</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>0</strong>
+                        </td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>36,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>36,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>36,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>36,000</td>
 
                     </tr>
 
@@ -4682,27 +5096,48 @@
     </div>
 
 
-    <!-- =========================
-         සැපයුම්කරු ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         සැපයුම්කරු ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">සැපයුම්කරු ගිණුම</div>
+                <div class="account-name-title">
+                    සැපයුම්කරු ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
@@ -4716,6 +5151,7 @@
 
                     </tr>
 
+
                     <tr>
 
                         <td>06/01</td>
@@ -4723,18 +5159,25 @@
                         <td>1,000</td>
 
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>0</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>0</strong>
+                        </td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>20,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>20,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>20,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>20,000</td>
 
                     </tr>
 
@@ -4747,27 +5190,48 @@
     </div>
 
 
-    <!-- =========================
-         දුන් වට්ටම් ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         දුන් වට්ටම් ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">දුන් වට්ටම් ගිණුම</div>
+                <div class="account-name-title">
+                    දුන් වට්ටම් ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
@@ -4776,10 +5240,17 @@
                         <td>1,350</td>
 
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>3,150</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>3,150</strong>
+                        </td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4793,21 +5264,29 @@
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>3,150</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>3,150</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>3,150</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>3,150</td>
 
                     </tr>
+
 
                     <tr>
 
                         <td>01/02</td>
-                        <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>3,150</strong></td>
+
+                        <td>
+                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>3,150</strong>
+                        </td>
 
                         <td></td>
                         <td></td>
@@ -4824,33 +5303,60 @@
     </div>
 
 
-    <!-- =========================
-         ලද වට්ටම් ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         ලද වට්ටම් ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">ලද වට්ටම් ගිණුම</div>
+                <div class="account-name-title">
+                    ලද වට්ටම් ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
 
                     <tr>
 
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
+
+                    <tr>
+
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>1,000</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>1,000</strong>
+                        </td>
 
                         <td>06/01</td>
                         <td>සැපයුම්කරු ගිණුම</td>
@@ -4858,15 +5364,17 @@
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>1,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>1,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>1,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>1,000</td>
 
                     </tr>
+
 
                     <tr>
 
@@ -4875,8 +5383,14 @@
                         <td></td>
 
                         <td>01/02</td>
-                        <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>1,000</strong></td>
+
+                        <td>
+                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>1,000</strong>
+                        </td>
 
                     </tr>
 
@@ -4889,27 +5403,48 @@
     </div>
 
 
-    <!-- =========================
-         වැටුප් ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         වැටුප් ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">වැටුප් ගිණුම</div>
+                <div class="account-name-title">
+                    වැටුප් ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
@@ -4918,26 +5453,40 @@
                         <td>10,000</td>
 
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>10,000</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>10,000</strong>
+                        </td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>10,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>10,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>10,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>10,000</td>
 
                     </tr>
+
 
                     <tr>
 
                         <td>01/02</td>
-                        <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>10,000</strong></td>
+
+                        <td>
+                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>10,000</strong>
+                        </td>
 
                         <td></td>
                         <td></td>
@@ -4954,27 +5503,48 @@
     </div>
 
 
-    <!-- =========================
-         කුලී ගිණුම
-    ========================== -->
 
-    <div class="example-card">
+    <!-- =====================================================
+         කුලී ගිණුම
+         ===================================================== -->
+
+    <div class="lesson8-account">
 
         <div class="account-format-wrapper">
 
             <div class="account-title-row">
 
-                <div class="account-side-title debit-title">හර</div>
+                <div class="account-side-title debit-title">
+                    හර
+                </div>
 
-                <div class="account-side-title credit-title">බැර</div>
+                <div class="account-side-title credit-title">
+                    බැර
+                </div>
 
-                <div class="account-name-title">කුලී ගිණුම</div>
+                <div class="account-name-title">
+                    කුලී ගිණුම
+                </div>
 
             </div>
 
-            <table class="t-account">
+
+            <table class="ledger-table">
 
                 <tbody>
+
+                    <tr>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                        <th>දිනය</th>
+                        <th>විස්තර</th>
+                        <th>මුදල (රු.)</th>
+
+                    </tr>
+
 
                     <tr>
 
@@ -4983,26 +5553,40 @@
                         <td>8,000</td>
 
                         <td>31/01</td>
-                        <td><strong>පහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>8,000</strong></td>
+
+                        <td>
+                            <strong>පහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>8,000</strong>
+                        </td>
 
                     </tr>
 
-                    <tr class="total-row">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>8,000</strong></td>
+                    <tr class="ledger-total">
 
-                        <td colspan="2"><strong>එකතුව</strong></td>
-                        <td><strong>8,000</strong></td>
+                        <td colspan="2">එකතුව</td>
+                        <td>8,000</td>
+
+                        <td colspan="2">එකතුව</td>
+                        <td>8,000</td>
 
                     </tr>
+
 
                     <tr>
 
                         <td>01/02</td>
-                        <td><strong>ඉහලට ගෙන ආ ශේෂය</strong></td>
-                        <td><strong>8,000</strong></td>
+
+                        <td>
+                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
+                        </td>
+
+                        <td>
+                            <strong>8,000</strong>
+                        </td>
 
                         <td></td>
                         <td></td>
@@ -5019,28 +5603,29 @@
     </div>
 
 
-    <!-- =========================
-         සාරාංශය
-    ========================== -->
 
-    <div class="highlight-box">
+    <!-- =====================================================
+         සාරාංශය
+         ===================================================== -->
+
+    <div class="summary-box">
 
         <h3>📊 උදාහරණයේ ප්‍රධාන එකතු</h3>
 
         <ul>
 
             <li>
-                මුදල් පොතේ වට්ටම් – දුන් වට්ටම්:
+                මුදල් පොතේ දුන් වට්ටම් එකතුව:
                 <strong>රු.3,150</strong>
             </li>
 
             <li>
-                මුදල් පොතේ වට්ටම් – ලද වට්ටම්:
+                මුදල් පොතේ ලද වට්ටම් එකතුව:
                 <strong>රු.1,000</strong>
             </li>
 
             <li>
-                මුදල් පොතේ මුළු මුදල් ලැබීම්:
+                මුදල් පොතේ මුදල් ලැබීම් එකතුව:
                 <strong>රු.179,850</strong>
             </li>
 
@@ -5057,6 +5642,16 @@
             <li>
                 ගැනුම් ගිණුමේ එකතුව:
                 <strong>රු.20,000</strong>
+            </li>
+
+            <li>
+                දුන් වට්ටම් ගිණුමේ එකතුව:
+                <strong>රු.3,150</strong>
+            </li>
+
+            <li>
+                ලද වට්ටම් ගිණුමේ එකතුව:
+                <strong>රු.1,000</strong>
             </li>
 
         </ul>
