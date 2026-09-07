@@ -643,151 +643,117 @@
 
 }
 
-        /* =========================================================
-   මුදල් පොතේ ගිණුම් ශීර්ෂය
-   හර | මුදල් ගිණුම | බැර
+/* =========================================================
+   මුදල් පොත - හර | මුදල් ගිණුම | බැර
    ========================================================= */
 
-.lesson8-example .transaction-box .account-title-row{
+.cash-book-wrapper{
     width:100%;
-    min-width:850px;
+    overflow-x:auto;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+.cash-book-title{
+    min-width:1000px;
+    width:100%;
+    height:60px;
     display:grid;
     grid-template-columns:1fr 1fr;
     position:relative;
     align-items:center;
-    min-height:58px;
     border:1px solid #555;
     border-bottom:none;
     background:#111;
-    text-align:center;
 }
 
-/* මැද - මුදල් ගිණුම */
-
-.lesson8-example .transaction-box .account-name-title{
-    grid-column:1 / 3;
-    grid-row:1;
-    color:#ffd700;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-    z-index:2;
-}
-
-
-/* වම් පැත්ත - හර */
-
-.lesson8-example .transaction-box .debit-title{
+.cash-book-title .cash-debit{
     grid-column:1;
     grid-row:1;
     text-align:left;
     padding-left:20px;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    z-index:2;
 }
 
-
-/* දකුණු පැත්ත - බැර */
-
-.lesson8-example .transaction-box .credit-title{
+.cash-book-title .cash-credit{
     grid-column:2;
     grid-row:1;
     text-align:right;
     padding-right:20px;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    z-index:2;
 }
 
-
-.lesson8-example .transaction-box .account-side-title{
-    color:#fff;
-    font-size:17px;
+.cash-book-title .cash-name{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:#ffd700;
+    font-size:21px;
     font-weight:bold;
+    white-space:nowrap;
     z-index:3;
 }
 
+.cash-book-table{
+    min-width:1000px;
+    width:100%;
+    border-collapse:collapse;
+}
 
-/* Mobile */
+.cash-book-table th,
+.cash-book-table td{
+    border:1px solid #555;
+    padding:11px 8px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.cash-book-table th{
+    background:#191919;
+    color:#ffd700;
+    font-weight:bold;
+}
+
+.cash-book-table td{
+    background:#101010;
+    color:#f2f2f2;
+}
+
+.cash-book-table .cash-total td{
+    background:#191919;
+    color:#ffd700;
+    font-weight:bold;
+}
+
+.cash-book-table .cash-balance td{
+    color:#ffd700;
+    font-weight:bold;
+}
 
 @media(max-width:650px){
 
-    .lesson8-example .transaction-box .account-title-row{
-        min-width:850px;
+    .cash-book-title,
+    .cash-book-table{
+        min-width:1000px;
     }
 
-    .lesson8-example .transaction-box .account-name-title{
-        font-size:17px;
+    .cash-book-title .cash-name{
+        font-size:18px;
     }
 
-    .lesson8-example .transaction-box .account-side-title{
-        font-size:15px;
+    .cash-book-title .cash-debit,
+    .cash-book-title .cash-credit{
+        font-size:16px;
     }
 
 }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-<header class="site-header">
-
-    <div class="logo">
-        Unique EduZone
-    </div>
-
-    <nav>
-
-        <a href="../index.html">
-            Home
-        </a>
-
-        <a href="lessons.html">
-            Lessons
-        </a>
-
-        <a href="quiz.html">
-            MCQ
-        </a>
-
-        <a href="dashboard.html">
-            Dashboard
-        </a>
-
-        <a href="profile.html">
-            Profile
-        </a>
-
-    </nav>
-
-</header>
-
-
-
-<main class="lesson-page">
-
-
-    <!-- =====================================
-         LESSON HEADER
-         ===================================== -->
-
-    <section class="lesson-header">
-
-        <div class="lesson-number">
-            LESSON 08
-        </div>
-
-        <h1>
-            💰 මුදල් පොත සහ සුළු මුදල් පොත
-        </h1>
-
-        <p>
-            ව්‍යාපාරයක මුදල් ලැබීම්, මුදල් ගෙවීම්,
-            ලදුපත්, ගෙවීම් වවුචර් සහ මුදල් ගනුදෙනු
-            නිවැරදිව වාර්තා කිරීම.
-        </p>
-
-    </section>
-
 
 
     <!-- =====================================
@@ -4401,201 +4367,306 @@
 
 
 
-    <!-- =====================================================
-         මුදල් පොත
-         ===================================================== -->
+<!-- =========================================================
+     මුදල් පොත
+     ========================================================= -->
 
-<div class="account-title-row">
+<div class="cash-book-wrapper">
 
-    <div class="account-side-title debit-title">
-        හර
-    </div>
+    <!-- හර | මුදල් ගිණුම | බැර -->
 
-    <div class="account-side-title credit-title">
-        බැර
-    </div>
+    <div class="cash-book-title">
 
-    <div class="account-name-title">
-        මුදල් ගිණුම
-    </div>
+        <div class="cash-debit">
+            හර
+        </div>
 
-</div>
+        <div class="cash-credit">
+            බැර
+        </div>
 
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>දිනය</th>
-                        <th>විස්තර</th>
-                        <th>ලෙ.පො.</th>
-                        <th>වට්ටම්</th>
-                        <th>මුදල (රු.)</th>
-
-                        <th>දිනය</th>
-                        <th>විස්තර</th>
-                        <th>ලෙ.පො.</th>
-                        <th>වට්ටම්</th>
-                        <th>මුදල (රු.)</th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                    <tr>
-
-                        <td>01/01</td>
-                        <td>ප්‍රාග්ධන ගිණුම</td>
-                        <td></td>
-                        <td>-</td>
-                        <td>100,000</td>
-
-                        <td>04/01</td>
-                        <td>නිමල් ගිණුම</td>
-                        <td></td>
-                        <td>1,350</td>
-                        <td>25,650</td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>02/01</td>
-                        <td>අලෙවි ගිණුම</td>
-                        <td></td>
-                        <td>-</td>
-                        <td>20,000</td>
-
-                        <td>06/01</td>
-                        <td>සැපයුම්කරු ගිණුම</td>
-                        <td></td>
-                        <td>1,000</td>
-                        <td>19,000</td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>04/01</td>
-                        <td>නිමල් ගිණුම</td>
-                        <td></td>
-                        <td>1,350</td>
-                        <td>25,650</td>
-
-                        <td>07/01</td>
-                        <td>වැටුප් ගිණුම</td>
-                        <td></td>
-                        <td>-</td>
-                        <td>10,000</td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>09/01</td>
-                        <td>සුරංග ගිණුම</td>
-                        <td></td>
-                        <td>1,800</td>
-                        <td>34,200</td>
-
-                        <td>10/01</td>
-                        <td>කුලී ගිණුම</td>
-                        <td></td>
-                        <td>-</td>
-                        <td>8,000</td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                        <td>31/01</td>
-                        <td>
-                            <strong>පහලට ගෙන ආ ශේෂය</strong>
-                        </td>
-                        <td></td>
-                        <td>-</td>
-                        <td>
-                            <strong>142,850</strong>
-                        </td>
-
-                    </tr>
-
-
-                    <tr class="total-row">
-
-                        <td colspan="3">
-                            එකතුව
-                        </td>
-
-                        <td>
-                            3,150
-                        </td>
-
-                        <td>
-                            179,850
-                        </td>
-
-
-                        <td colspan="3">
-                            එකතුව
-                        </td>
-
-                        <td>
-                            1,000
-                        </td>
-
-                        <td>
-                            179,850
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>01/02</td>
-
-                        <td>
-                            <strong>ඉහලට ගෙන ආ ශේෂය</strong>
-                        </td>
-
-                        <td></td>
-
-                        <td>-</td>
-
-                        <td>
-                            <strong>142,850</strong>
-                        </td>
-
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
+        <div class="cash-name">
+            මුදල් ගිණුම
         </div>
 
     </div>
+
+
+    <!-- මුදල් පොතේ වගුව -->
+
+    <table class="cash-book-table">
+
+        <thead>
+
+            <tr>
+
+                <!-- හර පැත්ත -->
+
+                <th>දිනය</th>
+                <th>විස්තර</th>
+                <th>ලෙ.පො.</th>
+                <th>වට්ටම්</th>
+                <th>මුදල (රු.)</th>
+
+
+                <!-- බැර පැත්ත -->
+
+                <th>දිනය</th>
+                <th>විස්තර</th>
+                <th>ලෙ.පො.</th>
+                <th>වට්ටම්</th>
+                <th>මුදල (රු.)</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <!-- 01 - ප්‍රාග්ධනය -->
+
+            <tr>
+
+                <td>01/01</td>
+                <td>ප්‍රාග්ධන ගිණුම</td>
+                <td></td>
+                <td>-</td>
+                <td>100,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+
+            <!-- 02 - මුදල් අලෙවිය -->
+
+            <tr>
+
+                <td>02/01</td>
+                <td>අලෙවි ගිණුම</td>
+                <td></td>
+                <td>-</td>
+                <td>20,000</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+
+            <!-- 04 - නිමල්ගෙන් මුදල් ලැබීම -->
+
+            <tr>
+
+                <td>04/01</td>
+                <td>නිමල් ගිණුම</td>
+                <td></td>
+                <td>1,350</td>
+                <td>25,650</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+
+            <!-- 09 - සුරංගගෙන් මුදල් ලැබීම -->
+
+            <tr>
+
+                <td>09/01</td>
+                <td>සුරංග ගිණුම</td>
+                <td></td>
+                <td>1,800</td>
+                <td>34,200</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+
+            <!-- 04 - නිමල්ට ගෙවීම -->
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>04/01</td>
+                <td>නිමල් ගිණුම</td>
+                <td></td>
+                <td></td>
+                <td>0</td>
+
+            </tr>
+
+
+            <!-- 06 - සැපයුම්කරුට ගෙවීම -->
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>06/01</td>
+                <td>සැපයුම්කරු ගිණුම</td>
+                <td></td>
+                <td>1,000</td>
+                <td>19,000</td>
+
+            </tr>
+
+
+            <!-- 07 - වැටුප් -->
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>07/01</td>
+                <td>වැටුප් ගිණුම</td>
+                <td></td>
+                <td>-</td>
+                <td>10,000</td>
+
+            </tr>
+
+
+            <!-- 10 - කුලී -->
+
+            <tr>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>10/01</td>
+                <td>කුලී ගිණුම</td>
+                <td></td>
+                <td>-</td>
+                <td>8,000</td>
+
+            </tr>
+
+
+            <!-- පහලට ගෙන ආ ශේෂය -->
+
+            <tr class="cash-balance">
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>31/01</td>
+
+                <td>
+                    පහලට ගෙන ආ ශේෂය
+                </td>
+
+                <td></td>
+
+                <td>-</td>
+
+                <td>
+                    142,850
+                </td>
+
+            </tr>
+
+
+            <!-- එකතුව -->
+
+            <tr class="cash-total">
+
+                <td colspan="3">
+                    එකතුව
+                </td>
+
+                <td>
+                    3,150
+                </td>
+
+                <td>
+                    179,850
+                </td>
+
+
+                <td colspan="3">
+                    එකතුව
+                </td>
+
+                <td>
+                    1,000
+                </td>
+
+                <td>
+                    179,850
+                </td>
+
+            </tr>
+
+
+            <!-- ඉහලට ගෙන ආ ශේෂය -->
+
+            <tr class="cash-balance">
+
+                <td>01/02</td>
+
+                <td>
+                    ඉහලට ගෙන ආ ශේෂය
+                </td>
+
+                <td></td>
+
+                <td>-</td>
+
+                <td>
+                    142,850
+                </td>
+
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
 
     <!-- =====================================================
          අලෙවි ගිණුම
