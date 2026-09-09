@@ -24,6 +24,304 @@
         href="../assets/css/dashboard.css"
     >
 
+
+    <!-- =====================================================
+         UNIQUE EDUZONE - DASHBOARD BACKGROUND
+         Same original generated image as Profile page
+         ===================================================== -->
+
+    <style>
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            background: #07090d;
+            overflow-x: hidden;
+        }
+
+
+        /* -----------------------------------------------------
+           BACKGROUND IMAGE
+           ----------------------------------------------------- */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 0;
+
+            background-image:
+                url("../assets/images/profile-bg.png");
+
+            background-size: cover;
+
+            background-position: center center;
+
+            background-repeat: no-repeat;
+
+            transform: scale(1.02);
+
+        }
+
+
+        /* -----------------------------------------------------
+           DARK + GOLD OVERLAY
+           Keeps dashboard text/cards easy to read
+           ----------------------------------------------------- */
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 1;
+
+            pointer-events: none;
+
+            background:
+
+                linear-gradient(
+                    rgba(3, 5, 8, 0.70),
+                    rgba(3, 5, 8, 0.84)
+                ),
+
+                linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.10),
+                    rgba(0, 0, 0, 0.18),
+                    rgba(212, 175, 55, 0.06)
+                );
+
+        }
+
+
+        /* -----------------------------------------------------
+           KEEP ALL DASHBOARD CONTENT ABOVE BACKGROUND
+           ----------------------------------------------------- */
+
+        .site-header,
+        .dashboard-container,
+        .site-footer {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* -----------------------------------------------------
+           HEADER
+           ----------------------------------------------------- */
+
+        .site-header {
+
+            background:
+                rgba(5, 7, 10, 0.84);
+
+            border-bottom:
+                1px solid rgba(212, 175, 55, 0.35);
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        /* -----------------------------------------------------
+           DASHBOARD HEADER
+           ----------------------------------------------------- */
+
+        .dashboard-header {
+
+            text-shadow:
+                0 2px 12px rgba(0, 0, 0, 0.85);
+
+        }
+
+
+        .dashboard-header h1 {
+
+            text-shadow:
+
+                0 2px 15px
+                rgba(0, 0, 0, 0.85),
+
+                0 0 22px
+                rgba(212, 175, 55, 0.14);
+
+        }
+
+
+        /* -----------------------------------------------------
+           DASHBOARD CARDS
+           ----------------------------------------------------- */
+
+        .dashboard-card {
+
+            background:
+                rgba(7, 10, 15, 0.88);
+
+            border:
+                1px solid rgba(212, 175, 55, 0.32);
+
+            box-shadow:
+
+                0 18px 45px
+                rgba(0, 0, 0, 0.48),
+
+                0 0 25px
+                rgba(212, 175, 55, 0.06);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+        }
+
+
+        .dashboard-card:hover {
+
+            border-color:
+                rgba(212, 175, 55, 0.60);
+
+            box-shadow:
+
+                0 20px 50px
+                rgba(0, 0, 0, 0.55),
+
+                0 0 28px
+                rgba(212, 175, 55, 0.10);
+
+        }
+
+
+        /* -----------------------------------------------------
+           QUICK ACTION CARDS
+           ----------------------------------------------------- */
+
+        .action-card {
+
+            background:
+                rgba(7, 10, 15, 0.86);
+
+            border:
+                1px solid rgba(212, 175, 55, 0.28);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.40);
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .action-card:hover {
+
+            border-color:
+                rgba(212, 175, 55, 0.65);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+
+                0 18px 40px
+                rgba(0, 0, 0, 0.50),
+
+                0 0 22px
+                rgba(212, 175, 55, 0.09);
+
+        }
+
+
+        /* -----------------------------------------------------
+           PROFILE SUMMARY
+           ----------------------------------------------------- */
+
+        .profile-summary {
+
+            background:
+                rgba(7, 10, 15, 0.90);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+        }
+
+
+        /* -----------------------------------------------------
+           PROGRESS AREA
+           ----------------------------------------------------- */
+
+        .progress-container {
+
+            background:
+                rgba(0, 0, 0, 0.55);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+
+        }
+
+
+        /* -----------------------------------------------------
+           FOOTER
+           ----------------------------------------------------- */
+
+        .site-footer {
+
+            background:
+                rgba(3, 5, 8, 0.90);
+
+            border-top:
+                1px solid rgba(212, 175, 55, 0.25);
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        /* -----------------------------------------------------
+           MOBILE
+           ----------------------------------------------------- */
+
+        @media (max-width: 700px) {
+
+            body::before {
+
+                background-position:
+                    center center;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
@@ -33,11 +331,14 @@
 <header class="site-header">
 
     <a href="../index.html" class="site-logo">
+
         <img
             src="../assets/images/logo.png"
             alt="Unique EduZone Logo"
         >
+
     </a>
+
 
     <nav>
 
