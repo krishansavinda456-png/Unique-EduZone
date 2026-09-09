@@ -747,6 +747,59 @@
     }
 }
 
+    
+/* =========================================================
+   ACCOUNTING DETECTIVE CHALLENGE – Lesson 08
+   ========================================================= */
+.detective-section{background:linear-gradient(180deg,#151515,#0f0f0f);border:1px solid #4a4a4a;border-radius:16px;padding:26px;margin:28px 0;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.detective-title{text-align:center;color:#ffd700;font-size:30px;margin:0 0 8px}
+.detective-subtitle{text-align:center;color:#ddd;margin-bottom:22px;line-height:1.8}
+.detective-intro{background:#171717;border-left:5px solid #ffd700;padding:16px 18px;border-radius:9px;line-height:1.9;margin-bottom:20px}
+.detective-card{background:#111;border:1px solid #444;border-radius:13px;padding:20px;margin:20px 0}
+.detective-card h3{color:#ffd700;margin:0 0 10px}
+.detective-card h4{color:#f0c94a;margin:18px 0 10px}
+.detective-badge{display:inline-block;background:#2a2200;color:#ffd700;border:1px solid #806f00;border-radius:20px;padding:5px 11px;font-size:13px;margin-bottom:8px}
+.detective-transactions{margin:14px 0 20px;padding-left:24px;line-height:1.9}
+.detective-transactions li{margin-bottom:5px}
+.detective-note{font-size:14px;color:#bbb;line-height:1.7}
+.detective-table-wrap{width:100%;overflow-x:auto;margin:15px 0}
+.detective-input-table{width:100%;min-width:920px;border-collapse:collapse}
+.detective-input-table th,.detective-input-table td{border:1px solid #4b4b4b;padding:8px;text-align:center;vertical-align:middle}
+.detective-input-table th{background:#191919;color:#ffd700}
+.detective-input-table td{background:#101010}
+.detective-input-table input,.detective-input-table select{width:100%;min-width:95px;background:#080808;color:#fff;border:1px solid #555;border-radius:6px;padding:8px}
+.detective-input-table input:focus,.detective-input-table select:focus{outline:none;border-color:#ffd700;box-shadow:0 0 0 2px rgba(255,215,0,.08)}
+.detective-cash-table{min-width:1000px;border-collapse:collapse;width:100%}
+.detective-cash-table th,.detective-cash-table td{border:1px solid #555;padding:8px;text-align:center}
+.detective-cash-table th{background:#191919;color:#ffd700}
+.detective-cash-table td{background:#101010}
+.detective-cash-table input{width:100%;background:#080808;color:#fff;border:1px solid #555;border-radius:6px;padding:7px;text-align:center}
+.detective-ledger-table{min-width:920px;width:100%;border-collapse:collapse}
+.detective-ledger-table th,.detective-ledger-table td{border:1px solid #555;padding:8px;text-align:center}
+.detective-ledger-table th{background:#191919;color:#ffd700}
+.detective-ledger-table td{background:#101010}
+.detective-ledger-table input{width:100%;background:#080808;color:#fff;border:1px solid #555;border-radius:6px;padding:7px}
+.detective-actions{text-align:center;margin:18px 0 5px}
+.detective-check-btn,.detective-reset-btn,.detective-answer-btn{border:none;border-radius:8px;padding:11px 18px;font-weight:bold;cursor:pointer;margin:5px}
+.detective-check-btn{background:#ffd700;color:#000}
+.detective-reset-btn{background:#444;color:#fff}
+.detective-answer-btn{background:transparent;color:#38c172;border:1px solid #38c172;display:none}
+.detective-result{display:none;background:#151515;border-left:5px solid #38c172;border-radius:8px;padding:14px 16px;margin-top:14px;line-height:1.8}
+.detective-result.show{display:block}
+.detective-answer{display:none;background:#0d180f;border:1px solid #27633b;border-radius:10px;padding:16px;margin-top:16px;line-height:1.8}
+.detective-answer.show{display:block}
+.detective-answer table{width:100%;border-collapse:collapse;margin:12px 0;min-width:720px}
+.detective-answer th,.detective-answer td{border:1px solid #45604b;padding:7px;text-align:center}
+.detective-answer th{background:#142318;color:#7ee787}
+.detective-answer td{background:#0b120d}
+.detective-progress{background:#111;border:1px solid #444;border-radius:12px;padding:18px;margin:22px 0;text-align:center}
+.detective-progress h3{color:#ffd700;margin:0 0 10px}
+.detective-progress-bar{height:14px;background:#292929;border-radius:20px;overflow:hidden;margin:12px 0}
+.detective-progress-fill{height:100%;width:0;background:#ffd700;transition:width .3s ease}
+.detective-score{font-size:18px;font-weight:bold;color:#fff}
+.detective-locked{opacity:.7}
+@media(max-width:650px){.detective-section{padding:18px 12px}.detective-title{font-size:23px}.detective-card{padding:15px}.detective-check-btn,.detective-reset-btn,.detective-answer-btn{width:100%;margin:5px 0}}
+
     </style>
 
 </head>
@@ -7896,6 +7949,28 @@
 
 
 
+
+
+<!-- =========================================================
+     ACCOUNTING DETECTIVE CHALLENGE – SPECIAL ACTIVITIES
+     ========================================================= -->
+<section class="detective-section" id="accounting-detective-challenge">
+    <h2 class="detective-title">🕵️ Accounting Detective Challenge</h2>
+    <p class="detective-subtitle"><strong>විශේෂ අභියෝගය</strong> – ගනුදෙනු හඳුනාගෙන, මුදල් පොත / සුළු මුදල් පොත සහ අදාළ ලෙජර් ගිණුම් සකස් කරන්න.</p>
+    <div class="detective-intro">
+        <strong>📌 උපදෙස්:</strong> සෑම අභියෝගයකම ගනුදෙනු මුලින් හොඳින් කියවන්න. ඉන්පසු අදාළ ආකෘතියේ හිස් කොටස් පුරවන්න. <strong>අභියෝගය පරීක්ෂා කරන්න</strong> යන්න තෝරාගත් පසු ලකුණු ලැබෙන අතර <strong>නිවැරදි පිළිතුර බලන්න</strong> මඟින් ආදර්ශ පිළිතුර බැලිය හැකිය. සියලු අභියෝගවල ලකුණු එකතුවෙන් සමස්ථ ප්‍රගතිය පෙන්වනු ලැබේ.
+    </div>
+
+    <div class="detective-progress">
+        <h3>🏆 Accounting Detective සමස්ථ ප්‍රගතිය</h3>
+        <div class="detective-progress-bar"><div class="detective-progress-fill" id="detective-progress-fill"></div></div>
+        <div class="detective-score" id="detective-progress-text">අභියෝග 0 / 6 සම්පූර්ණයි | ලකුණු 0 / 465</div>
+    </div>
+
+    <div id="detective-challenge-container"></div>
+</section>
+
+
     <!-- =====================================
          SUMMARY
          ===================================== -->
@@ -8274,6 +8349,244 @@ function completeLesson8() {
         "lessons.html";
 
 }
+
+
+/* =========================================================
+   ACCOUNTING DETECTIVE CHALLENGE SYSTEM – LESSON 08
+   All challenge data, checking, answers and progress stay in this file.
+   ========================================================= */
+(function(){
+    const STORAGE = "uez_lesson8_detective_challenges";
+
+    const challenges = [
+        {
+            id:1,type:"cash",title:"විශේෂ අභියෝගය 01 – මුදල් පොත + වට්ටම්",
+            desc:"පහත ගනුදෙනු සඳහා මුදල් පොත (වට්ටම් ඇතුළුව) සහ අදාළ ගිණුම් සකස් කරන්න.",
+            tx:[
+                ["2026.06.01","ව්‍යාපාරයට ප්‍රාග්ධනය ලෙස මුදලින් ලැබුණි","ප්‍රාග්ධනය","100000", "receipt"],
+                ["2026.06.03","භාණ්ඩ මුදලට විකුණන ලදී","විකුණුම්","25000","receipt"],
+                ["2026.06.05","භාණ්ඩ මුදලට මිලදී ගන්නා ලදී","ගැනුම්","12000","payment"],
+                ["2026.06.08","නිමල්ගෙන් රු.10,000ක් ලැබිය යුතු අතර රු.200ක වට්ටමක් දී මුදලින් ලබා ගන්නා ලදී","ණයගැතියන් – නිමල්","9800","receipt",200],
+                ["2026.06.10","අමල්ට ගෙවිය යුතු රු.8,000කින් රු.300ක වට්ටමක් ලැබී ඉතිරිය ගෙවන ලදී","ණයහිමියන් – අමල්","7700","payment",300],
+                ["2026.06.12","කුලී මුදලින් ගෙවන ලදී","කුලී වියදම්","5000","payment"],
+                ["2026.06.15","භාණ්ඩ මුදලට විකුණන ලදී","විකුණුම්","18000","receipt"],
+                ["2026.06.18","වැටුප් මුදලින් ගෙවන ලදී","වැටුප්","7000","payment"],
+                ["2026.06.20","හිමිකරු පෞද්ගලික භාවිතයට මුදල් ලබා ගන්නා ලදී","ඇදගැනීම්","3000","payment"],
+                ["2026.06.22","කොමිස් ආදායම මුදලින් ලැබුණි","කොමිස් ආදායම","2500","receipt"],
+                ["2026.06.24","ලිපි ද්‍රව්‍ය මුදලින් මිලදී ගන්නා ලදී","ලිපි ද්‍රව්‍ය වියදම්","1200","payment"],
+                ["2026.06.26","සමන්ට ගෙවිය යුතු රු.5,000කින් රු.100ක වට්ටමක් ලැබී ඉතිරිය ගෙවන ලදී","ණයහිමියන් – සමන්","4900","payment",100],
+                ["2026.06.27","සුනිල්ගෙන් ලැබිය යුතු රු.6,000කින් රු.100ක වට්ටමක් දී ඉතිරිය ලැබුණි","ණයගැතියන් – සුනිල්","5900","receipt",100],
+                ["2026.06.29","විදුලි වියදම මුදලින් ගෙවන ලදී","විදුලි වියදම්","2200","payment"],
+                ["2026.06.30","භාණ්ඩ මුදලට විකුණන ලදී","විකුණුම්","10000","receipt"]
+            ]
+        },
+        {
+            id:2,type:"cash",title:"විශේෂ අභියෝගය 02 – මුදල් පොතේ ද්විත්ව කාර්යය",
+            desc:"ගනුදෙනු විශ්ලේෂණය කර මුදල් පොතේ හර/බැර පැති, වට්ටම් සහ අදාළ ලෙජර් ගිණුම් සකස් කරන්න.",
+            tx:[
+                ["2026.07.01","ප්‍රාග්ධනය ලෙස මුදලින් ලැබුණි","ප්‍රාග්ධනය","80000","receipt"],
+                ["2026.07.03","මුදල් විකිණීම","විකුණුම්","15000","receipt"],
+                ["2026.07.05","ගැනුම් මුදලින් ගෙවන ලදී","ගැනුම්","9000","payment"],
+                ["2026.07.07","කමල්ගෙන් රු.7,500ක් ලැබිය යුතු අතර රු.250ක වට්ටමක් දී ඉතිරිය ලැබුණි","ණයගැතියන් – කමල්","7250","receipt",250],
+                ["2026.07.09","නුවන්ට ගෙවිය යුතු රු.6,000කින් රු.200ක වට්ටමක් ලැබී ඉතිරිය ගෙවන ලදී","ණයහිමියන් – නුවන්","5800","payment",200],
+                ["2026.07.11","රක්ෂණ වියදම ගෙවන ලදී","රක්ෂණ වියදම්","3000","payment"],
+                ["2026.07.14","මුදල් විකිණීම","විකුණුම්","12000","receipt"],
+                ["2026.07.17","ප්‍රවාහන වියදම ගෙවන ලදී","ප්‍රවාහන වියදම්","1800","payment"],
+                ["2026.07.20","කාර්යාල උපකරණ සඳහා මුදලින් ගෙවන ලදී","කාර්යාල උපකරණ","4500","payment"],
+                ["2026.07.22","කොමිස් මුදල් ලැබුණි","කොමිස් ආදායම","2200","receipt"],
+                ["2026.07.24","රුවන්ගෙන් රු.5,000ක් ලැබිය යුතු අතර රු.150ක වට්ටමක් දී ඉතිරිය ලැබුණි","ණයගැතියන් – රුවන්","4850","receipt",150],
+                ["2026.07.26","ගීතාට ගෙවිය යුතු රු.4,000කින් රු.100ක වට්ටමක් ලැබී ඉතිරිය ගෙවන ලදී","ණයහිමියන් – ගීතා","3900","payment",100],
+                ["2026.07.27","වැටුප් ගෙවන ලදී","වැටුප්","6500","payment"],
+                ["2026.07.29","මුදල් විකිණීම","විකුණුම්","9000","receipt"],
+                ["2026.07.31","කුලී ගෙවන ලදී","කුලී වියදම්","4000","payment"]
+            ]
+        },
+        {
+            id:3,type:"cash",title:"විශේෂ අභියෝගය 03 – ගනුදෙනුවේ සිට ලෙජර් දක්වා",
+            desc:"ගනුදෙනු 15ම මුදල් පොතේ නිවැරදිව සටහන් කර, වට්ටම් සහිත ගනුදෙනුවලදී අදාළ ගිණුම්ද නිවැරදිව සකස් කරන්න.",
+            tx:[
+                ["2026.08.01","ප්‍රාග්ධනය ලෙස මුදලින් ලැබුණි","ප්‍රාග්ධනය","120000","receipt"],
+                ["2026.08.02","භාණ්ඩ මුදලට විකුණන ලදී","විකුණුම්","20000","receipt"],
+                ["2026.08.04","භාණ්ඩ මුදලට මිලදී ගන්නා ලදී","ගැනුම්","14000","payment"],
+                ["2026.08.06","සුරේෂ්ගෙන් ලැබිය යුතු රු.9,000කින් රු.300ක වට්ටමක් දී ඉතිරිය ලැබුණි","ණයගැතියන් – සුරේෂ්","8700","receipt",300],
+                ["2026.08.08","දිනේෂ්ට ගෙවිය යුතු රු.7,000කින් රු.250ක වට්ටමක් ලැබී ඉතිරිය ගෙවන ලදී","ණයහිමියන් – දිනේෂ්","6750","payment",250],
+                ["2026.08.10","විදුලි වියදම ගෙවන ලදී","විදුලි වියදම්","2800","payment"],
+                ["2026.08.12","මුදල් විකිණීම","විකුණුම්","16000","receipt"],
+                ["2026.08.15","වැටුප් ගෙවන ලදී","වැටුප්","8000","payment"],
+                ["2026.08.17","ඇදගැනීම් සඳහා මුදල් ලබා ගන්නා ලදී","ඇදගැනීම්","2500","payment"],
+                ["2026.08.19","කුලී ආදායම ලැබුණි","කුලී ආදායම","3500","receipt"],
+                ["2026.08.21","නිශාන්තගෙන් ලැබිය යුතු රු.6,000කින් රු.200ක වට්ටමක් දී ඉතිරිය ලැබුණි","ණයගැතියන් – නිශාන්ත","5800","receipt",200],
+                ["2026.08.23","ප්‍රදීප්ට ගෙවිය යුතු රු.5,500කින් රු.150ක වට්ටමක් ලැබී ඉතිරිය ගෙවන ලදී","ණයහිමියන් – ප්‍රදීප්","5350","payment",150],
+                ["2026.08.25","ලිපි ද්‍රව්‍ය වියදම ගෙවන ලදී","ලිපි ද්‍රව්‍ය වියදම්","900","payment"],
+                ["2026.08.28","මුදල් විකිණීම","විකුණුම්","11000","receipt"],
+                ["2026.08.30","ප්‍රචාරණ වියදම ගෙවන ලදී","ප්‍රචාරණ වියදම්","2500","payment"]
+            ]
+        },
+        {
+            id:4,type:"petty",title:"විශේෂ අභියෝගය 04 – සුළු මුදල් පොත I",
+            desc:"සුළු මුදල් ආග්‍රිමය රු.5,000කි. පහත ගනුදෙනු 10 ඇසුරින් සුළු මුදල් පොත, මුදල් ගිණුම සහ අදාළ වියදම් ගිණුම් සකස් කරන්න.",
+            advance:5000,
+            tx:[
+                ["2026.09.03","තැපැල් ගාස්තු","1","180","තැපැල් ගාස්තු"],
+                ["2026.09.05","ගමන් වියදම්","2","250","ගමන් වියදම්"],
+                ["2026.09.07","ලිපි ද්‍රව්‍ය වියදම්","3","320","ලිපි ද්‍රව්‍ය"],
+                ["2026.09.09","පිරිසිදු කිරීමේ වියදම්","4","150","පිරිසිදු කිරීමේ වියදම්"],
+                ["2026.09.11","තැපැල් ගාස්තු","5","120","තැපැල් ගාස්තු"],
+                ["2026.09.14","ගමන් වියදම්","6","180","ගමන් වියදම්"],
+                ["2026.09.17","ලිපි ද්‍රව්‍ය වියදම්","7","230","ලිපි ද්‍රව්‍ය"],
+                ["2026.09.20","විවිධ වියදම්","8","160","විවිධ වියදම්"],
+                ["2026.09.23","තැපැල් ගාස්තු","9","100","තැපැල් ගාස්තු"],
+                ["2026.09.26","සංග්‍රහ වියදම්","10","170","සංග්‍රහ වියදම්"]
+            ]
+        },
+        {
+            id:5,type:"petty",title:"විශේෂ අභියෝගය 05 – සුළු මුදල් පොත II",
+            desc:"සුළු මුදල් ආග්‍රිමය රු.6,000කි. ගනුදෙනු 10ම විශ්ලේෂණ තීරු වෙත නිවැරදිව බෙදා සටහන් කරන්න.",
+            advance:6000,
+            tx:[
+                ["2026.10.02","තැපැල් ගාස්තු","1","220","තැපැල් ගාස්තු"],
+                ["2026.10.04","ලිපි ද්‍රව්‍ය","2","350","ලිපි ද්‍රව්‍ය"],
+                ["2026.10.06","ගමන් වියදම්","3","280","ගමන් වියදම්"],
+                ["2026.10.08","පිරිසිදු කිරීමේ වියදම්","4","200","පිරිසිදු කිරීමේ වියදම්"],
+                ["2026.10.10","විවිධ වියදම්","5","140","විවිධ වියදම්"],
+                ["2026.10.13","තැපැල් ගාස්තු","6","160","තැපැල් ගාස්තු"],
+                ["2026.10.16","සංග්‍රහ වියදම්","7","190","සංග්‍රහ වියදම්"],
+                ["2026.10.19","ගමන් වියදම්","8","230","ගමන් වියදම්"],
+                ["2026.10.22","ලිපි ද්‍රව්‍ය","9","270","ලිපි ද්‍රව්‍ය"],
+                ["2026.10.25","පිරිසිදු කිරීමේ වියදම්","10","150","පිරිසිදු කිරීමේ වියදම්"]
+            ]
+        },
+        {
+            id:6,type:"petty",title:"විශේෂ අභියෝගය 06 – සුළු මුදල් පොත III",
+            desc:"සුළු මුදල් ආග්‍රිමය රු.7,000කි. ගනුදෙනු 10 අනුව සුළු මුදල් පොත, මුදල් ගිණුම සහ සියලු අදාළ වියදම් ගිණුම් සකස් කරන්න.",
+            advance:7000,
+            tx:[
+                ["2026.11.03","ගමන් වියදම්","1","300","ගමන් වියදම්"],
+                ["2026.11.05","තැපැල් ගාස්තු","2","190","තැපැල් ගාස්තු"],
+                ["2026.11.07","ලිපි ද්‍රව්‍ය","3","400","ලිපි ද්‍රව්‍ය"],
+                ["2026.11.10","පිරිසිදු කිරීමේ වියදම්","4","250","පිරිසිදු කිරීමේ වියදම්"],
+                ["2026.11.12","සංග්‍රහ වියදම්","5","180","සංග්‍රහ වියදම්"],
+                ["2026.11.15","විවිධ වියදම්","6","210","විවිධ වියදම්"],
+                ["2026.11.18","ගමන් වියදම්","7","260","ගමන් වියදම්"],
+                ["2026.11.21","තැපැල් ගාස්තු","8","130","තැපැල් ගාස්තු"],
+                ["2026.11.24","ලිපි ද්‍රව්‍ය","9","310","ලිපි ද්‍රව්‍ය"],
+                ["2026.11.27","පිරිසිදු කිරීමේ වියදම්","10","170","පිරිසිදු කිරීමේ වියදම්"]
+            ]
+        }
+    ];
+
+    const esc = v => String(v ?? "").replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    const money = n => Number(n||0).toLocaleString('en-US');
+    const cashAccounts = ["ප්‍රාග්ධනය","විකුණුම්","ගැනුම්","ණයගැතියන් – නිමල්","ණයහිමියන් – අමල්","කුලී වියදම්","වැටුප්","ඇදගැනීම්","කොමිස් ආදායම","ලිපි ද්‍රව්‍ය වියදම්","ණයහිමියන් – සමන්","ණයගැතියන් – සුනිල්","විදුලි වියදම්","ණයගැතියන් – කමල්","ණයහිමියන් – නුවන්","රක්ෂණ වියදම්","ප්‍රවාහන වියදම්","කාර්යාල උපකරණ","කොමිස් ආදායම","ණයගැතියන් – රුවන්","ණයහිමියන් – ගීතා","ණයගැතියන් – සුරේෂ්","ණයහිමියන් – දිනේෂ්","කුලී ආදායම","ණයගැතියන් – නිශාන්ත","ණයහිමියන් – ප්‍රදීප්","ප්‍රචාරණ වියදම්"];
+    const pettyCats = ["තැපැල් ගාස්තු","ගමන් වියදම්","ලිපි ද්‍රව්‍ය","පිරිසිදු කිරීමේ වියදම්","සංග්‍රහ වියදම්","විවිධ වියදම්"];
+
+    function loadState(){try{return JSON.parse(localStorage.getItem(STORAGE))||{};}catch(e){return {};}}
+    function saveState(st){localStorage.setItem(STORAGE,JSON.stringify(st));}
+    function getEntry(st,id){return st[String(id)]||{done:false,score:0};}
+
+    function cashInputTable(c){
+        let rows=c.tx.map((t,i)=>`<tr>
+            <td>${i+1}</td><td>${esc(t[0])}</td><td>${esc(t[1])}</td>
+            <td><select id="d${c.id}-${i}"><option value="">තෝරන්න</option><option>හර</option><option>බැර</option></select></td>
+            <td><input id="a${c.id}-${i}" placeholder="ගිණුමේ නම"></td>
+            <td><input id="cash${c.id}-${i}" inputmode="decimal" placeholder="මුදල"></td>
+            <td><input id="disc${c.id}-${i}" inputmode="decimal" placeholder="වට්ටම"></td>
+        </tr>`).join('');
+        return `<div class="detective-table-wrap"><table class="detective-input-table"><thead><tr><th>#</th><th>දිනය</th><th>ගනුදෙනුව</th><th>මුදල් පොත</th><th>අදාළ ගිණුම</th><th>මුදල් රු.</th><th>වට්ටම් රු.</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+    function pettyInputTable(c){
+        let rows=c.tx.map((t,i)=>`<tr>
+            <td>${i+1}</td><td>${esc(t[0])}</td><td>${esc(t[1])}</td><td>${esc(t[2])}</td>
+            <td><input id="pcash${c.id}-${i}" inputmode="decimal" placeholder="ගෙවීම්"></td>
+            <td><select id="pcat${c.id}-${i}"><option value="">තෝරන්න</option>${pettyCats.map(x=>`<option>${esc(x)}</option>`).join('')}</select></td>
+        </tr>`).join('');
+        return `<div class="detective-table-wrap"><table class="detective-input-table"><thead><tr><th>#</th><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>ගෙවීම් රු.</th><th>විශ්ලේෂණ ගිණුම</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+    function ledgerInput(c){
+        return `<h4>📚 අදාළ ලෙජර් ගිණුම් – එක් එක් ගනුදෙනුවේ හර / බැර ගිණුම්</h4><div class="detective-table-wrap"><table class="detective-ledger-table"><thead><tr><th>#</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>වටිනාකම රු.</th></tr></thead><tbody>${c.tx.map((t,i)=>`<tr><td>${i+1}</td><td><input id="ldr${c.id}-${i}" placeholder="හර ගිණුම"></td><td><input id="lcr${c.id}-${i}" placeholder="බැර ගිණුම"></td><td><input id="lamt${c.id}-${i}" inputmode="decimal" placeholder="මුළු වටිනාකම"></td></tr>`).join('')}</tbody></table></div>`;
+    }
+    function renderAnswer(c){
+        if(c.type==='cash') return cashAnswer(c);
+        return pettyAnswer(c);
+    }
+    function cashAnswer(c){
+        let receipts=c.tx.filter(t=>t[4]==='receipt'), pays=c.tx.filter(t=>t[4]==='payment');
+        let ar=c.tx.reduce((s,t)=>s+(t[4]==='receipt'?Number(t[3]):0),0), ap=c.tx.reduce((s,t)=>s+(t[4]==='payment'?Number(t[3]):0),0);
+        let da=c.tx.reduce((s,t)=>s+(t[4]==='receipt'?(Number(t[5])||0):0),0), dr=c.tx.reduce((s,t)=>s+(t[4]==='payment'?(Number(t[5])||0):0),0);
+        let balance=ar-ap;
+        let rows=c.tx.map((t,i)=>`<tr><td>${i+1}</td><td>${esc(t[0])}</td><td>${t[4]==='receipt'?'හර':'බැර'}</td><td>${esc(t[2])}</td><td>${t[4]==='receipt'?money(t[3]):''}</td><td>${t[4]==='payment'?money(t[3]):''}</td><td>${t[4]==='receipt'?(t[5]?money(t[5]):''):''}</td><td>${t[4]==='payment'?(t[5]?money(t[5]):''):''}</td></tr>`).join('');
+        let ledgerMap={};
+        c.tx.forEach(t=>{let total=Number(t[3])+(Number(t[5])||0); let debit=t[4]==='receipt'?'මුදල් ගිණුම':t[2]; let credit=t[4]==='receipt'?t[2]:'මුදල් ගිණුම'; ledgerMap[debit]=(ledgerMap[debit]||[]).concat([[t[0],credit,total,'Dr']]); ledgerMap[credit]=(ledgerMap[credit]||[]).concat([[t[0],debit,total,'Cr']]); if(t[5]){let daName=t[4]==='receipt'?'වට්ටම් දුන් ගිණුම':'වට්ටම් ලැබූ ගිණුම'; let contra=t[4]==='receipt'?t[2]:t[2]; ledgerMap[daName]=(ledgerMap[daName]||[]).concat([[t[0],contra,Number(t[5]),'Dr']]);}});
+        return `<h4>✅ නිවැරදි මුදල් පොත</h4><div class="detective-table-wrap"><table class="detective-answer"><thead><tr><th>#</th><th>දිනය</th><th>පැත්ත</th><th>විස්තරය</th><th>ලැබීම් රු.</th><th>ගෙවීම් රු.</th><th>වට්ටම් දුන් රු.</th><th>වට්ටම් ලැබූ රු.</th></tr></thead><tbody>${rows}<tr><th colspan="4">එකතුව</th><th>${money(ar)}</th><th>${money(ap)}</th><th>${money(da)}</th><th>${money(dr)}</th></tr><tr><th colspan="4">අවසාන මුදල් ශේෂය</th><th colspan="4">රු. ${money(balance)}</th></tr></tbody></table></div>
+        <h4>📒 ද්විත්ව සටහන් – සියලුම ගනුදෙනු</h4><div class="detective-table-wrap"><table class="detective-answer"><thead><tr><th>ගනුදෙනුව</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>මුළු වටිනාකම</th></tr></thead><tbody>${c.tx.map(t=>{let total=Number(t[3])+(Number(t[5])||0);return `<tr><td>${esc(t[1])}</td><td>${t[4]==='receipt'?'මුදල් ගිණුම':esc(t[2])}</td><td>${t[4]==='receipt'?esc(t[2]):'මුදල් ගිණුම'}</td><td>රු. ${money(total)}</td></tr>`}).join('')}</tbody></table></div>
+        <p><strong>වට්ටම්:</strong> වට්ටම් දුන් එකතුව = රු. ${money(da)} | වට්ටම් ලැබූ එකතුව = රු. ${money(dr)}.</p>`;
+    }
+    function pettyAnswer(c){
+        let total=c.tx.reduce((s,t)=>s+Number(t[3]),0), balance=c.advance-total;
+        let sums={}; c.tx.forEach(t=>sums[t[4]]=(sums[t[4]]||0)+Number(t[3]));
+        let rows=c.tx.map(t=>`<tr><td>${esc(t[0])}</td><td>${esc(t[1])}</td><td>${esc(t[2])}</td><td>${money(t[3])}</td>${pettyCats.map(cat=>`<td>${cat===t[4]?money(t[3]):''}</td>`).join('')}</tr>`).join('');
+        let cats=pettyCats.map(cat=>`<tr><td>${esc(cat)}</td><td>රු. ${money(sums[cat]||0)}</td><td>සුළු මුදල්</td></tr>`).join('');
+        return `<h4>✅ නිවැරදි සුළු මුදල් පොත</h4><div class="detective-table-wrap"><table class="detective-answer"><thead><tr><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>ගෙවීම් රු.</th>${pettyCats.map(x=>`<th>${esc(x)} රු.</th>`).join('')}</tr></thead><tbody>${rows}<tr><th colspan="3">වියදම් එකතුව</th><th>${money(total)}</th>${pettyCats.map(cat=>`<th>${money(sums[cat]||0)}</th>`).join('')}</tr><tr><th colspan="3">ආග්‍රිමය</th><th colspan="${pettyCats.length+1}">රු. ${money(c.advance)} | අවසාන ශේෂය රු. ${money(balance)}</th></tr></tbody></table></div>
+        <h4>📒 මුදල් ගිණුම</h4><div class="detective-table-wrap"><table class="detective-answer"><thead><tr><th>හර</th><th>වටිනාකම</th><th>බැර</th><th>වටිනාකම</th></tr></thead><tbody><tr><td>සුළු මුදල්</td><td>රු. ${money(c.advance)}</td><td>සුළු මුදල්</td><td>රු. ${money(total)}</td></tr><tr><td></td><td></td><td>ශේෂය</td><td>රු. ${money(balance)}</td></tr></tbody></table></div>
+        <h4>📚 අදාළ වියදම් ගිණුම්</h4><div class="detective-table-wrap"><table class="detective-answer"><thead><tr><th>වියදම් ගිණුම</th><th>හර වටිනාකම</th><th>බැර ගිණුම</th></tr></thead><tbody>${cats}</tbody></table></div>`;
+    }
+    function render(){
+        const root=document.getElementById('detective-challenge-container'); if(!root)return;
+        const st=loadState();
+        root.innerHTML=challenges.map(c=>{let e=getEntry(st,c.id); return `<div class="detective-card" id="detective-card-${c.id}">
+            <span class="detective-badge">${c.type==='cash'?'💰 මුදල් පොත':'🪙 සුළු මුදල් පොත'}</span>
+            <h3>${esc(c.title)}</h3><p>${esc(c.desc)}</p>
+            ${c.type==='petty'?`<p><strong>සුළු මුදල් ආග්‍රිමය: රු. ${money(c.advance)}</strong></p>`:''}
+            <ol class="detective-transactions">${c.tx.map((t,i)=>`<li>${esc(t[0])} – ${esc(t[1])}${c.type==='cash'&&t[5]?` <strong>(මුළු වටිනාකම රු.${money(Number(t[3])+Number(t[5]))})</strong>`:''}</li>`).join('')}</ol>
+            <p class="detective-note">පහත ආකෘතිය පුරවන්න.</p>
+            ${c.type==='cash'?cashInputTable(c):pettyInputTable(c)}
+            ${c.type==='cash'?ledgerInput(c):ledgerPettyInput(c)}
+            <div class="detective-actions"><button class="detective-check-btn" onclick="checkDetective8(${c.id})">🔍 අභියෝගය පරීක්ෂා කරන්න</button><button class="detective-reset-btn" onclick="resetDetective8(${c.id})">↺ නැවත සකස් කරන්න</button><button class="detective-answer-btn" id="danswer-btn-${c.id}" onclick="toggleDetectiveAnswer8(${c.id})">👁️ නිවැරදි පිළිතුර බලන්න</button></div>
+            <div class="detective-result" id="dresult-${c.id}"></div><div class="detective-answer" id="danswer-${c.id}">${renderAnswer(c)}</div>
+        </div>`}).join('');
+        challenges.forEach(c=>{let e=getEntry(st,c.id); if(e.done)restoreOne(c.id,e);});
+        updateProgress();
+    }
+    function ledgerPettyInput(c){return `<h4>📚 අදාළ ලෙජර් ගිණුම්</h4><div class="detective-table-wrap"><table class="detective-ledger-table"><thead><tr><th>#</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>වටිනාකම රු.</th></tr></thead><tbody>${c.tx.map((t,i)=>`<tr><td>${i+1}</td><td><input id="pldr${c.id}-${i}" placeholder="වියදම් ගිණුම"></td><td><input id="plcr${c.id}-${i}" placeholder="මුදල් / සුළු මුදල්"></td><td><input id="plamt${c.id}-${i}" inputmode="decimal" placeholder="වටිනාකම"></td></tr>`).join('')}</tbody></table></div>`;}
+    function norm(v){return String(v||'').trim().replace(/\s+/g,'');}
+    function num(v){return Math.round((parseFloat(String(v||'').replace(/,/g,''))||0)*100)/100;}
+    function checkDetective8(id){
+        const c=challenges.find(x=>x.id===id); if(!c)return;
+        let score=0,total=c.tx.length*(c.type==='cash'?7:5), mistakes=[];
+        c.tx.forEach((t,i)=>{
+            if(c.type==='cash'){
+                let side=t[4]==='receipt'?'හර':'බැර', account=t[2], cash=Number(t[3]), disc=Number(t[5]||0), totalVal=cash+disc;
+                if(norm(document.getElementById(`d${id}-${i}`).value)===norm(side))score++;
+                if(norm(document.getElementById(`a${id}-${i}`).value)===norm(account))score++;
+                if(num(document.getElementById(`cash${id}-${i}`).value)===cash)score++;
+                if(num(document.getElementById(`disc${id}-${i}`).value)===disc)score++;
+                let dr=t[4]==='receipt'?'මුදල් ගිණුම':account, cr=t[4]==='receipt'?account:'මුදල් ගිණුම';
+                if(norm(document.getElementById(`ldr${id}-${i}`).value)===norm(dr))score++;
+                if(norm(document.getElementById(`lcr${id}-${i}`).value)===norm(cr))score++;
+                if(num(document.getElementById(`lamt${id}-${i}`).value)===totalVal)score++;
+            }else{
+                let amt=Number(t[3]),cat=t[4];
+                if(num(document.getElementById(`pcash${id}-${i}`).value)===amt)score++;
+                if(norm(document.getElementById(`pcat${id}-${i}`).value)===norm(cat))score++;
+                if(norm(document.getElementById(`pldr${id}-${i}`).value)===norm(cat))score++;
+                if(norm(document.getElementById(`plcr${id}-${i}`).value)===norm('සුළු මුදල් ගිණුම') || norm(document.getElementById(`plcr${id}-${i}`).value)===norm('සුළු මුදල්'))score++;
+                if(num(document.getElementById(`plamt${id}-${i}`).value)===amt)score++;
+            }
+        });
+        let pct=Math.round(score/total*100), st=loadState(); st[String(id)]={done:true,score,pct}; saveState(st); restoreOne(id,st[String(id)]); updateProgress();
+    }
+    function restoreOne(id,e){
+        const btn=document.querySelector(`#detective-card-${id} .detective-check-btn`), result=document.getElementById(`dresult-${id}`), ans=document.getElementById(`danswer-btn-${id}`);
+        if(btn){btn.textContent='✓ අභියෝගය සම්පූර්ණ කර ඇත';btn.disabled=true;btn.classList.add('detective-locked');}
+        if(result){result.classList.add('show');result.innerHTML=`<strong>ලකුණු: ${e.score}</strong> | ප්‍රතිශතය: <strong>${e.pct}%</strong><br>${e.pct===100?'🎉 විශිෂ්ටයි! සියලු පිළිතුරු නිවැරදියි.':e.pct>=70?'👍 හොඳයි! පිළිතුරු කිහිපයක් නැවත පරීක්ෂා කරන්න.':'📘 පාඩමේ අදාළ කොටස් නැවත බලලා නිවැරදි පිළිතුර සසඳන්න.'}`;}
+        if(ans)ans.style.display='inline-block';
+    }
+    function toggleDetectiveAnswer8(id){const el=document.getElementById(`danswer-${id}`);if(el)el.classList.toggle('show');}
+    function resetDetective8(id){let st=loadState();delete st[String(id)];saveState(st);render();}
+    function updateProgress(){let st=loadState(),done=0,score=0;challenges.forEach(c=>{let e=getEntry(st,c.id);if(e.done)done++;score+=Number(e.score||0);});let max=challenges.reduce((s,c)=>s+c.tx.length*(c.type==='cash'?7:5),0);document.getElementById('detective-progress-fill').style.width=(score/max*100)+'%';document.getElementById('detective-progress-text').textContent=`අභියෝග ${done} / 6 සම්පූර්ණයි | ලකුණු ${score} / ${max}`;}
+    window.checkDetective8=checkDetective8;window.resetDetective8=resetDetective8;window.toggleDetectiveAnswer8=toggleDetectiveAnswer8;
+    document.addEventListener('DOMContentLoaded',render);
+})();
 
 </script>
 
