@@ -346,6 +346,238 @@
 
         }
 
+        /* =========================================================
+   BOC STYLE - CASH DEPOSIT SLIP
+   Landscape Bank Deposit Slip
+   ========================================================= */
+
+.boc-deposit-slip{
+    width:100%;
+    max-width:1050px;
+    margin:30px auto;
+    background:#ffffff;
+    color:#111;
+    border:2px solid #222;
+    padding:0;
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+    font-size:11px;
+    line-height:1.25;
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+
+.boc-slip-header{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    align-items:center;
+    min-height:65px;
+    border-bottom:2px solid #222;
+    padding:8px 12px;
+}
+
+.boc-logo{
+    font-size:18px;
+    font-weight:bold;
+    text-align:left;
+}
+
+.boc-bank-title{
+    text-align:center;
+}
+
+.boc-bank-title h3{
+    margin:0;
+    font-size:21px;
+    letter-spacing:.5px;
+}
+
+.boc-bank-title p{
+    margin:3px 0 0;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.boc-slip-copy{
+    text-align:right;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.boc-slip-info{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    border-bottom:1px solid #222;
+}
+
+.boc-info-left{
+    border-right:1px solid #222;
+}
+
+.boc-row{
+    display:grid;
+    grid-template-columns:185px 1fr;
+    min-height:31px;
+    border-bottom:1px solid #555;
+}
+
+.boc-row:last-child{
+    border-bottom:0;
+}
+
+.boc-label{
+    padding:7px;
+    font-weight:bold;
+    border-right:1px solid #555;
+}
+
+.boc-value{
+    padding:7px;
+}
+
+.boc-account-boxes{
+    display:flex;
+    gap:3px;
+}
+
+.boc-account-boxes span{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    border:1px solid #555;
+}
+
+.boc-right-info{
+    padding:8px;
+}
+
+.boc-date-title{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.boc-date-boxes{
+    display:flex;
+    gap:3px;
+}
+
+.boc-date-boxes span{
+    border:1px solid #555;
+    width:27px;
+    height:22px;
+    text-align:center;
+    padding-top:3px;
+}
+
+.boc-main{
+    display:grid;
+    grid-template-columns:58% 42%;
+    min-height:255px;
+    border-bottom:1px solid #222;
+}
+
+.boc-customer{
+    border-right:1px solid #222;
+}
+
+.boc-denomination{
+    padding:7px;
+}
+
+.boc-denomination-title{
+    text-align:center;
+    font-weight:bold;
+    border:1px solid #333;
+    padding:5px;
+    margin-bottom:4px;
+}
+
+.boc-denom-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:10px;
+}
+
+.boc-denom-table th,
+.boc-denom-table td{
+    border:1px solid #444;
+    padding:4px;
+    text-align:center;
+    height:23px;
+}
+
+.boc-denom-table th{
+    font-weight:bold;
+}
+
+.boc-denom-table td:nth-child(1){
+    text-align:left;
+    font-weight:bold;
+}
+
+.boc-total{
+    display:grid;
+    grid-template-columns:1fr 120px;
+    border:1px solid #333;
+    border-top:0;
+}
+
+.boc-total div{
+    padding:6px;
+    font-weight:bold;
+}
+
+.boc-total div:last-child{
+    text-align:right;
+    border-left:1px solid #333;
+}
+
+.boc-bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    min-height:75px;
+}
+
+.boc-bottom-box{
+    padding:8px;
+    border-right:1px solid #222;
+}
+
+.boc-bottom-box:last-child{
+    border-right:0;
+}
+
+.boc-bottom-box strong{
+    display:block;
+    margin-bottom:18px;
+}
+
+.boc-signature{
+    text-align:center;
+    padding-top:25px;
+}
+
+.boc-sign-line{
+    border-top:1px solid #222;
+    margin:0 auto;
+    width:85%;
+    padding-top:4px;
+}
+
+.boc-note{
+    text-align:center;
+    font-size:9px;
+    padding:5px;
+    border-top:1px solid #222;
+}
+
+@media(max-width:700px){
+
+    .boc-deposit-slip{
+        min-width:850px;
+        font-size:10px;
+    }
+
+}
+
     </style>
 
 </head>
@@ -508,29 +740,310 @@
 
         </div>
 
-        <div class="voucher-frame">
+   <!-- =========================================================
+     BANK OF CEYLON STYLE - CASH DEPOSIT SLIP
+     ========================================================= -->
 
-            <div class="voucher-title">
-                🧾 BANK DEPOSIT SLIP
+<div class="boc-deposit-slip">
+
+    <!-- HEADER -->
+    <div class="boc-slip-header">
+
+        <div class="boc-logo">
+            BANK OF CEYLON
+        </div>
+
+        <div class="boc-bank-title">
+            <h3>CASH DEPOSIT SLIP</h3>
+            <p>මුදල් තැන්පතු පත්‍රිකාව</p>
+        </div>
+
+        <div class="boc-slip-copy">
+            CUSTOMER COPY
+        </div>
+
+    </div>
+
+
+    <!-- ACCOUNT + DATE -->
+    <div class="boc-slip-info">
+
+        <div class="boc-info-left">
+
+            <div class="boc-row">
+
+                <div class="boc-label">
+                    Account / Card Number
+                </div>
+
+                <div class="boc-value">
+                    <div class="boc-account-boxes">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
             </div>
 
-            <p>
-                Account Holder: Unique Business
-            </p>
 
-            <p>
-                Cash Deposit: Rs. 20,000
-            </p>
+            <div class="boc-row">
 
-            <p>
-                Date: 15.08.20XX
-            </p>
+                <div class="boc-label">
+                    Account Holder's Name & Address
+                </div>
 
-            <p>
-                Bank Stamp: __________________
-            </p>
+                <div class="boc-value">
+                    Unique Business<br>
+                    ______________________________________________
+                </div>
+
+            </div>
+
+
+            <div class="boc-row">
+
+                <div class="boc-label">
+                    Depositor's Name & Address
+                </div>
+
+                <div class="boc-value">
+                    ______________________________________________
+                </div>
+
+            </div>
 
         </div>
+
+
+        <div class="boc-right-info">
+
+            <div class="boc-date-title">
+                Date
+            </div>
+
+            <div class="boc-date-boxes">
+                <span>1</span>
+                <span>5</span>
+                <span>0</span>
+                <span>8</span>
+                <span>2</span>
+                <span>0</span>
+                <span>2</span>
+                <span>6</span>
+            </div>
+
+            <br>
+
+            <strong>Reference No.</strong>
+
+            <div style="
+                border:1px solid #555;
+                height:24px;
+                margin-top:5px;
+            "></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN AREA -->
+    <div class="boc-main">
+
+        <!-- CUSTOMER DETAILS -->
+        <div class="boc-customer">
+
+            <div class="boc-row">
+                <div class="boc-label">N.I.C. / P.P. / D.L. No.</div>
+                <div class="boc-value">
+                    ______________________________
+                </div>
+            </div>
+
+            <div class="boc-row">
+                <div class="boc-label">Telephone No.</div>
+                <div class="boc-value">
+                    ______________________________
+                </div>
+            </div>
+
+            <div class="boc-row">
+                <div class="boc-label">Purpose of Deposit</div>
+                <div class="boc-value">
+                    Business Cash Deposit
+                </div>
+            </div>
+
+            <div class="boc-row">
+                <div class="boc-label">Branch</div>
+                <div class="boc-value">
+                    ______________________________
+                </div>
+            </div>
+
+            <div class="boc-row">
+                <div class="boc-label">Amount in Words</div>
+                <div class="boc-value">
+                    Twenty Thousand Rupees Only
+                </div>
+            </div>
+
+            <div class="boc-row">
+                <div class="boc-label">Payment / Reference Code</div>
+                <div class="boc-value">
+                    ______________________________
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- DENOMINATION -->
+        <div class="boc-denomination">
+
+            <div class="boc-denomination-title">
+                CASH DENOMINATION
+            </div>
+
+            <table class="boc-denom-table">
+
+                <thead>
+                    <tr>
+                        <th>Denomination</th>
+                        <th>No.</th>
+                        <th>Amount (Rs.)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Rs. 5,000</td>
+                        <td>4</td>
+                        <td>20,000.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 2,000</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 1,000</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 500</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 200</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 100</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 50</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 20</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Rs. 10</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+
+            <div class="boc-total">
+
+                <div>
+                    TOTAL
+                </div>
+
+                <div>
+                    Rs. 20,000.00
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="boc-bottom">
+
+        <div class="boc-bottom-box">
+
+            <strong>Validation Checked</strong>
+
+            ☐ Checked
+
+        </div>
+
+
+        <div class="boc-bottom-box">
+
+            <strong>Bank Officer</strong>
+
+            <div class="boc-sign-line">
+                Signature
+            </div>
+
+        </div>
+
+
+        <div class="boc-bottom-box">
+
+            <strong>Depositor's Signature</strong>
+
+            <div class="boc-signature">
+                __________________________
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="boc-note">
+        CASH DEPOSIT SLIP
+    </div>
+
+</div>
 
     </section>
 
