@@ -1,168 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Profile | Unique EduZone</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/profile.css">
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Student Profile | Unique EduZone</title>
-
-    <link
-        rel="stylesheet"
-        href="../assets/css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="../assets/css/profile.css"
-    >
-
+<style>
+body{
+    position:relative;
+    min-height:100vh;
+    background:#07090d;
+    overflow-x:hidden;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    background-image:url("../assets/images/profile-bg.png");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    transform:scale(1.02);
+}
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:
+        linear-gradient(rgba(3,5,8,.68),rgba(3,5,8,.82)),
+        linear-gradient(135deg,rgba(212,175,55,.10),rgba(0,0,0,.18),rgba(212,175,55,.06));
+}
+.site-header,.profile-container,.site-footer{
+    position:relative;
+    z-index:2;
+}
+.site-header{
+    background:rgba(5,7,10,.82);
+    border-bottom:1px solid rgba(212,175,55,.35);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+.profile-container{
+    min-height:calc(100vh - 140px);
+    padding-top:55px;
+    padding-bottom:55px;
+}
+.profile-card{
+    background:rgba(7,10,15,.88);
+    border:1px solid rgba(212,175,55,.38);
+    box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 30px rgba(212,175,55,.08);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+.profile-container h1{
+    text-shadow:0 2px 15px rgba(0,0,0,.8),0 0 20px rgba(212,175,55,.15);
+}
+.profile-intro{text-shadow:0 2px 8px rgba(0,0,0,.8);}
+.profile-card input,.profile-card select{
+    background:rgba(0,0,0,.60);
+    border:1px solid rgba(255,255,255,.15);
+    color:#fff;
+    backdrop-filter:blur(5px);
+}
+.profile-card input:focus,.profile-card select:focus{
+    border-color:#d4af37;
+    outline:none;
+    box-shadow:0 0 0 2px rgba(212,175,55,.12),0 0 18px rgba(212,175,55,.12);
+}
+.save-message,.profile-actions{position:relative;z-index:3;}
+.site-footer{
+    background:rgba(3,5,8,.88);
+    border-top:1px solid rgba(212,175,55,.25);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+@media(max-width:700px){
+    body::before{background-position:center center;}
+    .profile-container{padding:35px 15px;}
+}
+</style>
 </head>
-
-
 <body>
 
-
 <header class="site-header">
-
-    <div class="logo">
-        Unique EduZone
-    </div>
-
-    <nav>
-
-        <a href="../index.html">Home</a>
-
-        <a href="lessons.html">Lessons</a>
-
-        <a href="quiz.html">MCQ</a>
-
-        <a href="dashboard.html">Dashboard</a>
-
-        <a href="profile.html">Profile</a>
-
-    </nav>
-
+<div class="logo">Unique EduZone</div>
+<nav>
+<a href="../index.html">Home</a>
+<a href="lessons.html">Lessons</a>
+<a href="quiz.html">MCQ</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="profile.html">Profile</a>
+</nav>
 </header>
 
-
-
 <main class="profile-container">
+<h1>Student Profile</h1>
+<p class="profile-intro">Enter your basic learning information.</p>
 
-    <h1>Student Profile</h1>
+<div class="profile-card">
+<form id="profileForm">
 
-    <p class="profile-intro">
-        Enter your basic learning information.
-    </p>
+<label for="studentName">Student Name</label>
+<input type="text" id="studentName" placeholder="Enter your name" required>
 
+<label for="studentGrade">Grade</label>
+<select id="studentGrade" required>
+<option value="">Select Grade</option>
+<option value="10">Grade 10</option>
+<option value="11">Grade 11</option>
+<option value="12">Grade 12</option>
+<option value="13">Grade 13</option>
+</select>
 
-    <div class="profile-card">
+<label for="studentSubject">Main Subject</label>
+<input type="text" id="studentSubject" placeholder="Example: Business Studies">
 
-        <form id="profileForm">
+<button type="submit" class="save-button">Save Profile</button>
+</form>
 
+<div id="saveMessage" class="save-message"></div>
+</div>
 
-            <label for="studentName">
-                Student Name
-            </label>
-
-            <input
-                type="text"
-                id="studentName"
-                placeholder="Enter your name"
-                required
-            >
-
-
-            <label for="studentGrade">
-                Grade
-            </label>
-
-            <select
-                id="studentGrade"
-                required
-            >
-
-                <option value="">
-                    Select Grade
-                </option>
-
-                <option value="10">
-                    Grade 10
-                </option>
-
-                <option value="11">
-                    Grade 11
-                </option>
-
-                <option value="12">
-                    Grade 12
-                </option>
-
-                <option value="13">
-                    Grade 13
-                </option>
-
-            </select>
-
-
-            <label for="studentSubject">
-                Main Subject
-            </label>
-
-            <input
-                type="text"
-                id="studentSubject"
-                placeholder="Example: Business Studies"
-            >
-
-
-            <button
-                type="submit"
-                class="save-button"
-            >
-                Save Profile
-            </button>
-
-
-        </form>
-
-
-        <div
-            id="saveMessage"
-            class="save-message"
-        ></div>
-
-    </div>
-
-
-    <div class="profile-actions">
-
-        <a href="dashboard.html">
-            Go to Dashboard
-        </a>
-
-    </div>
-
+<div class="profile-actions">
+<a href="dashboard.html">Go to Dashboard</a>
+</div>
 </main>
 
-
-
 <footer class="site-footer">
-
-    <p>
-        © 2026 Unique EduZone
-    </p>
-
+<p>© 2026 Unique EduZone</p>
 </footer>
 
-
 <script src="../assets/js/profile.js"></script>
-
 </body>
-
 </html>
