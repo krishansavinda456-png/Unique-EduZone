@@ -578,6 +578,155 @@
 
 }
 
+        /* =========================================================
+   9.1.2 - REALISTIC CHEQUE DESIGN
+   ========================================================= */
+
+.real-cheque{
+    width:100%;
+    max-width:850px;
+    margin:25px auto;
+    background:#fff;
+    color:#111;
+    border:2px solid #333;
+    border-radius:6px;
+    padding:0;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    font-family:Arial,"Noto Sans Sinhala",sans-serif;
+}
+
+.cheque-header-real{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:12px 18px 8px;
+    border-bottom:1px solid #555;
+}
+
+.cheque-bank-real{
+    font-size:19px;
+    font-weight:bold;
+}
+
+.cheque-bank-sub{
+    font-size:10px;
+    margin-top:3px;
+}
+
+.cheque-number-real{
+    font-size:12px;
+    font-weight:bold;
+}
+
+.cheque-body-real{
+    padding:12px 18px 10px;
+}
+
+.cheque-date-real{
+    text-align:right;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.cheque-pay-real{
+    font-size:12px;
+    margin-bottom:13px;
+}
+
+.cheque-pay-line{
+    display:inline-block;
+    min-width:65%;
+    border-bottom:1px solid #333;
+    margin-left:5px;
+}
+
+.cheque-amount-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:12px 0;
+}
+
+.cheque-words-real{
+    flex:1;
+    font-size:12px;
+    border-bottom:1px solid #333;
+    padding-bottom:4px;
+    margin-right:15px;
+}
+
+.cheque-amount-box-real{
+    width:145px;
+    border:1.5px solid #333;
+    padding:8px;
+    text-align:center;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.cheque-account-real{
+    font-size:11px;
+    margin-top:15px;
+}
+
+.cheque-signature-area{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:20px;
+}
+
+.cheque-signature{
+    width:210px;
+    text-align:center;
+    border-top:1px solid #333;
+    padding-top:4px;
+    font-size:10px;
+}
+
+.cheque-bottom-real{
+    border-top:1px solid #555;
+    padding:7px 15px;
+    font-family:"Courier New",monospace;
+    font-size:12px;
+    letter-spacing:2px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.method-card{
+    margin:25px 0;
+    padding:20px;
+    border-radius:10px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.method-card h4{
+    margin-bottom:12px;
+}
+
+.method-label{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    background:#c9a227;
+    color:#111;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+@media(max-width:700px){
+
+    .real-cheque{
+        min-width:700px;
+    }
+
+    .cheque-bank-real{
+        font-size:16px;
+    }
+}
+
     </style>
 
 </head>
@@ -1049,86 +1198,295 @@
 
 
 
-    <!-- CHEQUE DEPOSIT -->
+<!-- =========================================================
+     9.1.2 ලැබුණු චෙක්පත් බැංකුවේ තැන්පත් කිරීම
+     ========================================================= -->
 
-    <section class="lesson-section">
+<section class="lesson-section">
 
-        <h2>
-            🧾 9.1.2 ලැබුණු චෙක්පත් බැංකුවේ තැන්පත් කිරීම
-        </h2>
+    <h2>9.1.2 ලැබුණු චෙක්පත් බැංකුවේ තැන්පත් කිරීම</h2>
+
+    <p>
+        ව්‍යාපාරයකට ණයගැතියෙකුගෙන් චෙක්පතක් ලැබුණු විට,
+        එම චෙක්පත බැංකුවේ ජංගම ගිණුමේ තැන්පත් කළ හැකිය.
+        මෙහිදී චෙක්පත ලැබුණු අවස්ථාවේදීම බැංකුවේ තැන්පත් කරන්නේද,
+        නැතහොත් පසුව බැංකුවේ තැන්පත් කරන්නේද යන්න අනුව
+        ගිණුම් සටහන් වෙනස් වේ.
+    </p>
+
+
+    <!-- =====================================================
+         චෙක්පත
+         ===================================================== -->
+
+    <div class="example-box">
+
+        <h3>නිදසුන – ලැබුණු චෙක්පත</h3>
 
         <p>
-            ණයගැතියෙකුගෙන් හෝ විකුණුම් මගින් ලැබුණු චෙක්පතක්
-            බැංකුවේ තැන්පත් කළ විට බැංකු ගිණුම වැඩි වේ.
+            2026.08.15 දින <strong>සමන් මහතාගෙන් රු. 25,000</strong> ක
+            චෙක්පතක් ව්‍යාපාරයට ලැබුණි.
         </p>
 
-        <div class="example-box">
+        <div class="real-cheque">
 
-            <h3>නිදසුන</h3>
+            <div class="cheque-header-real">
+
+                <div>
+                    <div class="cheque-bank-real">
+                        BANK OF CEYLON
+                    </div>
+
+                    <div class="cheque-bank-sub">
+                        බැංකු චෙක්පත
+                    </div>
+                </div>
+
+                <div class="cheque-number-real">
+                    Cheque No. 001256
+                </div>
+
+            </div>
+
+
+            <div class="cheque-body-real">
+
+                <div class="cheque-date-real">
+                    Date: 15 / 08 / 2026
+                </div>
+
+
+                <div class="cheque-pay-real">
+
+                    Pay
+                    <span class="cheque-pay-line">
+                        SAMAN
+                    </span>
+                    or Bearer
+
+                </div>
+
+
+                <div class="cheque-amount-row">
+
+                    <div class="cheque-words-real">
+                        Rupees Twenty Five Thousand Only
+                    </div>
+
+                    <div class="cheque-amount-box-real">
+                        Rs. 25,000.00
+                    </div>
+
+                </div>
+
+
+                <div class="cheque-account-real">
+
+                    A/C No:
+                    <strong>1234567890</strong>
+
+                </div>
+
+
+                <div class="cheque-signature-area">
+
+                    <div class="cheque-signature">
+                        Authorised Signature
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="cheque-bottom-real">
+
+                <span>⑆ 001256⑆</span>
+                <span>1234567890</span>
+                <span>⑆ 0001256⑆</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ක්‍රමය 01
+         ===================================================== -->
+
+    <div class="method-card">
+
+        <span class="method-label">
+            ක්‍රමය 01
+        </span>
+
+        <h3>
+            චෙක්පත ලැබුණු වහාම බැංකුවේ තැන්පත් කිරීම
+        </h3>
+
+        <p>
+            ලැබුණු චෙක්පත එම අවස්ථාවේදීම බැංකුවේ ජංගම ගිණුමේ
+            තැන්පත් කරන්නේ නම්, චෙක්පත ලැබීම සහ බැංකුවේ
+            තැන්පත් කිරීම යන කටයුතු එකවර සිදුවේ.
+        </p>
+
+
+        <div class="important-box">
+
+            <strong>ගිණුම් සටහන:</strong>
 
             <p>
-                ණයගැතියෙකුගෙන් රු. 15,000ක චෙක්පතක් ලැබී
-                එය බැංකුවේ තැන්පත් කළේ ය.
+                <strong>බැංකු ගිණුම — හර රු. 25,000</strong>
+            </p>
+
+            <p>
+                <strong>සමන් ගිණුම — බැර රු. 25,000</strong>
             </p>
 
         </div>
 
-        <table class="ledger">
 
-            <tr>
-                <th>ගිණුම</th>
-                <th>හර</th>
-                <th>බැර</th>
-            </tr>
+        <div class="formula-box">
 
-            <tr>
-                <td>බැංකු ගිණුම</td>
-                <td class="debit">රු. 15,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>ණයගැති ගිණුම</td>
-                <td>-</td>
-                <td class="credit">රු. 15,000</td>
-            </tr>
-
-        </table>
-
-        <div class="cheque-frame">
-
-            <div class="cheque-top">
-
-                <span>
-                    UNIQUE BANK
-                </span>
-
-                <span>
-                    No. 00456
-                </span>
-
+            <div class="formula">
+                බැංකු ගිණුම &nbsp; Dr. &nbsp; Rs. 25,000
             </div>
 
-            <div class="cheque-bank">
-                PAY TO: Unique Business
-            </div>
-
-            <p>
-                Rupees: Fifteen Thousand Only
-            </p>
-
-            <div class="cheque-amount">
-                Rs. 15,000.00
-            </div>
-
-            <div class="signature">
-                Signature: ______________
+            <div class="formula">
+                සමන් ගිණුම &nbsp; Cr. &nbsp; Rs. 25,000
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+
+    <!-- =====================================================
+         ක්‍රමය 02
+         ===================================================== -->
+
+    <div class="method-card">
+
+        <span class="method-label">
+            ක්‍රමය 02
+        </span>
+
+        <h3>
+            චෙක්පත ලැබුණු පසු බැංකුවේ තැන්පත් කිරීම
+        </h3>
+
+        <p>
+            ලැබුණු චෙක්පත එම අවස්ථාවේදී බැංකුවේ තැන්පත් නොකර,
+            පසුව බැංකු ජංගම ගිණුමේ තැන්පත් කරන්නේ නම්
+            ගනුදෙනු දෙකක් ලෙස ගිණුම් සටහන් යෙදේ.
+        </p>
+
+
+        <div class="important-box">
+
+            <h4>
+                පියවර 01 – චෙක්පත ලැබුණු අවස්ථාවේ
+            </h4>
+
+            <p>
+                <strong>
+                    මුදල් ගිණුම — හර රු. 25,000
+                </strong>
+            </p>
+
+            <p>
+                <strong>
+                    සමන් ගිණුම — බැර රු. 25,000
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="formula-box">
+
+            <div class="formula">
+                මුදල් ගිණුම &nbsp; Dr. &nbsp; Rs. 25,000
+            </div>
+
+            <div class="formula">
+                සමන් ගිණුම &nbsp; Cr. &nbsp; Rs. 25,000
+            </div>
+
+        </div>
+
+
+        <div class="important-box">
+
+            <h4>
+                පියවර 02 – පසුව චෙක්පත බැංකුවේ තැන්පත් කළ අවස්ථාවේ
+            </h4>
+
+            <p>
+                <strong>
+                    බැංකු ගිණුම — හර රු. 25,000
+                </strong>
+            </p>
+
+            <p>
+                <strong>
+                    මුදල් ගිණුම — බැර රු. 25,000
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="formula-box">
+
+            <div class="formula">
+                බැංකු ගිණුම &nbsp; Dr. &nbsp; Rs. 25,000
+            </div>
+
+            <div class="formula">
+                මුදල් ගිණුම &nbsp; Cr. &nbsp; Rs. 25,000
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         සංසන්දනය
+         ===================================================== -->
+
+    <div class="important-box">
+
+        <h3>මතක තබාගන්න</h3>
+
+        <p>
+            <strong>චෙක්පත ලැබුණු වහාම බැංකුවේ තැන්පත් කළේ නම්:</strong>
+        </p>
+
+        <p>
+            බැංකු ගිණුම Dr. → සමන් ගිණුම Cr.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>චෙක්පත පසුව බැංකුවේ තැන්පත් කළේ නම්:</strong>
+        </p>
+
+        <p>
+            මුලින් → මුදල් ගිණුම Dr. → සමන් ගිණුම Cr.
+        </p>
+
+        <p>
+            පසුව → බැංකු ගිණුම Dr. → මුදල් ගිණුම Cr.
+        </p>
+
+    </div>
+
+</section>
 
 
     <!-- ISSUED CHEQUE -->
