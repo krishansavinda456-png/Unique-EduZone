@@ -643,6 +643,110 @@
 
 }
 
+        /* ================================
+   LEDGER ACCOUNT TABLE
+   ================================ */
+
+.account-format-wrapper{
+    width:100%;
+    overflow-x:auto;
+    margin:25px 0;
+}
+
+.account-title-row{
+    width:100%;
+    min-width:850px;
+    min-height:60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    position:relative;
+    align-items:center;
+    border:1px solid #555;
+    border-bottom:none;
+    background:#111;
+}
+
+.account-side-title{
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.debit-title{
+    grid-column:1;
+    grid-row:1;
+    text-align:left;
+    padding-left:20px;
+}
+
+.credit-title{
+    grid-column:2;
+    grid-row:1;
+    text-align:right;
+    padding-right:20px;
+}
+
+.account-name-title{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:#ffd700;
+    font-size:20px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.t-account{
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+
+.t-account th,
+.t-account td{
+    border:1px solid #555;
+    padding:10px 8px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.t-account th{
+    background:#191919;
+    color:#ffd700;
+    font-weight:bold;
+}
+
+.t-account td{
+    background:#101010;
+    color:#f2f2f2;
+}
+
+.t-account tr:last-child td{
+    font-weight:bold;
+}
+
+@media(max-width:650px){
+
+    .account-format-wrapper{
+        overflow-x:auto;
+    }
+
+    .account-title-row,
+    .t-account{
+        min-width:850px;
+    }
+
+    .account-name-title{
+        font-size:17px;
+    }
+
+    .account-side-title{
+        font-size:16px;
+    }
+}
+
     </style>
 
 </head>
