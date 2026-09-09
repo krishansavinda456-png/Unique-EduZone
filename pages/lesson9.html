@@ -727,6 +727,51 @@
     }
 }
 
+        /* =========================================================
+   DISHONOURED / CANCELLED CHEQUE
+   ========================================================= */
+
+.dishonoured-cheque{
+    position:relative;
+    filter:none;
+}
+
+.cancelled-stamp{
+    position:absolute;
+    top:42%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(-12deg);
+
+    border:4px solid #b30000;
+    color:#b30000;
+
+    padding:8px 25px;
+
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:3px;
+
+    opacity:.82;
+
+    background:rgba(255,255,255,.75);
+}
+
+.returned-stamp{
+    position:absolute;
+    right:18px;
+    bottom:45px;
+
+    border:2px solid #b30000;
+    color:#b30000;
+
+    padding:5px 10px;
+
+    font-size:11px;
+    font-weight:bold;
+
+    transform:rotate(-5deg);
+}
+
     </style>
 
 </head>
@@ -1719,35 +1764,133 @@
             අත්සන වෙනස් වීම වැනි හේතු නිසා චෙක්පත් අගරු විය හැක.
         </p>
 
-        <div class="notice-frame">
+<!-- =========================================================
+     9.1.4 - අගරු වූ චෙක්පත
+     ========================================================= -->
 
-            <h3>
-                ⚠️ CHEQUE RETURN NOTIFICATION
-            </h3>
+<div class="example-box">
 
-            <p>
-                Cheque No: 415
-            </p>
+    <h3>නිදසුන – අගරු වූ චෙක්පත</h3>
 
-            <p>
-                Amount: Rs. 13,000
-            </p>
+    <p>
+        ව්‍යාපාරයට ලැබුණු රු. 25,000 ක චෙක්පත බැංකුවේ
+        තැන්පත් කිරීමෙන් පසු ප්‍රමාණවත් මුදල් නොමැති වීම
+        හේතුවෙන් බැංකුව විසින් අගරු කර ආපසු එවන ලදී.
+    </p>
 
-            <p>
-                Status: DISHONOURED
-            </p>
 
-            <p>
-                Reason: Insufficient Funds
-            </p>
+    <!-- =====================================================
+         RETURNED / DISHONOURED CHEQUE
+         ===================================================== -->
 
-            <hr>
+    <div class="real-cheque dishonoured-cheque">
 
-            <strong>
-                Bank Notification
-            </strong>
+        <div class="cheque-header-real">
+
+            <div>
+
+                <div class="cheque-bank-real">
+                    BANK OF CEYLON
+                </div>
+
+                <div class="cheque-bank-sub">
+                    CHEQUE
+                </div>
+
+            </div>
+
+            <div class="cheque-number-real">
+                Cheque No. 001258
+            </div>
 
         </div>
+
+
+        <div class="cheque-body-real">
+
+            <div class="cheque-date-real">
+                Date: 25 / 08 / 2026
+            </div>
+
+
+            <div class="cheque-pay-real">
+
+                Pay
+                <span class="cheque-pay-line">
+                    UNIQUE BUSINESS
+                </span>
+                or Bearer
+
+            </div>
+
+
+            <div class="cheque-amount-row">
+
+                <div class="cheque-words-real">
+                    Rupees Twenty Five Thousand Only
+                </div>
+
+                <div class="cheque-amount-box-real">
+                    Rs. 25,000.00
+                </div>
+
+            </div>
+
+
+            <div class="cheque-account-real">
+
+                A/C No:
+                <strong>1234567890</strong>
+
+            </div>
+
+
+            <div class="cheque-signature-area">
+
+                <div class="cheque-signature">
+                    Authorised Signature
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cheque-bottom-real">
+
+            <span>⑆ 001258⑆</span>
+            <span>1234567890</span>
+            <span>⑆ 0001258⑆</span>
+
+        </div>
+
+
+        <!-- BANK CANCELLED STAMP -->
+
+        <div class="cancelled-stamp">
+            CANCELLED
+        </div>
+
+        <div class="returned-stamp">
+            CHEQUE RETURNED
+        </div>
+
+    </div>
+
+
+    <div class="warning-box">
+
+        <strong>අගරු වූ චෙක්පතක් යනු:</strong>
+
+        <p>
+            බැංකුවට ඉදිරිපත් කළ චෙක්පතට අදාළ ගෙවීම සිදු කිරීමට
+            නොහැකි වූ විට, එම චෙක්පත බැංකුව විසින් අගරු කර
+            ආපසු එවනු ලැබේ.
+        </p>
+
+    </div>
+
+</div>
 
     </section>
 
