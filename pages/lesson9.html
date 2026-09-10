@@ -772,6 +772,108 @@
     transform:rotate(-5deg);
 }
 
+        /* =========================================================
+   9.6 බැංකු සැසඳුම් ප්‍රකාශය – නිදසුන
+   ========================================================= */
+
+.reconciliation-example{
+    background:#fff;
+    color:#111;
+    border:2px solid #19aee5;
+    max-width:900px;
+    margin:25px auto;
+    padding:18px 22px 12px;
+    overflow-x:auto;
+}
+
+.reconciliation-title{
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.reconciliation-subtitle{
+    text-align:center;
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.reconciliation-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:18px;
+}
+
+.reconciliation-table th,
+.reconciliation-table td{
+    border:none;
+    padding:8px 10px;
+}
+
+.reconciliation-table .description{
+    width:68%;
+    text-align:left;
+}
+
+.reconciliation-table .amount-head{
+    width:16%;
+    text-align:center;
+    font-weight:700;
+}
+
+.reconciliation-table .amount{
+    width:16%;
+    text-align:right;
+    white-space:nowrap;
+}
+
+.reconciliation-table .label-row td{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.reconciliation-table .total-line{
+    border-bottom:2px solid #222 !important;
+}
+
+.reconciliation-table .subtotal{
+    font-weight:600;
+    padding-top:6px;
+}
+
+.reconciliation-table .final-balance{
+    font-weight:700;
+    border-bottom:4px double #222 !important;
+    padding-bottom:5px;
+}
+
+@media(max-width:700px){
+
+    .reconciliation-example{
+        padding:12px 8px;
+    }
+
+    .reconciliation-title{
+        font-size:20px;
+    }
+
+    .reconciliation-subtitle{
+        font-size:16px;
+    }
+
+    .reconciliation-table{
+        font-size:14px;
+    }
+
+    .reconciliation-table th,
+    .reconciliation-table td{
+        padding:7px 5px;
+    }
+
+}
+
     </style>
 
 </head>
@@ -3932,7 +4034,7 @@
 
         <p>
             බැංකු ප්‍රකාශය සමඟ සංසන්දනය කිරීමේදී ව්‍යාපාරයේ
-            බැංකු ගිණුමේ සටහන් නොවූ transactions තිබේ නම්
+            බැංකු ගිණුමේ සටහන් නොවූ ගනුදෙනු තිබේ නම්
             එම ගිණුම සංශෝධනය කළ යුතුය.
         </p>
 
@@ -3945,15 +4047,15 @@
             <ul>
 
                 <li>
-                    Direct remittances
+                    සෘජු ප්‍රේෂණ
                 </li>
 
                 <li>
-                    Standing orders
+                    ස්ථාවර නියෝග
                 </li>
 
                 <li>
-                    Bank charges
+                    බැංකු ගාස්තු
                 </li>
 
             </ul>
@@ -3967,7 +4069,7 @@
         <p>
             බැංකු ගිණුමේ ශේෂය රු. 31,000කි.
             බැංකුව විසින් ණයගැතියෙකුගෙන් රු. 11,000ක් සෘජුව ලැබී ඇත.
-            Bank loan standing order රු. 18,000ක් සහ bank charges රු. 3,000ක්
+            බැංකු ණය සඳහා ස්ථාවර නියෝගය රු. 18,000ක් සහ බැංකු ගාස්තු රු. 3,000ක්
             බැංකුව විසින් අඩු කර ඇත.
         </p>
 
@@ -3980,19 +4082,19 @@
             </tr>
 
             <tr>
-                <td>Direct Remittance</td>
+                <td>සෘජු ප්‍රේෂණ</td>
                 <td class="debit">හර</td>
                 <td>11,000</td>
             </tr>
 
             <tr>
-                <td>Bank Loan</td>
+                <td>බැංකු ණය</td>
                 <td class="credit">බැර</td>
                 <td>18,000</td>
             </tr>
 
             <tr>
-                <td>Bank Charges</td>
+                <td>බැංකු ගාස්තු</td>
                 <td class="credit">බැර</td>
                 <td>3,000</td>
             </tr>
@@ -4063,34 +4165,95 @@
             තැන්පත් කළ නමුත් realization නොවූ චෙක්පත = රු. 14,000
         </p>
 
-        <table class="ledger">
+<!-- =========================================================
+     9.6 බැංකු සැසඳුම් ප්‍රකාශය – නිදසුන
+     ========================================================= -->
 
-            <tr>
-                <th>Bank Reconciliation Statement</th>
-                <th>Rs.</th>
-            </tr>
+<div class="reconciliation-example">
 
-            <tr>
-                <td>සංශෝධිත බැංකු ශේෂය</td>
-                <td>21,000</td>
-            </tr>
+    <div class="reconciliation-subtitle">
+        20XX ජූලි මාසය සඳහා බැංකු සැසඳුම් විස්තරය
+    </div>
 
-            <tr>
-                <td>එකතු කරන්න: ඉදිරිපත් නොකළ චෙක්පත්</td>
-                <td>16,000</td>
-            </tr>
+    <table class="reconciliation-table">
 
-            <tr>
-                <td>අඩු කරන්න: realization නොවූ චෙක්පත්</td>
-                <td>(14,000)</td>
-            </tr>
+        <tr>
+            <th class="description-head"></th>
+            <th class="amount-head">රු.</th>
+            <th class="amount-head">රු.</th>
+        </tr>
 
-            <tr>
-                <td><strong>බැංකු ප්‍රකාශයේ ශේෂය</strong></td>
-                <td><strong>23,000</strong></td>
-            </tr>
+        <tr>
+            <td class="description">
+                සංශෝධිත බැංකු ශේෂය
+            </td>
+            <td></td>
+            <td class="amount">
+                21,000
+            </td>
+        </tr>
 
-        </table>
+        <tr class="label-row">
+            <td class="description">
+                එකතු කළා
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="description">
+                බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් (114)
+            </td>
+            <td class="amount">
+                16,000
+            </td>
+            <td class="amount total-line">
+                16,000
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="amount subtotal">
+                37,000
+            </td>
+        </tr>
+
+        <tr class="label-row">
+            <td class="description">
+                අඩු කළා
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="description">
+                නිෂ්කාශනය නොවූ චෙක්පත (58)
+            </td>
+            <td class="amount">
+                14,000
+            </td>
+            <td class="amount total-line">
+                14,000
+            </td>
+        </tr>
+
+        <tr>
+            <td class="description">
+                20XX.07.31 දිනට බැංකු ප්‍රකාශයේ සඳහන් ශේෂය
+            </td>
+            <td></td>
+            <td class="amount final-balance">
+                23,000
+            </td>
+        </tr>
+
+    </table>
+
+</div>
 
     </section>
 
@@ -4104,61 +4267,61 @@
             🧮 9.7 සංශෝධිත බැංකු ගිණුම
         </h2>
 
-        <table class="ledger">
+<table class="ledger">
 
-            <tr>
+    <tr>
 
-                <th colspan="2">
-                    Dr. Adjusted Bank Account
-                </th>
+        <th colspan="2">
+            හර — සංශෝධිත බැංකු ගිණුම
+        </th>
 
-                <th colspan="2">
-                    Cr. Adjusted Bank Account
-                </th>
+        <th colspan="2">
+            බැර — සංශෝධිත බැංකු ගිණුම
+        </th>
 
-            </tr>
+    </tr>
 
-            <tr>
+    <tr>
 
-                <td>Balance b/f</td>
-                <td>31,000</td>
+        <td>ඉදිරියට ගෙන ආ ශේෂය</td>
+        <td>31,000</td>
 
-                <td>Bank Loan</td>
-                <td>18,000</td>
+        <td>බැංකු ණය</td>
+        <td>18,000</td>
 
-            </tr>
+    </tr>
 
-            <tr>
+    <tr>
 
-                <td>Direct Remittance</td>
-                <td>11,000</td>
+        <td>සෘජු ප්‍රේෂණ</td>
+        <td>11,000</td>
 
-                <td>Bank Charges</td>
-                <td>3,000</td>
+        <td>බැංකු ගාස්තු</td>
+        <td>3,000</td>
 
-            </tr>
+    </tr>
 
-            <tr>
+    <tr>
 
-                <td></td>
-                <td></td>
+        <td></td>
+        <td></td>
 
-                <td>Balance c/d</td>
-                <td>21,000</td>
+        <td>පහළට ගෙන ගිය ශේෂය</td>
+        <td>21,000</td>
 
-            </tr>
+    </tr>
 
-            <tr>
+    <tr>
 
-                <th>Total</th>
-                <th>42,000</th>
+        <th>එකතුව</th>
+        <th>42,000</th>
 
-                <th>Total</th>
-                <th>42,000</th>
+        <th>එකතුව</th>
+        <th>42,000</th>
 
-            </tr>
+    </tr>
 
-        </table>
+</table>
 
     </section>
 
