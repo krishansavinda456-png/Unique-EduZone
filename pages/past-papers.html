@@ -1189,6 +1189,162 @@
 
         }
 
+        
+/* ===== 2025 O/L Paper I ===== */
+#paper2025Questions{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:20px;
+}
+.paper2025-question{
+    background:#111;
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.paper2025-q-number{
+    color:#d4af37;
+    font-weight:800;
+    font-size:18px;
+    margin-bottom:10px;
+}
+.paper2025-q-text{
+    color:#fff;
+    font-size:17px;
+    line-height:1.8;
+    white-space:pre-line;
+}
+.paper2025-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:16px;
+}
+.paper2025-option{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    background:#181818;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:13px;
+    color:#eee;
+    cursor:pointer;
+    transition:.2s;
+}
+.paper2025-option:hover{
+    border-color:#d4af37;
+}
+.paper2025-option input{
+    margin-top:5px;
+    accent-color:#d4af37;
+}
+.paper2025-option-number{
+    min-width:28px;
+    height:28px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#d4af37;
+    color:#080808;
+    font-weight:800;
+}
+#paper2025Warning{
+    display:none;
+    margin:15px 0;
+    padding:14px 16px;
+    border:1px solid #d4af37;
+    border-radius:12px;
+    color:#ffd966;
+    background:#241f0b;
+    font-weight:700;
+}
+#timer.warning{
+    animation:paperTimerPulse 1s infinite;
+}
+@keyframes paperTimerPulse{
+    50%{transform:scale(1.04);opacity:.75;}
+}
+#finish2025Btn{
+    display:block;
+    width:100%;
+    margin:25px 0;
+    padding:16px 20px;
+    border:0;
+    border-radius:12px;
+    background:#d4af37;
+    color:#080808;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+}
+#finish2025Btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+#paper2025Result{
+    display:none;
+    margin-top:25px;
+}
+.paper2025-score{
+    text-align:center;
+    background:#111;
+    border:2px solid #d4af37;
+    border-radius:18px;
+    padding:28px 20px;
+    margin-bottom:25px;
+}
+.paper2025-score-label{
+    color:#ddd;
+    line-height:1.7;
+}
+.paper2025-score-number{
+    color:#d4af37;
+    font-size:52px;
+    font-weight:900;
+    margin:8px 0;
+}
+.paper2025-score-percent{
+    color:#fff;
+    font-size:20px;
+}
+.paper2025-result-heading{
+    color:#d4af37;
+    margin:20px 0 12px;
+}
+.paper2025-review{
+    padding:14px 16px;
+    margin:10px 0;
+    border-radius:12px;
+    background:#111;
+    border:1px solid #333;
+    color:#eee;
+    line-height:1.8;
+}
+.paper2025-review.correct{
+    border-color:#2e8b57;
+}
+.paper2025-review.wrong{
+    border-color:#a94442;
+}
+.paper2025-review-title{
+    font-weight:800;
+    margin-bottom:5px;
+}
+@media(max-width:700px){
+    .paper2025-options{
+        grid-template-columns:1fr;
+    }
+    .paper2025-question{
+        padding:15px;
+    }
+    .paper2025-q-text{
+        font-size:16px;
+    }
+}
 
     </style>
 
@@ -1735,25 +1891,16 @@
 
 
 
-        <div class="coming-paper">
+        
+<div id="paper2025Warning"></div>
 
-            <strong>
-                📋 ප්‍රශ්න පත්‍රය
-            </strong>
+<div id="paper2025Questions"></div>
 
-            <p>
-                මෙහිදී තෝරාගත් වර්ෂයට අදාළ
-                සම්පූර්ණ ප්‍රශ්න පත්‍රය
-                ඉදිරියේදී ඇතුළත් කරනු ලැබේ.
-            </p>
+<button id="finish2025Btn" type="button" onclick="submit2025Paper(false)">
+    ✅ Paper එක අවසන් කරන්න
+</button>
 
-            <p>
-                දැනට මෙය ප්‍රශ්න පත්‍රය
-                පෙන්වන ස්ථානයයි.
-            </p>
-
-        </div>
-
+<div id="paper2025Result"></div>
 
     </section>
 
@@ -3069,6 +3216,650 @@
 
         }
     );
+
+    const paper2025Questions = [
+  {
+    "q": 1,
+    "question": "යාත්‍රා ව්‍යාපාරය සපුරාලන මිනිස් අවශ්‍යතාව කුමක් ද?",
+    "options": [
+      "ප්‍රවාහනය",
+      "දුරකථන සේවාව",
+      "විනෝදාස්වාදය",
+      "සන්නිවේදනය"
+    ],
+    "answer": 4
+  },
+  {
+    "q": 2,
+    "question": "ලාභ අරමුණු කර නොගත් පෞද්ගලික අංශයේ ව්‍යාපාර සංවිධානය වන්නේ",
+    "options": [
+      "යාත්‍රා ව්‍යාපාරයයි.",
+      "අමරදුව මහා විද්‍යාලයයි.",
+      "අමරදුව ප්‍රාදේශීය ලේකම් කාර්යාලයයි.",
+      "අමරදුව විවිධ සේවා සමුපකාර සමිතියයි."
+    ],
+    "answer": 4
+  },
+  {
+    "q": 3,
+    "question": "සහන්ගේ යාත්‍රා ව්‍යාපාරය අයත් ව්‍යාපාර සංවිධාන වර්ගයේ වාසියක් වන්නේ",
+    "options": [
+      "සහන්ගේ වගකීම අසීමිත වීම ය.",
+      "සහන්ගේ මූල්‍ය ශක්තිය සීමා වීම ය.",
+      "සහන්ට ස්වාධීනව තීරණ ගත හැකි වීම ය.",
+      "සහන්ගේ ව්‍යාපාරයට අඛණ්ඩ පැවැත්මක් නොමැති වීම ය."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 4,
+    "question": "අමරදුව මහා විද්‍යාලය, සහන්ගේ යාත්‍රා ව්‍යාපාරයට",
+    "options": [
+      "ශක්තියකි.",
+      "දුර්වලතාවකි.",
+      "අවස්ථාවකි.",
+      "තර්ජනයකි."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 5,
+    "question": "ඉහත සිද්ධියට අනුව නිවැරදි ප්‍රකාශය තෝරන්න.",
+    "options": [
+      "සහන්, යාත්‍රා ව්‍යාපාරයේ අභ්‍යන්තර පරිසර සාධකයකි.",
+      "යාත්‍රා ව්‍යාපාරයට අඛණ්ඩ පැවැත්මක් ඇත.",
+      "අමරදුව ප්‍රාදේශීය ලේකම් කාර්යාලය ලාභ අරමුණු කරගත් සංවිධානයකි.",
+      "යාත්‍රා ව්‍යාපාරය පවත්වාගෙන යන ගොඩනැගිල්ල එම ව්‍යාපාරයේ නිෂ්පාදන සාධකයක් වන ප්‍රාග්ධනයට අයත් වේ."
+    ],
+    "answer": 1
+  },
+  {
+    "q": 6,
+    "question": "ශ්‍රී ලංකාවේ නිෂ්පාදිත තේ මැද පෙරදිග රටවලට විකිණීම ______ වෙළෙඳාම වන අතර, මැද පෙරදිග රටවලින් ඛනිජ තෙල් මිලට ගැනීම ______ වෙළෙඳාම වේ.",
+    "options": [
+      "ආනයන, අපනයන",
+      "අපනයන, ආනයන",
+      "අපනයන, විදේශීය",
+      "විදේශීය, අපනයන"
+    ],
+    "answer": 2
+  },
+  {
+    "q": 7,
+    "question": "අනෙකුත් බැංකුවලට වඩා බලපත්‍රලාභී වාණිජ බැංකුවල සුවිශේෂී ලක්ෂණයක් වන්නේ",
+    "options": [
+      "ජංගම ගිණුම් පවත්වාගෙන යාමයි.",
+      "ඉතිරිකිරීමේ ගිණුම් පවත්වාගෙන යාමයි.",
+      "ස්ථාවර තැන්පතු පවත්වාගෙන යාමයි.",
+      "තැන්පතු මත ණය ලබා දීමයි."
+    ],
+    "answer": 1
+  },
+  {
+    "q": 8,
+    "question": "වාණිජ බැංකු නිකුත් කරන චෙක්පත්වල චුම්භක තීන්ත අක්ෂර හැඳුනුම් තීරුවේ (M.I.C.R.) මුලින්ම සඳහන් වන්නේ කුමක් ද?",
+    "options": [
+      "චෙක්පත් අංකය",
+      "බැංකුවේ අංකය",
+      "බැංකු ගිණුම් අංකය",
+      "බැංකු ශාඛා අංකය"
+    ],
+    "answer": 1
+  },
+  {
+    "q": 9,
+    "question": "“අධිවේගී මාර්ගයේ ගමන් ගත් බස් රථයක් ගිනි ගනියි.” යන පුවත්පත් සිරස්තලයේ ඇතුළත් ප්‍රවාහන මූලිකාංග නිවැරදිව දැක්වෙන පිළිතුර තෝරන්න.",
+    "options": [
+      "මාර්ගය හා බස් රථය",
+      "මාර්ගය හා පර්යන්තය",
+      "මාර්ගය හා මාධ්‍යය",
+      "මාධ්‍යය හා බස් රථය"
+    ],
+    "answer": 3
+  },
+  {
+    "q": 10,
+    "question": "රයන් තම බිරිඳ සඳුනි සමග ඔහුගේ සේවා ස්ථානයට යන්නේ තමාගේ මෝටර් රථයෙනි. මෙම මෝටර් රථය සීමිත සුහද රක්ෂණ සමාගමේ රක්ෂණය කර ඇත. මෙම සිද්ධියේ ඇතුළත් රක්ෂණයට සම්බන්ධ දෙවන හා තෙවන පාර්ශ්ව පිළිවෙළින් දැක්වෙන පිළිතුර තෝරන්න.",
+    "options": [
+      "රයන් හා සඳුනි",
+      "රයන් හා සීමිත සුහද රක්ෂණ සමාගම",
+      "සීමිත සුහද රක්ෂණ සමාගම හා මෝටර් රථය",
+      "සීමිත සුහද රක්ෂණ සමාගම හා සඳුනි"
+    ],
+    "answer": 4
+  },
+  {
+    "q": 11,
+    "question": "නව මාදිලියේ ජංගම දුරකථන විකිණීමේ ව්‍යාපාරයක් පවත්වාගෙන යන නදීමාල්, අලෙවිය වැඩිකර ගැනීම සඳහා අත් පත්‍රිකාවක් “මිල අඩුකිරීමක්! වෙළෙඳසැලට පැමිණෙන්න” යන වගන්තිය සහිතව මුද්‍රණය කර බෙදාහැරීමට තීරණය කරන ලදී. ඉහත සිද්ධියේ (1), (2) හා (3) යන තද කළු අකුරින් මුදිත වචනවලින් දැක්වෙන අලෙවිකරණ මිශ්‍රයේ විචල්‍යයන් පිළිවෙළින්",
+    "options": [
+      "ප්‍රවර්ධනය, මිල හා ප්‍රවර්ධනය ය.",
+      "නිෂ්පාදිතය, මිල හා ස්ථානය ය.",
+      "නිෂ්පාදිතය, ප්‍රවර්ධනය හා මිල ය.",
+      "ස්ථානය, ප්‍රවර්ධනය හා මිල ය."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 12,
+    "question": "ඉහත සිද්ධියේ ඇතුළත් කළමනාකරණ කාර්යය වන්නේ",
+    "options": [
+      "සැලසුම්කරණයයි.",
+      "සංවිධානකරණයයි.",
+      "මෙහෙයවීමයි.",
+      "පාලනයයි."
+    ],
+    "answer": 1
+  },
+  {
+    "q": 13,
+    "question": "නදීමාල්ගේ ව්‍යාපාරයේ අභ්‍යන්තර හා බාහිර පරිසර සාධකය බැගින් පිළිවෙළින් දැක්වෙන පිළිතුර කුමක් ද?",
+    "options": [
+      "නදීමාල් හා ජංගම දුරකථන",
+      "ව්‍යාපාරය හා නදීමාල්",
+      "නදීමාල් හා වෙළෙඳසැලට පැමිණෙන්නන්",
+      "මිල හා වෙළෙඳසැලට පැමිණෙන්නන්"
+    ],
+    "answer": 3
+  },
+  {
+    "q": 14,
+    "question": "තොග වෙළෙඳාම පිළිබඳ නිවැරදි ප්‍රකාශය තෝරන්න.",
+    "options": [
+      "තොග වෙළෙඳාමේදී භාණ්ඩ කිහිපයක් පමණක් විකිණීම කළ නොහැකි ය.",
+      "තොග වෙළෙන්දා, සිල්ලර වෙළෙන්දා සමග සෘජු සම්බන්ධතාවක් පවත්වා ගනියි.",
+      "තොග වෙළෙන්දා අවසාන පාරිභෝජනය සඳහා භාණ්ඩ හෝ සේවා විකිණීම සිදු කරයි.",
+      "තොග වෙළෙඳසැල් තිබිය යුතු වන්නේ පාරිභෝගිකයාට ඉතාම ආසන්න ස්ථානයක ය."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 15,
+    "question": "කළමනාකරණ කාර්ය දෙකක් පහත දැක්වේ. A - ව්‍යාපාරයේ නිෂ්පාදිතවල ගුණත්වය වැඩි කිරීමට සේවකයින්ට උපදෙස් ලබා දීම. B - සේවකයින්ට කාර්යක්ෂමව වැඩ කිරීමට අවශ්‍ය හිතකාමී පරිසරයක් සකස්කර දීමට තීරණය කිරීම. ඉහත කාර්ය දෙක පිළිවෙළින් අයත් වන්නේ",
+    "options": [
+      "සැලසුම්කරණයට හා මෙහෙයවීමට ය.",
+      "මෙහෙයවීමට හා සැලසුම්කරණයට ය.",
+      "මෙහෙයවීමට හා සංවිධානකරණයට ය.",
+      "පාලනයට හා සැලසුම්කරණයට ය."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 16,
+    "question": "බොහෝ පුද්ගලයෝ තම මුදල් ඉතිරි කිරීමේ ගිණුම්වල තැන්පත් කිරීමට වැඩි කැමැත්තක් දක්වති. මෙයට වඩාත්ම බලපාන හේතුව වන්නේ",
+    "options": [
+      "රජයේ පූර්ණ ආරක්ෂාවක් ලැබීමයි.",
+      "ඉහළ පොලී ආදායමක් ලැබීමයි.",
+      "අනෙකුත් ආයෝජන මාර්ගවලට වඩා වැඩි ප්‍රතිලාභ හිමිවීමයි.",
+      "අවශ්‍ය ඕනෑම වේලාවක ඉක්මනින්ම මුදල් ආපසු ලබාගත හැකිවීමයි."
+    ],
+    "answer": 4
+  },
+  {
+    "q": 17,
+    "question": "“ගිණුම්කරණය” යනු",
+    "options": [
+      "ව්‍යාපාරයක සිදුවන මූල්‍යමය ගනුදෙනු පොත්වල සටහන් කිරීමයි.",
+      "ව්‍යාපාරයක ප්‍රතිඵලය ගණනය කිරීම සඳහා අවශ්‍ය ගනුදෙනු වාර්තා කිරීමයි.",
+      "ව්‍යාපාරය කෙරෙහි ඇල්මැති පාර්ශ්වයන්ට අවශ්‍ය තීරණ ගැනීම සඳහා විවිධ තොරතුරු සැපයීමයි.",
+      "ව්‍යාපාරය කෙරෙහි ඇල්මැති පාර්ශ්වයන්ට අවශ්‍ය තීරණ ගැනීම සඳහා තොරතුරු සැපයීමේ ක්‍රියාවලියයි."
+    ],
+    "answer": 4
+  },
+  {
+    "q": 18,
+    "question": "ව්‍යාපාරයක ජංගම නොවන වගකීමක් වන්නේ",
+    "options": [
+      "ප්‍රාග්ධනය ය.",
+      "ණයහිමියෝ ය.",
+      "බැංකු ණය ය.",
+      "ගෙවිය යුතු විදුලි ගාස්තු ය."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 19,
+    "question": "වැඩිවීම බැර, අඩුවීම හර යන ද්විත්ව සටහන් මූලධර්මය අදාළ වන ගිණුමක් වන්නේ",
+    "options": [
+      "ලද වට්ටම් ගිණුම ය.",
+      "ගැනුම් ගිණුම ය.",
+      "බැංකු ණය පොලී ගිණුම ය.",
+      "ගොඩනැගිලි ගිණුම ය."
+    ],
+    "answer": 1
+  },
+  {
+    "q": 20,
+    "question": "සම්රගේ ව්‍යාපාරය රු. 25 000 ක වෙළෙඳ බඩු තොගයක් අත්පිට මුදලට ගැනීම සටහන් කිරීම සඳහා භාවිත කරන මූලාශ්‍ර ලේඛනය වන්නේ",
+    "options": [
+      "ලදුපත ය.",
+      "ගෙවීම් වවුචරය ය.",
+      "ගැනුම් ඉන්වොයිසිය ය.",
+      "ජ’නල් වවුචරය ය."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 21,
+    "question": "ව්‍යාපාරයක් විසින් පිළියෙල කරනු ලබන මුදල් පොතක දැකිය නොහැක්කේ කුමක් ද?",
+    "options": [
+      "සඟල පිටු අංක",
+      "ගෙවීම් වවුචර් අංක",
+      "ලදුපත් අංක",
+      "ඉන්වොයිස් අංක"
+    ],
+    "answer": 4
+  },
+  {
+    "q": 22,
+    "question": "ලී බඩු වෙළෙඳ ව්‍යාපාරයක ගැනුම් ජ’නලයේ සටහන් කරනු ලබන ගනුදෙනුව කුමක් ද?",
+    "options": [
+      "රු.50 000 ක පුටු අත්පිට මුදලට ගැනීම",
+      "රු.60 000 ක මේස රුවන්ගෙන් ණයට ගැනීම",
+      "රු.75 000 ක ලී අල්මාරියක් ව්‍යාපාරයේ ප්‍රයෝජනය සඳහා ණයට ගැනීම",
+      "රු.80 000 ක ඇඳක් අයිතිකරු තම පෞද්ගලික ප්‍රයෝජනය සඳහා ව්‍යාපාරයෙන් ගෙනයාම"
+    ],
+    "answer": 2
+  },
+  {
+    "q": 23,
+    "question": "ව්‍යාපාරයක ගිණුම්කරණ සමීකරණයෙහි වත්කම් හා වගකීම් යන දෙකෙහිම වටිනාකම අඩු කරනු ලබන ගනුදෙනුව වන්නේ",
+    "options": [
+      "ණයගැතියකුගෙන් රු.8 000 ක් ලැබීම ය.",
+      "රු.30 000 ක බඩු තොගයක් ණයට ගැනීම ය.",
+      "රු.10 000 ක් ණයහිමියකුට ගෙවීම ය.",
+      "රු.4 000 ක බැංකු ණය පොලී ගෙවීම ය."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 24,
+    "question": "ව්‍යාපාරයක, කාර්යාලයේ ප්‍රයෝජනය සඳහා රු.130 000 ක පරිගණකයක් අත්පිට මුදලට ගැනීම බලපාන්නේ",
+    "options": [
+      "වත්කම්වලට පමණි.",
+      "වත්කම් හා වගකීම්වලට ය.",
+      "වත්කම් හා වියදම්වලට ය.",
+      "වත්කම්, හිමිකම් හා වගකීම්වලට ය."
+    ],
+    "answer": 1
+  },
+  {
+    "q": 25,
+    "question": "සඳුන් රු.25 000 ක බඩු තොගයක් රු.30 000 කට ණයට විකිණීම නිසා ඔහුගේ ව්‍යාපාරයේ",
+    "options": [
+      "වත්කම් හා හිමිකම රු.5 000 කින් පමණක් අඩු වේ.",
+      "වත්කම් හා හිමිකම රු.5 000 කින් පමණක් වැඩි වේ.",
+      "වත්කම් හා වගකීම් රු.30 000 කින් පමණක් අඩු වේ.",
+      "වත්කම් හා හිමිකම රු.30 000 කින් පමණක් වැඩි වේ."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 26,
+    "question": "චාමර රු.10 000 ක බඩු තොගයක් සහන්ගෙන් අත්පිට මුදලට ගැනීමේදී 5% ක වෙළෙඳ වට්ටමක් ඔහුට ලැබුණි. මෙම ගනුදෙනුවට අදාළ නිවැරදි ද්විත්ව සටහන තෝරන්න.",
+    "options": [
+      "ගැනුම් ගිණුම හර රු.10 000; සහන්ගේ ගිණුම බැර රු.9 500; ලද වට්ටම් ගිණුම බැර රු.500",
+      "ගැනුම් ගිණුම හර රු.10 000; මුදල් ගිණුම බැර රු.9 500; ලද වට්ටම් ගිණුම බැර රු.500",
+      "ගැනුම් ගිණුම හර රු.9 500; සහන්ගේ ගිණුම බැර රු.9 500",
+      "ගැනුම් ගිණුම හර රු.9 500; මුදල් ගිණුම බැර රු.9 500"
+    ],
+    "answer": 4
+  },
+  {
+    "q": 27,
+    "question": "රවීගේ ව්‍යාපාරයේ 2025.12.31 දිනට සුළු මුදල් පොතේ විශ්ලේෂණ තීරුවල එකතුව රු.9 500 ක් වූ අතර එදිනට එහි ශේෂය රු.500 ක් විය. 2026.01.01 දින සිට සුළු මුදල් අත්තිකාරම් රු.2 000 කින් වැඩි කිරීමට රවී තීරණය කළේ ය. 2026.01.01 දින සුළු මුදල් ප්‍රතිපූරණය කිරීම සඳහා ලබා දුන් මුදල වන්නේ",
+    "options": [
+      "රු.2 500 කි.",
+      "රු.10 000 කි.",
+      "රු.11 500 කි.",
+      "රු.12 000 කි."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 28,
+    "question": "බැංකු ප්‍රකාශනය ලැබීමෙන් පසු ව්‍යාපාරයක බැංකු ගිණුම සංශෝධනය කිරීමේදී එම ගිණුමේ හර පැත්තේ සටහන් කරනු ලබන අයිතමයක් වන්නේ",
+    "options": [
+      "බැංකු ගාස්තු ය.",
+      "බැංකු ණය වාරික ය.",
+      "ණයගැති සෘජු ප්‍රේෂණ ය.",
+      "නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් ය."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 29,
+    "question": "බැංකුව විසින් එවනු ලබන බැංකු ප්‍රකාශනයේ ශේෂයට වඩා ව්‍යාපාරයේ බැංකු ගිණුමේ ශේෂය වැඩි වීමට හේතුවක් වන්නේ",
+    "options": [
+      "බැංකුවට සෘජුවම ලැබුණු ප්‍රේෂණ ය.",
+      "ස්ථාවර නියෝග මත බැංකුව විසින් ගෙවූ රක්ෂණ ගාස්තු ය.",
+      "බැංකුවට සෘජුව ලැබී ඇති ආයෝජන ආදායම ය.",
+      "නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් ය."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 30,
+    "question": "ව්‍යාපාරයක ගිණුම්කරණයේදී සිදු වූ වැරදිවලින් ශේෂ පිරික්සුමෙහි සමානත්වයට බලපෑමක් නොවන වරදක් වන්නේ",
+    "options": [
+      "රු.5 000 ක ගමන් වියදම් එම ගිණුමේ දෙවරක් සටහන් වීම ය.",
+      "සමන්ට ගෙවූ රු.10 000 ක්, මුදල් පොතේ පමණක් සටහන් වීම ය.",
+      "රු.75 000 කට මිල දී ගත් බඩු තොගයක් ගැනුම් ගිණුමේ රු.57 000 ක් ලෙස සටහන් වීම ය.",
+      "අමිත්ගෙන් ලැබුණු රු.30 000 ක් අමල්ගේ ගිණුමේ බැර පැත්තේ සටහන් කිරීම ය."
+    ],
+    "answer": 4
+  },
+  {
+    "q": 31,
+    "question": "ණයගැති සමන්ගෙන් ලැබුණු රු.10 000 ක් සමන්ගේ ගිණුමට හර කිරීමේ වරද නිවැරදි කිරීමට අදාළ ජ’නල් සටහන තෝරන්න.",
+    "options": [
+      "සමන්ගේ ගිණුම හර රු.10 000; අවිනිශ්චිත ගිණුම බැර රු.10 000",
+      "අවිනිශ්චිත ගිණුම හර රු.10 000; සමන්ගේ ගිණුම බැර රු.10 000",
+      "සමන්ගේ ගිණුම හර රු.20 000; අවිනිශ්චිත ගිණුම බැර රු.20 000",
+      "අවිනිශ්චිත ගිණුම හර රු.20 000; සමන්ගේ ගිණුම බැර රු.20 000"
+    ],
+    "answer": 4
+  },
+  {
+    "q": 32,
+    "question": "ළමා ඇඳුම් මැසීමේ ව්‍යාපාරයක ඇඳුම් 1000 ක් නිෂ්පාදනය කිරීම සඳහා වූ වියදම්: රෙදි හා නූල් රු.100 000, ඇඳුම් මසන්නාගේ වැටුප රු.60 000, විදුලි වියදම රු.25 000, ගොඩනැගිලි කුලී රු.15 000, මුරකරුගේ වැටුප රු.40 000, යන්ත්‍ර ක්ෂය රු.10 000. මෙම ව්‍යාපාරයේ නිෂ්පාදන පොදු කාර්ය පිරිවැය",
+    "options": [
+      "රු.50 000 කි.",
+      "රු.90 000 කි.",
+      "රු.160 000 කි.",
+      "රු.250 000 කි."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 33,
+    "question": "ඉහත ව්‍යාපාරයේ නිපදවන ළමා ඇඳුමක නිෂ්පාදන පිරිවැය",
+    "options": [
+      "රු.50 කි.",
+      "රු.90 කි.",
+      "රු.160 කි.",
+      "රු.250 කි."
+    ],
+    "answer": 4
+  },
+  {
+    "q": 34,
+    "question": "සුහද ක්‍රීඩා සමාජයේ සාමාජික සංඛ්‍යාව 80 කි. එක් සාමාජිකයකුගේ මාසික සාමාජික මුදල රු.100 කි. 2025.12.31 දිනෙන් අවසන් වර්ෂය තුළදී සාමාජිකයින් 30 ක් පමණක් වාර්ෂික සාමාජික මුදල් ගෙවා තිබුණි. අනෙකුත් සාමාජිකයින් කිසිදු මුදලක් ගෙවා නැත. 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ලැබීම් හා ගෙවීම් ගිණුමේ සටහන් කරනු ලබන සාමාජික මුදල වන්නේ",
+    "options": [
+      "රු.5 000 කි.",
+      "රු.8 000 කි.",
+      "රු.60 000 කි.",
+      "රු.96 000 කි."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 35,
+    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂය සඳහා දළ ලාභය",
+    "options": [
+      "රු.1 200 000 කි.",
+      "රු.1 300 000 කි.",
+      "රු.1 400 000 කි.",
+      "රු.2 200 000 කි."
+    ],
+    "answer": 4
+  },
+  {
+    "q": 36,
+    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ආදායම් ප්‍රකාශනයේ ඇතුළත් ආයතන හා පරිපාලන වියදම්වල එකතුව",
+    "options": [
+      "රු.320 000 කි.",
+      "රු.360 000 කි.",
+      "රු.380 000 කි.",
+      "රු.460 000 කි."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 37,
+    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ආදායම් ප්‍රකාශනයේ ඇතුළත් කරන මුළු වියදම්වල එකතුව",
+    "options": [
+      "රු.450 000 කි.",
+      "රු.490 000 කි.",
+      "රු.510 000 කි.",
+      "රු.560 000 කි."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 38,
+    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ශුද්ධ ලාභය",
+    "options": [
+      "රු.930 000 කි.",
+      "රු.1 690 000 කි.",
+      "රු.1 710 000 කි.",
+      "රු.1 720 000 කි."
+    ],
+    "answer": 3
+  },
+  {
+    "q": 39,
+    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට ජංගම නොවන වත්කම්වල ධාරණ අගය",
+    "options": [
+      "රු.3 500 000 කි.",
+      "රු.3 300 000 කි.",
+      "රු.3 250 000 කි.",
+      "රු.2 300 000 කි."
+    ],
+    "answer": 2
+  },
+  {
+    "q": 40,
+    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට හිමිකම",
+    "options": [
+      "රු.3 720 000 කි.",
+      "රු.3 710 000 කි.",
+      "රු.3 690 000 කි.",
+      "රු.2 930 000 කි."
+    ],
+    "answer": 2
+  }
+];
+
+
+let paper2025Answers = [];
+let paper2025Submitted = false;
+let paper2025Seconds = 3600;
+let paper2025TimerInterval = null;
+let paper2025WarningShown = false;
+
+function shuffleArray(arr){
+    const a = [...arr];
+    for(let i=a.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+}
+
+function init2025Paper(){
+    clearInterval(paper2025TimerInterval);
+    paper2025Submitted = false;
+    paper2025WarningShown = false;
+    paper2025Seconds = 3600;
+    paper2025Answers = new Array(paper2025Questions.length).fill(null);
+
+    const qBox = document.getElementById("paper2025Questions");
+    const resultBox = document.getElementById("paper2025Result");
+    const finishBtn = document.getElementById("finish2025Btn");
+
+    if(!qBox || !resultBox || !finishBtn) return;
+
+    resultBox.innerHTML = "";
+    resultBox.style.display = "none";
+    finishBtn.disabled = false;
+    finishBtn.style.display = "block";
+
+    qBox.innerHTML = "";
+
+    paper2025Questions.forEach((q, index) => {
+        const card = document.createElement("div");
+        card.className = "paper2025-question";
+        card.dataset.question = index;
+
+        const shuffled = shuffleArray(
+            q.options.map((text, originalIndex) => ({
+                text,
+                originalIndex: originalIndex + 1
+            }))
+        );
+
+        const optionsHTML = shuffled.map((opt, optionIndex) => `
+            <label class="paper2025-option">
+                <input type="radio"
+                       name="paper2025_q_${index}"
+                       value="${opt.originalIndex}"
+                       onchange="save2025Answer(${index}, ${opt.originalIndex})">
+                <span class="paper2025-option-number">${optionIndex + 1}</span>
+                <span>${escape2025HTML(opt.text)}</span>
+            </label>
+        `).join("");
+
+        card.innerHTML = `
+            <div class="paper2025-q-number">ප්‍රශ්නය ${index + 1}</div>
+            <div class="paper2025-q-text">${escape2025HTML(q.question)}</div>
+            <div class="paper2025-options">${optionsHTML}</div>
+        `;
+
+        qBox.appendChild(card);
+    });
+
+    update2025Timer();
+    paper2025TimerInterval = setInterval(() => {
+        paper2025Seconds--;
+
+        if(paper2025Seconds === 300 && !paper2025WarningShown){
+            paper2025WarningShown = true;
+            show2025Warning();
+        }
+
+        if(paper2025Seconds <= 0){
+            paper2025Seconds = 0;
+            update2025Timer();
+            clearInterval(paper2025TimerInterval);
+            submit2025Paper(true);
+            return;
+        }
+
+        update2025Timer();
+    },1000);
+}
+
+function escape2025HTML(text){
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+function save2025Answer(questionIndex, originalOption){
+    if(paper2025Submitted) return;
+    paper2025Answers[questionIndex] = originalOption;
+}
+
+function update2025Timer(){
+    const timer = document.getElementById("timer");
+    if(!timer) return;
+
+    const minutes = Math.floor(paper2025Seconds / 60);
+    const seconds = paper2025Seconds % 60;
+
+    timer.textContent =
+        String(minutes).padStart(2,"0") + ":" +
+        String(seconds).padStart(2,"0");
+
+    if(paper2025Seconds <= 300){
+        timer.classList.add("warning");
+    }else{
+        timer.classList.remove("warning");
+    }
+}
+
+function show2025Warning(){
+    const warning = document.getElementById("paper2025Warning");
+    if(!warning) return;
+
+    warning.textContent =
+        "⚠️ තවත් විනාඩි 5ක් පමණි! කරුණාකර ඔබගේ පිළිතුරු පරීක්ෂා කර Paper එක අවසන් කරන්න.";
+    warning.style.display = "block";
+}
+
+function submit2025Paper(autoSubmitted = false){
+    if(paper2025Submitted) return;
+
+    paper2025Submitted = true;
+    clearInterval(paper2025TimerInterval);
+
+    document.querySelectorAll(
+        '#paper2025Questions input[type="radio"]'
+    ).forEach(input => input.disabled = true);
+
+    const finishBtn = document.getElementById("finish2025Btn");
+    if(finishBtn){
+        finishBtn.disabled = true;
+        finishBtn.style.display = "none";
+    }
+
+    let score = 0;
+    paper2025Questions.forEach((q,index) => {
+        if(paper2025Answers[index] === q.answer){
+            score++;
+        }
+    });
+
+    show2025Result(score, autoSubmitted);
+}
+
+function show2025Result(score, autoSubmitted){
+    const resultBox = document.getElementById("paper2025Result");
+    if(!resultBox) return;
+
+    const percentage = Math.round((score / paper2025Questions.length) * 100);
+
+    const reviewHTML = paper2025Questions.map((q,index) => {
+        const selected = paper2025Answers[index];
+        const correct = q.answer;
+        const isCorrect = selected === correct;
+
+        return `
+            <div class="paper2025-review ${isCorrect ? "correct" : "wrong"}">
+                <div class="paper2025-review-title">
+                    ${isCorrect ? "✓" : "✗"} ප්‍රශ්නය ${index + 1}
+                </div>
+                <div>
+                    ඔබේ පිළිතුර:
+                    <strong>${selected ? selected : "පිළිතුරු නොදුන්නා"}</strong>
+                </div>
+                <div>
+                    නිවැරදි පිළිතුර:
+                    <strong>${correct}</strong>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    resultBox.innerHTML = `
+        <div class="paper2025-score">
+            <div class="paper2025-score-label">
+                ${autoSubmitted ? "⏰ කාලය අවසන් වී Paper එක ස්වයංක්‍රීයව අවසන් කරන ලදී." : "🎉 Paper එක අවසන් කරන ලදී."}
+            </div>
+            <div class="paper2025-score-number">${score} / 40</div>
+            <div class="paper2025-score-percent">${percentage}%</div>
+        </div>
+
+        <h3 class="paper2025-result-heading">📋 පිළිතුරු පරීක්ෂාව</h3>
+        ${reviewHTML}
+    `;
+
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({behavior:"smooth", block:"start"});
+}
 
 </script>
 
