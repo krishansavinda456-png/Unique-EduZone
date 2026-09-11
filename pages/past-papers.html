@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        පසුගිය විභාග ප්‍රශ්න පත්‍ර | Unique EduZone
+    </title>
+
+    <!-- Existing Main CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           UNIQUE EDUZONE
+           PAST PAPERS PAGE
+           BLACK & GOLD DESIGN
+           ===================================================== */
+
+        :root {
+
+            --gold: #f5c542;
+            --gold-light: #ffd95a;
+            --gold-dark: #b88900;
+
+            --black: #050505;
+            --black-2: #0b0b0b;
+            --card: #111111;
+            --card-2: #171717;
+
+            --white: #ffffff;
+            --text: #eeeeee;
+            --muted: #a9a9a9;
+
+            --border: rgba(245,197,66,0.35);
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                "Noto Sans Sinhala",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 80% 15%,
+                    rgba(245,197,66,0.08),
+                    transparent 30%
+                ),
+                #050505;
+
+            color: var(--white);
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        .pp-header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            width: 100%;
+
+            background:
+                rgba(3,3,3,0.96);
+
+            border-bottom:
+                1px solid
+                rgba(245,197,66,0.18);
+
+            backdrop-filter:
+                blur(15px);
+
+        }
+
+
+        .pp-header-inner {
+
+            max-width: 1500px;
+
+            margin: auto;
+
+            min-height: 82px;
+
+            padding:
+                10px 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+
+        /* =====================================================
+           LOGO
+           ===================================================== */
+
+        .pp-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            min-width: 280px;
+
+        }
+
+
+        .pp-logo-symbol {
+
+            width: 58px;
+
+            height: 58px;
+
+            border:
+                1px solid
+                var(--gold);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #222 0%,
+                    #050505 70%
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        .pp-logo-symbol img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+        }
+
+
+        .pp-logo-title {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            line-height: 1;
+
+        }
+
+
+        .pp-logo-title span {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-logo-tagline {
+
+            margin-top: 6px;
+
+            font-size: 10px;
+
+            color: #aaa;
+
+            letter-spacing: 0.4px;
+
+        }
+
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        .pp-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 3px;
+
+            flex: 1;
+
+            overflow-x: auto;
+
+            white-space: nowrap;
+
+            scrollbar-width: thin;
+
+            scrollbar-color:
+                var(--gold)
+                #111;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar {
+
+            height: 5px;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar-track {
+
+            background: #111;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar-thumb {
+
+            background: var(--gold);
+
+            border-radius: 10px;
+
+        }
+
+
+        .pp-nav a {
+
+            flex: 0 0 auto;
+
+            color: #eee;
+
+            padding:
+                12px 10px;
+
+            font-size: 13px;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .pp-nav a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-nav a.active {
+
+            color: var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        .pp-main {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                55px 25px 80px;
+
+        }
+
+
+
+        /* =====================================================
+           PAGE HERO
+           ===================================================== */
+
+        .pp-hero {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .pp-badge {
+
+            display: inline-block;
+
+            padding:
+                9px 20px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(245,197,66,0.10);
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            color: var(--gold);
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .pp-hero h1 {
+
+            margin:
+                0 0 15px;
+
+            font-size:
+                clamp(32px, 5vw, 54px);
+
+            font-weight: 900;
+
+        }
+
+
+        .pp-hero h1 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-hero p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #aaa;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+        }
+
+
+
+        /* =====================================================
+           STEP CARD
+           ===================================================== */
+
+        .selection-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0c0c0c
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.30);
+
+            border-radius: 20px;
+
+            padding:
+                35px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .step-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin:
+                0 0 25px;
+
+            font-size: 24px;
+
+        }
+
+
+        .step-number {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #000;
+
+            font-weight: 900;
+
+        }
+
+
+
+        /* =====================================================
+           CHOICE GRID
+           ===================================================== */
+
+        .choice-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .choice-button {
+
+            border:
+                1px solid
+                rgba(245,197,66,0.35);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #101010
+                );
+
+            color: white;
+
+            border-radius: 15px;
+
+            padding:
+                25px 20px;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .choice-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.07);
+
+            box-shadow:
+                0 10px 30px
+                rgba(245,197,66,0.10);
+
+        }
+
+
+        .choice-button.selected {
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.12);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(245,197,66,0.10);
+
+        }
+
+
+        .choice-icon {
+
+            display: block;
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .choice-small {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: #999;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+        }
+
+
+
+        /* =====================================================
+           YEAR GRID
+           ===================================================== */
+
+        .year-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .year-button {
+
+            border:
+                1px solid
+                #333;
+
+            background: #101010;
+
+            color: #eee;
+
+            border-radius: 10px;
+
+            padding:
+                15px 10px;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            transition:
+                all 0.2s ease;
+
+        }
+
+
+        .year-button:hover {
+
+            border-color:
+                var(--gold);
+
+            color:
+                var(--gold);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .year-button.selected {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           INSTRUCTION AREA
+           ===================================================== */
+
+        .instructions {
+
+            display: none;
+
+            margin-top: 30px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 18px;
+
+            padding:
+                30px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(245,197,66,0.09),
+                    transparent 45%
+                ),
+                #111;
+
+        }
+
+
+        .instructions.show {
+
+            display: block;
+
+            animation:
+                fadeIn 0.35s ease;
+
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .instruction-heading {
+
+            color: var(--gold);
+
+            font-size: 25px;
+
+            margin:
+                0 0 20px;
+
+        }
+
+
+        .instruction-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+        .instruction-list li {
+
+            padding:
+                12px 0;
+
+            border-bottom:
+                1px solid #292929;
+
+            color: #ddd;
+
+            line-height: 1.6;
+
+        }
+
+
+        .instruction-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .instruction-list li::before {
+
+            content: "✓";
+
+            color: var(--gold);
+
+            font-weight: bold;
+
+            margin-right: 10px;
+
+        }
+
+
+        .time-box {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin:
+                25px 0;
+
+            padding:
+                18px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.30);
+
+            border-radius: 12px;
+
+            background:
+                rgba(245,197,66,0.05);
+
+            color: var(--gold);
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+        }
+
+
+        .start-button {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding:
+                17px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .start-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(245,197,66,0.20);
+
+        }
+
+
+
+        /* =====================================================
+           PAPER PLACEHOLDER
+           ===================================================== */
+
+        .paper-area {
+
+            display: none;
+
+            margin-top: 35px;
+
+        }
+
+
+        .paper-area.show {
+
+            display: block;
+
+            animation:
+                fadeIn 0.4s ease;
+
+        }
+
+
+        .paper-header {
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #0d0d0d
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.40);
+
+            border-radius: 18px;
+
+            padding:
+                30px 20px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .paper-header h2 {
+
+            margin:
+                0 0 10px;
+
+            font-size: 25px;
+
+        }
+
+
+        .paper-header h2 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .paper-title {
+
+            color: #ccc;
+
+            font-size: 17px;
+
+        }
+
+
+        .timer-placeholder {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding:
+                10px 20px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 30px;
+
+            color: var(--gold);
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            background:
+                rgba(245,197,66,0.06);
+
+        }
+
+
+        .coming-paper {
+
+            background: #111;
+
+            border:
+                1px dashed #555;
+
+            border-radius: 15px;
+
+            padding:
+                35px 25px;
+
+            text-align: center;
+
+            color: #aaa;
+
+        }
+
+
+        .coming-paper strong {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        /* =====================================================
+           BACK BUTTON
+           ===================================================== */
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-button:hover {
+
+            color: var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .pp-footer {
+
+            border-top:
+                1px solid #242424;
+
+            background: #080808;
+
+            padding:
+                25px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .pp-header-inner {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .pp-logo {
+
+                min-width: auto;
+
+            }
+
+
+            .pp-nav {
+
+                order: 3;
+
+                width: 100%;
+
+            }
+
+
+            .choice-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .year-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .pp-header-inner {
+
+                padding:
+                    10px 15px;
+
+            }
+
+
+            .pp-logo-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .pp-logo-symbol {
+
+                width: 48px;
+
+                height: 48px;
+
+            }
+
+
+            .pp-logo-tagline {
+
+                font-size: 8px;
+
+            }
+
+
+            .pp-nav a {
+
+                font-size: 11px;
+
+                padding:
+                    10px 7px;
+
+            }
+
+
+            .pp-main {
+
+                padding:
+                    35px 15px 60px;
+
+            }
+
+
+            .selection-card {
+
+                padding:
+                    22px 16px;
+
+            }
+
+
+            .step-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .year-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .instructions {
+
+                padding:
+                    22px 17px;
+
+            }
+
+
+            .pp-hero h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="pp-header">
+
+    <div class="pp-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="../index.html"
+            class="pp-logo"
+        >
+
+            <div class="pp-logo-symbol">
+
+                <img
+                    src="../assets/images/logo.png"
+                    alt="Unique EduZone Logo"
+                >
+
+            </div>
+
+
+            <div>
+
+                <div class="pp-logo-title">
+
+                    Unique
+                    <span>
+                        EduZone
+                    </span>
+
+                </div>
+
+
+                <div class="pp-logo-tagline">
+
+                    LEARN SMARTER, ACHIEVE GREATER
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="pp-nav">
+
+            <a href="../index.html">
+                HOME
+            </a>
+
+            <a href="about.html">
+                ABOUT
+            </a>
+
+            <a href="lessons.html">
+                GRADE 10
+            </a>
+
+            <a href="g11.html">
+                GRADE 11
+            </a>
+
+            <a href="quiz.html">
+                MCQ
+            </a>
+
+            <a
+                href="past-papers.html"
+                class="active"
+            >
+                📄 PAST PAPERS
+            </a>
+
+            <a href="../accounting-practice.html">
+                🧮 ACCOUNTING
+            </a>
+
+            <a href="downloads.html">
+                DOWNLOADS
+            </a>
+
+            <a href="videos.html">
+                VIDEOS
+            </a>
+
+            <a href="profile.html">
+                👤 PROFILE
+            </a>
+
+            <a href="dashboard.html">
+                📊 DASHBOARD
+            </a>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main class="pp-main">
+
+
+    <!-- PAGE HERO -->
+
+    <section class="pp-hero">
+
+        <div class="pp-badge">
+            📄 PAST EXAM PAPERS
+        </div>
+
+
+        <h1>
+
+            පසුගිය විභාග
+            <span>
+                ප්‍රශ්න පත්‍ර
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            සාමාන්‍ය පෙළ සහ උසස් පෙළ
+            ව්‍යාපාර අධ්‍යයනය හා ගිණුම්කරණ
+            විෂයන් සඳහා පසුගිය විභාග
+            ප්‍රශ්න පත්‍ර online ආකාරයෙන්
+            පුහුණු වන්න.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STEP 01 – EXAM LEVEL
+         ===================================================== -->
+
+    <section class="selection-card">
+
+        <h2 class="step-title">
+
+            <span class="step-number">
+                1
+            </span>
+
+            විභාග මට්ටම තෝරන්න
+
+        </h2>
+
+
+        <div class="choice-grid">
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectLevel('ol', this)"
+            >
+
+                <span class="choice-icon">
+                    📘
+                </span>
+
+                සාමාන්‍ය පෙළ
+
+                <span class="choice-small">
+                    G.C.E. O/L
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectLevel('al', this)"
+            >
+
+                <span class="choice-icon">
+                    📚
+                </span>
+
+                උසස් පෙළ
+
+                <span class="choice-small">
+                    G.C.E. A/L
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STEP 02 – PAPER
+         ===================================================== -->
+
+    <section
+        class="selection-card"
+        id="paperSection"
+        style="display:none;"
+    >
+
+        <h2 class="step-title">
+
+            <span class="step-number">
+                2
+            </span>
+
+            ප්‍රශ්න පත්‍රය තෝරන්න
+
+        </h2>
+
+
+        <div class="choice-grid">
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectPaper(1, this)"
+            >
+
+                <span class="choice-icon">
+                    📝
+                </span>
+
+                1 පේපරය
+
+                <span class="choice-small">
+                    Paper 01
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectPaper(2, this)"
+            >
+
+                <span class="choice-icon">
+                    📄
+                </span>
+
+                2 පේපරය
+
+                <span class="choice-small">
+                    Paper 02
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STEP 03 – YEAR
+         ===================================================== -->
+
+    <section
+        class="selection-card"
+        id="yearSection"
+        style="display:none;"
+    >
+
+        <h2 class="step-title">
+
+            <span class="step-number">
+                3
+            </span>
+
+            අවුරුද්ද තෝරන්න
+
+        </h2>
+
+
+        <div class="year-grid">
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2016, this)"
+            >
+                2016
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2017, this)"
+            >
+                2017
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2018, this)"
+            >
+                2018
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2019, this)"
+            >
+                2019
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2020, this)"
+            >
+                2020
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2021, this)"
+            >
+                2021
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2022, this)"
+            >
+                2022
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2023, this)"
+            >
+                2023
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2024, this)"
+            >
+                2024
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2025, this)"
+            >
+                2025
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INSTRUCTIONS
+             ================================================= -->
+
+        <div
+            class="instructions"
+            id="instructions"
+        >
+
+            <h3 class="instruction-heading">
+
+                📢 ප්‍රශ්න පත්‍රය ආරම්භ කිරීමට පෙර
+
+            </h3>
+
+
+            <ul class="instruction-list">
+
+                <li>
+                    ප්‍රශ්න පත්‍රය සඳහා ඔබට
+                    මිනිත්තු 60ක කාලයක් ලබා දේ.
+                </li>
+
+                <li>
+                    ප්‍රශ්න පත්‍රය ආරම්භ කළ
+                    මොහොතේ සිට කාලය ගණනය වේ.
+                </li>
+
+                <li>
+                    කාලය අවසන් වීමට මිනිත්තු 5කට
+                    පෙර ඔබට අනතුරු ඇඟවීමක් ලබා දේ.
+                </li>
+
+                <li>
+                    මිනිත්තු 60 අවසන් වූ විට
+                    පිළිතුරු ලබාදීමේ හැකියාව
+                    ස්වයංක්‍රීයව නතර වේ.
+                </li>
+
+                <li>
+                    ඔබ කලින් අවසන් කළහොත්
+                    පේපරය අවසන් කිරීමේ button එක
+                    භාවිතා කළ හැකිය.
+                </li>
+
+                <li>
+                    පේපරය අවසන් කළ පසු ඔබේ
+                    ලකුණු සහ නිවැරදි / වැරදි
+                    පිළිතුරු පෙන්වනු ලැබේ.
+                </li>
+
+            </ul>
+
+
+            <div class="time-box">
+
+                ⏱️
+
+                කාලය:
+                <strong>
+                    මිනිත්තු 60
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="start-button"
+                onclick="startPaper()"
+            >
+
+                ▶
+                පිළිතුරු සැපයීම ආරම්භ කරන්න
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAPER AREA
+         ===================================================== -->
+
+    <section
+        class="paper-area"
+        id="paperArea"
+    >
+
+
+        <div class="paper-header">
+
+            <h2>
+
+                අධ්‍යයන පොදු සහතික පත්‍ර
+                <span>
+                    සාමාන්‍ය පෙළ විභාගය
+                </span>
+
+            </h2>
+
+
+            <div class="paper-title">
+
+                ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය
+
+                <br>
+
+                <strong id="selectedPaperTitle">
+                    පළමු පත්‍රය
+                </strong>
+
+                <br>
+
+                <span id="selectedYearTitle">
+                    2025
+                </span>
+
+            </div>
+
+
+            <div class="timer-placeholder">
+
+                ⏱️
+                <span id="timer">
+                    60:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="coming-paper">
+
+            <strong>
+                📋 ප්‍රශ්න පත්‍රය
+            </strong>
+
+            <p>
+                මෙහිදී තෝරාගත් වර්ෂයට අදාළ
+                සම්පූර්ණ ප්‍රශ්න පත්‍රය
+                ඉදිරියේදී ඇතුළත් කරනු ලැබේ.
+            </p>
+
+            <p>
+                දැනට මෙය ප්‍රශ්න පත්‍රය
+                පෙන්වන ස්ථානයයි.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="pp-footer">
+
+    © 2026 Unique EduZone.
+    All Rights Reserved.
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+    /*
+     * =========================================
+     * CURRENT SELECTIONS
+     * =========================================
+     */
+
+    let selectedLevel = "";
+
+    let selectedPaper = 0;
+
+    let selectedYear = 0;
+
+
+
+    /*
+     * =========================================
+     * SELECT LEVEL
+     * =========================================
+     */
+
+    function selectLevel(level, button) {
+
+        selectedLevel = level;
+
+        selectedPaper = 0;
+
+        selectedYear = 0;
+
+
+        /*
+         * Remove old selected buttons
+         */
+
+        document
+            .querySelectorAll(".choice-button")
+            .forEach(function(btn) {
+
+                btn.classList.remove("selected");
+
+            });
+
+
+        button.classList.add("selected");
+
+
+        /*
+         * Show paper selection
+         */
+
+        const paperSection =
+            document.getElementById(
+                "paperSection"
+            );
+
+
+        paperSection.style.display =
+            "block";
+
+
+        /*
+         * Hide year and instructions
+         */
+
+        document.getElementById(
+            "yearSection"
+        ).style.display =
+            "none";
+
+
+        document.getElementById(
+            "instructions"
+        ).classList.remove("show");
+
+
+        /*
+         * Scroll to paper selection
+         */
+
+        setTimeout(function() {
+
+            paperSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * SELECT PAPER
+     * =========================================
+     */
+
+    function selectPaper(paper, button) {
+
+        selectedPaper = paper;
+
+
+        /*
+         * Only paper buttons
+         */
+
+        const paperButtons =
+            document.querySelectorAll(
+                "#paperSection .choice-button"
+            );
+
+
+        paperButtons.forEach(
+            function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            }
+        );
+
+
+        button.classList.add("selected");
+
+
+        /*
+         * Show year selection
+         */
+
+        const yearSection =
+            document.getElementById(
+                "yearSection"
+            );
+
+
+        yearSection.style.display =
+            "block";
+
+
+        /*
+         * Hide previous instruction
+         */
+
+        document.getElementById(
+            "instructions"
+        ).classList.remove("show");
+
+
+        /*
+         * Scroll
+         */
+
+        setTimeout(function() {
+
+            yearSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * SELECT YEAR
+     * =========================================
+     */
+
+    function selectYear(year, button) {
+
+        selectedYear = year;
+
+
+        /*
+         * Remove selected year
+         */
+
+        document
+            .querySelectorAll(".year-button")
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+        button.classList.add("selected");
+
+
+        /*
+         * Show instructions
+         */
+
+        const instructions =
+            document.getElementById(
+                "instructions"
+            );
+
+
+        instructions.classList.add(
+            "show"
+        );
+
+
+        /*
+         * Scroll to instructions
+         */
+
+        setTimeout(function() {
+
+            instructions.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * START PAPER
+     * =========================================
+     */
+
+    function startPaper() {
+
+        /*
+         * Check selections
+         */
+
+        if (
+            !selectedLevel ||
+            !selectedPaper ||
+            !selectedYear
+        ) {
+
+            alert(
+                "කරුණාකර විභාග මට්ටම, පේපරය සහ අවුරුද්ද තෝරන්න."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Update paper heading
+         */
+
+        const paperTitle =
+            document.getElementById(
+                "selectedPaperTitle"
+            );
+
+
+        const yearTitle =
+            document.getElementById(
+                "selectedYearTitle"
+            );
+
+
+        paperTitle.textContent =
+            selectedPaper === 1
+                ? "පළමු පත්‍රය"
+                : "දෙවන පත්‍රය";
+
+
+        yearTitle.textContent =
+            selectedYear;
+
+
+        /*
+         * Show paper area
+         */
+
+        const paperArea =
+            document.getElementById(
+                "paperArea"
+            );
+
+
+        paperArea.classList.add(
+            "show"
+        );
+
+
+        /*
+         * Scroll to paper
+         */
+
+        setTimeout(function() {
+
+            paperArea.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 100);
+
+
+        /*
+         * -------------------------------------
+         * TEMPORARY TIMER DISPLAY
+         * -------------------------------------
+         *
+         * Real 60-minute timer will be added
+         * when the actual questions are added.
+         *
+         */
+
+        startTemporaryTimer();
+
+    }
+
+
+
+    /*
+     * =========================================
+     * TEMPORARY TIMER
+     * =========================================
+     *
+     * This is only for testing the page.
+     * The final timer will be replaced with
+     * the complete 60-minute exam timer.
+     */
+
+    let temporarySeconds = 3600;
+
+    let temporaryTimerInterval = null;
+
+
+    function startTemporaryTimer() {
+
+        clearInterval(
+            temporaryTimerInterval
+        );
+
+
+        temporarySeconds = 3600;
+
+
+        updateTemporaryTimer();
+
+
+        temporaryTimerInterval =
+            setInterval(function() {
+
+                temporarySeconds--;
+
+
+                if (
+                    temporarySeconds <= 0
+                ) {
+
+                    clearInterval(
+                        temporaryTimerInterval
+                    );
+
+                    temporarySeconds = 0;
+
+                }
+
+
+                updateTemporaryTimer();
+
+            }, 1000);
+
+    }
+
+
+
+    function updateTemporaryTimer() {
+
+        const minutes =
+            Math.floor(
+                temporarySeconds / 60
+            );
+
+
+        const seconds =
+            temporarySeconds % 60;
+
+
+        document.getElementById(
+            "timer"
+        ).textContent =
+
+            String(minutes).padStart(
+                2,
+                "0"
+            )
+            +
+            ":"
+            +
+            String(seconds).padStart(
+                2,
+                "0"
+            );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
