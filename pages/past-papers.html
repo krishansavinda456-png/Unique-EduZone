@@ -969,6 +969,57 @@
         }
 
 
+        /* =====================================================
+           FLOATING EXAM TIMER
+           Keeps the remaining time visible while scrolling.
+           ===================================================== */
+
+        #paperArea.show .timer-placeholder {
+
+            position: fixed;
+
+            right: 20px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            z-index: 9999;
+
+            margin-top: 0;
+
+            min-width: 105px;
+
+            text-align: center;
+
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            #paperArea.show .timer-placeholder {
+
+                right: 8px;
+
+                top: 85px;
+
+                transform: none;
+
+                padding: 8px 12px;
+
+                min-width: 88px;
+
+                font-size: 16px;
+
+            }
+
+        }
+
+
         .coming-paper {
 
             background: #111;
