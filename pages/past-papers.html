@@ -20,1177 +20,1214 @@
         href="../assets/css/style.css"
     >
 
-    <style>
+    <script>
 
-        /* =====================================================
-           UNIQUE EDUZONE
-           PAST PAPERS PAGE
-           BLACK & GOLD DESIGN
-           ===================================================== */
+    /*
+     * =========================================
+     * CURRENT SELECTIONS
+     * =========================================
+     */
 
-        :root {
+    let selectedLevel = "";
 
-            --gold: #f5c542;
-            --gold-light: #ffd95a;
-            --gold-dark: #b88900;
+    let selectedPaper = 0;
 
-            --black: #050505;
-            --black-2: #0b0b0b;
-            --card: #111111;
-            --card-2: #171717;
+    let selectedYear = 0;
 
-            --white: #ffffff;
-            --text: #eeeeee;
-            --muted: #a9a9a9;
+    let temporarySeconds = 3600;
 
-            --border: rgba(245,197,66,0.35);
-
-        }
-
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-
-        body {
-
-            margin: 0;
-
-            font-family:
-                Arial,
-                "Noto Sans Sinhala",
-                sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 80% 15%,
-                    rgba(245,197,66,0.08),
-                    transparent 30%
-                ),
-                #050505;
-
-            color: var(--white);
-
-            min-height: 100vh;
-
-            overflow-x: hidden;
-
-        }
-
-
-        a {
-            text-decoration: none;
-        }
+    let temporaryTimerInterval = null;
 
 
 
-        /* =====================================================
-           HEADER
-           ===================================================== */
+    /*
+     * =========================================
+     * INITIAL BROWSER HISTORY
+     * =========================================
+     *
+     * Past Papers page එකට පැමිණි පළමු
+     * history state එක.
+     */
 
-        .pp-header {
+    if (!history.state) {
 
-            position: sticky;
+        history.replaceState(
+            {
+                step: 0
+            },
+            "",
+            window.location.pathname
+        );
 
-            top: 0;
-
-            z-index: 1000;
-
-            width: 100%;
-
-            background:
-                rgba(3,3,3,0.96);
-
-            border-bottom:
-                1px solid
-                rgba(245,197,66,0.18);
-
-            backdrop-filter:
-                blur(15px);
-
-        }
-
-
-        .pp-header-inner {
-
-            max-width: 1500px;
-
-            margin: auto;
-
-            min-height: 82px;
-
-            padding:
-                10px 28px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 25px;
-
-        }
+    }
 
 
 
-        /* =====================================================
-           LOGO
-           ===================================================== */
+    /*
+     * =========================================
+     * SELECT LEVEL
+     * =========================================
+     */
 
-        .pp-logo {
+    function selectLevel(level, button) {
 
-            display: flex;
+        selectedLevel = level;
 
-            align-items: center;
+        selectedPaper = 0;
 
-            gap: 13px;
-
-            min-width: 280px;
-
-        }
+        selectedYear = 0;
 
 
-        .pp-logo-symbol {
+        /*
+         * Remove selected buttons
+         */
 
-            width: 58px;
+        document
+            .querySelectorAll(".choice-button")
+            .forEach(function(btn) {
 
-            height: 58px;
+                btn.classList.remove("selected");
 
-            border:
-                1px solid
-                var(--gold);
+            });
 
-            border-radius: 50%;
 
-            display: flex;
+        button.classList.add("selected");
 
-            align-items: center;
 
-            justify-content: center;
+        /*
+         * Show paper selection
+         */
 
-            background:
-                radial-gradient(
-                    circle,
-                    #222 0%,
-                    #050505 70%
+        const paperSection =
+            document.getElementById(
+                "paperSection"
+            );
+
+        paperSection.style.display = "block";
+
+
+        /*
+         * Hide year
+         */
+
+        document.getElementById(
+            "yearSection"
+        ).style.display = "none";
+
+
+        /*
+         * Hide instructions
+         */
+
+        document.getElementById(
+            "instructions"
+        ).classList.remove("show");
+
+
+        /*
+         * Hide paper
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove("show");
+
+
+        /*
+         * Add browser history state
+         */
+
+        history.pushState(
+            {
+                step: 1,
+                level: level
+            },
+            "",
+            "#level"
+        );
+
+
+        /*
+         * Scroll
+         */
+
+        setTimeout(function() {
+
+            paperSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * SELECT PAPER
+     * =========================================
+     */
+
+    function selectPaper(paper, button) {
+
+        selectedPaper = paper;
+
+        selectedYear = 0;
+
+
+        /*
+         * Select only paper buttons
+         */
+
+        const paperButtons =
+            document.querySelectorAll(
+                "#paperSection .choice-button"
+            );
+
+
+        paperButtons.forEach(
+            function(btn) {
+
+                btn.classList.remove(
+                    "selected"
                 );
 
-            overflow: hidden;
+            }
+        );
 
-        }
 
+        button.classList.add("selected");
 
-        .pp-logo-symbol img {
 
-            width: 100%;
+        /*
+         * Show year selection
+         */
 
-            height: 100%;
+        const yearSection =
+            document.getElementById(
+                "yearSection"
+            );
 
-            object-fit: contain;
+        yearSection.style.display = "block";
 
-            border-radius: 50%;
 
-        }
+        /*
+         * Hide instructions
+         */
 
+        document.getElementById(
+            "instructions"
+        ).classList.remove("show");
 
-        .pp-logo-title {
 
-            font-size: 25px;
+        /*
+         * Hide paper area
+         */
 
-            font-weight: 800;
+        document.getElementById(
+            "paperArea"
+        ).classList.remove("show");
 
-            line-height: 1;
 
-        }
+        /*
+         * Add browser history state
+         */
 
+        history.pushState(
+            {
+                step: 2,
+                level: selectedLevel,
+                paper: paper
+            },
+            "",
+            "#paper"
+        );
 
-        .pp-logo-title span {
 
-            color: var(--gold);
+        /*
+         * Scroll
+         */
 
-        }
+        setTimeout(function() {
 
+            yearSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
 
-        .pp-logo-tagline {
+        }, 100);
 
-            margin-top: 6px;
+    }
 
-            font-size: 10px;
 
-            color: #aaa;
 
-            letter-spacing: 0.4px;
+    /*
+     * =========================================
+     * SELECT YEAR
+     * =========================================
+     */
 
-        }
+    function selectYear(year, button) {
 
+        selectedYear = year;
 
 
-        /* =====================================================
-           NAVIGATION
-           ===================================================== */
+        /*
+         * Remove selected years
+         */
 
-        .pp-nav {
+        document
+            .querySelectorAll(".year-button")
+            .forEach(function(btn) {
 
-            display: flex;
-
-            align-items: center;
-
-            gap: 3px;
-
-            flex: 1;
-
-            overflow-x: auto;
-
-            white-space: nowrap;
-
-            scrollbar-width: thin;
-
-            scrollbar-color:
-                var(--gold)
-                #111;
-
-        }
-
-
-        .pp-nav::-webkit-scrollbar {
-
-            height: 5px;
-
-        }
-
-
-        .pp-nav::-webkit-scrollbar-track {
-
-            background: #111;
-
-        }
-
-
-        .pp-nav::-webkit-scrollbar-thumb {
-
-            background: var(--gold);
-
-            border-radius: 10px;
-
-        }
-
-
-        .pp-nav a {
-
-            flex: 0 0 auto;
-
-            color: #eee;
-
-            padding:
-                12px 10px;
-
-            font-size: 13px;
-
-            transition:
-                color 0.2s ease;
-
-        }
-
-
-        .pp-nav a:hover {
-
-            color: var(--gold);
-
-        }
-
-
-        .pp-nav a.active {
-
-            color: var(--gold);
-
-        }
-
-
-
-        /* =====================================================
-           MAIN
-           ===================================================== */
-
-        .pp-main {
-
-            max-width: 1250px;
-
-            margin: auto;
-
-            padding:
-                55px 25px 80px;
-
-        }
-
-
-
-        /* =====================================================
-           PAGE HERO
-           ===================================================== */
-
-        .pp-hero {
-
-            text-align: center;
-
-            margin-bottom: 40px;
-
-        }
-
-
-        .pp-badge {
-
-            display: inline-block;
-
-            padding:
-                9px 20px;
-
-            border-radius: 30px;
-
-            background:
-                rgba(245,197,66,0.10);
-
-            border:
-                1px solid
-                rgba(245,197,66,0.45);
-
-            color: var(--gold);
-
-            font-weight: 700;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .pp-hero h1 {
-
-            margin:
-                0 0 15px;
-
-            font-size:
-                clamp(32px, 5vw, 54px);
-
-            font-weight: 900;
-
-        }
-
-
-        .pp-hero h1 span {
-
-            color: var(--gold);
-
-        }
-
-
-        .pp-hero p {
-
-            max-width: 750px;
-
-            margin: auto;
-
-            color: #aaa;
-
-            line-height: 1.8;
-
-            font-size: 16px;
-
-        }
-
-
-
-        /* =====================================================
-           STEP CARD
-           ===================================================== */
-
-        .selection-card {
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #151515,
-                    #0c0c0c
+                btn.classList.remove(
+                    "selected"
                 );
 
-            border:
-                1px solid
-                rgba(245,197,66,0.30);
+            });
 
-            border-radius: 20px;
 
-            padding:
-                35px;
+        button.classList.add("selected");
 
-            margin-bottom: 25px;
 
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.25);
+        /*
+         * Show instructions
+         */
+
+        const instructions =
+            document.getElementById(
+                "instructions"
+            );
+
+        instructions.classList.add("show");
+
+
+        /*
+         * Hide paper area
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove("show");
+
+
+        /*
+         * Add browser history state
+         */
+
+        history.pushState(
+            {
+                step: 3,
+                level: selectedLevel,
+                paper: selectedPaper,
+                year: year
+            },
+            "",
+            "#year"
+        );
+
+
+        /*
+         * Scroll
+         */
+
+        setTimeout(function() {
+
+            instructions.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * START PAPER
+     * =========================================
+     */
+
+    function startPaper() {
+
+        /*
+         * Check selections
+         */
+
+        if (
+            !selectedLevel ||
+            !selectedPaper ||
+            !selectedYear
+        ) {
+
+            alert(
+                "කරුණාකර විභාග මට්ටම, පේපරය සහ අවුරුද්ද තෝරන්න."
+            );
+
+            return;
 
         }
 
 
-        .step-title {
+        /*
+         * Update paper heading
+         */
 
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            margin:
-                0 0 25px;
-
-            font-size: 24px;
-
-        }
+        const paperTitle =
+            document.getElementById(
+                "selectedPaperTitle"
+            );
 
 
-        .step-number {
+        const yearTitle =
+            document.getElementById(
+                "selectedYearTitle"
+            );
 
-            width: 38px;
 
-            height: 38px;
+        paperTitle.textContent =
+            selectedPaper === 1
+                ? "පළමු පත්‍රය"
+                : "දෙවන පත්‍රය";
 
-            border-radius: 50%;
 
-            display: flex;
+        yearTitle.textContent =
+            selectedYear;
 
-            align-items: center;
 
-            justify-content: center;
+        /*
+         * Show paper
+         */
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffd95a,
-                    #dca916
+        const paperArea =
+            document.getElementById(
+                "paperArea"
+            );
+
+        paperArea.classList.add("show");
+
+
+        /*
+         * Add browser history state
+         */
+
+        history.pushState(
+            {
+                step: 4,
+                level: selectedLevel,
+                paper: selectedPaper,
+                year: selectedYear,
+                started: true
+            },
+            "",
+            "#exam"
+        );
+
+
+        /*
+         * Start timer
+         */
+
+        startTemporaryTimer();
+
+
+        /*
+         * Scroll to paper
+         */
+
+        setTimeout(function() {
+
+            paperArea.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * TEMPORARY TIMER
+     * =========================================
+     */
+
+    function startTemporaryTimer() {
+
+        clearInterval(
+            temporaryTimerInterval
+        );
+
+
+        temporarySeconds = 3600;
+
+
+        updateTemporaryTimer();
+
+
+        temporaryTimerInterval =
+            setInterval(function() {
+
+                temporarySeconds--;
+
+
+                if (
+                    temporarySeconds <= 0
+                ) {
+
+                    clearInterval(
+                        temporaryTimerInterval
+                    );
+
+                    temporarySeconds = 0;
+
+                }
+
+
+                updateTemporaryTimer();
+
+            }, 1000);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * UPDATE TIMER
+     * =========================================
+     */
+
+    function updateTemporaryTimer() {
+
+        const minutes =
+            Math.floor(
+                temporarySeconds / 60
+            );
+
+
+        const seconds =
+            temporarySeconds % 60;
+
+
+        document.getElementById(
+            "timer"
+        ).textContent =
+
+            String(minutes).padStart(
+                2,
+                "0"
+            )
+            +
+            ":"
+            +
+            String(seconds).padStart(
+                2,
+                "0"
+            );
+
+    }
+
+
+
+    /*
+     * =========================================
+     * RESTORE PAGE FROM HISTORY
+     * =========================================
+     *
+     * Browser BACK / FORWARD button භාවිතා
+     * කළ විට මෙය ක්‍රියා කරයි.
+     */
+
+    window.addEventListener(
+        "popstate",
+        function(event) {
+
+            const state =
+                event.state;
+
+
+            /*
+             * =================================
+             * STEP 0
+             * Past Papers main page
+             * =================================
+             */
+
+            if (
+                !state ||
+                state.step === 0
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
                 );
 
-            color: #000;
 
-            font-weight: 900;
+                selectedLevel = "";
 
-        }
+                selectedPaper = 0;
 
-
-
-        /* =====================================================
-           CHOICE GRID
-           ===================================================== */
-
-        .choice-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 20px;
-
-        }
+                selectedYear = 0;
 
 
-        .choice-button {
+                /*
+                 * Hide later sections
+                 */
 
-            border:
-                1px solid
-                rgba(245,197,66,0.35);
+                document.getElementById(
+                    "paperSection"
+                ).style.display = "none";
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #181818,
-                    #101010
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display = "none";
+
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
                 );
 
-            color: white;
 
-            border-radius: 15px;
-
-            padding:
-                25px 20px;
-
-            cursor: pointer;
-
-            text-align: center;
-
-            font-size: 18px;
-
-            font-weight: 800;
-
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease,
-                background 0.2s ease,
-                box-shadow 0.2s ease;
-
-        }
-
-
-        .choice-button:hover {
-
-            transform:
-                translateY(-4px);
-
-            border-color:
-                var(--gold);
-
-            background:
-                rgba(245,197,66,0.07);
-
-            box-shadow:
-                0 10px 30px
-                rgba(245,197,66,0.10);
-
-        }
-
-
-        .choice-button.selected {
-
-            border-color:
-                var(--gold);
-
-            background:
-                rgba(245,197,66,0.12);
-
-            box-shadow:
-                0 0 0 2px
-                rgba(245,197,66,0.10);
-
-        }
-
-
-        .choice-icon {
-
-            display: block;
-
-            font-size: 38px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-        .choice-small {
-
-            display: block;
-
-            margin-top: 7px;
-
-            color: #999;
-
-            font-size: 13px;
-
-            font-weight: normal;
-
-        }
-
-
-
-        /* =====================================================
-           YEAR GRID
-           ===================================================== */
-
-        .year-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(5, 1fr);
-
-            gap: 14px;
-
-        }
-
-
-        .year-button {
-
-            border:
-                1px solid
-                #333;
-
-            background: #101010;
-
-            color: #eee;
-
-            border-radius: 10px;
-
-            padding:
-                15px 10px;
-
-            cursor: pointer;
-
-            font-size: 17px;
-
-            font-weight: 800;
-
-            transition:
-                all 0.2s ease;
-
-        }
-
-
-        .year-button:hover {
-
-            border-color:
-                var(--gold);
-
-            color:
-                var(--gold);
-
-            transform:
-                translateY(-2px);
-
-        }
-
-
-        .year-button.selected {
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffd95a,
-                    #dca916
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
                 );
 
-            color: #050505;
 
-            border-color:
-                var(--gold);
+                /*
+                 * Remove selections
+                 */
 
-        }
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(
+                        function(btn) {
 
+                            btn.classList.remove(
+                                "selected"
+                            );
 
-
-        /* =====================================================
-           INSTRUCTION AREA
-           ===================================================== */
-
-        .instructions {
-
-            display: none;
-
-            margin-top: 30px;
-
-            border:
-                1px solid
-                rgba(245,197,66,0.45);
-
-            border-radius: 18px;
-
-            padding:
-                30px;
-
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(245,197,66,0.09),
-                    transparent 45%
-                ),
-                #111;
-
-        }
+                        }
+                    );
 
 
-        .instructions.show {
-
-            display: block;
-
-            animation:
-                fadeIn 0.35s ease;
-
-        }
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
 
-        @keyframes fadeIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(10px);
+                return;
 
             }
 
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-            }
-
-        }
 
 
-        .instruction-heading {
+            /*
+             * =================================
+             * STEP 1
+             * Level selected
+             * =================================
+             */
 
-            color: var(--gold);
+            if (
+                state.step === 1
+            ) {
 
-            font-size: 25px;
-
-            margin:
-                0 0 20px;
-
-        }
-
-
-        .instruction-list {
-
-            list-style: none;
-
-            padding: 0;
-
-            margin: 0;
-
-        }
-
-
-        .instruction-list li {
-
-            padding:
-                12px 0;
-
-            border-bottom:
-                1px solid #292929;
-
-            color: #ddd;
-
-            line-height: 1.6;
-
-        }
-
-
-        .instruction-list li:last-child {
-
-            border-bottom: none;
-
-        }
-
-
-        .instruction-list li::before {
-
-            content: "✓";
-
-            color: var(--gold);
-
-            font-weight: bold;
-
-            margin-right: 10px;
-
-        }
-
-
-        .time-box {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            margin:
-                25px 0;
-
-            padding:
-                18px;
-
-            border:
-                1px solid
-                rgba(245,197,66,0.30);
-
-            border-radius: 12px;
-
-            background:
-                rgba(245,197,66,0.05);
-
-            color: var(--gold);
-
-            font-size: 22px;
-
-            font-weight: 900;
-
-        }
-
-
-        .start-button {
-
-            width: 100%;
-
-            border: none;
-
-            border-radius: 12px;
-
-            padding:
-                17px 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffd95a,
-                    #dca916
+                clearInterval(
+                    temporaryTimerInterval
                 );
 
-            color: #050505;
 
-            font-size: 18px;
+                selectedLevel =
+                    state.level || "";
 
-            font-weight: 900;
+                selectedPaper = 0;
 
-            cursor: pointer;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-
-        }
+                selectedYear = 0;
 
 
-        .start-button:hover {
+                /*
+                 * Show paper section
+                 */
 
-            transform:
-                translateY(-3px);
-
-            box-shadow:
-                0 12px 30px
-                rgba(245,197,66,0.20);
-
-        }
+                document.getElementById(
+                    "paperSection"
+                ).style.display = "block";
 
 
+                /*
+                 * Hide year
+                 */
 
-        /* =====================================================
-           PAPER PLACEHOLDER
-           ===================================================== */
-
-        .paper-area {
-
-            display: none;
-
-            margin-top: 35px;
-
-        }
+                document.getElementById(
+                    "yearSection"
+                ).style.display = "none";
 
 
-        .paper-area.show {
+                /*
+                 * Hide instructions
+                 */
 
-            display: block;
-
-            animation:
-                fadeIn 0.4s ease;
-
-        }
-
-
-        .paper-header {
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #181818,
-                    #0d0d0d
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
                 );
 
-            border:
-                1px solid
-                rgba(245,197,66,0.40);
 
-            border-radius: 18px;
+                /*
+                 * Hide paper
+                 */
 
-            padding:
-                30px 20px;
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
 
-            margin-bottom: 25px;
+
+                /*
+                 * Restore level button
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            btn.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                const levelButtons =
+                    document.querySelectorAll(
+                        ".pp-main > .selection-card:first-of-type .choice-button"
+                    );
+
+
+                levelButtons.forEach(
+                    function(btn) {
+
+                        const onclickText =
+                            btn.getAttribute(
+                                "onclick"
+                            ) || "";
+
+
+                        if (
+                            onclickText.includes(
+                                "'" +
+                                selectedLevel +
+                                "'"
+                            )
+                        ) {
+
+                            btn.classList.add(
+                                "selected"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                window.scrollTo({
+                    top:
+                        document.querySelector(
+                            ".pp-main > .selection-card"
+                        ).offsetTop - 20,
+                    behavior: "smooth"
+                });
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 2
+             * Paper selected
+             * =================================
+             */
+
+            if (
+                state.step === 2
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Show paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display = "block";
+
+
+                /*
+                 * Show year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display = "block";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove all selected
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            btn.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                /*
+                 * Restore level button
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".pp-main > .selection-card:first-of-type .choice-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            const text =
+                                btn.getAttribute(
+                                    "onclick"
+                                ) || "";
+
+
+                            if (
+                                text.includes(
+                                    "'" +
+                                    selectedLevel +
+                                    "'"
+                                )
+                            ) {
+
+                                btn.classList.add(
+                                    "selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                /*
+                 * Restore paper button
+                 */
+
+                document
+                    .querySelectorAll(
+                        "#paperSection .choice-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            const text =
+                                btn.getAttribute(
+                                    "onclick"
+                                ) || "";
+
+
+                            if (
+                                text.includes(
+                                    "(" +
+                                    selectedPaper +
+                                    ","
+                                )
+                            ) {
+
+                                btn.classList.add(
+                                    "selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                window.scrollTo({
+                    top:
+                        document.getElementById(
+                            "yearSection"
+                        ).offsetTop - 20,
+                    behavior: "smooth"
+                });
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 3
+             * Year selected / instructions
+             * =================================
+             */
+
+            if (
+                state.step === 3
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear =
+                    state.year || 0;
+
+
+                /*
+                 * Show all selection sections
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display = "block";
+
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display = "block";
+
+
+                /*
+                 * Show instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selected classes
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            btn.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                /*
+                 * Restore level
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".pp-main > .selection-card:first-of-type .choice-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            const text =
+                                btn.getAttribute(
+                                    "onclick"
+                                ) || "";
+
+
+                            if (
+                                text.includes(
+                                    "'" +
+                                    selectedLevel +
+                                    "'"
+                                )
+                            ) {
+
+                                btn.classList.add(
+                                    "selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                /*
+                 * Restore paper
+                 */
+
+                document
+                    .querySelectorAll(
+                        "#paperSection .choice-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            const text =
+                                btn.getAttribute(
+                                    "onclick"
+                                ) || "";
+
+
+                            if (
+                                text.includes(
+                                    "(" +
+                                    selectedPaper +
+                                    ","
+                                )
+                            ) {
+
+                                btn.classList.add(
+                                    "selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                /*
+                 * Restore year
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".year-button"
+                    )
+                    .forEach(
+                        function(btn) {
+
+                            if (
+                                btn.textContent.trim()
+                                ===
+                                String(selectedYear)
+                            ) {
+
+                                btn.classList.add(
+                                    "selected"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                window.scrollTo({
+                    top:
+                        document.getElementById(
+                            "instructions"
+                        ).offsetTop - 20,
+                    behavior: "smooth"
+                });
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 4
+             * Paper opened
+             * =================================
+             */
+
+            if (
+                state.step === 4
+            ) {
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear =
+                    state.year || 0;
+
+
+                /*
+                 * Show selections
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display = "block";
+
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display = "block";
+
+
+                /*
+                 * Show instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Update heading
+                 */
+
+                document.getElementById(
+                    "selectedPaperTitle"
+                ).textContent =
+                    selectedPaper === 1
+                        ? "පළමු පත්‍රය"
+                        : "දෙවන පත්‍රය";
+
+
+                document.getElementById(
+                    "selectedYearTitle"
+                ).textContent =
+                    selectedYear;
+
+
+                /*
+                 * Show paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Start timer again
+                 */
+
+                startTemporaryTimer();
+
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "paperArea"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }, 100);
+
+            }
 
         }
+    );
 
-
-        .paper-header h2 {
-
-            margin:
-                0 0 10px;
-
-            font-size: 25px;
-
-        }
-
-
-        .paper-header h2 span {
-
-            color: var(--gold);
-
-        }
-
-
-        .paper-title {
-
-            color: #ccc;
-
-            font-size: 17px;
-
-        }
-
-
-        .timer-placeholder {
-
-            display: inline-block;
-
-            margin-top: 18px;
-
-            padding:
-                10px 20px;
-
-            border:
-                1px solid
-                rgba(245,197,66,0.45);
-
-            border-radius: 30px;
-
-            color: var(--gold);
-
-            font-size: 18px;
-
-            font-weight: 900;
-
-            background:
-                rgba(245,197,66,0.06);
-
-        }
-
-
-        .coming-paper {
-
-            background: #111;
-
-            border:
-                1px dashed #555;
-
-            border-radius: 15px;
-
-            padding:
-                35px 25px;
-
-            text-align: center;
-
-            color: #aaa;
-
-        }
-
-
-        .coming-paper strong {
-
-            display: block;
-
-            color: var(--gold);
-
-            font-size: 20px;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        /* =====================================================
-           BACK BUTTON
-           ===================================================== */
-
-        .back-button {
-
-            display: inline-block;
-
-            margin-bottom: 25px;
-
-            color: #aaa;
-
-            cursor: pointer;
-
-            font-size: 14px;
-
-        }
-
-
-        .back-button:hover {
-
-            color: var(--gold);
-
-        }
-
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        .pp-footer {
-
-            border-top:
-                1px solid #242424;
-
-            background: #080808;
-
-            padding:
-                25px;
-
-            text-align: center;
-
-            color: #777;
-
-            font-size: 13px;
-
-        }
-
-
-
-        /* =====================================================
-           RESPONSIVE
-           ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .pp-header-inner {
-
-                flex-wrap: wrap;
-
-            }
-
-
-            .pp-logo {
-
-                min-width: auto;
-
-            }
-
-
-            .pp-nav {
-
-                order: 3;
-
-                width: 100%;
-
-            }
-
-
-            .choice-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .year-grid {
-
-                grid-template-columns:
-                    repeat(3, 1fr);
-
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            .pp-header-inner {
-
-                padding:
-                    10px 15px;
-
-            }
-
-
-            .pp-logo-title {
-
-                font-size: 20px;
-
-            }
-
-
-            .pp-logo-symbol {
-
-                width: 48px;
-
-                height: 48px;
-
-            }
-
-
-            .pp-logo-tagline {
-
-                font-size: 8px;
-
-            }
-
-
-            .pp-nav a {
-
-                font-size: 11px;
-
-                padding:
-                    10px 7px;
-
-            }
-
-
-            .pp-main {
-
-                padding:
-                    35px 15px 60px;
-
-            }
-
-
-            .selection-card {
-
-                padding:
-                    22px 16px;
-
-            }
-
-
-            .step-title {
-
-                font-size: 20px;
-
-            }
-
-
-            .year-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-            }
-
-
-            .instructions {
-
-                padding:
-                    22px 17px;
-
-            }
-
-
-            .pp-hero h1 {
-
-                font-size: 32px;
-
-            }
-
-        }
-
-
-    </style>
+</script>
 
 </head>
 
