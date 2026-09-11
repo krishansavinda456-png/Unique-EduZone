@@ -20,1214 +20,1177 @@
         href="../assets/css/style.css"
     >
 
-    <script>
+    <style>
 
-    /*
-     * =========================================
-     * CURRENT SELECTIONS
-     * =========================================
-     */
+        /* =====================================================
+           UNIQUE EDUZONE
+           PAST PAPERS PAGE
+           BLACK & GOLD DESIGN
+           ===================================================== */
 
-    let selectedLevel = "";
+        :root {
 
-    let selectedPaper = 0;
+            --gold: #f5c542;
+            --gold-light: #ffd95a;
+            --gold-dark: #b88900;
 
-    let selectedYear = 0;
+            --black: #050505;
+            --black-2: #0b0b0b;
+            --card: #111111;
+            --card-2: #171717;
 
-    let temporarySeconds = 3600;
+            --white: #ffffff;
+            --text: #eeeeee;
+            --muted: #a9a9a9;
 
-    let temporaryTimerInterval = null;
-
-
-
-    /*
-     * =========================================
-     * INITIAL BROWSER HISTORY
-     * =========================================
-     *
-     * Past Papers page එකට පැමිණි පළමු
-     * history state එක.
-     */
-
-    if (!history.state) {
-
-        history.replaceState(
-            {
-                step: 0
-            },
-            "",
-            window.location.pathname
-        );
-
-    }
-
-
-
-    /*
-     * =========================================
-     * SELECT LEVEL
-     * =========================================
-     */
-
-    function selectLevel(level, button) {
-
-        selectedLevel = level;
-
-        selectedPaper = 0;
-
-        selectedYear = 0;
-
-
-        /*
-         * Remove selected buttons
-         */
-
-        document
-            .querySelectorAll(".choice-button")
-            .forEach(function(btn) {
-
-                btn.classList.remove("selected");
-
-            });
-
-
-        button.classList.add("selected");
-
-
-        /*
-         * Show paper selection
-         */
-
-        const paperSection =
-            document.getElementById(
-                "paperSection"
-            );
-
-        paperSection.style.display = "block";
-
-
-        /*
-         * Hide year
-         */
-
-        document.getElementById(
-            "yearSection"
-        ).style.display = "none";
-
-
-        /*
-         * Hide instructions
-         */
-
-        document.getElementById(
-            "instructions"
-        ).classList.remove("show");
-
-
-        /*
-         * Hide paper
-         */
-
-        document.getElementById(
-            "paperArea"
-        ).classList.remove("show");
-
-
-        /*
-         * Add browser history state
-         */
-
-        history.pushState(
-            {
-                step: 1,
-                level: level
-            },
-            "",
-            "#level"
-        );
-
-
-        /*
-         * Scroll
-         */
-
-        setTimeout(function() {
-
-            paperSection.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-        }, 100);
-
-    }
-
-
-
-    /*
-     * =========================================
-     * SELECT PAPER
-     * =========================================
-     */
-
-    function selectPaper(paper, button) {
-
-        selectedPaper = paper;
-
-        selectedYear = 0;
-
-
-        /*
-         * Select only paper buttons
-         */
-
-        const paperButtons =
-            document.querySelectorAll(
-                "#paperSection .choice-button"
-            );
-
-
-        paperButtons.forEach(
-            function(btn) {
-
-                btn.classList.remove(
-                    "selected"
-                );
-
-            }
-        );
-
-
-        button.classList.add("selected");
-
-
-        /*
-         * Show year selection
-         */
-
-        const yearSection =
-            document.getElementById(
-                "yearSection"
-            );
-
-        yearSection.style.display = "block";
-
-
-        /*
-         * Hide instructions
-         */
-
-        document.getElementById(
-            "instructions"
-        ).classList.remove("show");
-
-
-        /*
-         * Hide paper area
-         */
-
-        document.getElementById(
-            "paperArea"
-        ).classList.remove("show");
-
-
-        /*
-         * Add browser history state
-         */
-
-        history.pushState(
-            {
-                step: 2,
-                level: selectedLevel,
-                paper: paper
-            },
-            "",
-            "#paper"
-        );
-
-
-        /*
-         * Scroll
-         */
-
-        setTimeout(function() {
-
-            yearSection.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-        }, 100);
-
-    }
-
-
-
-    /*
-     * =========================================
-     * SELECT YEAR
-     * =========================================
-     */
-
-    function selectYear(year, button) {
-
-        selectedYear = year;
-
-
-        /*
-         * Remove selected years
-         */
-
-        document
-            .querySelectorAll(".year-button")
-            .forEach(function(btn) {
-
-                btn.classList.remove(
-                    "selected"
-                );
-
-            });
-
-
-        button.classList.add("selected");
-
-
-        /*
-         * Show instructions
-         */
-
-        const instructions =
-            document.getElementById(
-                "instructions"
-            );
-
-        instructions.classList.add("show");
-
-
-        /*
-         * Hide paper area
-         */
-
-        document.getElementById(
-            "paperArea"
-        ).classList.remove("show");
-
-
-        /*
-         * Add browser history state
-         */
-
-        history.pushState(
-            {
-                step: 3,
-                level: selectedLevel,
-                paper: selectedPaper,
-                year: year
-            },
-            "",
-            "#year"
-        );
-
-
-        /*
-         * Scroll
-         */
-
-        setTimeout(function() {
-
-            instructions.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-        }, 100);
-
-    }
-
-
-
-    /*
-     * =========================================
-     * START PAPER
-     * =========================================
-     */
-
-    function startPaper() {
-
-        /*
-         * Check selections
-         */
-
-        if (
-            !selectedLevel ||
-            !selectedPaper ||
-            !selectedYear
-        ) {
-
-            alert(
-                "කරුණාකර විභාග මට්ටම, පේපරය සහ අවුරුද්ද තෝරන්න."
-            );
-
-            return;
+            --border: rgba(245,197,66,0.35);
 
         }
 
 
-        /*
-         * Update paper heading
-         */
+        * {
+            box-sizing: border-box;
+        }
 
-        const paperTitle =
-            document.getElementById(
-                "selectedPaperTitle"
-            );
 
+        html {
+            scroll-behavior: smooth;
+        }
 
-        const yearTitle =
-            document.getElementById(
-                "selectedYearTitle"
-            );
 
+        body {
 
-        paperTitle.textContent =
-            selectedPaper === 1
-                ? "පළමු පත්‍රය"
-                : "දෙවන පත්‍රය";
+            margin: 0;
 
+            font-family:
+                Arial,
+                "Noto Sans Sinhala",
+                sans-serif;
 
-        yearTitle.textContent =
-            selectedYear;
+            background:
+                radial-gradient(
+                    circle at 80% 15%,
+                    rgba(245,197,66,0.08),
+                    transparent 30%
+                ),
+                #050505;
 
+            color: var(--white);
 
-        /*
-         * Show paper
-         */
+            min-height: 100vh;
 
-        const paperArea =
-            document.getElementById(
-                "paperArea"
-            );
+            overflow-x: hidden;
 
-        paperArea.classList.add("show");
+        }
 
 
-        /*
-         * Add browser history state
-         */
+        a {
+            text-decoration: none;
+        }
 
-        history.pushState(
-            {
-                step: 4,
-                level: selectedLevel,
-                paper: selectedPaper,
-                year: selectedYear,
-                started: true
-            },
-            "",
-            "#exam"
-        );
 
 
-        /*
-         * Start timer
-         */
+        /* =====================================================
+           HEADER
+           ===================================================== */
 
-        startTemporaryTimer();
+        .pp-header {
 
+            position: sticky;
 
-        /*
-         * Scroll to paper
-         */
+            top: 0;
 
-        setTimeout(function() {
+            z-index: 1000;
 
-            paperArea.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            width: 100%;
 
-        }, 100);
+            background:
+                rgba(3,3,3,0.96);
 
-    }
+            border-bottom:
+                1px solid
+                rgba(245,197,66,0.18);
 
+            backdrop-filter:
+                blur(15px);
 
+        }
 
-    /*
-     * =========================================
-     * TEMPORARY TIMER
-     * =========================================
-     */
 
-    function startTemporaryTimer() {
+        .pp-header-inner {
 
-        clearInterval(
-            temporaryTimerInterval
-        );
+            max-width: 1500px;
 
+            margin: auto;
 
-        temporarySeconds = 3600;
+            min-height: 82px;
 
+            padding:
+                10px 28px;
 
-        updateTemporaryTimer();
+            display: flex;
 
+            align-items: center;
 
-        temporaryTimerInterval =
-            setInterval(function() {
+            gap: 25px;
 
-                temporarySeconds--;
+        }
 
 
-                if (
-                    temporarySeconds <= 0
-                ) {
 
-                    clearInterval(
-                        temporaryTimerInterval
-                    );
+        /* =====================================================
+           LOGO
+           ===================================================== */
 
-                    temporarySeconds = 0;
+        .pp-logo {
 
-                }
+            display: flex;
 
+            align-items: center;
 
-                updateTemporaryTimer();
+            gap: 13px;
 
-            }, 1000);
+            min-width: 280px;
 
-    }
+        }
 
 
+        .pp-logo-symbol {
 
-    /*
-     * =========================================
-     * UPDATE TIMER
-     * =========================================
-     */
+            width: 58px;
 
-    function updateTemporaryTimer() {
+            height: 58px;
 
-        const minutes =
-            Math.floor(
-                temporarySeconds / 60
-            );
+            border:
+                1px solid
+                var(--gold);
 
+            border-radius: 50%;
 
-        const seconds =
-            temporarySeconds % 60;
+            display: flex;
 
+            align-items: center;
 
-        document.getElementById(
-            "timer"
-        ).textContent =
+            justify-content: center;
 
-            String(minutes).padStart(
-                2,
-                "0"
-            )
-            +
-            ":"
-            +
-            String(seconds).padStart(
-                2,
-                "0"
-            );
-
-    }
-
-
-
-    /*
-     * =========================================
-     * RESTORE PAGE FROM HISTORY
-     * =========================================
-     *
-     * Browser BACK / FORWARD button භාවිතා
-     * කළ විට මෙය ක්‍රියා කරයි.
-     */
-
-    window.addEventListener(
-        "popstate",
-        function(event) {
-
-            const state =
-                event.state;
-
-
-            /*
-             * =================================
-             * STEP 0
-             * Past Papers main page
-             * =================================
-             */
-
-            if (
-                !state ||
-                state.step === 0
-            ) {
-
-                clearInterval(
-                    temporaryTimerInterval
+            background:
+                radial-gradient(
+                    circle,
+                    #222 0%,
+                    #050505 70%
                 );
 
+            overflow: hidden;
 
-                selectedLevel = "";
-
-                selectedPaper = 0;
-
-                selectedYear = 0;
+        }
 
 
-                /*
-                 * Hide later sections
-                 */
+        .pp-logo-symbol img {
 
-                document.getElementById(
-                    "paperSection"
-                ).style.display = "none";
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+        }
 
 
-                document.getElementById(
-                    "yearSection"
-                ).style.display = "none";
+        .pp-logo-title {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            line-height: 1;
+
+        }
 
 
-                document.getElementById(
-                    "instructions"
-                ).classList.remove(
-                    "show"
+        .pp-logo-title span {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-logo-tagline {
+
+            margin-top: 6px;
+
+            font-size: 10px;
+
+            color: #aaa;
+
+            letter-spacing: 0.4px;
+
+        }
+
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        .pp-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 3px;
+
+            flex: 1;
+
+            overflow-x: auto;
+
+            white-space: nowrap;
+
+            scrollbar-width: thin;
+
+            scrollbar-color:
+                var(--gold)
+                #111;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar {
+
+            height: 5px;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar-track {
+
+            background: #111;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar-thumb {
+
+            background: var(--gold);
+
+            border-radius: 10px;
+
+        }
+
+
+        .pp-nav a {
+
+            flex: 0 0 auto;
+
+            color: #eee;
+
+            padding:
+                12px 10px;
+
+            font-size: 13px;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .pp-nav a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-nav a.active {
+
+            color: var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        .pp-main {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                55px 25px 80px;
+
+        }
+
+
+
+        /* =====================================================
+           PAGE HERO
+           ===================================================== */
+
+        .pp-hero {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .pp-badge {
+
+            display: inline-block;
+
+            padding:
+                9px 20px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(245,197,66,0.10);
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            color: var(--gold);
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .pp-hero h1 {
+
+            margin:
+                0 0 15px;
+
+            font-size:
+                clamp(32px, 5vw, 54px);
+
+            font-weight: 900;
+
+        }
+
+
+        .pp-hero h1 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-hero p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #aaa;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+        }
+
+
+
+        /* =====================================================
+           STEP CARD
+           ===================================================== */
+
+        .selection-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0c0c0c
                 );
 
+            border:
+                1px solid
+                rgba(245,197,66,0.30);
 
-                document.getElementById(
-                    "paperArea"
-                ).classList.remove(
-                    "show"
+            border-radius: 20px;
+
+            padding:
+                35px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .step-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin:
+                0 0 25px;
+
+            font-size: 24px;
+
+        }
+
+
+        .step-number {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
                 );
 
+            color: #000;
 
-                /*
-                 * Remove selections
-                 */
+            font-weight: 900;
 
-                document
-                    .querySelectorAll(
-                        ".choice-button, .year-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            btn.classList.remove(
-                                "selected"
-                            );
-
-                        }
-                    );
+        }
 
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+
+        /* =====================================================
+           CHOICE GRID
+           ===================================================== */
+
+        .choice-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
 
 
-                return;
+        .choice-button {
+
+            border:
+                1px solid
+                rgba(245,197,66,0.35);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #101010
+                );
+
+            color: white;
+
+            border-radius: 15px;
+
+            padding:
+                25px 20px;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .choice-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.07);
+
+            box-shadow:
+                0 10px 30px
+                rgba(245,197,66,0.10);
+
+        }
+
+
+        .choice-button.selected {
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.12);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(245,197,66,0.10);
+
+        }
+
+
+        .choice-icon {
+
+            display: block;
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .choice-small {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: #999;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+        }
+
+
+
+        /* =====================================================
+           YEAR GRID
+           ===================================================== */
+
+        .year-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .year-button {
+
+            border:
+                1px solid
+                #333;
+
+            background: #101010;
+
+            color: #eee;
+
+            border-radius: 10px;
+
+            padding:
+                15px 10px;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            transition:
+                all 0.2s ease;
+
+        }
+
+
+        .year-button:hover {
+
+            border-color:
+                var(--gold);
+
+            color:
+                var(--gold);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .year-button.selected {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           INSTRUCTION AREA
+           ===================================================== */
+
+        .instructions {
+
+            display: none;
+
+            margin-top: 30px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 18px;
+
+            padding:
+                30px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(245,197,66,0.09),
+                    transparent 45%
+                ),
+                #111;
+
+        }
+
+
+        .instructions.show {
+
+            display: block;
+
+            animation:
+                fadeIn 0.35s ease;
+
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
 
             }
 
+            to {
 
+                opacity: 1;
 
-            /*
-             * =================================
-             * STEP 1
-             * Level selected
-             * =================================
-             */
-
-            if (
-                state.step === 1
-            ) {
-
-                clearInterval(
-                    temporaryTimerInterval
-                );
-
-
-                selectedLevel =
-                    state.level || "";
-
-                selectedPaper = 0;
-
-                selectedYear = 0;
-
-
-                /*
-                 * Show paper section
-                 */
-
-                document.getElementById(
-                    "paperSection"
-                ).style.display = "block";
-
-
-                /*
-                 * Hide year
-                 */
-
-                document.getElementById(
-                    "yearSection"
-                ).style.display = "none";
-
-
-                /*
-                 * Hide instructions
-                 */
-
-                document.getElementById(
-                    "instructions"
-                ).classList.remove(
-                    "show"
-                );
-
-
-                /*
-                 * Hide paper
-                 */
-
-                document.getElementById(
-                    "paperArea"
-                ).classList.remove(
-                    "show"
-                );
-
-
-                /*
-                 * Restore level button
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".choice-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            btn.classList.remove(
-                                "selected"
-                            );
-
-                        }
-                    );
-
-
-                const levelButtons =
-                    document.querySelectorAll(
-                        ".pp-main > .selection-card:first-of-type .choice-button"
-                    );
-
-
-                levelButtons.forEach(
-                    function(btn) {
-
-                        const onclickText =
-                            btn.getAttribute(
-                                "onclick"
-                            ) || "";
-
-
-                        if (
-                            onclickText.includes(
-                                "'" +
-                                selectedLevel +
-                                "'"
-                            )
-                        ) {
-
-                            btn.classList.add(
-                                "selected"
-                            );
-
-                        }
-
-                    }
-                );
-
-
-                window.scrollTo({
-                    top:
-                        document.querySelector(
-                            ".pp-main > .selection-card"
-                        ).offsetTop - 20,
-                    behavior: "smooth"
-                });
-
-
-                return;
-
-            }
-
-
-
-            /*
-             * =================================
-             * STEP 2
-             * Paper selected
-             * =================================
-             */
-
-            if (
-                state.step === 2
-            ) {
-
-                clearInterval(
-                    temporaryTimerInterval
-                );
-
-
-                selectedLevel =
-                    state.level || "";
-
-                selectedPaper =
-                    state.paper || 0;
-
-                selectedYear = 0;
-
-
-                /*
-                 * Show paper section
-                 */
-
-                document.getElementById(
-                    "paperSection"
-                ).style.display = "block";
-
-
-                /*
-                 * Show year section
-                 */
-
-                document.getElementById(
-                    "yearSection"
-                ).style.display = "block";
-
-
-                /*
-                 * Hide instructions
-                 */
-
-                document.getElementById(
-                    "instructions"
-                ).classList.remove(
-                    "show"
-                );
-
-
-                /*
-                 * Hide paper
-                 */
-
-                document.getElementById(
-                    "paperArea"
-                ).classList.remove(
-                    "show"
-                );
-
-
-                /*
-                 * Remove all selected
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".choice-button, .year-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            btn.classList.remove(
-                                "selected"
-                            );
-
-                        }
-                    );
-
-
-                /*
-                 * Restore level button
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".pp-main > .selection-card:first-of-type .choice-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            const text =
-                                btn.getAttribute(
-                                    "onclick"
-                                ) || "";
-
-
-                            if (
-                                text.includes(
-                                    "'" +
-                                    selectedLevel +
-                                    "'"
-                                )
-                            ) {
-
-                                btn.classList.add(
-                                    "selected"
-                                );
-
-                            }
-
-                        }
-                    );
-
-
-                /*
-                 * Restore paper button
-                 */
-
-                document
-                    .querySelectorAll(
-                        "#paperSection .choice-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            const text =
-                                btn.getAttribute(
-                                    "onclick"
-                                ) || "";
-
-
-                            if (
-                                text.includes(
-                                    "(" +
-                                    selectedPaper +
-                                    ","
-                                )
-                            ) {
-
-                                btn.classList.add(
-                                    "selected"
-                                );
-
-                            }
-
-                        }
-                    );
-
-
-                window.scrollTo({
-                    top:
-                        document.getElementById(
-                            "yearSection"
-                        ).offsetTop - 20,
-                    behavior: "smooth"
-                });
-
-
-                return;
-
-            }
-
-
-
-            /*
-             * =================================
-             * STEP 3
-             * Year selected / instructions
-             * =================================
-             */
-
-            if (
-                state.step === 3
-            ) {
-
-                clearInterval(
-                    temporaryTimerInterval
-                );
-
-
-                selectedLevel =
-                    state.level || "";
-
-                selectedPaper =
-                    state.paper || 0;
-
-                selectedYear =
-                    state.year || 0;
-
-
-                /*
-                 * Show all selection sections
-                 */
-
-                document.getElementById(
-                    "paperSection"
-                ).style.display = "block";
-
-
-                document.getElementById(
-                    "yearSection"
-                ).style.display = "block";
-
-
-                /*
-                 * Show instructions
-                 */
-
-                document.getElementById(
-                    "instructions"
-                ).classList.add(
-                    "show"
-                );
-
-
-                /*
-                 * Hide paper
-                 */
-
-                document.getElementById(
-                    "paperArea"
-                ).classList.remove(
-                    "show"
-                );
-
-
-                /*
-                 * Remove selected classes
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".choice-button, .year-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            btn.classList.remove(
-                                "selected"
-                            );
-
-                        }
-                    );
-
-
-                /*
-                 * Restore level
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".pp-main > .selection-card:first-of-type .choice-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            const text =
-                                btn.getAttribute(
-                                    "onclick"
-                                ) || "";
-
-
-                            if (
-                                text.includes(
-                                    "'" +
-                                    selectedLevel +
-                                    "'"
-                                )
-                            ) {
-
-                                btn.classList.add(
-                                    "selected"
-                                );
-
-                            }
-
-                        }
-                    );
-
-
-                /*
-                 * Restore paper
-                 */
-
-                document
-                    .querySelectorAll(
-                        "#paperSection .choice-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            const text =
-                                btn.getAttribute(
-                                    "onclick"
-                                ) || "";
-
-
-                            if (
-                                text.includes(
-                                    "(" +
-                                    selectedPaper +
-                                    ","
-                                )
-                            ) {
-
-                                btn.classList.add(
-                                    "selected"
-                                );
-
-                            }
-
-                        }
-                    );
-
-
-                /*
-                 * Restore year
-                 */
-
-                document
-                    .querySelectorAll(
-                        ".year-button"
-                    )
-                    .forEach(
-                        function(btn) {
-
-                            if (
-                                btn.textContent.trim()
-                                ===
-                                String(selectedYear)
-                            ) {
-
-                                btn.classList.add(
-                                    "selected"
-                                );
-
-                            }
-
-                        }
-                    );
-
-
-                window.scrollTo({
-                    top:
-                        document.getElementById(
-                            "instructions"
-                        ).offsetTop - 20,
-                    behavior: "smooth"
-                });
-
-
-                return;
-
-            }
-
-
-
-            /*
-             * =================================
-             * STEP 4
-             * Paper opened
-             * =================================
-             */
-
-            if (
-                state.step === 4
-            ) {
-
-                selectedLevel =
-                    state.level || "";
-
-                selectedPaper =
-                    state.paper || 0;
-
-                selectedYear =
-                    state.year || 0;
-
-
-                /*
-                 * Show selections
-                 */
-
-                document.getElementById(
-                    "paperSection"
-                ).style.display = "block";
-
-
-                document.getElementById(
-                    "yearSection"
-                ).style.display = "block";
-
-
-                /*
-                 * Show instructions
-                 */
-
-                document.getElementById(
-                    "instructions"
-                ).classList.add(
-                    "show"
-                );
-
-
-                /*
-                 * Update heading
-                 */
-
-                document.getElementById(
-                    "selectedPaperTitle"
-                ).textContent =
-                    selectedPaper === 1
-                        ? "පළමු පත්‍රය"
-                        : "දෙවන පත්‍රය";
-
-
-                document.getElementById(
-                    "selectedYearTitle"
-                ).textContent =
-                    selectedYear;
-
-
-                /*
-                 * Show paper
-                 */
-
-                document.getElementById(
-                    "paperArea"
-                ).classList.add(
-                    "show"
-                );
-
-
-                /*
-                 * Start timer again
-                 */
-
-                startTemporaryTimer();
-
-
-                setTimeout(function() {
-
-                    document.getElementById(
-                        "paperArea"
-                    ).scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }, 100);
+                transform:
+                    translateY(0);
 
             }
 
         }
-    );
 
-</script>
+
+        .instruction-heading {
+
+            color: var(--gold);
+
+            font-size: 25px;
+
+            margin:
+                0 0 20px;
+
+        }
+
+
+        .instruction-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+        .instruction-list li {
+
+            padding:
+                12px 0;
+
+            border-bottom:
+                1px solid #292929;
+
+            color: #ddd;
+
+            line-height: 1.6;
+
+        }
+
+
+        .instruction-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .instruction-list li::before {
+
+            content: "✓";
+
+            color: var(--gold);
+
+            font-weight: bold;
+
+            margin-right: 10px;
+
+        }
+
+
+        .time-box {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin:
+                25px 0;
+
+            padding:
+                18px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.30);
+
+            border-radius: 12px;
+
+            background:
+                rgba(245,197,66,0.05);
+
+            color: var(--gold);
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+        }
+
+
+        .start-button {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding:
+                17px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .start-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(245,197,66,0.20);
+
+        }
+
+
+
+        /* =====================================================
+           PAPER PLACEHOLDER
+           ===================================================== */
+
+        .paper-area {
+
+            display: none;
+
+            margin-top: 35px;
+
+        }
+
+
+        .paper-area.show {
+
+            display: block;
+
+            animation:
+                fadeIn 0.4s ease;
+
+        }
+
+
+        .paper-header {
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #0d0d0d
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.40);
+
+            border-radius: 18px;
+
+            padding:
+                30px 20px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .paper-header h2 {
+
+            margin:
+                0 0 10px;
+
+            font-size: 25px;
+
+        }
+
+
+        .paper-header h2 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .paper-title {
+
+            color: #ccc;
+
+            font-size: 17px;
+
+        }
+
+
+        .timer-placeholder {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding:
+                10px 20px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 30px;
+
+            color: var(--gold);
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            background:
+                rgba(245,197,66,0.06);
+
+        }
+
+
+        .coming-paper {
+
+            background: #111;
+
+            border:
+                1px dashed #555;
+
+            border-radius: 15px;
+
+            padding:
+                35px 25px;
+
+            text-align: center;
+
+            color: #aaa;
+
+        }
+
+
+        .coming-paper strong {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        /* =====================================================
+           BACK BUTTON
+           ===================================================== */
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-button:hover {
+
+            color: var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .pp-footer {
+
+            border-top:
+                1px solid #242424;
+
+            background: #080808;
+
+            padding:
+                25px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .pp-header-inner {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .pp-logo {
+
+                min-width: auto;
+
+            }
+
+
+            .pp-nav {
+
+                order: 3;
+
+                width: 100%;
+
+            }
+
+
+            .choice-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .year-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .pp-header-inner {
+
+                padding:
+                    10px 15px;
+
+            }
+
+
+            .pp-logo-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .pp-logo-symbol {
+
+                width: 48px;
+
+                height: 48px;
+
+            }
+
+
+            .pp-logo-tagline {
+
+                font-size: 8px;
+
+            }
+
+
+            .pp-nav a {
+
+                font-size: 11px;
+
+                padding:
+                    10px 7px;
+
+            }
+
+
+            .pp-main {
+
+                padding:
+                    35px 15px 60px;
+
+            }
+
+
+            .selection-card {
+
+                padding:
+                    22px 16px;
+
+            }
+
+
+            .step-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .year-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .instructions {
+
+                padding:
+                    22px 17px;
+
+            }
+
+
+            .pp-hero h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+
+    </style>
 
 </head>
 
@@ -1831,6 +1794,36 @@
     let selectedYear = 0;
 
 
+    /*
+     * =========================================
+     * TIMER
+     * =========================================
+     */
+
+    let temporarySeconds = 3600;
+
+    let temporaryTimerInterval = null;
+
+
+
+    /*
+     * =========================================
+     * INITIAL HISTORY STATE
+     * =========================================
+     *
+     * Past Papers page එකේ මුල් state එක.
+     */
+
+    history.replaceState(
+        {
+            step: 0
+        },
+        "",
+        window.location.pathname +
+        window.location.search
+    );
+
+
 
     /*
      * =========================================
@@ -1848,14 +1841,27 @@
 
 
         /*
-         * Remove old selected buttons
+         * Stop timer if running
+         */
+
+        clearInterval(
+            temporaryTimerInterval
+        );
+
+
+        /*
+         * Remove old selections
          */
 
         document
-            .querySelectorAll(".choice-button")
+            .querySelectorAll(
+                ".choice-button, .year-button"
+            )
             .forEach(function(btn) {
 
-                btn.classList.remove("selected");
+                btn.classList.remove(
+                    "selected"
+                );
 
             });
 
@@ -1864,7 +1870,7 @@
 
 
         /*
-         * Show paper selection
+         * Show Paper section
          */
 
         const paperSection =
@@ -1872,13 +1878,12 @@
                 "paperSection"
             );
 
-
         paperSection.style.display =
             "block";
 
 
         /*
-         * Hide year and instructions
+         * Hide Year section
          */
 
         document.getElementById(
@@ -1887,13 +1892,45 @@
             "none";
 
 
+        /*
+         * Hide instructions
+         */
+
         document.getElementById(
             "instructions"
-        ).classList.remove("show");
+        ).classList.remove(
+            "show"
+        );
 
 
         /*
-         * Scroll to paper selection
+         * Hide paper
+
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+         */
+
+        history.pushState(
+            {
+                step: 1,
+                level: level
+            },
+            "",
+            "#level"
+        );
+
+
+        /*
+         * Scroll
          */
 
         setTimeout(function() {
@@ -1919,33 +1956,49 @@
 
         selectedPaper = paper;
 
+        selectedYear = 0;
+
 
         /*
-         * Only paper buttons
+         * Remove selected paper buttons
          */
 
-        const paperButtons =
-            document.querySelectorAll(
+        document
+            .querySelectorAll(
                 "#paperSection .choice-button"
-            );
-
-
-        paperButtons.forEach(
-            function(btn) {
+            )
+            .forEach(function(btn) {
 
                 btn.classList.remove(
                     "selected"
                 );
 
-            }
-        );
+            });
+
+
+        /*
+         * Remove old selected year
+
+         */
+
+        document
+            .querySelectorAll(
+                ".year-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            });
 
 
         button.classList.add("selected");
 
 
         /*
-         * Show year selection
+         * Show year section
          */
 
         const yearSection =
@@ -1953,18 +2006,46 @@
                 "yearSection"
             );
 
-
         yearSection.style.display =
             "block";
 
 
         /*
-         * Hide previous instruction
+         * Hide instructions
          */
 
         document.getElementById(
             "instructions"
-        ).classList.remove("show");
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Hide paper
+
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+         */
+
+        history.pushState(
+            {
+                step: 2,
+                level: selectedLevel,
+                paper: paper
+            },
+            "",
+            "#paper"
+        );
 
 
         /*
@@ -1996,11 +2077,13 @@
 
 
         /*
-         * Remove selected year
+         * Remove old selected year
          */
 
         document
-            .querySelectorAll(".year-button")
+            .querySelectorAll(
+                ".year-button"
+            )
             .forEach(function(btn) {
 
                 btn.classList.remove(
@@ -2022,14 +2105,43 @@
                 "instructions"
             );
 
-
         instructions.classList.add(
             "show"
         );
 
 
         /*
-         * Scroll to instructions
+         * Hide paper
+
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+
+         */
+
+        history.pushState(
+            {
+                step: 3,
+                level: selectedLevel,
+                paper: selectedPaper,
+                year: year
+            },
+            "",
+            "#year"
+        );
+
+
+        /*
+         * Scroll
+
          */
 
         setTimeout(function() {
@@ -2099,7 +2211,7 @@
 
 
         /*
-         * Show paper area
+         * Show paper
          */
 
         const paperArea =
@@ -2111,6 +2223,29 @@
         paperArea.classList.add(
             "show"
         );
+
+
+        /*
+         * Add browser history
+         */
+
+        history.pushState(
+            {
+                step: 4,
+                level: selectedLevel,
+                paper: selectedPaper,
+                year: selectedYear
+            },
+            "",
+            "#exam"
+        );
+
+
+        /*
+         * Start timer
+         */
+
+        startTemporaryTimer();
 
 
         /*
@@ -2126,19 +2261,6 @@
 
         }, 100);
 
-
-        /*
-         * -------------------------------------
-         * TEMPORARY TIMER DISPLAY
-         * -------------------------------------
-         *
-         * Real 60-minute timer will be added
-         * when the actual questions are added.
-         *
-         */
-
-        startTemporaryTimer();
-
     }
 
 
@@ -2147,16 +2269,7 @@
      * =========================================
      * TEMPORARY TIMER
      * =========================================
-     *
-     * This is only for testing the page.
-     * The final timer will be replaced with
-     * the complete 60-minute exam timer.
      */
-
-    let temporarySeconds = 3600;
-
-    let temporaryTimerInterval = null;
-
 
     function startTemporaryTimer() {
 
@@ -2198,6 +2311,12 @@
 
 
 
+    /*
+     * =========================================
+     * UPDATE TIMER
+     * =========================================
+     */
+
     function updateTemporaryTimer() {
 
         const minutes =
@@ -2227,6 +2346,729 @@
             );
 
     }
+
+
+
+    /*
+     * =========================================
+     * RESTORE LEVEL BUTTON
+     * =========================================
+     */
+
+    function restoreLevelButton() {
+
+        document
+            .querySelectorAll(
+                ".pp-main > .selection-card:first-of-type .choice-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+
+                const onclickText =
+                    btn.getAttribute(
+                        "onclick"
+                    ) || "";
+
+
+                if (
+                    onclickText.includes(
+                        "'" +
+                        selectedLevel +
+                        "'"
+                    )
+                ) {
+
+                    btn.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+
+    /*
+     * =========================================
+     * RESTORE PAPER BUTTON
+     * =========================================
+     */
+
+    function restorePaperButton() {
+
+        document
+            .querySelectorAll(
+                "#paperSection .choice-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+
+                const onclickText =
+                    btn.getAttribute(
+                        "onclick"
+                    ) || "";
+
+
+                if (
+                    onclickText.includes(
+                        "(" +
+                        selectedPaper +
+                        ","
+                    )
+                ) {
+
+                    btn.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+
+    /*
+     * =========================================
+     * RESTORE YEAR BUTTON
+     * =========================================
+     */
+
+    function restoreYearButton() {
+
+        document
+            .querySelectorAll(
+                ".year-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+
+                if (
+                    btn.textContent.trim()
+                    ===
+                    String(selectedYear)
+                ) {
+
+                    btn.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+
+    /*
+     * =========================================
+     * BROWSER BACK / FORWARD
+     * =========================================
+     */
+
+    window.addEventListener(
+        "popstate",
+        function(event) {
+
+            const state =
+                event.state;
+
+
+            /*
+             * =================================
+             * STEP 0
+             * Main Past Papers page
+             * =================================
+             */
+
+            if (
+                !state ||
+                state.step === 0
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel = "";
+
+                selectedPaper = 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Hide Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "none";
+
+
+                /*
+                 * Hide Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "none";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide exam
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selected buttons
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Scroll to top
+                 */
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 1
+             * Level selected
+             * =================================
+             */
+
+            if (
+                state.step === 1
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper = 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Hide Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "none";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selections
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Restore level
+                 */
+
+                restoreLevelButton();
+
+
+                /*
+                 * Scroll to Paper section
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "paperSection"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 50);
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 2
+             * Paper selected
+             * =================================
+             */
+
+            if (
+                state.step === 2
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove old selections
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Restore level
+                 */
+
+                restoreLevelButton();
+
+
+                /*
+                 * Restore paper
+                 */
+
+                restorePaperButton();
+
+
+                /*
+                 * Scroll to Year section
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "yearSection"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 50);
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 3
+             * Year selected
+             * =================================
+             */
+
+            if (
+                state.step === 3
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear =
+                    state.year || 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selections
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Restore level
+                 */
+
+                restoreLevelButton();
+
+
+                /*
+                 * Restore paper
+                 */
+
+                restorePaperButton();
+
+
+                /*
+                 * Restore year
+                 */
+
+                restoreYearButton();
+
+
+                /*
+                 * Scroll to instructions
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "instructions"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 50);
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 4
+             * Paper opened
+             * =================================
+             */
+
+            if (
+                state.step === 4
+            ) {
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear =
+                    state.year || 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Restore selections
+                 */
+
+                restoreLevelButton();
+
+                restorePaperButton();
+
+                restoreYearButton();
+
+
+                /*
+                 * Update paper title
+                 */
+
+                document.getElementById(
+                    "selectedPaperTitle"
+                ).textContent =
+
+                    selectedPaper === 1
+                        ? "පළමු පත්‍රය"
+                        : "දෙවන පත්‍රය";
+
+
+                document.getElementById(
+                    "selectedYearTitle"
+                ).textContent =
+                    selectedYear;
+
+
+                /*
+                 * Show paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Restart temporary timer
+                 */
+
+                startTemporaryTimer();
+
+
+                /*
+                 * Scroll to paper
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "paperArea"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }, 50);
+
+            }
+
+        }
+    );
 
 </script>
 
