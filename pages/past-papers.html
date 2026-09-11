@@ -1,493 +1,3163 @@
 <!DOCTYPE html>
 <html lang="si">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Past Papers | Unique EduZone</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}:root{--bg:#070707;--card:#111;--gold:#d4af37;--muted:#bdbdbd;--border:rgba(212,175,55,.35)}
-body{font-family:Arial,"Noto Sans Sinhala",sans-serif;background:var(--bg);color:#fff;line-height:1.7}a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:100;background:rgba(7,7,7,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
-.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:18px}.logo{font-size:22px;font-weight:900;color:var(--gold);white-space:nowrap}.nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav-links a{padding:7px 10px;border-radius:8px;color:#eee;font-size:13px}.nav-links a:hover{background:#191919;color:var(--gold)}
-.hero{max-width:1200px;margin:auto;padding:55px 20px 30px;text-align:center}.hero h1{font-size:clamp(28px,5vw,48px);color:var(--gold);margin-bottom:10px}.hero p{color:var(--muted);font-size:17px}
-.container{max-width:1100px;margin:auto;padding:10px 20px 60px}.step-card{background:linear-gradient(145deg,#121212,#0c0c0c);border:1px solid var(--border);border-radius:20px;padding:26px;margin:18px 0;box-shadow:0 10px 35px rgba(0,0,0,.25)}.step-title{font-size:22px;color:var(--gold);font-weight:800;margin-bottom:18px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.year-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.choice-button,.year-button{width:100%;padding:16px;border:1px solid #333;border-radius:13px;background:#181818;color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:.2s}.choice-button:hover,.year-button:hover,.choice-button.selected,.year-button.selected{border-color:var(--gold);color:var(--gold);background:#211d0c}
-#paperSection,#yearSection,#instructions{display:none}#instructions.show{display:block}.instruction-list{padding-left:22px;color:#ddd}.instruction-list li{margin:6px 0}.start-btn{width:100%;padding:17px;border:0;border-radius:13px;background:var(--gold);color:#080808;font-size:18px;font-weight:900;cursor:pointer;margin-top:20px}
-#paperArea{display:none;margin-top:25px}#paperArea.show{display:block}.paper-head{background:linear-gradient(145deg,#171717,#0d0d0d);border:1px solid var(--border);border-radius:20px;padding:25px;text-align:center;position:sticky;top:72px;z-index:50}.paper-head h2{font-size:24px;color:var(--gold)}.paper-head .year{font-size:22px;font-weight:800;margin:5px 0}.paper-head .subject{color:#ddd}.timer-wrap{margin-top:15px;display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border:1px solid var(--gold);border-radius:999px;background:#0b0b0b}.timer-label{color:#ddd;font-weight:700}#timer{font-size:27px;color:var(--gold);font-weight:900;min-width:75px}#timer.warning{animation:paperTimerPulse 1s infinite;color:#ffdf65}@keyframes paperTimerPulse{50%{transform:scale(1.06);opacity:.7}}
-#paper2025Questions{display:flex;flex-direction:column;gap:18px;margin-top:20px}.paper2025-question{background:#111;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 8px 25px rgba(0,0,0,.25)}.paper2025-q-number{color:var(--gold);font-weight:800;font-size:18px;margin-bottom:10px}.paper2025-q-text{color:#fff;font-size:17px;line-height:1.8;white-space:pre-line}.paper2025-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.paper2025-option{display:flex;align-items:flex-start;gap:10px;background:#181818;border:1px solid #333;border-radius:12px;padding:13px;color:#eee;cursor:pointer;transition:.2s}.paper2025-option:hover{border-color:var(--gold)}.paper2025-option input{margin-top:5px;accent-color:var(--gold)}.paper2025-option-number{min-width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--gold);color:#080808;font-weight:800}
-#paper2025Warning{display:none;margin:15px 0;padding:14px 16px;border:1px solid var(--gold);border-radius:12px;color:#ffd966;background:#241f0b;font-weight:700}#finish2025Btn{display:block;width:100%;margin:25px 0;padding:16px 20px;border:0;border-radius:12px;background:var(--gold);color:#080808;font-size:18px;font-weight:800;cursor:pointer}#finish2025Btn:disabled{opacity:.5;cursor:not-allowed}#paper2025Result{display:none;margin-top:25px}.paper2025-score{text-align:center;background:#111;border:2px solid var(--gold);border-radius:18px;padding:28px 20px;margin-bottom:25px}.paper2025-score-label{color:#ddd;line-height:1.7}.paper2025-score-number{color:var(--gold);font-size:52px;font-weight:900;margin:8px 0}.paper2025-score-percent{color:#fff;font-size:22px;font-weight:800}.paper2025-review{background:#111;border:1px solid #333;border-radius:14px;padding:16px;margin:10px 0}.paper2025-review.correct{border-color:#277a4a}.paper2025-review.wrong{border-color:#8a3434}.paper2025-review-title{font-weight:900;color:var(--gold);margin-bottom:7px}.paper2025-review .answer-text{color:#ddd;margin-top:5px}.result-heading{color:var(--gold);font-size:22px;margin:25px 0 10px}.back-home{display:inline-block;margin-top:20px;padding:12px 18px;border:1px solid var(--gold);border-radius:10px;color:var(--gold)}footer{border-top:1px solid #222;text-align:center;color:#888;padding:25px 20px}
-@media(max-width:700px){.nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.choice-grid,.paper2025-options{grid-template-columns:1fr}.year-grid{grid-template-columns:repeat(2,1fr)}.paper-head{top:0}}
-</style></head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        පසුගිය විභාග ප්‍රශ්න පත්‍ර | Unique EduZone
+    </title>
+
+    <!-- Existing Main CSS -->
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           UNIQUE EDUZONE
+           PAST PAPERS PAGE
+           BLACK & GOLD DESIGN
+           ===================================================== */
+
+        :root {
+
+            --gold: #f5c542;
+            --gold-light: #ffd95a;
+            --gold-dark: #b88900;
+
+            --black: #050505;
+            --black-2: #0b0b0b;
+            --card: #111111;
+            --card-2: #171717;
+
+            --white: #ffffff;
+            --text: #eeeeee;
+            --muted: #a9a9a9;
+
+            --border: rgba(245,197,66,0.35);
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                "Noto Sans Sinhala",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 80% 15%,
+                    rgba(245,197,66,0.08),
+                    transparent 30%
+                ),
+                #050505;
+
+            color: var(--white);
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        .pp-header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            width: 100%;
+
+            background:
+                rgba(3,3,3,0.96);
+
+            border-bottom:
+                1px solid
+                rgba(245,197,66,0.18);
+
+            backdrop-filter:
+                blur(15px);
+
+        }
+
+
+        .pp-header-inner {
+
+            max-width: 1500px;
+
+            margin: auto;
+
+            min-height: 82px;
+
+            padding:
+                10px 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+
+        /* =====================================================
+           LOGO
+           ===================================================== */
+
+        .pp-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            min-width: 280px;
+
+        }
+
+
+        .pp-logo-symbol {
+
+            width: 58px;
+
+            height: 58px;
+
+            border:
+                1px solid
+                var(--gold);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #222 0%,
+                    #050505 70%
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        .pp-logo-symbol img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+        }
+
+
+        .pp-logo-title {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            line-height: 1;
+
+        }
+
+
+        .pp-logo-title span {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-logo-tagline {
+
+            margin-top: 6px;
+
+            font-size: 10px;
+
+            color: #aaa;
+
+            letter-spacing: 0.4px;
+
+        }
+
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        .pp-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 3px;
+
+            flex: 1;
+
+            overflow-x: auto;
+
+            white-space: nowrap;
+
+            scrollbar-width: thin;
+
+            scrollbar-color:
+                var(--gold)
+                #111;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar {
+
+            height: 5px;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar-track {
+
+            background: #111;
+
+        }
+
+
+        .pp-nav::-webkit-scrollbar-thumb {
+
+            background: var(--gold);
+
+            border-radius: 10px;
+
+        }
+
+
+        .pp-nav a {
+
+            flex: 0 0 auto;
+
+            color: #eee;
+
+            padding:
+                12px 10px;
+
+            font-size: 13px;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .pp-nav a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-nav a.active {
+
+            color: var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        .pp-main {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                55px 25px 80px;
+
+        }
+
+
+
+        /* =====================================================
+           PAGE HERO
+           ===================================================== */
+
+        .pp-hero {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .pp-badge {
+
+            display: inline-block;
+
+            padding:
+                9px 20px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(245,197,66,0.10);
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            color: var(--gold);
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .pp-hero h1 {
+
+            margin:
+                0 0 15px;
+
+            font-size:
+                clamp(32px, 5vw, 54px);
+
+            font-weight: 900;
+
+        }
+
+
+        .pp-hero h1 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .pp-hero p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #aaa;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+        }
+
+
+
+        /* =====================================================
+           STEP CARD
+           ===================================================== */
+
+        .selection-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #0c0c0c
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.30);
+
+            border-radius: 20px;
+
+            padding:
+                35px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        .step-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin:
+                0 0 25px;
+
+            font-size: 24px;
+
+        }
+
+
+        .step-number {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #000;
+
+            font-weight: 900;
+
+        }
+
+
+
+        /* =====================================================
+           CHOICE GRID
+           ===================================================== */
+
+        .choice-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .choice-button {
+
+            border:
+                1px solid
+                rgba(245,197,66,0.35);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #101010
+                );
+
+            color: white;
+
+            border-radius: 15px;
+
+            padding:
+                25px 20px;
+
+            cursor: pointer;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .choice-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.07);
+
+            box-shadow:
+                0 10px 30px
+                rgba(245,197,66,0.10);
+
+        }
+
+
+        .choice-button.selected {
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.12);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(245,197,66,0.10);
+
+        }
+
+
+        .choice-icon {
+
+            display: block;
+
+            font-size: 38px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .choice-small {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: #999;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+        }
+
+
+
+        /* =====================================================
+           YEAR GRID
+           ===================================================== */
+
+        .year-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .year-button {
+
+            border:
+                1px solid
+                #333;
+
+            background: #101010;
+
+            color: #eee;
+
+            border-radius: 10px;
+
+            padding:
+                15px 10px;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            transition:
+                all 0.2s ease;
+
+        }
+
+
+        .year-button:hover {
+
+            border-color:
+                var(--gold);
+
+            color:
+                var(--gold);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .year-button.selected {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           INSTRUCTION AREA
+           ===================================================== */
+
+        .instructions {
+
+            display: none;
+
+            margin-top: 30px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 18px;
+
+            padding:
+                30px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(245,197,66,0.09),
+                    transparent 45%
+                ),
+                #111;
+
+        }
+
+
+        .instructions.show {
+
+            display: block;
+
+            animation:
+                fadeIn 0.35s ease;
+
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .instruction-heading {
+
+            color: var(--gold);
+
+            font-size: 25px;
+
+            margin:
+                0 0 20px;
+
+        }
+
+
+        .instruction-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+
+        }
+
+
+        .instruction-list li {
+
+            padding:
+                12px 0;
+
+            border-bottom:
+                1px solid #292929;
+
+            color: #ddd;
+
+            line-height: 1.6;
+
+        }
+
+
+        .instruction-list li:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .instruction-list li::before {
+
+            content: "✓";
+
+            color: var(--gold);
+
+            font-weight: bold;
+
+            margin-right: 10px;
+
+        }
+
+
+        .time-box {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin:
+                25px 0;
+
+            padding:
+                18px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.30);
+
+            border-radius: 12px;
+
+            background:
+                rgba(245,197,66,0.05);
+
+            color: var(--gold);
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+        }
+
+
+        .start-button {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding:
+                17px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .start-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(245,197,66,0.20);
+
+        }
+
+
+
+        /* =====================================================
+           PAPER PLACEHOLDER
+           ===================================================== */
+
+        .paper-area {
+
+            display: none;
+
+            margin-top: 35px;
+
+        }
+
+
+        .paper-area.show {
+
+            display: block;
+
+            animation:
+                fadeIn 0.4s ease;
+
+        }
+
+
+        .paper-header {
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #0d0d0d
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.40);
+
+            border-radius: 18px;
+
+            padding:
+                30px 20px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .paper-header h2 {
+
+            margin:
+                0 0 10px;
+
+            font-size: 25px;
+
+        }
+
+
+        .paper-header h2 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .paper-title {
+
+            color: #ccc;
+
+            font-size: 17px;
+
+        }
+
+
+        .timer-placeholder {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding:
+                10px 20px;
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 30px;
+
+            color: var(--gold);
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+            background:
+                rgba(245,197,66,0.06);
+
+        }
+
+
+        .coming-paper {
+
+            background: #111;
+
+            border:
+                1px dashed #555;
+
+            border-radius: 15px;
+
+            padding:
+                35px 25px;
+
+            text-align: center;
+
+            color: #aaa;
+
+        }
+
+
+        .coming-paper strong {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        /* =====================================================
+           BACK BUTTON
+           ===================================================== */
+
+        .back-button {
+
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-button:hover {
+
+            color: var(--gold);
+
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .pp-footer {
+
+            border-top:
+                1px solid #242424;
+
+            background: #080808;
+
+            padding:
+                25px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .pp-header-inner {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .pp-logo {
+
+                min-width: auto;
+
+            }
+
+
+            .pp-nav {
+
+                order: 3;
+
+                width: 100%;
+
+            }
+
+
+            .choice-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .year-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .pp-header-inner {
+
+                padding:
+                    10px 15px;
+
+            }
+
+
+            .pp-logo-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .pp-logo-symbol {
+
+                width: 48px;
+
+                height: 48px;
+
+            }
+
+
+            .pp-logo-tagline {
+
+                font-size: 8px;
+
+            }
+
+
+            .pp-nav a {
+
+                font-size: 11px;
+
+                padding:
+                    10px 7px;
+
+            }
+
+
+            .pp-main {
+
+                padding:
+                    35px 15px 60px;
+
+            }
+
+
+            .selection-card {
+
+                padding:
+                    22px 16px;
+
+            }
+
+
+            .step-title {
+
+                font-size: 20px;
+
+            }
+
+
+            .year-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .instructions {
+
+                padding:
+                    22px 17px;
+
+            }
+
+
+            .pp-hero h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+
+    
+/* =====================================================
+   2025 PAPER I – ONLINE EXAM
+   Added without changing the original page design
+   ===================================================== */
+.paper-intro-box,.paper-context-box,.question-card,.result-box{
+    background:linear-gradient(145deg,#171717,#0d0d0d);
+    border:1px solid rgba(245,197,66,.28);
+    border-radius:18px;
+    padding:24px;
+    margin-bottom:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.20);
+}
+.paper-intro-box{border-color:rgba(245,197,66,.45);text-align:center}
+.paper-intro-box h3,.paper-context-box h3{color:var(--gold);margin:0 0 14px;font-size:21px}
+.paper-context-box{line-height:1.95;color:#e8e8e8}
+.paper-context-box p{margin:8px 0}
+.question-card{position:relative}
+.question-number{color:var(--gold);font-weight:900;font-size:19px;margin-bottom:12px}
+.question-text{font-size:17px;line-height:1.85;color:#f3f3f3;margin-bottom:16px}
+.option-grid-online{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option-button-online{border:1px solid #333;background:#101010;color:#eee;border-radius:12px;padding:14px 15px;text-align:left;cursor:pointer;font-size:15px;line-height:1.65;transition:.2s}
+.option-button-online:hover{border-color:var(--gold);background:rgba(245,197,66,.06)}
+.option-button-online.selected{border-color:var(--gold);background:rgba(245,197,66,.13);box-shadow:0 0 0 2px rgba(245,197,66,.08)}
+.paper-context-title{color:var(--gold);font-weight:900;margin-bottom:10px;font-size:18px}
+.finish-paper-btn{width:100%;border:none;border-radius:13px;padding:17px 20px;background:linear-gradient(135deg,#ffd95a,#dca916);color:#050505;font-size:18px;font-weight:900;cursor:pointer;margin:10px 0 25px}
+.finish-paper-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(245,197,66,.18)}
+.result-score{font-size:32px;font-weight:900;color:var(--gold);text-align:center;margin:10px 0 22px}
+.review-row{padding:15px 0;border-bottom:1px solid #292929;line-height:1.75}
+.review-row:last-child{border-bottom:none}
+.review-correct{color:#62d48b;font-weight:800}.review-wrong{color:#ff7373;font-weight:800}
+.data-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:15px}
+.data-table th,.data-table td{border:1px solid #383838;padding:9px;text-align:center}
+.data-table th{color:var(--gold);background:#151515}.data-table td:first-child{text-align:left}
+.warning-box{display:none;margin:0 0 18px;padding:13px 16px;border:1px solid #ffb000;border-radius:12px;background:rgba(255,176,0,.08);color:#ffd15c;font-weight:800;text-align:center}
+@media(max-width:600px){.option-grid-online{grid-template-columns:1fr}.paper-intro-box,.paper-context-box,.question-card{padding:18px}.question-text{font-size:16px}.data-table{font-size:13px}}
+
+    </style>
+
+</head>
+
+
 <body>
-<header><div class="nav"><a class="logo" href="../index.html">Unique EduZone</a><nav class="nav-links"><a href="../index.html">HOME</a><a href="about.html">ABOUT</a><a href="lessons.html">GRADE 10</a><a href="g11.html">GRADE 11</a><a href="quiz.html">MCQ</a><a href="past-papers.html">PAST PAPERS</a><a href="downloads.html">DOWNLOADS</a><a href="videos.html">VIDEOS</a><a href="profile.html">PROFILE</a><a href="dashboard.html">DASHBOARD</a></nav></div></header>
-<section class="hero"><h1>📄 Past Exam Papers</h1><p>පසුගිය විභාග ප්‍රශ්න පත්‍ර Online Practice</p></section>
-<main class="container">
-<section class="step-card" id="levelSection"><div class="step-title">01. විභාග මට්ටම තෝරන්න</div><div class="choice-grid"><button class="choice-button" onclick="selectLevel('ol',this)">O/L – සාමාන්‍ය පෙළ</button><button class="choice-button" onclick="selectLevel('al',this)">A/L – උසස් පෙළ</button></div></section>
-<section class="step-card" id="paperSection"><div class="step-title">02. පත්‍රය තෝරන්න</div><div class="choice-grid"><button class="choice-button" onclick="selectPaper(1,this)">📝 පළමු පත්‍රය – Paper I</button><button class="choice-button" onclick="selectPaper(2,this)">📘 දෙවන පත්‍රය – Paper II</button></div></section>
-<section class="step-card" id="yearSection"><div class="step-title">03. අවුරුද්ද තෝරන්න</div><div class="year-grid"><button class="year-button" onclick="selectYear(2016,this)">2016</button><button class="year-button" onclick="selectYear(2017,this)">2017</button><button class="year-button" onclick="selectYear(2018,this)">2018</button><button class="year-button" onclick="selectYear(2019,this)">2019</button><button class="year-button" onclick="selectYear(2020,this)">2020</button><button class="year-button" onclick="selectYear(2021,this)">2021</button><button class="year-button" onclick="selectYear(2022,this)">2022</button><button class="year-button" onclick="selectYear(2023,this)">2023</button><button class="year-button" onclick="selectYear(2024,this)">2024</button><button class="year-button" onclick="selectYear(2025,this)">2025</button></div></section>
-<section class="step-card" id="instructions"><div class="step-title">📌 ප්‍රශ්න පත්‍රයට පෙර උපදෙස්</div><ul class="instruction-list"><li>කාලය: <strong>විනාඩි 60</strong></li><li>Timer එක Start Answering කළ වහාම ආරම්භ වේ.</li><li>විනාඩි 60 අවසන් වූ විට පිළිතුරු ලබාදීම ස්වයංක්‍රීයව නවතී.</li><li>ප්‍රශ්නයකට පිළිතුරු දුන් වහාම ලකුණු හෝ නිවැරදි පිළිතුර පෙන්වන්නේ නැත.</li><li>Paper එක අවසන් කළ පසුව පමණක් ලකුණු සහ පිළිතුරු පරීක්ෂාව පෙන්වනු ලැබේ.</li><li>නැවත Paper එක කිරීමේදී පිළිතුරු විකල්පවල ස්ථාන වෙනස් වේ.</li></ul><button class="start-btn" onclick="startPaper()">▶ Start Answering</button></section>
-<section id="paperArea"><div class="paper-head"><h2>අධ්‍යයන පොදු සහතික පත්‍ර සාමාන්‍ය පෙළ විභාගය</h2><div class="year" id="selectedYearTitle"></div><div class="subject">ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය</div><div id="selectedPaperTitle" class="subject"></div><div class="timer-wrap"><span class="timer-label">⏱️ ඉතිරි කාලය</span><span id="timer">60:00</span></div></div><div id="paper2025Warning"></div><div id="paper2025Questions"></div><button id="finish2025Btn" type="button" onclick="submit2025Paper(false)">✅ Paper එක අවසන් කරන්න</button><div id="paper2025Result"></div></section>
-</main><footer>© Unique EduZone – Learn Smarter, Achieve Greater</footer>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="pp-header">
+
+    <div class="pp-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="../index.html"
+            class="pp-logo"
+        >
+
+            <div class="pp-logo-symbol">
+
+                <img
+                    src="../assets/images/logo.png"
+                    alt="Unique EduZone Logo"
+                >
+
+            </div>
+
+
+            <div>
+
+                <div class="pp-logo-title">
+
+                    Unique
+                    <span>
+                        EduZone
+                    </span>
+
+                </div>
+
+
+                <div class="pp-logo-tagline">
+
+                    LEARN SMARTER, ACHIEVE GREATER
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="pp-nav">
+
+            <a href="../index.html">
+                HOME
+            </a>
+
+            <a href="about.html">
+                ABOUT
+            </a>
+
+            <a href="lessons.html">
+                GRADE 10
+            </a>
+
+            <a href="g11.html">
+                GRADE 11
+            </a>
+
+            <a href="quiz.html">
+                MCQ
+            </a>
+
+            <a
+                href="past-papers.html"
+                class="active"
+            >
+                📄 PAST PAPERS
+            </a>
+
+            <a href="../accounting-practice.html">
+                🧮 ACCOUNTING
+            </a>
+
+            <a href="downloads.html">
+                DOWNLOADS
+            </a>
+
+            <a href="videos.html">
+                VIDEOS
+            </a>
+
+            <a href="profile.html">
+                👤 PROFILE
+            </a>
+
+            <a href="dashboard.html">
+                📊 DASHBOARD
+            </a>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main class="pp-main">
+
+
+    <!-- PAGE HERO -->
+
+    <section class="pp-hero">
+
+        <div class="pp-badge">
+            📄 PAST EXAM PAPERS
+        </div>
+
+
+        <h1>
+
+            පසුගිය විභාග
+            <span>
+                ප්‍රශ්න පත්‍ර
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            සාමාන්‍ය පෙළ සහ උසස් පෙළ
+            ව්‍යාපාර අධ්‍යයනය හා ගිණුම්කරණ
+            විෂයන් සඳහා පසුගිය විභාග
+            ප්‍රශ්න පත්‍ර online ආකාරයෙන්
+            පුහුණු වන්න.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STEP 01 – EXAM LEVEL
+         ===================================================== -->
+
+    <section class="selection-card">
+
+        <h2 class="step-title">
+
+            <span class="step-number">
+                1
+            </span>
+
+            විභාග මට්ටම තෝරන්න
+
+        </h2>
+
+
+        <div class="choice-grid">
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectLevel('ol', this)"
+            >
+
+                <span class="choice-icon">
+                    📘
+                </span>
+
+                සාමාන්‍ය පෙළ
+
+                <span class="choice-small">
+                    G.C.E. O/L
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectLevel('al', this)"
+            >
+
+                <span class="choice-icon">
+                    📚
+                </span>
+
+                උසස් පෙළ
+
+                <span class="choice-small">
+                    G.C.E. A/L
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STEP 02 – PAPER
+         ===================================================== -->
+
+    <section
+        class="selection-card"
+        id="paperSection"
+        style="display:none;"
+    >
+
+        <h2 class="step-title">
+
+            <span class="step-number">
+                2
+            </span>
+
+            ප්‍රශ්න පත්‍රය තෝරන්න
+
+        </h2>
+
+
+        <div class="choice-grid">
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectPaper(1, this)"
+            >
+
+                <span class="choice-icon">
+                    📝
+                </span>
+
+                1 පේපරය
+
+                <span class="choice-small">
+                    Paper 01
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="choice-button"
+                onclick="selectPaper(2, this)"
+            >
+
+                <span class="choice-icon">
+                    📄
+                </span>
+
+                2 පේපරය
+
+                <span class="choice-small">
+                    Paper 02
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STEP 03 – YEAR
+         ===================================================== -->
+
+    <section
+        class="selection-card"
+        id="yearSection"
+        style="display:none;"
+    >
+
+        <h2 class="step-title">
+
+            <span class="step-number">
+                3
+            </span>
+
+            අවුරුද්ද තෝරන්න
+
+        </h2>
+
+
+        <div class="year-grid">
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2016, this)"
+            >
+                2016
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2017, this)"
+            >
+                2017
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2018, this)"
+            >
+                2018
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2019, this)"
+            >
+                2019
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2020, this)"
+            >
+                2020
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2021, this)"
+            >
+                2021
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2022, this)"
+            >
+                2022
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2023, this)"
+            >
+                2023
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2024, this)"
+            >
+                2024
+            </button>
+
+
+            <button
+                type="button"
+                class="year-button"
+                onclick="selectYear(2025, this)"
+            >
+                2025
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INSTRUCTIONS
+             ================================================= -->
+
+        <div
+            class="instructions"
+            id="instructions"
+        >
+
+            <h3 class="instruction-heading">
+
+                📢 ප්‍රශ්න පත්‍රය ආරම්භ කිරීමට පෙර
+
+            </h3>
+
+
+            <ul class="instruction-list">
+
+                <li>
+                    ප්‍රශ්න පත්‍රය සඳහා ඔබට
+                    මිනිත්තු 60ක කාලයක් ලබා දේ.
+                </li>
+
+                <li>
+                    ප්‍රශ්න පත්‍රය ආරම්භ කළ
+                    මොහොතේ සිට කාලය ගණනය වේ.
+                </li>
+
+                <li>
+                    කාලය අවසන් වීමට මිනිත්තු 5කට
+                    පෙර ඔබට අනතුරු ඇඟවීමක් ලබා දේ.
+                </li>
+
+                <li>
+                    මිනිත්තු 60 අවසන් වූ විට
+                    පිළිතුරු ලබාදීමේ හැකියාව
+                    ස්වයංක්‍රීයව නතර වේ.
+                </li>
+
+                <li>
+                    ඔබ කලින් අවසන් කළහොත්
+                    පේපරය අවසන් කිරීමේ button එක
+                    භාවිතා කළ හැකිය.
+                </li>
+
+                <li>
+                    පේපරය අවසන් කළ පසු ඔබේ
+                    ලකුණු සහ නිවැරදි / වැරදි
+                    පිළිතුරු පෙන්වනු ලැබේ.
+                </li>
+
+            </ul>
+
+
+            <div class="time-box">
+
+                ⏱️
+
+                කාලය:
+                <strong>
+                    මිනිත්තු 60
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="start-button"
+                onclick="startPaper()"
+            >
+
+                ▶
+                පිළිතුරු සැපයීම ආරම්භ කරන්න
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PAPER AREA
+         ===================================================== -->
+
+    <section
+        class="paper-area"
+        id="paperArea"
+    >
+
+
+        <div class="paper-header">
+
+            <h2>
+
+                අධ්‍යයන පොදු සහතික පත්‍ර
+                <span>
+                    සාමාන්‍ය පෙළ විභාගය
+                </span>
+
+            </h2>
+
+
+            <div class="paper-title">
+
+                ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය
+
+                <br>
+
+                <strong id="selectedPaperTitle">
+                    පළමු පත්‍රය
+                </strong>
+
+                <br>
+
+                <span id="selectedYearTitle">
+                    2025
+                </span>
+
+            </div>
+
+
+            <div class="timer-placeholder">
+
+                ⏱️
+                <span id="timer">
+                    60:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="paperIntroContent">
+<div class="paper-intro-box">
+<h3>📘 2025(2026) O/L – පළමු පත්‍රය</h3>
+<p>ව්‍යාපාර හා ගිණුම්කරණ අධ්‍යයනය — සියලු ප්‍රශ්න 40ට පිළිතුරු සපයන්න.</p>
+<p>එක් එක් ප්‍රශ්නය සඳහා (1), (2), (3), (4) යන පිළිතුරුවලින් නිවැරදි හෝ වඩාත් ගැළපෙන පිළිතුර තෝරන්න.</p>
+</div>
+<div class="paper-context-box">
+<h3>📖 ප්‍රශ්න 1 සිට 5 දක්වා අදාළ සිද්ධිය</h3>
+<p><strong>සහන්</strong>, අමරදුව නගරයේ ගොඩනැගිල්ලක් කුලියට ගෙන <strong>‘යාත්‍රා’</strong> නමින් දුරකථන සේවා සපයන ව්‍යාපාරයක් පවත්වාගෙන යයි. ඒ අසල ප්‍රාදේශීය ලේකම් කාර්යාලය, අමරදුව මහා විද්‍යාලය හා අමරදුව විවිධ සේවා සමුපකාර සමිතිය පිහිටා ඇත.</p>
+</div>
+<div class="question-card" data-question="1"><div class="question-number">ප්‍රශ්නය 1</div><div class="question-text">යාත්‍රා ව්‍යාපාරය සපුරාලන මිනිස් අවශ්‍යතාව කුමක් ද?</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="1" data-option="1" onclick="choose2025Answer(1,1,this)"><strong>(1)</strong> ප්‍රවාහනය</button><button type="button" class="option-button-online" data-q="1" data-option="2" onclick="choose2025Answer(1,2,this)"><strong>(2)</strong> දුරකථන සේවාව</button><button type="button" class="option-button-online" data-q="1" data-option="3" onclick="choose2025Answer(1,3,this)"><strong>(3)</strong> විනෝදාස්වාදය</button><button type="button" class="option-button-online" data-q="1" data-option="4" onclick="choose2025Answer(1,4,this)"><strong>(4)</strong> සන්නිවේදනය</button></div></div><div class="question-card" data-question="2"><div class="question-number">ප්‍රශ්නය 2</div><div class="question-text">ලාභ අරමුණු කර නොගත් පෞද්ගලික අංශයේ ව්‍යාපාර සංවිධානය වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="2" data-option="1" onclick="choose2025Answer(2,1,this)"><strong>(1)</strong> යාත්‍රා ව්‍යාපාරයයි.</button><button type="button" class="option-button-online" data-q="2" data-option="2" onclick="choose2025Answer(2,2,this)"><strong>(2)</strong> අමරදුව මහා විද්‍යාලයයි.</button><button type="button" class="option-button-online" data-q="2" data-option="3" onclick="choose2025Answer(2,3,this)"><strong>(3)</strong> අමරදුව ප්‍රාදේශීය ලේකම් කාර්යාලයයි.</button><button type="button" class="option-button-online" data-q="2" data-option="4" onclick="choose2025Answer(2,4,this)"><strong>(4)</strong> අමරදුව විවිධ සේවා සමුපකාර සමිතියයි.</button></div></div><div class="question-card" data-question="3"><div class="question-number">ප්‍රශ්නය 3</div><div class="question-text">සහන්ගේ යාත්‍රා ව්‍යාපාරය අයත් ව්‍යාපාර සංවිධාන වර්ගයේ වාසියක් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="3" data-option="1" onclick="choose2025Answer(3,1,this)"><strong>(1)</strong> සහන්ගේ වගකීම අසීමිත වීම ය.</button><button type="button" class="option-button-online" data-q="3" data-option="2" onclick="choose2025Answer(3,2,this)"><strong>(2)</strong> සහන්ගේ මූල්‍ය ශක්තිය සීමා වීම ය.</button><button type="button" class="option-button-online" data-q="3" data-option="3" onclick="choose2025Answer(3,3,this)"><strong>(3)</strong> සහන්ට ස්වාධීනව තීරණ ගත හැකි වීම ය.</button><button type="button" class="option-button-online" data-q="3" data-option="4" onclick="choose2025Answer(3,4,this)"><strong>(4)</strong> සහන්ගේ ව්‍යාපාරයට අඛණ්ඩ පැවැත්මක් නොමැති වීම ය.</button></div></div><div class="question-card" data-question="4"><div class="question-number">ප්‍රශ්නය 4</div><div class="question-text">අමරදුව මහා විද්‍යාලය, සහන්ගේ යාත්‍රා ව්‍යාපාරයට</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="4" data-option="1" onclick="choose2025Answer(4,1,this)"><strong>(1)</strong> ශක්තියකි.</button><button type="button" class="option-button-online" data-q="4" data-option="2" onclick="choose2025Answer(4,2,this)"><strong>(2)</strong> දුර්වලතාවකි.</button><button type="button" class="option-button-online" data-q="4" data-option="3" onclick="choose2025Answer(4,3,this)"><strong>(3)</strong> අවස්ථාවකි.</button><button type="button" class="option-button-online" data-q="4" data-option="4" onclick="choose2025Answer(4,4,this)"><strong>(4)</strong> තර්ජනයකි.</button></div></div><div class="question-card" data-question="5"><div class="question-number">ප්‍රශ්නය 5</div><div class="question-text">ඉහත සිද්ධියට අනුව නිවැරදි ප්‍රකාශය තෝරන්න.</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="5" data-option="1" onclick="choose2025Answer(5,1,this)"><strong>(1)</strong> සහන්, යාත්‍රා ව්‍යාපාරයේ අභ්‍යන්තර පරිසර සාධකයකි.</button><button type="button" class="option-button-online" data-q="5" data-option="2" onclick="choose2025Answer(5,2,this)"><strong>(2)</strong> යාත්‍රා ව්‍යාපාරයට අඛණ්ඩ පැවැත්මක් ඇත.</button><button type="button" class="option-button-online" data-q="5" data-option="3" onclick="choose2025Answer(5,3,this)"><strong>(3)</strong> අමරදුව ප්‍රාදේශීය ලේකම් කාර්යාලය ලාභ අරමුණු කරගත් සංවිධානයකි.</button><button type="button" class="option-button-online" data-q="5" data-option="4" onclick="choose2025Answer(5,4,this)"><strong>(4)</strong> යාත්‍රා ව්‍යාපාරය පවත්වාගෙන යන ගොඩනැගිල්ල එම ව්‍යාපාරයේ නිෂ්පාදන සාධකයක් වන ප්‍රාග්ධනයට අයත් වේ.</button></div></div>
+<div class="paper-context-box"><h3>📖 ප්‍රශ්න 11, 12 හා 13 සඳහා තොරතුරු</h3><p>නව මාදිලියේ ජංගම දුරකථන විකිණීමේ ව්‍යාපාරයක් පවත්වාගෙන යන <strong>නදීමාල්</strong>, අලෙවිය වැඩිකර ගැනීම සඳහා අත් පත්‍රිකාවක් <strong>“මිල අඩු කිරීමක්! වෙළෙඳසැලට පැමිණෙන්න”</strong> යන වගන්තිය සහිතව මුද්‍රණය කර බෙදාහැරීමට තීරණය කරන ලදී.</p></div>
+<div class="question-card" data-question="11"><div class="question-number">ප්‍රශ්නය 11</div><div class="question-text">ඉහත සිද්ධියේ (1), (2) හා (3) යන තද කළු අකුරින් දැක්වෙන වචනවලින් දැක්වෙන අලෙවිකරණ මිශ්‍ර විචල්‍යයන් පිළිවෙළින් කුමක් ද?</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="11" data-option="1" onclick="choose2025Answer(11,1,this)"><strong>(1)</strong> ප්‍රචර්ධනය, මිල හා ප්‍රවර්ධනය ය.</button><button type="button" class="option-button-online" data-q="11" data-option="2" onclick="choose2025Answer(11,2,this)"><strong>(2)</strong> නිෂ්පාදිතය, මිල හා ස්ථානය ය.</button><button type="button" class="option-button-online" data-q="11" data-option="3" onclick="choose2025Answer(11,3,this)"><strong>(3)</strong> නිෂ්පාදිතය, ප්‍රවර්ධනය හා මිල ය.</button><button type="button" class="option-button-online" data-q="11" data-option="4" onclick="choose2025Answer(11,4,this)"><strong>(4)</strong> ස්ථානය, ප්‍රවර්ධනය හා මිල ය.</button></div></div><div class="question-card" data-question="12"><div class="question-number">ප්‍රශ්නය 12</div><div class="question-text">ඉහත සිද්ධියේ ඇතුළත් කළමනාකරණ කාර්යය වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="12" data-option="1" onclick="choose2025Answer(12,1,this)"><strong>(1)</strong> සැලසුම්කරණයයි.</button><button type="button" class="option-button-online" data-q="12" data-option="2" onclick="choose2025Answer(12,2,this)"><strong>(2)</strong> සංවිධානකරණයයි.</button><button type="button" class="option-button-online" data-q="12" data-option="3" onclick="choose2025Answer(12,3,this)"><strong>(3)</strong> මෙහෙයවීමයි.</button><button type="button" class="option-button-online" data-q="12" data-option="4" onclick="choose2025Answer(12,4,this)"><strong>(4)</strong> පාලනයයි.</button></div></div><div class="question-card" data-question="13"><div class="question-number">ප්‍රශ්නය 13</div><div class="question-text">නදීමාල්ගේ ව්‍යාපාරයේ අභ්‍යන්තර හා බාහිර පරිසර සාධකය බැගින් පිළිවෙළින් දැක්වෙන පිළිතුර කුමක් ද?</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="13" data-option="1" onclick="choose2025Answer(13,1,this)"><strong>(1)</strong> නදීමාල් හා ජංගම දුරකථන</button><button type="button" class="option-button-online" data-q="13" data-option="2" onclick="choose2025Answer(13,2,this)"><strong>(2)</strong> නදීමාල් හා වෙළෙඳසැල</button><button type="button" class="option-button-online" data-q="13" data-option="3" onclick="choose2025Answer(13,3,this)"><strong>(3)</strong> අලෙවි පත්‍රිකාව හා වෙළෙඳසැලට පැමිණෙන්නන්</button><button type="button" class="option-button-online" data-q="13" data-option="4" onclick="choose2025Answer(13,4,this)"><strong>(4)</strong> මිල හා වෙළෙඳසැලට පැමිණෙන්නන්</button></div></div><div class="question-card" data-question="14"><div class="question-number">ප්‍රශ්නය 14</div><div class="question-text">තොග වෙළෙඳාම පිළිබඳ නිවැරදි ප්‍රකාශය තෝරන්න.</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="14" data-option="1" onclick="choose2025Answer(14,1,this)"><strong>(1)</strong> තොග වෙළෙඳාමේදී භාණ්ඩ කිහිපයක් පමණක් විකිණීම කළ නොහැකි ය.</button><button type="button" class="option-button-online" data-q="14" data-option="2" onclick="choose2025Answer(14,2,this)"><strong>(2)</strong> තොග වෙළෙන්දා, සිල්ලර වෙළෙන්දා සමග සෘජු සම්බන්ධතාවක් පවත්වා ගනියි.</button><button type="button" class="option-button-online" data-q="14" data-option="3" onclick="choose2025Answer(14,3,this)"><strong>(3)</strong> තොග වෙළෙන්දා අවසාන පාරිභෝජනය සඳහා භාණ්ඩ හෝ සේවා විකිණීම සිදු කරයි.</button><button type="button" class="option-button-online" data-q="14" data-option="4" onclick="choose2025Answer(14,4,this)"><strong>(4)</strong> තොග වෙළෙඳසැල් තිබිය යුතු වන්නේ පාරිභෝගිකයාට ඉතාම ආසන්න ස්ථානයක ය.</button></div></div><div class="question-card" data-question="15"><div class="question-number">ප්‍රශ්නය 15</div><div class="question-text">කළමනාකරණ කාර්ය දෙකක් පහත දැක්වේ. A - ව්‍යාපාරයේ නිෂ්පාදිතවල ගුණත්වය වැඩි කිරීමට සේවකයින්ට උපදෙස් ලබා දීම. B - සේවකයින්ට කාර්යක්ෂමව වැඩ කිරීමට අවශ්‍ය හිතකාමී පරිසරයක් සකස්කර දීමට තීරණය කිරීම. ඉහත කාර්ය දෙක පිළිවෙළින් අයත් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="15" data-option="1" onclick="choose2025Answer(15,1,this)"><strong>(1)</strong> සැලසුම්කරණයට හා මෙහෙයවීමට ය.</button><button type="button" class="option-button-online" data-q="15" data-option="2" onclick="choose2025Answer(15,2,this)"><strong>(2)</strong> මෙහෙයවීමට හා සැලසුම්කරණයට ය.</button><button type="button" class="option-button-online" data-q="15" data-option="3" onclick="choose2025Answer(15,3,this)"><strong>(3)</strong> මෙහෙයවීමට හා සංවිධානකරණයට ය.</button><button type="button" class="option-button-online" data-q="15" data-option="4" onclick="choose2025Answer(15,4,this)"><strong>(4)</strong> පාලනයට හා සැලසුම්කරණයට ය.</button></div></div><div class="question-card" data-question="16"><div class="question-number">ප්‍රශ්නය 16</div><div class="question-text">බොහෝ පුද්ගලයෝ තම මුදල් ඉතිරි කිරීමේ ගිණුම්වල තැන්පත් කිරීමට වැඩි කැමැත්තක් දක්වති. මෙයට වඩාත්ම බලපාන හේතුව වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="16" data-option="1" onclick="choose2025Answer(16,1,this)"><strong>(1)</strong> රජයේ පූර්ණ ආරක්ෂාවක් ලැබීමයි.</button><button type="button" class="option-button-online" data-q="16" data-option="2" onclick="choose2025Answer(16,2,this)"><strong>(2)</strong> ඉහළ පොලී ආදායමක් ලැබීමයි.</button><button type="button" class="option-button-online" data-q="16" data-option="3" onclick="choose2025Answer(16,3,this)"><strong>(3)</strong> අනෙකුත් ආයෝජන මාර්ගවලට වඩා වැඩි ප්‍රතිලාභ ලැබීමයි.</button><button type="button" class="option-button-online" data-q="16" data-option="4" onclick="choose2025Answer(16,4,this)"><strong>(4)</strong> අවශ්‍ය ඕනෑම වේලාවක ඉක්මනින්ම මුදල් ආපසු ලබාගත හැකිවීමයි.</button></div></div><div class="question-card" data-question="17"><div class="question-number">ප්‍රශ්නය 17</div><div class="question-text">“ගිණුම්කරණය” යනු</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="17" data-option="1" onclick="choose2025Answer(17,1,this)"><strong>(1)</strong> ව්‍යාපාරයක සිදුවන මූල්‍යමය ගනුදෙනු පොත්වල සටහන් කිරීමයි.</button><button type="button" class="option-button-online" data-q="17" data-option="2" onclick="choose2025Answer(17,2,this)"><strong>(2)</strong> ව්‍යාපාරයක ප්‍රතිඵලය ගණනය කිරීම සඳහා අවශ්‍ය ගනුදෙනු වාර්තා කිරීමයි.</button><button type="button" class="option-button-online" data-q="17" data-option="3" onclick="choose2025Answer(17,3,this)"><strong>(3)</strong> ව්‍යාපාරය කෙරෙහි ඇල්මැති පාර්ශ්වයන්ට අවශ්‍ය තීරණ ගැනීම සඳහා විවිධ තොරතුරු සැපයීමයි.</button><button type="button" class="option-button-online" data-q="17" data-option="4" onclick="choose2025Answer(17,4,this)"><strong>(4)</strong> ව්‍යාපාරය කෙරෙහි ඇල්මැති පාර්ශ්වයන්ට අවශ්‍ය තීරණ ගැනීම සඳහා තොරතුරු සැපයීමේ ක්‍රියාවලියයි.</button></div></div><div class="question-card" data-question="18"><div class="question-number">ප්‍රශ්නය 18</div><div class="question-text">ව්‍යාපාරයක ජංගම නොවන වගකීමක් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="18" data-option="1" onclick="choose2025Answer(18,1,this)"><strong>(1)</strong> ප්‍රාග්ධනය ය.</button><button type="button" class="option-button-online" data-q="18" data-option="2" onclick="choose2025Answer(18,2,this)"><strong>(2)</strong> ණයහිමියෝ ය.</button><button type="button" class="option-button-online" data-q="18" data-option="3" onclick="choose2025Answer(18,3,this)"><strong>(3)</strong> බැංකු ණය ය.</button><button type="button" class="option-button-online" data-q="18" data-option="4" onclick="choose2025Answer(18,4,this)"><strong>(4)</strong> ගෙවිය යුතු විදුලි ගාස්තු ය.</button></div></div><div class="question-card" data-question="19"><div class="question-number">ප්‍රශ්නය 19</div><div class="question-text">වැඩිවීම බැර, අඩුවීම හර යන ද්විත්ව සටහන් මූලධර්මය අදාළ වන ගිණුමක් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="19" data-option="1" onclick="choose2025Answer(19,1,this)"><strong>(1)</strong> ලද වට්ටම් ගිණුම ය.</button><button type="button" class="option-button-online" data-q="19" data-option="2" onclick="choose2025Answer(19,2,this)"><strong>(2)</strong> ගැනුම් ගිණුම ය.</button><button type="button" class="option-button-online" data-q="19" data-option="3" onclick="choose2025Answer(19,3,this)"><strong>(3)</strong> බැංකු ණය පොලී ගිණුම ය.</button><button type="button" class="option-button-online" data-q="19" data-option="4" onclick="choose2025Answer(19,4,this)"><strong>(4)</strong> ගොඩනැගිලි ගිණුම ය.</button></div></div><div class="question-card" data-question="20"><div class="question-number">ප්‍රශ්නය 20</div><div class="question-text">සම්රගේ ව්‍යාපාරය රු. 25 000 ක වෙළෙඳ බඩු තොගයක් අත්පිට මුදලට ගැනීම සටහන් කිරීම සඳහා භාවිත කරන මූලාශ්‍ර ලේඛනය වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="20" data-option="1" onclick="choose2025Answer(20,1,this)"><strong>(1)</strong> ලදුපත ය.</button><button type="button" class="option-button-online" data-q="20" data-option="2" onclick="choose2025Answer(20,2,this)"><strong>(2)</strong> ගෙවීම් වවුචරය ය.</button><button type="button" class="option-button-online" data-q="20" data-option="3" onclick="choose2025Answer(20,3,this)"><strong>(3)</strong> ගැනුම් ඉන්වොයිසිය ය.</button><button type="button" class="option-button-online" data-q="20" data-option="4" onclick="choose2025Answer(20,4,this)"><strong>(4)</strong> මුදල් වවුචරය ය.</button></div></div><div class="question-card" data-question="21"><div class="question-number">ප්‍රශ්නය 21</div><div class="question-text">ව්‍යාපාරයක් විසින් පිළියෙල කරනු ලබන මුදල් පොතක දැකිය නොහැක්කේ කුමක් ද?</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="21" data-option="1" onclick="choose2025Answer(21,1,this)"><strong>(1)</strong> සඟල පිටු අංක</button><button type="button" class="option-button-online" data-q="21" data-option="2" onclick="choose2025Answer(21,2,this)"><strong>(2)</strong> ගෙවීම් වවුචර් අංක</button><button type="button" class="option-button-online" data-q="21" data-option="3" onclick="choose2025Answer(21,3,this)"><strong>(3)</strong> ලදුපත් අංක</button><button type="button" class="option-button-online" data-q="21" data-option="4" onclick="choose2025Answer(21,4,this)"><strong>(4)</strong> ඉන්වොයිස් අංක</button></div></div><div class="question-card" data-question="22"><div class="question-number">ප්‍රශ්නය 22</div><div class="question-text">ලී බඩු වෙළෙඳ ව්‍යාපාරයක ගැනුම් ජ&#x27;නලයේ සටහන් කරනු ලබන ගනුදෙනුව කුමක් ද?</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="22" data-option="1" onclick="choose2025Answer(22,1,this)"><strong>(1)</strong> රු.50 000 ක පුටු අත්පිට මුදලට ගැනීම</button><button type="button" class="option-button-online" data-q="22" data-option="2" onclick="choose2025Answer(22,2,this)"><strong>(2)</strong> රු.60 000 ක මේස ණයට ගැනීම</button><button type="button" class="option-button-online" data-q="22" data-option="3" onclick="choose2025Answer(22,3,this)"><strong>(3)</strong> රු.75 000 ක ලී අල්මාරියක් ව්‍යාපාරයේ ප්‍රයෝජනය සඳහා ණයට ගැනීම</button><button type="button" class="option-button-online" data-q="22" data-option="4" onclick="choose2025Answer(22,4,this)"><strong>(4)</strong> රු.80 000 ක ඇඳක් අයිතිකරු තම පෞද්ගලික ප්‍රයෝජනය සඳහා ව්‍යාපාරයෙන් ගෙනයාම</button></div></div><div class="question-card" data-question="23"><div class="question-number">ප්‍රශ්නය 23</div><div class="question-text">ව්‍යාපාරයක ගිණුම්කරණ සමීකරණයෙහි වත්කම් හා වගකීම් යන දෙකෙහිම වටිනාකම අඩු කරනු ලබන ගනුදෙනුව වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="23" data-option="1" onclick="choose2025Answer(23,1,this)"><strong>(1)</strong> ණයගැතියකුගෙන් රු.8 000 ක් ලැබීම ය.</button><button type="button" class="option-button-online" data-q="23" data-option="2" onclick="choose2025Answer(23,2,this)"><strong>(2)</strong> රු.30 000 ක බඩු තොගයක් ණයට ගැනීම ය.</button><button type="button" class="option-button-online" data-q="23" data-option="3" onclick="choose2025Answer(23,3,this)"><strong>(3)</strong> රු.10 000 ක් ණයහිමියකුට ගෙවීම ය.</button><button type="button" class="option-button-online" data-q="23" data-option="4" onclick="choose2025Answer(23,4,this)"><strong>(4)</strong> රු.4 000 ක බැංකු ණය පොලී ගෙවීම ය.</button></div></div><div class="question-card" data-question="24"><div class="question-number">ප්‍රශ්නය 24</div><div class="question-text">ව්‍යාපාරයක, කාර්යාලයේ ප්‍රයෝජනය සඳහා රු.130 000 ක පරිගණකයක් අත්පිට මුදලට ගැනීම බලපාන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="24" data-option="1" onclick="choose2025Answer(24,1,this)"><strong>(1)</strong> වත්කම්වලට පමණි.</button><button type="button" class="option-button-online" data-q="24" data-option="2" onclick="choose2025Answer(24,2,this)"><strong>(2)</strong> වත්කම් හා වගකීම්වලට ය.</button><button type="button" class="option-button-online" data-q="24" data-option="3" onclick="choose2025Answer(24,3,this)"><strong>(3)</strong> වත්කම් හා වියදම්වලට ය.</button><button type="button" class="option-button-online" data-q="24" data-option="4" onclick="choose2025Answer(24,4,this)"><strong>(4)</strong> වත්කම්, හිමිකම් හා වගකීම්වලට ය.</button></div></div><div class="question-card" data-question="25"><div class="question-number">ප්‍රශ්නය 25</div><div class="question-text">සඳුන් රු.25 000 ක බඩු තොගයක් රු.30 000 කට ණයට විකිණීම නිසා ඔහුගේ ව්‍යාපාරයේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="25" data-option="1" onclick="choose2025Answer(25,1,this)"><strong>(1)</strong> වත්කම් හා හිමිකම රු.5 000 කින් පමණක් අඩු වේ.</button><button type="button" class="option-button-online" data-q="25" data-option="2" onclick="choose2025Answer(25,2,this)"><strong>(2)</strong> වත්කම් හා හිමිකම රු.5 000 කින් පමණක් වැඩි වේ.</button><button type="button" class="option-button-online" data-q="25" data-option="3" onclick="choose2025Answer(25,3,this)"><strong>(3)</strong> වත්කම් හා වගකීම් රු.30 000 කින් පමණක් අඩු වේ.</button><button type="button" class="option-button-online" data-q="25" data-option="4" onclick="choose2025Answer(25,4,this)"><strong>(4)</strong> වත්කම් හා හිමිකම රු.30 000 කින් පමණක් වැඩි වේ.</button></div></div><div class="question-card" data-question="26"><div class="question-number">ප්‍රශ්නය 26</div><div class="question-text">චාමර රු.10 000 ක බඩු තොගයක් සහන්ගෙන් අත්පිට මුදලට ගැනීමේදී 5% ක වෙළෙඳ වට්ටමක් ඔහුට ලැබුණි. මෙම ගනුදෙනුවට අදාළ නිවැරදි ද්විත්ව සටහන තෝරන්න.</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="26" data-option="1" onclick="choose2025Answer(26,1,this)"><strong>(1)</strong> ගැනුම් ගිණුම හර 10 000; සහන්ගේ ගිණුම බැර 9 500; ලද වට්ටම් ගිණුම බැර 500.</button><button type="button" class="option-button-online" data-q="26" data-option="2" onclick="choose2025Answer(26,2,this)"><strong>(2)</strong> ගැනුම් ගිණුම හර 10 000; මුදල් ගිණුම බැර 9 500; ලද වට්ටම් ගිණුම බැර 500.</button><button type="button" class="option-button-online" data-q="26" data-option="3" onclick="choose2025Answer(26,3,this)"><strong>(3)</strong> ගැනුම් ගිණුම හර 9 500; සහන්ගේ ගිණුම බැර 9 500.</button><button type="button" class="option-button-online" data-q="26" data-option="4" onclick="choose2025Answer(26,4,this)"><strong>(4)</strong> ගැනුම් ගිණුම හර 9 500; මුදල් ගිණුම බැර 9 500.</button></div></div><div class="question-card" data-question="27"><div class="question-number">ප්‍රශ්නය 27</div><div class="question-text">රවීගේ ව්‍යාපාරයේ 2025.12.31 දිනට සුළු මුදල් පොතේ විශ්ලේෂණ තීරුවල එකතුව රු.9 500 ක් වූ අතර එදිනට එහි ශේෂය රු.500 ක් විය. 2026.01.01 දින සිට සුළු මුදල් අරමුදල රු.2 000 කින් වැඩි කිරීමට රවී තීරණය කළේ ය. 2026.01.01 දින සුළු මුදල් ප්‍රතිපූරණය කිරීම සඳහා ලබා දුන් මුදල වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="27" data-option="1" onclick="choose2025Answer(27,1,this)"><strong>(1)</strong> රු.2 500 කි.</button><button type="button" class="option-button-online" data-q="27" data-option="2" onclick="choose2025Answer(27,2,this)"><strong>(2)</strong> රු.10 000 කි.</button><button type="button" class="option-button-online" data-q="27" data-option="3" onclick="choose2025Answer(27,3,this)"><strong>(3)</strong> රු.11 500 කි.</button><button type="button" class="option-button-online" data-q="27" data-option="4" onclick="choose2025Answer(27,4,this)"><strong>(4)</strong> රු.12 000 කි.</button></div></div><div class="question-card" data-question="28"><div class="question-number">ප්‍රශ්නය 28</div><div class="question-text">බැංකු ප්‍රකාශනය ලැබීමෙන් පසු ව්‍යාපාරයක බැංකු ගිණුම සංශෝධනය කිරීමේදී එම ගිණුමේ හර පැත්තේ සටහන් කරනු ලබන අයිතමයක් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="28" data-option="1" onclick="choose2025Answer(28,1,this)"><strong>(1)</strong> බැංකු ගාස්තු ය.</button><button type="button" class="option-button-online" data-q="28" data-option="2" onclick="choose2025Answer(28,2,this)"><strong>(2)</strong> බැංකු ණය වාරික ය.</button><button type="button" class="option-button-online" data-q="28" data-option="3" onclick="choose2025Answer(28,3,this)"><strong>(3)</strong> ණයගැති සෘජු ප්‍රේෂණ ය.</button><button type="button" class="option-button-online" data-q="28" data-option="4" onclick="choose2025Answer(28,4,this)"><strong>(4)</strong> නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් ය.</button></div></div><div class="question-card" data-question="29"><div class="question-number">ප්‍රශ්නය 29</div><div class="question-text">බැංකුව විසින් එවනු ලබන බැංකු ප්‍රකාශනයේ ශේෂයට වඩා ව්‍යාපාරයේ බැංකු ගිණුමේ ශේෂය වැඩි වීමට හේතුවක් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="29" data-option="1" onclick="choose2025Answer(29,1,this)"><strong>(1)</strong> බැංකුවට සෘජුවම ලැබුණු ප්‍රේෂණ ය.</button><button type="button" class="option-button-online" data-q="29" data-option="2" onclick="choose2025Answer(29,2,this)"><strong>(2)</strong> ස්ථාවර නියෝග මත බැංකුව විසින් ගෙවූ රක්ෂණ ගාස්තු ය.</button><button type="button" class="option-button-online" data-q="29" data-option="3" onclick="choose2025Answer(29,3,this)"><strong>(3)</strong> බැංකුවට සෘජුව ලැබී ඇති ආයෝජන ආදායම ය.</button><button type="button" class="option-button-online" data-q="29" data-option="4" onclick="choose2025Answer(29,4,this)"><strong>(4)</strong> නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් ය.</button></div></div><div class="question-card" data-question="30"><div class="question-number">ප්‍රශ්නය 30</div><div class="question-text">ව්‍යාපාරයක ගිණුම්කරණයේදී සිදු වූ වැරදිවලින් ශේෂ පිරික්සුමෙහි සමානත්වයට බලපෑමක් නොවන වරදක් වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="30" data-option="1" onclick="choose2025Answer(30,1,this)"><strong>(1)</strong> රු.5 000 ක ගමන් වියදම් එම ගිණුමේ දෙවරක් සටහන් වීම ය.</button><button type="button" class="option-button-online" data-q="30" data-option="2" onclick="choose2025Answer(30,2,this)"><strong>(2)</strong> සමන්ට ගෙවූ රු.10 000 ක් මුදල් පොතේ පමණක් සටහන් වීම ය.</button><button type="button" class="option-button-online" data-q="30" data-option="3" onclick="choose2025Answer(30,3,this)"><strong>(3)</strong> රු.75 000 කට මිල දී ගත් බඩු තොගයක් ගැනුම් ගිණුමේ රු.57 000 ක් ලෙස සටහන් වීම ය.</button><button type="button" class="option-button-online" data-q="30" data-option="4" onclick="choose2025Answer(30,4,this)"><strong>(4)</strong> අමිත්ගෙන් ලැබුණු රු.30 000 ක් අමල්ගේ ගිණුමේ බැර පැත්තේ සටහන් කිරීම ය.</button></div></div><div class="question-card" data-question="31"><div class="question-number">ප්‍රශ්නය 31</div><div class="question-text">ණයගැති සමන්ගෙන් ලැබුණු රු.10 000 ක් සමන්ගේ ගිණුමට හර කිරීමේ වරද නිවැරදි කිරීමට අදාළ ජ&#x27;නල් සටහන තෝරන්න.</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="31" data-option="1" onclick="choose2025Answer(31,1,this)"><strong>(1)</strong> සමන්ගේ ගිණුම හර 10 000; අවිනිශ්චිත ගිණුම බැර 10 000</button><button type="button" class="option-button-online" data-q="31" data-option="2" onclick="choose2025Answer(31,2,this)"><strong>(2)</strong> අවිනිශ්චිත ගිණුම හර 10 000; සමන්ගේ ගිණුම බැර 10 000</button><button type="button" class="option-button-online" data-q="31" data-option="3" onclick="choose2025Answer(31,3,this)"><strong>(3)</strong> සමන්ගේ ගිණුම හර 20 000; අවිනිශ්චිත ගිණුම බැර 20 000</button><button type="button" class="option-button-online" data-q="31" data-option="4" onclick="choose2025Answer(31,4,this)"><strong>(4)</strong> අවිනිශ්චිත ගිණුම හර 20 000; සමන්ගේ ගිණුම බැර 20 000</button></div></div>
+<div class="paper-context-box"><h3>📖 ප්‍රශ්න 32 සහ 33 සඳහා තොරතුරු</h3><p>ළමා ඇඳුම් මැසීමේ ව්‍යාපාරයක ඇඳුම් 1000 ක් නිෂ්පාදනය කිරීම සඳහා වූ වියදම්:</p>
+<table class="data-table"><tr><th>වියදම් අයිතමය</th><th>රු.</th></tr><tr><td>රෙදි හා නූල් සඳහා</td><td>100 000</td></tr><tr><td>ඇඳුම් මසන්නාගේ වැටුප</td><td>60 000</td></tr><tr><td>විදුලි වියදම්</td><td>25 000</td></tr><tr><td>ගොඩනැගිලි කුලී</td><td>15 000</td></tr><tr><td>මුරකරුගේ වැටුප</td><td>40 000</td></tr><tr><td>යන්ත්‍ර ක්ෂය</td><td>10 000</td></tr></table></div>
+<div class="question-card" data-question="32"><div class="question-number">ප්‍රශ්නය 32</div><div class="question-text">මෙම ව්‍යාපාරයේ නිෂ්පාදන පොදු කාර්ය පිරිවැය</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="32" data-option="1" onclick="choose2025Answer(32,1,this)"><strong>(1)</strong> රු.50 000 කි.</button><button type="button" class="option-button-online" data-q="32" data-option="2" onclick="choose2025Answer(32,2,this)"><strong>(2)</strong> රු.90 000 කි.</button><button type="button" class="option-button-online" data-q="32" data-option="3" onclick="choose2025Answer(32,3,this)"><strong>(3)</strong> රු.160 000 කි.</button><button type="button" class="option-button-online" data-q="32" data-option="4" onclick="choose2025Answer(32,4,this)"><strong>(4)</strong> රු.250 000 කි.</button></div></div><div class="question-card" data-question="33"><div class="question-number">ප්‍රශ්නය 33</div><div class="question-text">මෙම ව්‍යාපාරයේ නිපදවන ළමා ඇඳුමක නිෂ්පාදන පිරිවැය</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="33" data-option="1" onclick="choose2025Answer(33,1,this)"><strong>(1)</strong> රු.50 කි.</button><button type="button" class="option-button-online" data-q="33" data-option="2" onclick="choose2025Answer(33,2,this)"><strong>(2)</strong> රු.90 කි.</button><button type="button" class="option-button-online" data-q="33" data-option="3" onclick="choose2025Answer(33,3,this)"><strong>(3)</strong> රු.160 කි.</button><button type="button" class="option-button-online" data-q="33" data-option="4" onclick="choose2025Answer(33,4,this)"><strong>(4)</strong> රු.250 කි.</button></div></div><div class="question-card" data-question="34"><div class="question-number">ප්‍රශ්නය 34</div><div class="question-text">සුහද ක්‍රීඩා සමාජයේ සාමාජික සංඛ්‍යාව 80 කි. එක් සාමාජිකයකුගේ මාසික සාමාජික මුදල රු.100 කි. 2025.12.31 දිනෙන් අවසන් වර්ෂය තුළදී සාමාජිකයින් 50 ක් පමණක් වාර්ෂික සාමාජික මුදල් ගෙවා තිබුණි. අනෙකුත් සාමාජිකයින් කිසිදු මුදලක් ගෙවා නැත. එම වර්ෂයේ ලැබීම් හා ගෙවීම් ගිණුමේ සටහන් කරනු ලබන සාමාජික මුදල වන්නේ</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="34" data-option="1" onclick="choose2025Answer(34,1,this)"><strong>(1)</strong> රු.5 000 කි.</button><button type="button" class="option-button-online" data-q="34" data-option="2" onclick="choose2025Answer(34,2,this)"><strong>(2)</strong> රු.8 000 කි.</button><button type="button" class="option-button-online" data-q="34" data-option="3" onclick="choose2025Answer(34,3,this)"><strong>(3)</strong> රු.60 000 කි.</button><button type="button" class="option-button-online" data-q="34" data-option="4" onclick="choose2025Answer(34,4,this)"><strong>(4)</strong> රු.96 000 කි.</button></div></div>
+<div class="paper-context-box"><h3>📖 ප්‍රශ්න 35 සිට 40 දක්වා අදාළ තොරතුරු</h3><p>ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට ශේෂ පිරික්සුමෙන් ලබා දී ඇති තොරතුරු අනුව ප්‍රශ්න 35–40ට පිළිතුරු සපයන්න.</p>
+<table class="data-table"><tr><th>ගිණුම / තොරතුර</th><th>හර (රු.)</th><th>බැර (රු.)</th></tr><tr><td>ගැනුම්</td><td>2 000 000</td><td>—</td></tr><tr><td>විකුණුම්</td><td>—</td><td>3 400 000</td></tr><tr><td>2025.01.01 දිනට ගොඩනැගිලි පිරිවැය</td><td>2 500 000</td><td>—</td></tr><tr><td>2025.01.01 දිනට මෝටර් රථ පිරිවැය</td><td>1 000 000</td><td>—</td></tr><tr><td>10% බැංකු ණය</td><td>—</td><td>500 000</td></tr><tr><td>ණයගැතියෝ</td><td>100 000</td><td>—</td></tr><tr><td>ණයහිමියෝ</td><td>—</td><td>80 000</td></tr><tr><td>ප්‍රවාහන වියදම්</td><td>80 000</td><td>—</td></tr><tr><td>සේවක වැටුප්</td><td>100 000</td><td>—</td></tr><tr><td>බැංකු ගාස්තු</td><td>10 000</td><td>—</td></tr><tr><td>විදුලි වියදම්</td><td>60 000</td><td>—</td></tr><tr><td>ප්‍රාග්ධනය (2025.01.01)</td><td>—</td><td>2 000 000</td></tr><tr><td>ලද වට්ටම්</td><td>—</td><td>20 000</td></tr><tr><td>මුදල්</td><td>50 000</td><td>—</td></tr></table>
+<p><strong>අතිරේක තොරතුරු:</strong> 2025.12.31 දිනට තොගය රු.900 000කි. ගෙවිය යුතු විදුලිය රු.20 000කි. ගොඩනැගිලි සරල මාර්ග ක්‍රමයට වාර්ෂිකව 8% බැගින් ක්ෂය කළ යුතු ය.</p></div>
+<div class="question-card" data-question="35"><div class="question-number">ප්‍රශ්නය 35</div><div class="question-text">ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂය සඳහා දළ ලාභය</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="35" data-option="1" onclick="choose2025Answer(35,1,this)"><strong>(1)</strong> රු.1 200 000 කි.</button><button type="button" class="option-button-online" data-q="35" data-option="2" onclick="choose2025Answer(35,2,this)"><strong>(2)</strong> රු.1 300 000 කි.</button><button type="button" class="option-button-online" data-q="35" data-option="3" onclick="choose2025Answer(35,3,this)"><strong>(3)</strong> රු.1 400 000 කි.</button><button type="button" class="option-button-online" data-q="35" data-option="4" onclick="choose2025Answer(35,4,this)"><strong>(4)</strong> රු.2 200 000 කි.</button></div></div><div class="question-card" data-question="36"><div class="question-number">ප්‍රශ්නය 36</div><div class="question-text">ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ආදායම් ප්‍රකාශනයේ ඇතුළත් ආයතන හා පරිපාලන වියදම්වල එකතුව</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="36" data-option="1" onclick="choose2025Answer(36,1,this)"><strong>(1)</strong> රු.320 000 කි.</button><button type="button" class="option-button-online" data-q="36" data-option="2" onclick="choose2025Answer(36,2,this)"><strong>(2)</strong> රු.360 000 කි.</button><button type="button" class="option-button-online" data-q="36" data-option="3" onclick="choose2025Answer(36,3,this)"><strong>(3)</strong> රු.380 000 කි.</button><button type="button" class="option-button-online" data-q="36" data-option="4" onclick="choose2025Answer(36,4,this)"><strong>(4)</strong> රු.460 000 කි.</button></div></div><div class="question-card" data-question="37"><div class="question-number">ප්‍රශ්නය 37</div><div class="question-text">ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ආදායම් ප්‍රකාශනයේ ඇතුළත් කරන ලද විකුණුම් වියදම්වල එකතුව</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="37" data-option="1" onclick="choose2025Answer(37,1,this)"><strong>(1)</strong> රු.450 000 කි.</button><button type="button" class="option-button-online" data-q="37" data-option="2" onclick="choose2025Answer(37,2,this)"><strong>(2)</strong> රු.490 000 කි.</button><button type="button" class="option-button-online" data-q="37" data-option="3" onclick="choose2025Answer(37,3,this)"><strong>(3)</strong> රු.510 000 කි.</button><button type="button" class="option-button-online" data-q="37" data-option="4" onclick="choose2025Answer(37,4,this)"><strong>(4)</strong> රු.560 000 කි.</button></div></div><div class="question-card" data-question="38"><div class="question-number">ප්‍රශ්නය 38</div><div class="question-text">ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ශුද්ධ ලාභය</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="38" data-option="1" onclick="choose2025Answer(38,1,this)"><strong>(1)</strong> රු.930 000 කි.</button><button type="button" class="option-button-online" data-q="38" data-option="2" onclick="choose2025Answer(38,2,this)"><strong>(2)</strong> රු.1 690 000 කි.</button><button type="button" class="option-button-online" data-q="38" data-option="3" onclick="choose2025Answer(38,3,this)"><strong>(3)</strong> රු.1 710 000 කි.</button><button type="button" class="option-button-online" data-q="38" data-option="4" onclick="choose2025Answer(38,4,this)"><strong>(4)</strong> රු.1 720 000 කි.</button></div></div><div class="question-card" data-question="39"><div class="question-number">ප්‍රශ්නය 39</div><div class="question-text">ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට ජංගම නොවන වත්කම්වල ධාරණ අගය</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="39" data-option="1" onclick="choose2025Answer(39,1,this)"><strong>(1)</strong> රු.3 500 000 කි.</button><button type="button" class="option-button-online" data-q="39" data-option="2" onclick="choose2025Answer(39,2,this)"><strong>(2)</strong> රු.3 300 000 කි.</button><button type="button" class="option-button-online" data-q="39" data-option="3" onclick="choose2025Answer(39,3,this)"><strong>(3)</strong> රු.3 250 000 කි.</button><button type="button" class="option-button-online" data-q="39" data-option="4" onclick="choose2025Answer(39,4,this)"><strong>(4)</strong> රු.2 300 000 කි.</button></div></div><div class="question-card" data-question="40"><div class="question-number">ප්‍රශ්නය 40</div><div class="question-text">ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට හිමිකම</div><div class="option-grid-online"><button type="button" class="option-button-online" data-q="40" data-option="1" onclick="choose2025Answer(40,1,this)"><strong>(1)</strong> රු.3 720 000 කි.</button><button type="button" class="option-button-online" data-q="40" data-option="2" onclick="choose2025Answer(40,2,this)"><strong>(2)</strong> රු.3 710 000 කි.</button><button type="button" class="option-button-online" data-q="40" data-option="3" onclick="choose2025Answer(40,3,this)"><strong>(3)</strong> රු.3 690 000 කි.</button><button type="button" class="option-button-online" data-q="40" data-option="4" onclick="choose2025Answer(40,4,this)"><strong>(4)</strong> රු.2 930 000 කි.</button></div></div></div>
+<div id="fiveMinuteWarning" class="warning-box">⚠️ තව විනාඩි 5ක් පමණයි ඉතිරිව ඇත්තේ! ඔබේ පිළිතුරු පරීක්ෂා කරන්න.</div>
+<button type="button" class="finish-paper-btn" id="finish2025Button" onclick="finish2025Paper()">🏁 පේපරය අවසන් කරන්න</button>
+<div id="result2025" class="result-box" style="display:none;"></div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="pp-footer">
+
+    © 2026 Unique EduZone.
+    All Rights Reserved.
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
 <script>
-let selectedLevel="",selectedPaper=0,selectedYear=0;
-history.replaceState({step:0},"",location.pathname+location.search);
-function clearSelections(){document.querySelectorAll('.choice-button,.year-button').forEach(btn=>btn.classList.remove('selected'))}
-function selectLevel(level,button,push=true){selectedLevel=level;selectedPaper=0;selectedYear=0;clearSelections();button.classList.add('selected');document.getElementById('paperSection').style.display='block';document.getElementById('yearSection').style.display='none';document.getElementById('instructions').classList.remove('show');document.getElementById('paperArea').classList.remove('show');if(push)history.pushState({step:1,level},'',location.pathname+'#level');setTimeout(()=>document.getElementById('paperSection').scrollIntoView({behavior:'smooth',block:'center'}),100)}
-function selectPaper(paper,button,push=true){selectedPaper=paper;selectedYear=0;document.querySelectorAll('#paperSection .choice-button').forEach(btn=>btn.classList.remove('selected'));button.classList.add('selected');document.getElementById('yearSection').style.display='block';document.getElementById('instructions').classList.remove('show');document.getElementById('paperArea').classList.remove('show');if(push)history.pushState({step:2,level:selectedLevel,paper},'',location.pathname+'#paper');setTimeout(()=>document.getElementById('yearSection').scrollIntoView({behavior:'smooth',block:'center'}),100)}
-function selectYear(year,button,push=true){selectedYear=year;document.querySelectorAll('.year-button').forEach(btn=>btn.classList.remove('selected'));button.classList.add('selected');document.getElementById('instructions').classList.add('show');if(push)history.pushState({step:3,level:selectedLevel,paper:selectedPaper,year},'',location.pathname+'#year');setTimeout(()=>document.getElementById('instructions').scrollIntoView({behavior:'smooth',block:'center'}),100)}
-function startPaper(push=true){if(!selectedLevel||!selectedPaper||!selectedYear){alert('කරුණාකර විභාග මට්ටම, පේපරය සහ අවුරුද්ද තෝරන්න.');return}document.getElementById('selectedPaperTitle').textContent=selectedPaper===1?'පළමු පත්‍රය':'දෙවන පත්‍රය';document.getElementById('selectedYearTitle').textContent=selectedYear;document.getElementById('paperArea').classList.add('show');if(push)history.pushState({step:4,level:selectedLevel,paper:selectedPaper,year:selectedYear},'',location.pathname+'#exam');if(selectedLevel==='ol'&&selectedPaper===1&&selectedYear===2025)init2025Paper();else startTemporaryTimer();setTimeout(()=>document.getElementById('paperArea').scrollIntoView({behavior:'smooth',block:'start'}),100)}
-function restoreLevelButton(){const bs=document.querySelectorAll('#levelSection .choice-button');if(selectedLevel==='ol'&&bs[0])bs[0].classList.add('selected');if(selectedLevel==='al'&&bs[1])bs[1].classList.add('selected')}
-function restorePaperButton(){const bs=document.querySelectorAll('#paperSection .choice-button');if(bs[selectedPaper-1])bs[selectedPaper-1].classList.add('selected')}
-function restoreYearButton(){const b=[...document.querySelectorAll('.year-button')].find(x=>Number(x.textContent)===Number(selectedYear));if(b)b.classList.add('selected')}
-window.addEventListener('popstate',e=>{const st=e.state||{step:0};clearInterval(temporaryTimerInterval);clearInterval(paper2025TimerInterval);if(st.step===0){selectedLevel='';selectedPaper=0;selectedYear=0;clearSelections();document.getElementById('paperSection').style.display='none';document.getElementById('yearSection').style.display='none';document.getElementById('instructions').classList.remove('show');document.getElementById('paperArea').classList.remove('show');return}selectedLevel=st.level||selectedLevel;selectedPaper=st.paper||0;selectedYear=st.year||0;clearSelections();document.getElementById('paperSection').style.display=st.step>=1?'block':'none';document.getElementById('yearSection').style.display=st.step>=2?'block':'none';document.getElementById('instructions').classList.toggle('show',st.step>=3&&st.step<4);document.getElementById('paperArea').classList.toggle('show',st.step>=4);if(st.step>=1)restoreLevelButton();if(st.step>=2)restorePaperButton();if(st.step>=3)restoreYearButton();if(st.step>=4){document.getElementById('selectedPaperTitle').textContent=selectedPaper===1?'පළමු පත්‍රය':'දෙවන පත්‍රය';document.getElementById('selectedYearTitle').textContent=selectedYear;if(selectedLevel==='ol'&&selectedPaper===1&&selectedYear===2025)init2025Paper();else startTemporaryTimer()}});
-let temporarySeconds=3600,temporaryTimerInterval=null;function startTemporaryTimer(){clearInterval(temporaryTimerInterval);temporarySeconds=3600;updateTemporaryTimer();temporaryTimerInterval=setInterval(()=>{temporarySeconds--;if(temporarySeconds<=0){temporarySeconds=0;clearInterval(temporaryTimerInterval)}updateTemporaryTimer()},1000)}function updateTemporaryTimer(){const t=document.getElementById('timer');if(!t)return;const m=Math.floor(temporarySeconds/60),s=temporarySeconds%60;t.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
-const paper2025Questions=[
-  {
-    "q": 1,
-    "question": "යාත්‍රා ව්‍යාපාරය සපුරාලන මිනිස් අවශ්‍යතාව කුමක් ද?",
-    "options": [
-      "ප්‍රවාහනය",
-      "දුරකථන සේවාව",
-      "විනෝදාස්වාදය",
-      "සන්නිවේදනය"
-    ],
-    "answer": 4
-  },
-  {
-    "q": 2,
-    "question": "ලාභ අරමුණු කර නොගත් පෞද්ගලික අංශයේ ව්‍යාපාර සංවිධානය වන්නේ",
-    "options": [
-      "යාත්‍රා ව්‍යාපාරයයි.",
-      "අමරදුව මහා විද්‍යාලයයි.",
-      "අමරදුව ප්‍රාදේශීය ලේකම් කාර්යාලයයි.",
-      "අමරදුව විවිධ සේවා සමුපකාර සමිතියයි."
-    ],
-    "answer": 4
-  },
-  {
-    "q": 3,
-    "question": "සහන්ගේ යාත්‍රා ව්‍යාපාරය අයත් ව්‍යාපාර සංවිධාන වර්ගයේ වාසියක් වන්නේ",
-    "options": [
-      "සහන්ගේ වගකීම අසීමිත වීම ය.",
-      "සහන්ගේ මූල්‍ය ශක්තිය සීමා වීම ය.",
-      "සහන්ට ස්වාධීනව තීරණ ගත හැකි වීම ය.",
-      "සහන්ගේ ව්‍යාපාරයට අඛණ්ඩ පැවැත්මක් නොමැති වීම ය."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 4,
-    "question": "අමරදුව මහා විද්‍යාලය, සහන්ගේ යාත්‍රා ව්‍යාපාරයට",
-    "options": [
-      "ශක්තියකි.",
-      "දුර්වලතාවකි.",
-      "අවස්ථාවකි.",
-      "තර්ජනයකි."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 5,
-    "question": "ඉහත සිද්ධියට අනුව නිවැරදි ප්‍රකාශය තෝරන්න.",
-    "options": [
-      "සහන්, යාත්‍රා ව්‍යාපාරයේ අභ්‍යන්තර පරිසර සාධකයකි.",
-      "යාත්‍රා ව්‍යාපාරයට අඛණ්ඩ පැවැත්මක් ඇත.",
-      "අමරදුව ප්‍රාදේශීය ලේකම් කාර්යාලය ලාභ අරමුණු කරගත් සංවිධානයකි.",
-      "යාත්‍රා ව්‍යාපාරය පවත්වාගෙන යන ගොඩනැගිල්ල එම ව්‍යාපාරයේ නිෂ්පාදන සාධකයක් වන ප්‍රාග්ධනයට අයත් වේ."
-    ],
-    "answer": 1
-  },
-  {
-    "q": 6,
-    "question": "ශ්‍රී ලංකාවේ නිෂ්පාදිත තේ මැද පෙරදිග රටවලට විකිණීම ______ වෙළෙඳාම වන අතර, මැද පෙරදිග රටවලින් ඛනිජ තෙල් මිලට ගැනීම ______ වෙළෙඳාම වේ.",
-    "options": [
-      "ආනයන, අපනයන",
-      "අපනයන, ආනයන",
-      "අපනයන, විදේශීය",
-      "විදේශීය, අපනයන"
-    ],
-    "answer": 2
-  },
-  {
-    "q": 7,
-    "question": "අනෙකුත් බැංකුවලට වඩා බලපත්‍රලාභී වාණිජ බැංකුවල සුවිශේෂී ලක්ෂණයක් වන්නේ",
-    "options": [
-      "ජංගම ගිණුම් පවත්වාගෙන යාමයි.",
-      "ඉතිරිකිරීමේ ගිණුම් පවත්වාගෙන යාමයි.",
-      "ස්ථාවර තැන්පතු පවත්වාගෙන යාමයි.",
-      "තැන්පතු මත ණය ලබා දීමයි."
-    ],
-    "answer": 1
-  },
-  {
-    "q": 8,
-    "question": "වාණිජ බැංකු නිකුත් කරන චෙක්පත්වල චුම්භක තීන්ත අක්ෂර හැඳුනුම් තීරුවේ (M.I.C.R.) මුලින්ම සඳහන් වන්නේ කුමක් ද?",
-    "options": [
-      "චෙක්පත් අංකය",
-      "බැංකුවේ අංකය",
-      "බැංකු ගිණුම් අංකය",
-      "බැංකු ශාඛා අංකය"
-    ],
-    "answer": 1
-  },
-  {
-    "q": 9,
-    "question": "“අධිවේගී මාර්ගයේ ගමන් ගත් බස් රථයක් ගිනි ගනියි.” යන පුවත්පත් සිරස්තලයේ ඇතුළත් ප්‍රවාහන මූලිකාංග නිවැරදිව දැක්වෙන පිළිතුර තෝරන්න.",
-    "options": [
-      "මාර්ගය හා බස් රථය",
-      "මාර්ගය හා පර්යන්තය",
-      "මාර්ගය හා මාධ්‍යය",
-      "මාධ්‍යය හා බස් රථය"
-    ],
-    "answer": 3
-  },
-  {
-    "q": 10,
-    "question": "රයන් තම බිරිඳ සඳුනි සමග ඔහුගේ සේවා ස්ථානයට යන්නේ තමාගේ මෝටර් රථයෙනි. මෙම මෝටර් රථය සීමිත සුහද රක්ෂණ සමාගමේ රක්ෂණය කර ඇත. මෙම සිද්ධියේ ඇතුළත් රක්ෂණයට සම්බන්ධ දෙවන හා තෙවන පාර්ශ්ව පිළිවෙළින් දැක්වෙන පිළිතුර තෝරන්න.",
-    "options": [
-      "රයන් හා සඳුනි",
-      "රයන් හා සීමිත සුහද රක්ෂණ සමාගම",
-      "සීමිත සුහද රක්ෂණ සමාගම හා මෝටර් රථය",
-      "සීමිත සුහද රක්ෂණ සමාගම හා සඳුනි"
-    ],
-    "answer": 4
-  },
-  {
-    "q": 11,
-    "question": "නව මාදිලියේ ජංගම දුරකථන විකිණීමේ ව්‍යාපාරයක් පවත්වාගෙන යන නදීමාල්, අලෙවිය වැඩිකර ගැනීම සඳහා අත් පත්‍රිකාවක් “මිල අඩුකිරීමක්! වෙළෙඳසැලට පැමිණෙන්න” යන වගන්තිය සහිතව මුද්‍රණය කර බෙදාහැරීමට තීරණය කරන ලදී. ඉහත සිද්ධියේ (1), (2) හා (3) යන තද කළු අකුරින් මුදිත වචනවලින් දැක්වෙන අලෙවිකරණ මිශ්‍රයේ විචල්‍යයන් පිළිවෙළින්",
-    "options": [
-      "ප්‍රවර්ධනය, මිල හා ප්‍රවර්ධනය ය.",
-      "නිෂ්පාදිතය, මිල හා ස්ථානය ය.",
-      "නිෂ්පාදිතය, ප්‍රවර්ධනය හා මිල ය.",
-      "ස්ථානය, ප්‍රවර්ධනය හා මිල ය."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 12,
-    "question": "ඉහත සිද්ධියේ ඇතුළත් කළමනාකරණ කාර්යය වන්නේ",
-    "options": [
-      "සැලසුම්කරණයයි.",
-      "සංවිධානකරණයයි.",
-      "මෙහෙයවීමයි.",
-      "පාලනයයි."
-    ],
-    "answer": 1
-  },
-  {
-    "q": 13,
-    "question": "නදීමාල්ගේ ව්‍යාපාරයේ අභ්‍යන්තර හා බාහිර පරිසර සාධකය බැගින් පිළිවෙළින් දැක්වෙන පිළිතුර කුමක් ද?",
-    "options": [
-      "නදීමාල් හා ජංගම දුරකථන",
-      "ව්‍යාපාරය හා නදීමාල්",
-      "නදීමාල් හා වෙළෙඳසැලට පැමිණෙන්නන්",
-      "මිල හා වෙළෙඳසැලට පැමිණෙන්නන්"
-    ],
-    "answer": 3
-  },
-  {
-    "q": 14,
-    "question": "තොග වෙළෙඳාම පිළිබඳ නිවැරදි ප්‍රකාශය තෝරන්න.",
-    "options": [
-      "තොග වෙළෙඳාමේදී භාණ්ඩ කිහිපයක් පමණක් විකිණීම කළ නොහැකි ය.",
-      "තොග වෙළෙන්දා, සිල්ලර වෙළෙන්දා සමග සෘජු සම්බන්ධතාවක් පවත්වා ගනියි.",
-      "තොග වෙළෙන්දා අවසාන පාරිභෝජනය සඳහා භාණ්ඩ හෝ සේවා විකිණීම සිදු කරයි.",
-      "තොග වෙළෙඳසැල් තිබිය යුතු වන්නේ පාරිභෝගිකයාට ඉතාම ආසන්න ස්ථානයක ය."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 15,
-    "question": "කළමනාකරණ කාර්ය දෙකක් පහත දැක්වේ. A - ව්‍යාපාරයේ නිෂ්පාදිතවල ගුණත්වය වැඩි කිරීමට සේවකයින්ට උපදෙස් ලබා දීම. B - සේවකයින්ට කාර්යක්ෂමව වැඩ කිරීමට අවශ්‍ය හිතකාමී පරිසරයක් සකස්කර දීමට තීරණය කිරීම. ඉහත කාර්ය දෙක පිළිවෙළින් අයත් වන්නේ",
-    "options": [
-      "සැලසුම්කරණයට හා මෙහෙයවීමට ය.",
-      "මෙහෙයවීමට හා සැලසුම්කරණයට ය.",
-      "මෙහෙයවීමට හා සංවිධානකරණයට ය.",
-      "පාලනයට හා සැලසුම්කරණයට ය."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 16,
-    "question": "බොහෝ පුද්ගලයෝ තම මුදල් ඉතිරි කිරීමේ ගිණුම්වල තැන්පත් කිරීමට වැඩි කැමැත්තක් දක්වති. මෙයට වඩාත්ම බලපාන හේතුව වන්නේ",
-    "options": [
-      "රජයේ පූර්ණ ආරක්ෂාවක් ලැබීමයි.",
-      "ඉහළ පොලී ආදායමක් ලැබීමයි.",
-      "අනෙකුත් ආයෝජන මාර්ගවලට වඩා වැඩි ප්‍රතිලාභ හිමිවීමයි.",
-      "අවශ්‍ය ඕනෑම වේලාවක ඉක්මනින්ම මුදල් ආපසු ලබාගත හැකිවීමයි."
-    ],
-    "answer": 4
-  },
-  {
-    "q": 17,
-    "question": "“ගිණුම්කරණය” යනු",
-    "options": [
-      "ව්‍යාපාරයක සිදුවන මූල්‍යමය ගනුදෙනු පොත්වල සටහන් කිරීමයි.",
-      "ව්‍යාපාරයක ප්‍රතිඵලය ගණනය කිරීම සඳහා අවශ්‍ය ගනුදෙනු වාර්තා කිරීමයි.",
-      "ව්‍යාපාරය කෙරෙහි ඇල්මැති පාර්ශ්වයන්ට අවශ්‍ය තීරණ ගැනීම සඳහා විවිධ තොරතුරු සැපයීමයි.",
-      "ව්‍යාපාරය කෙරෙහි ඇල්මැති පාර්ශ්වයන්ට අවශ්‍ය තීරණ ගැනීම සඳහා තොරතුරු සැපයීමේ ක්‍රියාවලියයි."
-    ],
-    "answer": 4
-  },
-  {
-    "q": 18,
-    "question": "ව්‍යාපාරයක ජංගම නොවන වගකීමක් වන්නේ",
-    "options": [
-      "ප්‍රාග්ධනය ය.",
-      "ණයහිමියෝ ය.",
-      "බැංකු ණය ය.",
-      "ගෙවිය යුතු විදුලි ගාස්තු ය."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 19,
-    "question": "වැඩිවීම බැර, අඩුවීම හර යන ද්විත්ව සටහන් මූලධර්මය අදාළ වන ගිණුමක් වන්නේ",
-    "options": [
-      "ලද වට්ටම් ගිණුම ය.",
-      "ගැනුම් ගිණුම ය.",
-      "බැංකු ණය පොලී ගිණුම ය.",
-      "ගොඩනැගිලි ගිණුම ය."
-    ],
-    "answer": 1
-  },
-  {
-    "q": 20,
-    "question": "සම්රගේ ව්‍යාපාරය රු. 25 000 ක වෙළෙඳ බඩු තොගයක් අත්පිට මුදලට ගැනීම සටහන් කිරීම සඳහා භාවිත කරන මූලාශ්‍ර ලේඛනය වන්නේ",
-    "options": [
-      "ලදුපත ය.",
-      "ගෙවීම් වවුචරය ය.",
-      "ගැනුම් ඉන්වොයිසිය ය.",
-      "ජ’නල් වවුචරය ය."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 21,
-    "question": "ව්‍යාපාරයක් විසින් පිළියෙල කරනු ලබන මුදල් පොතක දැකිය නොහැක්කේ කුමක් ද?",
-    "options": [
-      "සඟල පිටු අංක",
-      "ගෙවීම් වවුචර් අංක",
-      "ලදුපත් අංක",
-      "ඉන්වොයිස් අංක"
-    ],
-    "answer": 4
-  },
-  {
-    "q": 22,
-    "question": "ලී බඩු වෙළෙඳ ව්‍යාපාරයක ගැනුම් ජ’නලයේ සටහන් කරනු ලබන ගනුදෙනුව කුමක් ද?",
-    "options": [
-      "රු.50 000 ක පුටු අත්පිට මුදලට ගැනීම",
-      "රු.60 000 ක මේස රුවන්ගෙන් ණයට ගැනීම",
-      "රු.75 000 ක ලී අල්මාරියක් ව්‍යාපාරයේ ප්‍රයෝජනය සඳහා ණයට ගැනීම",
-      "රු.80 000 ක ඇඳක් අයිතිකරු තම පෞද්ගලික ප්‍රයෝජනය සඳහා ව්‍යාපාරයෙන් ගෙනයාම"
-    ],
-    "answer": 2
-  },
-  {
-    "q": 23,
-    "question": "ව්‍යාපාරයක ගිණුම්කරණ සමීකරණයෙහි වත්කම් හා වගකීම් යන දෙකෙහිම වටිනාකම අඩු කරනු ලබන ගනුදෙනුව වන්නේ",
-    "options": [
-      "ණයගැතියකුගෙන් රු.8 000 ක් ලැබීම ය.",
-      "රු.30 000 ක බඩු තොගයක් ණයට ගැනීම ය.",
-      "රු.10 000 ක් ණයහිමියකුට ගෙවීම ය.",
-      "රු.4 000 ක බැංකු ණය පොලී ගෙවීම ය."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 24,
-    "question": "ව්‍යාපාරයක, කාර්යාලයේ ප්‍රයෝජනය සඳහා රු.130 000 ක පරිගණකයක් අත්පිට මුදලට ගැනීම බලපාන්නේ",
-    "options": [
-      "වත්කම්වලට පමණි.",
-      "වත්කම් හා වගකීම්වලට ය.",
-      "වත්කම් හා වියදම්වලට ය.",
-      "වත්කම්, හිමිකම් හා වගකීම්වලට ය."
-    ],
-    "answer": 1
-  },
-  {
-    "q": 25,
-    "question": "සඳුන් රු.25 000 ක බඩු තොගයක් රු.30 000 කට ණයට විකිණීම නිසා ඔහුගේ ව්‍යාපාරයේ",
-    "options": [
-      "වත්කම් හා හිමිකම රු.5 000 කින් පමණක් අඩු වේ.",
-      "වත්කම් හා හිමිකම රු.5 000 කින් පමණක් වැඩි වේ.",
-      "වත්කම් හා වගකීම් රු.30 000 කින් පමණක් අඩු වේ.",
-      "වත්කම් හා හිමිකම රු.30 000 කින් පමණක් වැඩි වේ."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 26,
-    "question": "චාමර රු.10 000 ක බඩු තොගයක් සහන්ගෙන් අත්පිට මුදලට ගැනීමේදී 5% ක වෙළෙඳ වට්ටමක් ඔහුට ලැබුණි. මෙම ගනුදෙනුවට අදාළ නිවැරදි ද්විත්ව සටහන තෝරන්න.",
-    "options": [
-      "ගැනුම් ගිණුම හර රු.10 000; සහන්ගේ ගිණුම බැර රු.9 500; ලද වට්ටම් ගිණුම බැර රු.500",
-      "ගැනුම් ගිණුම හර රු.10 000; මුදල් ගිණුම බැර රු.9 500; ලද වට්ටම් ගිණුම බැර රු.500",
-      "ගැනුම් ගිණුම හර රු.9 500; සහන්ගේ ගිණුම බැර රු.9 500",
-      "ගැනුම් ගිණුම හර රු.9 500; මුදල් ගිණුම බැර රු.9 500"
-    ],
-    "answer": 4
-  },
-  {
-    "q": 27,
-    "question": "රවීගේ ව්‍යාපාරයේ 2025.12.31 දිනට සුළු මුදල් පොතේ විශ්ලේෂණ තීරුවල එකතුව රු.9 500 ක් වූ අතර එදිනට එහි ශේෂය රු.500 ක් විය. 2026.01.01 දින සිට සුළු මුදල් අත්තිකාරම් රු.2 000 කින් වැඩි කිරීමට රවී තීරණය කළේ ය. 2026.01.01 දින සුළු මුදල් ප්‍රතිපූරණය කිරීම සඳහා ලබා දුන් මුදල වන්නේ",
-    "options": [
-      "රු.2 500 කි.",
-      "රු.10 000 කි.",
-      "රු.11 500 කි.",
-      "රු.12 000 කි."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 28,
-    "question": "බැංකු ප්‍රකාශනය ලැබීමෙන් පසු ව්‍යාපාරයක බැංකු ගිණුම සංශෝධනය කිරීමේදී එම ගිණුමේ හර පැත්තේ සටහන් කරනු ලබන අයිතමයක් වන්නේ",
-    "options": [
-      "බැංකු ගාස්තු ය.",
-      "බැංකු ණය වාරික ය.",
-      "ණයගැති සෘජු ප්‍රේෂණ ය.",
-      "නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් ය."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 29,
-    "question": "බැංකුව විසින් එවනු ලබන බැංකු ප්‍රකාශනයේ ශේෂයට වඩා ව්‍යාපාරයේ බැංකු ගිණුමේ ශේෂය වැඩි වීමට හේතුවක් වන්නේ",
-    "options": [
-      "බැංකුවට සෘජුවම ලැබුණු ප්‍රේෂණ ය.",
-      "ස්ථාවර නියෝග මත බැංකුව විසින් ගෙවූ රක්ෂණ ගාස්තු ය.",
-      "බැංකුවට සෘජුව ලැබී ඇති ආයෝජන ආදායම ය.",
-      "නිකුත් කළ නමුත් බැංකුවට ඉදිරිපත් නොකළ චෙක්පත් ය."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 30,
-    "question": "ව්‍යාපාරයක ගිණුම්කරණයේදී සිදු වූ වැරදිවලින් ශේෂ පිරික්සුමෙහි සමානත්වයට බලපෑමක් නොවන වරදක් වන්නේ",
-    "options": [
-      "රු.5 000 ක ගමන් වියදම් එම ගිණුමේ දෙවරක් සටහන් වීම ය.",
-      "සමන්ට ගෙවූ රු.10 000 ක්, මුදල් පොතේ පමණක් සටහන් වීම ය.",
-      "රු.75 000 කට මිල දී ගත් බඩු තොගයක් ගැනුම් ගිණුමේ රු.57 000 ක් ලෙස සටහන් වීම ය.",
-      "අමිත්ගෙන් ලැබුණු රු.30 000 ක් අමල්ගේ ගිණුමේ බැර පැත්තේ සටහන් කිරීම ය."
-    ],
-    "answer": 4
-  },
-  {
-    "q": 31,
-    "question": "ණයගැති සමන්ගෙන් ලැබුණු රු.10 000 ක් සමන්ගේ ගිණුමට හර කිරීමේ වරද නිවැරදි කිරීමට අදාළ ජ’නල් සටහන තෝරන්න.",
-    "options": [
-      "සමන්ගේ ගිණුම හර රු.10 000; අවිනිශ්චිත ගිණුම බැර රු.10 000",
-      "අවිනිශ්චිත ගිණුම හර රු.10 000; සමන්ගේ ගිණුම බැර රු.10 000",
-      "සමන්ගේ ගිණුම හර රු.20 000; අවිනිශ්චිත ගිණුම බැර රු.20 000",
-      "අවිනිශ්චිත ගිණුම හර රු.20 000; සමන්ගේ ගිණුම බැර රු.20 000"
-    ],
-    "answer": 4
-  },
-  {
-    "q": 32,
-    "question": "ළමා ඇඳුම් මැසීමේ ව්‍යාපාරයක ඇඳුම් 1000 ක් නිෂ්පාදනය කිරීම සඳහා වූ වියදම්: රෙදි හා නූල් රු.100 000, ඇඳුම් මසන්නාගේ වැටුප රු.60 000, විදුලි වියදම රු.25 000, ගොඩනැගිලි කුලී රු.15 000, මුරකරුගේ වැටුප රු.40 000, යන්ත්‍ර ක්ෂය රු.10 000. මෙම ව්‍යාපාරයේ නිෂ්පාදන පොදු කාර්ය පිරිවැය",
-    "options": [
-      "රු.50 000 කි.",
-      "රු.90 000 කි.",
-      "රු.160 000 කි.",
-      "රු.250 000 කි."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 33,
-    "question": "ඉහත ව්‍යාපාරයේ නිපදවන ළමා ඇඳුමක නිෂ්පාදන පිරිවැය",
-    "options": [
-      "රු.50 කි.",
-      "රු.90 කි.",
-      "රු.160 කි.",
-      "රු.250 කි."
-    ],
-    "answer": 4
-  },
-  {
-    "q": 34,
-    "question": "සුහද ක්‍රීඩා සමාජයේ සාමාජික සංඛ්‍යාව 80 කි. එක් සාමාජිකයකුගේ මාසික සාමාජික මුදල රු.100 කි. 2025.12.31 දිනෙන් අවසන් වර්ෂය තුළදී සාමාජිකයින් 30 ක් පමණක් වාර්ෂික සාමාජික මුදල් ගෙවා තිබුණි. අනෙකුත් සාමාජිකයින් කිසිදු මුදලක් ගෙවා නැත. 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ලැබීම් හා ගෙවීම් ගිණුමේ සටහන් කරනු ලබන සාමාජික මුදල වන්නේ",
-    "options": [
-      "රු.5 000 කි.",
-      "රු.8 000 කි.",
-      "රු.60 000 කි.",
-      "රු.96 000 කි."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 35,
-    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂය සඳහා දළ ලාභය",
-    "options": [
-      "රු.1 200 000 කි.",
-      "රු.1 300 000 කි.",
-      "රු.1 400 000 කි.",
-      "රු.2 200 000 කි."
-    ],
-    "answer": 4
-  },
-  {
-    "q": 36,
-    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ආදායම් ප්‍රකාශනයේ ඇතුළත් ආයතන හා පරිපාලන වියදම්වල එකතුව",
-    "options": [
-      "රු.320 000 කි.",
-      "රු.360 000 කි.",
-      "රු.380 000 කි.",
-      "රු.460 000 කි."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 37,
-    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ආදායම් ප්‍රකාශනයේ ඇතුළත් කරන මුළු වියදම්වල එකතුව",
-    "options": [
-      "රු.450 000 කි.",
-      "රු.490 000 කි.",
-      "රු.510 000 කි.",
-      "රු.560 000 කි."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 38,
-    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනෙන් අවසන් වර්ෂයේ ශුද්ධ ලාභය",
-    "options": [
-      "රු.930 000 කි.",
-      "රු.1 690 000 කි.",
-      "රු.1 710 000 කි.",
-      "රු.1 720 000 කි."
-    ],
-    "answer": 3
-  },
-  {
-    "q": 39,
-    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට ජංගම නොවන වත්කම්වල ධාරණ අගය",
-    "options": [
-      "රු.3 500 000 කි.",
-      "රු.3 300 000 කි.",
-      "රු.3 250 000 කි.",
-      "රු.2 300 000 කි."
-    ],
-    "answer": 2
-  },
-  {
-    "q": 40,
-    "question": "ඊෂාන්ගේ ව්‍යාපාරයේ 2025.12.31 දිනට හිමිකම",
-    "options": [
-      "රු.3 720 000 කි.",
-      "රු.3 710 000 කි.",
-      "රු.3 690 000 කි.",
-      "රු.2 930 000 කි."
-    ],
-    "answer": 2
-  }
-];
-let paper2025Answers=[],paper2025Submitted=false,paper2025Seconds=3600,paper2025TimerInterval=null,paper2025WarningShown=false;
-function shuffleArray(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function escape2025HTML(text){return String(text).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}
-function init2025Paper(){clearInterval(paper2025TimerInterval);paper2025Submitted=false;paper2025WarningShown=false;paper2025Seconds=3600;paper2025Answers=new Array(paper2025Questions.length).fill(null);const qBox=document.getElementById('paper2025Questions'),resultBox=document.getElementById('paper2025Result'),finishBtn=document.getElementById('finish2025Btn');if(!qBox||!resultBox||!finishBtn)return;resultBox.innerHTML='';resultBox.style.display='none';finishBtn.disabled=false;finishBtn.style.display='block';document.getElementById('paper2025Warning').style.display='none';qBox.innerHTML='';paper2025Questions.forEach((q,index)=>{const card=document.createElement('div');card.className='paper2025-question';const shuffled=shuffleArray(q.options.map((text,originalIndex)=>({text,originalIndex:originalIndex+1})));const optionsHTML=shuffled.map((opt,optionIndex)=>`<label class="paper2025-option"><input type="radio" name="paper2025_q_${index}" value="${opt.originalIndex}" onchange="save2025Answer(${index},${opt.originalIndex})"><span class="paper2025-option-number">${optionIndex+1}</span><span>${escape2025HTML(opt.text)}</span></label>`).join('');card.innerHTML=`<div class="paper2025-q-number">ප්‍රශ්නය ${index+1}</div><div class="paper2025-q-text">${escape2025HTML(q.question)}</div><div class="paper2025-options">${optionsHTML}</div>`;qBox.appendChild(card)});update2025Timer();paper2025TimerInterval=setInterval(()=>{paper2025Seconds--;if(paper2025Seconds===300&&!paper2025WarningShown){paper2025WarningShown=true;show2025Warning()}if(paper2025Seconds<=0){paper2025Seconds=0;update2025Timer();clearInterval(paper2025TimerInterval);submit2025Paper(true);return}update2025Timer()},1000)}
-function save2025Answer(i,o){if(!paper2025Submitted)paper2025Answers[i]=o}
-function update2025Timer(){const t=document.getElementById('timer');if(!t)return;const m=Math.floor(paper2025Seconds/60),s=paper2025Seconds%60;t.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');t.classList.toggle('warning',paper2025Seconds<=300)}
-function show2025Warning(){const w=document.getElementById('paper2025Warning');if(w){w.textContent='⚠️ තවත් විනාඩි 5ක් පමණි! කරුණාකර ඔබගේ පිළිතුරු පරීක්ෂා කර Paper එක අවසන් කරන්න.';w.style.display='block'}}
-function submit2025Paper(autoSubmitted=false){if(paper2025Submitted)return;if(!autoSubmitted&&!confirm('Paper එක අවසන් කර ප්‍රතිඵල පෙන්වන්නද?'))return;paper2025Submitted=true;clearInterval(paper2025TimerInterval);document.querySelectorAll('#paper2025Questions input[type="radio"]').forEach(i=>i.disabled=true);const btn=document.getElementById('finish2025Btn');if(btn){btn.disabled=true;btn.style.display='none'}let score=0;paper2025Questions.forEach((q,i)=>{if(paper2025Answers[i]===q.answer)score++});show2025Result(score,autoSubmitted)}
-function show2025Result(score,autoSubmitted){const box=document.getElementById('paper2025Result');if(!box)return;const pct=Math.round(score/paper2025Questions.length*100);const review=paper2025Questions.map((q,i)=>{const selected=paper2025Answers[i],correct=q.answer,ok=selected===correct;return `<div class="paper2025-review ${ok?'correct':'wrong'}"><div class="paper2025-review-title">${ok?'✓ නිවැරදියි':'✗ වැරදියි'} — ප්‍රශ්නය ${i+1}</div><div class="answer-text">ඔබේ පිළිතුර: <strong>${selected?selected+'. '+escape2025HTML(q.options[selected-1]):'පිළිතුරු නොදුන්නා'}</strong></div><div class="answer-text">නිවැරදි පිළිතුර: <strong>${correct}. ${escape2025HTML(q.options[correct-1])}</strong></div></div>`}).join('');box.innerHTML=`<div class="paper2025-score"><div class="paper2025-score-label">${autoSubmitted?'⏰ කාලය අවසන් වී Paper එක ස්වයංක්‍රීයව අවසන් කරන ලදී.':'🎉 Paper එක අවසන් කරන ලදී.'}</div><div class="paper2025-score-number">${score} / 40</div><div class="paper2025-score-percent">${pct}%</div></div><h3 class="result-heading">📋 පිළිතුරු පරීක්ෂාව</h3>${review}<a class="back-home" href="past-papers.html">↩ Past Papers වෙත</a>`;box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'start'})}
-</script></body></html>
+
+    /*
+     * =========================================
+     * CURRENT SELECTIONS
+     * =========================================
+     */
+
+    let selectedLevel = "";
+
+    let selectedPaper = 0;
+
+    let selectedYear = 0;
+
+
+    /*
+     * =========================================
+     * TIMER
+     * =========================================
+     */
+
+    let temporarySeconds = 3600;
+
+    let temporaryTimerInterval = null;
+
+
+
+    /*
+     * =========================================
+     * INITIAL HISTORY STATE
+     * =========================================
+     *
+     * Past Papers page එකේ මුල් state එක.
+     */
+
+    history.replaceState(
+        {
+            step: 0
+        },
+        "",
+        window.location.pathname +
+        window.location.search
+    );
+
+
+
+    /*
+     * =========================================
+     * SELECT LEVEL
+     * =========================================
+     */
+
+    function selectLevel(level, button) {
+
+        selectedLevel = level;
+
+        selectedPaper = 0;
+
+        selectedYear = 0;
+
+
+        /*
+         * Stop timer if running
+         */
+
+        clearInterval(
+            temporaryTimerInterval
+        );
+
+
+        /*
+         * Remove old selections
+         */
+
+        document
+            .querySelectorAll(
+                ".choice-button, .year-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+        button.classList.add("selected");
+
+
+        /*
+         * Show Paper section
+         */
+
+        const paperSection =
+            document.getElementById(
+                "paperSection"
+            );
+
+        paperSection.style.display =
+            "block";
+
+
+        /*
+         * Hide Year section
+         */
+
+        document.getElementById(
+            "yearSection"
+        ).style.display =
+            "none";
+
+
+        /*
+         * Hide instructions
+         */
+
+        document.getElementById(
+            "instructions"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Hide paper
+
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+         */
+
+        history.pushState(
+            {
+                step: 1,
+                level: level
+            },
+            "",
+            "#level"
+        );
+
+
+        /*
+         * Scroll
+         */
+
+        setTimeout(function() {
+
+            paperSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * SELECT PAPER
+     * =========================================
+     */
+
+    function selectPaper(paper, button) {
+
+        selectedPaper = paper;
+
+        selectedYear = 0;
+
+
+        /*
+         * Remove selected paper buttons
+         */
+
+        document
+            .querySelectorAll(
+                "#paperSection .choice-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+        /*
+         * Remove old selected year
+
+         */
+
+        document
+            .querySelectorAll(
+                ".year-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+        button.classList.add("selected");
+
+
+        /*
+         * Show year section
+         */
+
+        const yearSection =
+            document.getElementById(
+                "yearSection"
+            );
+
+        yearSection.style.display =
+            "block";
+
+
+        /*
+         * Hide instructions
+         */
+
+        document.getElementById(
+            "instructions"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Hide paper
+
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+         */
+
+        history.pushState(
+            {
+                step: 2,
+                level: selectedLevel,
+                paper: paper
+            },
+            "",
+            "#paper"
+        );
+
+
+        /*
+         * Scroll
+         */
+
+        setTimeout(function() {
+
+            yearSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * SELECT YEAR
+     * =========================================
+     */
+
+    function selectYear(year, button) {
+
+        selectedYear = year;
+
+
+        /*
+         * Remove old selected year
+         */
+
+        document
+            .querySelectorAll(
+                ".year-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+        button.classList.add("selected");
+
+
+        /*
+         * Show instructions
+         */
+
+        const instructions =
+            document.getElementById(
+                "instructions"
+            );
+
+        instructions.classList.add(
+            "show"
+        );
+
+
+        /*
+         * Hide paper
+
+         */
+
+        document.getElementById(
+            "paperArea"
+        ).classList.remove(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+
+         */
+
+        history.pushState(
+            {
+                step: 3,
+                level: selectedLevel,
+                paper: selectedPaper,
+                year: year
+            },
+            "",
+            "#year"
+        );
+
+
+        /*
+         * Scroll
+
+         */
+
+        setTimeout(function() {
+
+            instructions.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * START PAPER
+     * =========================================
+     */
+
+    function startPaper() {
+
+        /*
+         * Check selections
+         */
+
+        if (
+            !selectedLevel ||
+            !selectedPaper ||
+            !selectedYear
+        ) {
+
+            alert(
+                "කරුණාකර විභාග මට්ටම, පේපරය සහ අවුරුද්ද තෝරන්න."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Update paper heading
+         */
+
+        const paperTitle =
+            document.getElementById(
+                "selectedPaperTitle"
+            );
+
+
+        const yearTitle =
+            document.getElementById(
+                "selectedYearTitle"
+            );
+
+
+        paperTitle.textContent =
+            selectedPaper === 1
+                ? "පළමු පත්‍රය"
+                : "දෙවන පත්‍රය";
+
+
+        yearTitle.textContent =
+            selectedYear;
+
+
+        /*
+         * Show paper
+         */
+
+        const paperArea =
+            document.getElementById(
+                "paperArea"
+            );
+
+
+        paperArea.classList.add(
+            "show"
+        );
+
+
+        /*
+         * Add browser history
+         */
+
+        history.pushState(
+            {
+                step: 4,
+                level: selectedLevel,
+                paper: selectedPaper,
+                year: selectedYear
+            },
+            "",
+            "#exam"
+        );
+
+
+        /*
+         * Start timer
+         */
+
+        startTemporaryTimer();
+
+
+        /*
+         * Scroll to paper
+         */
+
+        setTimeout(function() {
+
+            paperArea.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 100);
+
+    }
+
+
+
+    /*
+     * =========================================
+     * TEMPORARY TIMER
+     * =========================================
+     */
+
+    function startTemporaryTimer() {
+
+        clearInterval(
+            temporaryTimerInterval
+        );
+
+
+        temporarySeconds = 3600;
+
+
+        updateTemporaryTimer();
+
+
+        temporaryTimerInterval =
+            setInterval(function() {
+
+                temporarySeconds--;
+
+
+                if (
+                    temporarySeconds <= 0
+                ) {
+
+                    clearInterval(
+                        temporaryTimerInterval
+                    );
+
+                    temporarySeconds = 0;
+
+                }
+
+
+                updateTemporaryTimer();
+
+            }, 1000);
+
+    }
+
+
+
+    /* =========================================================
+       2025 PAPER I – ANSWER SYSTEM
+       ========================================================= */
+    const answers2025 = [null,4,4,3,3,1,2,1,1,3,4,3,1,3,2,2,4,4,3,1,2,4,2,3,1,2,4,3,3,2,4,4,2,4,3,4,3,3,3,2,2];
+    const userAnswers2025 = Array(41).fill(null);
+    let paper2025Finished = false;
+    let warningShown2025 = false;
+
+    function init2025Paper(){
+        paper2025Finished=false;
+        warningShown2025=false;
+        for(let i=1;i<=40;i++) userAnswers2025[i]=null;
+        document.querySelectorAll('.option-button-online').forEach(b=>{b.classList.remove('selected');b.disabled=false;});
+        shuffle2025Options();
+        document.getElementById('result2025').style.display='none';
+        document.getElementById('finish2025Button').style.display='block';
+        document.getElementById('fiveMinuteWarning').style.display='none';
+        startTemporaryTimer();
+    }
+
+    function shuffle2025Options(){
+        document.querySelectorAll('.question-card').forEach(card=>{
+            const grid=card.querySelector('.option-grid-online');
+            if(!grid) return;
+            const buttons=Array.from(grid.children);
+            for(let i=buttons.length-1;i>0;i--){
+                const j=Math.floor(Math.random()*(i+1));
+                grid.appendChild(buttons[j]);
+                buttons.splice(j,1);
+            }
+        });
+    }
+
+    function choose2025Answer(q, option, button){
+        if(paper2025Finished || temporarySeconds<=0) return;
+        userAnswers2025[q]=option;
+        document.querySelectorAll('.option-button-online[data-q="'+q+'"]').forEach(b=>b.classList.remove('selected'));
+        button.classList.add('selected');
+    }
+
+    function finish2025Paper(autoSubmit=false){
+        if(paper2025Finished) return;
+        if(!autoSubmit && !confirm('පේපරය දැන් අවසන් කර ප්‍රතිඵල පෙන්වන්නද?')) return;
+        paper2025Finished=true;
+        clearInterval(temporaryTimerInterval);
+        const result=document.getElementById('result2025');
+        let score=0, rows='';
+        for(let i=1;i<=40;i++){
+            const ua=userAnswers2025[i], ca=answers2025[i], ok=ua===ca;
+            if(ok) score++;
+            rows += '<div class="review-row"><strong>ප්‍රශ්නය '+i+'</strong><br>'+
+                '<span class="'+(ok?'review-correct':'review-wrong')+'">'+(ok?'✓ නිවැරදියි':'✗ වැරදියි')+'</span><br>'+
+                'ඔබේ පිළිතුර: <strong>'+(ua? '('+ua+')':'ලබා දී නැත')+'</strong><br>'+
+                'නිවැරදි පිළිතුර: <strong>(' + ca + ')</strong></div>';
+        }
+        const pct=Math.round(score/40*100);
+        result.innerHTML='<h3 style="color:var(--gold);text-align:center;margin-top:0">🏆 2025 Paper I ප්‍රතිඵල</h3><div class="result-score">'+score+' / 40</div><p style="text-align:center;color:#ccc;font-size:18px">ප්‍රතිශතය: <strong style="color:var(--gold)">'+pct+'%</strong></p><div>'+rows+'</div>';
+        result.style.display='block';
+        document.getElementById('finish2025Button').style.display='none';
+        document.querySelectorAll('.option-button-online').forEach(b=>b.disabled=true);
+        setTimeout(()=>result.scrollIntoView({behavior:'smooth',block:'start'}),100);
+    }
+
+    function updateTemporaryTimer(){
+        const minutes=Math.floor(temporarySeconds/60);
+        const seconds=temporarySeconds%60;
+        document.getElementById('timer').textContent=String(minutes).padStart(2,'0')+':'+String(seconds).padStart(2,'0');
+        if(selectedLevel==='ol' && selectedPaper===1 && selectedYear===2025 && temporarySeconds<=300 && temporarySeconds>0 && !warningShown2025){
+            warningShown2025=true;
+            document.getElementById('fiveMinuteWarning').style.display='block';
+            alert('⚠️ තව විනාඩි 5ක් පමණයි ඉතිරිව ඇත්තේ!');
+        }
+        if(selectedLevel==='ol' && selectedPaper===1 && selectedYear===2025 && temporarySeconds<=0 && !paper2025Finished){
+            finish2025Paper(true);
+        }
+    }
+
+    /*
+     * =========================================
+     * RESTORE LEVEL BUTTON
+     * =========================================
+     */
+
+    function restoreLevelButton() {
+
+        document
+            .querySelectorAll(
+                ".pp-main > .selection-card:first-of-type .choice-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+
+                const onclickText =
+                    btn.getAttribute(
+                        "onclick"
+                    ) || "";
+
+
+                if (
+                    onclickText.includes(
+                        "'" +
+                        selectedLevel +
+                        "'"
+                    )
+                ) {
+
+                    btn.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+
+    /*
+     * =========================================
+     * RESTORE PAPER BUTTON
+     * =========================================
+     */
+
+    function restorePaperButton() {
+
+        document
+            .querySelectorAll(
+                "#paperSection .choice-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+
+                const onclickText =
+                    btn.getAttribute(
+                        "onclick"
+                    ) || "";
+
+
+                if (
+                    onclickText.includes(
+                        "(" +
+                        selectedPaper +
+                        ","
+                    )
+                ) {
+
+                    btn.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+
+    /*
+     * =========================================
+     * RESTORE YEAR BUTTON
+     * =========================================
+     */
+
+    function restoreYearButton() {
+
+        document
+            .querySelectorAll(
+                ".year-button"
+            )
+            .forEach(function(btn) {
+
+                btn.classList.remove(
+                    "selected"
+                );
+
+
+                if (
+                    btn.textContent.trim()
+                    ===
+                    String(selectedYear)
+                ) {
+
+                    btn.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+    }
+
+
+
+    /*
+     * =========================================
+     * BROWSER BACK / FORWARD
+     * =========================================
+     */
+
+    window.addEventListener(
+        "popstate",
+        function(event) {
+
+            const state =
+                event.state;
+
+
+            /*
+             * =================================
+             * STEP 0
+             * Main Past Papers page
+             * =================================
+             */
+
+            if (
+                !state ||
+                state.step === 0
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel = "";
+
+                selectedPaper = 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Hide Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "none";
+
+
+                /*
+                 * Hide Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "none";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide exam
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selected buttons
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Scroll to top
+                 */
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 1
+             * Level selected
+             * =================================
+             */
+
+            if (
+                state.step === 1
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper = 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Hide Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "none";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selections
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Restore level
+                 */
+
+                restoreLevelButton();
+
+
+                /*
+                 * Scroll to Paper section
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "paperSection"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 50);
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 2
+             * Paper selected
+             * =================================
+             */
+
+            if (
+                state.step === 2
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear = 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Hide instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove old selections
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Restore level
+                 */
+
+                restoreLevelButton();
+
+
+                /*
+                 * Restore paper
+                 */
+
+                restorePaperButton();
+
+
+                /*
+                 * Scroll to Year section
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "yearSection"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 50);
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 3
+             * Year selected
+             * =================================
+             */
+
+            if (
+                state.step === 3
+            ) {
+
+                clearInterval(
+                    temporaryTimerInterval
+                );
+
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear =
+                    state.year || 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Hide paper
+
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.remove(
+                    "show"
+                );
+
+
+                /*
+                 * Remove selections
+                 */
+
+                document
+                    .querySelectorAll(
+                        ".choice-button, .year-button"
+                    )
+                    .forEach(function(btn) {
+
+                        btn.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                /*
+                 * Restore level
+                 */
+
+                restoreLevelButton();
+
+
+                /*
+                 * Restore paper
+                 */
+
+                restorePaperButton();
+
+
+                /*
+                 * Restore year
+                 */
+
+                restoreYearButton();
+
+
+                /*
+                 * Scroll to instructions
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "instructions"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }, 50);
+
+
+                return;
+
+            }
+
+
+
+            /*
+             * =================================
+             * STEP 4
+             * Paper opened
+             * =================================
+             */
+
+            if (
+                state.step === 4
+            ) {
+
+                selectedLevel =
+                    state.level || "";
+
+                selectedPaper =
+                    state.paper || 0;
+
+                selectedYear =
+                    state.year || 0;
+
+
+                /*
+                 * Show Paper section
+                 */
+
+                document.getElementById(
+                    "paperSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show Year section
+                 */
+
+                document.getElementById(
+                    "yearSection"
+                ).style.display =
+                    "block";
+
+
+                /*
+                 * Show instructions
+                 */
+
+                document.getElementById(
+                    "instructions"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Restore selections
+                 */
+
+                restoreLevelButton();
+
+                restorePaperButton();
+
+                restoreYearButton();
+
+
+                /*
+                 * Update paper title
+                 */
+
+                document.getElementById(
+                    "selectedPaperTitle"
+                ).textContent =
+
+                    selectedPaper === 1
+                        ? "පළමු පත්‍රය"
+                        : "දෙවන පත්‍රය";
+
+
+                document.getElementById(
+                    "selectedYearTitle"
+                ).textContent =
+                    selectedYear;
+
+
+                /*
+                 * Show paper
+                 */
+
+                document.getElementById(
+                    "paperArea"
+                ).classList.add(
+                    "show"
+                );
+
+
+                /*
+                 * Restart temporary timer
+                 */
+
+                if (selectedLevel === "ol" && selectedPaper === 1 && selectedYear === 2025) {
+                    init2025Paper();
+                } else {
+                    startTemporaryTimer();
+                }
+
+
+                /*
+                 * Scroll to paper
+                 */
+
+                setTimeout(function() {
+
+                    document.getElementById(
+                        "paperArea"
+                    ).scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }, 50);
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
