@@ -5926,6 +5926,1820 @@
 
     </section>
 
+    <!-- =========================================================
+     ACCOUNTING DETECTIVE CHALLENGE
+     Lesson 09 – සම්පූර්ණ ප්‍රායෝගික අභියෝගය
+     ========================================================= -->
+
+<style>
+/* =========================================================
+   ACCOUNTING DETECTIVE CHALLENGE – CSS
+   ========================================================= */
+
+.detective-section{
+    margin:45px auto;
+    max-width:1150px;
+}
+
+.detective-header{
+    background:linear-gradient(135deg,#111,#1b1b1b);
+    border:2px solid #d4af37;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.35);
+}
+
+.detective-header h2{
+    color:#d4af37;
+    margin-bottom:12px;
+}
+
+.detective-header p{
+    line-height:1.9;
+}
+
+.detective-progress-box{
+    background:#111;
+    border:1px solid #444;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:25px;
+}
+
+.detective-progress-track{
+    width:100%;
+    height:18px;
+    background:#292929;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.detective-progress-fill{
+    height:100%;
+    width:0%;
+    background:#d4af37;
+    transition:.4s;
+}
+
+.detective-card{
+    background:#111;
+    border:1px solid #333;
+    border-radius:15px;
+    margin-bottom:30px;
+    overflow:hidden;
+}
+
+.detective-card-head{
+    padding:20px;
+    background:#181818;
+    border-bottom:1px solid #333;
+}
+
+.detective-card-head h3{
+    color:#d4af37;
+    margin-bottom:8px;
+}
+
+.detective-info{
+    padding:20px;
+    line-height:1.9;
+}
+
+.detective-transaction-box,
+.detective-bank-box,
+.detective-answer-box{
+    margin:20px;
+    padding:18px;
+    border:1px solid #333;
+    border-radius:12px;
+    background:#0d0d0d;
+}
+
+.detective-table-wrap{
+    overflow-x:auto;
+}
+
+.detective-table{
+    width:100%;
+    min-width:900px;
+    border-collapse:collapse;
+    background:#fff;
+    color:#111;
+}
+
+.detective-table th,
+.detective-table td{
+    border:1px solid #777;
+    padding:7px;
+    text-align:center;
+}
+
+.detective-table th{
+    background:#202020;
+    color:#fff;
+}
+
+.detective-table input{
+    width:100%;
+    min-width:90px;
+    padding:7px;
+    border:1px solid #aaa;
+    border-radius:5px;
+    background:#fff;
+    color:#111;
+}
+
+.detective-table input.detective-correct{
+    border:3px solid #159447 !important;
+    background:#eafff0;
+}
+
+.detective-table input.detective-wrong{
+    border:3px solid #c62828 !important;
+    background:#fff0f0;
+}
+
+.detective-score{
+    margin:18px 20px;
+    padding:15px;
+    border-radius:10px;
+    background:#171717;
+    border:1px solid #444;
+    font-weight:bold;
+}
+
+.detective-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:0 20px 20px;
+}
+
+.detective-btn{
+    border:0;
+    border-radius:8px;
+    padding:11px 18px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.detective-check{
+    background:#d4af37;
+    color:#111;
+}
+
+.detective-answer-btn{
+    background:#333;
+    color:#fff;
+}
+
+.detective-reset{
+    background:#8b2020;
+    color:#fff;
+}
+
+.detective-bank-statement{
+    background:#fff;
+    color:#111;
+    padding:15px;
+    border-radius:10px;
+    overflow-x:auto;
+}
+
+.detective-bank-statement table{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+}
+
+.detective-bank-statement th,
+.detective-bank-statement td{
+    border:1px solid #555;
+    padding:7px;
+    text-align:center;
+}
+
+.detective-bank-statement th{
+    background:#222;
+    color:#fff;
+}
+
+.detective-final{
+    background:linear-gradient(135deg,#101010,#1d1d1d);
+    border:2px solid #d4af37;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    margin-top:30px;
+}
+
+.detective-answer{
+    display:none;
+    margin:20px;
+    padding:20px;
+    background:#161616;
+    border:1px solid #555;
+    border-radius:10px;
+}
+
+.detective-answer.show{
+    display:block;
+}
+
+.detective-mini-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    color:#111;
+    margin-top:12px;
+}
+
+.detective-mini-table th,
+.detective-mini-table td{
+    border:1px solid #666;
+    padding:7px;
+    text-align:center;
+}
+
+.detective-mini-table th{
+    background:#222;
+    color:#fff;
+}
+
+.detective-note{
+    background:#211d0c;
+    border-left:4px solid #d4af37;
+    padding:12px;
+    margin:15px 0;
+}
+
+.detective-result{
+    font-size:18px;
+    margin-top:10px;
+}
+
+.detective-field-result{
+    font-size:13px;
+    margin-top:4px;
+}
+
+@media(max-width:700px){
+    .detective-section{
+        margin:25px 8px;
+    }
+
+    .detective-header{
+        padding:18px 12px;
+    }
+
+    .detective-card-head{
+        padding:15px;
+    }
+
+    .detective-transaction-box,
+    .detective-bank-box{
+        margin:12px;
+        padding:12px;
+    }
+
+    .detective-buttons{
+        padding:0 12px 15px;
+    }
+}
+</style>
+
+
+<section class="detective-section" id="accountingDetectiveChallenge">
+
+    <div class="detective-header">
+        <h2>🕵️ Accounting Detective Challenge</h2>
+        <h3>විශේෂ අභියෝගය</h3>
+
+        <p>
+            ඔබ දැන් සාමාන්‍ය ක්‍රියාකාරකම්වලින් ඉදිරියට ගොස්
+            සැබෑ ගිණුම්කරණ පරීක්ෂකයෙකු ලෙස කටයුතු කළ යුතුය.
+        </p>
+
+        <p>
+            එක් අභියෝගයක ගනුදෙනු <strong>15ක්</strong> ඇත.
+            ගනුදෙනු පරීක්ෂා කර,
+            බැංකු ගිණුම, මුදල් ගිණුම,
+            අදාළ ගිණුම්, බැංකු ප්‍රකාශය,
+            සංශෝධිත බැංකු ගිණුම සහ
+            බැංකු සැසඳුම් විස්තරය සම්පූර්ණ කරන්න.
+        </p>
+    </div>
+
+
+    <div class="detective-progress-box">
+
+        <strong>🏆 සමස්ත අභියෝග ප්‍රගතිය</strong>
+
+        <div id="detectiveOverallText">
+            සම්පූර්ණ කළ අභියෝග: 0 / 5
+        </div>
+
+        <div class="detective-progress-track">
+            <div
+                class="detective-progress-fill"
+                id="detectiveOverallFill">
+            </div>
+        </div>
+
+        <div id="detectiveOverallScore">
+            මුළු ලකුණු: 0
+        </div>
+
+    </div>
+
+
+    <div id="detectiveChallengeContainer"></div>
+
+</section>
+
+
+<script>
+/* =========================================================
+   ACCOUNTING DETECTIVE DATA
+   ========================================================= */
+
+const detectiveChallengeData = [
+
+/* =========================================================
+   CHALLENGE 01
+   ========================================================= */
+
+{
+    id:1,
+    title:"අභියෝගය 01 – Unique Business",
+    month:"2026 සැප්තැම්බර්",
+    openingBank:0,
+    openingCash:0,
+
+    transactions:[
+        ["01.09.26","ප්‍රාග්ධනය ලෙස මුදල් ආයෝජනය කිරීම","මුදල් ගිණුම","ප්‍රාග්ධන ගිණුම",100000],
+        ["02.09.26","මුදල් බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",40000],
+        ["04.09.26","නදීෂාගෙන් චෙක්පතක් ලැබී එදිනම බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","නදීෂා ණයගැති ගිණුම",25000],
+        ["06.09.26","අමල් වෙළෙඳසැලෙන් භාණ්ඩ ණයට මිලදී ගැනීම","ගැනුම් ගිණුම","අමල් වෙළෙඳසැල් ගිණුම",18000],
+        ["08.09.26","අමල් වෙළෙඳසැලට චෙක්පතක් නිකුත් කිරීම","අමල් වෙළෙඳසැල් ගිණුම","බැංකු ගිණුම",10000],
+        ["10.09.26","නදීෂාගෙන් චෙක්පතක් ලැබී එදින බැංකුවේ තැන්පත් නොකිරීම","මුදල් ගිණුම","නදීෂා ණයගැති ගිණුම",20000],
+        ["12.09.26","නදීෂාගේ චෙක්පත බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",20000],
+        ["15.09.26","නදීෂාගේ රු.25,000 චෙක්පත අගරු වීම","නදීෂා ණයගැති ගිණුම","බැංකු ගිණුම",25000],
+        ["18.09.26","අමල් වෙත නිකුත් කළ රු.10,000 චෙක්පත අගරු වීම","බැංකු ගිණුම","අමල් වෙළෙඳසැල් ගිණුම",10000],
+        ["20.09.26","බැංකු ගාස්තු","බැංකු ගාස්තු ගිණුම","බැංකු ගිණුම",1000],
+        ["22.09.26","විදුලි ගාස්තු සඳහා චෙක්පතක් නිකුත් කිරීම","විදුලි ගාස්තු ගිණුම","බැංකු ගිණුම",3000],
+        ["25.09.26","කාර්යාල කුලී මුදලින් ගෙවීම","කුලී ගිණුම","මුදල් ගිණුම",5000],
+        ["26.09.26","මුදල් විකිණුම්","මුදල් ගිණුම","විකුණුම් ගිණුම",12000],
+        ["28.09.26","නිමල්ගෙන් සෘජු ප්‍රේෂණයක් ලැබීම","බැංකු ගිණුම","නිමල් ණයගැති ගිණුම",8000],
+        ["30.09.26","රක්ෂණය සඳහා ස්ථාවර නියෝගයක්","රක්ෂණ ගිණුම","බැංකු ගිණුම",4000]
+    ],
+
+    statement:{
+        opening:50000,
+        rows:[
+            ["02.09.26","මුදල් තැන්පතුව","",40000,90000],
+            ["04.09.26","චෙක්පත් තැන්පතුව – නදීෂා","",25000,115000],
+            ["08.09.26","චෙක්පත් ගෙවීම – අමල්",10000,"",105000],
+            ["15.09.26","නදීෂා චෙක්පත අගරු වීම",25000,"",80000],
+            ["20.09.26","බැංකු ගාස්තු",1000,"",79000],
+            ["28.09.26","සෘජු ප්‍රේෂණ – නිමල්","",8000,87000],
+            ["30.09.26","ස්ථාවර නියෝග – රක්ෂණය",4000,"",83000]
+        ],
+        closing:83000
+    },
+
+    reconciliation:{
+        unpresented:3000,
+        uncleared:20000
+    }
+},
+
+
+/* =========================================================
+   CHALLENGE 02
+   ========================================================= */
+
+{
+    id:2,
+    title:"අභියෝගය 02 – Saman Traders",
+    month:"2026 ඔක්තෝබර්",
+    openingBank:0,
+    openingCash:0,
+
+    transactions:[
+        ["01.10.26","ප්‍රාග්ධනය ලෙස මුදල් ආයෝජනය කිරීම","මුදල් ගිණුම","ප්‍රාග්ධන ගිණුම",120000],
+        ["02.10.26","මුදල් බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",50000],
+        ["04.10.26","නිමල්ගෙන් චෙක්පතක් ලැබී එදිනම බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","නිමල් ණයගැති ගිණුම",30000],
+        ["06.10.26","සුනිල් වෙළෙඳසැලෙන් භාණ්ඩ ණයට ගැනීම","ගැනුම් ගිණුම","සුනිල් වෙළෙඳසැල් ගිණුම",22000],
+        ["08.10.26","සුනිල් වෙළෙඳසැලට චෙක්පතක් නිකුත් කිරීම","සුනිල් වෙළෙඳසැල් ගිණුම","බැංකු ගිණුම",12000],
+        ["10.10.26","කමල්ගෙන් චෙක්පතක් ලැබී මුදල් ලෙස භාරගැනීම","මුදල් ගිණුම","කමල් ණයගැති ගිණුම",18000],
+        ["12.10.26","කමල්ගේ චෙක්පත බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",18000],
+        ["15.10.26","නිමල්ගේ චෙක්පත අගරු වීම","නිමල් ණයගැති ගිණුම","බැංකු ගිණුම",30000],
+        ["17.10.26","සුනිල් වෙත නිකුත් කළ චෙක්පත අගරු වීම","බැංකු ගිණුම","සුනිල් වෙළෙඳසැල් ගිණුම",12000],
+        ["20.10.26","බැංකු ගාස්තු","බැංකු ගාස්තු ගිණුම","බැංකු ගිණුම",1500],
+        ["22.10.26","විදුලි ගාස්තු චෙක්පත","විදුලි ගාස්තු ගිණුම","බැංකු ගිණුම",4500],
+        ["24.10.26","කාර්යාල කුලී මුදලින් ගෙවීම","කුලී ගිණුම","මුදල් ගිණුම",7000],
+        ["26.10.26","මුදල් විකිණුම්","මුදල් ගිණුම","විකුණුම් ගිණුම",15000],
+        ["28.10.26","අමල්ගෙන් සෘජු ප්‍රේෂණයක්","බැංකු ගිණුම","අමල් ණයගැති ගිණුම",10000],
+        ["30.10.26","ණය වාරිකය සඳහා ස්ථාවර නියෝගය","ණය ගිණුම","බැංකු ගිණුම",6000]
+    ],
+
+    statement:{
+        opening:60000,
+        rows:[
+            ["02.10.26","මුදල් තැන්පතුව","",50000,110000],
+            ["04.10.26","චෙක්පත් තැන්පතුව – නිමල්","",30000,140000],
+            ["08.10.26","චෙක්පත් ගෙවීම – සුනිල්",12000,"",128000],
+            ["12.10.26","චෙක්පත් තැන්පතුව – කමල්","",18000,146000],
+            ["15.10.26","නිමල් චෙක්පත අගරු වීම",30000,"",116000],
+            ["20.10.26","බැංකු ගාස්තු",1500,"",114500],
+            ["28.10.26","සෘජු ප්‍රේෂණ – අමල්","",10000,124500],
+            ["30.10.26","ස්ථාවර නියෝග – ණය වාරිකය",6000,"",118500]
+        ],
+        closing:118500
+    },
+
+    reconciliation:{
+        unpresented:4500,
+        uncleared:18000
+    }
+},
+
+
+/* =========================================================
+   CHALLENGE 03
+   ========================================================= */
+
+{
+    id:3,
+    title:"අභියෝගය 03 – Nimal Stores",
+    month:"2026 නොවැම්බර්",
+    openingBank:0,
+    openingCash:0,
+
+    transactions:[
+        ["01.11.26","ප්‍රාග්ධනය ලෙස මුදල් ආයෝජනය කිරීම","මුදල් ගිණුම","ප්‍රාග්ධන ගිණුම",150000],
+        ["02.11.26","මුදල් බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",60000],
+        ["04.11.26","සමන්ගෙන් චෙක්පතක් ලැබී බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","සමන් ණයගැති ගිණුම",35000],
+        ["06.11.26","අමල් වෙළෙඳසැලෙන් භාණ්ඩ ණයට ගැනීම","ගැනුම් ගිණුම","අමල් වෙළෙඳසැල් ගිණුම",25000],
+        ["08.11.26","අමල් වෙත චෙක්පතක් නිකුත් කිරීම","අමල් වෙළෙඳසැල් ගිණුම","බැංකු ගිණුම",15000],
+        ["10.11.26","නිමල්ගෙන් චෙක්පතක් ලැබී මුදල් ලෙස භාරගැනීම","මුදල් ගිණුම","නිමල් ණයගැති ගිණුම",22000],
+        ["12.11.26","නිමල්ගේ චෙක්පත බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",22000],
+        ["15.11.26","සමන්ගේ චෙක්පත අගරු වීම","සමන් ණයගැති ගිණුම","බැංකු ගිණුම",35000],
+        ["17.11.26","අමල් වෙත නිකුත් කළ චෙක්පත අගරු වීම","බැංකු ගිණුම","අමල් වෙළෙඳසැල් ගිණුම",15000],
+        ["20.11.26","බැංකු ගාස්තු","බැංකු ගාස්තු ගිණුම","බැංකු ගිණුම",2000],
+        ["22.11.26","විදුලි ගාස්තු චෙක්පත","විදුලි ගාස්තු ගිණුම","බැංකු ගිණුම",5500],
+        ["24.11.26","කාර්යාල කුලී මුදලින් ගෙවීම","කුලී ගිණුම","මුදල් ගිණුම",8000],
+        ["26.11.26","මුදල් විකිණුම්","මුදල් ගිණුම","විකුණුම් ගිණුම",18000],
+        ["28.11.26","නදීෂාගෙන් සෘජු ප්‍රේෂණයක්","බැංකු ගිණුම","නදීෂා ණයගැති ගිණුම",12000],
+        ["30.11.26","රක්ෂණය සඳහා ස්ථාවර නියෝගය","රක්ෂණ ගිණුම","බැංකු ගිණුම",5000]
+    ],
+
+    statement:{
+        opening:70000,
+        rows:[
+            ["02.11.26","මුදල් තැන්පතුව","",60000,130000],
+            ["04.11.26","චෙක්පත් තැන්පතුව – සමන්","",35000,165000],
+            ["08.11.26","චෙක්පත් ගෙවීම – අමල්",15000,"",150000],
+            ["12.11.26","චෙක්පත් තැන්පතුව – නිමල්","",22000,172000],
+            ["15.11.26","සමන් චෙක්පත අගරු වීම",35000,"",137000],
+            ["20.11.26","බැංකු ගාස්තු",2000,"",135000],
+            ["28.11.26","සෘජු ප්‍රේෂණ – නදීෂා","",12000,147000],
+            ["30.11.26","ස්ථාවර නියෝග – රක්ෂණය",5000,"",142000]
+        ],
+        closing:142000
+    },
+
+    reconciliation:{
+        unpresented:5500,
+        uncleared:22000
+    }
+},
+
+
+/* =========================================================
+   CHALLENGE 04
+   ========================================================= */
+
+{
+    id:4,
+    title:"අභියෝගය 04 – Perera Traders",
+    month:"2026 දෙසැම්බර්",
+    openingBank:0,
+    openingCash:0,
+
+    transactions:[
+        ["01.12.26","ප්‍රාග්ධනය ලෙස මුදල් ආයෝජනය කිරීම","මුදල් ගිණුම","ප්‍රාග්ධන ගිණුම",200000],
+        ["02.12.26","මුදල් බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",80000],
+        ["04.12.26","නිමල්ගෙන් චෙක්පතක් ලැබී බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","නිමල් ණයගැති ගිණුම",45000],
+        ["06.12.26","පෙරේරා වෙළෙඳසැලෙන් භාණ්ඩ ණයට ගැනීම","ගැනුම් ගිණුම","පෙරේරා වෙළෙඳසැල් ගිණුම",30000],
+        ["08.12.26","පෙරේරා වෙළෙඳසැලට චෙක්පතක් නිකුත් කිරීම","පෙරේරා වෙළෙඳසැල් ගිණුම","බැංකු ගිණුම",18000],
+        ["10.12.26","සමන්ගෙන් චෙක්පතක් ලැබී මුදල් ලෙස භාරගැනීම","මුදල් ගිණුම","සමන් ණයගැති ගිණුම",25000],
+        ["12.12.26","සමන්ගේ චෙක්පත බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",25000],
+        ["15.12.26","නිමල්ගේ චෙක්පත අගරු වීම","නිමල් ණයගැති ගිණුම","බැංකු ගිණුම",45000],
+        ["17.12.26","පෙරේරා වෙත නිකුත් කළ චෙක්පත අගරු වීම","බැංකු ගිණුම","පෙරේරා වෙළෙඳසැල් ගිණුම",18000],
+        ["20.12.26","බැංකු ගාස්තු","බැංකු ගාස්තු ගිණුම","බැංකු ගිණුම",2500],
+        ["22.12.26","විදුලි ගාස්තු චෙක්පත","විදුලි ගාස්තු ගිණුම","බැංකු ගිණුම",6500],
+        ["24.12.26","කාර්යාල කුලී මුදලින් ගෙවීම","කුලී ගිණුම","මුදල් ගිණුම",10000],
+        ["26.12.26","මුදල් විකිණුම්","මුදල් ගිණුම","විකුණුම් ගිණුම",20000],
+        ["28.12.26","කමල්ගෙන් සෘජු ප්‍රේෂණයක්","බැංකු ගිණුම","කමල් ණයගැති ගිණුම",15000],
+        ["30.12.26","ණය වාරිකය සඳහා ස්ථාවර නියෝගය","ණය ගිණුම","බැංකු ගිණුම",7000]
+    ],
+
+    statement:{
+        opening:80000,
+        rows:[
+            ["02.12.26","මුදල් තැන්පතුව","",80000,160000],
+            ["04.12.26","චෙක්පත් තැන්පතුව – නිමල්","",45000,205000],
+            ["08.12.26","චෙක්පත් ගෙවීම – පෙරේරා",18000,"",187000],
+            ["12.12.26","චෙක්පත් තැන්පතුව – සමන්","",25000,212000],
+            ["15.12.26","නිමල් චෙක්පත අගරු වීම",45000,"",167000],
+            ["20.12.26","බැංකු ගාස්තු",2500,"",164500],
+            ["28.12.26","සෘජු ප්‍රේෂණ – කමල්","",15000,179500],
+            ["30.12.26","ස්ථාවර නියෝග – ණය වාරිකය",7000,"",172500]
+        ],
+        closing:172500
+    },
+
+    reconciliation:{
+        unpresented:6500,
+        uncleared:25000
+    }
+},
+
+
+/* =========================================================
+   CHALLENGE 05
+   ========================================================= */
+
+{
+    id:5,
+    title:"අභියෝගය 05 – Final Detective Mission",
+    month:"2027 ජනවාරි",
+    openingBank:0,
+    openingCash:0,
+
+    transactions:[
+        ["01.01.27","ප්‍රාග්ධනය ලෙස මුදල් ආයෝජනය කිරීම","මුදල් ගිණුම","ප්‍රාග්ධන ගිණුම",250000],
+        ["02.01.27","මුදල් බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",100000],
+        ["04.01.27","නදීෂාගෙන් චෙක්පතක් ලැබී බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","නදීෂා ණයගැති ගිණුම",50000],
+        ["06.01.27","අමල් වෙළෙඳසැලෙන් භාණ්ඩ ණයට ගැනීම","ගැනුම් ගිණුම","අමල් වෙළෙඳසැල් ගිණුම",35000],
+        ["08.01.27","අමල් වෙත චෙක්පතක් නිකුත් කිරීම","අමල් වෙළෙඳසැල් ගිණුම","බැංකු ගිණුම",20000],
+        ["10.01.27","සමන්ගෙන් චෙක්පතක් ලැබී මුදල් ලෙස භාරගැනීම","මුදල් ගිණුම","සමන් ණයගැති ගිණුම",30000],
+        ["12.01.27","සමන්ගේ චෙක්පත බැංකුවේ තැන්පත් කිරීම","බැංකු ගිණුම","මුදල් ගිණුම",30000],
+        ["15.01.27","නදීෂාගේ චෙක්පත අගරු වීම","නදීෂා ණයගැති ගිණුම","බැංකු ගිණුම",50000],
+        ["17.01.27","අමල් වෙත නිකුත් කළ චෙක්පත අගරු වීම","බැංකු ගිණුම","අමල් වෙළෙඳසැල් ගිණුම",20000],
+        ["20.01.27","බැංකු ගාස්තු","බැංකු ගාස්තු ගිණුම","බැංකු ගිණුම",3000],
+        ["22.01.27","විදුලි ගාස්තු චෙක්පත","විදුලි ගාස්තු ගිණුම","බැංකු ගිණුම",7500],
+        ["24.01.27","කාර්යාල කුලී මුදලින් ගෙවීම","කුලී ගිණුම","මුදල් ගිණුම",12000],
+        ["26.01.27","මුදල් විකිණුම්","මුදල් ගිණුම","විකුණුම් ගිණුම",25000],
+        ["28.01.27","නිමල්ගෙන් සෘජු ප්‍රේෂණයක්","බැංකු ගිණුම","නිමල් ණයගැති ගිණුම",18000],
+        ["30.01.27","රක්ෂණය සඳහා ස්ථාවර නියෝගය","රක්ෂණ ගිණුම","බැංකු ගිණුම",8000]
+    ],
+
+    statement:{
+        opening:90000,
+        rows:[
+            ["02.01.27","මුදල් තැන්පතුව","",100000,190000],
+            ["04.01.27","චෙක්පත් තැන්පතුව – නදීෂා","",50000,240000],
+            ["08.01.27","චෙක්පත් ගෙවීම – අමල්",20000,"",220000],
+            ["12.01.27","චෙක්පත් තැන්පතුව – සමන්","",30000,250000],
+            ["15.01.27","නදීෂා චෙක්පත අගරු වීම",50000,"",200000],
+            ["20.01.27","බැංකු ගාස්තු",3000,"",197000],
+            ["28.01.27","සෘජු ප්‍රේෂණ – නිමල්","",18000,215000],
+            ["30.01.27","ස්ථාවර නියෝග – රක්ෂණය",8000,"",207000]
+        ],
+        closing:207000
+    },
+
+    reconciliation:{
+        unpresented:7500,
+        uncleared:30000
+    }
+}
+
+];
+
+
+/* =========================================================
+   STORAGE
+   ========================================================= */
+
+const DETECTIVE_STORAGE_KEY =
+    "uez_lesson9_detective_challenge_v1";
+
+
+function getDetectiveState(){
+
+    try{
+        return JSON.parse(
+            localStorage.getItem(DETECTIVE_STORAGE_KEY)
+        ) || {};
+    }catch(e){
+        return {};
+    }
+
+}
+
+
+function saveDetectiveState(state){
+
+    localStorage.setItem(
+        DETECTIVE_STORAGE_KEY,
+        JSON.stringify(state)
+    );
+
+}
+
+
+/* =========================================================
+   NORMALIZATION
+   ========================================================= */
+
+function detectiveNormalize(value){
+
+    return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/රු\.?/g,"")
+        .replace(/rs\.?/g,"")
+        .replace(/,/g,"")
+        .replace(/\s+/g," ");
+
+}
+
+
+function detectiveNumber(value){
+
+    let x = detectiveNormalize(value);
+
+    x = x.replace(/[^0-9.-]/g,"");
+
+    if(x === "") return "";
+
+    return Number(x);
+}
+
+
+/* =========================================================
+   ALIASES
+   ========================================================= */
+
+const detectiveAliases = {
+
+    "bank account":[
+        "බැංකු ගිණුම",
+        "බැංකු ගිණුම"
+    ],
+
+    "cash account":[
+        "මුදල් ගිණුම"
+    ],
+
+    "capital account":[
+        "ප්‍රාග්ධන ගිණුම"
+    ],
+
+    "purchases account":[
+        "ගැනුම් ගිණුම",
+        "purchases account"
+    ],
+
+    "sales account":[
+        "විකුණුම් ගිණුම",
+        "sales account"
+    ]
+
+};
+
+
+function detectiveTextCorrect(user,answer){
+
+    const u = detectiveNormalize(user);
+    const a = detectiveNormalize(answer);
+
+    if(u === a) return true;
+
+    if(
+        (u === "bank" && a === "බැංකු ගිණුම") ||
+        (u === "cash" && a === "මුදල් ගිණුම")
+    ){
+        return true;
+    }
+
+    return false;
+}
+
+
+/* =========================================================
+   RENDER CHALLENGES
+   ========================================================= */
+
+function renderDetectiveChallenges(){
+
+    const container =
+        document.getElementById(
+            "detectiveChallengeContainer"
+        );
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+    detectiveChallengeData.forEach(challenge => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "detective-card";
+
+        let transactionRows = "";
+
+        challenge.transactions.forEach((t,index) => {
+
+            transactionRows += `
+                <tr>
+
+                    <td>${index + 1}</td>
+
+                    <td>
+                        ${t[0]}
+                    </td>
+
+                    <td>
+                        ${t[1]}
+                    </td>
+
+                    <td>
+                        <input
+                            id="d${challenge.id}_date_${index}"
+                            placeholder="දිනය"
+                        >
+                    </td>
+
+                    <td>
+                        <input
+                            id="d${challenge.id}_description_${index}"
+                            placeholder="විස්තරය"
+                        >
+                    </td>
+
+                    <td>
+                        <input
+                            id="d${challenge.id}_debit_${index}"
+                            placeholder="හර ගිණුම"
+                        >
+                    </td>
+
+                    <td>
+                        <input
+                            id="d${challenge.id}_credit_${index}"
+                            placeholder="බැර ගිණුම"
+                        >
+                    </td>
+
+                    <td>
+                        <input
+                            id="d${challenge.id}_amount_${index}"
+                            placeholder="මුදල"
+                        >
+                    </td>
+
+                </tr>
+            `;
+
+        });
+
+
+        let statementRows = "";
+
+        challenge.statement.rows.forEach(row => {
+
+            statementRows += `
+                <tr>
+                    <td>${row[0]}</td>
+                    <td>${row[1]}</td>
+                    <td>${row[2] || ""}</td>
+                    <td>${row[3] || ""}</td>
+                    <td>${row[4]}</td>
+                </tr>
+            `;
+
+        });
+
+
+        card.innerHTML = `
+
+            <div class="detective-card-head">
+
+                <h3>${challenge.title}</h3>
+
+                <p>
+                    📅 ${challenge.month}
+                </p>
+
+            </div>
+
+
+            <div class="detective-info">
+
+                <div class="detective-note">
+
+                    <strong>🔎 පරීක්ෂක උපදෙස</strong><br>
+
+                    මුලින් ගනුදෙනු 15 හොඳින් කියවන්න.
+                    ඉන්පසුව එක් එක් ගනුදෙනුවේ
+                    ද්විත්ව සටහන සකස් කරන්න.
+
+                    <br><br>
+
+                    <strong>
+                    සෑම දිනයක්, විස්තරයක්, හර ගිණුමක්,
+                    බැර ගිණුමක් සහ මුදලක් වෙන වෙනම
+                    පරීක්ෂා කෙරේ.
+                    </strong>
+
+                </div>
+
+
+                <h4>📋 ගනුදෙනු 15</h4>
+
+                <div class="detective-transaction-box">
+
+                    <div class="detective-table-wrap">
+
+                        <table class="detective-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>#</th>
+                                    <th>දිනය</th>
+                                    <th>දී ඇති ගනුදෙනුව</th>
+
+                                    <th>ඔබගේ දිනය</th>
+                                    <th>ඔබගේ විස්තරය</th>
+
+                                    <th>හර ගිණුම</th>
+                                    <th>බැර ගිණුම</th>
+
+                                    <th>මුදල</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                ${transactionRows}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <h4>🏦 බැංකු ප්‍රකාශය</h4>
+
+                <div class="detective-bank-box">
+
+                    <div class="detective-bank-statement">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th colspan="5">
+                                        ${challenge.month}
+                                        – බැංකු ප්‍රකාශය
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th>දිනය</th>
+                                    <th>විස්තරය</th>
+                                    <th>හර</th>
+                                    <th>බැර</th>
+                                    <th>ශේෂය</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>ආරම්භක</td>
+                                    <td>ශේෂය</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        ${challenge.statement.opening.toLocaleString()}
+                                    </td>
+                                </tr>
+
+                                ${statementRows}
+
+                                <tr>
+                                    <th colspan="4">
+                                        අවසන් ශේෂය
+                                    </th>
+
+                                    <th>
+                                        ${challenge.statement.closing.toLocaleString()}
+                                    </th>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detective-bank-box">
+
+                    <h4>
+                        🧮 සංශෝධිත බැංකු ගිණුම
+                    </h4>
+
+                    <p>
+                        ඉහත ගනුදෙනු සහ බැංකු ප්‍රකාශය
+                        සසඳා අවශ්‍ය බැංකු ගැළපීම් හඳුනාගන්න.
+                    </p>
+
+                    <div class="detective-table-wrap">
+
+                        <table class="detective-table">
+
+                            <tr>
+                                <th>අයිතමය</th>
+                                <th>ඔබගේ පිළිතුර</th>
+                            </tr>
+
+                            <tr>
+                                <td>බැංකු ගිණුමේ අවසාන ශේෂය</td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_adjusted_bank"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>සෘජු ප්‍රේෂණ</td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_direct"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>ස්ථාවර නියෝග</td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_standing"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>බැංකු ගාස්තු</td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_charges"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>සංශෝධිත බැංකු ශේෂය</td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_adjusted_final"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detective-bank-box">
+
+                    <h4>
+                        📑 බැංකු සැසඳුම් විස්තරය
+                    </h4>
+
+                    <div class="detective-table-wrap">
+
+                        <table class="detective-table">
+
+                            <tr>
+                                <th>අයිතමය</th>
+                                <th>ඔබගේ පිළිතුර</th>
+                            </tr>
+
+                            <tr>
+                                <td>සංශෝධිත බැංකු ශේෂය</td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_recon_start"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    එකතු කරන්න –
+                                    ඉදිරිපත් නොකළ චෙක්පත්
+                                </td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_unpresented"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    අඩු කරන්න –
+                                    නිෂ්කාශනය නොවූ චෙක්පත්
+                                </td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_uncleared"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    බැංකු ප්‍රකාශයේ ශේෂය
+                                </td>
+
+                                <td>
+                                    <input
+                                        id="d${challenge.id}_recon_final"
+                                        placeholder="රු."
+                                    >
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="detective-score"
+                id="detectiveScore${challenge.id}"
+            >
+                තවම පරීක්ෂා කර නැත.
+            </div>
+
+
+            <div class="detective-buttons">
+
+                <button
+                    type="button"
+                    class="detective-btn detective-check"
+                    onclick="checkDetectiveChallenge(${challenge.id})"
+                >
+                    🔍 පිළිතුරු පරීක්ෂා කරන්න
+                </button>
+
+                <button
+                    type="button"
+                    class="detective-btn detective-answer-btn"
+                    onclick="showDetectiveChallengeAnswer(${challenge.id})"
+                >
+                    👁️ පිළිතුරු බලන්න
+                </button>
+
+                <button
+                    type="button"
+                    class="detective-btn detective-reset"
+                    onclick="resetDetectiveChallenge(${challenge.id})"
+                >
+                    🔄 නැවත සකස් කරන්න
+                </button>
+
+            </div>
+
+
+            <div
+                class="detective-answer"
+                id="detectiveAnswer${challenge.id}"
+            >
+
+                <h4>✅ නිවැරදි පිළිතුරු</h4>
+
+                <div id="detectiveAnswerContent${challenge.id}"></div>
+
+            </div>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================================================
+   CHECK TRANSACTIONS
+   ========================================================= */
+
+function checkDetectiveChallenge(id){
+
+    const challenge =
+        detectiveChallengeData.find(
+            x => x.id === id
+        );
+
+    if(!challenge) return;
+
+    let totalFields = 0;
+    let correctFields = 0;
+
+    challenge.transactions.forEach((t,index)=>{
+
+        const fields = [
+            ["date",t[0]],
+            ["description",t[1]],
+            ["debit",t[2]],
+            ["credit",t[3]],
+            ["amount",t[4]]
+        ];
+
+        fields.forEach(field => {
+
+            const input =
+                document.getElementById(
+                    `d${id}_${field[0]}_${index}`
+                );
+
+            if(!input) return;
+
+            totalFields++;
+
+            let correct = false;
+
+            if(field[0] === "amount"){
+
+                correct =
+                    detectiveNumber(input.value)
+                    === Number(field[1]);
+
+            }else{
+
+                correct =
+                    detectiveTextCorrect(
+                        input.value,
+                        field[1]
+                    );
+
+            }
+
+            input.classList.remove(
+                "detective-correct",
+                "detective-wrong"
+            );
+
+            if(correct){
+
+                input.classList.add(
+                    "detective-correct"
+                );
+
+                correctFields++;
+
+            }else{
+
+                input.classList.add(
+                    "detective-wrong"
+                );
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       ADDITIONAL ACCOUNTING SCORES
+       ===================================================== */
+
+    const additional = [
+
+        [`d${id}_adjusted_bank`, calculateBankBalance(challenge)],
+        [`d${id}_direct`, getTransactionAmount(challenge,"සෘජු ප්‍රේෂණ")],
+        [`d${id}_standing`, getTransactionAmount(challenge,"ස්ථාවර නියෝග")],
+        [`d${id}_charges`, getTransactionAmount(challenge,"බැංකු ගාස්තු")],
+        [`d${id}_adjusted_final`, calculateBankBalance(challenge)],
+
+        [`d${id}_recon_start`, calculateBankBalance(challenge)],
+        [`d${id}_unpresented`, challenge.reconciliation.unpresented],
+        [`d${id}_uncleared`, challenge.reconciliation.uncleared],
+        [`d${id}_recon_final`,
+            calculateBankBalance(challenge)
+            + challenge.reconciliation.unpresented
+            - challenge.reconciliation.uncleared
+        ]
+
+    ];
+
+
+    additional.forEach(item => {
+
+        const input =
+            document.getElementById(item[0]);
+
+        if(!input) return;
+
+        totalFields++;
+
+        const correct =
+            detectiveNumber(input.value)
+            === Number(item[1]);
+
+        input.classList.remove(
+            "detective-correct",
+            "detective-wrong"
+        );
+
+        if(correct){
+
+            input.classList.add(
+                "detective-correct"
+            );
+
+            correctFields++;
+
+        }else{
+
+            input.classList.add(
+                "detective-wrong"
+            );
+
+        }
+
+    });
+
+
+    const percentage =
+        totalFields === 0
+        ? 0
+        : Math.round(
+            (correctFields / totalFields) * 100
+        );
+
+
+    const scoreBox =
+        document.getElementById(
+            `detectiveScore${id}`
+        );
+
+
+    scoreBox.innerHTML = `
+
+        <div class="detective-result">
+
+            🎯 ලකුණු:
+            <strong>
+                ${correctFields} / ${totalFields}
+            </strong>
+
+            <br>
+
+            📊 ප්‍රතිශතය:
+            <strong>
+                ${percentage}%
+            </strong>
+
+        </div>
+
+        <div class="detective-field-result">
+
+            🟢 කොළ = නිවැරදි<br>
+            🔴 රතු = වැරදි
+
+        </div>
+
+    `;
+
+
+    const state =
+        getDetectiveState();
+
+    state[id] = {
+        checked:true,
+        correct:correctFields,
+        total:totalFields,
+        percentage:percentage
+    };
+
+    saveDetectiveState(state);
+
+    updateDetectiveOverallProgress();
+
+}
+
+
+/* =========================================================
+   BANK BALANCE CALCULATION
+   ========================================================= */
+
+function calculateBankBalance(challenge){
+
+    let balance = 0;
+
+    challenge.transactions.forEach(t => {
+
+        const debit = t[2];
+        const credit = t[3];
+        const amount = Number(t[4]);
+
+        if(debit === "බැංකු ගිණුම"){
+            balance += amount;
+        }
+
+        if(credit === "බැංකු ගිණුම"){
+            balance -= amount;
+        }
+
+    });
+
+    return balance;
+
+}
+
+
+/* =========================================================
+   GET TRANSACTION AMOUNT
+   ========================================================= */
+
+function getTransactionAmount(challenge,text){
+
+    const found =
+        challenge.transactions.find(
+            t => t[1].includes(text)
+        );
+
+    return found ? Number(found[4]) : 0;
+
+}
+
+
+/* =========================================================
+   SHOW ANSWER
+   ========================================================= */
+
+function showDetectiveChallengeAnswer(id){
+
+    const challenge =
+        detectiveChallengeData.find(
+            x => x.id === id
+        );
+
+    if(!challenge) return;
+
+    const answerBox =
+        document.getElementById(
+            `detectiveAnswer${id}`
+        );
+
+    const answerContent =
+        document.getElementById(
+            `detectiveAnswerContent${id}`
+        );
+
+
+    let html = `
+
+        <h4>📋 ගනුදෙනු 15 – නිවැරදි ද්විත්ව සටහන්</h4>
+
+        <table class="detective-mini-table">
+
+            <tr>
+                <th>#</th>
+                <th>දිනය</th>
+                <th>විස්තරය</th>
+                <th>හර</th>
+                <th>බැර</th>
+                <th>මුදල</th>
+            </tr>
+
+    `;
+
+
+    challenge.transactions.forEach((t,index)=>{
+
+        html += `
+
+            <tr>
+
+                <td>${index+1}</td>
+                <td>${t[0]}</td>
+                <td>${t[1]}</td>
+                <td>${t[2]}</td>
+                <td>${t[3]}</td>
+                <td>${Number(t[4]).toLocaleString()}</td>
+
+            </tr>
+
+        `;
+
+    });
+
+
+    html += `
+
+        </table>
+
+
+        <h4 style="margin-top:25px;">
+            🏦 බැංකු ගිණුමේ අවසාන ශේෂය
+        </h4>
+
+        <p>
+            රු.
+            <strong>
+                ${calculateBankBalance(challenge).toLocaleString()}
+            </strong>
+        </p>
+
+
+        <h4>
+            📑 බැංකු සැසඳුම් විස්තරය
+        </h4>
+
+        <table class="detective-mini-table">
+
+            <tr>
+                <th>අයිතමය</th>
+                <th>රු.</th>
+            </tr>
+
+            <tr>
+                <td>සංශෝධිත බැංකු ශේෂය</td>
+                <td>
+                    ${calculateBankBalance(challenge).toLocaleString()}
+                </td>
+            </tr>
+
+            <tr>
+                <td>එකතු කරන්න – ඉදිරිපත් නොකළ චෙක්පත්</td>
+                <td>
+                    ${challenge.reconciliation.unpresented.toLocaleString()}
+                </td>
+            </tr>
+
+            <tr>
+                <td>අඩු කරන්න – නිෂ්කාශනය නොවූ චෙක්පත්</td>
+                <td>
+                    ${challenge.reconciliation.uncleared.toLocaleString()}
+                </td>
+            </tr>
+
+            <tr>
+                <th>බැංකු ප්‍රකාශයේ ශේෂය</th>
+                <th>
+                    ${
+                        (
+                            calculateBankBalance(challenge)
+                            + challenge.reconciliation.unpresented
+                            - challenge.reconciliation.uncleared
+                        ).toLocaleString()
+                    }
+                </th>
+            </tr>
+
+        </table>
+
+    `;
+
+
+    answerContent.innerHTML = html;
+
+    answerBox.classList.add("show");
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+function resetDetectiveChallenge(id){
+
+    const challenge =
+        detectiveChallengeData.find(
+            x => x.id === id
+        );
+
+    if(!challenge) return;
+
+
+    challenge.transactions.forEach((t,index)=>{
+
+        [
+            "date",
+            "description",
+            "debit",
+            "credit",
+            "amount"
+        ].forEach(type=>{
+
+            const input =
+                document.getElementById(
+                    `d${id}_${type}_${index}`
+                );
+
+            if(input){
+
+                input.value = "";
+
+                input.classList.remove(
+                    "detective-correct",
+                    "detective-wrong"
+                );
+
+            }
+
+        });
+
+    });
+
+
+    [
+        "adjusted_bank",
+        "direct",
+        "standing",
+        "charges",
+        "adjusted_final",
+        "recon_start",
+        "unpresented",
+        "uncleared",
+        "recon_final"
+    ].forEach(type=>{
+
+        const input =
+            document.getElementById(
+                `d${id}_${type}`
+            );
+
+        if(input){
+
+            input.value = "";
+
+            input.classList.remove(
+                "detective-correct",
+                "detective-wrong"
+            );
+
+        }
+
+    });
+
+
+    const answer =
+        document.getElementById(
+            `detectiveAnswer${id}`
+        );
+
+    if(answer){
+        answer.classList.remove("show");
+    }
+
+
+    const score =
+        document.getElementById(
+            `detectiveScore${id}`
+        );
+
+    if(score){
+
+        score.innerHTML =
+            "තවම පරීක්ෂා කර නැත.";
+
+    }
+
+
+    const state =
+        getDetectiveState();
+
+    delete state[id];
+
+    saveDetectiveState(state);
+
+    updateDetectiveOverallProgress();
+
+}
+
+
+/* =========================================================
+   OVERALL PROGRESS
+   ========================================================= */
+
+function updateDetectiveOverallProgress(){
+
+    const state =
+        getDetectiveState();
+
+    let completed = 0;
+    let totalScore = 0;
+    let totalPossible = 0;
+
+
+    detectiveChallengeData.forEach(challenge=>{
+
+        if(state[challenge.id] &&
+           state[challenge.id].checked){
+
+            completed++;
+
+            totalScore +=
+                Number(state[challenge.id].correct || 0);
+
+            totalPossible +=
+                Number(state[challenge.id].total || 0);
+
+        }
+
+    });
+
+
+    const progress =
+        Math.round(
+            (completed / detectiveChallengeData.length) * 100
+        );
+
+
+    const fill =
+        document.getElementById(
+            "detectiveOverallFill"
+        );
+
+    if(fill){
+        fill.style.width = progress + "%";
+    }
+
+
+    const text =
+        document.getElementById(
+            "detectiveOverallText"
+        );
+
+    if(text){
+
+        text.innerHTML =
+            `සම්පූර්ණ කළ අභියෝග:
+             <strong>
+             ${completed} / ${detectiveChallengeData.length}
+             </strong>`;
+
+    }
+
+
+    const score =
+        document.getElementById(
+            "detectiveOverallScore"
+        );
+
+    if(score){
+
+        const overallPercentage =
+            totalPossible === 0
+            ? 0
+            : Math.round(
+                (totalScore / totalPossible) * 100
+            );
+
+        score.innerHTML =
+
+            `මුළු ලකුණු:
+             <strong>
+             ${totalScore} / ${totalPossible}
+             </strong>
+             &nbsp; | &nbsp;
+             සමස්ත ප්‍රතිශතය:
+             <strong>
+             ${overallPercentage}%
+             </strong>`;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESTORE
+   ========================================================= */
+
+function restoreDetectiveScores(){
+
+    const state =
+        getDetectiveState();
+
+    detectiveChallengeData.forEach(challenge=>{
+
+        if(state[challenge.id] &&
+           state[challenge.id].checked){
+
+            const score =
+                document.getElementById(
+                    `detectiveScore${challenge.id}`
+                );
+
+            if(score){
+
+                score.innerHTML = `
+
+                    <div class="detective-result">
+
+                        🎯 අවසන් ලකුණු:
+                        <strong>
+                        ${state[challenge.id].correct}
+                        /
+                        ${state[challenge.id].total}
+                        </strong>
+
+                        <br>
+
+                        📊 ප්‍රතිශතය:
+                        <strong>
+                        ${state[challenge.id].percentage}%
+                        </strong>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+    });
+
+    updateDetectiveOverallProgress();
+
+}
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        renderDetectiveChallenges();
+
+        restoreDetectiveScores();
+
+    }
+);
+
+</script>
+
 
 
     <!-- QUIZ -->
