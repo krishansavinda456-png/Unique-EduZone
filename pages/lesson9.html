@@ -258,6 +258,85 @@
 
 
         /* =========================================
+           ACCOUNTING DETECTIVE BUTTONS
+           ========================================= */
+        .adc2buttons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 22px 0 10px;
+            padding: 16px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 14px;
+        }
+
+        .adc2buttons button {
+            border: none;
+            border-radius: 9px;
+            padding: 11px 18px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,.25);
+        }
+
+        .adc2buttons button:hover {
+            transform: translateY(-1px);
+            opacity: .92;
+        }
+
+        .adc2buttons button:nth-child(1) {
+            background: gold;
+            color: #000;
+        }
+
+        .adc2buttons button:nth-child(2) {
+            background: transparent;
+            color: #38c172;
+            border: 1px solid #38c172;
+        }
+
+        .adc2buttons button:nth-child(3) {
+            background: #292929;
+            color: #fff;
+            border: 1px solid #555;
+        }
+
+        .adc2buttons > span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 105px;
+            padding: 10px 16px;
+            border-radius: 9px;
+            background: #191919;
+            border: 1px solid #444;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .adc2buttons > span b {
+            color: gold;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .adc2buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .adc2buttons button,
+            .adc2buttons > span {
+                width: 100%;
+            }
+        }
+
+        /* =========================================
            ACTIVITY SYSTEM
            ========================================= */
 
@@ -5952,11 +6031,14 @@
 .adc2 .adc2recon .reconciliation-table{width:100%;border-collapse:collapse;font-size:16px}
 .adc2 .adc2recon .reconciliation-table th,.adc2 .adc2recon .reconciliation-table td{border:none;padding:8px 10px}
 .adc2 .adc2recon input{width:100%;box-sizing:border-box;padding:7px;border:1px solid #aaa;border-radius:4px;text-align:right}
+.adc2 select{width:100%;box-sizing:border-box;padding:7px;border:1px solid #aaa;border-radius:4px;background:#fff;color:#111;min-width:85px}
+.adc2 .adc2select-text{min-width:140px}
+.adc2 .adc2select-num{text-align:right;min-width:95px}
 @media(max-width:700px){.adc2 .statement-details{grid-template-columns:1fr 1fr}.adc2 .bank-statement-header{flex-direction:column}.adc2 .statement-table{font-size:12px}.adc2 .statement-table th,.adc2 .statement-table td{padding:6px 4px}}
 </style>
-<section id="accountingDetectiveChallenge" class="adc2"><h2>🕵️ Accounting Detective Challenge – විශේෂ අභියෝගය</h2><p class="intro">මෙහි අභියෝග 5ක් ඇත. එක් එක් අභියෝගයේ ගනුදෙනු 15ක් සහ Bank Statement එකක් ලබා දී ඇත. ශිෂ්‍යයා Bank Account, Cash Account සහ අදාළ Ledger Accounts සකස් කර, පසුව Adjusted Bank Account හා Bank Reconciliation Statement සකස් කළ යුතුය. එක් එක් field එක වෙන වෙනම පරීක්ෂා කර ලකුණු ලබා දේ.</p><div class="adc2progress"><b>සමස්ත ප්‍රගතිය:</b> <span id="adc2prog">0 / 5</span><div class="adc2bar"><div id="adc2fill" class="adc2fill"></div></div><div id="adc2total">ලකුණු: 0</div></div><div id="adc2list"></div></section>
+<section id="accountingDetectiveChallenge" class="adc2"><h2>🕵️ Accounting Detective Challenge – විශේෂ අභියෝගය</h2><p class="intro">මෙහි අභියෝග 5ක් ඇත. එක් එක් අභියෝගයේ ගනුදෙනු 15ක් සහ Bank Statement එකක් ලබා දී ඇත. ශිෂ්‍යයා Bank Account, Cash Account සහ අදාළ Ledger Accounts සකස් කර, පසුව Adjusted Bank Account හා Bank Reconciliation Statement සකස් කළ යුතුය. එක් එක් field එක වෙන වෙනම පරීක්ෂා කර ලකුණු ලබා දේ. <b>ගනුදෙනු ලැයිස්තුව සහ Bank Statement ප්‍රශ්නයේ දත්ත ලෙස සෘජුව පෙන්වා ඇත; ඒවා තෝරාගැනීමට අවශ්‍ය නැත.</b></p><div class="adc2progress"><b>සමස්ත ප්‍රගතිය:</b> <span id="adc2prog">0 / 5</span><div class="adc2bar"><div id="adc2fill" class="adc2fill"></div></div><div id="adc2total">ලකුණු: 0</div></div><div id="adc2list"></div></section>
 <script>
-const ADC2_KEY='uez_lesson9_detective_v3';
+const ADC2_KEY='uez_lesson9_detective_v4';
 const ADC2_DATA=[{"id":1,"name":"Unique Business","month":"2026 සැප්තැම්බර්","transactions":[{"date":"01","text":"ව්‍යාපාරය ආරම්භ කිරීම සඳහා Capital ලෙස මුදල් රු.100,000 යෙදවීය.","dr":"Cash Account","cr":"Capital Account","amt":"100000"},{"date":"02","text":"මුදල් රු.60,000 බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"Cash Account","amt":"60000"},{"date":"03","text":"මුදලින් භාණ්ඩ රු.15,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Cash Account","amt":"15000"},{"date":"04","text":"Silva Traders වෙතින් ණයට භාණ්ඩ රු.20,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Silva Traders Account","amt":"20000"},{"date":"05","text":"මුදලින් භාණ්ඩ රු.25,000 කට විකිණීය.","dr":"Cash Account","cr":"Sales Account","amt":"25000"},{"date":"06","text":"ගනුදෙනුකරු ප්‍රදීප් වෙත ණයට භාණ්ඩ රු.18,000 කට විකිණීය.","dr":"ගනුදෙනුකරු ප්‍රදීප් Account","cr":"Sales Account","amt":"18000"},{"date":"07","text":"ගනුදෙනුකරු ප්‍රදීප් ගෙන් රු.10,000 ක චෙක්පතක් ලැබී බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"ගනුදෙනුකරු ප්‍රදීප් Account","amt":"10000"},{"date":"08","text":"සේවක වැටුප් රු.8,000 මුදලින් ගෙවීය.","dr":"Wages Account","cr":"Cash Account","amt":"8000"},{"date":"09","text":"විදුලි ගාස්තු රු.5,000 චෙක්පතකින් ගෙවීය.","dr":"Electricity Account","cr":"Bank Account","amt":"5000"},{"date":"10","text":"Silva Traders වෙත රු.7,000 චෙක්පතකින් ගෙවීය.","dr":"Silva Traders Account","cr":"Bank Account","amt":"7000"},{"date":"12","text":"Bank Statement අනුව සෘජු බැර කිරීමක් රු.6,000 ලැබී ඇත.","dr":"Bank Account","cr":"Debtor / Other Account","amt":"6000"},{"date":"14","text":"Bank Statement අනුව Rent සඳහා Standing Order රු.4,000 ගෙවා ඇත.","dr":"Rent Account","cr":"Bank Account","amt":"4000"},{"date":"16","text":"Bank Statement අනුව Bank Charges රු.1,000 අය කර ඇත.","dr":"Bank Charges Account","cr":"Bank Account","amt":"1000"},{"date":"18","text":"රු.9,000 ක නිකුත් කළ චෙක්පතක් තවමත් බැංකුවට ඉදිරිපත් කර නැත.","dr":"Silva Traders Account","cr":"Bank Account","amt":"9000","timing":"unpresented"},{"date":"20","text":"රු.8,000 ක තැන්පත් කළ චෙක්පතක් තවමත් නිෂ්කාශනය වී නැත.","dr":"Bank Account","cr":"ගනුදෙනුකරු ප්‍රදීප් Account","amt":"8000","timing":"uncleared"}],"statementBalance":59000.0,"bookBalance":57000.0,"accounts":["Bank Account","Cash Account","Capital Account","ගැනුම් ගිණුම","Sales Account","ගනුදෙනුකරු ප්‍රදීප් Account","Silva Traders Account","Wages Account","Electricity Account","Rent Account","Bank Charges Account"],"adjust":{"statement":57000.0,"direct":"6000","standing":"4000","charges":"1000","unpresented":"9000","uncleared":"8000","answer":58000.0},"recon":{"adjusted":58000.0,"unpresented":"9000","uncleared":"8000","answer":59000.0}},{"id":2,"name":"Saman Traders","month":"2026 ඔක්තෝබර්","transactions":[{"date":"01","text":"ව්‍යාපාරය ආරම්භ කිරීම සඳහා Capital ලෙස මුදල් රු.150,000 යෙදවීය.","dr":"Cash Account","cr":"Capital Account","amt":"150000"},{"date":"02","text":"මුදල් රු.90,000 බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"Cash Account","amt":"90000"},{"date":"03","text":"මුදලින් භාණ්ඩ රු.20,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Cash Account","amt":"20000"},{"date":"04","text":"Fernando Traders වෙතින් ණයට භාණ්ඩ රු.30,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Fernando Traders Account","amt":"30000"},{"date":"05","text":"මුදලින් භාණ්ඩ රු.35,000 කට විකිණීය.","dr":"Cash Account","cr":"Sales Account","amt":"35000"},{"date":"06","text":"ගනුදෙනුකරු කුමාර වෙත ණයට භාණ්ඩ රු.25,000 කට විකිණීය.","dr":"ගනුදෙනුකරු කුමාර Account","cr":"Sales Account","amt":"25000"},{"date":"07","text":"ගනුදෙනුකරු කුමාර ගෙන් රු.15,000 ක චෙක්පතක් ලැබී බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"ගනුදෙනුකරු කුමාර Account","amt":"15000"},{"date":"08","text":"සේවක වැටුප් රු.10,000 මුදලින් ගෙවීය.","dr":"Wages Account","cr":"Cash Account","amt":"10000"},{"date":"09","text":"විදුලි ගාස්තු රු.7,000 චෙක්පතකින් ගෙවීය.","dr":"Electricity Account","cr":"Bank Account","amt":"7000"},{"date":"10","text":"Fernando Traders වෙත රු.12,000 චෙක්පතකින් ගෙවීය.","dr":"Fernando Traders Account","cr":"Bank Account","amt":"12000"},{"date":"12","text":"Bank Statement අනුව සෘජු බැර කිරීමක් රු.8,000 ලැබී ඇත.","dr":"Bank Account","cr":"Debtor / Other Account","amt":"8000"},{"date":"14","text":"Bank Statement අනුව Rent සඳහා Standing Order රු.5,000 ගෙවා ඇත.","dr":"Rent Account","cr":"Bank Account","amt":"5000"},{"date":"16","text":"Bank Statement අනුව Bank Charges රු.1,500 අය කර ඇත.","dr":"Bank Charges Account","cr":"Bank Account","amt":"1500"},{"date":"18","text":"රු.12,000 ක නිකුත් කළ චෙක්පතක් තවමත් බැංකුවට ඉදිරිපත් කර නැත.","dr":"Fernando Traders Account","cr":"Bank Account","amt":"12000","timing":"unpresented"},{"date":"20","text":"රු.9,000 ක තැන්පත් කළ චෙක්පතක් තවමත් නිෂ්කාශනය වී නැත.","dr":"Bank Account","cr":"ගනුදෙනුකරු කුමාර Account","amt":"9000","timing":"uncleared"}],"statementBalance":87500.0,"bookBalance":83000.0,"accounts":["Bank Account","Cash Account","Capital Account","ගැනුම් ගිණුම","Sales Account","ගනුදෙනුකරු කුමාර Account","Fernando Traders Account","Wages Account","Electricity Account","Rent Account","Bank Charges Account"],"adjust":{"statement":83000.0,"direct":"8000","standing":"5000","charges":"1500","unpresented":"12000","uncleared":"9000","answer":84500.0},"recon":{"adjusted":84500.0,"unpresented":"12000","uncleared":"9000","answer":87500.0}},{"id":3,"name":"Nimal Stores","month":"2026 නොවැම්බර්","transactions":[{"date":"01","text":"ව්‍යාපාරය ආරම්භ කිරීම සඳහා Capital ලෙස මුදල් රු.200,000 යෙදවීය.","dr":"Cash Account","cr":"Capital Account","amt":"200000"},{"date":"02","text":"මුදල් රු.120,000 බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"Cash Account","amt":"120000"},{"date":"03","text":"මුදලින් භාණ්ඩ රු.25,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Cash Account","amt":"25000"},{"date":"04","text":"Perera Suppliers වෙතින් ණයට භාණ්ඩ රු.40,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Perera Suppliers Account","amt":"40000"},{"date":"05","text":"මුදලින් භාණ්ඩ රු.50,000 කට විකිණීය.","dr":"Cash Account","cr":"Sales Account","amt":"50000"},{"date":"06","text":"ගනුදෙනුකරු සුනිල් වෙත ණයට භාණ්ඩ රු.30,000 කට විකිණීය.","dr":"ගනුදෙනුකරු සුනිල් Account","cr":"Sales Account","amt":"30000"},{"date":"07","text":"ගනුදෙනුකරු සුනිල් ගෙන් රු.20,000 ක චෙක්පතක් ලැබී බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"ගනුදෙනුකරු සුනිල් Account","amt":"20000"},{"date":"08","text":"සේවක වැටුප් රු.12,000 මුදලින් ගෙවීය.","dr":"Wages Account","cr":"Cash Account","amt":"12000"},{"date":"09","text":"විදුලි ගාස්තු රු.9,000 චෙක්පතකින් ගෙවීය.","dr":"Electricity Account","cr":"Bank Account","amt":"9000"},{"date":"10","text":"Perera Suppliers වෙත රු.15,000 චෙක්පතකින් ගෙවීය.","dr":"Perera Suppliers Account","cr":"Bank Account","amt":"15000"},{"date":"12","text":"Bank Statement අනුව සෘජු බැර කිරීමක් රු.10,000 ලැබී ඇත.","dr":"Bank Account","cr":"Debtor / Other Account","amt":"10000"},{"date":"14","text":"Bank Statement අනුව Rent සඳහා Standing Order රු.6,000 ගෙවා ඇත.","dr":"Rent Account","cr":"Bank Account","amt":"6000"},{"date":"16","text":"Bank Statement අනුව Bank Charges රු.2,000 අය කර ඇත.","dr":"Bank Charges Account","cr":"Bank Account","amt":"2000"},{"date":"18","text":"රු.15,000 ක නිකුත් කළ චෙක්පතක් තවමත් බැංකුවට ඉදිරිපත් කර නැත.","dr":"Perera Suppliers Account","cr":"Bank Account","amt":"15000","timing":"unpresented"},{"date":"20","text":"රු.11,000 ක තැන්පත් කළ චෙක්පතක් තවමත් නිෂ්කාශනය වී නැත.","dr":"Bank Account","cr":"ගනුදෙනුකරු සුනිල් Account","amt":"11000","timing":"uncleared"}],"statementBalance":118000.0,"bookBalance":112000.0,"accounts":["Bank Account","Cash Account","Capital Account","ගැනුම් ගිණුම","Sales Account","ගනුදෙනුකරු සුනිල් Account","Perera Suppliers Account","Wages Account","Electricity Account","Rent Account","Bank Charges Account"],"adjust":{"statement":112000.0,"direct":"10000","standing":"6000","charges":"2000","unpresented":"15000","uncleared":"11000","answer":114000.0},"recon":{"adjusted":114000.0,"unpresented":"15000","uncleared":"11000","answer":118000.0}},{"id":4,"name":"Perera Traders","month":"2026 දෙසැම්බර්","transactions":[{"date":"01","text":"ව්‍යාපාරය ආරම්භ කිරීම සඳහා Capital ලෙස මුදල් රු.250,000 යෙදවීය.","dr":"Cash Account","cr":"Capital Account","amt":"250000"},{"date":"02","text":"මුදල් රු.160,000 බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"Cash Account","amt":"160000"},{"date":"03","text":"මුදලින් භාණ්ඩ රු.30,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Cash Account","amt":"30000"},{"date":"04","text":"Silva Suppliers වෙතින් ණයට භාණ්ඩ රු.50,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Silva Suppliers Account","amt":"50000"},{"date":"05","text":"මුදලින් භාණ්ඩ රු.65,000 කට විකිණීය.","dr":"Cash Account","cr":"Sales Account","amt":"65000"},{"date":"06","text":"ගනුදෙනුකරු කුමාරි වෙත ණයට භාණ්ඩ රු.40,000 කට විකිණීය.","dr":"ගනුදෙනුකරු කුමාරි Account","cr":"Sales Account","amt":"40000"},{"date":"07","text":"ගනුදෙනුකරු කුමාරි ගෙන් රු.25,000 ක චෙක්පතක් ලැබී බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"ගනුදෙනුකරු කුමාරි Account","amt":"25000"},{"date":"08","text":"සේවක වැටුප් රු.15,000 මුදලින් ගෙවීය.","dr":"Wages Account","cr":"Cash Account","amt":"15000"},{"date":"09","text":"විදුලි ගාස්තු රු.11,000 චෙක්පතකින් ගෙවීය.","dr":"Electricity Account","cr":"Bank Account","amt":"11000"},{"date":"10","text":"Silva Suppliers වෙත රු.20,000 චෙක්පතකින් ගෙවීය.","dr":"Silva Suppliers Account","cr":"Bank Account","amt":"20000"},{"date":"12","text":"Bank Statement අනුව සෘජු බැර කිරීමක් රු.12,000 ලැබී ඇත.","dr":"Bank Account","cr":"Debtor / Other Account","amt":"12000"},{"date":"14","text":"Bank Statement අනුව Rent සඳහා Standing Order රු.7,000 ගෙවා ඇත.","dr":"Rent Account","cr":"Bank Account","amt":"7000"},{"date":"16","text":"Bank Statement අනුව Bank Charges රු.2,500 අය කර ඇත.","dr":"Bank Charges Account","cr":"Bank Account","amt":"2500"},{"date":"18","text":"රු.18,000 ක නිකුත් කළ චෙක්පතක් තවමත් බැංකුවට ඉදිරිපත් කර නැත.","dr":"Silva Suppliers Account","cr":"Bank Account","amt":"18000","timing":"unpresented"},{"date":"20","text":"රු.13,000 ක තැන්පත් කළ චෙක්පතක් තවමත් නිෂ්කාශනය වී නැත.","dr":"Bank Account","cr":"ගනුදෙනුකරු කුමාරි Account","amt":"13000","timing":"uncleared"}],"statementBalance":156500.0,"bookBalance":149000.0,"accounts":["Bank Account","Cash Account","Capital Account","ගැනුම් ගිණුම","Sales Account","ගනුදෙනුකරු කුමාරි Account","Silva Suppliers Account","Wages Account","Electricity Account","Rent Account","Bank Charges Account"],"adjust":{"statement":149000.0,"direct":"12000","standing":"7000","charges":"2500","unpresented":"18000","uncleared":"13000","answer":151500.0},"recon":{"adjusted":151500.0,"unpresented":"18000","uncleared":"13000","answer":156500.0}},{"id":5,"name":"Master Business","month":"2027 ජනවාරි","transactions":[{"date":"01","text":"ව්‍යාපාරය ආරම්භ කිරීම සඳහා Capital ලෙස මුදල් රු.300,000 යෙදවීය.","dr":"Cash Account","cr":"Capital Account","amt":"300000"},{"date":"02","text":"මුදල් රු.200,000 බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"Cash Account","amt":"200000"},{"date":"03","text":"මුදලින් භාණ්ඩ රු.40,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Cash Account","amt":"40000"},{"date":"04","text":"Fernando Suppliers වෙතින් ණයට භාණ්ඩ රු.60,000 කට මිලදී ගත්තේය.","dr":"ගැනුම් ගිණුම","cr":"Fernando Suppliers Account","amt":"60000"},{"date":"05","text":"මුදලින් භාණ්ඩ රු.80,000 කට විකිණීය.","dr":"Cash Account","cr":"Sales Account","amt":"80000"},{"date":"06","text":"ගනුදෙනුකරු රුවන් වෙත ණයට භාණ්ඩ රු.50,000 කට විකිණීය.","dr":"ගනුදෙනුකරු රුවන් Account","cr":"Sales Account","amt":"50000"},{"date":"07","text":"ගනුදෙනුකරු රුවන් ගෙන් රු.30,000 ක චෙක්පතක් ලැබී බැංකුවට තැන්පත් කළේය.","dr":"Bank Account","cr":"ගනුදෙනුකරු රුවන් Account","amt":"30000"},{"date":"08","text":"සේවක වැටුප් රු.18,000 මුදලින් ගෙවීය.","dr":"Wages Account","cr":"Cash Account","amt":"18000"},{"date":"09","text":"විදුලි ගාස්තු රු.13,000 චෙක්පතකින් ගෙවීය.","dr":"Electricity Account","cr":"Bank Account","amt":"13000"},{"date":"10","text":"Fernando Suppliers වෙත රු.25,000 චෙක්පතකින් ගෙවීය.","dr":"Fernando Suppliers Account","cr":"Bank Account","amt":"25000"},{"date":"12","text":"Bank Statement අනුව සෘජු බැර කිරීමක් රු.15,000 ලැබී ඇත.","dr":"Bank Account","cr":"Debtor / Other Account","amt":"15000"},{"date":"14","text":"Bank Statement අනුව Rent සඳහා Standing Order රු.9,000 ගෙවා ඇත.","dr":"Rent Account","cr":"Bank Account","amt":"9000"},{"date":"16","text":"Bank Statement අනුව Bank Charges රු.3,000 අය කර ඇත.","dr":"Bank Charges Account","cr":"Bank Account","amt":"3000"},{"date":"18","text":"රු.22,000 ක නිකුත් කළ චෙක්පතක් තවමත් බැංකුවට ඉදිරිපත් කර නැත.","dr":"Fernando Suppliers Account","cr":"Bank Account","amt":"22000","timing":"unpresented"},{"date":"20","text":"රු.16,000 ක තැන්පත් කළ චෙක්පතක් තවමත් නිෂ්කාශනය වී නැත.","dr":"Bank Account","cr":"ගනුදෙනුකරු රුවන් Account","amt":"16000","timing":"uncleared"}],"statementBalance":195000.0,"bookBalance":186000.0,"accounts":["Bank Account","Cash Account","Capital Account","ගැනුම් ගිණුම","Sales Account","ගනුදෙනුකරු රුවන් Account","Fernando Suppliers Account","Wages Account","Electricity Account","Rent Account","Bank Charges Account"],"adjust":{"statement":186000.0,"direct":"15000","standing":"9000","charges":"3000","unpresented":"22000","uncleared":"16000","answer":189000.0},"recon":{"adjusted":189000.0,"unpresented":"22000","uncleared":"16000","answer":195000.0}}];
 function adc2State(){try{return JSON.parse(localStorage.getItem(ADC2_KEY))||{}}catch(e){return {}}}function adc2Save(x){localStorage.setItem(ADC2_KEY,JSON.stringify(x))}function n(v){return Number(String(v??'').replace(/,/g,'').replace(/රු\.?/g,'').replace(/[^0-9.-]/g,''))||0}function norm(v){return String(v??'').trim().toLowerCase().replace(/\s+/g,' ')}
 function entriesFor(ch,acc){return ch.transactions.filter(t=>t.dr===acc||t.cr===acc).map(t=>({date:t.date,particulars:t.dr===acc?('Dr '+t.cr):('Cr '+t.dr),side:t.dr===acc?'dr':'cr',amount:t.amt}))}
@@ -5980,46 +6062,149 @@ function adc2StatementRows(ch){
   });
   return {rows,balance:bal};
 }
-function adc2Input(ch,kind,key,value=''){return `<input data-a="${ch.id}" data-z="${kind}" data-k="${key}" value="${value}" inputmode="decimal">`}
-function ledger(ch,acc,ai){
-  let es=entriesFor(ch,acc),dr=es.filter(x=>x.side==='dr'),cr=es.filter(x=>x.side==='cr'),rows=Math.max(dr.length,cr.length);
-  let L=`<h4 class="adc2head">${acc}</h4><div class="adc2wrap"><table class="adc2table adc2t"><tr><th colspan="4">හර</th><th colspan="4">බැර</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>වටිනාකම රු.</th><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>වටිනාකම රු.</th></tr>`;
-  for(let r=0;r<rows;r++){let d=dr[r]||{},c=cr[r]||{};L+=`<tr><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="dr" data-f="date"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="dr" data-f="particulars"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="dr" data-f="folio"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="dr" data-f="amount" inputmode="decimal"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="cr" data-f="date"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="cr" data-f="particulars"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="cr" data-f="folio"></td><td><input data-a="${ch.id}" data-ac="${ai}" data-r="${r}" data-s="cr" data-f="amount" inputmode="decimal"></td></tr>`}
-  L+=`</table></div><div class="adc2exact"><table class="full-bank-ledger"><tr><th colspan="4">ශේෂය</th><th colspan="4">Dr / Cr</th></tr><tr><td colspan="4"><input data-a="${ch.id}" data-ac="${ai}" data-f="balance" inputmode="decimal"></td><td colspan="4"><input data-a="${ch.id}" data-ac="${ai}" data-f="side"></td></tr></table></div>`;return L;
+function adc2Options(list,expected,formatter='text'){
+  const vals=[...new Set(list.map(v=>String(v??'')))];
+  if(expected!==undefined && expected!==null && !vals.includes(String(expected))) vals.unshift(String(expected));
+  const shuffled=vals;
+  return shuffled.map(v=>{
+    const label=formatter==='money'?(v===''?'—':Number(v).toLocaleString('en-US')):(v===''?'—':v);
+    return `<option value="${String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}">${label}</option>`;
+  }).join('');
 }
+function adc2Dates(ch){return [...new Set(ch.transactions.map(t=>String(t.date)))]}
+function adc2Descriptions(ch){return [...new Set(ch.transactions.flatMap(t=>[t.dr,t.cr,t.text]).filter(Boolean))]}
+function adc2Amounts(ch){
+  const nums=ch.transactions.map(t=>Number(t.amt));
+  const z=ch.adjust||{}, r=ch.recon||{};
+  return [...new Set(nums.concat([z.statement,z.direct,z.standing,z.charges,z.answer,z.statement+Number(z.direct),Number(z.standing)+Number(z.charges)+Number(z.answer),r.adjusted,r.unpresented,r.uncleared,r.answer,Number(r.adjusted)+Number(r.unpresented)]).map(Number).filter(Number.isFinite))];
+}
+function adc2Select(ch,kind,key,expected,type='text',extra=[]){
+  const list=type==='date'?adc2Dates(ch):type==='money'?adc2Amounts(ch):type==='folio'?['','ස.පි.','–','1','2','3']:adc2Descriptions(ch);
+  extra.forEach(v=>{if(v!==undefined&&v!==null)list.push(v)});
+  const cls=type==='money'?'adc2select-num':(type==='text'?'adc2select-text':'');
+  return `<select class="${cls}" data-a="${ch.id}" data-z="${kind}" data-k="${key}" data-expected="${String(expected??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"><option value="">තෝරන්න...</option>${adc2Options(list,expected,type==='money'?'money':'text')}</select>`;
+}
+function adc2Input(ch,kind,key,value=''){return adc2Select(ch,kind,key,value,'money')}
+function ledger(ch,acc,ai){
+  let es=entriesFor(ch,acc),L='';
+  L+=`<h4 class="adc2head">${acc}</h4><div class="adc2wrap"><table class="adc2table adc2t"><tr><th colspan="4">හර (Dr)</th><th colspan="4">බැර (Cr)</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>මුදල</th><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>මුදල</th></tr>`;
+  let dr=es.filter(x=>x.side==='dr'),cr=es.filter(x=>x.side==='cr'),rows=Math.max(dr.length,cr.length);
+  for(let r=0;r<rows;r++){
+    let d=dr[r],c=cr[r];
+    L+=`<tr>`;
+    L+=d?`<td>${adc2Select(ch,'ledger',`${ai}_${r}_dr_date`,d.date,'date')}</td><td>${adc2Select(ch,'ledger',`${ai}_${r}_dr_particulars`,d.particulars.replace(/^Dr |^Cr /,''),'text')}</td><td>${adc2Select(ch,'ledger',`${ai}_${r}_dr_folio`,'','folio')}</td><td>${adc2Select(ch,'ledger',`${ai}_${r}_dr_amount`,d.amount,'money')}</td>`:`<td><select disabled><option>—</option></select></td><td><select disabled><option>—</option></select></td><td><select disabled><option>—</option></select></td><td><select disabled><option>—</option></select></td>`;
+    L+=c?`<td>${adc2Select(ch,'ledger',`${ai}_${r}_cr_date`,c.date,'date')}</td><td>${adc2Select(ch,'ledger',`${ai}_${r}_cr_particulars`,c.particulars.replace(/^Dr |^Cr /,''),'text')}</td><td>${adc2Select(ch,'ledger',`${ai}_${r}_cr_folio`,'','folio')}</td><td>${adc2Select(ch,'ledger',`${ai}_${r}_cr_amount`,c.amount,'money')}</td>`:`<td><select disabled><option>—</option></select></td><td><select disabled><option>—</option></select></td><td><select disabled><option>—</option></select></td><td><select disabled><option>—</option></select></td>`;
+    L+=`</tr>`;
+  }
+  let sum=es.reduce((x,e)=>x+(e.side==='dr'?e.amount:-e.amount),0), bal=Math.abs(sum), side=sum>=0?'Dr':'Cr';
+  L+=`</table></div><div class="adc2wrap"><table class="adc2table"><tr><th>ශේෂය</th><th>Dr / Cr</th></tr><tr><td>${adc2Select(ch,'ledger',`${ai}_balance`,bal,'money')}</td><td>${adc2Select(ch,'ledger',`${ai}_side`,side,'text',['Dr','Cr'])}</td></tr></table></div>`;
+  return L;
+}
+
 function render(){
-  let box=document.getElementById('adc2list');box.innerHTML='';
+  const box=document.getElementById('adc2list');
+  if(!box)return;
+  let out='';
   ADC2_DATA.forEach(ch=>{
-    let st=adc2StatementRows(ch);
-    let h=`<div class="adc2card"><h3 style="color:#d4af37">${ch.name} – ${ch.month}</h3><p class="adc2small">ගනුදෙනු 15ක් | Bank Statement | Bank Account | Cash Account | අදාළ Ledger Accounts | සංශෝධිත බැංකු ගිණුම | බැංකු සැසඳුම් විස්තරය</p>`;
-    h+=`<h4 class="adc2head">🧾 ගනුදෙනු</h4><div class="adc2wrap"><table class="adc2table"><tr><th>#</th><th>දිනය</th><th>ගනුදෙනුව</th><th>රු.</th></tr>`;
-    ch.transactions.forEach((t,i)=>h+=`<tr><td>${i+1}</td><td>${t.date}</td><td>${t.text}</td><td>${adc2Money(t.amt)}</td></tr>`);h+=`</table></div>`;
-    h+=`<h4 class="adc2head">🏦 බැංකු ප්‍රකාශය</h4><div class="bank-statement-frame"><div class="bank-statement-header"><div class="bank-logo-box"><strong>BANK OF CEYLON</strong><span>ලංකා බැංකුව</span></div><div class="statement-title"><strong>ACCOUNT STATEMENT</strong><span>ජංගම ගිණුම් ප්‍රකාශය</span></div></div><div class="statement-details"><div><strong>ගිණුම් හිමියා</strong><br>${ch.name}</div><div><strong>ගිණුම් අංකය</strong><br>********</div><div><strong>ශාඛාව</strong><br>Matale</div><div><strong>ප්‍රකාශන කාලය</strong><br>${ch.month}</div></div><div class="statement-balance"><span>ආරම්භක ශේෂය</span><strong>රු. 0.00</strong></div><table class="statement-table"><thead><tr><th>දිනය</th><th>විස්තරය</th><th>යොමු අංකය</th><th>හර<br>(රු.)</th><th>බැර<br>(රු.)</th><th>ශේෂය<br>(රු.)</th></tr></thead><tbody>`;
-    st.rows.forEach(r=>h+=`<tr><td>${r.date}</td><td>${r.desc}</td><td>${r.ref}</td><td>${typeof r.debit==='number'?adc2Money(r.debit):r.debit}</td><td>${typeof r.credit==='number'?adc2Money(r.credit):r.credit}</td><td>${adc2Money(r.balance)}</td></tr>`);
-    h+=`</tbody></table><div class="statement-footer"><strong>අවසන් ශේෂය</strong><strong>රු. ${adc2Money(ch.statementBalance)}.00</strong></div><div class="statement-note"><strong>සටහන:</strong> බැංකු ප්‍රකාශයේ සටහන් බැංකුවේ දෘෂ්ටිකෝණයෙන් පෙන්වා ඇත.</div></div>`;
-    ch.accounts.forEach((a,i)=>h+=ledger(ch,a,i));
-    h+=`<h4 class="adc2head">🧮 සංශෝධිත බැංකු ගිණුම</h4><div class="adc2exact"><div class="account-heading"><div>හර</div><div class="account-title">සංශෝධිත බැංකු ගිණුම</div><div>බැර</div></div><table class="full-bank-ledger"><tr><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>වටිනාකම රු.</th><th>දිනය</th><th>විස්තරය</th><th>ස.පි.</th><th>වටිනාකම රු.</th></tr><tr><td>${ch.month.split(' ')[1]||'01'}</td><td>ශේෂය ඉ/ගෙ</td><td></td><td>${adc2Input(ch,'adj','opening')}</td><td></td><td></td><td></td><td></td></tr><tr><td>${ch.month.split(' ')[1]||'01'}</td><td>සෘජු ප්‍රේෂණ</td><td></td><td>${adc2Input(ch,'adj','direct')}</td><td>${ch.month.split(' ')[1]||'01'}</td><td>ස්ථාවර නියෝග</td><td></td><td>${adc2Input(ch,'adj','standing')}</td></tr><tr><td></td><td></td><td></td><td></td><td>${ch.month.split(' ')[1]||'01'}</td><td>බැංකු ගාස්තු</td><td></td><td>${adc2Input(ch,'adj','charges')}</td></tr><tr><td></td><td></td><td></td><td></td><td>${ch.month.split(' ')[1]||'01'}</td><td>ශේෂය ප/ගෙ</td><td></td><td>${adc2Input(ch,'adj','closing')}</td></tr><tr class="balance-row"><td></td><td></td><td></td><td><strong>${adc2Input(ch,'adj','drtotal')}</strong></td><td></td><td></td><td></td><td><strong>${adc2Input(ch,'adj','crtotal')}</strong></td></tr><tr><td>ඊළඟ දිනය</td><td>ශේෂය ඉ/ගෙ</td><td></td><td>${adc2Input(ch,'adj','nextopening')}</td><td></td><td></td><td></td><td></td></tr></table></div>`;
-    h+=`<h4 class="adc2head">📑 බැංකු සැසඳුම් විස්තරය</h4><div class="adc2recon"><div class="reconciliation-subtitle">${ch.month} සඳහා බැංකු සැසඳුම් විස්තරය</div><table class="reconciliation-table"><tr><th class="description-head"></th><th class="amount-head">රු.</th><th class="amount-head">රු.</th></tr><tr><td class="description">සංශෝධිත බැංකු ශේෂය</td><td></td><td>${adc2Input(ch,'rec','adjusted')}</td></tr><tr class="label-row"><td class="description">එකතු කළා</td><td></td><td></td></tr><tr><td class="description">බැංකුවට ඉදිරිපත් නොකළ චෙක්පත්</td><td>${adc2Input(ch,'rec','unpresented')}</td><td class="amount total-line">${adc2Input(ch,'rec','addtotal')}</td></tr><tr><td></td><td></td><td class="amount subtotal">${adc2Input(ch,'rec','subtotal')}</td></tr><tr class="label-row"><td class="description">අඩු කළා</td><td></td><td></td></tr><tr><td class="description">නිෂ්කාශනය නොවූ චෙක්පත්</td><td>${adc2Input(ch,'rec','uncleared')}</td><td class="amount total-line">${adc2Input(ch,'rec','lesstotal')}</td></tr><tr><td class="description">බැංකු ප්‍රකාශයේ සඳහන් ශේෂය</td><td></td><td class="amount final-balance">${adc2Input(ch,'rec','answer')}</td></tr></table></div>`;
-    h+=`<div class="adc2score">ලකුණු: <b id="adc2s${ch.id}">0</b></div><button class="adc2btn adc2check" onclick="checkADC2(${ch.id})">✅ පරීක්ෂා කරන්න</button><button class="adc2btn adc2ans" onclick="answerADC2(${ch.id})">👁️ පිළිතුරු බලන්න</button><button class="adc2btn adc2reset" onclick="resetADC2(${ch.id})">🔄 නැවත ආරම්භ කරන්න</button><div id="adc2ans${ch.id}" class="adc2answer"></div></div>`;
-    box.insertAdjacentHTML('beforeend',h);
+    const sr=adc2StatementRows(ch);
+    out+=`<article class="adc2challenge" id="adc2c${ch.id}">
+      <h3>🕵️ අභියෝග ${ch.id} – ${ch.name}</h3>
+      <p><b>කාලය:</b> ${ch.month} | <b>ගනුදෙනු:</b> 15</p>
+      <h4>1. ගනුදෙනු ලැයිස්තුව</h4>
+      <div class="adc2wrap"><table class="adc2table statement-table">
+        <tr><th>දිනය</th><th>ගනුදෙනුව / විස්තරය</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>මුදල</th></tr>
+        ${ch.transactions.map((t,i)=>`<tr>
+          <td>${t.date}</td>
+          <td>${t.text}</td>
+          <td>${t.dr}</td>
+          <td>${t.cr}</td>
+          <td>${Number(t.amt).toLocaleString('en-US')}</td>
+        </tr>`).join('')}
+      </table></div>
+      <h4>2. Bank Statement</h4>
+      <div class="adc2wrap"><table class="adc2table statement-table">
+        <tr><th>දිනය</th><th>විස්තරය</th><th>යොමු</th><th>Debit</th><th>Credit</th><th>Balance</th></tr>
+        ${sr.rows.map((r,i)=>`<tr>
+          <td>${r.date}</td>
+          <td>${r.desc}</td>
+          <td>${r.ref}</td>
+          <td>${r.debit==='–'?'–':Number(r.debit).toLocaleString('en-US')}</td>
+          <td>${r.credit==='–'?'–':Number(r.credit).toLocaleString('en-US')}</td>
+          <td>${Number(r.balance).toLocaleString('en-US')}</td>
+        </tr>`).join('')}
+      </table><p class="statement-note"><b>Bank Statement අවසන් ශේෂය:</b> ${Number(ch.statementBalance).toLocaleString('en-US')}</p></div>
+      <h4>3. Bank Account සහ Cash Account</h4>
+      ${ledger(ch,'Bank Account',ch.accounts.indexOf('Bank Account'))}
+      ${ledger(ch,'Cash Account',ch.accounts.indexOf('Cash Account'))}
+      <h4>4. අදාළ Ledger Accounts</h4>
+      ${ch.accounts.filter(a=>a!=='Bank Account'&&a!=='Cash Account').map((a)=>ledger(ch,a,ch.accounts.indexOf(a))).join('')}
+      <h4>5. සංශෝධිත බැංකු ගිණුම (Adjusted Bank Account)</h4>
+      <div class="adc2exact"><table class="adc2table full-bank-ledger">
+        <tr><th colspan="4">සංශෝධිත බැංකු ගිණුම</th></tr>
+        <tr><th>දිනය</th><th>විස්තරය</th><th>Dr / Cr</th><th>මුදල</th></tr>
+        <tr><td>${adc2Select(ch,'adj','opening_date',ch.month.split(' ')[1]||'01','date')}</td><td>${adc2Select(ch,'adj','opening','Opening / Bank balance','text',['Opening / Bank balance'])}</td><td>${adc2Select(ch,'adj','opening_side','Dr','text',['Dr','Cr'])}</td><td>${adc2Select(ch,'adj','opening_amt',ch.adjust.statement,'money')}</td></tr>
+        <tr><td>${adc2Select(ch,'adj','direct_date',ch.month.split(' ')[1]||'01','date')}</td><td>${adc2Select(ch,'adj','direct','Direct remittance','text',['Direct remittance'])}</td><td>${adc2Select(ch,'adj','direct_side','Dr','text',['Dr','Cr'])}</td><td>${adc2Select(ch,'adj','direct_amt',ch.adjust.direct,'money')}</td></tr>
+        <tr><td>${adc2Select(ch,'adj','standing_date',ch.month.split(' ')[1]||'01','date')}</td><td>${adc2Select(ch,'adj','standing','Standing Order','text',['Standing Order'])}</td><td>${adc2Select(ch,'adj','standing_side','Cr','text',['Dr','Cr'])}</td><td>${adc2Select(ch,'adj','standing_amt',ch.adjust.standing,'money')}</td></tr>
+        <tr><td>${adc2Select(ch,'adj','charges_date',ch.month.split(' ')[1]||'01','date')}</td><td>${adc2Select(ch,'adj','charges','Bank Charges','text',['Bank Charges'])}</td><td>${adc2Select(ch,'adj','charges_side','Cr','text',['Dr','Cr'])}</td><td>${adc2Select(ch,'adj','charges_amt',ch.adjust.charges,'money')}</td></tr>
+        <tr><td>${adc2Select(ch,'adj','closing_date',ch.month.split(' ')[1]||'01','date')}</td><td>${adc2Select(ch,'adj','closing','Adjusted balance','text',['Adjusted balance'])}</td><td>${adc2Select(ch,'adj','closing_side','Dr','text',['Dr','Cr'])}</td><td>${adc2Select(ch,'adj','closing_amt',ch.adjust.answer,'money')}</td></tr>
+        <tr><th colspan="3">හර එකතුව</th><td>${adc2Select(ch,'adj','drtotal',Number(ch.adjust.statement)+Number(ch.adjust.direct),'money')}</td></tr>
+        <tr><th colspan="3">බැර එකතුව</th><td>${adc2Select(ch,'adj','crtotal',Number(ch.adjust.standing)+Number(ch.adjust.charges)+Number(ch.adjust.answer),'money')}</td></tr>
+        <tr><th colspan="3">ඊළඟ කාලයේ ආරම්භක ශේෂය</th><td>${adc2Select(ch,'adj','nextopening',ch.adjust.answer,'money')}</td></tr>
+      </table></div>
+      <h4>6. බැංකු සැසඳුම් විස්තරය (Bank Reconciliation Statement)</h4>
+      <div class="adc2recon"><table class="reconciliation-table">
+        <tr><th colspan="2">Bank Reconciliation Statement</th></tr>
+        <tr><td>සංශෝධිත බැංකු ගිණුමේ ශේෂය</td><td>${adc2Select(ch,'rec','adjusted',ch.recon.adjusted,'money')}</td></tr>
+        <tr><td>(+) ඉදිරිපත් නොකළ චෙක්පත්</td><td>${adc2Select(ch,'rec','unpresented',ch.recon.unpresented,'money')}</td></tr>
+        <tr><td>එකතුව</td><td>${adc2Select(ch,'rec','addtotal',Number(ch.recon.adjusted)+Number(ch.recon.unpresented),'money')}</td></tr>
+        <tr><td>(−) නිෂ්කාශනය නොවූ තැන්පතුව</td><td>${adc2Select(ch,'rec','uncleared',ch.recon.uncleared,'money')}</td></tr>
+        <tr><td>අඩු කිරීමේ එකතුව</td><td>${adc2Select(ch,'rec','lesstotal',ch.recon.uncleared,'money')}</td></tr>
+        <tr><th>Bank Statement අවසන් ශේෂය</th><th>${adc2Select(ch,'rec','answer',ch.recon.answer,'money')}</th></tr>
+      </table></div>
+      <div class="adc2buttons">
+        <button type="button" onclick="checkADC2(${ch.id})">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
+        <button type="button" onclick="answerADC2(${ch.id})">👁️ පිළිතුරු පෙන්වන්න</button>
+        <button type="button" onclick="resetADC2(${ch.id})">↻ නැවත සකස් කරන්න</button>
+        <span>ලකුණු: <b id="adc2s${ch.id}">0</b></span>
+      </div>
+      <div id="adc2ans${ch.id}" class="adc2answer"></div>
+    </article>`;
   });
+  box.innerHTML=out;
   restoreADC2();
 }
 
 function checkADC2(id){
   let ch=ADC2_DATA.find(x=>x.id===id),score=0,total=0;
+  const check=(q,expected,type='text')=>{
+    if(!q)return;
+    total++;
+    let ok=type==='money'?n(q.value)===Number(expected):norm(q.value)===norm(String(expected));
+    q.classList.remove('ok','no');q.classList.add(ok?'ok':'no');if(ok)score++;
+  };
   ch.accounts.forEach((acc,ai)=>{
     let es=entriesFor(ch,acc),dr=es.filter(x=>x.side==='dr'),cr=es.filter(x=>x.side==='cr'),rows=Math.max(dr.length,cr.length);
-    ['dr','cr'].forEach(side=>{let arr=side==='dr'?dr:cr;arr.forEach((e,r)=>['date','particulars','amount'].forEach(f=>{let q=document.querySelector(`[data-a="${id}"][data-ac="${ai}"][data-r="${r}"][data-s="${side}"][data-f="${f}"]`);if(!q)return;total++;let ok=f==='date'?norm(q.value)===norm(e.date):f==='amount'?n(q.value)===e.amount:norm(q.value).includes(norm(e.particulars.replace(/^Dr |^Cr /,'')))||norm(e.particulars).includes(norm(q.value));q.classList.remove('ok','no');q.classList.add(ok?'ok':'no');if(ok)score++}));});
-    let bal=document.querySelector(`[data-a="${id}"][data-ac="${ai}"][data-f="balance"]`);if(bal){total++;let sum=es.reduce((x,e)=>x+(e.side==='dr'?e.amount:-e.amount),0),ok=n(bal.value)===Math.abs(sum);bal.classList.remove('ok','no');bal.classList.add(ok?'ok':'no');if(ok)score++}
+    ['dr','cr'].forEach(side=>{
+      let arr=side==='dr'?dr:cr;
+      arr.forEach((e,r)=>{
+        const base=`[data-a="${id}"][data-z="ledger"]`;
+        check(document.querySelector(`${base}[data-k="${ai}_${r}_${side}_date"]`),e.date,'date');
+        check(document.querySelector(`${base}[data-k="${ai}_${r}_${side}_particulars"]`),e.particulars.replace(/^Dr |^Cr /,''),'text');
+        check(document.querySelector(`${base}[data-k="${ai}_${r}_${side}_amount"]`),e.amount,'money');
+      });
+    });
+    let sum=es.reduce((x,e)=>x+(e.side==='dr'?e.amount:-e.amount),0);
+    check(document.querySelector(`[data-a="${id}"][data-z="ledger"][data-k="${ai}_balance"]`),Math.abs(sum),'money');
+    check(document.querySelector(`[data-a="${id}"][data-z="ledger"][data-k="${ai}_side"]`),sum>=0?'Dr':'Cr','text');
   });
-  let z=ch.adjust, adjExpected={opening:z.statement,direct:z.direct,standing:z.standing,charges:z.charges,closing:z.answer,drtotal:z.statement+Number(z.direct),crtotal:Number(z.standing)+Number(z.charges)+z.answer,nextopening:z.answer};
-  Object.keys(adjExpected).forEach(k=>{let q=document.querySelector(`[data-a="${id}"][data-z="adj"][data-k="${k}"]`);if(q){total++;let ok=n(q.value)===Number(adjExpected[k]);q.classList.remove('ok','no');q.classList.add(ok?'ok':'no');if(ok)score++}});
+  let z=ch.adjust, adjExpected={opening:z.statement,direct:z.direct,standing:z.standing,charges:z.charges,closing:z.answer,drtotal:Number(z.statement)+Number(z.direct),crtotal:Number(z.standing)+Number(z.charges)+Number(z.answer),nextopening:z.answer};
+  Object.keys(adjExpected).forEach(k=>check(document.querySelector(`[data-a="${id}"][data-z="adj"][data-k="${k}"]`),adjExpected[k],'money'));
+  const adjDate=ch.month.split(' ')[1]||'01';
+  ['opening_date','direct_date','standing_date','charges_date','closing_date'].forEach(k=>check(document.querySelector(`[data-a="${id}"][data-z="adj"][data-k="${k}"]`),adjDate,'date'));
   let r=ch.recon, recExpected={adjusted:r.adjusted,unpresented:r.unpresented,addtotal:r.unpresented,subtotal:Number(r.adjusted)+Number(r.unpresented),uncleared:r.uncleared,lesstotal:r.uncleared,answer:r.answer};
-  Object.keys(recExpected).forEach(k=>{let q=document.querySelector(`[data-a="${id}"][data-z="rec"][data-k="${k}"]`);if(q){total++;let ok=n(q.value)===Number(recExpected[k]);q.classList.remove('ok','no');q.classList.add(ok?'ok':'no');if(ok)score++}});
+  Object.keys(recExpected).forEach(k=>check(document.querySelector(`[data-a="${id}"][data-z="rec"][data-k="${k}"]`),recExpected[k],'money'));
   let st=adc2State();st[id]={score,total,checked:true};adc2Save(st);document.getElementById('adc2s'+id).textContent=score+'/'+total;updateADC2();
 }
-
 function answerADC2(id){
   let ch=ADC2_DATA.find(x=>x.id===id),b=document.getElementById('adc2ans'+id),h='<b>නිවැරදි පිළිතුරු</b><br><br>';
   ch.accounts.forEach(a=>{let es=entriesFor(ch,a);h+=`<b>${a}</b><br>`;es.forEach(e=>h+=`${e.date} – ${e.particulars.replace(/^Dr |^Cr /,'')} – ${e.amount.toLocaleString()} (${e.side==='dr'?'හර':'බැර'})<br>`);let sum=es.reduce((x,e)=>x+(e.side==='dr'?e.amount:-e.amount),0);h+=`ශේෂය: ${Math.abs(sum).toLocaleString()} ${sum>=0?'හර':'බැර'}<br><br>`});
