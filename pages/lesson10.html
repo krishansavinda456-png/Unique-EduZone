@@ -876,54 +876,329 @@
 
 </div>
         <h3>
-            ලෙජරයට Posting
+            ලෙජරයට පිටපත් කරන ආකාරය
         </h3>
 
-        <table class="ledger">
+<!-- =========================================================
+     01. ගැනුම් ගිණුම
+     ========================================================= -->
 
-            <tr>
-                <th colspan="3">
-                    Purchases Account
-                </th>
-            </tr>
+<div class="example-box">
 
-            <tr>
-                <th>දිනය</th>
-                <th>විස්තරය</th>
-                <th>Debit Rs.</th>
-            </tr>
+    <!-- ගිණුමේ නම / හර / බැර -->
+    <div style="
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        align-items:center;
+        margin-bottom:8px;
+        color:#d4af37;
+        font-weight:bold;
+        font-size:18px;
+    ">
 
-            <tr>
-                <td>31/01/2026</td>
-                <td>Purchase Journal Total</td>
-                <td>80,000</td>
-            </tr>
+        <div style="text-align:left;">හර</div>
 
-        </table>
+        <div style="text-align:center;">
+            ගැනුම් ගිණුම
+        </div>
+
+        <div style="text-align:right;">බැර</div>
+
+    </div>
 
 
-        <table class="ledger">
+    <table style="
+        width:100%;
+        border-collapse:collapse;
+        border:1px solid #d4af37;
+    ">
 
-            <tr>
-                <th colspan="3">
-                    ABC Traders Account
-                </th>
-            </tr>
+        <tr>
 
-            <tr>
-                <th>දිනය</th>
-                <th>විස්තරය</th>
-                <th>Credit Rs.</th>
-            </tr>
+            <!-- හර -->
+            <th style="border:1px solid #d4af37;padding:8px;">
+                දිනය
+            </th>
 
-            <tr>
-                <td>05/01/2026</td>
-                <td>Purchases</td>
-                <td>50,000</td>
-            </tr>
+            <th style="border:1px solid #d4af37;padding:8px;">
+                විස්තරය
+            </th>
 
-        </table>
+            <th style="border:1px solid #d4af37;padding:8px;">
+                ස.පි
+            </th>
 
+            <th style="border:1px solid #d4af37;padding:8px;">
+                වටිනාකම රු.
+            </th>
+
+            <!-- බැර -->
+            <th style="border:1px solid #d4af37;padding:8px;">
+                දිනය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                විස්තරය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                ස.පි
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                වටිනාකම රු.
+            </th>
+
+        </tr>
+
+
+        <!-- හර පැත්ත -->
+        <tr>
+
+            <td style="border:1px solid #d4af37;padding:8px;">
+                31/01/2026
+            </td>
+
+            <td style="border:1px solid #d4af37;padding:8px;">
+                ණයට හිමි
+            </td>
+
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+
+            <td style="
+                border:1px solid #d4af37;
+                padding:8px;
+                text-align:right;
+            ">
+                80,000
+            </td>
+
+
+            <!-- බැර පැත්ත හිස් -->
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- =========================================================
+     02. ABC වෙළඳසැල ගිණුම
+     ========================================================= -->
+
+<div class="example-box">
+
+    <div style="
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        align-items:center;
+        margin-bottom:8px;
+        color:#d4af37;
+        font-weight:bold;
+        font-size:18px;
+    ">
+
+        <div style="text-align:left;">හර</div>
+
+        <div style="text-align:center;">
+            ABC වෙළඳසැල ගිණුම
+        </div>
+
+        <div style="text-align:right;">බැර</div>
+
+    </div>
+
+
+    <table style="
+        width:100%;
+        border-collapse:collapse;
+        border:1px solid #d4af37;
+    ">
+
+        <tr>
+
+            <!-- හර -->
+            <th style="border:1px solid #d4af37;padding:8px;">
+                දිනය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                විස්තරය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                ස.පි
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                වටිනාකම රු.
+            </th>
+
+            <!-- බැර -->
+            <th style="border:1px solid #d4af37;padding:8px;">
+                දිනය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                විස්තරය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                ස.පි
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                වටිනාකම රු.
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <!-- හර පැත්ත හිස් -->
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+
+
+            <!-- බැර පැත්ත -->
+            <td style="border:1px solid #d4af37;padding:8px;">
+                05/01/2026
+            </td>
+
+            <td style="border:1px solid #d4af37;padding:8px;">
+                ගැනුම් ගිණුම
+            </td>
+
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+
+            <td style="
+                border:1px solid #d4af37;
+                padding:8px;
+                text-align:right;
+            ">
+                50,000
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- =========================================================
+     03. XYZ සැපයුම්කරුවන් ගිණුම
+     ========================================================= -->
+
+<div class="example-box">
+
+    <div style="
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        align-items:center;
+        margin-bottom:8px;
+        color:#d4af37;
+        font-weight:bold;
+        font-size:18px;
+    ">
+
+        <div style="text-align:left;">හර</div>
+
+        <div style="text-align:center;">
+            XYZ සැපයුම්කරුවන් ගිණුම
+        </div>
+
+        <div style="text-align:right;">බැර</div>
+
+    </div>
+
+
+    <table style="
+        width:100%;
+        border-collapse:collapse;
+        border:1px solid #d4af37;
+    ">
+
+        <tr>
+
+            <!-- හර -->
+            <th style="border:1px solid #d4af37;padding:8px;">
+                දිනය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                විස්තරය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                ස.පි
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                වටිනාකම රු.
+            </th>
+
+            <!-- බැර -->
+            <th style="border:1px solid #d4af37;padding:8px;">
+                දිනය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                විස්තරය
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                ස.පි
+            </th>
+
+            <th style="border:1px solid #d4af37;padding:8px;">
+                වටිනාකම රු.
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <!-- හර පැත්ත හිස් -->
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+
+
+            <!-- බැර පැත්ත -->
+            <td style="border:1px solid #d4af37;padding:8px;">
+                08/01/2026
+            </td>
+
+            <td style="border:1px solid #d4af37;padding:8px;">
+                ගැනුම් ගිණුම
+            </td>
+
+            <td style="border:1px solid #d4af37;padding:8px;"></td>
+
+            <td style="
+                border:1px solid #d4af37;
+                padding:8px;
+                text-align:right;
+            ">
+                30,000
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
     </section>
 
 
