@@ -2848,95 +2848,632 @@
 
 
 
-    <!-- =====================================================
-         PART 05
-         ===================================================== -->
+<!-- =========================================================
+     ප්‍රධාන පාඩම – ශේෂ පිරික්සුම
+     ========================================================= -->
 
-    <section class="topic-card">
+<div class="topic-card" style="
+    border:2px solid #d4af37;
+    box-shadow:0 0 18px rgba(212,175,55,0.25);
+    margin-top:35px;
+">
 
-        <h2>
+    <div style="
+        text-align:center;
+        padding:18px 10px;
+        border-bottom:1px solid #d4af37;
+        background:linear-gradient(
+            135deg,
+            rgba(212,175,55,0.12),
+            rgba(0,0,0,0.2)
+        );
+    ">
+
+        <div style="
+            font-size:14px;
+            color:#d4af37;
+            font-weight:bold;
+            letter-spacing:1px;
+            margin-bottom:6px;
+        ">
+            ප්‍රධාන පාඩම
+        </div>
+
+        <h2 style="
+            color:#d4af37;
+            margin:0;
+            font-size:28px;
+        ">
             5. ශේෂ පිරික්සුම
         </h2>
 
+    </div>
+
+
+    <!-- =====================================================
+         ශේෂ පිරික්සුම යනු කුමක්ද?
+         ===================================================== -->
+
+    <div class="example-box">
+
+        <h3 style="color:#d4af37;">
+            📘 ශේෂ පිරික්සුම යනු කුමක්ද?
+        </h3>
+
         <p>
-            ලෙජර ගිණුම්වල අවසාන ශේෂ එකතු කර Debit සහ Credit
-            තීරු දෙකකට ඇතුළත් කර ඒවායේ සමානත්වය පරීක්ෂා කිරීම
-            ශේෂ පිරික්සුම ලෙස හැඳින්වේ.
+            <strong>ශේෂ පිරික්සුම</strong> යනු යම් නිශ්චිත දිනයකට
+            ලෙජර් ගිණුම්වලින් ලබාගත් සියලුම හර ශේෂ සහ බැර ශේෂ
+            එකම ප්‍රකාශයකට ඇතුළත් කර, හර ශේෂවල එකතුව සහ
+            බැර ශේෂවල එකතුව සමාන දැයි පරීක්ෂා කිරීම සඳහා
+            සකස් කරන ගිණුම්කරණ ප්‍රකාශයකි.
+        </p>
+
+        <p>
+            එනම්, ලෙජර් ගිණුම් තුලනය කිරීමෙන් පසුව ලැබෙන
+            <strong>හර ශේෂ සහ බැර ශේෂ</strong> එකතු කර
+            ශේෂ පිරික්සුම සකස් කරනු ලැබේ.
         </p>
 
         <div class="formula">
-            Total Debit = Total Credit
+
+            <strong>ශේෂ පිරික්සුමේ මූලික පරීක්ෂාව</strong>
+
+            <br><br>
+
+            හර ශේෂ එකතුව = බැර ශේෂ එකතුව
+
         </div>
 
+        <p>
+            ද්විත්ව සටහන් ක්‍රමයට අනුව සෑම ගනුදෙනුවකම හර
+            සහ බැර බලපෑම සමාන බැවින්, නිවැරදිව ගනුදෙනු
+            සටහන් කර ලෙජර් ගිණුම් පවත්වාගෙන ඇත්නම්
+            ශේෂ පිරික්සුමේ හර සහ බැර එකතුව සමාන විය යුතුය.
+        </p>
 
-        <h3>
-            ගිණුම් කිහිපයක් සහිත නිදසුන
+    </div>
+
+
+    <!-- =====================================================
+         ශේෂ පිරික්සුම සකස් කිරීමට පෙර
+         ===================================================== -->
+
+    <div class="example-box">
+
+        <h3 style="color:#d4af37;">
+            📌 ශේෂ පිරික්සුම සකස් කිරීමට පෙර
         </h3>
 
-        <table class="ledger">
+        <ol>
 
-            <tr>
-                <th>ගිණුම</th>
-                <th>Debit Rs.</th>
-                <th>Credit Rs.</th>
-            </tr>
+            <li>
+                සියලුම ගනුදෙනු නිවැරදිව ජර්නල් සහ මූලික
+                පොත්වල සටහන් කළ යුතුය.
+            </li>
 
-            <tr>
-                <td>Cash</td>
-                <td>30,000</td>
-                <td>-</td>
-            </tr>
+            <li>
+                අදාළ ගනුදෙනු ලෙජර් ගිණුම්වලට පිටපත් කළ යුතුය.
+            </li>
 
-            <tr>
-                <td>Bank</td>
-                <td>45,000</td>
-                <td>-</td>
-            </tr>
+            <li>
+                එක් එක් ලෙජර් ගිණුම තුලනය කළ යුතුය.
+            </li>
 
-            <tr>
-                <td>Purchases</td>
-                <td>80,000</td>
-                <td>-</td>
-            </tr>
+            <li>
+                ලෙජර් ගිණුම්වලින් ලැබෙන අවසාන හර සහ බැර
+                ශේෂ හඳුනාගත යුතුය.
+            </li>
 
-            <tr>
-                <td>Furniture</td>
-                <td>25,000</td>
-                <td>-</td>
-            </tr>
+            <li>
+                එම ශේෂ ශේෂ පිරික්සුමට ඇතුළත් කළ යුතුය.
+            </li>
 
-            <tr>
-                <td>Capital</td>
-                <td>-</td>
-                <td>100,000</td>
-            </tr>
+        </ol>
 
-            <tr>
-                <td>Sales</td>
-                <td>-</td>
-                <td>80,000</td>
-            </tr>
+    </div>
 
-            <tr>
-                <td>Creditors</td>
-                <td>-</td>
-                <td>20,000</td>
-            </tr>
 
-            <tr>
-                <th>Total</th>
-                <th>180,000</th>
-                <th>200,000</th>
-            </tr>
+    <!-- =====================================================
+         නිදසුන
+         ===================================================== -->
+
+    <div class="content-card" style="
+        margin-top:25px;
+        border:1px solid #d4af37;
+    ">
+
+        <h3 style="
+            text-align:center;
+            color:#d4af37;
+        ">
+            නිදසුන
+        </h3>
+
+        <p style="line-height:1.9;">
+
+            <strong>2026.01.01</strong> දිනට වෙළඳ ව්‍යාපාරයක්
+            ආරම්භ කළ සමන්තගේ ව්‍යාපාරයේ
+            <strong>2026.06.30</strong> වන දිනට ලෙජර් ගිණුම්
+            තුලනය කර ලබාගත් ශේෂ පහත දැක්වේ.
+
+        </p>
+
+
+        <!-- =================================================
+             ලෙජර් ගිණුම්වලින් ලබාගත් ශේෂ
+             ================================================= -->
+
+        <h4 style="
+            text-align:center;
+            color:#d4af37;
+            margin:22px 0 12px;
+        ">
+            2026.06.30 දිනට ලෙජර් ගිණුම්වලින් ලබාගත් ශේෂ
+        </h4>
+
+
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            border:1px solid #d4af37;
+        ">
+
+            <thead>
+
+                <tr>
+
+                    <th style="
+                        border:1px solid #d4af37;
+                        padding:10px;
+                        color:#d4af37;
+                        background:#151515;
+                    ">
+                        ගිණුම
+                    </th>
+
+                    <th style="
+                        border:1px solid #d4af37;
+                        padding:10px;
+                        color:#d4af37;
+                        background:#151515;
+                    ">
+                        ශේෂය රු.
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        මුදල්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        85,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        බැංකු
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        120,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ගැනුම්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        180,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        විකුණුම්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        260,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ණයගැතියෝ
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        95,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ණයහිමියෝ
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        70,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        දුන් වට්ටම්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        8,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ලද වට්ටම්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        6,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        වැටුප්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        45,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        කුලී
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        30,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        විදුලි ගාස්තු
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        12,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ප්‍රවාහන වියදම්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        15,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        උපකරණ
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        50,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ප්‍රාග්ධන
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        400,000
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="border:1px solid #d4af37; padding:9px;">
+                        ඇදගැනීම්
+                    </td>
+                    <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                        20,000
+                    </td>
+                </tr>
+
+            </tbody>
 
         </table>
 
-        <p>
-            මෙවැනි වෙනසක් පවතින විට ගිණුම් නැවත පරීක්ෂා කළ යුතුය.
-            අවශ්‍ය අවස්ථාවක Suspense Account භාවිතා කළ හැක.
-        </p>
+    </div>
 
-    </section>
+</div>
+
+    <!-- =========================================================
+     සමන්තගේ ව්‍යාපාරයේ ශේෂ පිරික්සුම
+     ========================================================= -->
+
+<div class="content-card" style="
+    margin-top:30px;
+    border:1px solid #d4af37;
+">
+
+    <h3 style="
+        text-align:center;
+        color:#d4af37;
+        margin-bottom:18px;
+    ">
+        සමන්තගේ ව්‍යාපාරය
+    </h3>
+
+    <p style="
+        text-align:center;
+        font-weight:bold;
+        color:#fff;
+        margin-bottom:20px;
+    ">
+        2026.06.30 දිනට ශේෂ පිරික්සුම
+    </p>
+
+
+    <table style="
+        width:100%;
+        border-collapse:collapse;
+        border:1px solid #d4af37;
+    ">
+
+        <thead>
+
+            <tr>
+
+                <th style="
+                    border:1px solid #d4af37;
+                    padding:10px;
+                    color:#d4af37;
+                    background:#151515;
+                ">
+                    විස්තරය
+                </th>
+
+                <th style="
+                    border:1px solid #d4af37;
+                    padding:10px;
+                    color:#d4af37;
+                    background:#151515;
+                ">
+                    හර රු.
+                </th>
+
+                <th style="
+                    border:1px solid #d4af37;
+                    padding:10px;
+                    color:#d4af37;
+                    background:#151515;
+                ">
+                    බැර රු.
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <!-- හර ශේෂ -->
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    මුදල්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    161,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    බැංකු
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    120,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ගැනුම්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    180,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ණයගැතියෝ
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    95,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    දුන් වට්ටම්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    8,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    වැටුප්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    45,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    කුලී
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    30,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    විදුලි ගාස්තු
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    12,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ප්‍රවාහන වියදම්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    15,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    උපකරණ
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    50,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ඇදගැනීම්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    20,000
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+            </tr>
+
+
+            <!-- බැර ශේෂ -->
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    විකුණුම්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    260,000
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ණයහිමියෝ
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    70,000
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ලද වට්ටම්
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    6,000
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border:1px solid #d4af37; padding:9px;">
+                    ප්‍රාග්ධනය
+                </td>
+                <td style="border:1px solid #d4af37; padding:9px;"></td>
+                <td style="border:1px solid #d4af37; padding:9px; text-align:right;">
+                    400,000
+                </td>
+            </tr>
+
+
+            <!-- එකතුව -->
+
+            <tr style="font-weight:bold;">
+
+                <td style="
+                    border:1px solid #d4af37;
+                    padding:10px;
+                    color:#d4af37;
+                ">
+                    එකතුව
+                </td>
+
+                <td style="
+                    border:1px solid #d4af37;
+                    padding:10px;
+                    text-align:right;
+                    color:#d4af37;
+                ">
+                    736,000
+                </td>
+
+                <td style="
+                    border:1px solid #d4af37;
+                    padding:10px;
+                    text-align:right;
+                    color:#d4af37;
+                ">
+                    736,000
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <div class="formula" style="margin-top:20px;">
+
+        <strong>පරීක්ෂාව</strong>
+
+        <br><br>
+
+        හර එකතුව = රු. 736,000
+
+        <br>
+
+        බැර එකතුව = රු. 736,000
+
+        <br><br>
+
+        <strong>
+            ∴ හර එකතුව = බැර එකතුව
+        </strong>
+
+    </div>
+
+</div>
 
 
 
