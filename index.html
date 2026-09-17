@@ -244,71 +244,67 @@
 
         .home-nav {
 
-    display: flex;
+            display: flex;
 
-    align-items: center;
+            align-items: center;
 
-    justify-content: flex-start;
+            justify-content: flex-start;
 
-    gap: 4px;
+            gap: 4px;
 
-    flex: 1;
+            flex: 1;
 
-    overflow-x: auto;
+            overflow-x: auto;
 
-    overflow-y: hidden;
+            overflow-y: hidden;
 
-    white-space: nowrap;
+            white-space: nowrap;
 
-    scrollbar-width: thin;
+            scrollbar-width: thin;
 
-    scrollbar-color: var(--gold) #111;
+            scrollbar-color: var(--gold) #111;
 
-    -webkit-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch;
 
-    padding-bottom: 3px;
+            padding-bottom: 3px;
 
-}
-
-
-/* Navigation links එකම පේළියේ තබාගැනීම */
-
-.home-nav a {
-
-    flex: 0 0 auto;
-
-}
+        }
 
 
-/* Chrome / Edge / Firefox scrollbar */
+        .home-nav a {
 
-.home-nav::-webkit-scrollbar {
+            flex: 0 0 auto;
 
-    height: 5px;
+        }
 
-}
 
-.home-nav::-webkit-scrollbar-track {
+        .home-nav::-webkit-scrollbar {
 
-    background: #111;
+            height: 5px;
 
-    border-radius: 10px;
+        }
 
-}
+        .home-nav::-webkit-scrollbar-track {
 
-.home-nav::-webkit-scrollbar-thumb {
+            background: #111;
 
-    background: var(--gold);
+            border-radius: 10px;
 
-    border-radius: 10px;
+        }
 
-}
+        .home-nav::-webkit-scrollbar-thumb {
 
-.home-nav::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
 
-    background: var(--gold-light);
+            border-radius: 10px;
 
-}
+        }
+
+        .home-nav::-webkit-scrollbar-thumb:hover {
+
+            background: var(--gold-light);
+
+        }
 
 
         .home-nav a {
@@ -363,8 +359,6 @@
 
         }
 
-
-        /* ACCOUNTING PRACTICE NAV */
 
         .home-nav .accounting-practice-link {
 
@@ -754,11 +748,6 @@
 
         }
 
-
-
-        /* =====================================================
-           ACCOUNTING PRACTICE HERO BUTTON
-           ===================================================== */
 
         .hero-btn-accounting {
 
@@ -1425,6 +1414,758 @@
 
 
         /* =====================================================
+           🧩 PUZZLE GAME
+           ===================================================== */
+
+        .uez-puzzle-section {
+
+            max-width: 1400px;
+
+            margin:
+                0 auto 55px;
+
+            padding:
+                35px 30px;
+
+        }
+
+
+        .uez-puzzle-wrapper {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #151515,
+                    #080808
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.45);
+
+            border-radius: 24px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.45);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .uez-puzzle-wrapper::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            right: -150px;
+
+            top: -150px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(245,197,66,0.055);
+
+            pointer-events: none;
+
+        }
+
+
+        .uez-puzzle-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 25px;
+
+            flex-wrap: wrap;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .uez-puzzle-title-area h2 {
+
+            margin:
+                0 0 8px;
+
+            font-size: 34px;
+
+        }
+
+
+        .uez-puzzle-title-area h2 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .uez-puzzle-subtitle {
+
+            color: #aaa;
+
+            margin: 0;
+
+            line-height: 1.6;
+
+        }
+
+
+        .uez-puzzle-stats {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .uez-puzzle-stat {
+
+            min-width: 105px;
+
+            padding:
+                10px 14px;
+
+            background: #0b0b0b;
+
+            border:
+                1px solid #303030;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+        }
+
+
+        .uez-puzzle-stat-label {
+
+            display: block;
+
+            color: #888;
+
+            font-size: 11px;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .uez-puzzle-stat-value {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 19px;
+
+            font-weight: 900;
+
+        }
+
+
+        .uez-puzzle-controls {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 22px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .uez-puzzle-category,
+        .uez-puzzle-newgame {
+
+            border-radius: 10px;
+
+            padding:
+                11px 16px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+        }
+
+
+        .uez-puzzle-category {
+
+            background: #0b0b0b;
+
+            color: #ddd;
+
+            border:
+                1px solid #444;
+
+            outline: none;
+
+        }
+
+
+        .uez-puzzle-category:focus {
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+        .uez-puzzle-newgame {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+            border: none;
+
+        }
+
+
+        .uez-puzzle-newgame:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .uez-puzzle-game {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 22px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .uez-puzzle-panel {
+
+            background: #0c0c0c;
+
+            border:
+                1px solid #292929;
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            min-height: 390px;
+
+        }
+
+
+        .uez-puzzle-panel-title {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            padding-bottom: 13px;
+
+            border-bottom:
+                1px solid #292929;
+
+        }
+
+
+        .uez-puzzle-panel-title h3 {
+
+            margin: 0;
+
+            font-size: 20px;
+
+        }
+
+
+        .uez-puzzle-panel-title span {
+
+            color: var(--gold);
+
+            font-size: 13px;
+
+        }
+
+
+        .uez-puzzle-question-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1a1a1a,
+                    #101010
+                );
+
+            border:
+                1px solid
+                rgba(245,197,66,0.32);
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            margin-bottom: 15px;
+
+            cursor: grab;
+
+            user-select: none;
+
+            -webkit-user-select: none;
+
+            touch-action: manipulation;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .uez-puzzle-question-card:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                var(--gold);
+
+            box-shadow:
+                0 10px 25px
+                rgba(245,197,66,0.08);
+
+        }
+
+
+        .uez-puzzle-question-card.selected {
+
+            border-color:
+                var(--gold);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(245,197,66,0.15);
+
+            background:
+                rgba(245,197,66,0.08);
+
+        }
+
+
+        .uez-puzzle-question-card.dragging {
+
+            opacity: 0.55;
+
+            transform:
+                scale(0.97);
+
+        }
+
+
+        .uez-puzzle-card-number {
+
+            color: var(--gold);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 9px;
+
+        }
+
+
+        .uez-puzzle-card-text {
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            line-height: 1.7;
+
+        }
+
+
+        .uez-puzzle-answer {
+
+            min-height: 92px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding:
+                16px 18px;
+
+            margin-bottom: 12px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #141414,
+                    #0b0b0b
+                );
+
+            border:
+                1px dashed #555;
+
+            border-radius: 14px;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+
+        .uez-puzzle-answer:hover {
+
+            border-color:
+                var(--gold);
+
+            transform:
+                translateX(3px);
+
+        }
+
+
+        .uez-puzzle-answer.drag-over {
+
+            border-color:
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.10);
+
+            transform:
+                scale(1.02);
+
+        }
+
+
+        .uez-puzzle-answer.correct {
+
+            border-style: solid;
+
+            border-color:
+                #35d07f;
+
+            background:
+                rgba(53,208,127,0.08);
+
+        }
+
+
+        .uez-puzzle-answer.wrong {
+
+            border-style: solid;
+
+            border-color:
+                #ff5757;
+
+            background:
+                rgba(255,87,87,0.08);
+
+        }
+
+
+        .uez-puzzle-answer-name {
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+        }
+
+
+        .uez-puzzle-answer-type {
+
+            color: #888;
+
+            font-size: 12px;
+
+            margin-top: 4px;
+
+        }
+
+
+        .uez-puzzle-answer-icon {
+
+            font-size: 25px;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .uez-puzzle-message {
+
+            min-height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                9px;
+
+            margin-top: 18px;
+
+            border-radius: 10px;
+
+            background: #111;
+
+            color: #bbb;
+
+            font-weight: 800;
+
+        }
+
+
+        .uez-puzzle-message.success {
+
+            color:
+                #35d07f;
+
+            border:
+                1px solid
+                rgba(53,208,127,0.25);
+
+        }
+
+
+        .uez-puzzle-message.error {
+
+            color:
+                #ff6969;
+
+            border:
+                1px solid
+                rgba(255,87,87,0.25);
+
+        }
+
+
+        .uez-puzzle-level-progress {
+
+            margin-top: 18px;
+
+        }
+
+
+        .uez-puzzle-progress-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: #999;
+
+            font-size: 12px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .uez-puzzle-progress-bar {
+
+            height: 8px;
+
+            background: #222;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .uez-puzzle-progress-fill {
+
+            height: 100%;
+
+            width: 0%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #dca916,
+                    #ffd95a
+                );
+
+            border-radius: 10px;
+
+            transition:
+                width 0.3s ease;
+
+        }
+
+
+        .uez-puzzle-instruction {
+
+            margin-top: 20px;
+
+            padding:
+                14px 17px;
+
+            border-left:
+                3px solid
+                var(--gold);
+
+            background:
+                rgba(245,197,66,0.04);
+
+            color: #aaa;
+
+            line-height: 1.7;
+
+            border-radius: 8px;
+
+        }
+
+
+        .uez-puzzle-instruction strong {
+
+            color:
+                var(--gold);
+
+        }
+
+
+        .uez-puzzle-gameover {
+
+            text-align: center;
+
+            padding:
+                35px 15px;
+
+        }
+
+
+        .uez-puzzle-gameover-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .uez-puzzle-gameover h3 {
+
+            margin:
+                0 0 10px;
+
+            color:
+                var(--gold);
+
+            font-size: 28px;
+
+        }
+
+
+        .uez-puzzle-gameover p {
+
+            color: #aaa;
+
+            line-height: 1.8;
+
+            margin:
+                0 0 22px;
+
+        }
+
+
+        .uez-puzzle-play-again {
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding:
+                12px 24px;
+
+            cursor: pointer;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd95a,
+                    #dca916
+                );
+
+            color: #050505;
+
+        }
+
+
+        /* =====================================================
            CTA
            ===================================================== */
 
@@ -1474,10 +2215,6 @@
 
         }
 
-
-        /* =====================================================
-           ACCOUNTING CTA BUTTON
-           ===================================================== */
 
         .accounting-cta-button {
 
@@ -1792,6 +2529,101 @@
 
             }
 
+
+            /* PUZZLE MOBILE */
+
+            .uez-puzzle-section {
+
+                padding:
+                    25px 15px 40px;
+
+            }
+
+
+            .uez-puzzle-wrapper {
+
+                padding:
+                    20px 15px;
+
+                border-radius: 18px;
+
+            }
+
+
+            .uez-puzzle-header {
+
+                display: block;
+
+            }
+
+
+            .uez-puzzle-title-area {
+
+                margin-bottom: 18px;
+
+            }
+
+
+            .uez-puzzle-title-area h2 {
+
+                font-size: 27px;
+
+            }
+
+
+            .uez-puzzle-stats {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+
+            .uez-puzzle-stat {
+
+                min-width: 0;
+
+            }
+
+
+            .uez-puzzle-game {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .uez-puzzle-panel {
+
+                min-height: auto;
+
+                padding: 17px;
+
+            }
+
+
+            .uez-puzzle-question-card {
+
+                padding: 17px;
+
+            }
+
+
+            .uez-puzzle-card-text {
+
+                font-size: 15px;
+
+            }
+
+
+            .uez-puzzle-answer {
+
+                min-height: 82px;
+
+            }
+
         }
 
 
@@ -1888,6 +2720,68 @@
             .hero-btn {
 
                 justify-content: center;
+
+            }
+
+
+            /* PUZZLE SMALL PHONE */
+
+            .uez-puzzle-stats {
+
+                gap: 6px;
+
+            }
+
+
+            .uez-puzzle-stat {
+
+                padding:
+                    8px 5px;
+
+            }
+
+
+            .uez-puzzle-stat-value {
+
+                font-size: 16px;
+
+            }
+
+
+            .uez-puzzle-stat-label {
+
+                font-size: 10px;
+
+            }
+
+
+            .uez-puzzle-controls {
+
+                display: grid;
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .uez-puzzle-category,
+            .uez-puzzle-newgame {
+
+                width: 100%;
+
+            }
+
+
+            .uez-puzzle-card-text {
+
+                font-size: 14px;
+
+            }
+
+
+            .uez-puzzle-answer-name {
+
+                font-size: 14px;
 
             }
 
@@ -1988,16 +2882,12 @@
                 📄 PAST PAPERS
             </a>
 
-
-            <!-- NEW ACCOUNTING PRACTICE LINK -->
-
             <a
                 href="accounting-practice.html"
                 class="accounting-practice-link"
             >
                 🧮 ACCOUNTING
             </a>
-
 
             <a href="pages/downloads.html">
                 DOWNLOADS
@@ -2131,8 +3021,6 @@
                 විභාගය හරඹන්න
             </a>
 
-
-            <!-- NEW ACCOUNTING PRACTICE BUTTON -->
 
             <a
                 href="accounting-practice.html"
@@ -2589,9 +3477,7 @@
 
 
 
-        <!-- =================================================
-             NEW ACCOUNTING PRACTICE CARD
-             ================================================= -->
+        <!-- ACCOUNTING PRACTICE CARD -->
 
         <article class="learning-card accounting-practice-card">
 
@@ -2621,6 +3507,293 @@
             </a>
 
         </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     🧩 PUZZLE GAME SECTION
+     ========================================================= -->
+
+<section
+    class="uez-puzzle-section"
+    id="puzzleGame"
+>
+
+
+    <div class="uez-puzzle-wrapper">
+
+
+        <!-- PUZZLE HEADER -->
+
+        <div class="uez-puzzle-header">
+
+
+            <div class="uez-puzzle-title-area">
+
+                <h2>
+                    🧩
+                    <span>
+                        Puzzle Challenge
+                    </span>
+                </h2>
+
+                <p class="uez-puzzle-subtitle">
+
+                    ගිණුම්කරණය • ව්‍යාපාර • බැංකුකරණය
+                    ක්‍රීඩා කරමින් ඉගෙනගන්න.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- GAME STATS -->
+
+            <div class="uez-puzzle-stats">
+
+
+                <div class="uez-puzzle-stat">
+
+                    <span class="uez-puzzle-stat-label">
+                        ❤️ LIVES
+                    </span>
+
+                    <span
+                        class="uez-puzzle-stat-value"
+                        id="uezLives"
+                    >
+                        3
+                    </span>
+
+                </div>
+
+
+
+                <div class="uez-puzzle-stat">
+
+                    <span class="uez-puzzle-stat-label">
+                        ⭐ SCORE
+                    </span>
+
+                    <span
+                        class="uez-puzzle-stat-value"
+                        id="uezScore"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+
+                <div class="uez-puzzle-stat">
+
+                    <span class="uez-puzzle-stat-label">
+                        🏆 BEST
+                    </span>
+
+                    <span
+                        class="uez-puzzle-stat-value"
+                        id="uezBestScore"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CATEGORY / NEW GAME -->
+
+        <div class="uez-puzzle-controls">
+
+
+            <select
+                id="uezPuzzleCategory"
+                class="uez-puzzle-category"
+            >
+
+                <option value="accounting">
+                    🧮 Accounting
+                </option>
+
+                <option value="business">
+                    💼 Business
+                </option>
+
+                <option value="banking">
+                    🏦 Banking
+                </option>
+
+                <option value="mixed">
+                    🎯 Mixed Challenge
+                </option>
+
+            </select>
+
+
+
+            <button
+                type="button"
+                class="uez-puzzle-newgame"
+                onclick="uezStartPuzzleGame()"
+            >
+                🔄 New Game
+            </button>
+
+
+        </div>
+
+
+
+        <!-- GAME AREA -->
+
+        <div
+            class="uez-puzzle-game"
+            id="uezPuzzleGameArea"
+        >
+
+
+            <!-- LEFT : QUESTIONS -->
+
+            <div class="uez-puzzle-panel">
+
+
+                <div class="uez-puzzle-panel-title">
+
+                    <h3>
+                        🧩 ප්‍රශ්න / Cards
+                    </h3>
+
+                    <span id="uezQuestionCount">
+                        0 / 0
+                    </span>
+
+                </div>
+
+
+
+                <div id="uezQuestionCards">
+
+                    <!-- Cards JavaScript මගින් මෙහි දමයි -->
+
+                </div>
+
+
+
+                <div class="uez-puzzle-instruction">
+
+                    <strong>
+                        🎮 ක්‍රීඩා කරන ආකාරය:
+                    </strong>
+
+                    <br>
+
+                    Desktop එකේ Card එකක්
+                    <strong>Drag</strong>
+                    කර දකුණු පැත්තේ නිවැරදි පිළිතුරට
+                    Drop කරන්න.
+
+                    <br><br>
+
+                    📱 Phone එකේදී Card එක
+                    <strong>Tap</strong>
+                    කර පසුව නිවැරදි පිළිතුර
+                    <strong>Tap</strong>
+                    කරන්න.
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT : ANSWERS -->
+
+            <div class="uez-puzzle-panel">
+
+
+                <div class="uez-puzzle-panel-title">
+
+                    <h3>
+                        🎯 නිවැරදි පිළිතුරු
+                    </h3>
+
+                    <span>
+                        Drop Here
+                    </span>
+
+                </div>
+
+
+
+                <div id="uezAnswerBoxes">
+
+                    <!-- Answers JavaScript මගින් මෙහි දමයි -->
+
+                </div>
+
+
+
+                <div
+                    class="uez-puzzle-message"
+                    id="uezPuzzleMessage"
+                >
+                    🧩 Card එකක් තෝරලා ආරම්භ කරන්න.
+                </div>
+
+
+
+                <!-- LEVEL PROGRESS -->
+
+                <div class="uez-puzzle-level-progress">
+
+
+                    <div class="uez-puzzle-progress-top">
+
+                        <span>
+                            📈 Level Progress
+                        </span>
+
+                        <span id="uezLevelProgressText">
+                            0%
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="uez-puzzle-progress-bar">
+
+                        <div
+                            class="uez-puzzle-progress-fill"
+                            id="uezLevelProgressFill"
+                        ></div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
 
 
     </div>
@@ -2742,8 +3915,6 @@
             </div>
 
 
-            <!-- NEW QUICK LINK -->
-
             <div class="footer-item">
 
                 <a
@@ -2825,11 +3996,9 @@
 <script>
 
 
-    /*
-     * =========================================
-     * DARK MODE
-     * =========================================
-     */
+    /* =====================================================
+       DARK MODE
+       ===================================================== */
 
     function toggleDarkMode() {
 
@@ -2855,11 +4024,9 @@
 
 
 
-    /*
-     * =========================================
-     * RESTORE DARK MODE SETTING
-     * =========================================
-     */
+    /* =====================================================
+       RESTORE DARK MODE
+       ===================================================== */
 
     document.addEventListener(
         "DOMContentLoaded",
@@ -2886,11 +4053,9 @@
 
 
 
-    /*
-     * =========================================
-     * SEARCH
-     * =========================================
-     */
+    /* =====================================================
+       SEARCH
+       ===================================================== */
 
     function performSearch() {
 
@@ -2923,10 +4088,6 @@
 
         }
 
-
-        /*
-         * ACCOUNTING PRACTICE SEARCH
-         */
 
         if (
             value.includes("accounting") ||
@@ -2989,11 +4150,9 @@
 
 
 
-    /*
-     * =========================================
-     * SEARCH ENTER KEY
-     * =========================================
-     */
+    /* =====================================================
+       SEARCH ENTER KEY
+       ===================================================== */
 
     document.addEventListener(
         "keydown",
@@ -3024,11 +4183,9 @@
 
 
 
-    /*
-     * =========================================
-     * GRADE 11
-     * =========================================
-     */
+    /* =====================================================
+       GRADE 11
+       ===================================================== */
 
     function showGrade11Message() {
 
@@ -3040,11 +4197,9 @@
 
 
 
-    /*
-     * =========================================
-     * COMING SOON
-     * =========================================
-     */
+    /* =====================================================
+       COMING SOON
+       ===================================================== */
 
     function showComingSoon(
         gradeName
@@ -3056,6 +4211,1764 @@
         );
 
     }
+
+
+
+    /* =====================================================
+       🧩 UNIQUE EDUZONE PUZZLE GAME
+       ===================================================== */
+
+
+    const uezPuzzleData = {
+
+
+        /* =================================================
+           ACCOUNTING
+           ================================================= */
+
+        accounting: [
+
+            {
+                id: "capital",
+
+                question:
+                    "ව්‍යාපාරය ආරම්භ කිරීම සඳහා හිමිකරු රු. 100,000ක් මුදලින් යෙදවීය.",
+
+                answer:
+                    "ප්‍රාග්ධන ගිණුම",
+
+                type:
+                    "Capital Account"
+            },
+
+
+            {
+                id: "electricity",
+
+                question:
+                    "විදුලි බිල රු. 5,000ක් මුදලින් ගෙවන ලදී.",
+
+                answer:
+                    "විදුලි වියදම් ගිණුම",
+
+                type:
+                    "Expense Account"
+            },
+
+
+            {
+                id: "rent",
+
+                question:
+                    "මාසික කුලිය රු. 15,000ක් ගෙවන ලදී.",
+
+                answer:
+                    "කුලී ගිණුම",
+
+                type:
+                    "Expense Account"
+            },
+
+
+            {
+                id: "purchases",
+
+                question:
+                    "නැවත විකිණීම සඳහා භාණ්ඩ රු. 25,000කට මුදලින් මිලදී ගන්නා ලදී.",
+
+                answer:
+                    "ගැනුම් ගිණුම",
+
+                type:
+                    "Purchase Account"
+            },
+
+
+            {
+                id: "sales",
+
+                question:
+                    "භාණ්ඩ රු. 30,000කට මුදලින් විකුණන ලදී.",
+
+                answer:
+                    "විකුණුම් ගිණුම",
+
+                type:
+                    "Sales Account"
+            },
+
+
+            {
+                id: "drawings",
+
+                question:
+                    "ව්‍යාපාර හිමිකරු පෞද්ගලික භාවිතය සඳහා රු. 5,000ක් ලබා ගත්තේය.",
+
+                answer:
+                    "ඇදගැනීම් ගිණුම",
+
+                type:
+                    "Drawings Account"
+            },
+
+
+            {
+                id: "wages",
+
+                question:
+                    "සේවක වැටුප් රු. 12,000ක් ගෙවන ලදී.",
+
+                answer:
+                    "වැටුප් ගිණුම",
+
+                type:
+                    "Expense Account"
+            },
+
+
+            {
+                id: "equipment",
+
+                question:
+                    "ව්‍යාපාරය සඳහා උපකරණ රු. 40,000කට මුදලින් මිලදී ගන්නා ලදී.",
+
+                answer:
+                    "උපකරණ ගිණුම",
+
+                type:
+                    "Asset Account"
+            }
+
+        ],
+
+
+
+        /* =================================================
+           BUSINESS
+           ================================================= */
+
+        business: [
+
+            {
+                id: "sole",
+
+                question:
+                    "එක් පුද්ගලයෙකු විසින් හිමිකාරීත්වය දරන ව්‍යාපාරයකි.",
+
+                answer:
+                    "තනි පුද්ගල ව්‍යාපාරය",
+
+                type:
+                    "Business Ownership"
+            },
+
+
+            {
+                id: "partnership",
+
+                question:
+                    "පුද්ගලයන් දෙදෙනෙකු හෝ වැඩි පිරිසක් එකඟතාවයකින් පවත්වාගෙන යන ව්‍යාපාරයකි.",
+
+                answer:
+                    "හවුල් ව්‍යාපාරය",
+
+                type:
+                    "Business Ownership"
+            },
+
+
+            {
+                id: "needs",
+
+                question:
+                    "මිනිසාගේ ජීවිතයට අත්‍යවශ්‍ය දේවල්.",
+
+                answer:
+                    "අවශ්‍යතා",
+
+                type:
+                    "Basic Concept"
+            },
+
+
+            {
+                id: "wants",
+
+                question:
+                    "ජීවිතයට අත්‍යවශ්‍ය නොවන නමුත් ලබා ගැනීමට කැමති දේවල්.",
+
+                answer:
+                    "අවශ්‍යතා නොවන ආශාවන්",
+
+                type:
+                    "Basic Concept"
+            },
+
+
+            {
+                id: "marketing",
+
+                question:
+                    "පාරිභෝගික අවශ්‍යතා හඳුනාගෙන ඒවා සපුරාලීමට කරන ක්‍රියාවලිය.",
+
+                answer:
+                    "අලෙවිකරණය",
+
+                type:
+                    "Business Function"
+            },
+
+
+            {
+                id: "hr",
+
+                question:
+                    "ආයතනයේ සේවකයන් සම්බන්ධ කටයුතු කළමනාකරණය කිරීම.",
+
+                answer:
+                    "මානව සම්පත් කළමනාකරණය",
+
+                type:
+                    "Business Function"
+            }
+
+        ],
+
+
+
+        /* =================================================
+           BANKING
+           ================================================= */
+
+        banking: [
+
+            {
+                id: "deposit",
+
+                question:
+                    "ව්‍යාපාරයේ මුදල් බැංකු ගිණුමට තැන්පත් කරන ලදී.",
+
+                answer:
+                    "බැංකු ගිණුම",
+
+                type:
+                    "Banking"
+            },
+
+
+            {
+                id: "cheque",
+
+                question:
+                    "සැපයුම්කරුවෙකුට චෙක්පතක් මඟින් මුදල් ගෙවන ලදී.",
+
+                answer:
+                    "චෙක්පත් ගෙවීම",
+
+                type:
+                    "Banking"
+            },
+
+
+            {
+                id: "charges",
+
+                question:
+                    "බැංකුව විසින් ගිණුම් ගාස්තු අය කරන ලදී.",
+
+                answer:
+                    "බැංකු ගාස්තු",
+
+                type:
+                    "Banking"
+            },
+
+
+            {
+                id: "standing",
+
+                question:
+                    "බැංකුව මඟින් ස්ථාවර නියෝගයක් අනුව මුදල් ගෙවන ලදී.",
+
+                answer:
+                    "ස්ථාවර නියෝග ගෙවීම",
+
+                type:
+                    "Banking"
+            },
+
+
+            {
+                id: "dishonoured",
+
+                question:
+                    "ලැබුණු චෙක්පත බැංකුව විසින් ප්‍රතික්ෂේප කරන ලදී.",
+
+                answer:
+                    "අගරු වූ චෙක්පත",
+
+                type:
+                    "Banking"
+            },
+
+
+            {
+                id: "overdraft",
+
+                question:
+                    "බැංකු ගිණුමේ ඇති මුදල් ශේෂයට වඩා වැඩි මුදලක් භාවිතා කිරීම.",
+
+                answer:
+                    "බැංකු අයිරා",
+
+                type:
+                    "Banking"
+            }
+
+        ]
+
+    };
+
+
+
+    /* =====================================================
+       PUZZLE STATE
+       ===================================================== */
+
+    let uezPuzzleState = {
+
+        lives: 3,
+
+        score: 0,
+
+        level: 1,
+
+        currentQuestions: [],
+
+        solved: [],
+
+        selectedCard: null,
+
+        locked: false
+
+    };
+
+
+
+    /* =====================================================
+       SHUFFLE
+       ===================================================== */
+
+    function uezShuffle(
+        array
+    ) {
+
+        const result =
+            [...array];
+
+
+        for (
+            let i = result.length - 1;
+            i > 0;
+            i--
+        ) {
+
+            const j =
+                Math.floor(
+                    Math.random() *
+                    (i + 1)
+                );
+
+
+            [
+                result[i],
+                result[j]
+            ] =
+            [
+                result[j],
+                result[i]
+            ];
+
+        }
+
+
+        return result;
+
+    }
+
+
+
+    /* =====================================================
+       BEST SCORE
+       ===================================================== */
+
+    function uezGetBestScore() {
+
+        return Number(
+            localStorage.getItem(
+                "uez_puzzle_best_score"
+            ) || 0
+        );
+
+    }
+
+
+
+    function uezSaveBestScore() {
+
+        const best =
+            uezGetBestScore();
+
+
+        if (
+            uezPuzzleState.score >
+            best
+        ) {
+
+            localStorage.setItem(
+                "uez_puzzle_best_score",
+                uezPuzzleState.score
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       CATEGORY DATA
+       ===================================================== */
+
+    function uezGetCategoryData() {
+
+        const category =
+            document.getElementById(
+                "uezPuzzleCategory"
+            ).value;
+
+
+        if (
+            category === "mixed"
+        ) {
+
+            return [
+                ...uezPuzzleData.accounting,
+                ...uezPuzzleData.business,
+                ...uezPuzzleData.banking
+            ];
+
+        }
+
+
+        return uezPuzzleData[
+            category
+        ];
+
+    }
+
+
+
+    /* =====================================================
+       START GAME
+       ===================================================== */
+
+    function uezStartPuzzleGame() {
+
+        uezPuzzleState.lives = 3;
+
+        uezPuzzleState.score = 0;
+
+        uezPuzzleState.level = 1;
+
+        uezPuzzleState.solved = [];
+
+        uezPuzzleState.selectedCard = null;
+
+        uezPuzzleState.locked = false;
+
+
+        /*
+         * Game Area නැවත සාදන්න
+         * Game Over වූ පසුවත්
+         * New Game වැඩ කිරීම සඳහා
+         */
+
+        const area =
+            document.getElementById(
+                "uezPuzzleGameArea"
+            );
+
+
+        if (
+            area &&
+            !document.getElementById(
+                "uezQuestionCards"
+            )
+        ) {
+
+            area.innerHTML = `
+
+                <div class="uez-puzzle-panel">
+
+                    <div class="uez-puzzle-panel-title">
+
+                        <h3>
+                            🧩 ප්‍රශ්න / Cards
+                        </h3>
+
+                        <span id="uezQuestionCount">
+                            0 / 0
+                        </span>
+
+                    </div>
+
+                    <div id="uezQuestionCards"></div>
+
+                    <div class="uez-puzzle-instruction">
+
+                        <strong>
+                            🎮 ක්‍රීඩා කරන ආකාරය:
+                        </strong>
+
+                        <br>
+
+                        Desktop එකේ Card එකක්
+                        <strong>Drag</strong>
+                        කර දකුණු පැත්තේ නිවැරදි පිළිතුරට
+                        Drop කරන්න.
+
+                        <br><br>
+
+                        📱 Phone එකේදී Card එක
+                        <strong>Tap</strong>
+                        කර පසුව නිවැරදි පිළිතුර
+                        <strong>Tap</strong>
+                        කරන්න.
+
+                    </div>
+
+                </div>
+
+
+                <div class="uez-puzzle-panel">
+
+                    <div class="uez-puzzle-panel-title">
+
+                        <h3>
+                            🎯 නිවැරදි පිළිතුරු
+                        </h3>
+
+                        <span>
+                            Drop Here
+                        </span>
+
+                    </div>
+
+                    <div id="uezAnswerBoxes"></div>
+
+                    <div
+                        class="uez-puzzle-message"
+                        id="uezPuzzleMessage"
+                    >
+                        🧩 Card එකක් තෝරලා ආරම්භ කරන්න.
+                    </div>
+
+                    <div class="uez-puzzle-level-progress">
+
+                        <div class="uez-puzzle-progress-top">
+
+                            <span>
+                                📈 Level Progress
+                            </span>
+
+                            <span id="uezLevelProgressText">
+                                0%
+                            </span>
+
+                        </div>
+
+                        <div class="uez-puzzle-progress-bar">
+
+                            <div
+                                class="uez-puzzle-progress-fill"
+                                id="uezLevelProgressFill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        uezCreateLevel();
+
+        uezUpdateStats();
+
+    }
+
+
+
+    /* =====================================================
+       CREATE LEVEL
+       ===================================================== */
+
+    function uezCreateLevel() {
+
+        const data =
+            uezGetCategoryData();
+
+
+        const amount =
+            Math.min(
+                3 +
+                uezPuzzleState.level,
+                data.length
+            );
+
+
+        const selected =
+            uezShuffle(
+                data
+            ).slice(
+                0,
+                amount
+            );
+
+
+        uezPuzzleState.currentQuestions =
+            selected;
+
+
+        uezPuzzleState.solved = [];
+
+
+        uezRenderQuestions();
+
+        uezRenderAnswers();
+
+        uezUpdateProgress();
+
+
+        uezShowMessage(
+            "🧩 Card එකක් Drag කරන්න හෝ Tap කරන්න.",
+            ""
+        );
+
+    }
+
+
+
+    /* =====================================================
+       RENDER QUESTIONS
+       ===================================================== */
+
+    function uezRenderQuestions() {
+
+        const container =
+            document.getElementById(
+                "uezQuestionCards"
+            );
+
+
+        if (!container) {
+
+            return;
+
+        }
+
+
+        container.innerHTML = "";
+
+
+        const questions =
+            uezShuffle(
+                uezPuzzleState.currentQuestions
+            );
+
+
+        questions.forEach(
+            function (
+                item,
+                index
+            ) {
+
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                card.className =
+                    "uez-puzzle-question-card";
+
+
+                card.dataset.id =
+                    item.id;
+
+
+                card.draggable = true;
+
+
+                card.innerHTML = `
+
+                    <div class="uez-puzzle-card-number">
+
+                        CARD ${index + 1}
+
+                    </div>
+
+                    <div class="uez-puzzle-card-text">
+
+                        ${item.question}
+
+                    </div>
+
+                `;
+
+
+
+                /* =================================================
+                   DESKTOP DRAG
+                   ================================================= */
+
+                card.addEventListener(
+                    "dragstart",
+                    function (event) {
+
+                        if (
+                            uezPuzzleState.locked
+                        ) {
+
+                            event.preventDefault();
+
+                            return;
+
+                        }
+
+
+                        uezPuzzleState.selectedCard =
+                            item.id;
+
+
+                        card.classList.add(
+                            "dragging"
+                        );
+
+
+                        if (
+                            event.dataTransfer
+                        ) {
+
+                            event.dataTransfer.effectAllowed =
+                                "move";
+
+
+                            event.dataTransfer.setData(
+                                "text/plain",
+                                item.id
+                            );
+
+                        }
+
+                    }
+                );
+
+
+
+                card.addEventListener(
+                    "dragend",
+                    function () {
+
+                        card.classList.remove(
+                            "dragging"
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   PHONE / TOUCH / CLICK
+                   ================================================= */
+
+                card.addEventListener(
+                    "click",
+                    function () {
+
+                        if (
+                            uezPuzzleState.locked
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        document
+                            .querySelectorAll(
+                                ".uez-puzzle-question-card"
+                            )
+                            .forEach(
+                                function (
+                                    c
+                                ) {
+
+                                    c.classList.remove(
+                                        "selected"
+                                    );
+
+                                }
+                            );
+
+
+                        card.classList.add(
+                            "selected"
+                        );
+
+
+                        uezPuzzleState.selectedCard =
+                            item.id;
+
+
+                        uezShowMessage(
+                            "🎯 දැන් දකුණු පැත්තේ නිවැරදි පිළිතුර Tap කරන්න.",
+                            ""
+                        );
+
+                    }
+                );
+
+
+                container.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+        const count =
+            document.getElementById(
+                "uezQuestionCount"
+            );
+
+
+        if (count) {
+
+            count.textContent =
+                `${uezPuzzleState.solved.length} / ${uezPuzzleState.currentQuestions.length}`;
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       RENDER ANSWERS
+       ===================================================== */
+
+    function uezRenderAnswers() {
+
+        const container =
+            document.getElementById(
+                "uezAnswerBoxes"
+            );
+
+
+        if (!container) {
+
+            return;
+
+        }
+
+
+        container.innerHTML = "";
+
+
+        const answers =
+            uezShuffle(
+                uezPuzzleState.currentQuestions
+            );
+
+
+        answers.forEach(
+            function (
+                item
+            ) {
+
+
+                const answer =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                answer.className =
+                    "uez-puzzle-answer";
+
+
+                answer.dataset.id =
+                    item.id;
+
+
+                answer.innerHTML = `
+
+                    <div>
+
+                        <div class="uez-puzzle-answer-name">
+
+                            ${item.answer}
+
+                        </div>
+
+                        <div class="uez-puzzle-answer-type">
+
+                            ${item.type}
+
+                        </div>
+
+                    </div>
+
+                    <div class="uez-puzzle-answer-icon">
+
+                        🎯
+
+                    </div>
+
+                `;
+
+
+
+                /* =================================================
+                   DRAG OVER
+                   ================================================= */
+
+                answer.addEventListener(
+                    "dragover",
+                    function (
+                        event
+                    ) {
+
+                        event.preventDefault();
+
+
+                        if (
+                            !uezPuzzleState.locked
+                        ) {
+
+                            answer.classList.add(
+                                "drag-over"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+
+                answer.addEventListener(
+                    "dragleave",
+                    function () {
+
+                        answer.classList.remove(
+                            "drag-over"
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   DROP
+                   ================================================= */
+
+                answer.addEventListener(
+                    "drop",
+                    function (
+                        event
+                    ) {
+
+                        event.preventDefault();
+
+
+                        answer.classList.remove(
+                            "drag-over"
+                        );
+
+
+                        let id = "";
+
+
+                        if (
+                            event.dataTransfer
+                        ) {
+
+                            id =
+                                event.dataTransfer.getData(
+                                    "text/plain"
+                                );
+
+                        }
+
+
+                        if (
+                            !id
+                        ) {
+
+                            id =
+                                uezPuzzleState.selectedCard;
+
+                        }
+
+
+                        uezCheckAnswer(
+                            id,
+                            item.id,
+                            answer
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   PHONE / TAP ANSWER
+                   ================================================= */
+
+                answer.addEventListener(
+                    "click",
+                    function () {
+
+                        if (
+                            !uezPuzzleState.selectedCard
+                        ) {
+
+                            uezShowMessage(
+                                "⚠️ මුලින් වම් පැත්තේ Card එකක් තෝරන්න.",
+                                "error"
+                            );
+
+                            return;
+
+                        }
+
+
+                        uezCheckAnswer(
+                            uezPuzzleState.selectedCard,
+                            item.id,
+                            answer
+                        );
+
+                    }
+                );
+
+
+                container.appendChild(
+                    answer
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       CHECK ANSWER
+       ===================================================== */
+
+    function uezCheckAnswer(
+        questionId,
+        answerId,
+        answerElement
+    ) {
+
+
+        if (
+            uezPuzzleState.locked
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            !questionId
+        ) {
+
+            return;
+
+        }
+
+
+        const question =
+            uezPuzzleState
+                .currentQuestions
+                .find(
+                    function (
+                        item
+                    ) {
+
+                        return (
+                            item.id ===
+                            questionId
+                        );
+
+                    }
+                );
+
+
+        if (!question) {
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           CORRECT
+           ================================================= */
+
+        if (
+            questionId ===
+            answerId
+        ) {
+
+
+            if (
+                uezPuzzleState.solved
+                    .includes(
+                        questionId
+                    )
+            ) {
+
+                return;
+
+            }
+
+
+            uezPuzzleState.solved.push(
+                questionId
+            );
+
+
+            const earned =
+                100 *
+                uezPuzzleState.level;
+
+
+            uezPuzzleState.score +=
+                earned;
+
+
+            answerElement.classList.add(
+                "correct"
+            );
+
+
+            /*
+             * Correct mark
+             */
+
+            const icon =
+                answerElement.querySelector(
+                    ".uez-puzzle-answer-icon"
+                );
+
+
+            if (icon) {
+
+                icon.textContent =
+                    "✅";
+
+            }
+
+
+            /*
+             * Hide question card
+             */
+
+            const card =
+                document.querySelector(
+                    `.uez-puzzle-question-card[data-id="${questionId}"]`
+                );
+
+
+            if (card) {
+
+                card.style.display =
+                    "none";
+
+            }
+
+
+            uezPuzzleState.selectedCard =
+                null;
+
+
+            document
+                .querySelectorAll(
+                    ".uez-puzzle-question-card"
+                )
+                .forEach(
+                    function (
+                        c
+                    ) {
+
+                        c.classList.remove(
+                            "selected"
+                        );
+
+                    }
+                );
+
+
+            uezUpdateStats();
+
+            uezUpdateProgress();
+
+
+            uezShowMessage(
+                `✅ නිවැරදියි! +${earned} ⭐`,
+                "success"
+            );
+
+
+            /*
+             * Level complete
+             */
+
+            if (
+                uezPuzzleState.solved.length ===
+                uezPuzzleState.currentQuestions.length
+            ) {
+
+                setTimeout(
+                    uezLevelComplete,
+                    900
+                );
+
+            }
+
+        }
+
+
+
+        /* =================================================
+           WRONG
+           ================================================= */
+
+        else {
+
+
+            uezPuzzleState.lives--;
+
+
+            answerElement.classList.add(
+                "wrong"
+            );
+
+
+            uezUpdateStats();
+
+
+            uezShowMessage(
+                `❌ වැරදියි! ❤️ Lives ${uezPuzzleState.lives}යි.`,
+                "error"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    answerElement.classList.remove(
+                        "wrong"
+                    );
+
+                },
+                700
+            );
+
+
+            uezPuzzleState.selectedCard =
+                null;
+
+
+            document
+                .querySelectorAll(
+                    ".uez-puzzle-question-card"
+                )
+                .forEach(
+                    function (
+                        card
+                    ) {
+
+                        card.classList.remove(
+                            "selected"
+                        );
+
+                    }
+                );
+
+
+            /*
+             * Game Over
+             */
+
+            if (
+                uezPuzzleState.lives <= 0
+            ) {
+
+                setTimeout(
+                    uezGameOver,
+                    600
+                );
+
+            }
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       LEVEL COMPLETE
+       ===================================================== */
+
+    function uezLevelComplete() {
+
+
+        uezSaveBestScore();
+
+
+        /*
+         * Level 5 complete
+         */
+
+        if (
+            uezPuzzleState.level >= 5
+        ) {
+
+            uezGameFinished();
+
+            return;
+
+        }
+
+
+        const completedLevel =
+            uezPuzzleState.level;
+
+
+        uezPuzzleState.level++;
+
+
+        uezShowMessage(
+            `🏆 Level ${completedLevel} Complete! → Level ${uezPuzzleState.level}`,
+            "success"
+        );
+
+
+        setTimeout(
+            function () {
+
+                uezCreateLevel();
+
+            },
+            1200
+        );
+
+    }
+
+
+
+    /* =====================================================
+       GAME OVER
+       ===================================================== */
+
+    function uezGameOver() {
+
+
+        uezSaveBestScore();
+
+
+        const area =
+            document.getElementById(
+                "uezPuzzleGameArea"
+            );
+
+
+        if (!area) {
+
+            return;
+
+        }
+
+
+        area.innerHTML = `
+
+            <div
+                class="uez-puzzle-panel"
+                style="grid-column:1/-1;"
+            >
+
+                <div class="uez-puzzle-gameover">
+
+                    <div class="uez-puzzle-gameover-icon">
+                        💔
+                    </div>
+
+                    <h3>
+                        Game Over
+                    </h3>
+
+                    <p>
+
+                        ඔබගේ Score:
+                        <strong>
+                            ${uezPuzzleState.score}
+                        </strong>
+                        ⭐
+
+                        <br>
+
+                        Best Score:
+                        <strong>
+                            ${uezGetBestScore()}
+                        </strong>
+                        🏆
+
+                    </p>
+
+                    <button
+                        type="button"
+                        class="uez-puzzle-play-again"
+                        onclick="uezStartPuzzleGame()"
+                    >
+                        🔄 නැවත ක්‍රීඩා කරන්න
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+
+    /* =====================================================
+       GAME FINISHED
+       ===================================================== */
+
+    function uezGameFinished() {
+
+
+        uezSaveBestScore();
+
+
+        const area =
+            document.getElementById(
+                "uezPuzzleGameArea"
+            );
+
+
+        if (!area) {
+
+            return;
+
+        }
+
+
+        area.innerHTML = `
+
+            <div
+                class="uez-puzzle-panel"
+                style="grid-column:1/-1;"
+            >
+
+                <div class="uez-puzzle-gameover">
+
+                    <div class="uez-puzzle-gameover-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Excellent!
+                    </h3>
+
+                    <p>
+
+                        සියලු Levels සාර්ථකව
+                        සම්පූර්ණ කළා!
+
+                        <br>
+
+                        Final Score:
+                        <strong>
+                            ${uezPuzzleState.score}
+                        </strong>
+                        ⭐
+
+                        <br>
+
+                        Best Score:
+                        <strong>
+                            ${uezGetBestScore()}
+                        </strong>
+                        🏆
+
+                    </p>
+
+                    <button
+                        type="button"
+                        class="uez-puzzle-play-again"
+                        onclick="uezStartPuzzleGame()"
+                    >
+                        🎮 නැවත ක්‍රීඩා කරන්න
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+
+    /* =====================================================
+       MESSAGE
+       ===================================================== */
+
+    function uezShowMessage(
+        text,
+        type
+    ) {
+
+
+        const message =
+            document.getElementById(
+                "uezPuzzleMessage"
+            );
+
+
+        if (!message) {
+
+            return;
+
+        }
+
+
+        message.textContent =
+            text;
+
+
+        message.className =
+            "uez-puzzle-message";
+
+
+        if (type) {
+
+            message.classList.add(
+                type
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       UPDATE STATS
+       ===================================================== */
+
+    function uezUpdateStats() {
+
+
+        const lives =
+            document.getElementById(
+                "uezLives"
+            );
+
+
+        const score =
+            document.getElementById(
+                "uezScore"
+            );
+
+
+        const best =
+            document.getElementById(
+                "uezBestScore"
+            );
+
+
+        if (lives) {
+
+            lives.textContent =
+                uezPuzzleState.lives;
+
+        }
+
+
+        if (score) {
+
+            score.textContent =
+                uezPuzzleState.score;
+
+        }
+
+
+        if (best) {
+
+            best.textContent =
+                uezGetBestScore();
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       UPDATE PROGRESS
+       ===================================================== */
+
+    function uezUpdateProgress() {
+
+
+        const total =
+            uezPuzzleState
+                .currentQuestions
+                .length;
+
+
+        const solved =
+            uezPuzzleState
+                .solved
+                .length;
+
+
+        const percent =
+            total > 0
+                ? Math.round(
+                    (solved / total) *
+                    100
+                )
+                : 0;
+
+
+        const fill =
+            document.getElementById(
+                "uezLevelProgressFill"
+            );
+
+
+        const text =
+            document.getElementById(
+                "uezLevelProgressText"
+            );
+
+
+        if (fill) {
+
+            fill.style.width =
+                percent + "%";
+
+        }
+
+
+        if (text) {
+
+            text.textContent =
+                percent + "%";
+
+        }
+
+
+        const count =
+            document.getElementById(
+                "uezQuestionCount"
+            );
+
+
+        if (count) {
+
+            count.textContent =
+                `${solved} / ${total}`;
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       CATEGORY CHANGE
+       ===================================================== */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+
+            const category =
+                document.getElementById(
+                    "uezPuzzleCategory"
+                );
+
+
+            if (category) {
+
+                category.addEventListener(
+                    "change",
+                    function () {
+
+                        uezStartPuzzleGame();
+
+                    }
+                );
+
+            }
+
+
+            /*
+             * Start Puzzle automatically
+             */
+
+            if (
+                document.getElementById(
+                    "uezPuzzleGameArea"
+                )
+            ) {
+
+                uezStartPuzzleGame();
+
+            }
+
+
+        }
+    );
 
 
 </script>
