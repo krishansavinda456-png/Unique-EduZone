@@ -5316,672 +5316,1124 @@ XYZ සැපයුම්කරුවන් (ණයහිමි)
 
 <!-- =========================================================
      ගිණුම්කරණ වැරදි නිවැරදි කිරීම
+     Chapter 12 - ක්‍රියාකාරකම් පසුව වෙනම එකතු කිරීමට ඉඩ තබා ඇත.
      ========================================================= -->
-
 <section class="lesson-section">
-
-    <!-- ප්‍රධාන පාඩම් මාතෘකාව -->
-    <div class="content-card"
-         style="border:2px solid #d4af37;
-                border-radius:15px;
-                background:#111;
-                padding:25px;
-                margin-bottom:25px;
-                box-shadow:0 0 15px rgba(212,175,55,0.20);">
-
-        <h2 style="text-align:center;
-                   color:#d4af37;
-                   margin:0;
-                   font-size:28px;">
+<!-- ප්‍රධාන පාඩම් මාතෘකාව -->
+<div class="content-card" style="border:2px solid #d4af37;border-radius:15px;background:#111;padding:25px;margin-bottom:25px;box-shadow:0 0 15px rgba(212,175,55,.20);">
+<h2 style="text-align:center;color:#d4af37;margin:0;font-size:28px;">
             ගිණුම්කරණ වැරදි නිවැරදි කිරීම
         </h2>
-
-    </div>
-
-
-    <!-- =====================================================
-         01. ගිණුම්කරණ වැරදි සිදුවිය හැකි අවස්ථා
-         ===================================================== -->
-
-    <div class="content-card"
-         style="border:1px solid #d4af37;
-                border-radius:15px;
-                background:#111;
-                padding:25px;
-                margin-bottom:25px;">
-
-        <h3 style="color:#d4af37;
-                   border-bottom:1px solid #d4af37;
-                   padding-bottom:12px;
-                   margin-bottom:18px;">
-            01. ගිණුම්කරණ වැරදි සිදුවිය හැකි අවස්ථා
+</div>
+<!-- 12.1 -->
+<div class="content-card" style="border:1px solid #d4af37;border-radius:15px;background:#111;padding:25px;margin-bottom:25px;">
+<h3 style="color:#d4af37;border-bottom:1px solid #d4af37;padding-bottom:12px;">
+            12.1 ගිණුම්කරණ වැරදි නිවැරදි කිරීමේ අවශ්‍යතාව
         </h3>
-
-        <p style="color:#fff;">
-            ගනුදෙනුවක් සිදුවූ අවස්ථාවේ සිට එය ගිණුම් පොත්වල
-            සටහන් කර ශේෂ පිරික්සුම පිළියෙල කරන තෙක්
-            විවිධ අවස්ථාවලදී ගිණුම්කරණ වැරදි සිදුවිය හැකිය.
+<p style="color:#fff;">
+            ගිණුම්කරණය තුළින් ව්‍යාපාරයක් කෙරෙහි ඇල්මක් දක්වන පාර්ශ්වයන්ට තීරණ ගැනීමට
+            නිවැරදි තොරතුරු ලබා දීම අපේක්ෂා කෙරේ. ව්‍යාපාරික ගනුදෙනු මූලික පොත්වල
+            සටහන් කිරීමේදී, ඒවා ලෙජරයට පිටපත් කිරීමේදී හා ලෙජර් ගිණුම් තුලනය කිරීමේදී
+            මෙන්ම ගිණුම්වල ශේෂයන් ශේෂ පිරික්සුමට උපුටා ගැනීමේදී විවිධ වූ වැරදි සිදුවිය හැකිය.
         </p>
-
-
-        <!-- =================================================
-             අවස්ථාව 01
-             ================================================= -->
-
-        <div class="important-box"
-             style="border:1px solid #d4af37;
-                    border-left:5px solid #d4af37;
-                    border-radius:12px;
-                    background:#171717;
-                    padding:20px;
-                    margin-top:22px;">
-
-            <h4 style="color:#d4af37;
-                       margin-bottom:12px;">
-                01. මූලික සටහන් පොත්වල ගනුදෙනු සටහන් කිරීමේදී
-            </h4>
-
-            <p style="color:#fff;">
-                ගනුදෙනුවක් මූලික සටහන් පොතක සටහන් කිරීමේදී
-                ගනුදෙනුවේ වටිනාකම, දිනය හෝ ගනුදෙනුවේ ස්වභාවය
-                වැරදි ලෙස සටහන් විය හැකි හෝ ගනුදෙනුව සටහන් වී 
-                නොතීබීම සිදු විය හැකි.
+<p style="color:#fff;">
+            මෙසේ ගිණුම්කරණ ක්‍රියාවලිය තුළ වැරදි සිදු වී ඇත්නම් ව්‍යාපාර කෙරෙහි ඇල්මක්
+            දක්වන පාර්ශ්වයන්ට තීරණ ගැනීම සඳහා නිවැරදි තොරතුරු සැපයීමට නොහැකි වේ.
+            ඒ නිසා මූල්‍ය වාර්තා පිළියෙල කිරීමට පෙර සිදු වී ඇති වැරදි නිවැරදි කළ යුතුය.
+        </p>
+</div>
+<!-- 12.2 -->
+<div class="content-card" style="border:1px solid #d4af37;border-radius:15px;background:#111;padding:25px;margin-bottom:25px;">
+<h3 style="color:#d4af37;border-bottom:1px solid #d4af37;padding-bottom:12px;">
+            12.2 ගිණුම්කරණ වැරදි සිදුවිය හැකි අවස්ථා
+        </h3>
+<p style="color:#fff;">
+            ව්‍යාපාරයක ගිණුම්කරණ ක්‍රියාවලියේදී වැරදි සිදුවිය හැකි අවස්ථා පහත සඳහන් පරිදි වේ.
+        </p>
+<!-- 01 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">01. මූලික සටහන් පොත්වල ගනුදෙනු සටහන් කිරීමේදී</h4>
+<p style="color:#fff;">
+                ව්‍යාපාරයක ගනුදෙනු සටහන් කිරීමේ ආරම්භක අවස්ථාව වන මූලික සටහන් පොත්වල
+                ගනුදෙනු ඇතුළත් කිරීමේදී වැරදි සිදුවිය හැකිය.
             </p>
-
-            <div class="example-box"
-                 style="border:1px solid #d4af37;
-                        border-radius:10px;
-                        background:#0b0b0b;
-                        padding:18px;
-                        margin-top:15px;">
-
-                <h4 style="color:#d4af37;
-                           margin-bottom:10px;">
-                    නිදසුන
-                </h4>
-
-                <p style="color:#fff;">
-                    රු. 25,000ක භාණ්ඩ ණයට මිලදී ගෙන ඇත.
-                    නමුත් එය ගැනුම් ජර්නලයේ රු. 52,000ක් ලෙස
-                    සටහන් කර ඇත.
-                </p>
-
-                <p style="color:#fff;">
-                    මෙහි නිවැරදි වටිනාකම රු. 25,000ක් වුවද
-                    රු. 52,000ක් ලෙස සටහන් කර ඇති බැවින්
-                    වැරැද්ද සිදුවී ඇත්තේ
-                    <strong style="color:#d4af37;">
-                        මූලික සටහන් පොතේ ගනුදෙනුව
-                        සටහන් කිරීමේදීය.
-                    </strong>
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             අවස්ථාව 02
-             ================================================= -->
-
-        <div class="important-box"
-             style="border:1px solid #d4af37;
-                    border-left:5px solid #d4af37;
-                    border-radius:12px;
-                    background:#171717;
-                    padding:20px;
-                    margin-top:22px;">
-
-            <h4 style="color:#d4af37;
-                       margin-bottom:12px;">
-                02. මූලික සටහන් පොත්වලින් ගනුදෙනු ලෙජරයට
-                පිටපත් කිරීමේදී
-            </h4>
-
-            <p style="color:#fff;">
-                මූලික සටහන් පොත්වල නිවැරදිව සටහන් කර ඇති
-                ගනුදෙනු ලෙජර ගිණුම්වලට පිටපත් කිරීමේදී
-                වටිනාකම, ගිණුම හෝ හර හා බැර පැත්ත
-                වැරදි ලෙස සටහන් විය හැකිය.
-            </p>
-
-            <div class="example-box"
-                 style="border:1px solid #d4af37;
-                        border-radius:10px;
-                        background:#0b0b0b;
-                        padding:18px;
-                        margin-top:15px;">
-
-                <h4 style="color:#d4af37;
-                           margin-bottom:10px;">
-                    නිදසුන
-                </h4>
-
-                <p style="color:#fff;">
-                    XYZ සැපයුම්කරුගෙන් රු. 30,000ක භාණ්ඩ
-                    ණයට මිලදී ගෙන ඇත. ගැනුම් ජර්නලයේ එය
-                    රු. 30,000 ලෙස නිවැරදිව සටහන් කර තිබුණද,
-                    ගැනුම් ගිණුමට රු. 3,000ක් ලෙස පිටපත් කර ඇත.
-                </p>
-
-                <p style="color:#fff;">
-                    මෙහි වැරැද්ද සිදුවී ඇත්තේ
-                    <strong style="color:#d4af37;">
-                        මූලික සටහන් පොතෙන් ලෙජරයට
-                        පිටපත් කිරීමේදීය.
-                    </strong>
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             අවස්ථාව 03
-             ================================================= -->
-
-        <div class="important-box"
-             style="border:1px solid #d4af37;
-                    border-left:5px solid #d4af37;
-                    border-radius:12px;
-                    background:#171717;
-                    padding:20px;
-                    margin-top:22px;">
-
-            <h4 style="color:#d4af37;
-                       margin-bottom:12px;">
-                03. ලෙජර් ගිණුම් තුලනය කිරීමේදී
-            </h4>
-
-            <p style="color:#fff;">
-                යම් කාලසීමාවක් අවසානයේ ගිණුම් තුලනය කිරීමේදී 
-                වැරදි සිදු විය හැකිය. ලෙජර් ගිණුම්වල හර හා බැර පැතිවල වටිනාකම්
-                එකතු කිරීමේදී හෝ ශේෂය ගණනය කිරීමේදී
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන්</h4>
+<p style="color:#fff;">• රු. 20,000ක ණයට විකුණුම් ඉන්වොයිසියක් විකුණුම් ජ’නලයේ සටහන් නොවීම.</p>
+<p style="color:#fff;">• රු. 50,000ක ණයට ගැනුම් ඉන්වොයිසියක් ගැනුම් ජ’නලයේ රු. 5,000ක් ලෙස සටහන් වීම.</p>
+</div>
+</div>
+<!-- 02 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">02. මූලික සටහන් පොත්වලින් ගනුදෙනු ලෙජරයට පිටපත් කිරීමේදී</h4>
+<p style="color:#fff;">
+                මූලික පොත්වල සටහන් කරනු ලබන ගනුදෙනු ලෙජර ගිණුම්වලට පිටපත් කිරීමේදී
                 වැරදි සිදුවිය හැකිය.
             </p>
-
-            <div class="example-box"
-                 style="border:1px solid #d4af37;
-                        border-radius:10px;
-                        background:#0b0b0b;
-                        padding:18px;
-                        margin-top:15px;">
-
-                <h4 style="color:#d4af37;
-                           margin-bottom:10px;">
-                    නිදසුන
-                </h4>
-
-                <p style="color:#fff;">
-                    ගිණුමක හර පැත්තේ රු. 50,000ක්ද බැර
-                    පැත්තේ රු. 35,000ක්ද තිබේ නම් නිවැරදි
-                    ශේෂය රු. 15,000කි.
-                </p>
-
-                <p style="color:#fff;">
-                    නමුත් එය රු. 5,000ක් ලෙස ගණනය කර
-                    ශේෂය ගෙන ආවේ නම්, වැරැද්ද සිදුවී ඇත්තේ
-                    <strong style="color:#d4af37;">
-                        ලෙජර් ගිණුම තුලනය කිරීමේදීය.
-                    </strong>
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             අවස්ථාව 04
-             ================================================= -->
-
-        <div class="important-box"
-             style="border:1px solid #d4af37;
-                    border-left:5px solid #d4af37;
-                    border-radius:12px;
-                    background:#171717;
-                    padding:20px;
-                    margin-top:22px;">
-
-            <h4 style="color:#d4af37;
-                       margin-bottom:12px;">
-                04. ශේෂ පිරික්සුම පිළියෙල කිරීමේදී
-            </h4>
-
-            <p style="color:#fff;">
-                ලෙජර් ගිණුම්වලින් ලබාගත් ශේෂ ශේෂ පිරික්සුමට
-                ඇතුළත් කිරීමේදී සමහර ගිණුම් ඇතුලත් 
-                කර නොතිබීම,වටිනාකම හෝ හර හා බැර පැත්ත
-                වැරදි ලෙස සටහන් විය හැකිය. 
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන්</h4>
+<p style="color:#fff;">• රු. 50,000ක් වූ ගැනුම් ජ’නලයේ එකතුව ගැනුම් ගිණුමට පිටපත් නොවීම.</p>
+<p style="color:#fff;">• රු. 155,000ක් වූ විකුණුම් ජ’නලයේ එකතුව විකුණුම් ගිණුමේ රු. 150,000ක් ලෙස සටහන් වීම.</p>
+</div>
+</div>
+<!-- 03 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">03. ලෙජර් ගිණුම් තුලනය කිරීමේදී</h4>
+<p style="color:#fff;">
+                යම් කාල සීමාවක් අවසානයේදී ගිණුම් තුලනය කිරීමේදී වැරදි සිදුවිය හැකිය.
             </p>
-
-            <div class="example-box"
-                 style="border:1px solid #d4af37;
-                        border-radius:10px;
-                        background:#0b0b0b;
-                        padding:18px;
-                        margin-top:15px;">
-
-                <h4 style="color:#d4af37;
-                           margin-bottom:10px;">
-                    නිදසුන
-                </h4>
-
-                <p style="color:#fff;">
-                    වැටුප් ගිණුමේ නිවැරදි හර ශේෂය රු. 20,000ක්
-                    වුවද, ශේෂ පිරික්සුමේදී එය රු. 2,000ක් ලෙස
-                    සටහන් කර ඇත.
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන්</h4>
+<p style="color:#fff;">• විකුණුම් ගිණුමේ එකතුව රු. 10,000ක් අඩුවෙන් එකතු කොට තිබීම.</p>
+<p style="color:#fff;">• කුලී වියදම් ගිණුමේ එකතුව රු. 5,000ක් වැඩියෙන් සටහන් වීම.</p>
+</div>
+</div>
+<!-- 04 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">04. ශේෂ පිරික්සුම පිළියෙල කිරීමේදී</h4>
+<p style="color:#fff;">
+                ලෙජරයේ ඇති ගිණුම්වල ශේෂ පදනම් කර ගනිමින් ශේෂ පිරික්සුම පිළියෙල කිරීමේදී ද
+                ගිණුම්කරණ වැරදි සිදුවිය හැකිය.
+            </p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන්</h4>
+<p style="color:#fff;">• විදුලි ගාස්තු ගිණුමේ ශේෂය වූ රු. 15,000 ශේෂ පිරික්සුමට උපුටා නොගැනීම.</p>
+<p style="color:#fff;">• රක්ෂණ ගාස්තු ගිණුමේ ශේෂය වූ රු. 10,000 ශේෂ පිරික්සුමේ රු. 1,000ක් ලෙස ඇතුළත් වීම.</p>
+</div>
+</div>
+<div class="important-box" style="border:1px solid #d4af37;border-radius:12px;background:#171717;padding:18px;margin-top:20px;">
+<p style="color:#fff;margin:0;">
+                මෙසේ ගිණුම්කරණ ක්‍රියාවලියේ විවිධ අදියරයන් තුළ ගිණුම්කරණ වැරදි සිදු වේ.
+                එබැවින් ව්‍යාපාරයක් විසින් මුලින්ම කළ යුතු වන්නේ අදාළ වැරදි හඳුනා ගැනීමයි.
+            </p>
+</div>
+</div>
+<!-- 12.3 -->
+<div class="content-card" style="border:1px solid #d4af37;border-radius:15px;background:#111;padding:25px;margin-bottom:25px;">
+<h3 style="color:#d4af37;border-bottom:1px solid #d4af37;padding-bottom:12px;">
+            12.3 ගිණුම්කරණ වැරදි හඳුනා ගැනීම
+        </h3>
+<p style="color:#fff;">
+            ව්‍යාපාරයක ගනුදෙනු සටහන් කරනු ලබන්නේ ද්විත්ව සටහන් මූලධර්මය පදනම් කරගෙනය.
+            ඒ අනුව සෑම හර සටහනකටම බැර සටහනක් තැබිය යුතුය. එබැවින් ව්‍යාපාරයක් විසින්
+            පිළියෙල කරනු ලබන ශේෂ පිරික්සුමක හර සහ බැර තීරු එකතු සමාන විය යුතුය.
+        </p>
+<p style="color:#fff;">
+            එසේ සමාන නොවන විට ගිණුම්කරණ ක්‍රියාවලියේ වැරදි සිදු වී ඇති බව පැහැදිලිව
+            හඳුනාගත හැකිය. නමුත් ශේෂ පිරික්සුමක හර හා බැර තීරුවල එකතු සමාන වුවද
+            ගිණුම්කරණ ක්‍රියාවලියේ දෝෂ තිබීමට පුළුවන. මන්ද යත් ශේෂ පිරික්සුමේ හර ශේෂ
+            එකතුව සහ බැර ශේෂ එකතුව සමාන වීමෙන් තහවුරු වන්නේ හර සටහන්වල වටිනාකමට
+            සමානව බැර සටහන් තබා ගිණුම් තුලනය කර ඇති බව පමණි.
+        </p>
+<p style="color:#fff;">
+            ඒ අනුව ගිණුම්කරණ වැරදි කොටස් දෙකකට බෙදා දැක්විය හැකිය.
+        </p>
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:18px;">
+<p style="color:#d4af37;margin:5px 0;">• ශේෂ පිරික්සුමේ සමානත්වයට බල නොපාන වැරදි</p>
+<p style="color:#d4af37;margin:5px 0;">• ශේෂ පිරික්සුමේ සමානත්වයට බලපෑමක් ඇති කරන වැරදි</p>
+</div>
+<p style="color:#fff;margin-top:20px;">
+            ගිණුම්කරණ වැරදි හඳුනාගත් පසු ඒවා නිවැරදි කරනු ලබන්නේ පොදු ජ’නලයේ සටහන්
+            යෙදීමෙනි. ඉන්පසු අදාළ ගිණුම් නිවැරදි කළ යුතුය. දැන් ඉහතින් දක්වන ලද එක් එක්
+            වැරදි නිවැරදි කරන ආකාරය අධ්‍යයනය කරමු.
+        </p>
+</div>
+<!-- 12.4 -->
+<div class="content-card" style="border:1px solid #d4af37;border-radius:15px;background:#111;padding:25px;margin-bottom:25px;">
+<h3 style="color:#d4af37;border-bottom:1px solid #d4af37;padding-bottom:12px;">
+            12.4 ශේෂ පිරික්සුමේ සමානත්වයට බල නොපාන වැරදි
+        </h3>
+<p style="color:#fff;">
+            ගිණුම්කරණ ක්‍රියාවලියේදී සිදුවන සමහර වැරදි ශේෂ පිරික්සුමේ සමානත්වයට
+            බලපෑමක් ඇති නොකරයි. ඒ අනුව එවැනි වැරදි සිදු වී තිබියදී වුවද ශේෂ පිරික්සුමේ
+            හර ශේෂ එකතුව සහ බැර ශේෂ එකතුව සමාන වේ. මේවා ශේෂ පිරික්සුම තුළින්
+            හෙළිදරව් නොවන වැරදි ලෙස ද හඳුනා ගැනේ.
+        </p>
+<!-- Error 01 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">01. ගනුදෙනුවක් සම්පූර්ණයෙන්ම පොත්වලින් මගහැරීම</h4>
+<p style="color:#fff;">
+                කිසියම් ගනුදෙනුවක් මූලික පොතක සටහන් නොවූ විට ඒ පිළිබඳව ගිණුම්වල ද
+                සටහන් ඇතුළත් නොවේ. මෙම දෝෂ අත්හැරීමේ දෝෂ ලෙස ද හැඳින්වේ.
+                නිවැරදි කිරීම සඳහා ගනුදෙනුවට අදාළ ද්විත්ව සටහන නිසි පරිදි වාර්තා කළ යුතුය.
+            </p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">රු. 50,000ක ණයට ගැනුම් ඉන්වොයිසියක් ගිණුම් පොත්වලින් සම්පූර්ණයෙන්ම මගහැරී යාම.</p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">ගැනුම් ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">50,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ණයහිමි ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">50,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(රු. 50,000ක ගැනුම් ඉන්වොයිසියක් ගිණුම් පොත්වල සටහන් නොවීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Error 02 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">02. ගනුදෙනුවක වටිනාකම මූලික පොත්වල වැරදියට සටහන් වීම</h4>
+<p style="color:#fff;">
+                මෙහිදී ගනුදෙනුවේ සත්‍ය වටිනාකමට වඩා අඩු හෝ වැඩි අගයක් මූලික පොතෙහි
+                සටහන් වේ. එවිට හර සහ බැර යන සටහන් දෙකම තුළ ඇතුළත් වන්නේ එම වැරදි අගයයි.
+                නමුත් හර සහ බැර වටිනාකම් සමානව යොදා ඇති නිසා ශේෂ පිරික්සුම සමාන වේ.
+                එබැවින්, එය නිවැරදි කිරීමේදී ගනුදෙනුවේ සත්‍ය වටිනාකමත් සටහන් වී ඇති
+                වටිනාකමත් අතර වෙනස සටහන් කිරීම ප්‍රමාණවත් වේ.
+            </p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">
+                    රු. 20,000ක් වූ ණයට විකුණුම් ඉන්වොයිසියක් රු. 2,000ක් ලෙස
+                    විකුණුම් ජ’නලයේ සටහන් වීම.
                 </p>
-
-                <p style="color:#fff;">
-                    මෙහි වැරැද්ද සිදුවී ඇත්තේ
-                    <strong style="color:#d4af37;">
-                        ශේෂ පිරික්සුම පිළියෙල කිරීමේදීය.
-                    </strong>
+<p style="color:#fff;">
+                    මෙහිදී ණයගැති ගිණුම මෙන්ම විකුණුම් ගිණුම ද රු. 18,000කින්
+                    (රු. 20,000 − රු. 2,000) අඩු වී ඇති බැවින් අදාළ ගිණුම් දෙකෙහිම
+                    රු. 18,000 බැගින් සටහන් කිරීමෙන් සිදු වී ඇති ගිණුම්කරණ දෝෂය
+                    නිවැරදි කළ හැකිය.
                 </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">ණයගැති ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">18,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">විකුණුම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">18,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(රු. 18,000ක් අඩුවෙන් සටහන් වූ ණයට විකුණුම් නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">තවත් නිදසුන</h4>
+<p style="color:#fff;">
+                    ණය හිමියකුගෙන් ලද වට්ටම් රු. 1,500ක් මුදල් පොතේ ලද වට්ටම් තීරුවේ
+                    රු. 1,300ක් ලෙස සටහන් වී තිබීම.
+                </p>
+<p style="color:#fff;">
+                    මෙහිදී ණයහිමි ගිණුමේ මෙන්ම ලද වට්ටම් ගිණුමේ ද වටිනාකම් රු. 200
+                    (රු. 1,500 − රු. 1,300) ක් අඩුවෙන් සටහන් වී ඇති බැවින් එම රු. 200
+                    අලුතින් ගිණුම්වලට ඇතුළත් කළ යුතුය.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">ණයහිමි ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">200</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ලද වට්ටම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">200</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(රු. 1,500ක වට්ටම් ලැබීම මුදල් පොතේ ලද වට්ටම් තීරුවේ රු. 1,300ක් ලෙස සටහන් වීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Error 03 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">03. එකම ගනුදෙනුව ගිණුම් පොත්වල දෙවරක් සටහන් වීම</h4>
+<p style="color:#fff;">
+                ඇතැම් අවස්ථාවලදී එකම ගනුදෙනුව අදාළ මූලික පොතෙහි දෙවරක් සටහන් විය හැකි
+                අතර, ඒ නිසාම එය ගිණුම්වල ද දෙවරක් සටහන් වී තිබිය හැකිය. එවිට අදාළ
+                ගනුදෙනුවේ වටිනාකම එම ගිණුම්වල විරුද්ධ පැතිවල සටහන් කිරීම තුළින්
+                එම වරද නිවැරදි කළ හැකිය.
+            </p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">රු. 10,000ක ගැනුම් ඉන්වොයිසියක් ගිණුම් පොත්වල දෙවරක් සටහන් වීම.</p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">ණයහිමි ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">10,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ගැනුම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">10,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(රු. 10,000ක ගැනුම් ඉන්වොයිසියක් ගිණුම් පොත්වල දෙවරක් සටහන් වීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Error 04 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">04. කිසියම් ගනුදෙනුවක වටිනාකම නියමිත ගිණුමේ සටහන් නොකර වෙනත් ගිණුමක සටහන් වීම</h4>
+<p style="color:#fff;">
+                ව්‍යාපාරයක් විසින් සමහර ගනුදෙනු සටහන් කරන විට අදාළ අගය නියමිත ගිණුමේ
+                සටහන් නොකර වෙනත් ගිණුමක සටහන් වන අවස්ථා තිබිය හැකිය. නමුත් මෙහිදී
+                හර හා බැර සටහන්වල වටිනාකම් සමානව සටහන් වී ඇති හෙයින් ශේෂ පිරික්සුමේ
+                සමානත්වයට බලපෑමක් ඇති නොකරයි.
+            </p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">
+                    ව්‍යාපාරයේ පරිහරණය සඳහා මිලදී ගත් රු. 200,000ක් වූ කාර්යාල
+                    උපකරණවල පිරිවැය ගැනුම් ගිණුමට හර කර තිබීම.
+                </p>
+<p style="color:#fff;">
+                    ගැනුම් ගිණුමෙන් පෙන්නුම් කරන්නේ ව්‍යාපාරයේ නැවත විකිණීමේ පරමාර්ථයෙන්
+                    මිලදී ගත් භාණ්ඩ තොගයේ වටිනාකමයි. මෙහිදී කාර්යාල උපකරණ මිලදී ගෙන
+                    ඇත්තේ ව්‍යාපාරයේ පරිහරණය සඳහා බැවින් එය හර කළ යුත්තේ
+                    කාර්යාල උපකරණ නමැති වත්කම් ගිණුමටයි.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">කාර්යාල උපකරණ ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">200,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ගැනුම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">200,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ව්‍යාපාරයේ පරිහරණය සඳහා මිලදී ගෙන තිබූ කාර්යාල උපකරණ ගැනුම් ගිණුමේ සටහන් වීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- 12.5 -->
+<div class="content-card" style="border:1px solid #d4af37;border-radius:15px;background:#111;padding:25px;margin-bottom:25px;">
+<h3 style="color:#d4af37;border-bottom:1px solid #d4af37;padding-bottom:12px;">
+            12.5 ශේෂ පිරික්සුමේ සමානත්වයට බලපෑමක් ඇති කරන ගිණුම්කරණ වැරදි
+        </h3>
+<p style="color:#fff;">
+            ගිණුම්කරණ ක්‍රියාවලියේදී සිදුවන සමහර වැරදි නිසා පිළියෙල කරන ශේෂ පිරික්සුමේ
+            හර ශේෂ එකතුව සහ බැර ශේෂ එකතුව අතර වෙනසක් ඇති වේ. එවැනි වැරදි
+            ශේෂ පිරික්සුමේ සමානත්වයට බලපාන වැරදි ලෙස හැඳින්වේ. ශේෂ පිරික්සුම තුළින්
+            හෙළිදරව් වන වැරදි ලෙස හඳුන්වන්නේ ද මේවාය.
+        </p>
+<p style="color:#fff;">
+            වැරදි මොනවාද යන්න හඳුනා ගැනීමට ගිණුම් පරීක්ෂණයක් කළ යුතුය. කෙසේ වුවද
+            ඒ සඳහා සැලකිය යුතු කාලයක් ගතවිය හැකිය. එබැවින් වැරදි අනාවරණය කරගෙන
+            නිවැරදි කරන තෙක් ශේෂ පිරික්සුමේ වෙනස අවිනිශ්චිත ගිණුමකට පිටපත් කළ යුතුය.
+        </p>
+<!-- Suspense account -->
+<div class="important-box" style="border:2px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;text-align:center;">අවිනිශ්චිත ගිණුම</h4>
+<p style="color:#fff;">
+                ශේෂ පිරික්සුමේ හර ශේෂ එකතුව සහ බැර ශේෂ එකතුව අතර වෙනසක් ඇති විටෙක,
+                ඊට හේතු වූ ගිණුම්කරණ වැරදි සොයා ඒවා නිවැරදි කරන තෙක් ශේෂ පිරික්සුමේ
+                වෙනස තාවකාලිකව සටහන් කරන ගිණුම අවිනිශ්චිත ගිණුම වශයෙන් හඳුන්වනු ලැබේ.
+            </p>
+<h4 style="color:#d4af37;">අවිනිශ්චිත ගිණුමක් විවෘත කිරීම</h4>
+<p style="color:#fff;">01. ශේෂ පිරික්සුමේ හර ශේෂ එකතුව සහ බැර ශේෂ එකතුව අතර වෙනස හඳුනා ගන්න.</p>
+<p style="color:#fff;">02. එම වෙනස ශේෂ පිරික්සුමේ අගය අඩුවෙන් පවතින තීරුවට ඇතුළත් කර තාවකාලිකව ශේෂ පිරික්සුමේ එකතු සමාන කරන්න.</p>
+<p style="color:#fff;">03. එම වෙනස කුමක්ද යන්න නිශ්චිතවම නොදන්නා නිසා ඇතුළත් කළ අගය ඉදිරියෙන් අවිනිශ්චිත ගිණුම ලෙස ලියා අදාළ අගය අවිනිශ්චිත ගිණුමට පිටපත් කරන්න.</p>
+<p style="color:#fff;">
+                ඒ අනුව ශේෂ පිරික්සුමේ හර ශේෂ එකතුවට වඩා බැර ශේෂ එකතුව අඩුනම් එම වෙනස
+                අවිනිශ්චිත ගිණුමේ බැර පැත්තට පිටපත් කරන අතර බැර එකතුවට වඩා හර එකතුව
+                අඩුනම් එම වෙනස අවිනිශ්චිත ගිණුමේ හර පැත්තට පිටපත් කරයි.
+            </p>
+</div>
+<!-- Suspense opening example -->
+<div class="example-box" style="border:1px solid #d4af37;border-radius:12px;background:#0b0b0b;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">නිදසුන – ශේෂ පිරික්සුමේ වෙනස</h4>
+<p style="color:#fff;">
+                ජානකගේ ව්‍යාපාරය විසින් 20XX.12.31 දිනට පිළියෙල කරන ලද ශේෂ පිරික්සුමේ
+                හර හා බැර තීරුවල ඓක්‍යන් සමාන නොවීය. එම ශේෂ පිරික්සුම පහත දැක්වේ.
+            </p>
+<table style="width:100%;border-collapse:collapse;color:#fff;margin-top:15px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:8px;">ගිණුමේ නම</th>
+<th style="border:1px solid #d4af37;padding:8px;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:8px;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="border:1px solid #555;padding:7px;">මුදල් ගිණුම</td><td style="border:1px solid #555;padding:7px;">50,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ප්‍රවාහන වියදම් ගිණුම</td><td style="border:1px solid #555;padding:7px;">11,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">විකුණුම් ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">130,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ගැනුම් ගිණුම</td><td style="border:1px solid #555;padding:7px;">520,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ප්‍රාග්ධන ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">24,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">රථ වාහන ගිණුම</td><td style="border:1px solid #555;padding:7px;">140,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">බැංකු ණය ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">20,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ගැනිලි ගිණුම</td><td style="border:1px solid #555;padding:7px;">5,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">උපකරණ ගිණුම</td><td style="border:1px solid #555;padding:7px;">900,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">විදුලි වියදම් ගිණුම</td><td style="border:1px solid #555;padding:7px;">350,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">අවිනිශ්චිත ගිණුම</td><td style="border:1px solid #555;padding:7px;">360,000</td><td></td></tr>
+<tr>
+<td style="border:1px solid #d4af37;padding:8px;font-weight:bold;"></td>
+<td style="border:1px solid #d4af37;padding:8px;font-weight:bold;">900,000</td>
+<td style="border:1px solid #d4af37;padding:8px;font-weight:bold;">900,000</td>
+</tr>
+</tbody>
+</table>
+<p style="color:#fff;margin-top:15px;">
+                ඉහත ශේෂ පිරික්සුමේ වෙනස, අවිනිශ්චිත ගිණුමේ පහත දැක්වෙන අයුරින් සටහන් කරනු ලැබේ.
+            </p>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="display:grid;grid-template-columns:1fr 2fr 1fr;align-items:end;margin-bottom:4px;color:#d4af37;font-weight:bold;text-align:center;min-width:760px;">
+<div>හර</div>
+<div>අවිනිශ්චිත ගිණුම</div>
+<div>බැර</div>
+</div>
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:8px;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:8px;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:8px;">ලෙ.පි.</th>
+<th style="border:1px solid #d4af37;padding:8px;">වටිනාකම<br/>රු.</th>
+<th style="border:1px solid #d4af37;padding:8px;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:8px;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:8px;">ලෙ.පි.</th>
+<th style="border:1px solid #d4af37;padding:8px;">වටිනාකම<br/>රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;">ශේෂ පිරික්සුමේ වෙනස</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;">5,000</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Detection and correction -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">ශේෂ පිරික්සුම තුළින් අනාවරණය වන වැරදි නිවැරදි කිරීම</h4>
+<p style="color:#fff;">
+                ශේෂ පිරික්සුමේ වෙනස අවිනිශ්චිත ගිණුමේ සටහන් කිරීමෙන් පසු එම වෙනසට හේතු
+                හඳුනාගත යුතුය. ගිණුම්කරණ ක්‍රියාවලිය තුළ සිදුවී ඇති සියලු වැරදි නිවැරදි කළ
+                පසු අවිනිශ්චිත ගිණුම පොත්වලින් ඉවත් විය යුතුය. මේ නිසා ඇතැම් ගිණුම්කරණ
+                වැරදි නිවැරදි කරන විට අවිනිශ්චිත ගිණුමේ ද සටහන් තැබිය යුතුය.
+            </p>
+<p style="color:#fff;">
+                අවිනිශ්චිත ගිණුමේ ශේෂය ඇතිවීමට බලපා ඇත්තේ ශේෂ පිරික්සුමේ අසමානත්වයට
+                බලපාන වැරදි පමණි. මේ නිසා එම වැරදි නිවැරදි කිරීමේදී ද්විත්ව සටහනෙන්
+                එක් සටහනක් අවිනිශ්චිත ගිණුමේ සටහන් කිරීමට සිදු වේ.
+            </p>
+</div>
+<!-- Error 01 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">01. ගනුදෙනුවක ද්විත්ව සටහනෙන් එක් සටහනක් පමණක් ඇතුළත් වීම</h4>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">රු. 15,000 දුරකථන ගාස්තු ගෙවීම මුදල් පොතේ පමණක් සටහන් කර තිබීම.</p>
+<p style="color:#fff;">
+                    මෙහිදී අදාළ වටිනාකම දුරකථන ගාස්තු ගිණුමට හර කර නැත. ඒ නිසා එය
+                    නිවැරදි කිරීමට දුරකථන ගාස්තු ගිණුමට හර කළ යුතුය. මුදල් පොත දැනටමත්
+                    බැර කර ඇති නිසා මුදල් පොත නිවැරදිය. එහෙත් හර සටහන නොතිබුණු නිසා
+                    ශේෂ පිරික්සුමේ හර පැත්තේ එකතුව රු. 15,000ක් අඩු වී අවිනිශ්චිත ගිණුමේ
+                    රු. 15,000ක හර ශේෂයක් ඇති වී තිබේ. එය නිවැරදි කිරීමට අවිනිශ්චිත
+                    ගිණුමට බැර කළ යුතුය.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">දුරකථන ගාස්තු ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">15,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">අවිනිශ්චිත ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">15,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(දුරකථන ගාස්තු ගිණුමට රු. 15,000ක් හර නොවීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Error 02 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">02. ගනුදෙනුවක ද්විත්ව සටහනෙන් එක් සටහනක් පමණක් නිවැරදිව සටහන් කර අනෙක් සටහන සඳහා වැරදි සංඛ්‍යාවක් සටහන් කිරීම</h4>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">රු. 54,000ක අත්පිට විකුණුම් මුදල් පොතේ නිවැරදිව සටහන් කර විකුණුම් ගිණුමට රු. 45,000ක් ලෙස බැර කිරීම.</p>
+<p style="color:#fff;">
+                    මෙහිදී විකුණුම් ගිණුමට රු. 9,000ක් අඩුවෙන් බැර කර ඇත. එය නිවැරදි කිරීමට
+                    විකුණුම් ගිණුමට රු. 9,000ක් බැර කර අවිනිශ්චිත ගිණුමට හර කළ යුතුය.
+                    රු. 9,000ක් අවිනිශ්චිත ගිණුමට හර කිරීම තුළින් අවිනිශ්චිත ගිණුම අහෝසි කළ හැකිය.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">අවිනිශ්චිත ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">9,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">විකුණුම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">9,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(විකුණුම් ගිණුම රු. 9,000ක් අඩුවෙන් සටහන් වීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Error 03 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">03. ගනුදෙනුවේ ද්විත්ව සටහන් අදාළ ගිණුම්වල එකම පැත්තේ සටහන් කිරීම</h4>
+<p style="color:#fff;">
+                ගනුදෙනුවක වටිනාකම අදාළ ගිණුම් දෙකේම එකම පැත්තේ සටහන් වී තිබිය හැකිය.
+            </p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">ණයගැතියෙකුගෙන් ලැබුණු රු. 5,000ක් මුදල් පොතට හර කර ණයගැති ගිණුමට ද හර කර තිබීම.</p>
+<p style="color:#fff;">
+                    මෙහිදී එක් ගිණුමකට රු. 5,000 බැගින් ගිණුම් දෙකටම හර කර ඇත. කිසිදු අගයක්
+                    බැර කර නැත. මේ නිසා ශේෂ පිරික්සුමේ බැර එකතුව රු. 10,000ක් අඩු වේ.
+                    එම නිසා අවිනිශ්චිත ගිණුමේ රු. 10,000ක බැර ශේෂයක් ඇති වේ.
+                    එය අහෝසි කිරීමට අවිනිශ්චිත ගිණුමට රු. 10,000ක් හර කළ යුතුය.
+                </p>
+<p style="color:#fff;">
+                    ණයගැති ගිණුම නිවැරදි කිරීමට එම ගිණුමට රු. 10,000ක් බැර කළ යුතුය.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">අවිනිශ්චිත ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">10,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ණයගැති ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">10,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ණයගැතියෙකුගෙන් ලැබුණු රු. 5,000ක් මුදල් පොතට හර කර ණයගැති ගිණුමට ද හර කර තිබීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Error 04 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">04. ලෙජර් ගිණුම් තුලනය කිරීමේදී සිදුවන වැරදි</h4>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">ගැනුම් ගිණුමේ නිවැරදි එකතුව වූ රු. 25,000, රු. 5,000ක් ලෙස ගැනුම් ගිණුමේ සටහන් කිරීම.</p>
+<p style="color:#fff;">
+                    මෙහිදී ගැනුම් ගිණුමේ ශේෂය රු. 20,000ක් අඩු වීම හේතුවෙන් ශේෂ පිරික්සුමේ
+                    හර එකතුව රු. 20,000කින් අඩු වේ. එම වෙනස නිසා අවිනිශ්චිත ගිණුමේ
+                    රු. 20,000ක හර ශේෂයක් ඇති වේ. එය අහෝසි කිරීමට එම අගය අවිනිශ්චිත
+                    ගිණුමට බැර කළ යුතුය. එසේම ගැනුම් ගිණුමේ ශේෂය රු. 20,000ක් අඩුය.
+                    එම නිසා එය නිවැරදි කිරීමට ගැනුම් ගිණුම රු. 20,000ක් හර කළ යුතුය.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">ගැනුම් ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">20,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">අවිනිශ්චිත ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">20,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ගැනුම් ගිණුමේ නිවැරදි එකතුව වූ රු. 25,000 රු. 5,000ක් ලෙස සටහන් වීම නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Error 05 -->
+<div class="important-box" style="border:1px solid #d4af37;border-left:5px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:20px;">
+<h4 style="color:#d4af37;">05. ශේෂ පිරික්සුම පිළියෙල කිරීමේදී සිදුවන වැරදි</h4>
+<p style="color:#fff;">
+                ව්‍යාපාරයක ලෙජරයේ ඇති සියලු ගිණුම් තුලනය කිරීමෙන් අනතුරුව ශේෂ පිරික්සුම
+                පිළියෙල කිරීමේදී ද වැරදි සිදුවීමට අවකාශ ඇත.
+            </p>
+<p style="color:#fff;">මෙහිදී:</p>
+<p style="color:#fff;">• ඇතැම් ගිණුම්වල ශේෂ ශේෂ පිරික්සුමට උපුටා නොගැනීම.</p>
+<p style="color:#fff;">• ඇතැම් ගිණුම්වල නිවැරදි ශේෂ වෙනුවට වැරදි ශේෂ ශේෂ පිරික්සුමේ සටහන් කිරීම.</p>
+<p style="color:#fff;">• ගිණුම්වල ශේෂ ශේෂ පිරික්සුමේ වැරදි තීරුවේ සටහන් කිරීම වැනි වැරදි සිදුවේ.</p>
+<div class="example-box" style="border:1px solid #d4af37;border-radius:10px;background:#0b0b0b;padding:18px;margin-top:15px;">
+<h4 style="color:#d4af37;">නිදසුන</h4>
+<p style="color:#fff;">රු. 10,000ක් වූ ගොඩනැගිලි කුලී වියදම් ගිණුමේ ශේෂය ශේෂ පිරික්සුමේ සටහන් වී නැත.</p>
+<p style="color:#fff;">
+                    මෙහිදී ගොඩනැගිලි කුලී වියදම් ගිණුමට බලපෑමක් සිදු වී නොමැති බැවින් එය
+                    නිවැරදි කිරීමක් අවශ්‍ය නොවේ. එහෙත් ශේෂ පිරික්සුමේ හර පැත්තේ රු. 10,000ක්
+                    අඩු බැවින් අවිනිශ්චිත ගිණුමේ රු. 10,000ක හර ශේෂයක් ඇති වේ.
+                    එය නිවැරදි කිරීමට රු. 10,000ක් අවිනිශ්චිත ගිණුමට බැර කිරීමෙන් ද,
+                    අත්හැරුණු අගය ශේෂ පිරික්සුමේ සටහන් කිරීමෙන් ද සිදු වී ඇති වරද
+                    නිවැරදි කළ හැකිය.
+                </p>
+</div>
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">අවිනිශ්චිත ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">10,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ගොඩනැගිලි කුලී වියදම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">10,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ගොඩනැගිලි කුලී වියදම් ගිණුමේ ශේෂය ශේෂ පිරික්සුමට උපුටා නොගැනීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Comparison -->
+<div class="important-box" style="border:2px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:25px;">
+<h4 style="color:#d4af37;text-align:center;">වැරදි නිවැරදි කිරීමේදී මතක තබා ගත යුතු කරුණ</h4>
+<p style="color:#fff;">
+                ශේෂ පිරික්සුමේ සමානත්වයට බලපාන වරදක් නිවැරදි කිරීමේදී එක් සටහනක්
+                අවිනිශ්චිත ගිණුමේත් අනෙක් සටහන වැරදි සිදු වී ඇති අනෙක් ගිණුමේත් සටහන්
+                විය යුතුය.
+            </p>
+<p style="color:#fff;">
+                ශේෂ පිරික්සුමේ සමානත්වයට බල නොපාන වැරදි නිවැරදි කිරීමේදී අවිනිශ්චිත
+                ගිණුමට කිසිදු නිවැරදි කිරීමේ සටහන් තැබීම අවශ්‍ය නොවන අතර වැරදි සිදු වී
+                ඇති ගිණුම් දෙක හඳුනාගෙන නිවැරදි කිරීම සිදු කළ යුතුය.
+            </p>
+</div>
+<!-- Full worked example -->
+<div class="example-box" style="border:1px solid #d4af37;border-radius:12px;background:#0b0b0b;padding:20px;margin-top:25px;">
+<h4 style="color:#d4af37;">නිදසුන – කසුනිගේ ව්‍යාපාරය</h4>
+<p style="color:#fff;">
+                කසුනිගේ ව්‍යාපාරය විසින් 20XX.12.31 දිනට පිළියෙල කරන ලද ශේෂ පිරික්සුමේ
+                හර හා බැර තීරුවල ඓක්‍යයන් සමාන නොවීය. පහත සඳහන් ගිණුම්කරණ වැරදි
+                හඳුනාගෙන ඇත.
+            </p>
+<table style="width:100%;border-collapse:collapse;color:#fff;margin-top:15px;">
+<thead><tr><th style="border:1px solid #d4af37;padding:8px;">ගිණුමේ නම</th><th style="border:1px solid #d4af37;padding:8px;">හර රු.</th><th style="border:1px solid #d4af37;padding:8px;">බැර රු.</th></tr></thead>
+<tbody>
+<tr><td style="border:1px solid #555;padding:7px;">මුදල් ගිණුම</td><td style="border:1px solid #555;padding:7px;">56,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">දුරකථන ගාස්තු ගිණුම</td><td style="border:1px solid #555;padding:7px;">5,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">විකුණුම් ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">150,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ගැනුම් ගිණුම</td><td style="border:1px solid #555;padding:7px;">500,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ප්‍රාග්ධන ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">130,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ඉඩම් හා ගොඩනැගිලි ගිණුම</td><td style="border:1px solid #555;padding:7px;">10,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">බැංකු ණය ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">15,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ගැනිලි ගිණුම</td><td style="border:1px solid #555;padding:7px;">900,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ලී බඩු උපකරණ ගිණුම</td><td style="border:1px solid #555;padding:7px;">300,000</td><td></td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">ලද පොලී ගිණුම</td><td></td><td style="border:1px solid #555;padding:7px;">400,000</td></tr>
+<tr><td style="border:1px solid #555;padding:7px;">අවිනිශ්චිත ගිණුම</td><td style="border:1px solid #555;padding:7px;">200,000</td><td></td></tr>
+<tr><td style="border:1px solid #d4af37;padding:8px;font-weight:bold;"></td><td style="border:1px solid #d4af37;padding:8px;font-weight:bold;">900,000</td><td style="border:1px solid #d4af37;padding:8px;font-weight:bold;">900,000</td></tr>
+</tbody>
+</table>
+<p style="color:#fff;margin-top:18px;"><strong style="color:#d4af37;">හඳුනාගත් වැරදි:</strong></p>
+<p style="color:#fff;">01. විදුලි ගාස්තු ගිණුමේ ශේෂය වූ රු. 16,000 ශේෂ පිරික්සුමට උපුටාගෙන නැත.</p>
+<p style="color:#fff;">02. ලැබූ පොලී ගිණුමේ ශේෂය වූ රු. 10,000 ශේෂ පිරික්සුමේ හර තීරුවේ සටහන් කොට ඇත.</p>
+<p style="color:#fff;">03. රු. 30,000ක බැංකු ණය පියවීම සටහන් කොට ඇත්තේ මුදල් පොතේ පමණි.</p>
+<p style="color:#fff;">04. ගැනුම් ගිණුමේ ශේෂය වූ රු. 130,000 ශේෂ පිරික්සුමේ සටහන් කර ඇත්තේ රු. 150,000ක් ලෙසය.</p>
+<p style="color:#fff;">05. ගැනිලි ගිණුම තුලනය කිරීමේදී එහි එකතුව වූ රු. 43,000 සටහන් කොට ඇත්තේ රු. 34,000ක් ලෙසය.</p>
+<p style="color:#fff;margin-top:18px;"><strong style="color:#d4af37;">වැරදි නිවැරදි කිරීමේ මූලධර්මය:</strong></p>
+<p style="color:#fff;">
+                01. විදුලි ගාස්තු ගිණුමේ රු. 16,000ක ශේෂය ශේෂ පිරික්සුමට උපුටා නොගැනීම
+                හේතුවෙන් ශේෂ පිරික්සුමේ හර තීරුවේ රු. 16,000ක ඌණතාවක් පවතී. එබැවින්
+                රු. 16,000ක් ශේෂ පිරික්සුමේ හර තීරුවේ ලිවිය යුතු අතර එම අගය අවිනිශ්චිත
+                ගිණුමට බැර විය යුතුය.
+            </p>
+<p style="color:#fff;">
+                02. ලැබූ පොලී ගිණුම ආදායම් ගිණුමක් බැවින් එය ශේෂ පිරික්සුමේ දැක්විය යුත්තේ
+                බැර පැත්තේය. රු. 10,000ක් වූ එම ගිණුම හර පැත්තේ සටහන් කිරීම තුළින් බැරට
+                රු. 20,000ක ඌණතාවයක් පවතී. එබැවින් රු. 20,000ක් ශේෂ පිරික්සුමේ බැර
+                තීරුවේ ලිවිය යුතු අතර අවිනිශ්චිත ගිණුම හර විය යුතුය.
+            </p>
+<p style="color:#fff;">
+                03. බැංකු ණය පියවීමේදී මුදල් පොත බැර කොට බැංකු ණය ගිණුම හර කළ යුතු
+                නමුදු එය බැංකු ණය ගිණුමේ සටහන් නොකිරීම හේතුවෙන් එම ගිණුම රු. 30,000කින්
+                වැඩි වී ඇත. එබැවින් රු. 30,000ක් බැංකු ණය ගිණුමට හර කොට අවිනිශ්චිත
+                ගිණුමට බැර කරනු ලැබේ.
+            </p>
+<p style="color:#fff;">
+                04. ගැනුම් ගිණුමේ නිවැරදි ශේෂය වූ රු. 130,000 රු. 150,000ක් ලෙස ශේෂ
+                පිරික්සුමේ සටහන් කිරීම හේතුවෙන් එහි හර තීරුවේ රු. 20,000ක් වැඩි වී ඇත.
+                එය නිවැරදි කර ලිවිය යුතුය.
+            </p>
+<p style="color:#fff;">
+                05. ගැනිලි ගිණුමේ එකතුව රු. 9,000කින් අඩු වීම නිසා ශේෂ පිරික්සුමේ හර
+                තීරුව රු. 9,000කින් අඩු වී ඇත. එබැවින් රු. 9,000ක් අවිනිශ්චිත ගිණුම
+                බැර කර ගැනිලි ගිණුම හර කළ යුතුය.
+            </p>
+<div style="overflow-x:auto;margin-top:15px;">
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">වවුචර් අංකය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">ලෙ.පි</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">හර රු.</th>
+<th style="border:1px solid #d4af37;padding:9px;color:#d4af37;">බැර රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">විදුලි ගාස්තු ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">16,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">අවිනිශ්චිත ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">16,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(විදුලි ගාස්තු ගිණුමේ ශේෂය ශේෂ පිරික්සුමට උපුටා නොගැනීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">අවිනිශ්චිත ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">20,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ලද පොලී ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">20,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ලද පොලී ගිණුමේ ශේෂය ශේෂ පිරික්සුමේ හර තීරුවේ සටහන් කිරීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">බැංකු ණය ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">30,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">අවිනිශ්චිත ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">30,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(රු. 30,000ක බැංකු ණය පියවීම බැංකු ණය ගිණුමට හර නොවීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">අවිනිශ්චිත ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">20,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">ගැනුම් ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">20,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ගැනුම් ගිණුමේ ශේෂය වූ රු. 130,000 රු. 150,000ක් ලෙස ශේෂ පිරික්සුමේ සටහන් වීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><strong style="color:#d4af37;">ගැනිලි ගිණුම</strong></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">9,000</td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;">අවිනිශ්චිත ගිණුම</td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;">9,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;"><em>(ගැනිලි ගිණුම තුලනය කිරීමේදී රු. 9,000ක් අඩුවෙන් සටහන් වීමේ වරද නිවැරදි කිරීම)</em></td>
+<td style="border:1px solid #555;padding:9px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+<td style="border:1px solid #555;padding:9px;text-align:right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Suspense account after corrections -->
+<div class="important-box" style="border:2px solid #d4af37;border-radius:12px;background:#171717;padding:20px;margin-top:25px;">
+<h4 style="color:#d4af37;text-align:center;">අවිනිශ්චිත ගිණුම – නිදසුන</h4>
+<div style="overflow-x:auto;margin-top:15px;">
+<div style="display:grid;grid-template-columns:1fr 2fr 1fr;align-items:end;margin-bottom:4px;color:#d4af37;font-weight:bold;text-align:center;min-width:760px;">
+<div>හර</div>
+<div>අවිනිශ්චිත ගිණුම</div>
+<div>බැර</div>
+</div>
+<table style="width:100%;border-collapse:collapse;color:#fff;min-width:760px;">
+<thead>
+<tr>
+<th style="border:1px solid #d4af37;padding:8px;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:8px;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:8px;">ලෙ.පි.</th>
+<th style="border:1px solid #d4af37;padding:8px;">වටිනාකම<br/>රු.</th>
+<th style="border:1px solid #d4af37;padding:8px;">දිනය</th>
+<th style="border:1px solid #d4af37;padding:8px;">විස්තරය</th>
+<th style="border:1px solid #d4af37;padding:8px;">ලෙ.පි.</th>
+<th style="border:1px solid #d4af37;padding:8px;">වටිනාකම<br/>රු.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;">ශේෂ පිරික්සුමේ වෙනස</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;">15,000</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;"></td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;">20,000</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;">බැංකු ණය ගිණුම</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;">30,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;">20,000</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;">ගැනිලි ගිණුම</td>
+<td style="border:1px solid #555;padding:8px;text-align:center;"></td>
+<td style="border:1px solid #555;padding:8px;text-align:right;">9,000</td>
+</tr>
+<tr>
+<td style="border:1px solid #d4af37;padding:8px;"></td>
+<td style="border:1px solid #d4af37;padding:8px;"></td>
+<td style="border:1px solid #d4af37;padding:8px;"></td>
+<td style="border:1px solid #d4af37;padding:8px;font-weight:bold;">55,000</td>
+<td style="border:1px solid #d4af37;padding:8px;"></td>
+<td style="border:1px solid #d4af37;padding:8px;"></td>
+<td style="border:1px solid #d4af37;padding:8px;"></td>
+<td style="border:1px solid #d4af37;padding:8px;font-weight:bold;">55,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section>
-    
-    <!-- =====================================================
-         PART 08
-         ===================================================== -->
-
-    <section class="topic-card">
-
-        <h2>
-            8. ශේෂ පිරික්සුමේ සමානත්වයට බල නොපාන වැරදි
-        </h2>
-
-        <p>
-            Debit සහ Credit දෙපසම සමාන මුදලක් වැරදි ගිණුම්වලට
-            ඇතුළත් වූ විට Trial Balance එකේ දෙපස එකතුව
-            සමාන විය හැක. එහෙත් ගිණුම් නිවැරදි නොවේ.
-        </p>
-
-        <h3>
-            නිදසුන 1 – වැරදි ගිණුමකට සටහන් කිරීම
-        </h3>
-
-        <div class="example-box">
-
-            Office Equipment රු. 20,000ක් මිලදීගෙන,
-            Purchases Account එකට Debit කර ඇත.
-
-        </div>
-
-        <table class="ledger">
-
-            <tr>
-                <th>නිවැරදි කිරීම</th>
-                <th>Debit Rs.</th>
-                <th>Credit Rs.</th>
-            </tr>
-
-            <tr>
-                <td>Office Equipment A/C Dr.<br>Purchases A/C</td>
-                <td>20,000</td>
-                <td>20,000</td>
-            </tr>
-
-        </table>
-
-
-        <h3>
-            නිදසුන 2
-        </h3>
-
-        <div class="example-box">
-
-            Electricity Rs. 5,000 Insurance Account එකට
-            වැරදියට Debit කර ඇත.
-
-        </div>
-
-        <table class="ledger">
-
-            <tr>
-                <th>Correcting Entry</th>
-                <th>Debit</th>
-                <th>Credit</th>
-            </tr>
-
-            <tr>
-                <td>Electricity A/C Dr.<br>Insurance A/C</td>
-                <td>5,000</td>
-                <td>5,000</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PART 09
-         ===================================================== -->
-
-    <section class="topic-card">
-
-        <h2>
-            9. ශේෂ පිරික්සුමේ සමානත්වයට බලපාන වැරදි
-        </h2>
-
-        <p>
-            Debit සහ Credit entries දෙක සමාන නොවීම නිසා
-            Trial Balance එකේ දෙපස එකතුව වෙනස් විය හැක.
-        </p>
-
-        <h3>
-            නිදසුන
-        </h3>
-
-        <div class="example-box">
-
-            Furniture රු. 15,000කට මිලදී ගත් නමුත්
-            Furniture Account එකට රු. 5,000ක් පමණක් Debit කර ඇත.
-
-            වෙනස = රු. 10,000
-
-        </div>
-
-        <table class="ledger">
-
-            <tr>
-                <th>Correction</th>
-                <th>Debit</th>
-                <th>Credit</th>
-            </tr>
-
-            <tr>
-                <td>Furniture A/C Dr.<br>Suspense A/C</td>
-                <td>10,000</td>
-                <td>10,000</td>
-            </tr>
-
-        </table>
-
-        <p class="small-note">
-            මෙවැනි Trial Balance agreement errors සඳහා
-            Suspense Account භාවිතා කළ හැක.
-        </p>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PART 10
-         ===================================================== -->
-
-    <section class="topic-card">
-
-        <h2>
-            10. අවිනිශ්චිත ගිණුම – Suspense Account
-        </h2>
-
-        <p>
-            Trial Balance එකේ Debit සහ Credit totals අතර වෙනසක්
-            ඇති වූ විට එම වෙනස තාවකාලිකව තබා ගැනීමට
-            Suspense Account භාවිතා කළ හැක.
-        </p>
-
-        <h3>
-            නිදසුන 1
-        </h3>
-
-        <div class="example-box">
-
-            Stationery රු. 3,500ක් Cash Book එකේ සටහන් කර ඇත.
-            නමුත් Stationery Account එකට Debit කර නැත.
-
-        </div>
-
-        <table class="ledger">
-
-            <tr>
-                <th>Account</th>
-                <th>Debit</th>
-                <th>Credit</th>
-            </tr>
-
-            <tr>
-                <td>Stationery A/C</td>
-                <td>3,500</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Suspense A/C</td>
-                <td>-</td>
-                <td>3,500</td>
-            </tr>
-
-        </table>
-
-
-        <h3>
-            නිදසුන 2
-        </h3>
-
-        <div class="example-box">
-
-            Purchases Account එකේ රු. 25,000ක් තිබිය යුතු නමුත්
-            රු. 5,000ක් පමණක් සටහන් කර ඇත.
-
-            වෙනස = රු. 20,000
-
-        </div>
-
-        <table class="ledger">
-
-            <tr>
-                <th>Account</th>
-                <th>Debit</th>
-                <th>Credit</th>
-            </tr>
-
-            <tr>
-                <td>Purchases A/C</td>
-                <td>20,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Suspense A/C</td>
-                <td>-</td>
-                <td>20,000</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PART 11
-         ===================================================== -->
-
-    <section class="topic-card">
-
-        <h2>
-            11. ශේෂ පිරික්සුම මගින් අනාවරණය වන වැරදි නිවැරදි කිරීම
-        </h2>
-
-        <p>
-            Trial Balance එක සමාන නොවූ විට මුලින්ම වෙනස හඳුනාගෙන,
-            ledger accounts, prime entry books සහ trial balance
-            නැවත පරීක්ෂා කළ යුතුය.
-        </p>
-
-        <h3>
-            ප්‍රධාන පියවර
-        </h3>
-
-        <ol>
-            <li>Trial Balance totals නැවත එකතු කිරීම.</li>
-            <li>Ledger balances නැවත පරීක්ෂා කිරීම.</li>
-            <li>Prime entry books පරීක්ෂා කිරීම.</li>
-            <li>Posting errors පරීක්ෂා කිරීම.</li>
-            <li>වෙනස තාවකාලිකව Suspense Account එකට දැමීම.</li>
-            <li>දෝෂය හඳුනාගැනීම.</li>
-            <li>Journal entry මගින් නිවැරදි කිරීම.</li>
-            <li>Suspense Account එක නැවත පරීක්ෂා කිරීම.</li>
-        </ol>
-
-
-        <h3>
-            ගනුදෙනු කිහිපයක් මගින් නිදසුන
-        </h3>
-
-        <table class="ledger">
-
-            <tr>
-                <th>දෝෂය</th>
-                <th>Correction</th>
-                <th>Dr.</th>
-                <th>Cr.</th>
-            </tr>
-
-            <tr>
-                <td>Stationery omitted Rs. 3,500</td>
-                <td>Stationery Dr / Suspense Cr</td>
-                <td>3,500</td>
-                <td>3,500</td>
-            </tr>
-
-            <tr>
-                <td>Furniture understated Rs. 10,000</td>
-                <td>Furniture Dr / Suspense Cr</td>
-                <td>10,000</td>
-                <td>10,000</td>
-            </tr>
-
-            <tr>
-                <td>Sales Account overcast Rs. 2,000</td>
-                <td>Sales Dr / Suspense Cr</td>
-                <td>2,000</td>
-                <td>2,000</td>
-            </tr>
-
-        </table>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PART 12
-         ===================================================== -->
-
-    <section class="topic-card">
-
-        <h2>
-            12. අවසාන ශේෂ පිරික්සුම – සම්පූර්ණ නිදසුන
-        </h2>
-
-        <p>
-            පහත උදාහරණයේදී ව්‍යාපාරයක ප්‍රධාන ලෙජර් ගිණුම්වල
-            අවසාන ශේෂ Trial Balance එකකට ගෙන එයි.
-        </p>
-
-        <table class="ledger">
-
-            <tr>
-                <th>Account</th>
-                <th>Debit Rs.</th>
-                <th>Credit Rs.</th>
-            </tr>
-
-            <tr>
-                <td>Cash</td>
-                <td>20,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Bank</td>
-                <td>40,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Debtors</td>
-                <td>35,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Purchases</td>
-                <td>100,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Furniture</td>
-                <td>25,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Rent</td>
-                <td>10,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Wages</td>
-                <td>20,000</td>
-                <td>-</td>
-            </tr>
-
-            <tr>
-                <td>Capital</td>
-                <td>-</td>
-                <td>100,000</td>
-            </tr>
-
-            <tr>
-                <td>Sales</td>
-                <td>-</td>
-                <td>120,000</td>
-            </tr>
-
-            <tr>
-                <td>Creditors</td>
-                <td>-</td>
-                <td>30,000</td>
-            </tr>
-
-            <tr>
-                <th>Total</th>
-                <th>250,000</th>
-                <th>250,000</th>
-            </tr>
-
-        </table>
-
-        <div class="formula">
-            Debit Total = Rs. 250,000<br>
-            Credit Total = Rs. 250,000
-        </div>
-
-        <p>
-            එබැවින් මෙම උදාහරණයේ Trial Balance එකේ
-            Debit සහ Credit totals සමාන වේ.
-        </p>
-
-    </section>
-
 
 
     <!-- =====================================================
