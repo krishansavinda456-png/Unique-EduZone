@@ -7733,6 +7733,433 @@ XYZ සැපයුම්කරුවන් (ණයහිමි)
 
 
 
+
+<!-- =========================================================
+     ACCOUNTING DETECTIVE CHALLENGE – SPECIAL CHALLENGE
+     Added without changing existing Lesson 10 activities
+     ========================================================= -->
+<style>
+#accountingDetectiveChallenge{margin-top:32px}
+.ad-hero{background:linear-gradient(135deg,#0b0b0b,#171717);border:1px solid #d4af37;border-radius:18px;padding:26px;box-shadow:0 10px 35px rgba(0,0,0,.35)}
+.ad-hero h2{color:#f5c542;margin:0 0 8px;text-align:center}
+.ad-hero p{color:#eee;line-height:1.7}
+.ad-progress{margin:18px 0 8px;background:#222;border-radius:999px;height:18px;overflow:hidden;border:1px solid #444}
+.ad-progress-bar{height:100%;width:0;background:#d4af37;transition:.3s}
+.ad-progress-text{text-align:center;color:#fff;font-weight:700}
+.ad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:16px}
+.ad-mini{background:#111;border:1px solid #444;border-radius:10px;padding:10px;text-align:center;color:#ddd}
+.ad-mini.done{border-color:#4caf50}
+.ad-card{margin-top:24px;background:#0e0e0e;border:1px solid #333;border-radius:16px;padding:18px;overflow:hidden}
+.ad-card h3{color:#f5c542;margin-top:0}
+.ad-note{background:#151515;border-left:4px solid #d4af37;padding:12px;margin:12px 0;color:#eee;line-height:1.7}
+.ad-table-wrap{overflow-x:auto;margin:12px 0}
+.ad-table{width:100%;border-collapse:collapse;min-width:760px;color:#eee;font-size:13px}
+.ad-table th,.ad-table td{border:1px solid #555;padding:7px;text-align:center;vertical-align:middle}
+.ad-table th{background:#333;color:#f5c542}
+.ad-table select{width:100%;min-width:100px;background:#161616;color:#fff;border:1px solid #777;border-radius:6px;padding:6px}
+.ad-table input{width:100%;min-width:90px;background:#161616;color:#fff;border:1px solid #777;border-radius:6px;padding:6px}
+.ad-ledger-title{background:#222;color:#f5c542;padding:9px;text-align:center;font-weight:700}
+.ad-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ad-btn{border:0;border-radius:8px;padding:10px 15px;font-weight:700;cursor:pointer}
+.ad-check{background:#d4af37;color:#000}
+.ad-answer{background:#333;color:#fff}
+.ad-reset{background:#555;color:#fff}
+.ad-result{margin-top:14px;padding:12px;border-radius:9px;background:#151515;color:#fff;display:none}
+.ad-result.show{display:block}
+.ad-correct{outline:2px solid #4caf50}
+.ad-wrong{outline:2px solid #e53935}
+.ad-answer-box{display:none;background:#102015;border:1px solid #4caf50;padding:14px;margin-top:12px;color:#fff;border-radius:9px}
+.ad-answer-box.show{display:block}
+.ad-total{font-size:18px;color:#f5c542;font-weight:800}
+.ad-small{font-size:12px;color:#bbb}
+@media(max-width:600px){
+ .ad-hero,.ad-card{padding:13px}
+ .ad-table{font-size:12px}
+}
+</style>
+
+<section class="topic-card" id="accountingDetectiveChallenge">
+  <div class="ad-hero">
+    <h2>🕵️ Accounting Detective Challenge – විශේෂ අභියෝගය</h2>
+    <p style="text-align:center">
+      ගනුදෙනු හඳුනාගෙන නිවැරදි ජර්නල්, ලෙජර්, මුදල්/බැංකු ගිණුම්,
+      ශේෂ පිරික්සුම සහ අවශ්‍ය තැන්වල පොදු ජර්නලය හා අවිනිශ්චිත ගිණුම
+      සකස් කරන්න.
+    </p>
+    <div class="ad-progress"><div class="ad-progress-bar" id="adProgressBar"></div></div>
+    <div class="ad-progress-text" id="adProgressText">0 / 10 ක්‍රියාකාරකම් සම්පූර්ණයි</div>
+    <div class="ad-grid" id="adMiniProgress"></div>
+  </div>
+  <div id="adActivities"></div>
+  <div class="ad-card" id="adFinalProgress" style="display:none">
+    <h3>🏆 Accounting Detective Challenge – සම්පූර්ණ ප්‍රගතිය</h3>
+    <div id="adFinalText"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+"use strict";
+
+const AD_KEY="uez_lesson10_detective_challenge_v1";
+
+/* ---------------------------------------------------------
+   Transaction data
+   Each object: date, invoice, party, amount, type
+   type:
+   purchase = credit purchase
+   sale = credit sale
+   cashIn / cashOut = cash transaction
+   bankIn / bankOut = bank transaction
+   discountReceive / discountAllow = discount
+   general = General Journal entry
+   suspense = error/correction entry
+   --------------------------------------------------------- */
+const baseNames=[
+ ["ABC වෙළඳසැල","50,000"],["XYZ සැපයුම්කරුවන්","30,000"],
+ ["සිල්වා වෙළඳසැල","40,000"],["පෙරේරා වෙළඳසැල","25,000"],
+ ["නිමල් ස්ටෝර්ස්","35,000"],["සමන් වෙළඳසැල","28,000"],
+ ["කුමාර වෙළඳසැල","32,000"]
+];
+
+function money(n){return Number(n).toLocaleString("en-US");}
+function tx(date,desc,amount,type,party="",ref="",discount=0){
+ return {date,desc,amount,type,party,ref,discount,gross:amount+discount};
+}
+
+const acts=[
+ {n:1,title:"ගැනුම් ජර්නල් Detective",count:10,mode:"purchase"},
+ {n:2,title:"විකුණුම් ජර්නල් Detective",count:10,mode:"sale"},
+ {n:3,title:"මුදල් + බැංකු + ජර්නල් + ශේෂ පිරික්සුම",count:20,mode:"full"},
+ {n:4,title:"දෛනික ගිණුම්කරණ පරීක්ෂණය",count:20,mode:"full"},
+ {n:5,title:"ව්‍යාපාර ගිණුම් සම්පූර්ණ අභියෝගය",count:20,mode:"full"},
+ {n:6,title:"පොදු ජර්නලය සහ අවිනිශ්චිත ගිණුම",count:25,mode:"advanced"},
+ {n:7,title:"Accounting Detective – Level 7",count:25,mode:"advanced"},
+ {n:8,title:"Accounting Detective – Level 8",count:25,mode:"advanced"},
+ {n:9,title:"Accounting Detective – Level 9",count:25,mode:"advanced"},
+ {n:10,title:"Accounting Detective – Final Mission",count:25,mode:"advanced"}
+];
+
+function makeTxs(a){
+ let arr=[];
+ if(a.mode==="purchase"){
+   for(let i=0;i<a.count;i++){
+     let names=["ABC වෙළඳසැල","XYZ සැපයුම්කරුවන්","සිරිමල් ට්‍රේඩර්ස්","ලංකා ඩිස්ට්‍රිබියුටර්ස්"];
+     let amt=[12000,18000,24000,15000,21000,27000,16000,22000,19000,25000][i];
+     arr.push(tx(String(2+i).padStart(2,"0")+"/02/2026","Invoice "+(301+i),amt,"purchase",names[i%names.length]));
+   }
+ }else if(a.mode==="sale"){
+   for(let i=0;i<a.count;i++){
+     let names=["සිල්වා වෙළඳසැල","පෙරේරා වෙළඳසැල","නිමල් ස්ටෝර්ස්","සමන් වෙළඳසැල"];
+     let amt=[14000,22000,17500,26000,19500,23000,28000,16000,21000,25000][i];
+     arr.push(tx(String(2+i).padStart(2,"0")+"/03/2026","Invoice "+(401+i),amt,"sale",names[i%names.length]));
+   }
+ }else{
+   const p=[
+    ["01/04/2026","මුදල් මගින් ගැනුම්",12000,"cashOut",""],
+    ["02/04/2026","බැංකුවට මුදල් තැන්පත් කළා",15000,"bankIn",""],
+    ["03/04/2026","ABC වෙළඳසැලෙන් ණයට ගැනුම්",18000,"purchase","ABC වෙළඳසැල"],
+    ["04/04/2026","සිල්වා වෙළඳසැලට ණයට විකුණුම්",22000,"sale","සිල්වා වෙළඳසැල"],
+    ["05/04/2026","වැටුප් මුදලින් ගෙවා",8000,"cashOut",""],
+    ["06/04/2026","විදුලි වියදම බැංකුවෙන් ගෙවා",5000,"bankOut",""],
+    ["07/04/2026","පෙරේරා වෙළඳසැලෙන් ණයට ගැනුම්",16000,"purchase","පෙරේරා වෙළඳසැල"],
+    ["08/04/2026","නිමල් ස්ටෝර්ස්ට ණයට විකුණුම්",19000,"sale","නිමල් ස්ටෝර්ස්"],
+    ["09/04/2026","ණයගැතියෙකුගෙන් මුදල් ලැබුණා",9500,"cashInDiscount","සිල්වා වෙළඳසැල","",500],
+    ["10/04/2026","ණයහිමියෙකුට බැංකුවෙන් ගෙවා",8600,"bankOutDiscount","ABC වෙළඳසැල","",400],
+    ["11/04/2026","කුලී බැංකුවෙන් ගෙවා",7000,"bankOut",""],
+    ["12/04/2026","මුදල් විකුණුම්",13000,"cashIn",""],
+    ["13/04/2026","සමන් වෙළඳසැලට ණයට විකුණුම්",17000,"sale","සමන් වෙළඳසැල"],
+    ["14/04/2026","XYZ සැපයුම්කරුවන්ගෙන් ණයට ගැනුම්",20000,"purchase","XYZ සැපයුම්කරුවන්"],
+    ["15/04/2026","ප්‍රවාහන වියදම මුදලින්",3000,"cashOut",""],
+    ["16/04/2026","බැංකුවෙන් මුදල් ලබාගත්තා",6000,"cashIn",""],
+    ["17/04/2026","කුමාර වෙළඳසැලට ණයට විකුණුම්",15000,"sale","කුමාර වෙළඳසැල"],
+    ["18/04/2026","ABC වෙළඳසැලට මුදලින් ගෙවීම",6000,"cashOut","ABC වෙළඳසැල"],
+    ["19/04/2026","ණයගැතියෙකුගෙන් බැංකුවට මුදල් ලැබුණා",11000,"bankIn","නිමල් ස්ටෝර්ස්"],
+    ["20/04/2026","මුදල් වියදම",2500,"cashOut",""]
+   ];
+   arr=p.slice(0,a.count).map(x=>tx(...x));
+   if(a.mode==="advanced"){
+     const extra=[
+      ["21/04/2026","අයිතිකරුගේ ප්‍රාග්ධනය බැංකුවට",25000,"bankIn",""],
+      ["22/04/2026","ගැනිලි මුදලින්",4000,"cashOut",""],
+      ["23/04/2026","පරණ ගෘහ භාණ්ඩ විකිණීම",5000,"cashIn",""],
+      ["24/04/2026","පොදු ජර්නල්: වැරදි ගිණුම නිවැරදි කිරීම",3000,"general",""],
+      ["25/04/2026","අවිනිශ්චිත ගිණුමෙන් නිවැරදි ගිණුමට මාරු කිරීම",3000,"suspense",""]
+     ];
+     arr=arr.concat(extra);
+   }
+ }
+ return arr.slice(0,a.count);
+}
+
+/* Correct debit/credit mapping for every transaction. */
+function mapping(t){
+ switch(t.type){
+  case"purchase": return {dr:["ගැනුම් ගිණුම"],cr:["ණයහිමි - "+t.party]};
+  case"sale": return {dr:["ණයගැති - "+t.party],cr:["විකුණුම් ගිණුම"]};
+  case"cashIn": return {dr:["මුදල් ගිණුම"],cr:[t.party?("ණයගැති - "+t.party):"අදාළ ආදායම්/ගිණුම"]};
+  case"cashInDiscount": return {dr:["මුදල් ගිණුම","වට්ටම් දුන් ගිණුම"],cr:[t.party?("ණයගැති - "+t.party):"අදාළ ගිණුම"]};
+  case"cashOut": return {dr:[t.desc.includes("වැටුප්")?"වැටුප් ගිණුම":t.desc.includes("විදුලි")?"විදුලි වියදම් ගිණුම":t.desc.includes("කුලී")?"කුලී ගිණුම":t.desc.includes("ගැනිලි")?"ගැනිලි ගිණුම":t.desc.includes("ප්‍රවාහන")?"ප්‍රවාහන වියදම් ගිණුම":t.desc.includes("ගෙවීම")?"ණයහිමි - "+t.party:"අදාළ වියදම් ගිණුම"],cr:["මුදල් ගිණුම"]};
+  case"bankOutDiscount": return {dr:[t.party?("ණයහිමි - "+t.party):"අදාළ ගිණුම"],cr:["බැංකු ගිණුම","වට්ටම් ලැබූ ගිණුම"]};
+  case"bankIn": return {dr:["බැංකු ගිණුම"],cr:[t.party?("ණයගැති - "+t.party):"අදාළ ගිණුම"]};
+  case"bankOut": return {dr:[t.party?("ණයහිමි - "+t.party):"අදාළ වියදම් ගිණුම"],cr:["බැංකු ගිණුම"]};
+  case"general": return {dr:["නිවැරදි ගිණුම"],cr:["වැරදි ගිණුම"]};
+  case"suspense": return {dr:["නිවැරදි ගිණුම"],cr:["අවිනිශ්චිත ගිණුම"]};
+  default:return {dr:["අදාළ ගිණුම"],cr:["අදාළ ගිණුම"]};
+ }
+}
+
+function accountsFor(arr){
+ const set=new Set(["මුදල් ගිණුම","බැංකු ගිණුම","ගැනුම් ගිණුම","විකුණුම් ගිණුම"]);
+ arr.forEach(t=>{let m=mapping(t);m.dr.concat(m.cr).forEach(x=>set.add(x));});
+ return [...set];
+}
+
+function choices(correct,all){
+ let a=[correct,...all.filter(x=>x!==correct)];
+ return a.slice(0,7);
+}
+function sel(id,correct,all){
+ let opts=choices(correct,all).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
+ return `<select id="${id}" data-answer="${esc(correct)}"><option value="">-- තෝරන්න --</option>${opts}</select>`;
+}
+function esc(x){return String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function renderActivity(a){
+ const arr=makeTxs(a), accounts=accountsFor(arr);
+ let html=`<div class="ad-card" id="adCard${a.n}">
+ <h3>🕵️ ක්‍රියාකාරකම ${String(a.n).padStart(2,"0")} — ${a.title}</h3>
+ <div class="ad-note"><b>ගනුදෙනු ${arr.length}ක්.</b> එක් එක් ගනුදෙනුව සඳහා නිවැරදි මූලාශ්‍රය, හර ගිණුම, බැර ගිණුම සහ මුදල තෝරන්න. ඉන්පසු පහත ජර්නල්/ලෙජර්/ශේෂ පිරික්සුම් කොටස් සම්පූර්ණ කරන්න.</div>`;
+
+ html+=`<h4 style="color:#f5c542">1. ගනුදෙනු හඳුනාගැනීම</h4><div class="ad-table-wrap"><table class="ad-table">
+ <thead><tr><th>දිනය</th><th>ගනුදෙනුව</th><th>මූලාශ්‍රය</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>වටිනාකම රු.</th></tr></thead><tbody>`;
+ arr.forEach((t,i)=>{
+   const m=mapping(t);
+   const sources=t.type==="purchase"?"ගැනුම් ජර්නලය":t.type==="sale"?"විකුණුම් ජර්නලය":(t.type==="general"||t.type==="suspense")?"පොදු ජර්නලය":(t.type==="cashIn"||t.type==="cashOut"||t.type==="cashInDiscount")?"මුදල් පොත":"බැංකු ගිණුම";
+   html+=`<tr><td>${esc(t.date)}</td><td style="text-align:left">${esc(t.desc)}${t.party?` (${esc(t.party)})`:""}</td>
+   <td>${sel(`ad${a.n}_src_${i}`,sources,["ගැනුම් ජර්නලය","විකුණුම් ජර්නලය","පොදු ජර්නලය","මුදල් පොත","බැංකු ගිණුම"])}</td>
+   <td>${sel(`ad${a.n}_dr_${i}`,m.dr[0],accounts)}${m.dr.length>1?`<br>${sel(`ad${a.n}_dr2_${i}`,m.dr[1],accounts)}`:""}</td>
+   <td>${sel(`ad${a.n}_cr_${i}`,m.cr[0],accounts)}${m.cr.length>1?`<br>${sel(`ad${a.n}_cr2_${i}`,m.cr[1],accounts)}`:""}</td>
+   <td>${money(t.amount)}</td></tr>`;
+ });
+ html+=`</tbody></table></div>`;
+
+ if(a.mode!=="sale"){
+  html+=journalTable(a,arr,"purchase");
+ }
+ if(a.mode!=="purchase"){
+  html+=journalTable(a,arr,"sale");
+ }
+ if(a.mode==="advanced"){
+  html+=generalTable(a,arr);
+  html+=suspenseTable(a,arr);
+ }
+ html+=cashBankTables(a,arr,accounts);
+ html+=ledgerTable(a,arr,accounts);
+ if(a.mode!=="purchase"&&a.mode!=="sale") html+=trialBalanceTable(a,arr,accounts);
+
+ html+=`<div class="ad-btns">
+   <button class="ad-btn ad-check" onclick="AD_check(${a.n})">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
+   <button class="ad-btn ad-answer" onclick="AD_show(${a.n})">👁️ නිවැරදි පිළිතුරු පෙන්වන්න</button>
+   <button class="ad-btn ad-reset" onclick="AD_reset(${a.n})">↻ නැවත සකස් කරන්න</button>
+ </div>
+ <div class="ad-result" id="adResult${a.n}"></div>
+ <div class="ad-answer-box" id="adAnswer${a.n}"><b>නිවැරදි පිළිතුරු:</b><div id="adAnswerContent${a.n}"></div></div>
+ </div>`;
+ return html;
+}
+
+function journalTable(a,arr,kind){
+ const rows=arr.filter(t=>t.type===kind);
+ if(!rows.length)return"";
+ const title=kind==="purchase"?"ගැනුම් ජර්නලය":"විකුණුම් ජර්නලය";
+ let html=`<h4 style="color:#f5c542">2. ${title}</h4><div class="ad-table-wrap"><table class="ad-table">
+ <thead><tr><th>දිනය</th><th>ඉන්වොයිස් අංකය</th><th>${kind==="purchase"?"සැපයුම්කරු":"ගනුම්කරු"}</th><th>මුළු වටිනාකම රු.</th><th>ලෙජර පිටුව</th></tr></thead><tbody>`;
+ rows.forEach((t,j)=>{
+  html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.ref || "—")}</td><td>${esc(t.party)}</td><td>${money(t.amount)}</td>
+  <td>${sel(`ad${a.n}_${kind}_lp_${j}`,`L${j+1}`,["L1","L2","L3","L4","L5","L6","L7"])}</td></tr>`;
+ });
+ let total=rows.reduce((x,t)=>x+t.amount,0);
+ html+=`<tr><td>${esc(arr[arr.length-1].date)}</td><td colspan="2">${kind==="purchase"?"ගැනුම් ගිණුමට හර කළා":"විකුණුම් ගිණුමට බැර කළා"}</td><td>${money(total)}</td><td></td></tr></tbody></table></div>`;
+ return html;
+}
+
+function cashBankTables(a,arr,accounts){
+ const cash=arr.filter(t=>t.type==="cashIn"||t.type==="cashOut");
+ const bank=arr.filter(t=>["bankIn","bankOut","bankOutDiscount"].includes(t.type));
+ if(!cash.length&&!bank.length)return"";
+ let html=`<h4 style="color:#f5c542">3. වට්ටම් තීරු සහිත මුදල් පොත / බැංකු ගිණුම</h4>`;
+ if(cash.length){
+  html+=`<div class="ad-table-wrap"><table class="ad-table"><thead><tr><th colspan="5">මුදල් පොත</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>වට්ටම් රු.</th><th>මුදල් රු.</th><th>ගිණුම</th></tr></thead><tbody>`;
+  cash.forEach((t,j)=>{
+   let side=t.type==="cashIn"?"ලැබීම්":"ගෙවීම්";
+   html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_cd_${j}`,t.type==="cashInDiscount"?"500":"0",["500","300","0","250","750"])}</td><td>${money(t.amount)}</td><td>${sel(`ad${a.n}_ca_${j}`,mapping(t).dr[0]==="මුදල් ගිණුම"?(mapping(t).cr[0]):mapping(t).dr[0],accounts)}</td></tr>`;
+  });
+  html+=`</tbody></table></div>`;
+ }
+ if(bank.length){
+  html+=`<div class="ad-table-wrap"><table class="ad-table"><thead><tr><th colspan="5">බැංකු ගිණුම</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>වට්ටම් රු.</th><th>බැංකු රු.</th><th>ගිණුම</th></tr></thead><tbody>`;
+  bank.forEach((t,j)=>{
+   html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_bd_${j}`,t.type==="bankOutDiscount"?"400":"0",["600","400","0","200","800"])}</td><td>${money(t.amount)}</td><td>${sel(`ad${a.n}_ba_${j}`,mapping(t).dr[0]==="බැංකු ගිණුම"?(mapping(t).cr[0]):mapping(t).dr[0],accounts)}</td></tr>`;
+  });
+  html+=`</tbody></table></div>`;
+ }
+ return html;
+}
+
+function generalTable(a,arr){
+ const rows=arr.filter(t=>t.type==="general");
+ return `<h4 style="color:#f5c542">4. පොදු ජර්නලය</h4><div class="ad-table-wrap"><table class="ad-table">
+ <thead><tr><th>දිනය</th><th>විස්තරය</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>වටිනාකම රු.</th></tr></thead><tbody>
+ ${rows.map((t,j)=>{let m=mapping(t);return `<tr><td>${t.date}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_gd_${j}`,m.dr[0],["නිවැරදි ගිණුම","වැරදි ගිණුම","වියදම් ගිණුම"])}</td><td>${sel(`ad${a.n}_gc_${j}`,m.cr[0],["වැරදි ගිණුම","නිවැරදි ගිණුම","අවිනිශ්චිත ගිණුම"])}</td><td>${money(t.amount)}</td></tr>`}).join("")}
+ </tbody></table></div>`;
+}
+function suspenseTable(a,arr){
+ const rows=arr.filter(t=>t.type==="suspense");
+ return `<h4 style="color:#f5c542">5. අවිනිශ්චිත ගිණුම</h4><div class="ad-table-wrap"><table class="ad-table">
+ <thead><tr><th colspan="4">අවිනිශ්චිත ගිණුම</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>හර රු.</th><th>බැර රු.</th></tr></thead><tbody>
+ ${rows.map((t,j)=>`<tr><td>${t.date}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_sd_${j}`,"3,000",["3,000","2,000","4,000","5,000"])}</td><td>${sel(`ad${a.n}_sc_${j}`,"0",["0","3,000","2,000","5,000"])}</td></tr>`).join("")}
+ </tbody></table></div>`;
+}
+
+
+function entryAmount(t,acc){
+ const m=mapping(t);
+ if(t.discount){
+   if(acc==="වට්ටම් දුන් ගිණුම"||acc==="වට්ටම් ලැබූ ගිණුම") return t.discount;
+   if((m.dr.includes(acc)&&m.dr.length===1)||(m.cr.includes(acc)&&m.cr.length===1)) return t.gross;
+ }
+ return t.amount;
+}
+function ledgerTable(a,arr,accounts){
+ let html=`<h4 style="color:#f5c542">6. අදාළ සියලුම ලෙජර් ගිණුම්</h4>`;
+ accounts.forEach((acc,k)=>{
+   let relevant=arr.filter(t=>mapping(t).dr.concat(mapping(t).cr).includes(acc));
+   if(!relevant.length)return;
+   html+=`<div class="ad-ledger-title">${esc(acc)}</div><div class="ad-table-wrap"><table class="ad-table">
+   <thead><tr><th colspan="4">හර</th><th colspan="4">බැර</th></tr><tr>
+   <th>දිනය</th><th>විස්තරය</th><th>ස.පි</th><th>වටිනාකම රු.</th>
+   <th>දිනය</th><th>විස්තරය</th><th>ස.පි</th><th>වටිනාකම රු.</th></tr></thead><tbody>`;
+   relevant.forEach((t,j)=>{
+     let m=mapping(t), debit=m.dr.includes(acc);
+     html+=`<tr>
+     <td>${debit?sel(`ad${a.n}_ld_${k}_${j}`,t.date,[t.date,"01/04/2026","02/04/2026","03/04/2026"]):""}</td>
+     <td>${debit?sel(`ad${a.n}_lv_${k}_${j}`,(m.dr[0]===acc?m.cr[0]:m.dr[0]),["ගැනුම් ගිණුම","විකුණුම් ගිණුම","මුදල් ගිණුම","බැංකු ගිණුම",m.dr[0],m.cr[0],t.desc]):""}</td>
+     <td>${debit?sel(`ad${a.n}_lp_${k}_${j}`,`L${j+1}`,["L1","L2","L3","L4","L5","L6","L7"]):""}</td>
+     <td>${debit?sel(`ad${a.n}_la_${k}_${j}`,money(entryAmount(t,acc)),[money(entryAmount(t,acc)),"1,000","2,000","3,000","5,000","10,000","20,000","30,000"]):""}</td>
+     <td>${!debit?sel(`ad${a.n}_rd_${k}_${j}`,t.date,[t.date,"01/04/2026","02/04/2026","03/04/2026"]):""}</td>
+     <td>${!debit?sel(`ad${a.n}_rv_${k}_${j}`,(m.dr[0]===acc?m.cr[0]:m.dr[0]),["ගැනුම් ගිණුම","විකුණුම් ගිණුම","මුදල් ගිණුම","බැංකු ගිණුම",m.dr[0],m.cr[0],t.desc]):""}</td>
+     <td>${!debit?sel(`ad${a.n}_rp_${k}_${j}`,`L${j+1}`,["L1","L2","L3","L4","L5","L6","L7"]):""}</td>
+     <td>${!debit?sel(`ad${a.n}_ra_${k}_${j}`,money(entryAmount(t,acc)),[money(entryAmount(t,acc)),"1,000","2,000","3,000","5,000","10,000","20,000","30,000"]):""}</td>
+     </tr>`;
+   });
+   html+=`${(()=>{
+     const tt=accountTotals(arr)[acc]||{dr:0,cr:0}, net=tt.dr-tt.cr;
+     const bal=money(Math.abs(net)), debitBal=net>0, creditBal=net<0;
+     const vals=["","0","3,000","4,000","5,000","6,000","7,000","8,000","9,000","10,000","12,000","15,000","16,000","17,000","18,000","19,000","20,000","21,000","22,000","24,000","25,000","27,000","30,000","40,000","50,000","60,000","100,000",bal];
+     return `
+       <tr>
+         <td colspan="3">${debitBal?"":"පහලට ගෙන ආ ශේෂය"}</td>
+         <td>${debitBal?sel(`ad${a.n}_lb_${k}`,bal,vals):""}</td>
+         <td colspan="3">${debitBal?"පහලට ගෙන ආ ශේෂය":""}</td>
+         <td>${creditBal?sel(`ad${a.n}_rb_${k}`,bal,vals):""}</td>
+       </tr>
+       <tr>
+         <td colspan="3">${debitBal?"ඉහලට ගෙන ආ ශේෂය":""}</td>
+         <td>${debitBal?sel(`ad${a.n}_lb2_${k}`,bal,vals):""}</td>
+         <td colspan="3">${creditBal?"ඉහලට ගෙන ආ ශේෂය":""}</td>
+         <td>${creditBal?sel(`ad${a.n}_rb2_${k}`,bal,vals):""}</td>
+       </tr>`;
+   })()}
+   </tbody></table></div>`;
+ });
+ return html;
+}
+
+
+function accountTotals(arr){
+ const totals={};
+ arr.forEach(t=>{
+   const m=mapping(t);
+   const dr=m.dr,cr=m.cr;
+   const eachDr=dr.length>1 && t.discount ? [t.amount,t.discount] : [dr.length===1&&cr.length>1&&t.discount?t.gross:t.amount];
+   const eachCr=cr.length>1 && t.discount ? [t.amount,t.discount] : [cr.length===1&&dr.length>1&&t.discount?t.gross:t.amount];
+   dr.forEach((acc,i)=>{totals[acc]=totals[acc]||{dr:0,cr:0};totals[acc].dr+=(eachDr[i]||0);});
+   cr.forEach((acc,i)=>{totals[acc]=totals[acc]||{dr:0,cr:0};totals[acc].cr+=(eachCr[i]||0);});
+ });
+ return totals;
+}
+function trialBalanceTable(a,arr,accounts){
+ let html=`<h4 style="color:#f5c542">7. අදාළ දිනට ශේෂ පිරික්සුම</h4><div class="ad-table-wrap"><table class="ad-table">
+ <thead><tr><th>ගිණුම</th><th>හර රු.</th><th>බැර රු.</th></tr></thead><tbody>`;
+ const totals=accountTotals(arr);
+ accounts.forEach((acc,k)=>{
+  const z=totals[acc]||{dr:0,cr:0}, net=z.dr-z.cr;
+  const drAns=net>0?money(net):"0", crAns=net<0?money(-net):"0";
+  const vals=["0","3,000","4,000","5,000","6,000","7,000","8,000","9,000","10,000","12,000","15,000","16,000","17,000","18,000","19,000","20,000","21,000","22,000","24,000","25,000","27,000","30,000","40,000","50,000","60,000","100,000",drAns,crAns];
+  html+=`<tr><td>${esc(acc)}</td><td>${sel(`ad${a.n}_td_${k}`,drAns,vals)}</td><td>${sel(`ad${a.n}_tc_${k}`,crAns,vals)}</td></tr>`;
+ });
+ html+=`</tbody></table></div>`;
+ return html;
+}
+
+function collect(){
+ let done=[];
+ try{done=JSON.parse(localStorage.getItem(AD_KEY))||[]}catch(e){}
+ return Array.isArray(done)?done:[];
+}
+function save(done){localStorage.setItem(AD_KEY,JSON.stringify(done));}
+function markDone(n){
+ let d=collect();if(!d.includes(n))d.push(n);save(d);updateProgress();
+}
+function updateProgress(){
+ let d=collect(),count=d.length;
+ document.getElementById("adProgressBar").style.width=(count/10*100)+"%";
+ document.getElementById("adProgressText").textContent=`${count} / 10 ක්‍රියාකාරකම් සම්පූර්ණයි`;
+ document.getElementById("adMiniProgress").innerHTML=acts.map(a=>`<div class="ad-mini ${d.includes(a.n)?"done":""}">Activity ${a.n}<br>${d.includes(a.n)?"✅ සම්පූර්ණයි":"⏳ ඉතිරි"}</div>`).join("");
+ if(count===10){
+   document.getElementById("adFinalProgress").style.display="block";
+   document.getElementById("adFinalText").innerHTML=`<p class="ad-total">🎉 ක්‍රියාකාරකම් 10ම සම්පූර්ණ කර ඇත!</p><p>ඔබගේ Accounting Detective Challenge ප්‍රගතිය: <b>100%</b></p>`;
+ }
+}
+function inputs(n){return [...document.querySelectorAll(`#adCard${n} select`)]}
+function check(n){
+ const card=document.getElementById("adCard"+n);
+ let fields=inputs(n),correct=0;
+ fields.forEach(x=>{
+   x.classList.remove("ad-correct","ad-wrong");
+   if(x.value && x.value===x.dataset.answer){correct++;x.classList.add("ad-correct")}
+   else{x.classList.add("ad-wrong")}
+ });
+ let total=fields.length, pct=total?Math.round(correct/total*100):0;
+ const r=document.getElementById("adResult"+n);
+ r.innerHTML=`<span class="ad-total">ලකුණු: ${correct} / ${total}</span> (${pct}%)<br>${pct===100?"🎉 සම්පූර්ණයෙන්ම නිවැරදියි!":"❗ වැරදි පිළිතුරු රතු පැහැයෙන් දැක්වේ. නිවැරදි පිළිතුරු බලන්න."}`;
+ r.classList.add("show");
+ if(pct===100)markDone(n);
+}
+function show(n){
+ const card=document.getElementById("adCard"+n);
+ inputs(n).forEach(x=>{x.value=x.dataset.answer||"";x.classList.remove("ad-wrong");x.classList.add("ad-correct")});
+ const box=document.getElementById("adAnswer"+n);
+ box.classList.add("show");
+ document.getElementById("adAnswerContent"+n).innerHTML="<p>ඉහත තේරීම්වලින් හරිත පැහැයෙන් දැක්වෙන්නේ නිවැරදි පිළිතුරුය.</p>";
+}
+function reset(n){
+ const card=document.getElementById("adCard"+n);
+ inputs(n).forEach(x=>{x.value="";x.classList.remove("ad-correct","ad-wrong")});
+ document.getElementById("adResult"+n).classList.remove("show");
+ document.getElementById("adAnswer"+n).classList.remove("show");
+}
+window.AD_check=check;window.AD_show=show;window.AD_reset=reset;
+
+document.addEventListener("DOMContentLoaded",function(){
+ document.getElementById("adActivities").innerHTML=acts.map(renderActivity).join("");
+ updateProgress();
+});
+})();
+</script>
+
+
     <!-- =====================================================
          QUIZ
          ===================================================== -->
