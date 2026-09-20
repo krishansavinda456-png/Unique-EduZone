@@ -8098,13 +8098,18 @@ function sel(id,correct,all){
  let opts=choices(correct,all).map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
  return `<select id="${id}" data-answer="${esc(correct)}"><option value="">-- තෝරන්න --</option>${opts}</select>`;
 }
+function amountSel(id,amount,extra=[]){
+ const correct=money(amount);
+ const pool=[correct,"0","1,000","2,000","3,000","4,000","5,000","6,000","7,000","8,000","10,000","12,000","15,000","16,000","17,000","18,000","19,000","20,000","21,000","22,000","24,000","25,000","27,000","30,000","35,000","40,000","50,000","60,000","80,000","100,000",...extra.map(v=>money(v))];
+ return sel(id,correct,[...new Set(pool)]);
+}
 function esc(x){return String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 
 function renderActivity(a){
  const arr=makeTxs(a), accounts=accountsFor(arr);
  let html=`<div class="ad-card" id="adCard${a.n}">
  <h3>🕵️ ක්‍රියාකාරකම ${String(a.n).padStart(2,"0")} — ${a.title}</h3>
- <div class="ad-note"><b>ගනුදෙනු ${arr.length}ක්.</b> එක් එක් ගනුදෙනුව සඳහා නිවැරදි මූලාශ්‍රය, හර ගිණුම, බැර ගිණුම සහ මුදල තෝරන්න. ඉන්පසු පහත ජර්නල්/ලෙජර්/ශේෂ පිරික්සුම් කොටස් සම්පූර්ණ කරන්න.</div>`;
+ <div class="ad-note"><b>ගනුදෙනු ${arr.length}ක්.</b> ගනුදෙනු සම්පූර්ණයෙන්ම ලබා දී ඇත. ගනුදෙනු වෙනස් කිරීමට අවශ්‍ය නැත. පහත ජර්නල්, මුදල්/බැංකු ගිණුම්, ලෙජර් සහ ශේෂ පිරික්සුම් වගුවල ඇති පිළිතුරු තේරීම් මගින් සම්පූර්ණ කරන්න. <b>මුදල/වටිනාකම තීරුද තේරීම් මගින් පුරවන්න.</b></div>`;
 
  html+=`<h4 style="color:#f5c542">1. ලබා දී ඇති ගනුදෙනු</h4>
  <div class="ad-note">පහත ගනුදෙනු කිසිදු තේරීමකින් තොරව ලබා දී ඇත. මෙම ගනුදෙනු පදනම් කරගෙන පහත ජර්නල්, ලෙජර්, මුදල්/බැංකු ගිණුම් සහ ශේෂ පිරික්සුම සම්පූර්ණ කරන්න.</div>
@@ -8147,16 +8152,17 @@ function journalTable(a,arr,kind){
  let html=`<h4 style="color:#f5c542">2. ${title}</h4><div class="ad-table-wrap"><table class="ad-table">
  <thead><tr><th>දිනය</th><th>ඉන්වොයිස් අංකය</th><th>${kind==="purchase"?"සැපයුම්කරු":"ගනුම්කරු"}</th><th>මුළු වටිනාකම රු.</th><th>ලෙජර පිටුව</th></tr></thead><tbody>`;
  rows.forEach((t,j)=>{
-  html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.ref || "—")}</td><td>${esc(t.party)}</td><td>${money(t.amount)}</td>
+  html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.ref || "—")}</td><td>${esc(t.party)}</td>
+  <td>${amountSel(`ad${a.n}_${kind}_amt_${j}`,t.amount)}</td>
   <td>${sel(`ad${a.n}_${kind}_lp_${j}`,`L${j+1}`,["L1","L2","L3","L4","L5","L6","L7"])}</td></tr>`;
  });
  let total=rows.reduce((x,t)=>x+t.amount,0);
- html+=`<tr><td>${esc(arr[arr.length-1].date)}</td><td colspan="2">${kind==="purchase"?"ගැනුම් ගිණුමට හර කළා":"විකුණුම් ගිණුමට බැර කළා"}</td><td>${money(total)}</td><td></td></tr></tbody></table></div>`;
+ html+=`<tr><td>${esc(arr[arr.length-1].date)}</td><td colspan="2">${kind==="purchase"?"ගැනුම් ගිණුමට හර කළා":"විකුණුම් ගිණුමට බැර කළා"}</td><td>${amountSel(`ad${a.n}_${kind}_total`,total)}</td><td></td></tr></tbody></table></div>`;
  return html;
 }
 
 function cashBankTables(a,arr,accounts){
- const cash=arr.filter(t=>t.type==="cashIn"||t.type==="cashOut");
+ const cash=arr.filter(t=>["cashIn","cashOut","cashInDiscount"].includes(t.type));
  const bank=arr.filter(t=>["bankIn","bankOut","bankOutDiscount"].includes(t.type));
  if(!cash.length&&!bank.length)return"";
  let html=`<h4 style="color:#f5c542">3. වට්ටම් තීරු සහිත මුදල් පොත / බැංකු ගිණුම</h4>`;
@@ -8164,14 +8170,14 @@ function cashBankTables(a,arr,accounts){
   html+=`<div class="ad-table-wrap"><table class="ad-table"><thead><tr><th colspan="5">මුදල් පොත</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>වට්ටම් රු.</th><th>මුදල් රු.</th><th>ගිණුම</th></tr></thead><tbody>`;
   cash.forEach((t,j)=>{
    let side=t.type==="cashIn"?"ලැබීම්":"ගෙවීම්";
-   html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_cd_${j}`,t.type==="cashInDiscount"?"500":"0",["500","300","0","250","750"])}</td><td>${money(t.amount)}</td><td>${sel(`ad${a.n}_ca_${j}`,mapping(t).dr[0]==="මුදල් ගිණුම"?(mapping(t).cr[0]):mapping(t).dr[0],accounts)}</td></tr>`;
+   html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_cd_${j}`,t.type==="cashInDiscount"?"500":"0",["500","300","0","250","750"])}</td><td>${amountSel(`ad${a.n}_ca_amt_${j}`,t.amount)}</td><td>${sel(`ad${a.n}_ca_${j}`,mapping(t).dr[0]==="මුදල් ගිණුම"?(mapping(t).cr[0]):mapping(t).dr[0],accounts)}</td></tr>`;
   });
   html+=`</tbody></table></div>`;
  }
  if(bank.length){
   html+=`<div class="ad-table-wrap"><table class="ad-table"><thead><tr><th colspan="5">බැංකු ගිණුම</th></tr><tr><th>දිනය</th><th>විස්තරය</th><th>වට්ටම් රු.</th><th>බැංකු රු.</th><th>ගිණුම</th></tr></thead><tbody>`;
   bank.forEach((t,j)=>{
-   html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_bd_${j}`,t.type==="bankOutDiscount"?"400":"0",["600","400","0","200","800"])}</td><td>${money(t.amount)}</td><td>${sel(`ad${a.n}_ba_${j}`,mapping(t).dr[0]==="බැංකු ගිණුම"?(mapping(t).cr[0]):mapping(t).dr[0],accounts)}</td></tr>`;
+   html+=`<tr><td>${esc(t.date)}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_bd_${j}`,t.type==="bankOutDiscount"?"400":"0",["600","400","0","200","800"])}</td><td>${amountSel(`ad${a.n}_ba_amt_${j}`,t.amount)}</td><td>${sel(`ad${a.n}_ba_${j}`,mapping(t).dr[0]==="බැංකු ගිණුම"?(mapping(t).cr[0]):mapping(t).dr[0],accounts)}</td></tr>`;
   });
   html+=`</tbody></table></div>`;
  }
@@ -8182,7 +8188,7 @@ function generalTable(a,arr){
  const rows=arr.filter(t=>t.type==="general");
  return `<h4 style="color:#f5c542">4. පොදු ජර්නලය</h4><div class="ad-table-wrap"><table class="ad-table">
  <thead><tr><th>දිනය</th><th>විස්තරය</th><th>හර ගිණුම</th><th>බැර ගිණුම</th><th>වටිනාකම රු.</th></tr></thead><tbody>
- ${rows.map((t,j)=>{let m=mapping(t);return `<tr><td>${t.date}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_gd_${j}`,m.dr[0],["නිවැරදි ගිණුම","වැරදි ගිණුම","වියදම් ගිණුම"])}</td><td>${sel(`ad${a.n}_gc_${j}`,m.cr[0],["වැරදි ගිණුම","නිවැරදි ගිණුම","අවිනිශ්චිත ගිණුම"])}</td><td>${money(t.amount)}</td></tr>`}).join("")}
+ ${rows.map((t,j)=>{let m=mapping(t);return `<tr><td>${t.date}</td><td>${esc(t.desc)}</td><td>${sel(`ad${a.n}_gd_${j}`,m.dr[0],["නිවැරදි ගිණුම","වැරදි ගිණුම","වියදම් ගිණුම"])}</td><td>${sel(`ad${a.n}_gc_${j}`,m.cr[0],["වැරදි ගිණුම","නිවැරදි ගිණුම","අවිනිශ්චිත ගිණුම"])}</td><td>${amountSel(`ad${a.n}_ga_${j}`,t.amount)}</td></tr>`}).join("")}
  </tbody></table></div>`;
 }
 function suspenseTable(a,arr){
