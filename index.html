@@ -258,6 +258,63 @@ body.light-mode .dark-switch::after{
 left:21px;
 }
 
+
+/* =====================================================
+UNIQUE EDUZONE TEACHER AD
+===================================================== */
+
+.teacher-ad-section{
+max-width:1400px;
+margin:35px auto 45px;
+padding:0 30px;
+}
+
+.teacher-ad-card{
+position:relative;
+overflow:hidden;
+border:1px solid rgba(245,197,66,.55);
+border-radius:22px;
+background:#080808;
+box-shadow:0 18px 55px rgba(0,0,0,.55),0 0 35px rgba(245,197,66,.08);
+}
+
+.teacher-ad-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(245,197,66,.04),rgba(0,0,0,.18));
+pointer-events:none;
+}
+
+.teacher-ad-image{
+width:100%;
+display:block;
+height:auto;
+position:relative;
+z-index:1;
+}
+
+.teacher-ad-link{
+display:block;
+text-decoration:none;
+}
+
+@media(max-width:800px){
+.teacher-ad-section{
+padding:0 15px;
+margin:25px auto 35px;
+}
+.teacher-ad-card{
+border-radius:15px;
+}
+}
+
+@media(max-width:480px){
+.teacher-ad-section{
+padding:0 10px;
+}
+}
+
 /* =====================================================
 HERO
 ===================================================== */
@@ -1686,6 +1743,21 @@ alt="Business Studies">
 
 </div>
 
+</section>
+
+<!-- =========================================================
+UNIQUE EDUZONE TEACHER / COURSE ADVERTISEMENT
+========================================================= -->
+
+<section class="teacher-ad-section" aria-label="Unique EduZone Teacher Advertisement">
+<div class="teacher-ad-card">
+<a href="pages/about.html" class="teacher-ad-link">
+<img
+class="teacher-ad-image"
+src="assets/images/unique-eduzone-teacher-ad.png"
+alt="Unique EduZone - BMS Hons Marketing Management - Grade 10, 11, 12 and 13 classes">
+</a>
+</div>
 </section>
 
 <!-- =========================================================
